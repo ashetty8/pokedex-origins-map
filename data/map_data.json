@@ -58124,7 +58124,8 @@
 "s": [
 570,
 571
-]
+],
+"w": "Kamuy"
 },
 "claddagh ring": {
 "g": "ring",
@@ -60478,7 +60479,8 @@
 "s": [
 129,
 130
-]
+],
+"w": "Dragon Gate (mythology)"
 },
 "dragon turtle": {
 "g": "mythic turtle",
@@ -60816,7 +60818,8 @@
 957,
 958,
 959
-]
+],
+"w": "Dwarf (folklore)"
 },
 "dwarf elephant": {
 "g": "elephant",
@@ -60939,7 +60942,8 @@
 "k": "folklore",
 "s": [
 184
-]
+],
+"w": "Easter Bunny"
 },
 "easter mona cake": {
 "g": "cake",
@@ -61896,7 +61900,8 @@
 "k": "folklore",
 "s": [
 707
-]
+],
+"w": "Fairy"
 },
 "fairy": {
 "g": "fairy",
@@ -61937,7 +61942,8 @@
 "k": "folklore",
 "s": [
 684
-]
+],
+"w": "Fairy"
 },
 "fairy godmother": {
 "g": "fairy godmother",
@@ -62295,7 +62301,8 @@
 "s": [
 757,
 758
-]
+],
+"w": "Salamanders in folklore"
 },
 "fire staff": {
 "g": "staff",
@@ -62495,7 +62502,8 @@
 "k": "folklore",
 "s": [
 353
-]
+],
+"w": "Yūrei"
 },
 "florida blenny": {
 "g": "florida blenny",
@@ -63839,7 +63847,8 @@
 486,
 894,
 895
-]
+],
+"w": "Golem"
 },
 "golem of prague": {
 "g": "prague",
@@ -64094,6 +64103,7 @@
 "s": [
 405
 ],
+"w": "Great Sphinx of Giza",
 "x": 1
 },
 "great tit": {
@@ -64798,7 +64808,8 @@
 "k": "folklore",
 "s": [
 866
-]
+],
+"w": "Yōkai"
 },
 "haramaki belly wrap": {
 "g": "wrap",
@@ -65744,7 +65755,8 @@
 "k": "folklore",
 "s": [
 302
-]
+],
+"w": "Kelly–Hopkinsville encounter"
 },
 "hopper crystal": {
 "g": "crystal",
@@ -66406,7 +66418,8 @@
 "k": "folklore",
 "s": [
 148
-]
+],
+"w": "Korean dragon"
 },
 "incandescent light bulb": {
 "g": "bulb",
@@ -66566,7 +66579,8 @@
 "k": "folklore",
 "s": [
 826
-]
+],
+"w": "Extraterrestrials in fiction"
 },
 "interlocking spur gears": {
 "g": "gear",
@@ -66627,7 +66641,8 @@
 "k": "folklore",
 "s": [
 707
-]
+],
+"w": "Iron in folklore"
 },
 "iron filings": {
 "g": "iron filings",
@@ -67357,6 +67372,7 @@
 425,
 426
 ],
+"w": "Kaidan",
 "x": 1
 },
 "kaijin (monster-movie villains)": {
