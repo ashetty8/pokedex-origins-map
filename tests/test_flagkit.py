@@ -162,6 +162,26 @@ def _(D):
             assert src not in lst, "left behind in %s" % other
 
 
+@case("normalize-case gives each referent one spelling, and keeps a hand-set one")
+def _(D):
+    # a referent the source text capitalises
+    r = next(r for r, v in sorted(D["referents"].items()) if v.get("d"))
+    want = D["referents"][r]["d"]
+    fk.normalize_case(D)
+    assert D["referents"][r]["d"] == want, "a settled spelling must survive a re-run"
+    for sp in D["species"].values():
+        for x in sp[1]:
+            k = x.lower()
+            if k in D["referents"]:
+                assert x == (D["referents"][k].get("d") or k), \
+                    "%s is written two ways" % k
+    # and one set by hand wins over whatever the strings say
+    other = next(r for r, v in sorted(D["referents"].items()) if not v.get("d"))
+    D["referents"][other]["d"] = "Deliberate Spelling"
+    fk.normalize_case(D)
+    assert D["referents"][other]["d"] == "Deliberate Spelling"
+
+
 @case("set-wiki sets a title and clears it")
 def _(D):
     r = next(r for r, v in sorted(D["referents"].items()) if v.get("w"))

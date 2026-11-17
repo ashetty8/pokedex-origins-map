@@ -21382,7 +21382,7 @@
 "own": [
 "Norwegian Forest cat",
 "European wildcat",
-"viking"
+"Viking"
 ],
 "s": 52
 },
@@ -22054,7 +22054,7 @@
 "staraptor-mega": {
 "f": "mega",
 "own": [
-"roc"
+"Roc"
 ],
 "s": 398
 },
@@ -52117,6 +52117,7 @@
 "x": 1
 },
 "\"british blue\" colour variant": {
+"d": "\"British Blue\" colour variant",
 "g": "shorthair breed",
 "k": "life",
 "s": [
@@ -52151,6 +52152,7 @@
 "x": 1
 },
 "\"kilroy was here\" graffiti": {
+"d": "\"Kilroy was here\" graffiti",
 "g": "\"kilroy was here\" graffiti",
 "i": 1,
 "k": "concept",
@@ -52184,6 +52186,7 @@
 "x": 1
 },
 "\"pearls before swine\" (matthew 7:6)": {
+"d": "\"pearls before swine\" (Matthew 7:6)",
 "g": "\"pearls before swine\"",
 "k": "concept",
 "s": [
@@ -52219,6 +52222,7 @@
 "x": 1
 },
 "\"the big apple\" / new york city": {
+"d": "\"The Big Apple\" / New York City",
 "g": "\"the big apple\" / new york city",
 "k": "concept",
 "s": [
@@ -52243,6 +52247,7 @@
 "x": 1
 },
 "1750-1775 western women's fashion": {
+"d": "1750-1775 Western women's fashion",
 "g": "fashion",
 "k": "concept",
 "s": [
@@ -52266,6 +52271,7 @@
 ]
 },
 "1950s b-movie bug-eyed alien": {
+"d": "1950s B-movie bug-eyed alien",
 "g": "alien",
 "k": "folklore",
 "s": [
@@ -52282,6 +52288,7 @@
 ]
 },
 "25 de abril bridge": {
+"d": "25 de Abril Bridge",
 "g": "bridge",
 "k": "earth & sky",
 "s": [
@@ -52290,6 +52297,7 @@
 "w": "25 de Abril Bridge"
 },
 "3d polygon rendering": {
+"d": "3D polygon rendering",
 "g": "rendering",
 "k": "concept",
 "s": [
@@ -52298,6 +52306,7 @@
 "x": 1
 },
 "3d rendering": {
+"d": "3D rendering",
 "g": "rendering",
 "k": "concept",
 "s": [
@@ -52307,6 +52316,7 @@
 "x": 1
 },
 "3d rendering and subdivision surfaces": {
+"d": "3D rendering and subdivision surfaces",
 "g": "rendering",
 "k": "concept",
 "s": [
@@ -52331,6 +52341,7 @@
 "x": 1
 },
 "a child's crayon drawing of pikachu": {
+"d": "a child's crayon drawing of Pikachu",
 "g": "a child's crayon drawing of pikachu",
 "k": "media & art",
 "s": [
@@ -52352,6 +52363,7 @@
 ]
 },
 "aachenosaurus": {
+"d": "Aachenosaurus",
 "g": "aachenosaurus",
 "k": "prehistoric",
 "s": [
@@ -52360,6 +52372,7 @@
 "w": "Nicolia (plant)"
 },
 "abe no seimei": {
+"d": "Abe no Seimei",
 "g": "abe no seimei",
 "i": 1,
 "k": "person",
@@ -52378,6 +52391,7 @@
 "x": 1
 },
 "ac power plug": {
+"d": "AC power plug",
 "g": "plug",
 "k": "object",
 "s": [
@@ -52403,6 +52417,7 @@
 "w": "Accordion"
 },
 "achiyalabopa": {
+"d": "Achiyalabopa",
 "g": "achiyalabopa",
 "k": "mythology",
 "s": [
@@ -52444,6 +52459,7 @@
 "w": "Adamant"
 },
 "adams mammoth": {
+"d": "Adams mammoth",
 "g": "mammoth",
 "k": "prehistoric",
 "s": [
@@ -52489,6 +52505,7 @@
 ]
 },
 "aedes albopictus": {
+"d": "Aedes albopictus",
 "g": "aedes albopictus",
 "k": "life",
 "s": [
@@ -52506,6 +52523,7 @@
 "w": "Aetosauria"
 },
 "afghan hound": {
+"d": "Afghan Hound",
 "g": "sighthound",
 "k": "life",
 "s": [
@@ -52514,6 +52532,7 @@
 "w": "Afghan Hound"
 },
 "african buffalo": {
+"d": "African buffalo",
 "g": "african buffalo",
 "k": "life",
 "s": [
@@ -52546,6 +52565,7 @@
 ]
 },
 "agaricus mushroom": {
+"d": "Agaricus mushroom",
 "g": "mushroom",
 "k": "life",
 "s": [
@@ -52555,6 +52575,7 @@
 ]
 },
 "agrajag (the hitchhiker's guide to the galaxy)": {
+"d": "Agrajag (The Hitchhiker's Guide to the Galaxy)",
 "g": "literary character",
 "k": "media & art",
 "s": [
@@ -52564,6 +52585,7 @@
 "x": 1
 },
 "agustin ibarrola's painted oma forest": {
+"d": "Agustin Ibarrola's painted Oma forest",
 "g": "agustin ibarrola's painted oma forest",
 "i": 1,
 "k": "media & art",
@@ -52572,6 +52594,7 @@
 ]
 },
 "ahriman": {
+"d": "Ahriman",
 "g": "ahriman",
 "k": "mythology",
 "s": [
@@ -52590,6 +52613,7 @@
 "w": "Ahuizotl (mythology)"
 },
 "aillen (irish sleep-bringing giant)": {
+"d": "Aillen (Irish sleep-bringing giant)",
 "g": "aillen",
 "k": "folklore",
 "s": [
@@ -52598,6 +52622,7 @@
 "w": "Aillen"
 },
 "ainiktozoon": {
+"d": "Ainiktozoon",
 "g": "ainiktozoon",
 "i": 1,
 "k": "prehistoric",
@@ -52607,6 +52632,7 @@
 "w": "Ainiktozoon"
 },
 "ainu ethnobotany": {
+"d": "Ainu ethnobotany",
 "g": "ainu ethnobotany",
 "k": "concept",
 "s": [
@@ -52671,6 +52697,7 @@
 "w": "Akaname"
 },
 "akaushi bull named judo": {
+"d": "Akaushi bull named Judo",
 "g": "akaushi bull named judo",
 "i": 1,
 "k": "life",
@@ -52679,6 +52706,7 @@
 ]
 },
 "akuro-o": {
+"d": "Akuro-o",
 "g": "akuro-o",
 "k": "folklore",
 "s": [
@@ -52686,6 +52714,7 @@
 ]
 },
 "al-andalus iconography": {
+"d": "Al-Andalus iconography",
 "g": "al-andalus iconography",
 "k": "media & art",
 "s": [
@@ -52693,6 +52722,7 @@
 ]
 },
 "al-mi'raj": {
+"d": "Al-Mi'raj",
 "g": "al-mi'raj",
 "k": "folklore",
 "s": [
@@ -52702,6 +52732,7 @@
 "w": "Al-Mi'raj"
 },
 "alano espanol": {
+"d": "Alano Espanol",
 "g": "guardian dog",
 "k": "life",
 "s": [
@@ -52718,6 +52749,7 @@
 "w": "Albatross"
 },
 "albertosaurus": {
+"d": "Albertosaurus",
 "g": "albertosaurus",
 "k": "prehistoric",
 "s": [
@@ -52803,6 +52835,7 @@
 "w": "Alebrije"
 },
 "alicanto": {
+"d": "Alicanto",
 "g": "alicanto",
 "k": "mythology",
 "s": [
@@ -52811,6 +52844,7 @@
 "w": "Alicanto"
 },
 "alicornio (murcian tumbleweed demon)": {
+"d": "Alicornio (Murcian tumbleweed demon)",
 "g": "alicornio",
 "k": "folklore",
 "s": [
@@ -52844,6 +52878,7 @@
 "w": "Alligator snapping turtle"
 },
 "allium victorialis": {
+"d": "Allium victorialis",
 "g": "allium victorialis",
 "i": 1,
 "k": "life",
@@ -52853,6 +52888,7 @@
 "w": "Allium victorialis"
 },
 "allosaurus": {
+"d": "Allosaurus",
 "g": "allosaurus",
 "k": "prehistoric",
 "s": [
@@ -52870,6 +52906,7 @@
 "w": "Alpine marmot"
 },
 "alpine marmot of the pyrenees": {
+"d": "alpine marmot of the Pyrenees",
 "g": "alpine marmot of the pyrenees",
 "k": "life",
 "s": [
@@ -52877,6 +52914,7 @@
 ]
 },
 "amanita": {
+"d": "Amanita",
 "g": "amanita",
 "i": 1,
 "k": "life",
@@ -52886,6 +52924,7 @@
 "w": "Amanita"
 },
 "amanita muscaria": {
+"d": "Amanita muscaria",
 "g": "amanita muscaria",
 "k": "life",
 "s": [
@@ -52895,6 +52934,7 @@
 "w": "Amanita muscaria"
 },
 "amargasaurus": {
+"d": "Amargasaurus",
 "g": "amargasaurus",
 "k": "prehistoric",
 "s": [
@@ -52904,6 +52944,7 @@
 "w": "Amargasaurus"
 },
 "amatsu-mikaboshi": {
+"d": "Amatsu-Mikaboshi",
 "g": "amatsu-mikaboshi",
 "k": "mythology",
 "s": [
@@ -52920,6 +52961,7 @@
 "w": "Amber"
 },
 "american alligator": {
+"d": "American alligator",
 "g": "american alligator",
 "k": "life",
 "s": [
@@ -52929,6 +52971,7 @@
 "w": "American alligator"
 },
 "american bison": {
+"d": "American bison",
 "g": "bison",
 "k": "life",
 "s": [
@@ -52937,6 +52980,7 @@
 "w": "American bison"
 },
 "american football quarterback": {
+"d": "American football quarterback",
 "g": "american football quarterback",
 "k": "person",
 "s": [
@@ -52945,6 +52989,7 @@
 "x": 1
 },
 "american lobster": {
+"d": "American lobster",
 "g": "lobster",
 "i": 1,
 "k": "life",
@@ -53036,6 +53081,7 @@
 "w": "Anaconda"
 },
 "ancient egyptian headdress and makeup": {
+"d": "ancient Egyptian headdress and makeup",
 "g": "headdress",
 "k": "object",
 "s": [
@@ -53043,6 +53089,7 @@
 ]
 },
 "ancient greek pottery": {
+"d": "ancient Greek pottery",
 "g": "ancient greek pottery",
 "k": "concept",
 "s": [
@@ -53052,6 +53099,7 @@
 "x": 1
 },
 "andean condor": {
+"d": "Andean condor",
 "g": "condor",
 "i": 1,
 "k": "life",
@@ -53061,6 +53109,7 @@
 "w": "Andean condor"
 },
 "anderson's salamander": {
+"d": "Anderson's salamander",
 "g": "salamander",
 "k": "life",
 "s": [
@@ -53128,6 +53177,7 @@
 "w": "Anglerfish"
 },
 "anglo-saxon fish brooch": {
+"d": "Anglo-Saxon fish brooch",
 "g": "anglo-saxon fish brooch",
 "k": "media & art",
 "s": [
@@ -53150,6 +53200,7 @@
 "w": "Ankylosauria"
 },
 "ankylosaurus": {
+"d": "Ankylosaurus",
 "g": "ankylosaurus",
 "k": "prehistoric",
 "s": [
@@ -53178,6 +53229,7 @@
 "w": "Anolidae"
 },
 "anomalocaris": {
+"d": "Anomalocaris",
 "g": "anomalocaris",
 "k": "prehistoric",
 "s": [
@@ -53188,6 +53240,7 @@
 "w": "Anomalocaris"
 },
 "anotogaster sieboldii": {
+"d": "Anotogaster sieboldii",
 "g": "anotogaster sieboldii",
 "k": "life",
 "s": [
@@ -53204,6 +53257,7 @@
 "w": "Ant"
 },
 "ant-mimicking spider (myrmarachne formicaria)": {
+"d": "ant-mimicking spider (Myrmarachne formicaria)",
 "g": "spider",
 "k": "life",
 "s": [
@@ -53212,6 +53266,7 @@
 "w": "Myrmarachne formicaria"
 },
 "antarabhava (buddhist purgatory)": {
+"d": "antarabhava (Buddhist purgatory)",
 "g": "antarabhava",
 "k": "concept",
 "s": [
@@ -53238,6 +53293,7 @@
 "x": 1
 },
 "antheia": {
+"d": "Antheia",
 "g": "antheia",
 "k": "mythology",
 "s": [
@@ -53247,6 +53303,7 @@
 "w": "Antheia"
 },
 "anthousai": {
+"d": "Anthousai",
 "g": "anthousai",
 "k": "mythology",
 "s": [
@@ -53271,6 +53328,7 @@
 "x": 1
 },
 "antikythera mechanism": {
+"d": "Antikythera mechanism",
 "g": "antikythera mechanism",
 "i": 1,
 "k": "object",
@@ -53295,6 +53353,7 @@
 ]
 },
 "anubis": {
+"d": "Anubis",
 "g": "anubis",
 "k": "mythology",
 "s": [
@@ -53304,6 +53363,7 @@
 "w": "Anubis"
 },
 "apatosaurus": {
+"d": "Apatosaurus",
 "g": "apatosaurus",
 "k": "prehistoric",
 "s": [
@@ -53313,6 +53373,7 @@
 "w": "Apatosaurus"
 },
 "apep": {
+"d": "Apep",
 "g": "apep",
 "k": "mythology",
 "s": [
@@ -53321,6 +53382,7 @@
 "w": "Apophis"
 },
 "aphrodite's dove": {
+"d": "Aphrodite's dove",
 "g": "dove",
 "k": "life",
 "s": [
@@ -53345,6 +53407,7 @@
 "w": "Turnover (food)"
 },
 "apricorn": {
+"d": "Apricorn",
 "g": "apricorn",
 "k": "life",
 "s": [
@@ -53354,6 +53417,7 @@
 "w": "Apricorn, Inc."
 },
 "arabian belly dancer": {
+"d": "Arabian belly dancer",
 "g": "dancer",
 "k": "person",
 "s": [
@@ -53370,6 +53434,7 @@
 "x": 1
 },
 "aramis of the three musketeers": {
+"d": "Aramis of The Three Musketeers",
 "g": "musketeers",
 "k": "person",
 "s": [
@@ -53379,6 +53444,7 @@
 "x": 1
 },
 "archaeopteryx": {
+"d": "Archaeopteryx",
 "g": "archaeopteryx",
 "k": "prehistoric",
 "s": [
@@ -53388,6 +53454,7 @@
 "w": "Archaeopteryx"
 },
 "archelon": {
+"d": "Archelon",
 "g": "archelon",
 "i": 1,
 "k": "prehistoric",
@@ -53415,6 +53482,7 @@
 "w": "Archerfish"
 },
 "archispirostreptus gigas millipede": {
+"d": "Archispirostreptus gigas millipede",
 "g": "millipede",
 "k": "life",
 "s": [
@@ -53422,6 +53490,7 @@
 ]
 },
 "arctic cetaceans": {
+"d": "Arctic cetaceans",
 "g": "arctic cetaceans",
 "k": "life",
 "s": [
@@ -53429,6 +53498,7 @@
 ]
 },
 "arctic fox": {
+"d": "Arctic fox",
 "g": "fox",
 "k": "life",
 "s": [
@@ -53463,6 +53533,7 @@
 "w": "Gynaephora groenlandica"
 },
 "ardhanari": {
+"d": "Ardhanari",
 "g": "ardhanari",
 "k": "mythology",
 "s": [
@@ -53471,6 +53542,7 @@
 "w": "Ardhanarishvara"
 },
 "area 51 and roswell lore": {
+"d": "Area 51 and Roswell lore",
 "g": "area 51 and roswell lore",
 "k": "folklore",
 "s": [
@@ -53480,6 +53552,7 @@
 "x": 1
 },
 "argus panoptes": {
+"d": "Argus Panoptes",
 "g": "argus panoptes",
 "k": "mythology",
 "s": [
@@ -53495,6 +53568,7 @@
 ]
 },
 "arizonasaurus": {
+"d": "Arizonasaurus",
 "g": "arizonasaurus",
 "i": 1,
 "k": "prehistoric",
@@ -53572,6 +53646,7 @@
 ]
 },
 "arthropleura": {
+"d": "Arthropleura",
 "g": "arthropleura",
 "i": 1,
 "k": "prehistoric",
@@ -53600,6 +53675,7 @@
 "w": "Artillery"
 },
 "ash ketchum's attire and hair": {
+"d": "Ash Ketchum's attire and hair",
 "g": "attire",
 "k": "object",
 "s": [
@@ -53614,6 +53690,7 @@
 ]
 },
 "asian black bear": {
+"d": "Asian black bear",
 "g": "bear",
 "k": "life",
 "s": [
@@ -53623,6 +53700,7 @@
 "w": "Asian black bear"
 },
 "asian black bear (ring-of-the-moon bear)": {
+"d": "Asian black bear (ring-of-the-moon bear)",
 "g": "bear",
 "k": "life",
 "s": [
@@ -53631,6 +53709,7 @@
 "w": "Asian black bear"
 },
 "asian box turtle": {
+"d": "Asian box turtle",
 "g": "freshwater turtle",
 "k": "life",
 "s": [
@@ -53639,6 +53718,7 @@
 "w": "Asian box turtle"
 },
 "asian carp": {
+"d": "Asian carp",
 "g": "asian carp",
 "k": "life",
 "s": [
@@ -53647,6 +53727,7 @@
 "w": "Asian carp"
 },
 "asian dragon's head": {
+"d": "Asian dragon's head",
 "g": "head",
 "k": "life",
 "s": [
@@ -53654,6 +53735,7 @@
 ]
 },
 "asian giant hornet": {
+"d": "Asian giant hornet",
 "g": "asian giant hornet",
 "k": "life",
 "s": [
@@ -53662,6 +53744,7 @@
 "w": "Asian giant hornet"
 },
 "asian kidney garden spider": {
+"d": "Asian kidney garden spider",
 "g": "spider",
 "k": "life",
 "s": [
@@ -53669,6 +53752,7 @@
 ]
 },
 "asian lady beetle": {
+"d": "Asian lady beetle",
 "g": "ladybird",
 "k": "life",
 "s": [
@@ -53677,6 +53761,7 @@
 "w": "Harmonia axyridis"
 },
 "asian paradise flycatcher": {
+"d": "Asian paradise flycatcher",
 "g": "asian paradise flycatcher",
 "k": "life",
 "s": [
@@ -53733,6 +53818,7 @@
 "w": "Asura"
 },
 "asura (three-headed buddhist demigod)": {
+"d": "asura (three-headed Buddhist demigod)",
 "g": "asura",
 "k": "mythology",
 "s": [
@@ -53751,6 +53837,7 @@
 "x": 1
 },
 "athos of the three musketeers": {
+"d": "Athos of The Three Musketeers",
 "g": "musketeers",
 "k": "person",
 "s": [
@@ -53779,6 +53866,7 @@
 "w": "Aurora"
 },
 "australian bustard": {
+"d": "Australian bustard",
 "g": "australian bustard",
 "k": "life",
 "s": [
@@ -53787,6 +53875,7 @@
 "w": "Australian bustard"
 },
 "australian kelpie": {
+"d": "Australian Kelpie",
 "g": "kelpie",
 "k": "folklore",
 "s": [
@@ -53795,6 +53884,7 @@
 "w": "Australian Kelpie"
 },
 "australian silky terrier": {
+"d": "Australian Silky Terrier",
 "g": "terrier",
 "i": 1,
 "k": "life",
@@ -53837,6 +53927,7 @@
 ]
 },
 "avalokitesvara": {
+"d": "Avalokitesvara",
 "g": "avalokitesvara",
 "k": "mythology",
 "s": [
@@ -53888,6 +53979,7 @@
 "w": "Aye-aye"
 },
 "azrael": {
+"d": "Azrael",
 "g": "azrael",
 "k": "mythology",
 "s": [
@@ -53896,6 +53988,7 @@
 "w": "Azrael"
 },
 "aztec ceremonial garb": {
+"d": "Aztec ceremonial garb",
 "g": "aztec ceremonial garb",
 "k": "object",
 "s": [
@@ -53903,6 +53996,7 @@
 ]
 },
 "aztec eagle warrior": {
+"d": "Aztec eagle warrior",
 "g": "aztec eagle warrior",
 "k": "person",
 "s": [
@@ -53911,6 +54005,7 @@
 "x": 1
 },
 "azure dragon": {
+"d": "Azure Dragon",
 "g": "dragon",
 "k": "mythology",
 "s": [
@@ -53919,6 +54014,7 @@
 "w": "Azure Dragon"
 },
 "b-2 spirit stealth bomber": {
+"d": "B-2 Spirit stealth bomber",
 "g": "bomber",
 "k": "object",
 "s": [
@@ -53926,6 +54022,7 @@
 ]
 },
 "baba roga (cave-dwelling witch)": {
+"d": "Baba Roga (cave-dwelling witch)",
 "g": "baba roga",
 "i": 1,
 "k": "folklore",
@@ -53935,6 +54032,7 @@
 "w": "Baba Yaga"
 },
 "baba yaga": {
+"d": "Baba Yaga",
 "g": "baba yaga",
 "k": "folklore",
 "s": [
@@ -53943,6 +54041,7 @@
 "w": "Baba Yaga"
 },
 "baba yaga in her mortar": {
+"d": "Baba Yaga in her mortar",
 "g": "mortar",
 "k": "object",
 "s": [
@@ -53950,6 +54049,7 @@
 ]
 },
 "baba yaga's mortar, pestle and broom": {
+"d": "Baba Yaga's mortar, pestle and broom",
 "g": "mortar",
 "k": "object",
 "s": [
@@ -54097,6 +54197,7 @@
 "x": 1
 },
 "bactrian camel": {
+"d": "Bactrian camel",
 "g": "camel",
 "k": "life",
 "s": [
@@ -54120,6 +54221,7 @@
 ]
 },
 "baghdad battery": {
+"d": "Baghdad Battery",
 "g": "battery",
 "k": "object",
 "s": [
@@ -54146,6 +54248,7 @@
 ]
 },
 "bahamut": {
+"d": "Bahamut",
 "g": "bahamut",
 "k": "mythology",
 "s": [
@@ -54156,6 +54259,7 @@
 "w": "Bahamut"
 },
 "bai ze (chinese omen beast)": {
+"d": "Bai Ze (Chinese omen beast)",
 "g": "bai ze",
 "k": "mythology",
 "s": [
@@ -54164,6 +54268,7 @@
 "w": "Bai Ze"
 },
 "bajiquan (hard style)": {
+"d": "Bajiquan (hard style)",
 "g": "bajiquan",
 "k": "person",
 "s": [
@@ -54400,6 +54505,7 @@
 "x": 1
 },
 "balor": {
+"d": "Balor",
 "g": "balor",
 "k": "mythology",
 "s": [
@@ -54463,6 +54569,7 @@
 "x": 1
 },
 "bannik (slavic bathhouse spirit)": {
+"d": "Bannik (Slavic bathhouse spirit)",
 "g": "bannik",
 "i": 1,
 "k": "folklore",
@@ -54481,6 +54588,7 @@
 "w": "Banshee"
 },
 "baphomet": {
+"d": "Baphomet",
 "g": "baphomet",
 "k": "folklore",
 "s": [
@@ -54498,6 +54606,7 @@
 "x": 1
 },
 "barbegazi (alpine gnome)": {
+"d": "barbegazi (Alpine gnome)",
 "g": "barbegazi",
 "i": 1,
 "k": "folklore",
@@ -54598,6 +54707,7 @@
 ]
 },
 "baron munchausen's cherry-tree stag": {
+"d": "Baron Munchausen's cherry-tree stag",
 "g": "stag",
 "k": "life",
 "s": [
@@ -54605,6 +54715,7 @@
 ]
 },
 "barong (balinese lion spirit)": {
+"d": "Barong (Balinese lion spirit)",
 "g": "barong",
 "k": "mythology",
 "s": [
@@ -54630,6 +54741,7 @@
 "w": "Barrel cactus"
 },
 "baryonyx": {
+"d": "Baryonyx",
 "g": "baryonyx",
 "k": "prehistoric",
 "s": [
@@ -54639,6 +54751,7 @@
 "w": "Baryonyx"
 },
 "basajaun": {
+"d": "Basajaun",
 "g": "basajaun",
 "i": 1,
 "k": "folklore",
@@ -54692,6 +54805,7 @@
 ]
 },
 "basque whaling": {
+"d": "Basque whaling",
 "g": "basque whaling",
 "k": "concept",
 "s": [
@@ -54709,6 +54823,7 @@
 "w": "Bass guitar"
 },
 "bastet and anubis statues": {
+"d": "Bastet and Anubis statues",
 "g": "bastet and anubis statues",
 "k": "media & art",
 "s": [
@@ -54731,6 +54846,7 @@
 "w": "Bat"
 },
 "bat boy": {
+"d": "Bat Boy",
 "g": "bat boy",
 "k": "folklore",
 "s": [
@@ -54747,6 +54863,7 @@
 "w": "Bat"
 },
 "batesian mimicry": {
+"d": "Batesian mimicry",
 "g": "mimicry",
 "k": "concept",
 "s": [
@@ -54890,6 +55007,7 @@
 "w": "Bombyliidae"
 },
 "bee fly (anastoechus nitidulus)": {
+"d": "bee fly (Anastoechus nitidulus)",
 "g": "fly",
 "k": "life",
 "s": [
@@ -54929,6 +55047,7 @@
 ]
 },
 "behemoth": {
+"d": "Behemoth",
 "g": "behemoth",
 "k": "mythology",
 "s": [
@@ -54954,6 +55073,7 @@
 "w": "Beigoma"
 },
 "bel and the dragon": {
+"d": "Bel and the Dragon",
 "g": "bel and the dragon",
 "i": 1,
 "k": "mythology",
@@ -54963,6 +55083,7 @@
 "w": "Bel and the Dragon"
 },
 "belgian endive (chicory)": {
+"d": "Belgian endive (chicory)",
 "g": "belgian endive",
 "k": "life",
 "s": [
@@ -55023,6 +55144,7 @@
 "w": "Beluga whale"
 },
 "bend-or spots on chestnut horses": {
+"d": "Bend-Or spots on chestnut horses",
 "g": "bend-or spots on chestnut horses",
 "k": "concept",
 "s": [
@@ -55031,6 +55153,7 @@
 "x": 1
 },
 "bennu": {
+"d": "Bennu",
 "g": "firebird",
 "i": 1,
 "k": "mythology",
@@ -55040,6 +55163,7 @@
 "w": "Bennu"
 },
 "benzaiten": {
+"d": "Benzaiten",
 "g": "benzaiten",
 "k": "mythology",
 "s": [
@@ -55101,6 +55225,7 @@
 "w": "Bib (garment)"
 },
 "bichon frise": {
+"d": "Bichon Frise",
 "g": "companion dog",
 "k": "life",
 "s": [
@@ -55133,6 +55258,7 @@
 "w": "Bigfin squid"
 },
 "bigfoot": {
+"d": "Bigfoot",
 "g": "bigfoot",
 "k": "folklore",
 "s": [
@@ -55277,6 +55403,7 @@
 "w": "Bison"
 },
 "bison latifrons": {
+"d": "Bison latifrons",
 "g": "bison latifrons",
 "k": "prehistoric",
 "s": [
@@ -55285,6 +55412,7 @@
 "w": "Bison latifrons"
 },
 "bittacomorpha crane fly": {
+"d": "Bittacomorpha crane fly",
 "g": "fly",
 "k": "life",
 "s": [
@@ -55365,6 +55493,7 @@
 "w": "Black hole"
 },
 "black iberian pig": {
+"d": "black Iberian pig",
 "g": "pig",
 "k": "life",
 "s": [
@@ -55487,6 +55616,7 @@
 ]
 },
 "blakiston's fish owl": {
+"d": "Blakiston's fish owl",
 "g": "owl",
 "k": "life",
 "s": [
@@ -55607,6 +55737,7 @@
 "w": "Procambarus alleni"
 },
 "blue crayfish (procambarus alleni)": {
+"d": "blue crayfish (Procambarus alleni)",
 "g": "crayfish",
 "k": "life",
 "s": [
@@ -55720,6 +55851,7 @@
 "w": "Bob cut"
 },
 "bodhidharma": {
+"d": "Bodhidharma",
 "g": "bodhidharma",
 "i": 1,
 "k": "person",
@@ -55729,6 +55861,7 @@
 "w": "Bodhidharma"
 },
 "bodhidharma in meditation": {
+"d": "Bodhidharma in meditation",
 "g": "bodhidharma in meditation",
 "i": 1,
 "k": "person",
@@ -55737,6 +55870,7 @@
 ]
 },
 "bodhisattva janguli": {
+"d": "Bodhisattva Janguli",
 "g": "bodhisattva janguli",
 "k": "mythology",
 "s": [
@@ -55898,6 +56032,7 @@
 "w": "Boomerang"
 },
 "boreas (north wind)": {
+"d": "Boreas (north wind)",
 "g": "boreas",
 "i": 1,
 "k": "mythology",
@@ -56042,6 +56177,7 @@
 "w": "Lybia"
 },
 "boxing and muay thai attire": {
+"d": "boxing and Muay Thai attire",
 "g": "boxing",
 "k": "concept",
 "s": [
@@ -56070,6 +56206,7 @@
 "w": "Boxing kangaroo"
 },
 "brachiosaurus": {
+"d": "Brachiosaurus",
 "g": "brachiosaurus",
 "k": "prehistoric",
 "s": [
@@ -56078,6 +56215,7 @@
 "w": "Brachiosaurus"
 },
 "brachytrachelopan": {
+"d": "Brachytrachelopan",
 "g": "brachytrachelopan",
 "k": "prehistoric",
 "s": [
@@ -56086,6 +56224,7 @@
 "w": "Brachytrachelopan"
 },
 "brahmi and siddham scripts": {
+"d": "Brahmi and Siddham scripts",
 "g": "brahmi and siddham scripts",
 "k": "object",
 "s": [
@@ -56101,6 +56240,7 @@
 "w": "Braid"
 },
 "braille": {
+"d": "Braille",
 "g": "braille",
 "k": "object",
 "s": [
@@ -56156,6 +56296,7 @@
 "w": "Breaking wave"
 },
 "brian boru and the pooka": {
+"d": "Brian Boru and the Pooka",
 "g": "brian boru and the pooka",
 "k": "folklore",
 "s": [
@@ -56165,6 +56306,7 @@
 "w": "Púca"
 },
 "briard": {
+"d": "Briard",
 "g": "herding dog",
 "k": "life",
 "s": [
@@ -56207,6 +56349,7 @@
 "w": "Brioche"
 },
 "british folk songs about the windflower": {
+"d": "British folk songs about the windflower",
 "g": "windflower",
 "k": "media & art",
 "s": [
@@ -56214,6 +56357,7 @@
 ]
 },
 "british saddleback pig": {
+"d": "British Saddleback pig",
 "g": "pig",
 "k": "life",
 "s": [
@@ -56224,6 +56368,7 @@
 "w": "British Saddleback"
 },
 "british shorthair cat": {
+"d": "British Shorthair cat",
 "g": "shorthair breed",
 "k": "life",
 "s": [
@@ -56233,6 +56378,7 @@
 "w": "British Shorthair"
 },
 "british tea culture": {
+"d": "British tea culture",
 "g": "culture",
 "k": "concept",
 "s": [
@@ -56259,6 +56405,7 @@
 "w": "Broccoli"
 },
 "bronte and sterope (helios's steeds)": {
+"d": "Bronte and Sterope (Helios's steeds)",
 "g": "bronte and sterope",
 "i": 1,
 "k": "mythology",
@@ -56268,6 +56415,7 @@
 ]
 },
 "brontosaurus (\"thunder lizard\")": {
+"d": "Brontosaurus (\"thunder lizard\")",
 "g": "brontosaurus",
 "k": "prehistoric",
 "s": [
@@ -56336,6 +56484,7 @@
 "w": "Brown rat"
 },
 "brownie (british folklore)": {
+"d": "brownie (British folklore)",
 "g": "brownie",
 "k": "folklore",
 "s": [
@@ -56344,6 +56493,7 @@
 "w": "Brownie (folklore)"
 },
 "bruce lee": {
+"d": "Bruce Lee",
 "g": "bruce lee",
 "k": "person",
 "s": [
@@ -56360,6 +56510,7 @@
 ]
 },
 "buddhist 108 bell rings on new year's eve": {
+"d": "Buddhist 108 bell rings on New Year's Eve",
 "g": "buddhist 108 bell rings on new year's eve",
 "k": "concept",
 "s": [
@@ -56368,6 +56519,7 @@
 "x": 1
 },
 "buddhist prayer beads": {
+"d": "Buddhist prayer beads",
 "g": "bead",
 "k": "object",
 "s": [
@@ -56400,6 +56552,7 @@
 "w": "Bugle"
 },
 "bugul noz (breton spirit)": {
+"d": "Bugul Noz (Breton spirit)",
 "g": "bugul noz",
 "k": "folklore",
 "s": [
@@ -56417,6 +56570,7 @@
 "w": "Bulb"
 },
 "bulgasari (korean iron-eating monster)": {
+"d": "Bulgasari (Korean iron-eating monster)",
 "g": "bulgasari",
 "k": "folklore",
 "s": [
@@ -56532,6 +56686,7 @@
 "x": 1
 },
 "butsu-men (buddhist deity mask)": {
+"d": "butsu-men (Buddhist deity mask)",
 "g": "butsu-men",
 "k": "media & art",
 "s": [
@@ -56579,6 +56734,7 @@
 "x": 1
 },
 "ca de bou": {
+"d": "Ca de Bou",
 "g": "guardian dog",
 "k": "life",
 "s": [
@@ -56625,6 +56781,7 @@
 "w": "Cacomistle"
 },
 "cadejo": {
+"d": "Cadejo",
 "g": "cadejo",
 "i": 1,
 "k": "folklore",
@@ -56651,6 +56808,7 @@
 "w": "Caduceus"
 },
 "caduceus of hermes": {
+"d": "caduceus of Hermes",
 "g": "caduceus of hermes",
 "k": "object",
 "s": [
@@ -56658,6 +56816,7 @@
 ]
 },
 "cain and abel": {
+"d": "Cain and Abel",
 "g": "cain and abel",
 "k": "mythology",
 "s": [
@@ -56695,6 +56854,7 @@
 "w": "Calavera"
 },
 "calcodes versicolor beetle": {
+"d": "Calcodes versicolor beetle",
 "g": "ground beetle",
 "k": "life",
 "s": [
@@ -56710,6 +56870,7 @@
 "w": "Caltrop"
 },
 "cam night-fixing plants": {
+"d": "CAM night-fixing plants",
 "g": "cam night-fixing plants",
 "k": "concept",
 "s": [
@@ -56718,6 +56879,7 @@
 "x": 1
 },
 "camarasaurus": {
+"d": "Camarasaurus",
 "g": "camarasaurus",
 "k": "prehistoric",
 "s": [
@@ -56726,6 +56888,7 @@
 "w": "Camarasaurus"
 },
 "camazotz": {
+"d": "Camazotz",
 "g": "camazotz",
 "k": "mythology",
 "s": [
@@ -56758,6 +56921,7 @@
 ]
 },
 "canada jay": {
+"d": "Canada jay",
 "g": "jay",
 "i": 1,
 "k": "life",
@@ -56795,6 +56959,7 @@
 "w": "Candy apple"
 },
 "cane corso": {
+"d": "Cane Corso",
 "g": "guardian dog",
 "k": "life",
 "s": [
@@ -56869,6 +57034,7 @@
 "w": "Cape"
 },
 "cape dwarf chameleon": {
+"d": "Cape dwarf chameleon",
 "g": "chameleon",
 "k": "life",
 "s": [
@@ -56886,6 +57052,7 @@
 "x": 1
 },
 "captain ahab": {
+"d": "Captain Ahab",
 "g": "literary character",
 "k": "media & art",
 "s": [
@@ -56941,6 +57108,7 @@
 "w": "Carbuncle (legendary creature)"
 },
 "carbuncle (latin american myth)": {
+"d": "carbuncle (Latin American myth)",
 "g": "carbuncle",
 "k": "folklore",
 "s": [
@@ -56957,6 +57125,7 @@
 "w": "Carbuncle (legendary creature)"
 },
 "carcharodontosaurus": {
+"d": "Carcharodontosaurus",
 "g": "carcharodontosaurus",
 "k": "prehistoric",
 "s": [
@@ -56983,6 +57152,7 @@
 "w": "Cardinal tetra"
 },
 "cardiocrinum cordatum": {
+"d": "Cardiocrinum cordatum",
 "g": "cardiocrinum cordatum",
 "i": 1,
 "k": "life",
@@ -56992,6 +57162,7 @@
 "w": "Cardiocrinum cordatum"
 },
 "cardisoma land crab": {
+"d": "Cardisoma land crab",
 "g": "crab",
 "k": "life",
 "s": [
@@ -57022,6 +57193,7 @@
 "x": 1
 },
 "carnival performer of santa cruz de tenerife": {
+"d": "carnival performer of Santa Cruz de Tenerife",
 "g": "carnival performer of santa cruz de tenerife",
 "i": 1,
 "k": "person",
@@ -57070,6 +57242,7 @@
 "x": 1
 },
 "carolina reaper": {
+"d": "Carolina Reaper",
 "g": "reaper",
 "k": "folklore",
 "s": [
@@ -57228,6 +57401,7 @@
 "w": "Cat-sìth"
 },
 "catalan sheepdog": {
+"d": "Catalan Sheepdog",
 "g": "herding dog",
 "k": "life",
 "s": [
@@ -57351,6 +57525,7 @@
 "x": 1
 },
 "celtic pig": {
+"d": "Celtic pig",
 "g": "pig",
 "k": "life",
 "s": [
@@ -57392,6 +57567,7 @@
 ]
 },
 "ceratophrys": {
+"d": "Ceratophrys",
 "g": "ceratophrys",
 "k": "life",
 "s": [
@@ -57419,6 +57595,7 @@
 "w": "Ceratopsidae"
 },
 "cerberus": {
+"d": "Cerberus",
 "g": "cerberus",
 "k": "mythology",
 "s": [
@@ -57428,6 +57605,7 @@
 "w": "Cerberus"
 },
 "cernunnos": {
+"d": "Cernunnos",
 "g": "cernunnos",
 "k": "mythology",
 "s": [
@@ -57446,6 +57624,7 @@
 "w": "Cetacean"
 },
 "chagama tea kettle of matsunaga hisahide": {
+"d": "chagama tea kettle of Matsunaga Hisahide",
 "g": "chagama tea kettle of matsunaga hisahide",
 "k": "object",
 "s": [
@@ -57482,6 +57661,7 @@
 "x": 1
 },
 "chang'e": {
+"d": "Chang'e",
 "g": "chang'e",
 "k": "mythology",
 "s": [
@@ -57525,6 +57705,7 @@
 "w": "Charging Bull"
 },
 "charlie chaplin's tramp": {
+"d": "Charlie Chaplin's Tramp",
 "g": "screen character",
 "k": "media & art",
 "s": [
@@ -57533,6 +57714,7 @@
 "x": 1
 },
 "charon": {
+"d": "Charon",
 "g": "charon",
 "i": 1,
 "k": "mythology",
@@ -57542,6 +57724,7 @@
 "w": "Charon"
 },
 "charon's obol": {
+"d": "Charon's obol",
 "g": "charon's obol",
 "k": "mythology",
 "s": [
@@ -57558,6 +57741,7 @@
 ]
 },
 "charybdis": {
+"d": "Charybdis",
 "g": "charybdis",
 "k": "mythology",
 "s": [
@@ -57574,6 +57758,7 @@
 "w": "Japanese tea utensils"
 },
 "chasmosaurus": {
+"d": "Chasmosaurus",
 "g": "chasmosaurus",
 "k": "prehistoric",
 "s": [
@@ -57633,6 +57818,7 @@
 "w": "Chef's uniform"
 },
 "cheirurus": {
+"d": "Cheirurus",
 "g": "cheirurus",
 "k": "prehistoric",
 "s": [
@@ -57664,6 +57850,7 @@
 "w": "Cherub"
 },
 "cherufe (chilean magma creature)": {
+"d": "Cherufe (Chilean magma creature)",
 "g": "cherufe",
 "k": "folklore",
 "s": [
@@ -57673,6 +57860,7 @@
 "w": "Cherufe"
 },
 "cheshire cat": {
+"d": "Cheshire Cat",
 "g": "literary character",
 "k": "media & art",
 "s": [
@@ -57755,6 +57943,7 @@
 "w": "Teeth-cleaning twig"
 },
 "chia pet": {
+"d": "Chia Pet",
 "g": "chia pet",
 "k": "object",
 "s": [
@@ -57820,6 +58009,7 @@
 ]
 },
 "chimera": {
+"d": "Chimera",
 "g": "chimera",
 "k": "mythology",
 "s": [
@@ -57856,6 +58046,7 @@
 "w": "Chimpanzee"
 },
 "china-mark moth": {
+"d": "China-mark moth",
 "g": "moth",
 "k": "life",
 "s": [
@@ -57874,6 +58065,7 @@
 "w": "Chinchilla"
 },
 "chinese \"dragon shrimp\" (longxia)": {
+"d": "Chinese \"dragon shrimp\" (longxia)",
 "g": "shrimp",
 "k": "life",
 "s": [
@@ -57882,6 +58074,7 @@
 "x": 1
 },
 "chinese dragon": {
+"d": "Chinese dragon",
 "g": "dragon",
 "k": "mythology",
 "s": [
@@ -57898,6 +58091,7 @@
 "w": "Chinese dragon"
 },
 "chinese guardian lion": {
+"d": "Chinese guardian lion",
 "g": "chinese guardian lion",
 "k": "media & art",
 "s": [
@@ -57908,6 +58102,7 @@
 "w": "Chinese guardian lions"
 },
 "chinese mantis": {
+"d": "Chinese mantis",
 "g": "mantis",
 "k": "life",
 "s": [
@@ -57916,6 +58111,7 @@
 "w": "Chinese mantis"
 },
 "chinese mitten crab": {
+"d": "Chinese mitten crab",
 "g": "crab",
 "k": "life",
 "s": [
@@ -57924,6 +58120,7 @@
 "w": "Chinese mitten crab"
 },
 "chinese opera \"water sleeves\"": {
+"d": "Chinese opera \"water sleeves\"",
 "g": "chinese opera \"water sleeves\"",
 "k": "concept",
 "s": [
@@ -57963,6 +58160,7 @@
 "x": 1
 },
 "chloris": {
+"d": "Chloris",
 "g": "chloris",
 "k": "mythology",
 "s": [
@@ -57990,6 +58188,7 @@
 "w": "Chōchin'obake"
 },
 "choeradodis mantis": {
+"d": "Choeradodis mantis",
 "g": "mantis",
 "k": "life",
 "s": [
@@ -57997,6 +58196,7 @@
 ]
 },
 "chonchon (mapuche folklore)": {
+"d": "Chonchon (Mapuche folklore)",
 "g": "chonchon",
 "i": 1,
 "k": "folklore",
@@ -58024,6 +58224,7 @@
 ]
 },
 "christmas tree": {
+"d": "Christmas tree",
 "g": "tree",
 "k": "life",
 "s": [
@@ -58066,6 +58267,7 @@
 ]
 },
 "cikap-kamuy": {
+"d": "Cikap-kamuy",
 "g": "cikap-kamuy",
 "k": "mythology",
 "s": [
@@ -58074,6 +58276,7 @@
 "w": "Cikap-kamuy"
 },
 "cikavac (slavic familiar)": {
+"d": "cikavac (Slavic familiar)",
 "g": "cikavac",
 "i": 1,
 "k": "folklore",
@@ -58118,6 +58321,7 @@
 "x": 1
 },
 "cironnup kamuy (ainu fox deity)": {
+"d": "Cironnup Kamuy (Ainu fox deity)",
 "g": "cironnup kamuy",
 "i": 1,
 "k": "folklore",
@@ -58128,6 +58332,7 @@
 "w": "Kamuy"
 },
 "claddagh ring": {
+"d": "Claddagh ring",
 "g": "ring",
 "k": "object",
 "s": [
@@ -58186,6 +58391,7 @@
 "w": "Galium aparine"
 },
 "cleopatra": {
+"d": "Cleopatra",
 "g": "cleopatra",
 "i": 1,
 "k": "person",
@@ -58203,6 +58409,7 @@
 "w": "Clock"
 },
 "close encounters of the third kind light signals": {
+"d": "Close Encounters of the Third Kind light signals",
 "g": "screen character",
 "k": "media & art",
 "s": [
@@ -58252,6 +58459,7 @@
 "x": 1
 },
 "clown face nebula": {
+"d": "Clown Face Nebula",
 "g": "nebula",
 "k": "earth & sky",
 "s": [
@@ -58294,6 +58502,7 @@
 "x": 1
 },
 "clydesdale": {
+"d": "Clydesdale",
 "g": "clydesdale",
 "k": "life",
 "s": [
@@ -58303,6 +58512,7 @@
 "w": "Clydesdale horse"
 },
 "clymene moth": {
+"d": "Clymene moth",
 "g": "moth",
 "k": "life",
 "s": [
@@ -58343,6 +58553,7 @@
 "w": "Cobra"
 },
 "coca (dragon)": {
+"d": "Coca (dragon)",
 "g": "coca",
 "k": "mythology",
 "s": [
@@ -58351,6 +58562,7 @@
 "w": "Coca"
 },
 "cochin chicken": {
+"d": "Cochin chicken",
 "g": "chicken",
 "k": "life",
 "s": [
@@ -58422,6 +58634,7 @@
 "w": "Cockroach"
 },
 "cocollona": {
+"d": "Cocollona",
 "g": "cocollona",
 "k": "folklore",
 "s": [
@@ -58478,6 +58691,7 @@
 "w": "Coelacanth"
 },
 "coelophysis": {
+"d": "Coelophysis",
 "g": "coelophysis",
 "k": "prehistoric",
 "s": [
@@ -58511,6 +58725,7 @@
 "w": "Coin wrapper"
 },
 "colobocentrotus atratus urchin": {
+"d": "Colobocentrotus atratus urchin",
 "g": "urchin",
 "k": "life",
 "s": [
@@ -58602,6 +58817,7 @@
 "w": "Common starfish"
 },
 "common surinam toad": {
+"d": "common Surinam toad",
 "g": "toad",
 "k": "life",
 "s": [
@@ -58661,6 +58877,7 @@
 "x": 1
 },
 "concavenator": {
+"d": "Concavenator",
 "g": "concavenator",
 "k": "prehistoric",
 "s": [
@@ -58821,6 +59038,7 @@
 ]
 },
 "copper(ii) sulfate crystals": {
+"d": "copper(II) sulfate crystals",
 "g": "crystal",
 "k": "earth & sky",
 "s": [
@@ -58837,6 +59055,7 @@
 "x": 1
 },
 "corinthian helmet": {
+"d": "Corinthian helmet",
 "g": "helmet",
 "k": "object",
 "s": [
@@ -58847,6 +59066,7 @@
 "w": "Corinthian helmet"
 },
 "coriolis effect": {
+"d": "Coriolis effect",
 "g": "coriolis effect",
 "k": "concept",
 "s": [
@@ -58969,6 +59189,7 @@
 "w": "Nutria"
 },
 "cpr": {
+"d": "CPR",
 "g": "cpr",
 "k": "concept",
 "s": [
@@ -59165,6 +59386,7 @@
 "w": "Crocodylia"
 },
 "crookes and geissler discharge tubes": {
+"d": "Crookes and Geissler discharge tubes",
 "g": "crookes and geissler discharge tubes",
 "k": "object",
 "s": [
@@ -59299,6 +59521,7 @@
 "w": "Crystallization"
 },
 "crystal onix (anime)": {
+"d": "Crystal Onix (anime)",
 "g": "crystal onix",
 "k": "media & art",
 "s": [
@@ -59307,6 +59530,7 @@
 "w": "Anime"
 },
 "cu-sith (celtic fairy dog)": {
+"d": "cu-sith (Celtic fairy dog)",
 "g": "cu-sith",
 "k": "folklore",
 "s": [
@@ -59316,6 +59540,7 @@
 "w": "Cù-sìth"
 },
 "cucafera (catalan crocodilian dragon)": {
+"d": "Cucafera (Catalan crocodilian dragon)",
 "g": "dragon",
 "i": 1,
 "k": "mythology",
@@ -59391,6 +59616,7 @@
 "w": "Curse"
 },
 "curtiss p-40 warhawk nose art": {
+"d": "Curtiss P-40 Warhawk nose art",
 "g": "art",
 "k": "media & art",
 "s": [
@@ -59398,6 +59624,7 @@
 ]
 },
 "curupira": {
+"d": "Curupira",
 "g": "curupira",
 "k": "folklore",
 "s": [
@@ -59430,6 +59657,7 @@
 "x": 1
 },
 "cuyaba dwarf frog": {
+"d": "Cuyaba dwarf frog",
 "g": "frog",
 "k": "life",
 "s": [
@@ -59438,6 +59666,7 @@
 "w": "Physalaemus nattereri"
 },
 "cuyaba dwarf frog's false eyes": {
+"d": "Cuyaba dwarf frog's false eyes",
 "g": "eye",
 "k": "concept",
 "s": [
@@ -59455,6 +59684,7 @@
 "w": "Cyborg"
 },
 "cyclommatus mandibles": {
+"d": "Cyclommatus mandibles",
 "g": "cyclommatus mandibles",
 "k": "life",
 "s": [
@@ -59469,6 +59699,7 @@
 ]
 },
 "cyclops": {
+"d": "Cyclops",
 "g": "cyclops",
 "k": "mythology",
 "s": [
@@ -59486,6 +59717,7 @@
 "w": "Swan"
 },
 "cygnus constellation": {
+"d": "Cygnus constellation",
 "g": "constellation",
 "k": "earth & sky",
 "s": [
@@ -59512,6 +59744,7 @@
 "w": "Cymbal"
 },
 "cyphonocerinae fireflies": {
+"d": "Cyphonocerinae fireflies",
 "g": "cyphonocerinae fireflies",
 "k": "life",
 "s": [
@@ -59528,6 +59761,7 @@
 "x": 1
 },
 "d'artagnan of the three musketeers": {
+"d": "d'Artagnan of The Three Musketeers",
 "g": "musketeers",
 "k": "person",
 "s": [
@@ -59545,6 +59779,7 @@
 "w": "Dachshund"
 },
 "daidarabotchi": {
+"d": "Daidarabotchi",
 "g": "daidarabotchi",
 "k": "mythology",
 "s": [
@@ -59562,6 +59797,7 @@
 "w": "Daifuku"
 },
 "daimonji bonfire": {
+"d": "Daimonji bonfire",
 "g": "bonfire",
 "k": "concept",
 "s": [
@@ -59570,6 +59806,7 @@
 "x": 1
 },
 "daimonji bonfire (kanji 大)": {
+"d": "Daimonji bonfire (kanji 大)",
 "g": "bonfire",
 "k": "concept",
 "s": [
@@ -59677,6 +59914,7 @@
 "x": 1
 },
 "darwin's finches": {
+"d": "Darwin's finches",
 "g": "darwin's finches",
 "k": "life",
 "s": [
@@ -59685,6 +59923,7 @@
 "w": "Darwin's finches"
 },
 "daspletosaurus": {
+"d": "Daspletosaurus",
 "g": "daspletosaurus",
 "k": "prehistoric",
 "s": [
@@ -59732,6 +59971,7 @@
 "w": "Death mask"
 },
 "death personified": {
+"d": "Death personified",
 "g": "personified",
 "k": "concept",
 "s": [
@@ -59741,6 +59981,7 @@
 "x": 1
 },
 "decennatherium": {
+"d": "Decennatherium",
 "g": "decennatherium",
 "i": 1,
 "k": "prehistoric",
@@ -59793,6 +60034,7 @@
 "w": "Defibrillation"
 },
 "deildegast (boundary-stone spirit)": {
+"d": "Deildegast (boundary-stone spirit)",
 "g": "deildegast",
 "k": "folklore",
 "s": [
@@ -59801,6 +60043,7 @@
 "w": "Deildegast"
 },
 "deildegast (norwegian boundary-stone spirit)": {
+"d": "Deildegast (Norwegian boundary-stone spirit)",
 "g": "deildegast",
 "k": "folklore",
 "s": [
@@ -59817,6 +60060,7 @@
 "w": "Deimatic behaviour"
 },
 "deinopis": {
+"d": "Deinopis",
 "g": "deinopis",
 "k": "life",
 "s": [
@@ -59841,6 +60085,7 @@
 "w": "Dekotora"
 },
 "demeter": {
+"d": "Demeter",
 "g": "demeter",
 "k": "mythology",
 "s": [
@@ -59871,6 +60116,7 @@
 ]
 },
 "desmoxytes purpurosea": {
+"d": "Desmoxytes purpurosea",
 "g": "desmoxytes purpurosea",
 "k": "life",
 "s": [
@@ -59911,6 +60157,7 @@
 ]
 },
 "devon rex cat": {
+"d": "Devon Rex cat",
 "g": "unusual-feature breed",
 "k": "life",
 "s": [
@@ -59954,6 +60201,7 @@
 "w": "Anthophorini"
 },
 "dilong": {
+"d": "Dilong",
 "g": "dilong",
 "k": "prehistoric",
 "s": [
@@ -59962,6 +60210,7 @@
 "w": "Dilong"
 },
 "dilophosaurus": {
+"d": "Dilophosaurus",
 "g": "dilophosaurus",
 "k": "prehistoric",
 "s": [
@@ -59971,6 +60220,7 @@
 "w": "Dilophosaurus"
 },
 "dimetrodon": {
+"d": "Dimetrodon",
 "g": "dimetrodon",
 "k": "prehistoric",
 "s": [
@@ -59980,6 +60230,7 @@
 "w": "Dimetrodon"
 },
 "ding (ancient chinese cauldron)": {
+"d": "ding (ancient Chinese cauldron)",
 "g": "ding",
 "k": "object",
 "s": [
@@ -59997,6 +60248,7 @@
 "w": "Ding (vessel)"
 },
 "dinocampus coccinellae (zombie-making wasp)": {
+"d": "Dinocampus coccinellae (zombie-making wasp)",
 "g": "dinocampus coccinellae",
 "k": "life",
 "s": [
@@ -60042,6 +60294,7 @@
 "x": 1
 },
 "diplocaulus": {
+"d": "Diplocaulus",
 "g": "diplocaulus",
 "k": "prehistoric",
 "s": [
@@ -60129,6 +60382,7 @@
 "w": "Jinn"
 },
 "dna double helix": {
+"d": "DNA double helix",
 "g": "dna double helix",
 "k": "concept",
 "s": [
@@ -60138,6 +60392,7 @@
 "x": 1
 },
 "dobermann": {
+"d": "Dobermann",
 "g": "guardian dog",
 "k": "life",
 "s": [
@@ -60174,6 +60429,7 @@
 "w": "Dodo"
 },
 "dodomeki": {
+"d": "Dodomeki",
 "g": "dodomeki",
 "k": "mythology",
 "s": [
@@ -60210,6 +60466,7 @@
 ]
 },
 "dokkaebi (korean goblin)": {
+"d": "dokkaebi (Korean goblin)",
 "g": "dokkaebi",
 "k": "mythology",
 "s": [
@@ -60329,6 +60586,7 @@
 "w": "Dorodango"
 },
 "dorotabo (yokai)": {
+"d": "Dorotabo (yokai)",
 "g": "dorotabo",
 "i": 1,
 "k": "folklore",
@@ -60339,6 +60597,7 @@
 "w": "Yōkai"
 },
 "dotaku (yayoi bronze bell)": {
+"d": "dotaku (Yayoi bronze bell)",
 "g": "dotaku",
 "k": "object",
 "s": [
@@ -60355,6 +60614,7 @@
 "x": 1
 },
 "double 99 flake soft serve": {
+"d": "double 99 Flake soft serve",
 "g": "double 99 flake soft serve",
 "i": 1,
 "k": "food",
@@ -60394,6 +60654,7 @@
 "w": "Dowsing"
 },
 "dr jekyll and mr hyde": {
+"d": "Dr Jekyll and Mr Hyde",
 "g": "literary character",
 "k": "media & art",
 "s": [
@@ -60403,6 +60664,7 @@
 "x": 1
 },
 "drac de na coca": {
+"d": "Drac de na Coca",
 "g": "coca",
 "k": "mythology",
 "s": [
@@ -60411,6 +60673,7 @@
 ]
 },
 "dracaena tree": {
+"d": "Dracaena tree",
 "g": "tree",
 "k": "life",
 "s": [
@@ -60418,6 +60681,7 @@
 ]
 },
 "draco flying lizard": {
+"d": "Draco flying lizard",
 "g": "display lizard",
 "k": "life",
 "s": [
@@ -60425,6 +60689,7 @@
 ]
 },
 "draconid meteor shower": {
+"d": "Draconid meteor shower",
 "g": "draconid meteor shower",
 "i": 1,
 "k": "earth & sky",
@@ -60433,6 +60698,7 @@
 ]
 },
 "dracula": {
+"d": "Dracula",
 "g": "literary character",
 "k": "media & art",
 "s": [
@@ -60474,6 +60740,7 @@
 "w": "Dragon"
 },
 "dragon gate carp legend": {
+"d": "Dragon Gate carp legend",
 "g": "legend",
 "k": "folklore",
 "s": [
@@ -60517,6 +60784,7 @@
 ]
 },
 "draining of lake texcoco": {
+"d": "draining of Lake Texcoco",
 "g": "draining of lake texcoco",
 "k": "concept",
 "s": [
@@ -60571,6 +60839,7 @@
 "w": "Dromaeosauridae"
 },
 "dromaeosaurus": {
+"d": "Dromaeosaurus",
 "g": "dromaeosaurus",
 "k": "prehistoric",
 "s": [
@@ -60641,6 +60910,7 @@
 ]
 },
 "dub sainglend": {
+"d": "Dub Sainglend",
 "g": "dub sainglend",
 "k": "mythology",
 "s": [
@@ -60688,6 +60958,7 @@
 "w": "Duende"
 },
 "dullahan": {
+"d": "Dullahan",
 "g": "dullahan",
 "k": "folklore",
 "s": [
@@ -60712,6 +60983,7 @@
 "w": "Grimpoteuthis"
 },
 "dune's sandworms": {
+"d": "Dune's sandworms",
 "g": "science fiction & horror",
 "k": "media & art",
 "s": [
@@ -60728,6 +61000,7 @@
 "w": "Dung beetle"
 },
 "dunkleosteus": {
+"d": "Dunkleosteus",
 "g": "dunkleosteus",
 "k": "prehistoric",
 "s": [
@@ -60746,6 +61019,7 @@
 "w": "Duralumin"
 },
 "durendal": {
+"d": "Durendal",
 "g": "durendal",
 "i": 1,
 "k": "mythology",
@@ -60765,6 +61039,7 @@
 "w": "Durian"
 },
 "duroc pig": {
+"d": "Duroc pig",
 "g": "pig",
 "k": "life",
 "s": [
@@ -60830,6 +61105,7 @@
 "w": "Dwarf elephant"
 },
 "dyson sphere": {
+"d": "Dyson sphere",
 "g": "dyson sphere",
 "i": 1,
 "k": "object",
@@ -60867,6 +61143,7 @@
 "w": "Earless seal"
 },
 "early 1600s european fashion": {
+"d": "early 1600s European fashion",
 "g": "fashion",
 "k": "concept",
 "s": [
@@ -60903,6 +61180,7 @@
 "w": "Elemental"
 },
 "earth's inner core": {
+"d": "Earth's inner core",
 "g": "earth's inner core",
 "k": "earth & sky",
 "s": [
@@ -60938,6 +61216,7 @@
 "w": "Earthworm"
 },
 "easter bunny and easter eggs": {
+"d": "Easter Bunny and Easter eggs",
 "g": "easter bunny",
 "k": "folklore",
 "s": [
@@ -60946,6 +61225,7 @@
 "w": "Easter Bunny"
 },
 "easter mona cake": {
+"d": "Easter mona cake",
 "g": "cake",
 "k": "food",
 "s": [
@@ -60953,6 +61233,7 @@
 ]
 },
 "eastern gray squirrel (invasive in britain)": {
+"d": "eastern gray squirrel (invasive in Britain)",
 "g": "squirrel",
 "k": "life",
 "s": [
@@ -61034,6 +61315,7 @@
 "w": "Eggplant"
 },
 "egyptian ba (soul)": {
+"d": "Egyptian ba (soul)",
 "g": "egyptian ba",
 "k": "mythology",
 "s": [
@@ -61042,6 +61324,7 @@
 "w": "Soul"
 },
 "egyptian plover symbiosis": {
+"d": "Egyptian plover symbiosis",
 "g": "symbiosis",
 "k": "concept",
 "s": [
@@ -61050,6 +61333,7 @@
 "x": 1
 },
 "egyptian sarcophagus": {
+"d": "Egyptian sarcophagus",
 "g": "egyptian sarcophagus",
 "k": "object",
 "s": [
@@ -61057,6 +61341,7 @@
 ]
 },
 "egyptian vulture": {
+"d": "Egyptian vulture",
 "g": "vulture",
 "k": "life",
 "s": [
@@ -61065,6 +61350,7 @@
 "w": "Egyptian vulture"
 },
 "eight treasures": {
+"d": "Eight Treasures",
 "g": "eight treasures",
 "k": "object",
 "s": [
@@ -61081,6 +61367,7 @@
 "w": "Eighth note"
 },
 "eikthyrnir and the four stags of yggdrasil": {
+"d": "Eikthyrnir and the four stags of Yggdrasil",
 "g": "eikthyrnir and the four stags of yggdrasil",
 "k": "mythology",
 "s": [
@@ -61088,6 +61375,7 @@
 ]
 },
 "el cid and his swords tizona and colada": {
+"d": "El Cid and his swords Tizona and Colada",
 "g": "el cid",
 "k": "mythology",
 "s": [
@@ -61095,6 +61383,7 @@
 ]
 },
 "el dorado": {
+"d": "El Dorado",
 "g": "legend",
 "i": 1,
 "k": "folklore",
@@ -61105,6 +61394,7 @@
 "w": "El Dorado"
 },
 "elasmosaurus": {
+"d": "Elasmosaurus",
 "g": "elasmosaurus",
 "k": "prehistoric",
 "s": [
@@ -61113,6 +61403,7 @@
 "w": "Elasmosaurus"
 },
 "elder mother": {
+"d": "Elder Mother",
 "g": "mother",
 "k": "person",
 "s": [
@@ -61122,6 +61413,7 @@
 "x": 1
 },
 "elderly ainu men": {
+"d": "elderly Ainu men",
 "g": "men",
 "i": 1,
 "k": "person",
@@ -61316,6 +61608,7 @@
 ]
 },
 "elvis presley": {
+"d": "Elvis Presley",
 "g": "elvis presley",
 "k": "person",
 "s": [
@@ -61325,6 +61618,7 @@
 "x": 1
 },
 "ema plaques and horse effigies": {
+"d": "Ema plaques and horse effigies",
 "g": "ema plaques and horse effigies",
 "k": "object",
 "s": [
@@ -61410,6 +61704,7 @@
 ]
 },
 "english foxhound": {
+"d": "English Foxhound",
 "g": "scent hound",
 "k": "life",
 "s": [
@@ -61418,6 +61713,7 @@
 "w": "English Foxhound"
 },
 "english knight": {
+"d": "English knight",
 "g": "knight",
 "k": "person",
 "s": [
@@ -61426,6 +61722,7 @@
 "x": 1
 },
 "english pouter pigeon": {
+"d": "English Pouter pigeon",
 "g": "pigeon",
 "k": "life",
 "s": [
@@ -61459,6 +61756,7 @@
 "w": "Ensaïmada"
 },
 "ent": {
+"d": "Ent",
 "g": "ent",
 "k": "folklore",
 "s": [
@@ -61484,6 +61782,7 @@
 "w": "Epaulette"
 },
 "epidexipteryx": {
+"d": "Epidexipteryx",
 "g": "epidexipteryx",
 "k": "prehistoric",
 "s": [
@@ -61492,6 +61791,7 @@
 "w": "Epidexipteryx"
 },
 "eremotherium": {
+"d": "Eremotherium",
 "g": "eremotherium",
 "i": 1,
 "k": "prehistoric",
@@ -61540,6 +61840,7 @@
 ]
 },
 "eton mess": {
+"d": "Eton mess",
 "g": "eton mess",
 "i": 1,
 "k": "food",
@@ -61549,6 +61850,7 @@
 "w": "Eton mess"
 },
 "eucladoceros": {
+"d": "Eucladoceros",
 "g": "eucladoceros",
 "i": 1,
 "k": "prehistoric",
@@ -61558,6 +61860,7 @@
 "w": "Eucladoceros"
 },
 "eurasian blue tit": {
+"d": "Eurasian blue tit",
 "g": "tit",
 "k": "life",
 "s": [
@@ -61566,6 +61869,7 @@
 "w": "Eurasian blue tit"
 },
 "eurasian eagle-owl": {
+"d": "Eurasian eagle-owl",
 "g": "eurasian eagle-owl",
 "i": 1,
 "k": "life",
@@ -61576,6 +61880,7 @@
 "w": "Eurasian eagle-owl"
 },
 "eurasian otter": {
+"d": "Eurasian otter",
 "g": "otter",
 "k": "life",
 "s": [
@@ -61584,6 +61889,7 @@
 "w": "Eurasian otter"
 },
 "eurasian red squirrel": {
+"d": "Eurasian red squirrel",
 "g": "squirrel",
 "k": "life",
 "s": [
@@ -61593,6 +61899,7 @@
 "w": "Red squirrel"
 },
 "eurasian teal": {
+"d": "Eurasian teal",
 "g": "eurasian teal",
 "k": "life",
 "s": [
@@ -61601,6 +61908,7 @@
 "w": "Eurasian teal"
 },
 "european badger": {
+"d": "European badger",
 "g": "badger",
 "k": "life",
 "s": [
@@ -61611,6 +61919,7 @@
 "w": "European badger"
 },
 "european dragon": {
+"d": "European dragon",
 "g": "dragon",
 "k": "mythology",
 "s": [
@@ -61631,6 +61940,7 @@
 "w": "European dragon"
 },
 "european dragon skeleton": {
+"d": "European dragon skeleton",
 "g": "european dragon skeleton",
 "k": "mythology",
 "s": [
@@ -61638,6 +61948,7 @@
 ]
 },
 "european fairies, goblins and bogeymen": {
+"d": "European fairies, goblins and bogeymen",
 "g": "fairy",
 "k": "folklore",
 "s": [
@@ -61645,6 +61956,7 @@
 ]
 },
 "european fantasy dragon": {
+"d": "European fantasy dragon",
 "g": "dragon",
 "k": "mythology",
 "s": [
@@ -61652,6 +61964,7 @@
 ]
 },
 "european mantis": {
+"d": "European mantis",
 "g": "mantis",
 "k": "life",
 "s": [
@@ -61660,6 +61973,7 @@
 "w": "European mantis"
 },
 "european shag": {
+"d": "European shag",
 "g": "european shag",
 "k": "life",
 "s": [
@@ -61668,6 +61982,7 @@
 "w": "European shag"
 },
 "european stone circles": {
+"d": "European stone circles",
 "g": "european stone circles",
 "k": "earth & sky",
 "s": [
@@ -61675,6 +61990,7 @@
 ]
 },
 "european wildcat": {
+"d": "European wildcat",
 "g": "small wild cat",
 "k": "life",
 "s": [
@@ -61683,6 +61999,7 @@
 "w": "European wildcat"
 },
 "european witch": {
+"d": "European witch",
 "g": "witch",
 "k": "person",
 "s": [
@@ -61691,6 +62008,7 @@
 "x": 1
 },
 "eurus and apeliotes (east and southeast winds)": {
+"d": "Eurus and Apeliotes (east and southeast winds)",
 "g": "eurus and apeliotes",
 "k": "mythology",
 "s": [
@@ -61742,6 +62060,7 @@
 "x": 1
 },
 "excalibur": {
+"d": "Excalibur",
 "g": "excalibur",
 "k": "mythology",
 "s": [
@@ -61831,6 +62150,7 @@
 "x": 1
 },
 "eye of horus": {
+"d": "Eye of Horus",
 "g": "horus",
 "k": "mythology",
 "s": [
@@ -61880,6 +62200,7 @@
 "w": "Factory"
 },
 "fairey barracuda bomber": {
+"d": "Fairey Barracuda bomber",
 "g": "bomber",
 "k": "object",
 "s": [
@@ -62056,6 +62377,7 @@
 "w": "Fat-tailed dunnart"
 },
 "faunus": {
+"d": "Faunus",
 "g": "faunus",
 "k": "mythology",
 "s": [
@@ -62122,6 +62444,7 @@
 "x": 1
 },
 "fenghuang": {
+"d": "Fenghuang",
 "g": "firebird",
 "i": 1,
 "k": "mythology",
@@ -62143,6 +62466,7 @@
 "w": "Fennec fox"
 },
 "fenrir": {
+"d": "Fenrir",
 "g": "fenrir",
 "k": "mythology",
 "s": [
@@ -62237,6 +62561,7 @@
 "w": "Fighter aircraft"
 },
 "fiji banded iguana": {
+"d": "Fiji banded iguana",
 "g": "iguana",
 "k": "life",
 "s": [
@@ -62245,6 +62570,7 @@
 "w": "Brachylophus bulabula"
 },
 "fiji crested iguana": {
+"d": "Fiji crested iguana",
 "g": "iguana",
 "k": "life",
 "s": [
@@ -62268,6 +62594,7 @@
 ]
 },
 "fire centipede (orphnaeus brevilabiatus)": {
+"d": "fire centipede (Orphnaeus brevilabiatus)",
 "g": "centipede",
 "k": "life",
 "s": [
@@ -62458,6 +62785,7 @@
 "x": 1
 },
 "flatwoods monster": {
+"d": "Flatwoods monster",
 "g": "monster",
 "k": "folklore",
 "s": [
@@ -62506,6 +62834,7 @@
 "w": "Yūrei"
 },
 "florida blenny": {
+"d": "Florida blenny",
 "g": "florida blenny",
 "i": 1,
 "k": "life",
@@ -62570,6 +62899,7 @@
 "w": "Flying fish"
 },
 "flying head (iroquois legend)": {
+"d": "Flying Head (Iroquois legend)",
 "g": "head",
 "k": "life",
 "s": [
@@ -62768,6 +63098,7 @@
 "w": "Setaria"
 },
 "frankenstein's monster": {
+"d": "Frankenstein's monster",
 "g": "monster",
 "k": "folklore",
 "s": [
@@ -62786,6 +63117,7 @@
 "x": 1
 },
 "french renaissance clergy dress": {
+"d": "French Renaissance clergy dress",
 "g": "dress",
 "k": "object",
 "s": [
@@ -62793,6 +63125,7 @@
 ]
 },
 "french tricolour": {
+"d": "French tricolour",
 "g": "french tricolour",
 "k": "object",
 "s": [
@@ -62811,6 +63144,7 @@
 "w": "Freshwater butterflyfish"
 },
 "freyja's cats": {
+"d": "Freyja's cats",
 "g": "freyja's cats",
 "k": "mythology",
 "s": [
@@ -62818,6 +63152,7 @@
 ]
 },
 "friesian horse": {
+"d": "Friesian horse",
 "g": "horse",
 "k": "life",
 "s": [
@@ -62930,6 +63265,7 @@
 ]
 },
 "fudo": {
+"d": "Fudo",
 "g": "fudo",
 "k": "mythology",
 "s": [
@@ -62954,6 +63290,7 @@
 "x": 1
 },
 "fujin (wind god)": {
+"d": "Fujin (wind god)",
 "g": "fujin",
 "k": "mythology",
 "s": [
@@ -62970,6 +63307,7 @@
 "w": "Fulmar"
 },
 "furin (japanese wind bell)": {
+"d": "furin (Japanese wind bell)",
 "g": "furin",
 "k": "object",
 "s": [
@@ -63012,6 +63350,7 @@
 "w": "Futakuchi-onna"
 },
 "gagana": {
+"d": "Gagana",
 "g": "gagana",
 "k": "mythology",
 "s": [
@@ -63020,6 +63359,7 @@
 "w": "Gagana"
 },
 "galapagos green sea turtle": {
+"d": "Galapagos green sea turtle",
 "g": "sea turtle",
 "k": "life",
 "s": [
@@ -63027,6 +63367,7 @@
 ]
 },
 "galapagos tortoise": {
+"d": "Galapagos tortoise",
 "g": "tortoise",
 "k": "life",
 "s": [
@@ -63054,6 +63395,7 @@
 "w": "Gallium"
 },
 "galvani's frog-leg experiments": {
+"d": "Galvani's frog-leg experiments",
 "g": "galvani's frog-leg experiments",
 "k": "concept",
 "s": [
@@ -63117,6 +63459,7 @@
 "w": "Gargoyle"
 },
 "garmr": {
+"d": "Garmr",
 "g": "garmr",
 "k": "mythology",
 "s": [
@@ -63133,6 +63476,7 @@
 "w": "Gar"
 },
 "garuda": {
+"d": "Garuda",
 "g": "garuda",
 "i": 1,
 "k": "mythology",
@@ -63211,6 +63555,7 @@
 "w": "Gecko"
 },
 "gegenees": {
+"d": "Gegenees",
 "g": "gegenees",
 "k": "mythology",
 "s": [
@@ -63238,6 +63583,7 @@
 "x": 1
 },
 "genie (i dream of jeannie)": {
+"d": "genie (I Dream of Jeannie)",
 "g": "genie",
 "k": "folklore",
 "s": [
@@ -63299,6 +63645,7 @@
 "w": "Gerenuk"
 },
 "german shepherd": {
+"d": "German Shepherd",
 "g": "herding dog",
 "k": "life",
 "s": [
@@ -63307,6 +63654,7 @@
 "w": "German Shepherd"
 },
 "germanic runes": {
+"d": "Germanic runes",
 "g": "germanic runes",
 "k": "object",
 "s": [
@@ -63315,6 +63663,7 @@
 "w": "Runes"
 },
 "gerrothorax": {
+"d": "Gerrothorax",
 "g": "gerrothorax",
 "k": "prehistoric",
 "s": [
@@ -63424,6 +63773,7 @@
 "w": "Giant isopod"
 },
 "giant musselburgh leek": {
+"d": "Giant Musselburgh leek",
 "g": "leek",
 "k": "life",
 "s": [
@@ -63509,6 +63859,7 @@
 "w": "Victoria (plant)"
 },
 "gibraltar barbary macaque": {
+"d": "Gibraltar barbary macaque",
 "g": "macaque",
 "k": "life",
 "s": [
@@ -63516,6 +63867,7 @@
 ]
 },
 "gigantopithecus": {
+"d": "Gigantopithecus",
 "g": "gigantopithecus",
 "i": 1,
 "k": "prehistoric",
@@ -63634,6 +63986,7 @@
 "w": "Glass frog"
 },
 "gleipnir": {
+"d": "Gleipnir",
 "g": "gleipnir",
 "i": 1,
 "k": "mythology",
@@ -63660,6 +64013,7 @@
 "x": 1
 },
 "glyptodon": {
+"d": "Glyptodon",
 "g": "glyptodon",
 "k": "prehistoric",
 "s": [
@@ -63698,6 +64052,7 @@
 "w": "Gnome"
 },
 "gnostic aeon": {
+"d": "Gnostic aeon",
 "g": "gnostic aeon",
 "k": "concept",
 "s": [
@@ -63735,6 +64090,7 @@
 "w": "Goblin"
 },
 "godzilla (1954)": {
+"d": "Godzilla (1954)",
 "g": "godzilla",
 "i": 1,
 "k": "media & art",
@@ -63774,6 +64130,7 @@
 "w": "Golden eagle"
 },
 "golden fleece": {
+"d": "Golden Fleece",
 "g": "golden fleece",
 "k": "mythology",
 "s": [
@@ -63838,6 +64195,7 @@
 "w": "Golem"
 },
 "golem of hebrew legend": {
+"d": "golem of Hebrew legend",
 "g": "legend",
 "k": "folklore",
 "s": [
@@ -63851,6 +64209,7 @@
 "w": "Golem"
 },
 "golem of prague": {
+"d": "Golem of Prague",
 "g": "prague",
 "k": "earth & sky",
 "s": [
@@ -63859,6 +64218,7 @@
 "w": "Golem"
 },
 "goliath heron": {
+"d": "Goliath heron",
 "g": "heron",
 "k": "life",
 "s": [
@@ -63899,6 +64259,7 @@
 ]
 },
 "gorgons": {
+"d": "Gorgons",
 "g": "gorgons",
 "k": "mythology",
 "s": [
@@ -63907,6 +64268,7 @@
 "w": "Gorgons"
 },
 "gorgosaurus": {
+"d": "Gorgosaurus",
 "g": "gorgosaurus",
 "k": "prehistoric",
 "s": [
@@ -63934,6 +64296,7 @@
 "w": "Goshawk"
 },
 "gothic fashion": {
+"d": "Gothic fashion",
 "g": "fashion",
 "k": "concept",
 "s": [
@@ -63943,6 +64306,7 @@
 "x": 1
 },
 "gothic lolita fashion": {
+"d": "Gothic Lolita fashion",
 "g": "fashion",
 "k": "concept",
 "s": [
@@ -63978,6 +64342,7 @@
 "w": "Gourmand"
 },
 "gracidea flower": {
+"d": "Gracidea flower",
 "g": "tropical flower",
 "k": "life",
 "s": [
@@ -64083,6 +64448,7 @@
 "w": "Great auk"
 },
 "great ball": {
+"d": "Great Ball",
 "g": "ball",
 "k": "object",
 "s": [
@@ -64098,6 +64464,7 @@
 "w": "Great hornbill"
 },
 "great sphinx of giza and the orion correlation theory": {
+"d": "Great Sphinx of Giza and the Orion correlation theory",
 "g": "great sphinx of giza and the orion correlation theory",
 "k": "folklore",
 "s": [
@@ -64149,6 +64516,7 @@
 "w": "Grebe"
 },
 "greek letter alpha": {
+"d": "Greek letter alpha",
 "g": "greek letter alpha",
 "k": "object",
 "s": [
@@ -64156,6 +64524,7 @@
 ]
 },
 "greek letter omega": {
+"d": "Greek letter omega",
 "g": "greek letter omega",
 "k": "object",
 "s": [
@@ -64163,6 +64532,7 @@
 ]
 },
 "greek muse": {
+"d": "Greek muse",
 "g": "greek muse",
 "k": "mythology",
 "s": [
@@ -64188,6 +64558,7 @@
 "w": "Chrysopidae"
 },
 "green man": {
+"d": "Green Man",
 "g": "man",
 "k": "person",
 "s": [
@@ -64207,6 +64578,7 @@
 "w": "Olive"
 },
 "green pheasant (japan's national bird)": {
+"d": "green pheasant (Japan's national bird)",
 "g": "pheasant",
 "k": "life",
 "s": [
@@ -64242,6 +64614,7 @@
 "w": "Grenade"
 },
 "grendel": {
+"d": "Grendel",
 "g": "grendel",
 "k": "folklore",
 "s": [
@@ -64290,6 +64663,7 @@
 "w": "Griffin"
 },
 "grim reaper": {
+"d": "Grim Reaper",
 "g": "reaper",
 "k": "folklore",
 "s": [
@@ -64302,6 +64676,7 @@
 "w": "Grim Reaper"
 },
 "ground beetle (carabus smaragdinus)": {
+"d": "ground beetle (Carabus smaragdinus)",
 "g": "ground beetle",
 "k": "life",
 "s": [
@@ -64352,6 +64727,7 @@
 "w": "Grunt sculpin"
 },
 "guadiana international bridge": {
+"d": "Guadiana International Bridge",
 "g": "bridge",
 "k": "earth & sky",
 "s": [
@@ -64410,6 +64786,7 @@
 "w": "Gulper eel"
 },
 "gun (chinese myth)": {
+"d": "Gun (Chinese myth)",
 "g": "gun (chinese myth)",
 "k": "mythology",
 "s": [
@@ -64460,6 +64837,7 @@
 "x": 1
 },
 "guy fawkes mask": {
+"d": "Guy Fawkes mask",
 "g": "mask",
 "k": "object",
 "s": [
@@ -64477,6 +64855,7 @@
 "x": 1
 },
 "gynaephora moth larva": {
+"d": "Gynaephora moth larva",
 "g": "larva",
 "k": "life",
 "s": [
@@ -64526,6 +64905,7 @@
 ]
 },
 "hachiro-taro": {
+"d": "Hachiro-Taro",
 "g": "hachiro-taro",
 "k": "folklore",
 "s": [
@@ -64541,6 +64921,7 @@
 "w": "Hadrosauridae"
 },
 "hadrosaur crest (saurolophus)": {
+"d": "hadrosaur crest (Saurolophus)",
 "g": "crest",
 "k": "object",
 "s": [
@@ -64584,6 +64965,7 @@
 ]
 },
 "haikouichthys": {
+"d": "Haikouichthys",
 "g": "haikouichthys",
 "k": "prehistoric",
 "s": [
@@ -64647,6 +65029,7 @@
 "w": "Hake"
 },
 "hake in spanish cuisine": {
+"d": "hake in Spanish cuisine",
 "g": "hake in spanish cuisine",
 "k": "concept",
 "s": [
@@ -64655,6 +65038,7 @@
 "x": 1
 },
 "hakuturi": {
+"d": "Hakuturi",
 "g": "hakuturi",
 "k": "folklore",
 "s": [
@@ -64779,6 +65163,7 @@
 ]
 },
 "hanuman": {
+"d": "Hanuman",
 "g": "hanuman",
 "k": "mythology",
 "s": [
@@ -64843,6 +65228,7 @@
 "x": 1
 },
 "harionago": {
+"d": "Harionago",
 "g": "harionago",
 "k": "folklore",
 "s": [
@@ -64851,6 +65237,7 @@
 "w": "Harionago"
 },
 "harionago (long-haired ghoul)": {
+"d": "Harionago (long-haired ghoul)",
 "g": "harionago",
 "k": "folklore",
 "s": [
@@ -64900,6 +65287,7 @@
 "w": "Hatchet"
 },
 "hathor": {
+"d": "Hathor",
 "g": "hathor",
 "k": "mythology",
 "s": [
@@ -64908,6 +65296,7 @@
 "w": "Hathor"
 },
 "hati hrodvitnisson": {
+"d": "Hati Hrodvitnisson",
 "g": "hati hrodvitnisson",
 "k": "mythology",
 "s": [
@@ -64932,6 +65321,7 @@
 "w": "Haunted doll"
 },
 "hawaiian happy-face spider": {
+"d": "Hawaiian happy-face spider",
 "g": "spider",
 "k": "life",
 "s": [
@@ -64940,6 +65330,7 @@
 "w": "Theridion grallator"
 },
 "hawaiian hoary bat": {
+"d": "Hawaiian hoary bat",
 "g": "bat",
 "k": "life",
 "s": [
@@ -64948,6 +65339,7 @@
 "w": "Hawaiian hoary bat"
 },
 "hawaiian honeycreeper": {
+"d": "Hawaiian honeycreeper",
 "g": "hawaiian honeycreeper",
 "k": "life",
 "s": [
@@ -64956,6 +65348,7 @@
 "w": "Hawaiian honeycreeper"
 },
 "hawaiian lei": {
+"d": "Hawaiian lei",
 "g": "lei",
 "k": "object",
 "s": [
@@ -64964,6 +65357,7 @@
 "w": "Lei (garland)"
 },
 "hawaiian monk seal": {
+"d": "Hawaiian monk seal",
 "g": "seal",
 "k": "life",
 "s": [
@@ -64974,6 +65368,7 @@
 "w": "Hawaiian monk seal"
 },
 "hawaiian poi dog": {
+"d": "Hawaiian Poi Dog",
 "g": "spitz & asian dog",
 "k": "life",
 "s": [
@@ -64982,6 +65377,7 @@
 "w": "Hawaiian Poi Dog"
 },
 "hawaiian pueo owl": {
+"d": "Hawaiian pueo owl",
 "g": "owl",
 "k": "life",
 "s": [
@@ -64990,6 +65386,7 @@
 ]
 },
 "hawaiian pueo owl facial disc": {
+"d": "Hawaiian pueo owl facial disc",
 "g": "disc",
 "k": "object",
 "s": [
@@ -64997,6 +65394,7 @@
 ]
 },
 "hawaiian surf culture": {
+"d": "Hawaiian surf culture",
 "g": "culture",
 "k": "concept",
 "s": [
@@ -65132,6 +65530,7 @@
 "w": "Heavy equipment"
 },
 "hecate (polecat and torches)": {
+"d": "Hecate (polecat and torches)",
 "g": "hecate",
 "k": "mythology",
 "s": [
@@ -65140,6 +65539,7 @@
 "w": "Hecate"
 },
 "hecatoncheires": {
+"d": "Hecatoncheires",
 "g": "hecatoncheires",
 "i": 1,
 "k": "mythology",
@@ -65172,6 +65572,7 @@
 "x": 1
 },
 "heffernan's starfish": {
+"d": "Heffernan's starfish",
 "g": "starfish",
 "k": "life",
 "s": [
@@ -65187,6 +65588,7 @@
 "w": "Heikegani"
 },
 "hel": {
+"d": "Hel",
 "g": "hel",
 "k": "mythology",
 "s": [
@@ -65195,6 +65597,7 @@
 "w": "Hel"
 },
 "hel, ruler of helheim": {
+"d": "Hel, ruler of Helheim",
 "g": "hel",
 "k": "mythology",
 "s": [
@@ -65209,6 +65612,7 @@
 ]
 },
 "heliconia": {
+"d": "Heliconia",
 "g": "heliconia",
 "i": 1,
 "k": "life",
@@ -65226,6 +65630,7 @@
 "w": "Helicopter rotor"
 },
 "helios": {
+"d": "Helios",
 "g": "helios",
 "k": "mythology",
 "s": [
@@ -65254,6 +65659,7 @@
 "w": "Hellhound"
 },
 "hellmouth": {
+"d": "Hellmouth",
 "g": "hellmouth",
 "k": "folklore",
 "s": [
@@ -65263,6 +65669,7 @@
 "w": "Hellmouth"
 },
 "hengroen": {
+"d": "Hengroen",
 "g": "hengroen",
 "k": "mythology",
 "s": [
@@ -65278,6 +65685,7 @@
 ]
 },
 "hera": {
+"d": "Hera",
 "g": "hera",
 "i": 1,
 "k": "mythology",
@@ -65309,6 +65717,7 @@
 ]
 },
 "hercules beetle": {
+"d": "Hercules beetle",
 "g": "stag & rhinoceros beetle",
 "k": "life",
 "s": [
@@ -65329,6 +65738,7 @@
 "w": "Hermit crab"
 },
 "herne the hunter": {
+"d": "Herne the Hunter",
 "g": "herne the hunter",
 "k": "mythology",
 "s": [
@@ -65353,6 +65763,7 @@
 ]
 },
 "hestia": {
+"d": "Hestia",
 "g": "hestia",
 "i": 1,
 "k": "mythology",
@@ -65362,6 +65773,7 @@
 "w": "Hestia"
 },
 "heterodontosaurus": {
+"d": "Heterodontosaurus",
 "g": "heterodontosaurus",
 "k": "prehistoric",
 "s": [
@@ -65393,6 +65805,7 @@
 "x": 1
 },
 "hida salamander": {
+"d": "Hida salamander",
 "g": "salamander",
 "k": "life",
 "s": [
@@ -65417,6 +65830,7 @@
 "w": "Highland cattle"
 },
 "highwayman dick turpin": {
+"d": "highwayman Dick Turpin",
 "g": "highwayman dick turpin",
 "i": 1,
 "k": "person",
@@ -65434,6 +65848,7 @@
 "x": 1
 },
 "himalayan cat": {
+"d": "Himalayan cat",
 "g": "longhair breed",
 "k": "life",
 "s": [
@@ -65458,6 +65873,7 @@
 "x": 1
 },
 "hindu and sikh elders' beards and headpieces": {
+"d": "Hindu and Sikh elders' beards and headpieces",
 "g": "hindu and sikh elders' beards and headpieces",
 "k": "object",
 "s": [
@@ -65465,6 +65881,7 @@
 ]
 },
 "hindu deities such as shiva": {
+"d": "Hindu deities such as Shiva",
 "g": "shiva",
 "k": "mythology",
 "s": [
@@ -65472,6 +65889,7 @@
 ]
 },
 "hine-nui-te-po": {
+"d": "Hine-nui-te-po",
 "g": "hine-nui-te-po",
 "k": "mythology",
 "s": [
@@ -65541,6 +65959,7 @@
 ]
 },
 "hiroyuki ebihara (boxer)": {
+"d": "Hiroyuki Ebihara (boxer)",
 "g": "hiroyuki ebihara",
 "i": 1,
 "k": "person",
@@ -65589,6 +66008,7 @@
 "x": 1
 },
 "hodgson's sargassum weed monsters": {
+"d": "Hodgson's Sargassum weed monsters",
 "g": "hodgson's sargassum weed monsters",
 "k": "folklore",
 "s": [
@@ -65605,6 +66025,7 @@
 "w": "Hog-nosed skunk"
 },
 "hojo clan crest": {
+"d": "Hojo clan crest",
 "g": "crest",
 "k": "object",
 "s": [
@@ -65612,6 +66033,7 @@
 ]
 },
 "hokkaido wolf": {
+"d": "Hokkaido wolf",
 "g": "wolf",
 "k": "life",
 "s": [
@@ -65634,6 +66056,7 @@
 ]
 },
 "holstein friesian cattle": {
+"d": "Holstein Friesian cattle",
 "g": "cattle",
 "k": "life",
 "s": [
@@ -65660,6 +66083,7 @@
 "w": "Homunculus"
 },
 "honduran white bat": {
+"d": "Honduran white bat",
 "g": "bat",
 "k": "life",
 "s": [
@@ -65744,6 +66168,7 @@
 "w": "Hoodie"
 },
 "hopi kachina figure": {
+"d": "Hopi kachina figure",
 "g": "hopi kachina figure",
 "k": "media & art",
 "s": [
@@ -65751,6 +66176,7 @@
 ]
 },
 "hopkinsville goblin (alleged alien encounter)": {
+"d": "Hopkinsville Goblin (alleged alien encounter)",
 "g": "goblin",
 "k": "folklore",
 "s": [
@@ -65793,6 +66219,7 @@
 "w": "Horned frog"
 },
 "horned frog (megophrys, ceratophrys)": {
+"d": "horned frog (Megophrys, Ceratophrys)",
 "g": "frog",
 "k": "life",
 "s": [
@@ -65852,6 +66279,7 @@
 "w": "Horsehair crab"
 },
 "horsehead nebula": {
+"d": "Horsehead Nebula",
 "g": "nebula",
 "k": "earth & sky",
 "s": [
@@ -65861,6 +66289,7 @@
 "w": "Horsehead Nebula"
 },
 "horses of helios": {
+"d": "horses of Helios",
 "g": "helios",
 "k": "mythology",
 "s": [
@@ -65868,6 +66297,7 @@
 ]
 },
 "horses of the ashvins": {
+"d": "horses of the Ashvins",
 "g": "horses of the ashvins",
 "k": "mythology",
 "s": [
@@ -65892,6 +66322,7 @@
 "w": "Horseshoe crab"
 },
 "horus": {
+"d": "Horus",
 "g": "horus",
 "k": "mythology",
 "s": [
@@ -65964,6 +66395,7 @@
 "w": "Howitzer"
 },
 "hraesvelgr": {
+"d": "Hraesvelgr",
 "g": "hraesvelgr",
 "k": "mythology",
 "s": [
@@ -65972,6 +66404,7 @@
 "w": "Hræsvelgr"
 },
 "hrimthursar (norse ice giants)": {
+"d": "hrimthursar (Norse ice giants)",
 "g": "hrimthursar",
 "k": "mythology",
 "s": [
@@ -65980,6 +66413,7 @@
 "w": "Jötunn"
 },
 "huitzilopochtli": {
+"d": "Huitzilopochtli",
 "g": "huitzilopochtli",
 "i": 1,
 "k": "mythology",
@@ -66006,6 +66440,7 @@
 "x": 1
 },
 "huma bird": {
+"d": "Huma bird",
 "g": "firebird",
 "k": "life",
 "s": [
@@ -66065,6 +66500,7 @@
 "w": "Humanoid robot"
 },
 "humboldt squid": {
+"d": "Humboldt squid",
 "g": "squid",
 "k": "life",
 "s": [
@@ -66090,6 +66526,7 @@
 "w": "Humpback whale"
 },
 "hundun of the four perils": {
+"d": "Hundun of the Four Perils",
 "g": "perils",
 "k": "mythology",
 "s": [
@@ -66184,6 +66621,7 @@
 "x": 1
 },
 "iberian lynx": {
+"d": "Iberian lynx",
 "g": "lynx",
 "k": "life",
 "s": [
@@ -66193,6 +66631,7 @@
 "w": "Iberian lynx"
 },
 "iberian lynx kitten": {
+"d": "Iberian lynx kitten",
 "g": "lynx",
 "i": 1,
 "k": "life",
@@ -66201,6 +66640,7 @@
 ]
 },
 "iberian ribbed newt": {
+"d": "Iberian ribbed newt",
 "g": "newt",
 "k": "life",
 "s": [
@@ -66210,6 +66650,7 @@
 "w": "Iberian ribbed newt"
 },
 "iberian sculpture (bicha of balazote)": {
+"d": "Iberian sculpture (Bicha of Balazote)",
 "g": "sculpture",
 "k": "media & art",
 "s": [
@@ -66218,6 +66659,7 @@
 "w": "Iberian sculpture"
 },
 "iberian shrew": {
+"d": "Iberian shrew",
 "g": "shrew",
 "k": "life",
 "s": [
@@ -66226,6 +66668,7 @@
 "w": "Iberian shrew"
 },
 "iberian worm lizard": {
+"d": "Iberian worm lizard",
 "g": "legless lizard",
 "k": "life",
 "s": [
@@ -66242,6 +66685,7 @@
 "w": "Ibex"
 },
 "ice age": {
+"d": "Ice Age",
 "g": "age",
 "k": "concept",
 "s": [
@@ -66333,6 +66777,7 @@
 "w": "Icicle"
 },
 "icicle-coated yukon grizzly bears": {
+"d": "icicle-coated Yukon grizzly bears",
 "g": "icicle-coated yukon grizzly bears",
 "k": "life",
 "s": [
@@ -66340,6 +66785,7 @@
 ]
 },
 "ifrit": {
+"d": "Ifrit",
 "g": "ifrit",
 "k": "folklore",
 "s": [
@@ -66406,6 +66852,7 @@
 "x": 1
 },
 "imugi (korean proto-dragon)": {
+"d": "imugi (Korean proto-dragon)",
 "g": "imugi",
 "k": "folklore",
 "s": [
@@ -66439,6 +66886,7 @@
 "w": "Geometer moth"
 },
 "indian and thai elephant statues": {
+"d": "Indian and Thai elephant statues",
 "g": "indian and thai elephant statues",
 "k": "media & art",
 "s": [
@@ -66447,6 +66895,7 @@
 ]
 },
 "indian cobra": {
+"d": "Indian cobra",
 "g": "cobra",
 "k": "life",
 "s": [
@@ -66456,6 +66905,7 @@
 "w": "Indian cobra"
 },
 "indian elephant calf": {
+"d": "Indian elephant calf",
 "g": "calf",
 "k": "life",
 "s": [
@@ -66463,6 +66913,7 @@
 ]
 },
 "indian elephant festival adornments": {
+"d": "Indian elephant festival adornments",
 "g": "indian elephant festival adornments",
 "k": "object",
 "s": [
@@ -66470,6 +66921,7 @@
 ]
 },
 "indian rhinoceros": {
+"d": "Indian rhinoceros",
 "g": "rhinoceros",
 "k": "life",
 "s": [
@@ -66478,6 +66930,7 @@
 "w": "Indian rhinoceros"
 },
 "indian working elephant": {
+"d": "Indian working elephant",
 "g": "elephant",
 "k": "life",
 "s": [
@@ -66510,6 +66963,7 @@
 ]
 },
 "inkanyamba": {
+"d": "Inkanyamba",
 "g": "inkanyamba",
 "k": "mythology",
 "s": [
@@ -66567,6 +67021,7 @@
 "x": 1
 },
 "insular g": {
+"d": "insular G",
 "g": "insular g",
 "k": "object",
 "s": [
@@ -66607,6 +67062,7 @@
 "x": 1
 },
 "invasive species in hawaii": {
+"d": "invasive species in Hawaii",
 "g": "invasive species in hawaii",
 "k": "concept",
 "s": [
@@ -66619,6 +67075,7 @@
 "x": 1
 },
 "irish elk": {
+"d": "Irish elk",
 "g": "elk",
 "k": "life",
 "s": [
@@ -66627,6 +67084,7 @@
 "w": "Irish elk"
 },
 "iron age": {
+"d": "Iron Age",
 "g": "age",
 "k": "concept",
 "s": [
@@ -66697,6 +67155,7 @@
 "x": 1
 },
 "isopod (ligia)": {
+"d": "isopod (Ligia)",
 "g": "isopod",
 "i": 1,
 "k": "life",
@@ -66706,6 +67165,7 @@
 "w": "Isopoda"
 },
 "issun-boshi": {
+"d": "Issun-boshi",
 "g": "issun-boshi",
 "k": "folklore",
 "s": [
@@ -66714,6 +67174,7 @@
 "w": "Issun-bōshi"
 },
 "itaomacip (ainu plank boat)": {
+"d": "Itaomacip (Ainu plank boat)",
 "g": "itaomacip",
 "k": "concept",
 "s": [
@@ -66723,6 +67184,7 @@
 "x": 1
 },
 "itzpapalotl": {
+"d": "Itzpapalotl",
 "g": "itzpapalotl",
 "k": "mythology",
 "s": [
@@ -66748,6 +67210,7 @@
 "w": "Hedera"
 },
 "izanagi's peaches at the gate of yomi": {
+"d": "Izanagi's peaches at the gate of Yomi",
 "g": "izanagi's peaches at the gate of yomi",
 "k": "mythology",
 "s": [
@@ -66755,6 +67218,7 @@
 ]
 },
 "izanami and izanagi creation myth": {
+"d": "Izanami and Izanagi creation myth",
 "g": "izanami and izanagi creation myth",
 "k": "mythology",
 "s": [
@@ -66825,6 +67289,7 @@
 "w": "Jackhammer"
 },
 "jacob sheep": {
+"d": "Jacob sheep",
 "g": "sheep",
 "k": "life",
 "s": [
@@ -66841,6 +67306,7 @@
 "w": "Jade"
 },
 "james webb space telescope": {
+"d": "James Webb Space Telescope",
 "g": "james webb space telescope",
 "i": 1,
 "k": "object",
@@ -66850,6 +67316,7 @@
 "w": "James Webb Space Telescope"
 },
 "japanese akita": {
+"d": "Japanese Akita",
 "g": "spitz & asian dog",
 "k": "life",
 "s": [
@@ -66858,6 +67325,7 @@
 "w": "Akita (dog breed)"
 },
 "japanese badger": {
+"d": "Japanese badger",
 "g": "badger",
 "k": "life",
 "s": [
@@ -66867,6 +67335,7 @@
 "w": "Japanese badger"
 },
 "japanese chestnut": {
+"d": "Japanese chestnut",
 "g": "chestnut",
 "k": "life",
 "s": [
@@ -66876,6 +67345,7 @@
 "w": "Castanea crenata"
 },
 "japanese dragon": {
+"d": "Japanese dragon",
 "g": "dragon",
 "k": "mythology",
 "s": [
@@ -66884,6 +67354,7 @@
 "w": "Japanese dragon"
 },
 "japanese dragon (ryu)": {
+"d": "Japanese dragon (ryu)",
 "g": "dragon",
 "k": "mythology",
 "s": [
@@ -66893,6 +67364,7 @@
 "w": "Japanese dragon"
 },
 "japanese dwarf flying squirrel": {
+"d": "Japanese dwarf flying squirrel",
 "g": "squirrel",
 "k": "life",
 "s": [
@@ -66901,6 +67373,7 @@
 "w": "Japanese dwarf flying squirrel"
 },
 "japanese fire belly newt": {
+"d": "Japanese fire belly newt",
 "g": "newt",
 "k": "life",
 "s": [
@@ -66909,6 +67382,7 @@
 "w": "Japanese fire-bellied newt"
 },
 "japanese firework shell": {
+"d": "Japanese firework shell",
 "g": "firework shell",
 "k": "object",
 "s": [
@@ -66917,6 +67391,7 @@
 ]
 },
 "japanese giant flying squirrel": {
+"d": "Japanese giant flying squirrel",
 "g": "squirrel",
 "k": "life",
 "s": [
@@ -66925,6 +67400,7 @@
 "w": "Japanese giant flying squirrel"
 },
 "japanese hand fan": {
+"d": "Japanese hand fan",
 "g": "fan",
 "k": "object",
 "s": [
@@ -66932,6 +67408,7 @@
 ]
 },
 "japanese honey bee": {
+"d": "Japanese honey bee",
 "g": "bee",
 "k": "life",
 "s": [
@@ -66940,6 +67417,7 @@
 "w": "Apis cerana japonica"
 },
 "japanese idol": {
+"d": "Japanese idol",
 "g": "japanese idol",
 "k": "person",
 "s": [
@@ -66949,6 +67427,7 @@
 "x": 1
 },
 "japanese luna moth": {
+"d": "Japanese luna moth",
 "g": "moth",
 "k": "life",
 "s": [
@@ -66956,6 +67435,7 @@
 ]
 },
 "japanese macaque": {
+"d": "Japanese macaque",
 "g": "macaque",
 "k": "life",
 "s": [
@@ -66965,6 +67445,7 @@
 "w": "Japanese macaque"
 },
 "japanese otter": {
+"d": "Japanese otter",
 "g": "otter",
 "k": "life",
 "s": [
@@ -66973,6 +67454,7 @@
 "w": "Japanese otter"
 },
 "japanese rhinoceros beetle": {
+"d": "Japanese rhinoceros beetle",
 "g": "stag & rhinoceros beetle",
 "k": "life",
 "s": [
@@ -66982,6 +67464,7 @@
 "w": "Japanese rhinoceros beetle"
 },
 "japanese rhinoceros beetle (kabutomushi pun)": {
+"d": "Japanese rhinoceros beetle (kabutomushi pun)",
 "g": "stag & rhinoceros beetle",
 "k": "life",
 "s": [
@@ -66991,6 +67474,7 @@
 "x": 1
 },
 "japanese robin": {
+"d": "Japanese robin",
 "g": "robin",
 "i": 1,
 "k": "life",
@@ -67002,6 +67486,7 @@
 "w": "Japanese robin"
 },
 "japanese saying \"a duck comes bearing spring onions\"": {
+"d": "Japanese saying \"a duck comes bearing spring onions\"",
 "g": "japanese saying \"a duck comes bearing spring onions\"",
 "k": "concept",
 "s": [
@@ -67010,6 +67495,7 @@
 "x": 1
 },
 "japanese sea lion": {
+"d": "Japanese sea lion",
 "g": "sea lion",
 "k": "life",
 "s": [
@@ -67018,6 +67504,7 @@
 "w": "Japanese sea lion"
 },
 "japanese silk moth": {
+"d": "Japanese silk moth",
 "g": "moth",
 "k": "life",
 "s": [
@@ -67026,6 +67513,7 @@
 "w": "Antheraea yamamai"
 },
 "japanese spider crab": {
+"d": "Japanese spider crab",
 "g": "crab",
 "k": "life",
 "s": [
@@ -67034,6 +67522,7 @@
 "w": "Japanese spider crab"
 },
 "japanese tea ceremony utensils": {
+"d": "Japanese tea ceremony utensils",
 "g": "japanese tea ceremony utensils",
 "k": "object",
 "s": [
@@ -67042,6 +67531,7 @@
 "w": "Japanese tea utensils"
 },
 "japanese war fan": {
+"d": "Japanese war fan",
 "g": "fan",
 "k": "object",
 "s": [
@@ -67051,6 +67541,7 @@
 "w": "Japanese war fan"
 },
 "japanese wolf": {
+"d": "Japanese wolf",
 "g": "wolf",
 "k": "life",
 "s": [
@@ -67106,6 +67597,7 @@
 "w": "Jerboa"
 },
 "jersey cattle": {
+"d": "Jersey cattle",
 "g": "cattle",
 "k": "life",
 "s": [
@@ -67217,6 +67709,7 @@
 ]
 },
 "jiraiya the toad-shapeshifting ninja": {
+"d": "Jiraiya the toad-shapeshifting ninja",
 "g": "ninja",
 "k": "person",
 "s": [
@@ -67225,6 +67718,7 @@
 "x": 1
 },
 "jormungandr": {
+"d": "Jormungandr",
 "g": "serpent",
 "i": 1,
 "k": "mythology",
@@ -67235,6 +67729,7 @@
 "w": "Jörmungandr"
 },
 "joro spider": {
+"d": "Joro spider",
 "g": "spider",
 "k": "life",
 "s": [
@@ -67295,6 +67790,7 @@
 "w": "Jumping spider"
 },
 "juvenile black iberian pig": {
+"d": "juvenile black Iberian pig",
 "g": "pig",
 "k": "life",
 "s": [
@@ -67316,6 +67812,7 @@
 ]
 },
 "kabandha": {
+"d": "Kabandha",
 "g": "kabandha",
 "k": "mythology",
 "s": [
@@ -67324,6 +67821,7 @@
 "w": "Kabandha"
 },
 "kabuki and noh makeup": {
+"d": "Kabuki and Noh makeup",
 "g": "kabuki and noh makeup",
 "k": "media & art",
 "s": [
@@ -67358,6 +67856,7 @@
 "w": "Hopi Kachina figure"
 },
 "kai ken dog": {
+"d": "Kai Ken dog",
 "g": "spitz & asian dog",
 "k": "life",
 "s": [
@@ -67445,6 +67944,7 @@
 "w": "Kamaitachi"
 },
 "kamen rider": {
+"d": "Kamen Rider",
 "g": "kamen rider",
 "i": 1,
 "k": "media & art",
@@ -67462,6 +67962,7 @@
 "w": "Kamikiri"
 },
 "kamoiwakura dotaku site": {
+"d": "Kamoiwakura dotaku site",
 "g": "kamoiwakura dotaku site",
 "k": "object",
 "s": [
@@ -67469,6 +67970,7 @@
 ]
 },
 "kamuy-huci (ainu fire goddess)": {
+"d": "Kamuy-huci (Ainu fire goddess)",
 "g": "kamuy-huci",
 "k": "mythology",
 "s": [
@@ -67484,6 +67986,7 @@
 ]
 },
 "kanaloa (hawaiian ocean god)": {
+"d": "Kanaloa (Hawaiian ocean god)",
 "g": "kanaloa",
 "i": 1,
 "k": "mythology",
@@ -67493,6 +67996,7 @@
 "w": "Kanaloa"
 },
 "kane (hawaiian creator god)": {
+"d": "Kane (Hawaiian creator god)",
 "g": "kane",
 "i": 1,
 "k": "mythology",
@@ -67502,6 +68006,7 @@
 "w": "Kāne"
 },
 "kanehekili (hawaiian thunder god)": {
+"d": "Kanehekili (Hawaiian thunder god)",
 "g": "kanehekili",
 "i": 1,
 "k": "mythology",
@@ -67551,6 +68056,7 @@
 ]
 },
 "kapatcir-kamuy (ainu divine being)": {
+"d": "Kapatcir-kamuy (Ainu divine being)",
 "g": "kapatcir-kamuy",
 "k": "mythology",
 "s": [
@@ -67606,6 +68112,7 @@
 "w": "Karura"
 },
 "karura (garuda)": {
+"d": "Karura (Garuda)",
 "g": "karura",
 "k": "mythology",
 "s": [
@@ -67616,6 +68123,7 @@
 "w": "Karura"
 },
 "kasa (japanese wide-brimmed hat)": {
+"d": "kasa (Japanese wide-brimmed hat)",
 "g": "kasa",
 "k": "object",
 "s": [
@@ -67624,6 +68132,7 @@
 "w": "Kasa"
 },
 "kaso (chinese fire mouse)": {
+"d": "kaso (Chinese fire mouse)",
 "g": "kaso",
 "k": "folklore",
 "s": [
@@ -67649,6 +68158,7 @@
 "x": 1
 },
 "kelpie (scottish water horse)": {
+"d": "kelpie (Scottish water horse)",
 "g": "kelpie",
 "k": "folklore",
 "s": [
@@ -67681,6 +68191,7 @@
 "w": "Khakkhara"
 },
 "khakkhara (buddhist monk's staff)": {
+"d": "khakkhara (Buddhist monk's staff)",
 "g": "staff",
 "i": 1,
 "k": "object",
@@ -67697,6 +68208,7 @@
 ]
 },
 "khepri": {
+"d": "Khepri",
 "g": "khepri",
 "k": "mythology",
 "s": [
@@ -67730,6 +68242,7 @@
 ]
 },
 "kim-un-kamuy (ainu bear god)": {
+"d": "Kim-un-kamuy (Ainu bear god)",
 "g": "kim-un-kamuy",
 "k": "mythology",
 "s": [
@@ -67747,6 +68260,7 @@
 "w": "Kimono"
 },
 "kimono worn by obon dancers": {
+"d": "kimono worn by Obon dancers",
 "g": "kimono worn by obon dancers",
 "k": "object",
 "s": [
@@ -67761,6 +68275,7 @@
 ]
 },
 "king arthur's magical armour": {
+"d": "King Arthur's magical armour",
 "g": "armour",
 "k": "object",
 "s": [
@@ -67768,6 +68283,7 @@
 ]
 },
 "king arthur's shield wynebgwrthucher": {
+"d": "King Arthur's shield Wynebgwrthucher",
 "g": "king arthur's shield wynebgwrthucher",
 "i": 1,
 "k": "object",
@@ -67776,6 +68292,7 @@
 ]
 },
 "king bladud of bath legend": {
+"d": "King Bladud of Bath legend",
 "g": "legend",
 "k": "folklore",
 "s": [
@@ -67799,6 +68316,7 @@
 "w": "King crab"
 },
 "king ghidorah": {
+"d": "King Ghidorah",
 "g": "king ghidorah",
 "k": "media & art",
 "s": [
@@ -67817,6 +68335,7 @@
 "x": 1
 },
 "king kong": {
+"d": "King Kong",
 "g": "king kong",
 "k": "media & art",
 "s": [
@@ -67826,6 +68345,7 @@
 "x": 1
 },
 "king minos in dante's inferno": {
+"d": "King Minos in Dante's Inferno",
 "g": "literary character",
 "k": "media & art",
 "s": [
@@ -67834,6 +68354,7 @@
 "x": 1
 },
 "king of saxony bird-of-paradise": {
+"d": "King of Saxony bird-of-paradise",
 "g": "king of saxony bird-of-paradise",
 "i": 1,
 "k": "life",
@@ -67858,6 +68379,7 @@
 "w": "FedEx Office"
 },
 "kinnikuman": {
+"d": "Kinnikuman",
 "g": "comic & manga character",
 "k": "media & art",
 "s": [
@@ -67867,6 +68389,7 @@
 "x": 1
 },
 "kintaro": {
+"d": "Kintaro",
 "g": "kintaro",
 "k": "folklore",
 "s": [
@@ -67884,6 +68407,7 @@
 "w": "Kintsugi"
 },
 "kirin (chinese unicorn)": {
+"d": "kirin (Chinese unicorn)",
 "g": "kirin",
 "k": "mythology",
 "s": [
@@ -68105,6 +68629,7 @@
 "w": "Kokeshi"
 },
 "kokopelli": {
+"d": "Kokopelli",
 "g": "kokopelli",
 "k": "mythology",
 "s": [
@@ -68132,6 +68657,7 @@
 ]
 },
 "komondor": {
+"d": "Komondor",
 "g": "herding dog",
 "k": "life",
 "s": [
@@ -68141,6 +68667,7 @@
 "w": "Komondor"
 },
 "konaki-jiji (yokai)": {
+"d": "Konaki-jiji (yokai)",
 "g": "konaki-jiji",
 "k": "folklore",
 "s": [
@@ -68164,6 +68691,7 @@
 ]
 },
 "koro (japanese incense burner)": {
+"d": "koro (Japanese incense burner)",
 "g": "koro",
 "k": "object",
 "s": [
@@ -68173,6 +68701,7 @@
 "w": "Koro"
 },
 "korpokkur (ainu folklore)": {
+"d": "Korpokkur (Ainu folklore)",
 "g": "korpokkur",
 "k": "folklore",
 "s": [
@@ -68199,6 +68728,7 @@
 "x": 1
 },
 "kukailimoku (hawaiian war god)": {
+"d": "Kukailimoku (Hawaiian war god)",
 "g": "kukailimoku",
 "i": 1,
 "k": "mythology",
@@ -68208,6 +68738,7 @@
 "w": "Kū"
 },
 "kukulkan at yaxchilan": {
+"d": "Kukulkan at Yaxchilan",
 "g": "kukulkan at yaxchilan",
 "k": "mythology",
 "s": [
@@ -68230,6 +68761,7 @@
 "x": 1
 },
 "kurage no hinotama": {
+"d": "Kurage no Hinotama",
 "g": "kurage no hinotama",
 "i": 1,
 "k": "folklore",
@@ -68238,6 +68770,7 @@
 ]
 },
 "kusanagi (sacred sword)": {
+"d": "Kusanagi (sacred sword)",
 "g": "kusanagi",
 "i": 1,
 "k": "mythology",
@@ -68256,6 +68789,7 @@
 "w": "Kitsune"
 },
 "la calavera catrina": {
+"d": "La Calavera Catrina",
 "g": "la calavera catrina",
 "i": 1,
 "k": "media & art",
@@ -68265,6 +68799,7 @@
 "w": "La Calavera Catrina"
 },
 "la petite souris (french tooth-fairy mouse)": {
+"d": "La Petite Souris (French tooth-fairy mouse)",
 "g": "la petite souris",
 "i": 1,
 "k": "folklore",
@@ -68297,6 +68832,7 @@
 "w": "Hemerobiiformia"
 },
 "ladon and the golden apples": {
+"d": "Ladon and the golden apples",
 "g": "ladon and the golden apples",
 "i": 1,
 "k": "mythology",
@@ -68348,6 +68884,7 @@
 "w": "Lamassu"
 },
 "lamb of god": {
+"d": "Lamb of God",
 "g": "lamb of god",
 "k": "mythology",
 "s": [
@@ -68363,6 +68900,7 @@
 ]
 },
 "lamia (basque mythology)": {
+"d": "Lamia (Basque mythology)",
 "g": "lamia",
 "k": "mythology",
 "s": [
@@ -68371,6 +68909,7 @@
 "w": "Lamia (Basque mythology)"
 },
 "laminaria ochroleuca": {
+"d": "Laminaria ochroleuca",
 "g": "laminaria ochroleuca",
 "i": 1,
 "k": "life",
@@ -68477,6 +69016,7 @@
 "w": "Lappet-faced vulture"
 },
 "lares (roman household gods)": {
+"d": "Lares (Roman household gods)",
 "g": "lares",
 "k": "mythology",
 "s": [
@@ -68527,6 +69067,7 @@
 "x": 1
 },
 "latin alphabet letters": {
+"d": "Latin alphabet letters",
 "g": "latin alphabet letters",
 "k": "object",
 "s": [
@@ -68551,6 +69092,7 @@
 ]
 },
 "leaf insect (phylliidae)": {
+"d": "leaf insect (Phylliidae)",
 "g": "insect",
 "k": "life",
 "s": [
@@ -68619,6 +69161,7 @@
 "w": "Leatherback sea turtle"
 },
 "led display": {
+"d": "LED display",
 "g": "display",
 "k": "object",
 "s": [
@@ -68648,6 +69191,7 @@
 "x": 1
 },
 "legio ix hispana, the lost legion": {
+"d": "Legio IX Hispana, the Lost Legion",
 "g": "legio ix hispana, the lost legion",
 "k": "person",
 "s": [
@@ -68674,6 +69218,7 @@
 "x": 1
 },
 "leo (astrology)": {
+"d": "Leo (astrology)",
 "g": "leo",
 "k": "earth & sky",
 "s": [
@@ -68682,6 +69227,7 @@
 "w": "Leo (astrology)"
 },
 "leo constellation": {
+"d": "Leo constellation",
 "g": "constellation",
 "k": "earth & sky",
 "s": [
@@ -68691,6 +69237,7 @@
 "w": "Leo (constellation)"
 },
 "leo minor constellation": {
+"d": "Leo Minor constellation",
 "g": "constellation",
 "k": "earth & sky",
 "s": [
@@ -68699,6 +69246,7 @@
 "w": "Leo Minor"
 },
 "leonardo da vinci's armored fighting vehicle": {
+"d": "Leonardo da Vinci's armored fighting vehicle",
 "g": "vehicle",
 "k": "object",
 "s": [
@@ -68739,6 +69287,7 @@
 ]
 },
 "lernaean hydra": {
+"d": "Lernaean Hydra",
 "g": "hydra",
 "k": "mythology",
 "s": [
@@ -68759,6 +69308,7 @@
 "x": 1
 },
 "leutogi": {
+"d": "Leutogi",
 "g": "leutogi",
 "k": "mythology",
 "s": [
@@ -68767,6 +69317,7 @@
 "w": "Leutogi"
 },
 "leviathan": {
+"d": "Leviathan",
 "g": "leviathan",
 "k": "mythology",
 "s": [
@@ -68777,6 +69328,7 @@
 "w": "Leviathan"
 },
 "liath macha": {
+"d": "Liath Macha",
 "g": "liath macha",
 "k": "mythology",
 "s": [
@@ -68785,6 +69337,7 @@
 "w": "Liath Macha and Dub Sainglend"
 },
 "liesegang rings in onyx": {
+"d": "Liesegang rings in onyx",
 "g": "liesegang rings in onyx",
 "k": "earth & sky",
 "s": [
@@ -68883,6 +69436,7 @@
 "w": "Syringa"
 },
 "liliaceae bulb": {
+"d": "Liliaceae bulb",
 "g": "bulb",
 "k": "life",
 "s": [
@@ -68911,6 +69465,7 @@
 "w": "Nymphaeaceae"
 },
 "lindu (estonian goddess of birds)": {
+"d": "Lindu (Estonian goddess of birds)",
 "g": "lindu",
 "k": "mythology",
 "s": [
@@ -68942,6 +69497,7 @@
 "w": "Lion"
 },
 "lion and sun motif": {
+"d": "Lion and Sun motif",
 "g": "lion and sun motif",
 "k": "object",
 "s": [
@@ -68994,6 +69550,7 @@
 "w": "Lionhead rabbit"
 },
 "lithops": {
+"d": "Lithops",
 "g": "lithops",
 "k": "life",
 "s": [
@@ -69049,6 +69606,7 @@
 "w": "Lizard"
 },
 "llamrei": {
+"d": "Llamrei",
 "g": "llamrei",
 "k": "mythology",
 "s": [
@@ -69066,6 +69624,7 @@
 "w": "Loach catfish"
 },
 "loch ness monster": {
+"d": "Loch Ness Monster",
 "g": "monster",
 "k": "folklore",
 "s": [
@@ -69090,6 +69649,7 @@
 "w": "Locust"
 },
 "lolita fashion": {
+"d": "Lolita fashion",
 "g": "fashion",
 "k": "concept",
 "s": [
@@ -69099,6 +69659,7 @@
 "x": 1
 },
 "lonesome george": {
+"d": "Lonesome George",
 "g": "lonesome george",
 "k": "life",
 "s": [
@@ -69171,6 +69732,7 @@
 "w": "Longma"
 },
 "lono (hawaiian god of agriculture)": {
+"d": "Lono (Hawaiian god of agriculture)",
 "g": "lono",
 "i": 1,
 "k": "mythology",
@@ -69211,6 +69773,7 @@
 "x": 1
 },
 "lou carcolh (french folklore)": {
+"d": "Lou Carcolh (French folklore)",
 "g": "lou carcolh",
 "i": 1,
 "k": "folklore",
@@ -69247,6 +69810,7 @@
 ]
 },
 "louis xiv the sun king": {
+"d": "Louis XIV the Sun King",
 "g": "king",
 "k": "person",
 "s": [
@@ -69255,6 +69819,7 @@
 "x": 1
 },
 "lovecraftian abomination": {
+"d": "Lovecraftian abomination",
 "g": "science fiction & horror",
 "k": "media & art",
 "s": [
@@ -69263,6 +69828,7 @@
 "x": 1
 },
 "lovecraftian horror": {
+"d": "Lovecraftian horror",
 "g": "science fiction & horror",
 "k": "media & art",
 "s": [
@@ -69281,6 +69847,7 @@
 "w": "Lowland streaked tenrec"
 },
 "lucanus maculifemoratus": {
+"d": "Lucanus maculifemoratus",
 "g": "lucanus maculifemoratus",
 "k": "life",
 "s": [
@@ -69306,6 +69873,7 @@
 "w": "Lucha libre"
 },
 "lucifer the fallen angel": {
+"d": "Lucifer the fallen angel",
 "g": "angel",
 "k": "mythology",
 "s": [
@@ -69338,6 +69906,7 @@
 "w": "Lump of coal"
 },
 "lunala's bat": {
+"d": "Lunala's bat",
 "g": "bat",
 "k": "life",
 "s": [
@@ -69425,6 +69994,7 @@
 "w": "Lyre"
 },
 "maat": {
+"d": "Maat",
 "g": "maat",
 "k": "mythology",
 "s": [
@@ -69601,6 +70171,7 @@
 "w": "Magnetite"
 },
 "magritte's the rights of man": {
+"d": "Magritte's The Rights of Man",
 "g": "man",
 "k": "person",
 "s": [
@@ -69609,6 +70180,7 @@
 "x": 1
 },
 "mahina (hawaiian moon goddess)": {
+"d": "Mahina (Hawaiian moon goddess)",
 "g": "mahina",
 "k": "mythology",
 "s": [
@@ -69625,6 +70197,7 @@
 ]
 },
 "maine coon": {
+"d": "Maine Coon",
 "g": "longhair breed",
 "k": "life",
 "s": [
@@ -69633,6 +70206,7 @@
 "w": "Maine Coon"
 },
 "malayan tapir": {
+"d": "Malayan tapir",
 "g": "tapir",
 "k": "life",
 "s": [
@@ -69656,6 +70230,7 @@
 "x": 1
 },
 "maltese": {
+"d": "Maltese",
 "g": "companion dog",
 "k": "life",
 "s": [
@@ -69672,6 +70247,7 @@
 "w": "Mammoth"
 },
 "man in the moon": {
+"d": "Man in the Moon",
 "g": "moon",
 "k": "earth & sky",
 "s": [
@@ -69689,6 +70265,7 @@
 "x": 1
 },
 "manasa": {
+"d": "Manasa",
 "g": "manasa",
 "k": "mythology",
 "s": [
@@ -69750,6 +70327,7 @@
 "w": "Mangosteen"
 },
 "mangosteen (\"queen of fruit\")": {
+"d": "mangosteen (\"Queen of Fruit\")",
 "g": "mangosteen",
 "i": 1,
 "k": "life",
@@ -69842,6 +70420,7 @@
 "x": 1
 },
 "marid": {
+"d": "Marid",
 "g": "marid",
 "k": "folklore",
 "s": [
@@ -69949,6 +70528,7 @@
 "w": "Martlet"
 },
 "mas oyama's shaved eyebrow": {
+"d": "Mas Oyama's shaved eyebrow",
 "g": "mas oyama's shaved eyebrow",
 "k": "person",
 "s": [
@@ -69991,6 +70571,7 @@
 "w": "Masquerade ball"
 },
 "massospora fungus": {
+"d": "Massospora fungus",
 "g": "fungus",
 "k": "life",
 "s": [
@@ -70054,6 +70635,7 @@
 "w": "Match"
 },
 "matsya (fish avatar of vishnu)": {
+"d": "Matsya (fish avatar of Vishnu)",
 "g": "matsya",
 "k": "mythology",
 "s": [
@@ -70077,6 +70659,7 @@
 ]
 },
 "mauna kea": {
+"d": "Mauna Kea",
 "g": "mauna kea",
 "k": "earth & sky",
 "s": [
@@ -70165,6 +70748,7 @@
 ]
 },
 "medjed fish (ancient egyptian elephantfish)": {
+"d": "medjed fish (ancient Egyptian elephantfish)",
 "g": "fish",
 "k": "life",
 "s": [
@@ -70172,6 +70756,7 @@
 ]
 },
 "medusa": {
+"d": "Medusa",
 "g": "medusa",
 "k": "mythology",
 "s": [
@@ -70199,6 +70784,7 @@
 "w": "Megalith"
 },
 "meganeura": {
+"d": "Meganeura",
 "g": "meganeura",
 "k": "prehistoric",
 "s": [
@@ -70207,6 +70793,7 @@
 "w": "Meganeura"
 },
 "meganeura (griffinfly)": {
+"d": "Meganeura (griffinfly)",
 "g": "meganeura",
 "k": "prehistoric",
 "s": [
@@ -70224,6 +70811,7 @@
 "w": "Megaphone"
 },
 "megatherium": {
+"d": "Megatherium",
 "g": "megatherium",
 "i": 1,
 "k": "prehistoric",
@@ -70233,6 +70821,7 @@
 "w": "Megatherium"
 },
 "meiolania": {
+"d": "Meiolania",
 "g": "meiolania",
 "k": "prehistoric",
 "s": [
@@ -70241,6 +70830,7 @@
 "w": "Meiolania"
 },
 "men in black": {
+"d": "Men in Black",
 "g": "screen character",
 "k": "media & art",
 "s": [
@@ -70250,6 +70840,7 @@
 "x": 1
 },
 "menehune": {
+"d": "Menehune",
 "g": "menehune",
 "k": "mythology",
 "s": [
@@ -70291,6 +70882,7 @@
 "w": "Meringue"
 },
 "merlion": {
+"d": "Merlion",
 "g": "merlion",
 "k": "mythology",
 "s": [
@@ -70312,6 +70904,7 @@
 "w": "Mermaid"
 },
 "mesoamerican feathered serpent": {
+"d": "Mesoamerican feathered serpent",
 "g": "serpent",
 "k": "mythology",
 "s": [
@@ -70319,6 +70912,7 @@
 ]
 },
 "mesozoic fossil fuel": {
+"d": "Mesozoic fossil fuel",
 "g": "mesozoic fossil fuel",
 "k": "concept",
 "s": [
@@ -70376,6 +70970,7 @@
 "w": "Metronome"
 },
 "mexican flag colours": {
+"d": "Mexican flag colours",
 "g": "mexican flag colours",
 "k": "object",
 "s": [
@@ -70383,6 +70978,7 @@
 ]
 },
 "mexican folk dancer": {
+"d": "Mexican folk dancer",
 "g": "dancer",
 "k": "person",
 "s": [
@@ -70392,6 +70988,7 @@
 "x": 1
 },
 "mexican free-tailed bat": {
+"d": "Mexican free-tailed bat",
 "g": "bat",
 "k": "life",
 "s": [
@@ -70400,6 +70997,7 @@
 "w": "Mexican free-tailed bat"
 },
 "mexican jumping bean": {
+"d": "Mexican jumping bean",
 "g": "mexican jumping bean",
 "k": "life",
 "s": [
@@ -70409,6 +71007,7 @@
 "w": "Mexican jumping bean"
 },
 "mexican marigolds": {
+"d": "Mexican marigolds",
 "g": "mexican marigolds",
 "k": "life",
 "s": [
@@ -70427,6 +71026,7 @@
 "x": 1
 },
 "microgale tenrec": {
+"d": "Microgale tenrec",
 "g": "tenrec",
 "i": 1,
 "k": "life",
@@ -70435,6 +71035,7 @@
 ]
 },
 "microraptor": {
+"d": "Microraptor",
 "g": "microraptor",
 "k": "prehistoric",
 "s": [
@@ -70560,6 +71161,7 @@
 "w": "Cultural depictions of turtles"
 },
 "minogame (japanese legend)": {
+"d": "minogame (Japanese legend)",
 "g": "mythic turtle",
 "k": "life",
 "s": [
@@ -70634,6 +71236,7 @@
 "w": "Moʻo"
 },
 "mo'o (hawaiian lizard goddess)": {
+"d": "mo'o (Hawaiian lizard goddess)",
 "g": "mo'o",
 "k": "folklore",
 "s": [
@@ -70642,6 +71245,7 @@
 "w": "Moʻo"
 },
 "mo'o (hawaiian shapeshifting dragon)": {
+"d": "Mo'o (Hawaiian shapeshifting dragon)",
 "g": "mo'o",
 "k": "folklore",
 "s": [
@@ -70660,6 +71264,7 @@
 "w": "Moa"
 },
 "moai statue of easter island": {
+"d": "moai statue of Easter Island",
 "g": "moai statue of easter island",
 "k": "media & art",
 "s": [
@@ -70668,6 +71273,7 @@
 ]
 },
 "mobula flying ray": {
+"d": "Mobula flying ray",
 "g": "ray",
 "i": 1,
 "k": "life",
@@ -70707,6 +71313,7 @@
 "w": "Mohawk hairstyle"
 },
 "mokele-mbembe": {
+"d": "Mokele-mbembe",
 "g": "mokele-mbembe",
 "k": "folklore",
 "s": [
@@ -70716,6 +71323,7 @@
 "w": "Mokele-mbembe"
 },
 "mokumokuren (many-eyed yokai)": {
+"d": "Mokumokuren (many-eyed yokai)",
 "g": "mokumokuren",
 "i": 1,
 "k": "folklore",
@@ -70761,6 +71369,7 @@
 "x": 1
 },
 "mollete de antequera": {
+"d": "mollete de Antequera",
 "g": "mollete de antequera",
 "i": 1,
 "k": "food",
@@ -70785,6 +71394,7 @@
 ]
 },
 "momotaro": {
+"d": "Momotaro",
 "g": "folktale",
 "i": 1,
 "k": "folklore",
@@ -70809,6 +71419,7 @@
 ]
 },
 "mongolian death worm": {
+"d": "Mongolian death worm",
 "g": "worm",
 "k": "life",
 "s": [
@@ -70818,6 +71429,7 @@
 "w": "Mongolian death worm"
 },
 "mongolian laminar armour": {
+"d": "Mongolian laminar armour",
 "g": "armour",
 "k": "object",
 "s": [
@@ -70825,6 +71437,7 @@
 ]
 },
 "mongolian spots": {
+"d": "Mongolian spots",
 "g": "mongolian spots",
 "k": "concept",
 "s": [
@@ -70853,6 +71466,7 @@
 "x": 1
 },
 "monk parakeet (invasive in madrid)": {
+"d": "monk parakeet (invasive in Madrid)",
 "g": "monk parakeet",
 "k": "life",
 "s": [
@@ -70875,6 +71489,7 @@
 "w": "Monkey"
 },
 "monkey kung fu": {
+"d": "Monkey Kung Fu",
 "g": "monkey kung fu",
 "i": 1,
 "k": "life",
@@ -70885,6 +71500,7 @@
 "w": "Monkey Kung Fu"
 },
 "monoceros constellation": {
+"d": "Monoceros constellation",
 "g": "constellation",
 "k": "earth & sky",
 "s": [
@@ -70911,6 +71527,7 @@
 "w": "Monowheel"
 },
 "monty python giant-cat sketch": {
+"d": "Monty Python giant-cat sketch",
 "g": "monty python giant-cat sketch",
 "k": "media & art",
 "s": [
@@ -70935,6 +71552,7 @@
 "w": "Moon moth"
 },
 "moon rabbit": {
+"d": "Moon rabbit",
 "g": "rabbit",
 "k": "life",
 "s": [
@@ -70963,6 +71581,7 @@
 "w": "Moose"
 },
 "morana (slavic winter goddess)": {
+"d": "Morana (Slavic winter goddess)",
 "g": "morana",
 "i": 1,
 "k": "mythology",
@@ -70972,6 +71591,7 @@
 "w": "Morana (goddess)"
 },
 "moravian star tree-topper": {
+"d": "Moravian star tree-topper",
 "g": "moravian star tree-topper",
 "k": "object",
 "s": [
@@ -70988,6 +71608,7 @@
 "w": "Moray eel"
 },
 "morchella": {
+"d": "Morchella",
 "g": "morchella",
 "i": 1,
 "k": "life",
@@ -70997,6 +71618,7 @@
 "w": "Morchella"
 },
 "morinji-no-okama / narigama (possessed kettle yokai)": {
+"d": "Morinji-no-okama / Narigama (possessed kettle yokai)",
 "g": "morinji-no-okama / narigama",
 "k": "folklore",
 "s": [
@@ -71012,6 +71634,7 @@
 "w": "Morning Star"
 },
 "morpheus": {
+"d": "Morpheus",
 "g": "morpheus",
 "k": "mythology",
 "s": [
@@ -71104,6 +71727,7 @@
 "w": "Mother"
 },
 "mothman": {
+"d": "Mothman",
 "g": "mothman",
 "k": "folklore",
 "s": [
@@ -71136,6 +71760,7 @@
 "w": "Motorcycle accessories"
 },
 "moulted american cockroach": {
+"d": "moulted American cockroach",
 "g": "cockroach",
 "k": "life",
 "s": [
@@ -71236,6 +71861,7 @@
 "x": 1
 },
 "muay thai": {
+"d": "Muay Thai",
 "g": "muay thai",
 "k": "person",
 "s": [
@@ -71245,6 +71871,7 @@
 "x": 1
 },
 "muay thai fighter": {
+"d": "Muay Thai fighter",
 "g": "fighter",
 "k": "person",
 "s": [
@@ -71290,6 +71917,7 @@
 ]
 },
 "multi-armed hindu deities": {
+"d": "multi-armed Hindu deities",
 "g": "deities",
 "i": 1,
 "k": "mythology",
@@ -71421,6 +72049,7 @@
 "w": "Mustelidae"
 },
 "mutated blue american lobster": {
+"d": "mutated blue American lobster",
 "g": "lobster",
 "i": 1,
 "k": "life",
@@ -71447,6 +72076,7 @@
 "w": "Mute swan"
 },
 "mwanza flat-headed rock agama": {
+"d": "Mwanza flat-headed rock agama",
 "g": "agama",
 "k": "life",
 "s": [
@@ -71455,6 +72085,7 @@
 "w": "Mwanza flat-headed rock agama"
 },
 "mycena bioluminescent mushroom": {
+"d": "Mycena bioluminescent mushroom",
 "g": "mushroom",
 "k": "life",
 "s": [
@@ -71503,6 +72134,7 @@
 "w": "Clairvoyance"
 },
 "myxozoa parasites": {
+"d": "Myxozoa parasites",
 "g": "myxozoa parasites",
 "k": "life",
 "s": [
@@ -71519,6 +72151,7 @@
 "w": "Naked mole-rat"
 },
 "namahage": {
+"d": "Namahage",
 "g": "namahage",
 "k": "folklore",
 "s": [
@@ -71544,6 +72177,7 @@
 ]
 },
 "namazu (earthquake catfish)": {
+"d": "Namazu (earthquake catfish)",
 "g": "catfish",
 "i": 1,
 "k": "life",
@@ -71564,6 +72198,7 @@
 "x": 1
 },
 "napoleon bonaparte": {
+"d": "Napoleon Bonaparte",
 "g": "napoleon bonaparte",
 "k": "person",
 "s": [
@@ -71584,6 +72219,7 @@
 "w": "Narwhal"
 },
 "nasu-baba (purple yokai witch)": {
+"d": "Nasu-baba (purple yokai witch)",
 "g": "nasu-baba",
 "k": "folklore",
 "s": [
@@ -71591,6 +72227,7 @@
 ]
 },
 "native american head plume": {
+"d": "Native American head plume",
 "g": "native american head plume",
 "k": "object",
 "s": [
@@ -71598,6 +72235,7 @@
 ]
 },
 "native american totem pole": {
+"d": "Native American totem pole",
 "g": "pole",
 "k": "object",
 "s": [
@@ -71605,6 +72243,7 @@
 ]
 },
 "native american war bonnet": {
+"d": "Native American war bonnet",
 "g": "bonnet",
 "k": "object",
 "s": [
@@ -71646,6 +72285,7 @@
 "w": "Naval mine"
 },
 "naveta d'es tudons tomb": {
+"d": "Naveta d'Es Tudons tomb",
 "g": "naveta d'es tudons tomb",
 "k": "earth & sky",
 "s": [
@@ -71653,6 +72293,7 @@
 ]
 },
 "nazca lines": {
+"d": "Nazca Lines",
 "g": "nazca lines",
 "k": "media & art",
 "s": [
@@ -71661,6 +72302,7 @@
 "w": "Nazca lines"
 },
 "nazca lines (bird figures)": {
+"d": "Nazca lines (bird figures)",
 "g": "nazca lines",
 "k": "media & art",
 "s": [
@@ -71709,6 +72351,7 @@
 "w": "Needle"
 },
 "nefertem": {
+"d": "Nefertem",
 "g": "nefertem",
 "k": "mythology",
 "s": [
@@ -71717,6 +72360,7 @@
 "w": "Nefertem"
 },
 "nefertiti's headdress": {
+"d": "Nefertiti's headdress",
 "g": "headdress",
 "k": "object",
 "s": [
@@ -71776,6 +72420,7 @@
 "x": 1
 },
 "nepenthes": {
+"d": "Nepenthes",
 "g": "nepenthes",
 "k": "life",
 "s": [
@@ -71784,6 +72429,7 @@
 "w": "Nepenthes"
 },
 "nepenthes lower pitcher": {
+"d": "Nepenthes lower pitcher",
 "g": "nepenthes lower pitcher",
 "i": 1,
 "k": "life",
@@ -71800,6 +72446,7 @@
 "x": 1
 },
 "nereid": {
+"d": "Nereid",
 "g": "nereid",
 "k": "mythology",
 "s": [
@@ -71808,6 +72455,7 @@
 "w": "Nereids"
 },
 "nerice bidentata moth": {
+"d": "Nerice bidentata moth",
 "g": "moth",
 "k": "life",
 "s": [
@@ -71841,6 +72489,7 @@
 "w": "Neutron star"
 },
 "new caledonian crow's tool use": {
+"d": "New Caledonian crow's tool use",
 "g": "tool use",
 "k": "concept",
 "s": [
@@ -71849,6 +72498,7 @@
 "x": 1
 },
 "new mexico whiptail": {
+"d": "New Mexico whiptail",
 "g": "new mexico whiptail",
 "k": "life",
 "s": [
@@ -71865,6 +72515,7 @@
 "w": "New moon"
 },
 "new world leaf-nosed bat": {
+"d": "New World leaf-nosed bat",
 "g": "bat",
 "k": "life",
 "s": [
@@ -71872,6 +72523,7 @@
 ]
 },
 "new world monkey": {
+"d": "New World monkey",
 "g": "monkey",
 "k": "life",
 "s": [
@@ -71881,6 +72533,7 @@
 "w": "New World monkey"
 },
 "new world porcupine": {
+"d": "New World porcupine",
 "g": "porcupine",
 "k": "life",
 "s": [
@@ -71889,6 +72542,7 @@
 "w": "New World porcupine"
 },
 "newfoundland dog": {
+"d": "Newfoundland dog",
 "g": "guardian dog",
 "k": "life",
 "s": [
@@ -71904,6 +72558,7 @@
 ]
 },
 "newton's apple": {
+"d": "Newton's apple",
 "g": "apple",
 "k": "life",
 "s": [
@@ -71912,6 +72567,7 @@
 "w": "Newton's apple"
 },
 "nezha": {
+"d": "Nezha",
 "g": "nezha",
 "k": "mythology",
 "s": [
@@ -71920,6 +72576,7 @@
 "w": "Nezha"
 },
 "nidhoggr": {
+"d": "Nidhoggr",
 "g": "nidhoggr",
 "k": "mythology",
 "s": [
@@ -71945,6 +72602,7 @@
 "w": "Nightlight"
 },
 "nightmarchers": {
+"d": "Nightmarchers",
 "g": "nightmarchers",
 "k": "folklore",
 "s": [
@@ -71953,6 +72611,7 @@
 "w": "Nightmarchers"
 },
 "nightmarchers (hawaiian ghost procession)": {
+"d": "Nightmarchers (Hawaiian ghost procession)",
 "g": "nightmarchers",
 "k": "folklore",
 "s": [
@@ -71961,6 +72620,7 @@
 "w": "Nightmarchers"
 },
 "nightmarchers (hawaiian legend)": {
+"d": "Nightmarchers (Hawaiian legend)",
 "g": "nightmarchers",
 "k": "folklore",
 "s": [
@@ -71993,6 +72653,7 @@
 "w": "Sushi"
 },
 "nike and victoria (victory goddesses)": {
+"d": "Nike and Victoria (victory goddesses)",
 "g": "nike and victoria",
 "k": "mythology",
 "s": [
@@ -72000,6 +72661,7 @@
 ]
 },
 "nile crocodile": {
+"d": "Nile crocodile",
 "g": "crocodile",
 "k": "life",
 "s": [
@@ -72019,6 +72681,7 @@
 "w": "Nimravidae"
 },
 "ningen (antarctic cryptid)": {
+"d": "Ningen (Antarctic cryptid)",
 "g": "ningen",
 "i": 1,
 "k": "folklore",
@@ -72093,6 +72756,7 @@
 ]
 },
 "noh and kyogen masks": {
+"d": "Noh and Kyogen masks",
 "g": "noh and kyogen masks",
 "k": "media & art",
 "s": [
@@ -72100,6 +72764,7 @@
 ]
 },
 "nordic or viking woman": {
+"d": "Nordic or Viking woman",
 "g": "woman",
 "k": "person",
 "s": [
@@ -72108,6 +72773,7 @@
 "x": 1
 },
 "north atlantic right whale": {
+"d": "North Atlantic right whale",
 "g": "whale",
 "k": "life",
 "s": [
@@ -72142,6 +72808,7 @@
 "w": "Northern pike"
 },
 "norway lemming": {
+"d": "Norway lemming",
 "g": "norway lemming",
 "k": "life",
 "s": [
@@ -72150,6 +72817,7 @@
 "w": "Norway lemming"
 },
 "norwegian forest cat": {
+"d": "Norwegian Forest cat",
 "g": "longhair breed",
 "k": "life",
 "s": [
@@ -72174,6 +72842,7 @@
 ]
 },
 "notus (south wind)": {
+"d": "Notus (south wind)",
 "g": "notus",
 "k": "mythology",
 "s": [
@@ -72217,6 +72886,7 @@
 "w": "Nudibranch"
 },
 "nue": {
+"d": "Nue",
 "g": "nue",
 "k": "mythology",
 "s": [
@@ -72241,6 +72911,7 @@
 "w": "Rokurokubi"
 },
 "nuppeppo (blob yokai)": {
+"d": "Nuppeppo (blob yokai)",
 "g": "nuppeppo",
 "k": "folklore",
 "s": [
@@ -72249,6 +72920,7 @@
 "w": "Nuppeppō"
 },
 "nurarihyon": {
+"d": "Nurarihyon",
 "g": "nurarihyon",
 "k": "folklore",
 "s": [
@@ -72257,6 +72929,7 @@
 "w": "Nurarihyon"
 },
 "nurarihyon (jellyfish yokai)": {
+"d": "Nurarihyon (jellyfish yokai)",
 "g": "nurarihyon",
 "k": "folklore",
 "s": [
@@ -72265,6 +72938,7 @@
 "w": "Nurarihyon"
 },
 "nurikabe (wall yokai)": {
+"d": "Nurikabe (wall yokai)",
 "g": "nurikabe",
 "i": 1,
 "k": "folklore",
@@ -72323,6 +72997,7 @@
 "w": "Oarfish"
 },
 "oboroguruma (haunted ox-cart)": {
+"d": "Oboroguruma (haunted ox-cart)",
 "g": "oboroguruma",
 "k": "folklore",
 "s": [
@@ -72384,6 +73059,7 @@
 "x": 1
 },
 "odette's costume from swan lake": {
+"d": "Odette's costume from Swan Lake",
 "g": "lake",
 "k": "earth & sky",
 "s": [
@@ -72490,6 +73166,7 @@
 "x": 1
 },
 "old english black horse": {
+"d": "Old English Black horse",
 "g": "horse",
 "k": "life",
 "s": [
@@ -72532,6 +73209,7 @@
 "w": "Olm"
 },
 "omizunu and the kunibiki myth": {
+"d": "Omizunu and the Kunibiki myth",
 "g": "omizunu and the kunibiki myth",
 "k": "mythology",
 "s": [
@@ -72539,6 +73217,7 @@
 ]
 },
 "omukade": {
+"d": "Omukade",
 "g": "centipede",
 "i": 1,
 "k": "life",
@@ -72547,6 +73226,7 @@
 ]
 },
 "omukade (giant centipede)": {
+"d": "Omukade (giant centipede)",
 "g": "centipede",
 "i": 1,
 "k": "life",
@@ -72642,6 +73322,7 @@
 ]
 },
 "onikenbai (devil's sword dance)": {
+"d": "Onikenbai (Devil's Sword Dance)",
 "g": "onikenbai",
 "k": "concept",
 "s": [
@@ -72668,6 +73349,7 @@
 "w": "Onion"
 },
 "onna-men (sorrowful female noh mask)": {
+"d": "onna-men (sorrowful female Noh mask)",
 "g": "onna-men",
 "k": "media & art",
 "s": [
@@ -72701,6 +73383,7 @@
 "x": 1
 },
 "opera diva (brunhilde)": {
+"d": "opera diva (Brunhilde)",
 "g": "opera diva",
 "i": 1,
 "k": "person",
@@ -72845,6 +73528,7 @@
 "w": "Oriental Shorthair"
 },
 "oriental stork": {
+"d": "Oriental stork",
 "g": "stork",
 "k": "life",
 "s": [
@@ -72869,6 +73553,7 @@
 "w": "Origami"
 },
 "orion and lepus constellations": {
+"d": "Orion and Lepus constellations",
 "g": "orion and lepus constellations",
 "i": 1,
 "k": "earth & sky",
@@ -72894,6 +73579,7 @@
 ]
 },
 "orphic egg and phanes": {
+"d": "Orphic Egg and Phanes",
 "g": "egg",
 "k": "object",
 "s": [
@@ -72908,6 +73594,7 @@
 ]
 },
 "osborne bull": {
+"d": "Osborne bull",
 "g": "bull",
 "k": "life",
 "s": [
@@ -72960,6 +73647,7 @@
 "w": "Ouni"
 },
 "ouranosaurus": {
+"d": "Ouranosaurus",
 "g": "ouranosaurus",
 "k": "prehistoric",
 "s": [
@@ -72969,6 +73657,7 @@
 "w": "Ouranosaurus"
 },
 "ourapteryx moth": {
+"d": "Ourapteryx moth",
 "g": "moth",
 "k": "life",
 "s": [
@@ -73015,6 +73704,7 @@
 ]
 },
 "oviraptor": {
+"d": "Oviraptor",
 "g": "oviraptor",
 "k": "prehistoric",
 "s": [
@@ -73064,6 +73754,7 @@
 "w": "Pachycephalosauria"
 },
 "pachycephalosaurus": {
+"d": "Pachycephalosaurus",
 "g": "pachycephalosaurus",
 "i": 1,
 "k": "prehistoric",
@@ -73075,6 +73766,7 @@
 "w": "Pachycephalosaurus"
 },
 "pacific razor clam": {
+"d": "Pacific razor clam",
 "g": "clam",
 "k": "life",
 "s": [
@@ -73083,6 +73775,7 @@
 "w": "Pacific razor clam"
 },
 "pacific sardine": {
+"d": "Pacific sardine",
 "g": "pacific sardine",
 "k": "life",
 "s": [
@@ -73106,6 +73799,7 @@
 ]
 },
 "padron pepper": {
+"d": "Padron pepper",
 "g": "pepper",
 "k": "life",
 "s": [
@@ -73145,6 +73839,7 @@
 ]
 },
 "pairan alien from warning from space (1956)": {
+"d": "Pairan alien from Warning from Space (1956)",
 "g": "warning from space (1956 film)",
 "k": "media & art",
 "s": [
@@ -73188,6 +73883,7 @@
 "w": "Chimera (paleontology)"
 },
 "paleozoic giant insects": {
+"d": "Paleozoic giant insects",
 "g": "paleozoic giant insects",
 "k": "prehistoric",
 "s": [
@@ -73210,6 +73906,7 @@
 ]
 },
 "pan": {
+"d": "Pan",
 "g": "pan",
 "k": "mythology",
 "s": [
@@ -73219,6 +73916,7 @@
 "w": "Pan"
 },
 "pan (greek god)": {
+"d": "Pan (Greek god)",
 "g": "pan",
 "k": "mythology",
 "s": [
@@ -73242,6 +73940,7 @@
 ]
 },
 "pando aspen grove": {
+"d": "Pando aspen grove",
 "g": "grove",
 "k": "life",
 "s": [
@@ -73321,6 +74020,7 @@
 "x": 1
 },
 "papilio dardanus and its many morphs": {
+"d": "Papilio dardanus and its many morphs",
 "g": "papilio dardanus and its many morphs",
 "k": "life",
 "s": [
@@ -73336,6 +74036,7 @@
 "w": "Parabolic antenna"
 },
 "parasaurolophus": {
+"d": "Parasaurolophus",
 "g": "parasaurolophus",
 "k": "prehistoric",
 "s": [
@@ -73406,6 +74107,7 @@
 "w": "Passerine"
 },
 "passionflower (passiflora caerulea)": {
+"d": "passionflower (Passiflora caerulea)",
 "g": "passionflower",
 "i": 1,
 "k": "life",
@@ -73447,6 +74149,7 @@
 "x": 1
 },
 "patufet": {
+"d": "Patufet",
 "g": "patufet",
 "k": "folklore",
 "s": [
@@ -73455,6 +74158,7 @@
 "w": "Patufet"
 },
 "pe'a-pe'a-makawalu": {
+"d": "Pe'a-pe'a-makawalu",
 "g": "pe'a-pe'a-makawalu",
 "k": "mythology",
 "s": [
@@ -73525,6 +74229,7 @@
 "x": 1
 },
 "pegasus": {
+"d": "Pegasus",
 "g": "pegasus",
 "k": "mythology",
 "s": [
@@ -73533,6 +74238,7 @@
 "w": "Pegasus"
 },
 "pekin duck": {
+"d": "Pekin duck",
 "g": "duck",
 "k": "life",
 "s": [
@@ -73541,6 +74247,7 @@
 "w": "Pekin duck"
 },
 "pele (hawaiian volcano goddess)": {
+"d": "Pele (Hawaiian volcano goddess)",
 "g": "pele",
 "k": "mythology",
 "s": [
@@ -73549,6 +74256,7 @@
 "w": "Pelé"
 },
 "pele's curse": {
+"d": "Pele's Curse",
 "g": "pele's curse",
 "i": 1,
 "k": "folklore",
@@ -73558,6 +74266,7 @@
 "w": "Pele's Curse"
 },
 "pele's hair (volcanic glass)": {
+"d": "Pele's hair (volcanic glass)",
 "g": "hair",
 "k": "life",
 "s": [
@@ -73583,6 +74292,7 @@
 "w": "Pendulum clock"
 },
 "peng (giant chinese bird)": {
+"d": "Peng (giant Chinese bird)",
 "g": "peng",
 "k": "mythology",
 "s": [
@@ -73591,6 +74301,7 @@
 "w": "Peng"
 },
 "penghou": {
+"d": "Penghou",
 "g": "penghou",
 "k": "mythology",
 "s": [
@@ -73615,6 +74326,7 @@
 "w": "Pentagram"
 },
 "pere david's deer": {
+"d": "Pere David's deer",
 "g": "deer",
 "k": "life",
 "s": [
@@ -73658,6 +74370,7 @@
 "w": "Perpetual motion"
 },
 "persephone and asphodels": {
+"d": "Persephone and asphodels",
 "g": "persephone and asphodels",
 "k": "mythology",
 "s": [
@@ -73674,6 +74387,7 @@
 "w": "Grit (personality trait)"
 },
 "persian cat": {
+"d": "Persian cat",
 "g": "longhair breed",
 "k": "life",
 "s": [
@@ -73683,6 +74397,7 @@
 "w": "Persian cat"
 },
 "pesanta": {
+"d": "Pesanta",
 "g": "pesanta",
 "k": "folklore",
 "s": [
@@ -73692,6 +74407,7 @@
 "w": "Pesanta"
 },
 "peter pan collar": {
+"d": "Peter Pan collar",
 "g": "collar",
 "k": "object",
 "s": [
@@ -73709,6 +74425,7 @@
 "w": "Petrified wood"
 },
 "phaethon": {
+"d": "Phaethon",
 "g": "phaethon",
 "k": "mythology",
 "s": [
@@ -73768,6 +74485,7 @@
 "x": 1
 },
 "phyllorhiza punctata (invasive jellyfish)": {
+"d": "Phyllorhiza punctata (invasive jellyfish)",
 "g": "cnidarian",
 "k": "life",
 "s": [
@@ -73801,6 +74519,7 @@
 "w": "Pickaxe"
 },
 "pierrot": {
+"d": "Pierrot",
 "g": "pierrot",
 "k": "person",
 "s": [
@@ -73951,6 +74670,7 @@
 "x": 1
 },
 "pinocchio": {
+"d": "Pinocchio",
 "g": "literary character",
 "k": "media & art",
 "s": [
@@ -74040,6 +74760,7 @@
 ]
 },
 "placerias": {
+"d": "Placerias",
 "g": "placerias",
 "i": 1,
 "k": "prehistoric",
@@ -74138,6 +74859,7 @@
 "w": "Plate armour"
 },
 "plateosaurus": {
+"d": "Plateosaurus",
 "g": "plateosaurus",
 "k": "prehistoric",
 "s": [
@@ -74278,6 +75000,7 @@
 "x": 1
 },
 "poke ball": {
+"d": "Poke Ball",
 "g": "ball",
 "k": "object",
 "s": [
@@ -74288,6 +75011,7 @@
 "w": "Pokémon (video game series)"
 },
 "pokestar studios big monster films": {
+"d": "Pokestar Studios Big Monster films",
 "g": "pokestar studios big monster films",
 "k": "media & art",
 "s": [
@@ -74337,6 +75061,7 @@
 "w": "Polecat"
 },
 "poliahu (hawaiian snow goddess)": {
+"d": "Poliahu (Hawaiian snow goddess)",
 "g": "poliahu",
 "i": 1,
 "k": "mythology",
@@ -74381,6 +75106,7 @@
 ]
 },
 "polynesian rat": {
+"d": "Polynesian rat",
 "g": "rat",
 "k": "life",
 "s": [
@@ -74407,6 +75133,7 @@
 ]
 },
 "pomegranate (granada)": {
+"d": "pomegranate (Granada)",
 "g": "pomegranate",
 "k": "life",
 "s": [
@@ -74506,6 +75233,7 @@
 "w": "Portcullis"
 },
 "porthos of the three musketeers": {
+"d": "Porthos of The Three Musketeers",
 "g": "musketeers",
 "k": "person",
 "s": [
@@ -74514,6 +75242,7 @@
 "x": 1
 },
 "portuguese man o' war": {
+"d": "Portuguese man o' war",
 "g": "cnidarian",
 "k": "life",
 "s": [
@@ -74658,6 +75387,7 @@
 ]
 },
 "preseli bluestones": {
+"d": "Preseli bluestones",
 "g": "preseli bluestones",
 "k": "earth & sky",
 "s": [
@@ -74682,6 +75412,7 @@
 "w": "Opuntia"
 },
 "princess kaguya of the tale of the bamboo cutter": {
+"d": "Princess Kaguya of The Tale of the Bamboo Cutter",
 "g": "princess kaguya of the tale of the bamboo cutter",
 "k": "folklore",
 "s": [
@@ -74721,6 +75452,7 @@
 "w": "Proboscis monkey"
 },
 "procoptodon": {
+"d": "Procoptodon",
 "g": "procoptodon",
 "i": 1,
 "k": "prehistoric",
@@ -74739,6 +75471,7 @@
 "x": 1
 },
 "proganochelys": {
+"d": "Proganochelys",
 "g": "proganochelys",
 "k": "prehistoric",
 "s": [
@@ -74747,6 +75480,7 @@
 "w": "Proganochelys"
 },
 "project habakkuk pykrete carrier": {
+"d": "Project Habakkuk pykrete carrier",
 "g": "carrier",
 "k": "object",
 "s": [
@@ -74763,6 +75497,7 @@
 "w": "Propeller"
 },
 "prosopocoilus inclinatus": {
+"d": "Prosopocoilus inclinatus",
 "g": "prosopocoilus inclinatus",
 "k": "life",
 "s": [
@@ -74771,6 +75506,7 @@
 "w": "Prosopocoilus inclinatus"
 },
 "protarchaeopteryx": {
+"d": "Protarchaeopteryx",
 "g": "protarchaeopteryx",
 "k": "prehistoric",
 "s": [
@@ -74779,6 +75515,7 @@
 "w": "Protarchaeopteryx"
 },
 "protoceratops": {
+"d": "Protoceratops",
 "g": "protoceratops",
 "k": "prehistoric",
 "s": [
@@ -74787,6 +75524,7 @@
 "w": "Protoceratops"
 },
 "protostega": {
+"d": "Protostega",
 "g": "protostega",
 "i": 1,
 "k": "prehistoric",
@@ -74797,6 +75535,7 @@
 "w": "Protostega"
 },
 "pseudocarcinus gigas": {
+"d": "Pseudocarcinus gigas",
 "g": "crustacean",
 "k": "life",
 "s": [
@@ -74813,6 +75552,7 @@
 "x": 1
 },
 "psyche": {
+"d": "Psyche",
 "g": "psyche",
 "k": "mythology",
 "s": [
@@ -74866,6 +75606,7 @@
 "w": "Pterosaur"
 },
 "puente del dragon": {
+"d": "Puente del Dragon",
 "g": "dragon",
 "k": "mythology",
 "s": [
@@ -74900,6 +75641,7 @@
 "w": "Tetraodontidae"
 },
 "puka (surfing pikachu from the anime)": {
+"d": "Puka (surfing Pikachu from the anime)",
 "g": "puka",
 "k": "media & art",
 "s": [
@@ -74917,6 +75659,7 @@
 "w": "Pukao"
 },
 "pulgasari (korean iron-eating monster)": {
+"d": "Pulgasari (Korean iron-eating monster)",
 "g": "pulgasari",
 "k": "media & art",
 "s": [
@@ -75027,6 +75770,7 @@
 "w": "Pisaster ochraceus"
 },
 "puss in boots": {
+"d": "Puss in Boots",
 "g": "literary character",
 "k": "media & art",
 "s": [
@@ -75036,6 +75780,7 @@
 "x": 1
 },
 "puss in boots swashbuckler": {
+"d": "Puss in Boots swashbuckler",
 "g": "literary character",
 "k": "media & art",
 "s": [
@@ -75075,6 +75820,7 @@
 "w": "Tridactyloidea"
 },
 "pyramids of guimar": {
+"d": "Pyramids of Guimar",
 "g": "pyramids of guimar",
 "k": "earth & sky",
 "s": [
@@ -75083,6 +75829,7 @@
 "w": "Pyramids of Güímar"
 },
 "pyrenean desman": {
+"d": "Pyrenean desman",
 "g": "pyrenean desman",
 "k": "life",
 "s": [
@@ -75091,6 +75838,7 @@
 "w": "Pyrenean desman"
 },
 "pyrenean mastiff": {
+"d": "Pyrenean Mastiff",
 "g": "guardian dog",
 "k": "life",
 "s": [
@@ -75132,6 +75880,7 @@
 "w": "Qilin"
 },
 "qinling panda": {
+"d": "Qinling panda",
 "g": "panda",
 "k": "life",
 "s": [
@@ -75141,6 +75890,7 @@
 "w": "Qinling panda"
 },
 "qiongqi of the four perils": {
+"d": "Qiongqi of the Four Perils",
 "g": "perils",
 "k": "mythology",
 "s": [
@@ -75191,6 +75941,7 @@
 "w": "Queen bee"
 },
 "queen charlotte of mecklenburg-strelitz": {
+"d": "Queen Charlotte of Mecklenburg-Strelitz",
 "g": "queen charlotte of mecklenburg-strelitz",
 "k": "person",
 "s": [
@@ -75201,6 +75952,7 @@
 "x": 1
 },
 "queen elizabeth ii's corgis": {
+"d": "Queen Elizabeth II's corgis",
 "g": "queen elizabeth ii's corgis",
 "k": "life",
 "s": [
@@ -75252,6 +76004,7 @@
 "w": "Quetzal"
 },
 "quetzalcoatl": {
+"d": "Quetzalcoatl",
 "g": "quetzalcoatl",
 "k": "mythology",
 "s": [
@@ -75269,6 +76022,7 @@
 "w": "Quicksand"
 },
 "quinkana": {
+"d": "Quinkana",
 "g": "quinkana",
 "i": 1,
 "k": "prehistoric",
@@ -75278,6 +76032,7 @@
 "w": "Quinkana"
 },
 "ra": {
+"d": "Ra",
 "g": "ra",
 "k": "mythology",
 "s": [
@@ -75373,6 +76128,7 @@
 "w": "Radome"
 },
 "rafflesia arnoldii": {
+"d": "Rafflesia arnoldii",
 "g": "rafflesia arnoldii",
 "i": 1,
 "k": "life",
@@ -75383,6 +76139,7 @@
 "w": "Rafflesia arnoldii"
 },
 "rafflesia bud": {
+"d": "Rafflesia bud",
 "g": "bud",
 "k": "life",
 "s": [
@@ -75390,6 +76147,7 @@
 ]
 },
 "rafflesia flower": {
+"d": "Rafflesia flower",
 "g": "rafflesia arnoldii",
 "k": "life",
 "s": [
@@ -75397,6 +76155,7 @@
 ]
 },
 "rafflesia hasseltii": {
+"d": "Rafflesia hasseltii",
 "g": "rafflesia hasseltii",
 "i": 1,
 "k": "life",
@@ -75407,6 +76166,7 @@
 "w": "Rafflesia hasseltii"
 },
 "rafflesia keithii": {
+"d": "Rafflesia keithii",
 "g": "rafflesia keithii",
 "i": 1,
 "k": "life",
@@ -75416,6 +76176,7 @@
 "w": "Rafflesia keithii"
 },
 "raijin (thunder god)": {
+"d": "Raijin (thunder god)",
 "g": "raijin",
 "k": "mythology",
 "s": [
@@ -75424,6 +76185,7 @@
 "w": "Raijin"
 },
 "raijin and his taiko drums": {
+"d": "Raijin and his taiko drums",
 "g": "raijin",
 "k": "mythology",
 "s": [
@@ -75478,6 +76240,7 @@
 "w": "Rainbow"
 },
 "rainbow (roygbiv)": {
+"d": "rainbow (ROYGBIV)",
 "g": "rainbow",
 "k": "earth & sky",
 "s": [
@@ -75518,6 +76281,7 @@
 "w": "Ramidreju"
 },
 "rapunzel": {
+"d": "Rapunzel",
 "g": "rapunzel",
 "k": "folklore",
 "s": [
@@ -75588,6 +76352,7 @@
 "x": 1
 },
 "recombinant dna / gene splicing": {
+"d": "recombinant DNA / gene splicing",
 "g": "recombinant dna / gene splicing",
 "i": 1,
 "k": "concept",
@@ -75683,6 +76448,7 @@
 "w": "Trillium erectum"
 },
 "red, white and blue of the us flag": {
+"d": "red, white and blue of the US flag",
 "g": "red, white and blue of the us flag",
 "k": "object",
 "s": [
@@ -75702,6 +76468,7 @@
 "w": "Red-bellied piranha"
 },
 "red-footed tortoise (chelonoidis carbonarius)": {
+"d": "red-footed tortoise (Chelonoidis carbonarius)",
 "g": "tortoise",
 "k": "life",
 "s": [
@@ -75774,6 +76541,7 @@
 "w": "Refrigerator"
 },
 "rei-kyo (japanese bronze mirror)": {
+"d": "rei-kyo (Japanese bronze mirror)",
 "g": "rei-kyo",
 "i": 1,
 "k": "folklore",
@@ -75800,6 +76568,7 @@
 "w": "Remora"
 },
 "renaissance aristocratic dress": {
+"d": "Renaissance aristocratic dress",
 "g": "dress",
 "k": "object",
 "s": [
@@ -75952,6 +76721,7 @@
 "w": "Pleuronectidae"
 },
 "rikki-tikki-tavi": {
+"d": "Rikki-Tikki-Tavi",
 "g": "literary character",
 "k": "media & art",
 "s": [
@@ -76044,6 +76814,7 @@
 "w": "Roadrunner"
 },
 "robin hood": {
+"d": "Robin Hood",
 "g": "hood",
 "k": "object",
 "s": [
@@ -76084,6 +76855,7 @@
 "w": "Robotic vacuum cleaner"
 },
 "roc": {
+"d": "Roc",
 "g": "roc",
 "k": "mythology",
 "s": [
@@ -76197,6 +76969,7 @@
 "w": "Rockhopper penguin"
 },
 "rococo fashion": {
+"d": "Rococo fashion",
 "g": "fashion",
 "k": "concept",
 "s": [
@@ -76242,6 +77015,7 @@
 "w": "Roly-poly toy"
 },
 "roman cestus": {
+"d": "Roman cestus",
 "g": "roman cestus",
 "k": "object",
 "s": [
@@ -76249,6 +77023,7 @@
 ]
 },
 "roman goose": {
+"d": "Roman goose",
 "g": "roman goose",
 "i": 1,
 "k": "life",
@@ -76258,6 +77033,7 @@
 "w": "Roman goose"
 },
 "romulus and remus": {
+"d": "Romulus and Remus",
 "g": "romulus and remus",
 "k": "mythology",
 "s": [
@@ -76342,6 +77118,7 @@
 "w": "Royal penguin"
 },
 "rpg knight class": {
+"d": "RPG knight class",
 "g": "class",
 "k": "media & art",
 "s": [
@@ -76350,6 +77127,7 @@
 "x": 1
 },
 "rpg mage class": {
+"d": "RPG mage class",
 "g": "class",
 "k": "media & art",
 "s": [
@@ -76358,6 +77136,7 @@
 "x": 1
 },
 "rpg medic/healer": {
+"d": "RPG medic/healer",
 "g": "rpg medic/healer",
 "k": "media & art",
 "s": [
@@ -76366,6 +77145,7 @@
 "x": 1
 },
 "rpg mimic": {
+"d": "RPG mimic",
 "g": "rpg mimic",
 "k": "media & art",
 "s": [
@@ -76377,6 +77157,7 @@
 "x": 1
 },
 "rpg mimic treasure chest": {
+"d": "RPG mimic treasure chest",
 "g": "rpg mimic",
 "i": 1,
 "k": "media & art",
@@ -76386,6 +77167,7 @@
 "x": 1
 },
 "rpg rogue class": {
+"d": "RPG rogue class",
 "g": "class",
 "k": "media & art",
 "s": [
@@ -76394,6 +77176,7 @@
 "x": 1
 },
 "rpg stone ogre": {
+"d": "RPG stone ogre",
 "g": "ogre",
 "k": "folklore",
 "s": [
@@ -76491,6 +77274,7 @@
 "w": "Rust"
 },
 "ryugu-jo (dragon palace)": {
+"d": "Ryugu-jo (dragon palace)",
 "g": "ryugu-jo",
 "k": "mythology",
 "s": [
@@ -76499,6 +77283,7 @@
 "w": "Ryūgū-jō"
 },
 "ryujin (sea god)": {
+"d": "Ryujin (sea god)",
 "g": "ryujin",
 "k": "mythology",
 "s": [
@@ -76507,6 +77292,7 @@
 "w": "Ryūjin"
 },
 "ryujin (shinto sea god)": {
+"d": "Ryujin (Shinto sea god)",
 "g": "ryujin",
 "k": "mythology",
 "s": [
@@ -76515,6 +77301,7 @@
 "w": "Ryūjin"
 },
 "ryukyu spiny rat": {
+"d": "Ryukyu spiny rat",
 "g": "rat",
 "k": "life",
 "s": [
@@ -76523,6 +77310,7 @@
 "w": "Ryukyu spiny rat"
 },
 "saci (brazilian folklore)": {
+"d": "Saci (Brazilian folklore)",
 "g": "saci",
 "k": "folklore",
 "s": [
@@ -76581,6 +77369,7 @@
 "w": "Saguaro"
 },
 "saharan silver ant": {
+"d": "Saharan silver ant",
 "g": "ant",
 "k": "life",
 "s": [
@@ -76589,6 +77378,7 @@
 "w": "Saharan silver ant"
 },
 "sakhalin taimen": {
+"d": "Sakhalin taimen",
 "g": "taimen",
 "k": "life",
 "s": [
@@ -76597,6 +77387,7 @@
 "w": "Sakhalin taimen"
 },
 "sakhalin taimen (\"phantom fish\")": {
+"d": "Sakhalin taimen (\"phantom fish\")",
 "g": "taimen",
 "k": "life",
 "s": [
@@ -76700,6 +77491,7 @@
 "x": 1
 },
 "samoan fire dancer": {
+"d": "Samoan fire dancer",
 "g": "dancer",
 "k": "person",
 "s": [
@@ -76708,6 +77500,7 @@
 "x": 1
 },
 "samson": {
+"d": "Samson",
 "g": "samson",
 "k": "mythology",
 "s": [
@@ -76805,6 +77598,7 @@
 ]
 },
 "sanpei hayashiya (rakugo performer)": {
+"d": "Sanpei Hayashiya (rakugo performer)",
 "g": "sanpei hayashiya",
 "i": 1,
 "k": "person",
@@ -76814,6 +77608,7 @@
 "w": "Hayashiya Sanpei I"
 },
 "santa claus": {
+"d": "Santa Claus",
 "g": "santa claus",
 "k": "folklore",
 "s": [
@@ -76823,6 +77618,7 @@
 "w": "Santa Claus"
 },
 "santa claus's reindeer": {
+"d": "Santa Claus's reindeer",
 "g": "reindeer",
 "k": "life",
 "s": [
@@ -76831,6 +77627,7 @@
 "w": "Santa Claus's reindeer"
 },
 "santa compana": {
+"d": "Santa Compana",
 "g": "santa compana",
 "i": 1,
 "k": "folklore",
@@ -76847,6 +77644,7 @@
 ]
 },
 "sarcophagus of akhenaten": {
+"d": "Sarcophagus of Akhenaten",
 "g": "sarcophagus of akhenaten",
 "k": "object",
 "s": [
@@ -76854,6 +77652,7 @@
 ]
 },
 "sargassum pneumatocysts": {
+"d": "Sargassum pneumatocysts",
 "g": "sargassum pneumatocysts",
 "i": 1,
 "k": "life",
@@ -76870,6 +77669,7 @@
 "w": "Sarpech"
 },
 "sasaki kojiro's turning swallow cut": {
+"d": "Sasaki Kojiro's Turning Swallow Cut",
 "g": "sasaki kojiro's turning swallow cut",
 "k": "person",
 "s": [
@@ -76919,6 +77719,7 @@
 "w": "Sauropoda"
 },
 "savannah cat": {
+"d": "Savannah cat",
 "g": "shorthair breed",
 "k": "life",
 "s": [
@@ -77004,6 +77805,7 @@
 "w": "Scaly-foot gastropod"
 },
 "scaphinotus and drilus snail-eating beetles": {
+"d": "Scaphinotus and Drilus snail-eating beetles",
 "g": "scaphinotus and drilus snail-eating beetles",
 "i": 1,
 "k": "life",
@@ -77080,6 +77882,7 @@
 "x": 1
 },
 "scolopendra cingulata": {
+"d": "Scolopendra cingulata",
 "g": "scolopendra cingulata",
 "k": "life",
 "s": [
@@ -77088,6 +77891,7 @@
 "w": "Scolopendra cingulata"
 },
 "scolopendra gigantea centipede": {
+"d": "Scolopendra gigantea centipede",
 "g": "centipede",
 "k": "life",
 "s": [
@@ -77115,6 +77919,7 @@
 "w": "Scorpion"
 },
 "scotch bonnet pepper": {
+"d": "Scotch bonnet pepper",
 "g": "pepper",
 "k": "life",
 "s": [
@@ -77123,6 +77928,7 @@
 "w": "Scotch bonnet"
 },
 "scotland's national animal": {
+"d": "Scotland's national animal",
 "g": "scotland's national animal",
 "k": "mythology",
 "s": [
@@ -77131,6 +77937,7 @@
 ]
 },
 "scottish fold cat": {
+"d": "Scottish Fold cat",
 "g": "unusual-feature breed",
 "k": "life",
 "s": [
@@ -77140,6 +77947,7 @@
 "w": "Scottish Fold"
 },
 "scottish terrier": {
+"d": "Scottish Terrier",
 "g": "terrier",
 "i": 1,
 "k": "life",
@@ -77210,6 +78018,7 @@
 "w": "Sea angel"
 },
 "sea angel (clione)": {
+"d": "sea angel (Clione)",
 "g": "angel",
 "k": "life",
 "s": [
@@ -77225,6 +78034,7 @@
 ]
 },
 "sea cucumber and its cuvierian tubules": {
+"d": "sea cucumber and its Cuvierian tubules",
 "g": "echinoderm & worm",
 "k": "life",
 "s": [
@@ -77354,6 +78164,7 @@
 "w": "Sea urchin"
 },
 "sea-monkeys": {
+"d": "Sea-Monkeys",
 "g": "sea-monkeys",
 "k": "object",
 "s": [
@@ -77447,6 +78258,7 @@
 ]
 },
 "selaginella lepidophylla": {
+"d": "Selaginella lepidophylla",
 "g": "selaginella lepidophylla",
 "k": "life",
 "s": [
@@ -77455,6 +78267,7 @@
 "w": "Selaginella lepidophylla"
 },
 "selene": {
+"d": "Selene",
 "g": "selene",
 "k": "mythology",
 "s": [
@@ -77507,6 +78320,7 @@
 "w": "Serpent"
 },
 "serpent in the shape of the letter z": {
+"d": "serpent in the shape of the letter Z",
 "g": "serpent in the shape of the letter z",
 "i": 1,
 "k": "mythology",
@@ -77533,6 +78347,7 @@
 "w": "Serpopard"
 },
 "serra (cartographic sea monster)": {
+"d": "Serra (cartographic sea monster)",
 "g": "serra",
 "k": "mythology",
 "s": [
@@ -77541,6 +78356,7 @@
 "w": "Serra"
 },
 "serrano bulldog": {
+"d": "Serrano Bulldog",
 "g": "guardian dog",
 "k": "life",
 "s": [
@@ -77559,6 +78375,7 @@
 "w": "Serval"
 },
 "set animal": {
+"d": "Set animal",
 "g": "set animal",
 "k": "mythology",
 "s": [
@@ -77576,6 +78393,7 @@
 "w": "Coccinella septempunctata"
 },
 "seville fair": {
+"d": "Seville Fair",
 "g": "seville fair",
 "k": "concept",
 "s": [
@@ -77596,6 +78414,7 @@
 "x": 1
 },
 "shachihoko": {
+"d": "Shachihoko",
 "g": "shachihoko",
 "k": "folklore",
 "s": [
@@ -77613,6 +78432,7 @@
 "w": "Shackle"
 },
 "shadhavar": {
+"d": "Shadhavar",
 "g": "shadhavar",
 "k": "mythology",
 "s": [
@@ -77646,6 +78466,7 @@
 "x": 1
 },
 "shakoki-dogu clay figurine": {
+"d": "Shakoki-dogu clay figurine",
 "g": "figurine",
 "k": "object",
 "s": [
@@ -77653,6 +78474,7 @@
 ]
 },
 "shakoki-dogu clay figurine (jomon period)": {
+"d": "Shakoki-dogu clay figurine (Jomon period)",
 "g": "figurine",
 "k": "object",
 "s": [
@@ -77661,6 +78483,7 @@
 "w": "Jōmon period"
 },
 "shamo chicken": {
+"d": "Shamo chicken",
 "g": "chicken",
 "k": "life",
 "s": [
@@ -77669,6 +78492,7 @@
 "w": "Shamo chickens"
 },
 "shaolin monk": {
+"d": "Shaolin monk",
 "g": "monk",
 "k": "person",
 "s": [
@@ -77712,6 +78536,7 @@
 "w": "Sheep"
 },
 "shenlong (rain dragon)": {
+"d": "Shenlong (rain dragon)",
 "g": "shenlong",
 "k": "mythology",
 "s": [
@@ -77720,6 +78545,7 @@
 "w": "Shenlong"
 },
 "shetland pony": {
+"d": "Shetland pony",
 "g": "shetland pony",
 "i": 1,
 "k": "life",
@@ -77729,6 +78555,7 @@
 "w": "Shetland pony"
 },
 "shiba inu": {
+"d": "Shiba Inu",
 "g": "spitz & asian dog",
 "k": "life",
 "s": [
@@ -77759,6 +78586,7 @@
 "w": "Shield"
 },
 "shih tzu": {
+"d": "Shih Tzu",
 "g": "companion dog",
 "k": "life",
 "s": [
@@ -77800,6 +78628,7 @@
 "w": "Shimenawa"
 },
 "shinto nature worship": {
+"d": "Shinto nature worship",
 "g": "shinto nature worship",
 "k": "concept",
 "s": [
@@ -77823,6 +78652,7 @@
 "w": "Ship's wheel"
 },
 "shire horse": {
+"d": "Shire horse",
 "g": "horse",
 "k": "life",
 "s": [
@@ -77867,6 +78697,7 @@
 "w": "Shishi-odoshi"
 },
 "shiva": {
+"d": "Shiva",
 "g": "shiva",
 "k": "mythology",
 "s": [
@@ -77939,6 +78770,7 @@
 "w": "Shut"
 },
 "siamese cat": {
+"d": "Siamese cat",
 "g": "shorthair breed",
 "k": "life",
 "s": [
@@ -77948,6 +78780,7 @@
 "w": "Siamese cat"
 },
 "siamese cat point colouration": {
+"d": "Siamese cat point colouration",
 "g": "colouration",
 "k": "concept",
 "s": [
@@ -77956,6 +78789,7 @@
 "x": 1
 },
 "siamese cat points": {
+"d": "Siamese cat points",
 "g": "siamese cat points",
 "k": "concept",
 "s": [
@@ -77964,6 +78798,7 @@
 "x": 1
 },
 "siamese fighting fish": {
+"d": "Siamese fighting fish",
 "g": "fish",
 "k": "life",
 "s": [
@@ -77973,6 +78808,7 @@
 "w": "Siamese fighting fish"
 },
 "siamese point colouration": {
+"d": "Siamese point colouration",
 "g": "colouration",
 "k": "concept",
 "s": [
@@ -77990,6 +78826,7 @@
 "w": "Crotalus cerastes"
 },
 "sierra luminous millipede": {
+"d": "Sierra luminous millipede",
 "g": "millipede",
 "k": "life",
 "s": [
@@ -78104,6 +78941,7 @@
 "w": "Silverfish"
 },
 "simurgh": {
+"d": "Simurgh",
 "g": "firebird",
 "i": 1,
 "k": "mythology",
@@ -78138,6 +78976,7 @@
 ]
 },
 "sinoceratops": {
+"d": "Sinoceratops",
 "g": "sinoceratops",
 "k": "prehistoric",
 "s": [
@@ -78146,6 +78985,7 @@
 "w": "Sinoceratops"
 },
 "sir lancelot": {
+"d": "Sir Lancelot",
 "g": "sir lancelot",
 "k": "mythology",
 "s": [
@@ -78163,6 +79003,7 @@
 "w": "Siren"
 },
 "sivatherium": {
+"d": "Sivatherium",
 "g": "sivatherium",
 "i": 1,
 "k": "prehistoric",
@@ -78189,6 +79030,7 @@
 "w": "Skin-walker"
 },
 "skinfaxi": {
+"d": "Skinfaxi",
 "g": "skinfaxi",
 "k": "mythology",
 "s": [
@@ -78214,6 +79056,7 @@
 "w": "Skirt"
 },
 "skoll": {
+"d": "Skoll",
 "g": "skoll",
 "k": "mythology",
 "s": [
@@ -78268,6 +79111,7 @@
 "w": "Skunk"
 },
 "slavic firebird": {
+"d": "Slavic firebird",
 "g": "firebird",
 "k": "mythology",
 "s": [
@@ -78286,6 +79130,7 @@
 "x": 1
 },
 "sleipnir": {
+"d": "Sleipnir",
 "g": "sleipnir",
 "k": "mythology",
 "s": [
@@ -78357,6 +79202,7 @@
 ]
 },
 "small indian mongoose": {
+"d": "small Indian mongoose",
 "g": "mongoose",
 "k": "life",
 "s": [
@@ -78374,6 +79220,7 @@
 "w": "Smiley"
 },
 "smilodon": {
+"d": "Smilodon",
 "g": "smilodon",
 "k": "prehistoric",
 "s": [
@@ -78382,6 +79229,7 @@
 "w": "Smilodon"
 },
 "smilodon (sabre-toothed cat)": {
+"d": "Smilodon (sabre-toothed cat)",
 "g": "smilodon",
 "k": "prehistoric",
 "s": [
@@ -78546,6 +79394,7 @@
 "w": "Snow leopard"
 },
 "snow white's magic mirror": {
+"d": "Snow White's magic mirror",
 "g": "mirror",
 "k": "object",
 "s": [
@@ -78643,6 +79492,7 @@
 "w": "Snub-nosed monkey"
 },
 "sock and buskin masks (thalia and melpomene)": {
+"d": "sock and buskin masks (Thalia and Melpomene)",
 "g": "sock and buskin masks",
 "k": "media & art",
 "s": [
@@ -78761,6 +79611,7 @@
 ]
 },
 "solgaleo's lion": {
+"d": "Solgaleo's lion",
 "g": "lion",
 "k": "life",
 "s": [
@@ -78809,6 +79660,7 @@
 ]
 },
 "southern california surfer": {
+"d": "Southern California surfer",
 "g": "southern california surfer",
 "k": "person",
 "s": [
@@ -78868,6 +79720,7 @@
 "w": "Spade"
 },
 "spaghetti western whistle": {
+"d": "spaghetti Western whistle",
 "g": "screen character",
 "k": "media & art",
 "s": [
@@ -78876,6 +79729,7 @@
 "x": 1
 },
 "spain's flamingo population": {
+"d": "Spain's flamingo population",
 "g": "spain's flamingo population",
 "k": "concept",
 "s": [
@@ -78884,6 +79738,7 @@
 "x": 1
 },
 "spain's olive production": {
+"d": "Spain's olive production",
 "g": "spain's olive production",
 "k": "concept",
 "s": [
@@ -78893,6 +79748,7 @@
 "x": 1
 },
 "spanish fighting bull": {
+"d": "Spanish fighting bull",
 "g": "bull",
 "k": "life",
 "s": [
@@ -78901,6 +79757,7 @@
 "w": "Spanish Fighting Bull"
 },
 "spanish mastiff": {
+"d": "Spanish Mastiff",
 "g": "guardian dog",
 "k": "life",
 "s": [
@@ -79051,6 +79908,7 @@
 "w": "Spinning top"
 },
 "spinosaurus": {
+"d": "Spinosaurus",
 "g": "spinosaurus",
 "k": "prehistoric",
 "s": [
@@ -79261,6 +80119,7 @@
 "w": "Squirrel monkey"
 },
 "st bernard": {
+"d": "St Bernard",
 "g": "guardian dog",
 "k": "life",
 "s": [
@@ -79396,6 +80255,7 @@
 "x": 1
 },
 "statue of liberty": {
+"d": "Statue of Liberty",
 "g": "statue of liberty",
 "k": "media & art",
 "s": [
@@ -79446,6 +80306,7 @@
 "w": "Stegosauria"
 },
 "stegosaurus": {
+"d": "Stegosaurus",
 "g": "stegosaurus",
 "k": "prehistoric",
 "s": [
@@ -79463,6 +80324,7 @@
 "x": 1
 },
 "steller's sea eagle": {
+"d": "Steller's sea eagle",
 "g": "eagle",
 "k": "life",
 "s": [
@@ -79496,6 +80358,7 @@
 "w": "Thosea aperiens"
 },
 "stingy jack": {
+"d": "Stingy Jack",
 "g": "stingy jack",
 "k": "folklore",
 "s": [
@@ -79522,6 +80385,7 @@
 "w": "Stomach"
 },
 "stone age": {
+"d": "Stone Age",
 "g": "age",
 "k": "concept",
 "s": [
@@ -79538,6 +80402,7 @@
 ]
 },
 "stonehenge": {
+"d": "Stonehenge",
 "g": "stonehenge",
 "k": "earth & sky",
 "s": [
@@ -79680,6 +80545,7 @@
 "w": "Sturgeon"
 },
 "stygimoloch/dracorex juveniles": {
+"d": "Stygimoloch/Dracorex juveniles",
 "g": "stygimoloch/dracorex juveniles",
 "k": "prehistoric",
 "s": [
@@ -79687,6 +80553,7 @@
 ]
 },
 "stygiomedusa (giant phantom jelly)": {
+"d": "Stygiomedusa (giant phantom jelly)",
 "g": "cnidarian",
 "k": "life",
 "s": [
@@ -79695,6 +80562,7 @@
 "w": "Stygiomedusa"
 },
 "stygiomedusa (phantom jelly)": {
+"d": "Stygiomedusa (phantom jelly)",
 "g": "cnidarian",
 "k": "life",
 "s": [
@@ -79710,6 +80578,7 @@
 ]
 },
 "stymphalian birds": {
+"d": "Stymphalian birds",
 "g": "bird",
 "k": "life",
 "s": [
@@ -79718,6 +80587,7 @@
 "w": "Stymphalian birds"
 },
 "styracosaurus": {
+"d": "Styracosaurus",
 "g": "styracosaurus",
 "k": "prehistoric",
 "s": [
@@ -79726,6 +80596,7 @@
 "w": "Styracosaurus"
 },
 "styracosaurus frill": {
+"d": "Styracosaurus frill",
 "g": "styracosaurus frill",
 "k": "prehistoric",
 "s": [
@@ -79766,6 +80637,7 @@
 "w": "Rapid transit"
 },
 "suerale": {
+"d": "Suerale",
 "g": "suerale",
 "k": "folklore",
 "s": [
@@ -79773,6 +80645,7 @@
 ]
 },
 "sugaar (basque storm serpent)": {
+"d": "Sugaar (Basque storm serpent)",
 "g": "sugaar",
 "k": "mythology",
 "s": [
@@ -79840,6 +80713,7 @@
 "w": "Sun cross"
 },
 "sun gazing (aztec and mayan practice)": {
+"d": "sun gazing (Aztec and Mayan practice)",
 "g": "sun gazing",
 "k": "concept",
 "s": [
@@ -79849,6 +80723,7 @@
 "x": 1
 },
 "sun wukong": {
+"d": "Sun Wukong",
 "g": "sun wukong",
 "k": "mythology",
 "s": [
@@ -79939,6 +80814,7 @@
 ]
 },
 "superman": {
+"d": "Superman",
 "g": "comic & manga character",
 "k": "media & art",
 "s": [
@@ -79991,6 +80867,7 @@
 ]
 },
 "suzu (shinto shrine bell)": {
+"d": "suzu (Shinto shrine bell)",
 "g": "suzu",
 "k": "object",
 "s": [
@@ -80045,6 +80922,7 @@
 "w": "List of swamp monsters"
 },
 "swamp monster from sturgeon's \"it!\"": {
+"d": "swamp monster from Sturgeon's \"It!\"",
 "g": "science fiction & horror",
 "k": "media & art",
 "s": [
@@ -80070,6 +80948,7 @@
 "w": "Swan"
 },
 "swedish alvor": {
+"d": "Swedish alvor",
 "g": "swedish alvor",
 "k": "folklore",
 "s": [
@@ -80134,6 +81013,7 @@
 "w": "Swordfish"
 },
 "sylvanian families dolls": {
+"d": "Sylvanian Families dolls",
 "g": "doll",
 "k": "object",
 "s": [
@@ -80183,6 +81063,7 @@
 ]
 },
 "syzygites parasitic mould": {
+"d": "Syzygites parasitic mould",
 "g": "mould",
 "k": "life",
 "s": [
@@ -80198,6 +81079,7 @@
 "w": "Iceberg"
 },
 "tadashi sawamura (kickboxer)": {
+"d": "Tadashi Sawamura (kickboxer)",
 "g": "tadashi sawamura",
 "k": "person",
 "s": [
@@ -80229,6 +81111,7 @@
 "x": 1
 },
 "taijiquan (soft style)": {
+"d": "Taijiquan (soft style)",
 "g": "taijiquan",
 "k": "person",
 "s": [
@@ -80272,6 +81155,7 @@
 "w": "Tailor"
 },
 "takaonna": {
+"d": "Takaonna",
 "g": "takaonna",
 "i": 1,
 "k": "folklore",
@@ -80281,6 +81165,7 @@
 "w": "Takaonna"
 },
 "takeda shingen": {
+"d": "Takeda Shingen",
 "g": "takeda shingen",
 "k": "person",
 "s": [
@@ -80290,6 +81175,7 @@
 "x": 1
 },
 "takemikazuchi": {
+"d": "Takemikazuchi",
 "g": "takemikazuchi",
 "k": "mythology",
 "s": [
@@ -80306,6 +81192,7 @@
 "x": 1
 },
 "talaiotic architecture": {
+"d": "Talaiotic architecture",
 "g": "talaiotic architecture",
 "k": "earth & sky",
 "s": [
@@ -80348,6 +81235,7 @@
 "w": "Japanese raccoon dog"
 },
 "tanuki (japanese raccoon dog)": {
+"d": "tanuki (Japanese raccoon dog)",
 "g": "tanuki",
 "i": 1,
 "k": "life",
@@ -80357,6 +81245,7 @@
 "w": "Japanese raccoon dog"
 },
 "tanzaku and the tanabata festival": {
+"d": "tanzaku and the Tanabata festival",
 "g": "tanzaku and the tanabata festival",
 "k": "concept",
 "s": [
@@ -80365,6 +81254,7 @@
 "x": 1
 },
 "taotie of the four perils": {
+"d": "Taotie of the Four Perils",
 "g": "perils",
 "k": "mythology",
 "s": [
@@ -80372,6 +81262,7 @@
 ]
 },
 "taowu of the four perils": {
+"d": "Taowu of the Four Perils",
 "g": "perils",
 "k": "mythology",
 "s": [
@@ -80426,6 +81317,7 @@
 "w": "Tarantula hawk"
 },
 "tarasque": {
+"d": "Tarasque",
 "g": "tarasque",
 "k": "folklore",
 "s": [
@@ -80450,6 +81342,7 @@
 ]
 },
 "taro urashima's turtle": {
+"d": "Taro Urashima's turtle",
 "g": "mythic turtle",
 "k": "life",
 "s": [
@@ -80457,6 +81350,7 @@
 ]
 },
 "tarzan": {
+"d": "Tarzan",
 "g": "literary character",
 "k": "media & art",
 "s": [
@@ -80466,6 +81360,7 @@
 "x": 1
 },
 "tasmanian devil": {
+"d": "Tasmanian devil",
 "g": "tasmanian devil",
 "k": "life",
 "s": [
@@ -80490,6 +81385,7 @@
 ]
 },
 "taurus constellation": {
+"d": "Taurus constellation",
 "g": "constellation",
 "k": "earth & sky",
 "s": [
@@ -80598,6 +81494,7 @@
 "w": "Tenrec"
 },
 "tepeyollotl": {
+"d": "Tepeyollotl",
 "g": "tepeyollotl",
 "k": "mythology",
 "s": [
@@ -80613,6 +81510,7 @@
 ]
 },
 "terracotta army": {
+"d": "Terracotta Army",
 "g": "terracotta army",
 "k": "mythology",
 "s": [
@@ -80655,6 +81553,7 @@
 ]
 },
 "tesla coil": {
+"d": "Tesla coil",
 "g": "tesla coil",
 "k": "object",
 "s": [
@@ -80664,6 +81563,7 @@
 "w": "Tesla coil"
 },
 "tessen (japanese war fan)": {
+"d": "tessen (Japanese war fan)",
 "g": "fan",
 "i": 1,
 "k": "object",
@@ -80681,6 +81581,7 @@
 "w": "Tessenjutsu"
 },
 "tezcatlipoca": {
+"d": "Tezcatlipoca",
 "g": "tezcatlipoca",
 "i": 1,
 "k": "mythology",
@@ -80730,6 +81631,7 @@
 "w": "Serpents in the Bible"
 },
 "the apple of discord": {
+"d": "the Apple of Discord",
 "g": "the apple of discord",
 "k": "mythology",
 "s": [
@@ -80754,6 +81656,7 @@
 "x": 1
 },
 "the beast of revelation": {
+"d": "the Beast of Revelation",
 "g": "revelation",
 "k": "mythology",
 "s": [
@@ -80762,6 +81665,7 @@
 "w": "The Beast (Revelation)"
 },
 "the big apple": {
+"d": "the Big Apple",
 "g": "apple",
 "k": "life",
 "s": [
@@ -80770,6 +81674,7 @@
 "w": "Big Apple"
 },
 "the black horse of famine": {
+"d": "the black horse of Famine",
 "g": "the black horse of famine",
 "k": "mythology",
 "s": [
@@ -80777,6 +81682,7 @@
 ]
 },
 "the black tortoise of the four symbols": {
+"d": "the Black Tortoise of the Four Symbols",
 "g": "symbols",
 "k": "object",
 "s": [
@@ -80784,6 +81690,7 @@
 ]
 },
 "the blob": {
+"d": "The Blob",
 "g": "the blob",
 "k": "media & art",
 "s": [
@@ -80794,6 +81701,7 @@
 "x": 1
 },
 "the cadbury drumming-gorilla advert": {
+"d": "the Cadbury drumming-gorilla advert",
 "g": "the cadbury drumming-gorilla advert",
 "k": "media & art",
 "s": [
@@ -80802,6 +81710,7 @@
 "x": 1
 },
 "the cantar de mio cid": {
+"d": "the Cantar de mio Cid",
 "g": "el cid",
 "k": "mythology",
 "s": [
@@ -80810,6 +81719,7 @@
 "w": "Cantar de mio Cid"
 },
 "the captain of the demeter (dracula)": {
+"d": "the captain of the Demeter (Dracula)",
 "g": "demeter",
 "k": "mythology",
 "s": [
@@ -80817,6 +81727,7 @@
 ]
 },
 "the carew ape": {
+"d": "the Carew Ape",
 "g": "the carew ape",
 "i": 1,
 "k": "life",
@@ -80825,6 +81736,7 @@
 ]
 },
 "the cowherd and the weaver girl": {
+"d": "The Cowherd and the Weaver Girl",
 "g": "the cowherd and the weaver girl",
 "k": "mythology",
 "s": [
@@ -80833,6 +81745,7 @@
 "w": "The Cowherd and the Weaver Girl"
 },
 "the crystal palace dinosaurs": {
+"d": "the Crystal Palace Dinosaurs",
 "g": "the crystal palace dinosaurs",
 "k": "media & art",
 "s": [
@@ -80842,6 +81755,7 @@
 "w": "Crystal Palace Dinosaurs"
 },
 "the deccan traps": {
+"d": "the Deccan Traps",
 "g": "the deccan traps",
 "i": 1,
 "k": "earth & sky",
@@ -80859,6 +81773,7 @@
 "x": 1
 },
 "the dip (catalan vampire dog)": {
+"d": "the Dip (Catalan vampire dog)",
 "g": "the dip",
 "k": "folklore",
 "s": [
@@ -80868,6 +81783,7 @@
 "w": "The Dip"
 },
 "the dog of momotaro": {
+"d": "the dog of Momotaro",
 "g": "folktale",
 "k": "folklore",
 "s": [
@@ -80875,6 +81791,7 @@
 ]
 },
 "the dorombo gang of yatterman": {
+"d": "the Dorombo Gang of Yatterman",
 "g": "the dorombo gang of yatterman",
 "k": "media & art",
 "s": [
@@ -80885,6 +81802,7 @@
 "x": 1
 },
 "the dragon of revelation": {
+"d": "the dragon of Revelation",
 "g": "revelation",
 "k": "mythology",
 "s": [
@@ -80899,6 +81817,7 @@
 ]
 },
 "the earth's land and volcanoes": {
+"d": "the Earth's land and volcanoes",
 "g": "the earth's land and volcanoes",
 "i": 1,
 "k": "earth & sky",
@@ -80907,6 +81826,7 @@
 ]
 },
 "the earth's oceans": {
+"d": "the Earth's oceans",
 "g": "the earth's oceans",
 "i": 1,
 "k": "earth & sky",
@@ -80916,6 +81836,7 @@
 "w": "Ocean"
 },
 "the england runestones": {
+"d": "the England runestones",
 "g": "the england runestones",
 "k": "object",
 "s": [
@@ -80932,6 +81853,7 @@
 "w": "Evil eye"
 },
 "the eye of ra": {
+"d": "the Eye of Ra",
 "g": "ra",
 "k": "mythology",
 "s": [
@@ -80940,6 +81862,7 @@
 "w": "Eye of Ra"
 },
 "the fims fungal-extinction hypothesis": {
+"d": "the FIMS fungal-extinction hypothesis",
 "g": "hypothesis",
 "k": "concept",
 "s": [
@@ -80948,6 +81871,7 @@
 "x": 1
 },
 "the flying dutchman": {
+"d": "the Flying Dutchman",
 "g": "the flying dutchman",
 "k": "folklore",
 "s": [
@@ -80956,6 +81880,7 @@
 "w": "Flying Dutchman"
 },
 "the four stags of yggdrasil": {
+"d": "the Four Stags of Yggdrasil",
 "g": "the four stags of yggdrasil",
 "k": "mythology",
 "s": [
@@ -80963,6 +81888,7 @@
 ]
 },
 "the frog prince": {
+"d": "The Frog Prince",
 "g": "the frog prince",
 "k": "folklore",
 "s": [
@@ -80971,6 +81897,7 @@
 "w": "The Frog Prince"
 },
 "the genie of aladdin": {
+"d": "the genie of Aladdin",
 "g": "the genie of aladdin",
 "k": "folklore",
 "s": [
@@ -80978,6 +81905,7 @@
 ]
 },
 "the golem of prague and its shem": {
+"d": "the Golem of Prague and its shem",
 "g": "prague",
 "k": "earth & sky",
 "s": [
@@ -80985,6 +81913,7 @@
 ]
 },
 "the great gama": {
+"d": "the Great Gama",
 "g": "the great gama",
 "k": "person",
 "s": [
@@ -81037,6 +81966,7 @@
 "x": 1
 },
 "the iron wolf of lithuania": {
+"d": "the Iron Wolf of Lithuania",
 "g": "the iron wolf of lithuania",
 "k": "folklore",
 "s": [
@@ -81044,6 +81974,7 @@
 ]
 },
 "the k-pg extinction": {
+"d": "the K-Pg extinction",
 "g": "the k-pg extinction",
 "k": "concept",
 "s": [
@@ -81053,6 +81984,7 @@
 "x": 1
 },
 "the knights of the round table": {
+"d": "the Knights of the Round Table",
 "g": "the knights of the round table",
 "k": "mythology",
 "s": [
@@ -81070,6 +82002,7 @@
 "x": 1
 },
 "the lady of the lake": {
+"d": "the Lady of the Lake",
 "g": "lake",
 "k": "earth & sky",
 "s": [
@@ -81078,6 +82011,7 @@
 "w": "Lady of the Lake"
 },
 "the lernaean hydra": {
+"d": "the Lernaean Hydra",
 "g": "hydra",
 "k": "mythology",
 "s": [
@@ -81086,6 +82020,7 @@
 "w": "Lernaean Hydra"
 },
 "the letter x": {
+"d": "the letter X",
 "g": "the letter x",
 "k": "object",
 "s": [
@@ -81094,6 +82029,7 @@
 "w": "X"
 },
 "the letter y": {
+"d": "the letter Y",
 "g": "the letter y",
 "k": "object",
 "s": [
@@ -81110,6 +82046,7 @@
 "x": 1
 },
 "the lincoln imp grotesque": {
+"d": "the Lincoln Imp grotesque",
 "g": "the lincoln imp grotesque",
 "i": 1,
 "k": "folklore",
@@ -81118,6 +82055,7 @@
 ]
 },
 "the london \"city gent\"": {
+"d": "the London \"city gent\"",
 "g": "the london \"city gent\"",
 "k": "person",
 "s": [
@@ -81126,6 +82064,7 @@
 "x": 1
 },
 "the maillard reaction": {
+"d": "the Maillard reaction",
 "g": "the maillard reaction",
 "k": "concept",
 "s": [
@@ -81142,6 +82081,7 @@
 ]
 },
 "the middle ages": {
+"d": "the Middle Ages",
 "g": "the middle ages",
 "k": "concept",
 "s": [
@@ -81151,6 +82091,7 @@
 "x": 1
 },
 "the mirror of reason from the snow queen": {
+"d": "the Mirror of Reason from The Snow Queen",
 "g": "queen",
 "k": "person",
 "s": [
@@ -81159,6 +82100,7 @@
 "x": 1
 },
 "the modern age": {
+"d": "the Modern Age",
 "g": "age",
 "k": "concept",
 "s": [
@@ -81168,6 +82110,7 @@
 "x": 1
 },
 "the monkey of momotaro": {
+"d": "the monkey of Momotaro",
 "g": "folktale",
 "k": "folklore",
 "s": [
@@ -81175,6 +82118,7 @@
 ]
 },
 "the moon": {
+"d": "the Moon",
 "g": "moon",
 "k": "earth & sky",
 "s": [
@@ -81183,6 +82127,7 @@
 "w": "Moon"
 },
 "the moon tarot card": {
+"d": "The Moon tarot card",
 "g": "card",
 "k": "object",
 "s": [
@@ -81190,6 +82135,7 @@
 ]
 },
 "the morrigan": {
+"d": "the Morrigan",
 "g": "the morrigan",
 "k": "mythology",
 "s": [
@@ -81198,6 +82144,7 @@
 "w": "The Morrígan"
 },
 "the mugenyama bell legend (kwaidan)": {
+"d": "the Mugenyama bell legend (Kwaidan)",
 "g": "legend",
 "k": "folklore",
 "s": [
@@ -81206,6 +82153,7 @@
 ]
 },
 "the nine-coloured deer of the jataka tales": {
+"d": "the nine-coloured deer of the Jataka tales",
 "g": "the nine-coloured deer of the jataka tales",
 "k": "folklore",
 "s": [
@@ -81213,6 +82161,7 @@
 ]
 },
 "the number seven in shinto and buddhist culture": {
+"d": "the number seven in Shinto and Buddhist culture",
 "g": "the number seven in shinto and buddhist culture",
 "i": 1,
 "k": "concept",
@@ -81222,6 +82171,7 @@
 "x": 1
 },
 "the olympics": {
+"d": "the Olympics",
 "g": "the olympics",
 "k": "concept",
 "s": [
@@ -81230,6 +82180,7 @@
 "w": "Olympic Games"
 },
 "the oni of momotaro": {
+"d": "the oni of Momotaro",
 "g": "folktale",
 "i": 1,
 "k": "folklore",
@@ -81238,6 +82189,7 @@
 ]
 },
 "the pheasant of momotaro": {
+"d": "the pheasant of Momotaro",
 "g": "folktale",
 "i": 1,
 "k": "folklore",
@@ -81246,6 +82198,7 @@
 ]
 },
 "the pink boto (shapeshifting river dolphin)": {
+"d": "the Pink Boto (shapeshifting river dolphin)",
 "g": "the pink boto",
 "k": "life",
 "s": [
@@ -81253,6 +82206,7 @@
 ]
 },
 "the rabbit of jataka tale 316": {
+"d": "the rabbit of Jataka tale 316",
 "g": "the rabbit of jataka tale 316",
 "k": "folklore",
 "s": [
@@ -81261,6 +82215,7 @@
 "x": 1
 },
 "the rainbow turtle of urashima taro": {
+"d": "the rainbow turtle of Urashima Taro",
 "g": "the rainbow turtle of urashima taro",
 "i": 1,
 "k": "life",
@@ -81269,6 +82224,7 @@
 ]
 },
 "the ravens of the tower of london": {
+"d": "the Ravens of the Tower of London",
 "g": "the ravens of the tower of london",
 "k": "life",
 "s": [
@@ -81277,6 +82233,7 @@
 "w": "Ravens of the Tower of London"
 },
 "the red shoes": {
+"d": "The Red Shoes",
 "g": "shoes",
 "k": "object",
 "s": [
@@ -81285,6 +82242,7 @@
 "w": "The Red Shoes"
 },
 "the sandman": {
+"d": "the Sandman",
 "g": "the sandman",
 "k": "folklore",
 "s": [
@@ -81293,6 +82251,7 @@
 "w": "Sandman"
 },
 "the selene (kaguya) lunar probe": {
+"d": "the SELENE (Kaguya) lunar probe",
 "g": "the selene  lunar probe",
 "i": 1,
 "k": "object",
@@ -81317,6 +82276,7 @@
 "w": "Seven deadly sins"
 },
 "the seven-headed dragon of revelation": {
+"d": "the seven-headed dragon of Revelation",
 "g": "revelation",
 "k": "mythology",
 "s": [
@@ -81324,6 +82284,7 @@
 ]
 },
 "the shard (london skyscraper)": {
+"d": "The Shard (London skyscraper)",
 "g": "the shard",
 "k": "earth & sky",
 "s": [
@@ -81332,6 +82293,7 @@
 "w": "The Shard"
 },
 "the shug monkey": {
+"d": "the Shug Monkey",
 "g": "monkey",
 "k": "life",
 "s": [
@@ -81340,6 +82302,7 @@
 "w": "Shug Monkey"
 },
 "the single horned rhinoceros king of journey to the west": {
+"d": "the Single Horned Rhinoceros King of Journey to the West",
 "g": "west",
 "k": "earth & sky",
 "s": [
@@ -81347,6 +82310,7 @@
 ]
 },
 "the snow queen": {
+"d": "The Snow Queen",
 "g": "queen",
 "k": "person",
 "s": [
@@ -81356,6 +82320,7 @@
 "x": 1
 },
 "the spartans at thermopylae": {
+"d": "the Spartans at Thermopylae",
 "g": "the spartans at thermopylae",
 "k": "person",
 "s": [
@@ -81371,6 +82336,7 @@
 ]
 },
 "the sun": {
+"d": "the Sun",
 "g": "sun",
 "k": "earth & sky",
 "s": [
@@ -81389,6 +82355,7 @@
 ]
 },
 "the sun on a cloud": {
+"d": "the Sun on a cloud",
 "g": "cloud",
 "k": "earth & sky",
 "s": [
@@ -81396,6 +82363,7 @@
 ]
 },
 "the sun tarot card": {
+"d": "The Sun tarot card",
 "g": "card",
 "k": "object",
 "s": [
@@ -81403,6 +82371,7 @@
 ]
 },
 "the tatsuko legend of lake tazawa": {
+"d": "the Tatsuko legend of Lake Tazawa",
 "g": "the tatsuko legend of lake tazawa",
 "i": 1,
 "k": "folklore",
@@ -81420,6 +82389,7 @@
 "w": "Fu (tally)"
 },
 "the ugly duckling": {
+"d": "The Ugly Duckling",
 "g": "duckling",
 "k": "life",
 "s": [
@@ -81456,6 +82426,7 @@
 "x": 1
 },
 "the velveteen rabbit": {
+"d": "The Velveteen Rabbit",
 "g": "rabbit",
 "k": "life",
 "s": [
@@ -81471,6 +82442,7 @@
 ]
 },
 "the war of the worlds (1953)": {
+"d": "The War of the Worlds (1953)",
 "g": "screen character",
 "k": "media & art",
 "s": [
@@ -81480,6 +82452,7 @@
 "x": 1
 },
 "the western drifter archetype": {
+"d": "the Western drifter archetype",
 "g": "the western drifter archetype",
 "k": "media & art",
 "s": [
@@ -81488,6 +82461,7 @@
 "x": 1
 },
 "the white horse of conquest": {
+"d": "the white horse of Conquest",
 "g": "the white horse of conquest",
 "k": "mythology",
 "s": [
@@ -81495,6 +82469,7 @@
 ]
 },
 "the white tiger of the four symbols": {
+"d": "the White Tiger of the Four Symbols",
 "g": "symbols",
 "k": "object",
 "s": [
@@ -81502,6 +82477,7 @@
 ]
 },
 "the wicked witch of the west": {
+"d": "the Wicked Witch of the West",
 "g": "west",
 "k": "earth & sky",
 "s": [
@@ -81510,6 +82486,7 @@
 "w": "Wicked Witch of the West"
 },
 "the wild hunt": {
+"d": "the Wild Hunt",
 "g": "the wild hunt",
 "k": "mythology",
 "s": [
@@ -81518,6 +82495,7 @@
 "w": "Wild Hunt (disambiguation)"
 },
 "the witch of hansel and gretel": {
+"d": "the witch of Hansel and Gretel",
 "g": "the witch of hansel and gretel",
 "i": 1,
 "k": "folklore",
@@ -81633,6 +82611,7 @@
 "w": "Thistle"
 },
 "thorny oyster (spondylus)": {
+"d": "thorny oyster (Spondylus)",
 "g": "oyster",
 "k": "life",
 "s": [
@@ -81717,6 +82696,7 @@
 "w": "Thunderbird"
 },
 "thunderbird (native american legend)": {
+"d": "thunderbird (Native American legend)",
 "g": "firebird",
 "k": "mythology",
 "s": [
@@ -81766,6 +82746,7 @@
 "w": "Thylacine"
 },
 "tibetan mastiff": {
+"d": "Tibetan Mastiff",
 "g": "guardian dog",
 "k": "life",
 "s": [
@@ -81861,6 +82842,7 @@
 "w": "Amorphophallus titanum"
 },
 "titans and the titanomachy": {
+"d": "Titans and the titanomachy",
 "g": "titans and the titanomachy",
 "i": 1,
 "k": "mythology",
@@ -81869,6 +82851,7 @@
 ]
 },
 "tlaloc (mesoamerican rain god)": {
+"d": "Tlaloc (Mesoamerican rain god)",
 "g": "tlaloc",
 "i": 1,
 "k": "mythology",
@@ -81902,6 +82885,7 @@
 ]
 },
 "tochukaso (ophiocordyceps sinensis)": {
+"d": "tochukaso (Ophiocordyceps sinensis)",
 "g": "tochukaso",
 "i": 1,
 "k": "life",
@@ -81911,6 +82895,7 @@
 "w": "Ophiocordyceps sinensis"
 },
 "tochukaso (ophiocordyceps) parasitic fungus": {
+"d": "tochukaso (Ophiocordyceps) parasitic fungus",
 "g": "fungus",
 "k": "life",
 "s": [
@@ -82048,6 +83033,7 @@
 "w": "Totem pole"
 },
 "tower of the sun": {
+"d": "Tower of the Sun",
 "g": "sun",
 "k": "earth & sky",
 "s": [
@@ -82063,6 +83049,7 @@
 ]
 },
 "toxoplasma gondii": {
+"d": "Toxoplasma gondii",
 "g": "toxoplasma gondii",
 "k": "life",
 "s": [
@@ -82096,6 +83083,7 @@
 "w": "Tractor beam"
 },
 "traditional mexican dress": {
+"d": "traditional Mexican dress",
 "g": "dress",
 "k": "object",
 "s": [
@@ -82217,6 +83205,7 @@
 "w": "Tree-kangaroo"
 },
 "treehopper (membracidae)": {
+"d": "treehopper (Membracidae)",
 "g": "treehopper",
 "k": "life",
 "s": [
@@ -82248,6 +83237,7 @@
 ]
 },
 "tribulus (caltrop plant)": {
+"d": "Tribulus (caltrop plant)",
 "g": "tribulus",
 "i": 1,
 "k": "life",
@@ -82257,6 +83247,7 @@
 "w": "Tribulus"
 },
 "triceratops": {
+"d": "Triceratops",
 "g": "triceratops",
 "k": "prehistoric",
 "s": [
@@ -82290,6 +83281,7 @@
 "w": "Tricorne"
 },
 "trident of poseidon": {
+"d": "trident of Poseidon",
 "g": "trident of poseidon",
 "k": "mythology",
 "s": [
@@ -82430,6 +83422,7 @@
 "w": "Trumpet"
 },
 "tsuchigumo (spider yokai)": {
+"d": "Tsuchigumo (spider yokai)",
 "g": "tsuchigumo",
 "k": "folklore",
 "s": [
@@ -82456,6 +83449,7 @@
 "w": "Tsuchinoko"
 },
 "tsuchinoko (japanese cryptid)": {
+"d": "tsuchinoko (Japanese cryptid)",
 "g": "snake",
 "k": "life",
 "s": [
@@ -82514,6 +83508,7 @@
 "w": "Tubifex"
 },
 "tulikettu (finnish fire fox)": {
+"d": "tulikettu (Finnish fire fox)",
 "g": "fox",
 "i": 1,
 "k": "life",
@@ -82531,6 +83526,7 @@
 "w": "Tulip"
 },
 "tumbaga and quimbaya artifacts": {
+"d": "tumbaga and Quimbaya artifacts",
 "g": "tumbaga and quimbaya artifacts",
 "k": "earth & sky",
 "s": [
@@ -82607,6 +83603,7 @@
 "w": "Turkey vulture"
 },
 "turkish angora": {
+"d": "Turkish Angora",
 "g": "longhair breed",
 "k": "life",
 "s": [
@@ -82633,6 +83630,7 @@
 "w": "Turnspit dog"
 },
 "turritopsis dohrnii (immortal jellyfish)": {
+"d": "Turritopsis dohrnii (immortal jellyfish)",
 "g": "cnidarian",
 "k": "life",
 "s": [
@@ -82652,6 +83650,7 @@
 "w": "Turtle"
 },
 "tutankhamun's coffin and mask": {
+"d": "Tutankhamun's coffin and mask",
 "g": "tutankhamun's coffin and mask",
 "i": 1,
 "k": "object",
@@ -82684,6 +83683,7 @@
 "w": "Bicolor cat"
 },
 "two fused beldum": {
+"d": "two fused Beldum",
 "g": "two fused beldum",
 "i": 1,
 "k": "object",
@@ -82725,6 +83725,7 @@
 "x": 1
 },
 "tyrannosaurus": {
+"d": "Tyrannosaurus",
 "g": "tyrannosaurus",
 "k": "prehistoric",
 "s": [
@@ -82744,6 +83745,7 @@
 "x": 1
 },
 "tyrfing": {
+"d": "Tyrfing",
 "g": "tyrfing",
 "i": 1,
 "k": "mythology",
@@ -82753,6 +83755,7 @@
 "w": "Tyrfing"
 },
 "uchchaihshravas": {
+"d": "Uchchaihshravas",
 "g": "uchchaihshravas",
 "k": "mythology",
 "s": [
@@ -82761,6 +83764,7 @@
 "w": "Uchchaihshravas"
 },
 "ufo": {
+"d": "UFO",
 "g": "ufo",
 "k": "folklore",
 "s": [
@@ -82772,6 +83776,7 @@
 "w": "Unidentified flying object"
 },
 "ugajin (snake-bodied harvest kami)": {
+"d": "Ugajin (snake-bodied harvest kami)",
 "g": "ugajin",
 "k": "mythology",
 "s": [
@@ -82780,6 +83785,7 @@
 "w": "Ugajin"
 },
 "uintatherium": {
+"d": "Uintatherium",
 "g": "uintatherium",
 "i": 1,
 "k": "prehistoric",
@@ -82789,6 +83795,7 @@
 "w": "Uintatherium"
 },
 "uloboridae (cribellate orb weavers)": {
+"d": "Uloboridae (cribellate orb weavers)",
 "g": "uloboridae",
 "k": "life",
 "s": [
@@ -82797,6 +83804,7 @@
 "w": "Uloboridae"
 },
 "ultraman": {
+"d": "Ultraman",
 "g": "ultraman",
 "i": 1,
 "k": "media & art",
@@ -82806,6 +83814,7 @@
 "w": "Ultraman"
 },
 "ultraman chest gem": {
+"d": "Ultraman chest gem",
 "g": "ultraman chest gem",
 "k": "media & art",
 "s": [
@@ -82815,6 +83824,7 @@
 "x": 1
 },
 "ultraman-style giant heroes": {
+"d": "Ultraman-style giant heroes",
 "g": "ultraman-style giant heroes",
 "k": "media & art",
 "s": [
@@ -82873,6 +83883,7 @@
 "w": "Unicorn"
 },
 "unicursal hexagram (thelema)": {
+"d": "unicursal hexagram (Thelema)",
 "g": "unicursal hexagram",
 "k": "object",
 "s": [
@@ -82903,6 +83914,7 @@
 "w": "Uraeus"
 },
 "urim and thummim": {
+"d": "Urim and Thummim",
 "g": "urim and thummim",
 "k": "mythology",
 "s": [
@@ -82920,6 +83932,7 @@
 "w": "Urna"
 },
 "ursa major and ursa minor": {
+"d": "Ursa Major and Ursa Minor",
 "g": "ursa major and ursa minor",
 "k": "earth & sky",
 "s": [
@@ -82928,6 +83941,7 @@
 "w": "Lists of constellations"
 },
 "ursa minor": {
+"d": "Ursa Minor",
 "g": "ursa minor",
 "k": "earth & sky",
 "s": [
@@ -82970,6 +83984,7 @@
 "w": "Ushi-oni"
 },
 "ussuri brown bear": {
+"d": "Ussuri brown bear",
 "g": "bear",
 "k": "life",
 "s": [
@@ -82978,6 +83993,7 @@
 "w": "Ussuri brown bear"
 },
 "uther pendragon's dragon standard": {
+"d": "Uther Pendragon's dragon standard",
 "g": "uther pendragon's dragon standard",
 "k": "object",
 "s": [
@@ -83001,6 +84017,7 @@
 "x": 1
 },
 "uv-blue pitcher rim": {
+"d": "UV-blue pitcher rim",
 "g": "uv-blue pitcher rim",
 "i": 1,
 "k": "life",
@@ -83009,6 +84026,7 @@
 ]
 },
 "v formation": {
+"d": "V formation",
 "g": "v formation",
 "k": "concept",
 "s": [
@@ -83018,6 +84036,7 @@
 "x": 1
 },
 "v sign": {
+"d": "V sign",
 "g": "v sign",
 "k": "concept",
 "s": [
@@ -83026,6 +84045,7 @@
 "w": "V sign"
 },
 "valais blacknose sheep (\"woolly worm\" pun)": {
+"d": "Valais Blacknose sheep (\"woolly worm\" pun)",
 "g": "sheep",
 "k": "life",
 "s": [
@@ -83075,6 +84095,7 @@
 "w": "Vampire squid"
 },
 "vanara": {
+"d": "Vanara",
 "g": "vanara",
 "k": "mythology",
 "s": [
@@ -83083,6 +84104,7 @@
 "w": "Vanara"
 },
 "vasorru baba (iron-nosed witch)": {
+"d": "Vasorru Baba (iron-nosed witch)",
 "g": "vasorru baba",
 "i": 1,
 "k": "folklore",
@@ -83091,6 +84113,7 @@
 ]
 },
 "vedrfolnir": {
+"d": "Vedrfolnir",
 "g": "vedrfolnir",
 "k": "mythology",
 "s": [
@@ -83099,6 +84122,7 @@
 "w": "Veðrfölnir and eagle"
 },
 "vegetable lamb of tartary": {
+"d": "Vegetable Lamb of Tartary",
 "g": "vegetable lamb of tartary",
 "k": "folklore",
 "s": [
@@ -83168,6 +84192,7 @@
 "x": 1
 },
 "venus": {
+"d": "Venus",
 "g": "venus",
 "k": "mythology",
 "s": [
@@ -83176,6 +84201,7 @@
 "w": "Venus"
 },
 "venus flytrap": {
+"d": "Venus flytrap",
 "g": "venus flytrap",
 "i": 1,
 "k": "life",
@@ -83185,6 +84211,7 @@
 "w": "Venus flytrap"
 },
 "vermilion bird": {
+"d": "Vermilion Bird",
 "g": "bird",
 "k": "life",
 "s": [
@@ -83201,6 +84228,7 @@
 "w": "Verraco"
 },
 "victorian and elizabethan fashion": {
+"d": "Victorian and Elizabethan fashion",
 "g": "victorian and elizabethan fashion",
 "i": 1,
 "k": "concept",
@@ -83210,6 +84238,7 @@
 "x": 1
 },
 "victorian british gentleman": {
+"d": "Victorian British gentleman",
 "g": "victorian british gentleman",
 "i": 1,
 "k": "person",
@@ -83219,6 +84248,7 @@
 "x": 1
 },
 "victorian dress": {
+"d": "Victorian dress",
 "g": "dress",
 "k": "object",
 "s": [
@@ -83227,6 +84257,7 @@
 "w": "Victorian fashion"
 },
 "victorian fashion": {
+"d": "Victorian fashion",
 "g": "fashion",
 "k": "concept",
 "s": [
@@ -83237,6 +84268,7 @@
 "x": 1
 },
 "viking": {
+"d": "Viking",
 "g": "viking",
 "k": "folklore",
 "s": [
@@ -83246,6 +84278,7 @@
 "w": "Vikings"
 },
 "viking sheep": {
+"d": "Viking sheep",
 "g": "sheep",
 "k": "life",
 "s": [
@@ -83322,6 +84355,7 @@
 "w": "Viperfish"
 },
 "virgo": {
+"d": "Virgo",
 "g": "virgo",
 "k": "concept",
 "s": [
@@ -83350,6 +84384,7 @@
 "w": "Viscacha"
 },
 "vishnu": {
+"d": "Vishnu",
 "g": "vishnu",
 "k": "mythology",
 "s": [
@@ -83477,6 +84512,7 @@
 ]
 },
 "warning from space (1956)": {
+"d": "Warning from Space (1956)",
 "g": "warning from space (1956 film)",
 "k": "media & art",
 "s": [
@@ -83565,6 +84601,7 @@
 "w": "Water gun"
 },
 "water margin's 108 demons": {
+"d": "Water Margin's 108 demons",
 "g": "water margin's 108 demons",
 "k": "mythology",
 "s": [
@@ -83761,6 +84798,7 @@
 "w": "Wels catfish"
 },
 "welsh corgi": {
+"d": "Welsh corgi",
 "g": "herding dog",
 "k": "life",
 "s": [
@@ -83769,6 +84807,7 @@
 "w": "Welsh Corgi"
 },
 "welsh leek": {
+"d": "Welsh leek",
 "g": "leek",
 "k": "life",
 "s": [
@@ -83776,6 +84815,7 @@
 ]
 },
 "welsh onion": {
+"d": "Welsh onion",
 "g": "onion",
 "k": "life",
 "s": [
@@ -83794,6 +84834,7 @@
 "w": "Werewolf"
 },
 "western dragon": {
+"d": "Western dragon",
 "g": "dragon",
 "k": "mythology",
 "s": [
@@ -83802,6 +84843,7 @@
 "w": "European dragon"
 },
 "western film cowboy": {
+"d": "Western film cowboy",
 "g": "western film cowboy",
 "i": 1,
 "k": "media & art",
@@ -83835,6 +84877,7 @@
 "w": "Wetsuit"
 },
 "whac-a-mole arcade mole": {
+"d": "Whac-A-Mole arcade mole",
 "g": "mole",
 "k": "life",
 "s": [
@@ -83907,6 +84950,7 @@
 ]
 },
 "white lady ghost": {
+"d": "White Lady ghost",
 "g": "ghost",
 "k": "folklore",
 "s": [
@@ -84000,6 +85044,7 @@
 ]
 },
 "wild leek (welsh symbol)": {
+"d": "wild leek (Welsh symbol)",
 "g": "leek",
 "k": "life",
 "s": [
@@ -84015,6 +85060,7 @@
 ]
 },
 "wilfred the hairy": {
+"d": "Wilfred the Hairy",
 "g": "wilfred the hairy",
 "k": "mythology",
 "s": [
@@ -84207,6 +85253,7 @@
 "x": 1
 },
 "wiwaxia": {
+"d": "Wiwaxia",
 "g": "wiwaxia",
 "i": 1,
 "k": "prehistoric",
@@ -84296,6 +85343,7 @@
 "w": "Woodlouse"
 },
 "woodpecker (piciformes kinship)": {
+"d": "woodpecker (Piciformes kinship)",
 "g": "woodpecker",
 "k": "life",
 "s": [
@@ -84321,6 +85369,7 @@
 "w": "Cosmic egg"
 },
 "world turtle": {
+"d": "World Turtle",
 "g": "mythic turtle",
 "k": "life",
 "s": [
@@ -84331,6 +85380,7 @@
 "w": "World Turtle"
 },
 "world turtle (akupara)": {
+"d": "World Turtle (Akupara)",
 "g": "mythic turtle",
 "k": "life",
 "s": [
@@ -84415,6 +85465,7 @@
 "w": "Wrestling singlet"
 },
 "wrought-iron gothic fixtures": {
+"d": "wrought-iron Gothic fixtures",
 "g": "wrought-iron gothic fixtures",
 "k": "object",
 "s": [
@@ -84469,6 +85520,7 @@
 "w": "Wyvern"
 },
 "xian (taoist immortal)": {
+"d": "xian (Taoist immortal)",
 "g": "xian",
 "k": "mythology",
 "s": [
@@ -84492,6 +85544,7 @@
 "w": "Xiezhi"
 },
 "xingtian": {
+"d": "Xingtian",
 "g": "xingtian",
 "k": "mythology",
 "s": [
@@ -84508,6 +85561,7 @@
 "w": "Xylophone"
 },
 "yagi-uda antenna": {
+"d": "Yagi-Uda antenna",
 "g": "antenna",
 "k": "object",
 "s": [
@@ -84533,6 +85587,7 @@
 ]
 },
 "yama-uba": {
+"d": "Yama-uba",
 "g": "yama-uba",
 "k": "folklore",
 "s": [
@@ -84542,6 +85597,7 @@
 "w": "Yama-uba"
 },
 "yamanba": {
+"d": "Yamanba",
 "g": "yamanba",
 "k": "folklore",
 "s": [
@@ -84558,6 +85614,7 @@
 ]
 },
 "yamata no orochi": {
+"d": "Yamata no Orochi",
 "g": "serpent",
 "i": 1,
 "k": "mythology",
@@ -84578,6 +85635,7 @@
 "x": 1
 },
 "yasakani no magatama (sacred jewel)": {
+"d": "Yasakani no Magatama (sacred jewel)",
 "g": "bead",
 "i": 1,
 "k": "object",
@@ -84587,6 +85645,7 @@
 "w": "Magatama"
 },
 "yata no kagami (sacred mirror)": {
+"d": "Yata no Kagami (sacred mirror)",
 "g": "yata no kagami",
 "i": 1,
 "k": "mythology",
@@ -84596,6 +85655,7 @@
 "w": "Yata no Kagami"
 },
 "yelbeghen": {
+"d": "Yelbeghen",
 "g": "yelbeghen",
 "k": "mythology",
 "s": [
@@ -84605,6 +85665,7 @@
 "w": "Yelbeghen"
 },
 "yellow dragon": {
+"d": "Yellow Dragon",
 "g": "dragon",
 "k": "mythology",
 "s": [
@@ -84675,6 +85736,7 @@
 ]
 },
 "yezo sika deer": {
+"d": "Yezo sika deer",
 "g": "deer",
 "k": "life",
 "s": [
@@ -84710,6 +85772,7 @@
 "x": 1
 },
 "yinglong": {
+"d": "Yinglong",
 "g": "yinglong",
 "k": "mythology",
 "s": [
@@ -84727,6 +85790,7 @@
 "x": 1
 },
 "yorkshire terrier": {
+"d": "Yorkshire Terrier",
 "g": "terrier",
 "i": 1,
 "k": "life",
@@ -84738,6 +85802,7 @@
 "w": "Yorkshire Terrier"
 },
 "yotsuya kaidan lantern yokai": {
+"d": "Yotsuya Kaidan lantern yokai",
 "g": "yokai",
 "k": "folklore",
 "s": [
@@ -84786,6 +85851,7 @@
 "w": "Yucca"
 },
 "yuki-onna": {
+"d": "Yuki-onna",
 "g": "yuki-onna",
 "k": "folklore",
 "s": [
@@ -84795,6 +85861,7 @@
 "w": "Yuki-onna"
 },
 "yuki-onna's child": {
+"d": "Yuki-onna's child",
 "g": "child",
 "k": "person",
 "s": [
@@ -84836,6 +85903,7 @@
 "w": "Yūrei"
 },
 "zahhak": {
+"d": "Zahhak",
 "g": "zahhak",
 "k": "mythology",
 "s": [
@@ -84868,6 +85936,7 @@
 ]
 },
 "zener cards": {
+"d": "Zener cards",
 "g": "card",
 "k": "object",
 "s": [
@@ -84876,6 +85945,7 @@
 "w": "Zener cards"
 },
 "zephyrus (west wind)": {
+"d": "Zephyrus (west wind)",
 "g": "zephyrus",
 "k": "mythology",
 "s": [
@@ -84884,6 +85954,7 @@
 "w": "Zephyrus"
 },
 "zeus": {
+"d": "Zeus",
 "g": "zeus",
 "k": "mythology",
 "s": [
@@ -84892,6 +85963,7 @@
 "w": "Zeus"
 },
 "zhang fei": {
+"d": "Zhang Fei",
 "g": "zhang fei",
 "k": "mythology",
 "s": [
@@ -84900,6 +85972,7 @@
 "w": "Zhang Fei"
 },
 "zhang fei's serpent spear": {
+"d": "Zhang Fei's serpent spear",
 "g": "spear",
 "k": "object",
 "s": [
@@ -84907,6 +85980,7 @@
 ]
 },
 "zhu bajie (journey to the west)": {
+"d": "Zhu Bajie (Journey to the West)",
 "g": "literary character",
 "k": "media & art",
 "s": [
@@ -84918,6 +85992,7 @@
 "x": 1
 },
 "zhulong (torch dragon)": {
+"d": "Zhulong (torch dragon)",
 "g": "zhulong",
 "k": "mythology",
 "s": [
@@ -84935,6 +86010,7 @@
 "w": "Ziggurat"
 },
 "ziz": {
+"d": "Ziz",
 "g": "ziz",
 "k": "mythology",
 "s": [
@@ -84943,6 +86019,7 @@
 "w": "Ziz"
 },
 "zmei gorynych": {
+"d": "Zmei Gorynych",
 "g": "dragon",
 "i": 1,
 "k": "mythology",
@@ -84972,6 +86049,7 @@
 "w": "Ophiocordyceps unilateralis"
 },
 "zoroastrian dualism": {
+"d": "Zoroastrian dualism",
 "g": "zoroastrian dualism",
 "k": "concept",
 "s": [
@@ -84980,6 +86058,7 @@
 "x": 1
 },
 "zorro-style eye mask": {
+"d": "Zorro-style eye mask",
 "g": "mask",
 "k": "object",
 "s": [
@@ -87487,7 +88566,7 @@
 "hellhound",
 "black dog of folklore",
 "Cerberus",
-"grim reaper",
+"Grim Reaper",
 "shackles",
 "Dobermann",
 "thylacine"
@@ -87506,7 +88585,7 @@
 "black dog of folklore",
 "Cerberus",
 "devil",
-"grim reaper",
+"Grim Reaper",
 "shackles",
 "Dobermann",
 "thylacine"
@@ -89420,7 +90499,7 @@
 "Duskull",
 [
 "skull mask",
-"grim reaper",
+"Grim Reaper",
 "Charon",
 "bogeyman",
 "Namahage",
@@ -91127,7 +92206,7 @@
 "angel",
 "egg",
 "flying-wing aircraft",
-"fenghuang"
+"Fenghuang"
 ],
 [
 "folklore",
@@ -91182,7 +92261,7 @@
 "471": [
 "Glaceon",
 [
-"arctic fox",
+"Arctic fox",
 "Siamese cat point colouration",
 "ushanka"
 ],
@@ -94689,7 +95768,7 @@
 "Heliolisk",
 [
 "frilled lizard",
-"the sun",
+"the Sun",
 "solar eclipse",
 "spotted salamander",
 "common basilisk",
@@ -95877,7 +96956,7 @@
 "772": [
 "Type: Null",
 [
-"chimera",
+"Chimera",
 "Frankenstein's monster"
 ],
 [
@@ -95888,7 +96967,7 @@
 "773": [
 "Silvally",
 [
-"chimera",
+"Chimera",
 "griffin",
 "Frankenstein's monster"
 ],
@@ -96174,7 +97253,7 @@
 "Solgaleo",
 [
 "lion",
-"the sun",
+"the Sun",
 "Lion and Sun motif",
 "alchemical lion",
 "Leo (astrology)",

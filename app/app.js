@@ -24,6 +24,19 @@
   var $=function(s){return document.querySelector(s)};
   var el=function(t,c,x){var e=document.createElement(t); if(c)e.className=c; if(x!=null)e.textContent=x; return e};
   var dex=function(n){return "#"+String(n).padStart(4,"0")};
+  /* Referent keys are lowercase because everything looks them up by key; the
+     spelling to SHOW is on the referent itself, taken from its source text.
+     A cluster named after a referent is that referent, so it reads the same. */
+  function disp(name){
+    var r=D && D.referents[name];
+    if(r && r.d) return r.d;
+    var g=D && D.groups[name];
+    if(g && (g.m||[]).length===1 && g.m[0]===name){
+      var only=D.referents[name];
+      if(only && only.d) return only.d;
+    }
+    return name;
+  }
   var esc=function(s){return String(s)};
 
   /* the sticky columns hang off the header, whose height changes with the
@@ -401,7 +414,7 @@
   function refRow(r){
     var b=el("button","row");
     b.setAttribute("aria-current", state.sel&&state.sel.t==="referent"&&state.sel.k===r.name ? "true":"false");
-    var nm=el("span","rowname",r.name);
+    var nm=el("span","rowname",disp(r.name));
     if(r.ref.w) nm.appendChild(el("span","wikimark"," ↗"));
     b.appendChild(nm);
     var meta=el("span","rowmeta");
@@ -427,8 +440,8 @@
       var nx=allsteps[i+1];
       if(step.t==="group" && nx && nx.t==="referent" && nx.k===step.k) return;   /* same name twice */
       c.appendChild(el("span","crumbsep","›"));
-      if(i===state.path.length-1){ c.appendChild(el("span","crumbhere",step.t==="kind"?kindLabel(step.k):step.k)); return }
-      var b=el("button","crumblink",step.t==="kind"?kindLabel(step.k):step.k);
+      if(i===state.path.length-1){ c.appendChild(el("span","crumbhere",step.t==="kind"?kindLabel(step.k):disp(step.k))); return }
+      var b=el("button","crumblink",step.t==="kind"?kindLabel(step.k):disp(step.k));
       b.onclick=function(){ goBackTo(state.path.slice(0,i+1)) };
       c.appendChild(b);
     });
@@ -694,7 +707,7 @@
                             (!leaf && state.sel.t==="group" && state.sel.k===r.name));
     b.setAttribute("aria-current",cur?"true":"false");
     var kids=(r.g.ch||[]).length;
-    var nm=el("span","rowname",leaf&&!kids?only:r.name);
+    var nm=el("span","rowname",disp(leaf&&!kids?only:r.name));
     if(kids) nm.appendChild(el("span","intonode"," ›"));
     b.appendChild(nm);
     var meta=el("span","rowmeta");
@@ -846,13 +859,13 @@
       var g=D.groups[sel.k];
       /* a grouping node owns no referents of its own, so report its subtree */
       var tot=g.tn||g.n, own=g.m.length;
-      title=sel.k; sub=(g.f?g.f+" · ":"")+(g.rg?g.rg+" · ":"")+(g.k||"unclassified")+(g.i?" · inferred":"")+
+      title=disp(sel.k); sub=(g.f?g.f+" · ":"")+(g.rg?g.rg+" · ":"")+(g.k||"unclassified")+(g.i?" · inferred":"")+
         " · "+tot+" Pokémon · "+(own?own+" referent"+(own===1?"":"s"):(g.ch||[]).length+" groups inside");
       if(g.ch && g.ch.length){
         body.appendChild(sectionTitle("Nested inside"));
         var nl=el("div","taglist");
         g.ch.forEach(function(ch){
-          var t=el("button","tag",ch+" ("+(D.groups[ch].tn||D.groups[ch].n)+")");
+          var t=el("button","tag",disp(ch)+" ("+(D.groups[ch].tn||D.groups[ch].n)+")");
           t.onclick=function(){ goTo(state.path.concat([{t:"group",k:ch}])) };
           nl.appendChild(t);
         });
@@ -861,7 +874,7 @@
       body.appendChild(sectionTitle("Referents in this cluster"));
       var tl=el("div","taglist");
       g.m.slice().sort().forEach(function(m){
-        var t=el("button","tag"+(D.referents[m]&&D.referents[m].w?" wiki":""),m);
+        var t=el("button","tag"+(D.referents[m]&&D.referents[m].w?" wiki":""),disp(m));
         var rk=D.referents[m];
         if(rk && rk.k && rk.k!==g.k) t.appendChild(kindTag(rk.k,rk.i));
         t.onclick=function(){select({t:"referent",k:m})};
@@ -885,7 +898,7 @@
     else if(sel.t==="referent"){
       var r=D.referents[sel.k];
       var rg=D.groups[r.g]||{};
-      title=sel.k; sub=((rg.f?rg.f+" · ":"")+(r.k||"unclassified"))+(r.x?" · allusion":"")+(r.i?" · inferred":"")+" · "+r.s.length+" Pokémon";
+      title=disp(sel.k); sub=((rg.f?rg.f+" · ":"")+(r.k||"unclassified"))+(r.x?" · allusion":"")+(r.i?" · inferred":"")+" · "+r.s.length+" Pokémon";
       if(rg.m && rg.m.length>1){
         var up=el("button","tag","↑ see the whole “"+r.g+"” cluster ("+rg.m.length+" referents)");
         up.onclick=function(){select({t:"group",k:r.g})};
@@ -920,7 +933,7 @@
       body.appendChild(sectionTitle("Inside"));
       var nl=el("div","taglist");
       kids.slice(0,80).forEach(function(c){
-        var t=el("button","tag",c.label+(c.n?" ("+c.n+")":""));
+        var t=el("button","tag",disp(c.label)+(c.n?" ("+c.n+")":""));
         t.onclick=function(){ goTo(state.path.concat([{t:c.t,k:c.k}])) };
         nl.appendChild(t);
       });
@@ -1077,7 +1090,7 @@
   function graphFocusFor(st){
     if(!st.length) return {t:"root",k:"Everything",label:"Everything"};
     var last=st[st.length-1];
-    var out={t:last.t,k:last.k,label:last.t==="kind"?kindLabel(last.k):last.k};
+    var out={t:last.t,k:last.k,label:last.t==="kind"?kindLabel(last.k):disp(last.k)};
     if(last.t==="family"){ var f=D.families[last.k]; if(f) out.kind=f.k; }
     else if(last.t==="group"){ var g=D.groups[last.k]; if(g){ out.kind=g.k; out.n=g.tn||g.n } }
     else if(last.t==="referent"){ var r=D.referents[last.k]; if(r){ out.kind=r.k; out.n=r.s.length } }
@@ -1204,7 +1217,7 @@
       (D.groups[node.k].ch||[]).forEach(function(c){ out.push(groupNode(c)) });
       (D.groups[node.k].m||[]).forEach(function(m){
         var r=D.referents[m];
-        if(r) out.push({t:"referent",k:m,label:m,kind:r.k,n:r.s.length,open:r.s.length>0});
+        if(r) out.push({t:"referent",k:m,label:disp(m),kind:r.k,n:r.s.length,open:r.s.length>0});
       });
     } else if(node.t==="search"){
       /* the same matcher the Browse list uses, so both tabs find the same things */
@@ -1245,7 +1258,7 @@
     var solo=(gg.ch||[]).length===0 && (gg.m||[]).length<=1;
     var sref=solo?((gg.m||[])[0]||null):null;
     var only=solo && (!sref || ((D.referents[sref]||{s:[]}).s||[]).length<=1);
-    return {t:"group",k:g,label:g,kind:gg.k,n:gg.tn||gg.n,open:!only,
+    return {t:"group",k:g,label:disp(g),kind:gg.k,n:gg.tn||gg.n,open:!only,
             only:only?sref:null,
             kids:(gg.ch||[]).length+(gg.m||[]).length};
   }
@@ -1589,7 +1602,7 @@
     var crumbs=["Everything"].concat(st.filter(function(x,i){
       var nx=st[i+1];
       return !(x.t==="group" && nx && nx.t==="referent" && nx.k===x.k);
-    }).map(function(t){return t.t==="kind"?kindLabel(t.k):t.k}));
+    }).map(function(t){return t.t==="kind"?kindLabel(t.k):disp(t.k)}));
     if($("#graph").classList.contains("hidden")) return;
     /* the hint names what the ring holds, for the same reason the rows do */
     var ringNoun={family:"families",branch:"groups of families",group:"clusters",
@@ -1800,12 +1813,12 @@
       SUGG.push({t:"species",k:+id,label:D.species[id][0],n:D.species[id][1].length,kind:(D.species[id][2]||[])[0]});
     });
     Object.keys(D.referents).forEach(function(r){
-      SUGG.push({t:"referent",k:r,label:r,n:D.referents[r].s.length,kind:D.referents[r].k});
+      SUGG.push({t:"referent",k:r,label:disp(r),n:D.referents[r].s.length,kind:D.referents[r].k});
     });
     Object.keys(D.groups).forEach(function(g){
       var gg=D.groups[g];
       if((gg.m||[]).length===1 && !(gg.ch||[]).length) return;   /* same name as its one referent */
-      SUGG.push({t:"group",k:g,label:g,n:gg.tn||gg.n,kind:gg.k});
+      SUGG.push({t:"group",k:g,label:disp(g),n:gg.tn||gg.n,kind:gg.k});
     });
     Object.keys(D.families).forEach(function(f){
       SUGG.push({t:"family",k:f,label:f,n:D.families[f].n,kind:D.families[f].k});

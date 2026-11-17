@@ -28,6 +28,7 @@ dist/map_data.json is the minified copy the page fetches, rewritten on every sav
   python3 flagkit.py set-wiki <referent> [title]       set or clear a referent's Wikipedia title
   python3 flagkit.py set-region <cluster> <family> <region>   refile a cluster by where it is from
   python3 flagkit.py set-kind <group|referent> <kind>  change a category
+  python3 flagkit.py normalize-case                    one spelling per referent, from its source text
   python3 flagkit.py recount                           recompute every family n and cluster tn
 
 Write commands print a one-line diff summary, re-run `check`, and refuse to save
@@ -581,6 +582,60 @@ def set_region(D, cluster, family, region):
     return "%r -> %s / %s (was %s)" % (cluster, family, region, old)
 
 
+def normalize_case(D):
+    """Give every referent one spelling, taken from Bulbapedia's own.
+
+       Keys stay lowercase — everything looks referents up by them — but a
+       referent whose source text capitalises it (Curupira, El Dorado, RPG
+       mimic) carries that spelling in `d`, and the page shows `d` wherever it
+       shows a name. The design lists are rewritten to match, so the same
+       referent never reads two ways."""
+    R, S, FM = D["referents"], D["species"], D.get("forms") or {}
+    seen = {}
+    def note(x):
+        k = x.lower()
+        if k in R: seen.setdefault(k, {}).setdefault(x, 0)
+        if k in R: seen[k][x] += 1
+    for sp in S.values():
+        for x in sp[1]: note(x)
+    for fm in FM.values():
+        for x in (fm.get("own") or []): note(x)
+    chosen, conflicts = {}, 0
+    # A spelling set by hand wins: this pass rewrites the design strings to
+    # match, so the evidence it was chosen from is gone by the next run.
+    for k, v in R.items():
+        if v.get("d") and v["d"] != k: chosen[k] = v["d"]
+    for k, counts in seen.items():
+        if k in chosen: continue
+        if len(counts) > 1: conflicts += 1
+        # Where the source spells it two ways, take the capitalised one: a
+        # proper noun written mid-sentence loses its capital far more often
+        # than a common noun gains one.
+        if len(counts) > 1:
+            caps = [x for x in counts if x != k]
+            best = sorted(caps, key=lambda x: (-counts[x], x))[0] if caps else k
+        else:
+            best = sorted(counts.items(), key=lambda kv: (-kv[1], kv[0]))[0][0]
+        if best != k: chosen[k] = best
+    for k, v in R.items():
+        if k in chosen: v["d"] = chosen[k]
+        else: v.pop("d", None)
+    # one spelling in the design lists too
+    fixed = 0
+    for sp in S.values():
+        for i, x in enumerate(sp[1]):
+            want = chosen.get(x.lower(), x.lower() if x.lower() in R else x)
+            if x != want: sp[1][i] = want; fixed += 1
+    for fm in FM.values():
+        own = fm.get("own")
+        if not own: continue
+        for i, x in enumerate(own):
+            want = chosen.get(x.lower(), x.lower() if x.lower() in R else x)
+            if x != want: own[i] = want; fixed += 1
+    return "%d referents carry a capitalised spelling (%d had been spelled two ways); %d strings rewritten to match" % (
+        len(chosen), conflicts, fixed)
+
+
 def set_kind(D, name, kind):
     kinds = D["meta"].get("kinds") or []
     if kind not in kinds + ["unclassified"]:
@@ -603,6 +658,7 @@ WRITES = {"move-family": move_family, "nest": nest, "unnest": unnest,
           "split-family": split_family, "rename-family": rename_family,
           "merge-ref": merge_ref, "move-ref": move_ref,
           "set-kind": set_kind, "set-wiki": set_wiki, "set-region": set_region,
+          "normalize-case": lambda D: normalize_case(D),
           "recount": lambda D: recount(D)}
 
 
@@ -749,7 +805,8 @@ def main():
         if dry:
             return print("(dry run — nothing saved)")
         save(D)
-        print("saved work/map_data.json — integrity clean, publish it with the page")
+        print("saved %s and rebuilt %s — integrity clean" % (
+            os.path.relpath(DATA, HERE), os.path.relpath(DIST, HERE)))
         return
     print("unknown command %r" % cmd)
     print(__doc__)
