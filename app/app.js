@@ -952,8 +952,8 @@
       var nl=el("div","taglist");
       kids.slice(0,80).forEach(function(c){
         var t=el("button","tag",disp(c.label)+(c.n?" ("+c.n+")":""));
-        if(c.t==="referent") t.dataset.ref=c.k;
-        else if(c.t==="group") t.dataset.cluster=c.k;
+        t.dataset.node=c.t+":"+c.k;
+        if(c.fam) t.dataset.fam=c.fam;          /* a region belongs to a family */
         t.onclick=function(){ goTo(state.path.concat([{t:c.t,k:c.k}])) };
         nl.appendChild(t);
       });
@@ -1054,58 +1054,59 @@
      clicked, nothing navigates — it only shows what is connected. */
   function wireHover(scope){
     var dexes=[].slice.call(scope.querySelectorAll(".tag[data-dex]"));
-    var refs=[].slice.call(scope.querySelectorAll(".tag[data-ref]"));
-    var clus=[].slice.call(scope.querySelectorAll(".tag[data-cluster]"));
-    if(!dexes.length && !refs.length && !clus.length) return;
-    var lit=[].concat(dexes,refs,clus);
+    /* A chip beside the Pokémon can be a referent, a cluster, or — in a
+       category or family panel — a branch, a family or a place of origin.
+       Rather than a branch per kind, each says what it is and one resolver
+       turns it into the Pokémon it covers. */
+    var others=[].slice.call(scope.querySelectorAll(
+      ".tag[data-ref],.tag[data-cluster],.tag[data-node]"));
+    if(!dexes.length && !others.length) return;
+    var lit=[].concat(dexes,others);
     function clear(){
       lit.forEach(function(e){ e.classList.remove("lit") });
       litRail(null);
     }
-    /* what each chip stands for, resolved once rather than on every move */
-    var clusterSpecies={};
-    clus.forEach(function(c){
-      var g=D.groups[c.dataset.cluster];
-      clusterSpecies[c.dataset.cluster]=g?speciesOfGroup(g):{};
+    function nodeOf(e){
+      if(e.dataset.ref) return {t:"referent",k:e.dataset.ref};
+      if(e.dataset.cluster) return {t:"group",k:e.dataset.cluster};
+      var bits=(e.dataset.node||"").split(":");
+      var n={t:bits.shift(),k:bits.join(":")};
+      if(e.dataset.fam) n.fam=e.dataset.fam;
+      return n.t?n:null;
+    }
+    function kindOf(n){
+      if(n.t==="referent") return (D.referents[n.k]||{}).k;
+      if(n.t==="group") return (D.groups[n.k]||{}).k;
+      if(n.t==="family") return (D.families[n.k]||{}).k;
+      if(n.t==="kind") return n.k;
+      if(n.t==="region") return (D.families[n.fam]||{}).k;
+      return null;
+    }
+    /* resolved once when the panel is built, not on every mouse move */
+    var covers=[];
+    others.forEach(function(e){
+      var n=nodeOf(e), set={};
+      if(n) nodeAllSpecies(n).forEach(function(i){ set[+i]=1 });
+      covers.push({el:e,node:n,set:set});
     });
     dexes.forEach(function(d){
       var id=+d.dataset.dex;
       d.addEventListener("mouseenter",function(){
         clear();
-        refs.forEach(function(r){
-          var ref=D.referents[r.dataset.ref];
-          if(ref && ref.s.indexOf(id)>=0) r.classList.add("lit");
-        });
-        clus.forEach(function(c){
-          if(clusterSpecies[c.dataset.cluster][id]) c.classList.add("lit");
-        });
+        covers.forEach(function(c){ if(c.set[id]) c.el.classList.add("lit") });
         /* the rail reads the Pokémon's own origins, so it lights even where
-           this panel shows no referents of its own */
+           this panel lists places or families rather than referents */
         litRail(kindsOf(id));
       });
       d.addEventListener("mouseleave",clear);
     });
-    refs.forEach(function(r){
-      var ref=D.referents[r.dataset.ref];
-      if(!ref) return;
-      r.addEventListener("mouseenter",function(){
+    covers.forEach(function(c){
+      c.el.addEventListener("mouseenter",function(){
         clear();
-        var want={}; ref.s.forEach(function(i){ want[i]=1 });
-        dexes.forEach(function(d){ if(want[+d.dataset.dex]) d.classList.add("lit") });
-        var k={}; k[ref.k||"unclassified"]=1; litRail(k);
+        dexes.forEach(function(d){ if(c.set[+d.dataset.dex]) d.classList.add("lit") });
+        var k=kindOf(c.node||{}); if(k){ var m={}; m[k]=1; litRail(m) }
       });
-      r.addEventListener("mouseleave",clear);
-    });
-    clus.forEach(function(c){
-      var name=c.dataset.cluster, g=D.groups[name];
-      if(!g) return;
-      c.addEventListener("mouseenter",function(){
-        clear();
-        var want=clusterSpecies[name];
-        dexes.forEach(function(d){ if(want[+d.dataset.dex]) d.classList.add("lit") });
-        var k={}; k[g.k||"unclassified"]=1; litRail(k);
-      });
-      c.addEventListener("mouseleave",clear);
+      c.el.addEventListener("mouseleave",clear);
     });
     scope.addEventListener("mouseleave",clear);
   }
