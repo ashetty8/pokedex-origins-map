@@ -882,6 +882,7 @@
         var nl=el("div","taglist");
         g.ch.forEach(function(ch){
           var t=el("button","tag",disp(ch)+" ("+(D.groups[ch].tn||D.groups[ch].n)+")");
+          t.dataset.cluster=ch;
           t.onclick=function(){ goTo(state.path.concat([{t:"group",k:ch}])) };
           nl.appendChild(t);
         });
@@ -951,6 +952,8 @@
       var nl=el("div","taglist");
       kids.slice(0,80).forEach(function(c){
         var t=el("button","tag",disp(c.label)+(c.n?" ("+c.n+")":""));
+        if(c.t==="referent") t.dataset.ref=c.k;
+        else if(c.t==="group") t.dataset.cluster=c.k;
         t.onclick=function(){ goTo(state.path.concat([{t:c.t,k:c.k}])) };
         nl.appendChild(t);
       });
@@ -1052,28 +1055,33 @@
   function wireHover(scope){
     var dexes=[].slice.call(scope.querySelectorAll(".tag[data-dex]"));
     var refs=[].slice.call(scope.querySelectorAll(".tag[data-ref]"));
-    if(!dexes.length && !refs.length) return;
-    var chips=[].slice.call(document.querySelectorAll("#kinds .chip"));
+    var clus=[].slice.call(scope.querySelectorAll(".tag[data-cluster]"));
+    if(!dexes.length && !refs.length && !clus.length) return;
+    var lit=[].concat(dexes,refs,clus);
     function clear(){
-      dexes.concat(refs).forEach(function(e){ e.classList.remove("lit") });
-      chips.forEach(function(c){ c.classList.remove("lit") });
+      lit.forEach(function(e){ e.classList.remove("lit") });
+      litRail(null);
     }
-    function litKinds(kinds){
-      chips.forEach(function(c){ if(kinds[c.dataset.kind]) c.classList.add("lit") });
-    }
+    /* what each chip stands for, resolved once rather than on every move */
+    var clusterSpecies={};
+    clus.forEach(function(c){
+      var g=D.groups[c.dataset.cluster];
+      clusterSpecies[c.dataset.cluster]=g?speciesOfGroup(g):{};
+    });
     dexes.forEach(function(d){
       var id=+d.dataset.dex;
       d.addEventListener("mouseenter",function(){
         clear();
-        var kinds={};
         refs.forEach(function(r){
           var ref=D.referents[r.dataset.ref];
-          if(ref && ref.s.indexOf(id)>=0){
-            r.classList.add("lit");
-            kinds[ref.k||"unclassified"]=1;
-          }
+          if(ref && ref.s.indexOf(id)>=0) r.classList.add("lit");
         });
-        litKinds(kinds);
+        clus.forEach(function(c){
+          if(clusterSpecies[c.dataset.cluster][id]) c.classList.add("lit");
+        });
+        /* the rail reads the Pokémon's own origins, so it lights even where
+           this panel shows no referents of its own */
+        litRail(kindsOf(id));
       });
       d.addEventListener("mouseleave",clear);
     });
@@ -1084,9 +1092,20 @@
         clear();
         var want={}; ref.s.forEach(function(i){ want[i]=1 });
         dexes.forEach(function(d){ if(want[+d.dataset.dex]) d.classList.add("lit") });
-        var kinds={}; kinds[ref.k||"unclassified"]=1; litKinds(kinds);
+        var k={}; k[ref.k||"unclassified"]=1; litRail(k);
       });
       r.addEventListener("mouseleave",clear);
+    });
+    clus.forEach(function(c){
+      var name=c.dataset.cluster, g=D.groups[name];
+      if(!g) return;
+      c.addEventListener("mouseenter",function(){
+        clear();
+        var want=clusterSpecies[name];
+        dexes.forEach(function(d){ if(want[+d.dataset.dex]) d.classList.add("lit") });
+        var k={}; k[g.k||"unclassified"]=1; litRail(k);
+      });
+      c.addEventListener("mouseleave",clear);
     });
     scope.addEventListener("mouseleave",clear);
   }
