@@ -34,6 +34,23 @@ h1{font-size:1.32rem;letter-spacing:-.02em}
 .headright{margin-left:auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end}
 .counts{font-family:var(--mono);font-size:.74rem;color:var(--ink-faint);font-variant-numeric:tabular-nums}
 .searchrow{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.searchbox{position:relative;flex:1 1 240px;min-width:0;display:flex}
+/* jump straight to a thing, instead of only narrowing the lists */
+.suggest{position:absolute;top:calc(100% + 6px);left:0;right:0;z-index:12;background:var(--card);
+  border:1px solid var(--rule-strong);border-radius:12px;padding:5px;box-shadow:0 12px 32px rgba(0,0,0,.18);
+  max-height:min(52vh,420px);overflow:auto;overscroll-behavior:contain}
+.suggest[hidden]{display:none}
+.sg{display:flex;align-items:center;gap:9px;width:100%;text-align:left;background:none;border:0;
+  border-radius:8px;padding:5px 8px;color:var(--ink);font:inherit;font-size:.88rem;cursor:pointer}
+.sg:hover,.sg.on{background:var(--accent-soft)}
+.sg .sgspr{width:34px;height:34px;margin:-6px 0;image-rendering:pixelated;flex:0 0 auto}
+.sg .sgdot{width:9px;height:9px;border-radius:50%;flex:0 0 auto;margin:0 12px 0 13px}
+.sg .sgname{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sg .sgname b{font-weight:600}
+.sg .sgkind{font-family:var(--mono);font-size:.63rem;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--ink-faint);flex:0 0 auto}
+.sg .sgn{font-family:var(--mono);font-size:.7rem;color:var(--ink-faint);flex:0 0 auto;font-variant-numeric:tabular-nums}
+.sghint{font-family:var(--mono);font-size:.64rem;color:var(--ink-faint);padding:6px 9px 3px;letter-spacing:.05em}
 /* theme: follows the system until you say otherwise */
 .themebtn{flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--rule);border-radius:999px;padding:4px 11px;font-family:var(--mono);font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-soft);transition:border-color .12s,color .12s}
 .themebtn:hover{color:var(--ink);border-color:var(--rule-strong)}

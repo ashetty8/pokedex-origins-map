@@ -787,6 +787,20 @@
   /* Where a cluster or referent sits, as a full path from its category down:
      selecting one from the panel has to move Browse and the Map too, or the
      panel ends up describing a place the other two columns are not in. */
+  /* the path down to a family: category, the branch when there is one, family */
+  function famSteps(fam){
+    var f=D.families[fam]; if(!f) return null;
+    var kind=f.k||"unclassified", steps=[{t:"kind",k:kind}];
+    var defs=(D.branches||{})[kind]||[];
+    for(var i=0;i<defs.length;i++){
+      if(defs[i][1].indexOf(fam)>=0){
+        if(defs[i][1].length>1) steps.push({t:"branch",k:defs[i][0]});
+        break;
+      }
+    }
+    steps.push({t:"family",k:fam});
+    return steps;
+  }
   function pathTo(sel){
     var g=null;
     if(sel.t==="referent"){ var r=D.referents[sel.k]; if(!r) return null; g=r.g }
@@ -797,16 +811,7 @@
     while(cur && !seen[cur]){ seen[cur]=1; chain.unshift(cur); cur=D.groups[cur].p }
     var steps=[], top=chain[0], fam=D.groups[top].f, f=fam&&D.families[fam];
     if(f){
-      var kind=f.k||"unclassified";
-      steps.push({t:"kind",k:kind});
-      var defs=(D.branches||{})[kind]||[];
-      for(var i=0;i<defs.length;i++){
-        if(defs[i][1].indexOf(fam)>=0){
-          if(defs[i][1].length>1) steps.push({t:"branch",k:defs[i][0]});
-          break;
-        }
-      }
-      steps.push({t:"family",k:fam});
+      steps=famSteps(fam)||[];
       if(f.rg) for(var rg in f.rg){ if(f.rg[rg].indexOf(top)>=0){ steps.push({t:"region",k:rg}); break } }
     }
     chain.forEach(function(c){ steps.push({t:"group",k:c}) });
@@ -1783,8 +1788,129 @@
     if(state.tab==="map" && D3 && D) drawGraph();
   });
 
+  /* ---------- search suggestions ----------
+     The box already narrows the lists as you type. This is the other half:
+     somewhere to jump straight to, with a Pokémon's own face beside its name
+     so a dex search reads at a glance. */
+  var SUGG=null, sgItems=[], sgAt=-1;
+  function buildSuggest(){
+    if(SUGG) return SUGG;
+    SUGG=[];
+    Object.keys(D.species).forEach(function(id){
+      SUGG.push({t:"species",k:+id,label:D.species[id][0],n:D.species[id][1].length,kind:(D.species[id][2]||[])[0]});
+    });
+    Object.keys(D.referents).forEach(function(r){
+      SUGG.push({t:"referent",k:r,label:r,n:D.referents[r].s.length,kind:D.referents[r].k});
+    });
+    Object.keys(D.groups).forEach(function(g){
+      var gg=D.groups[g];
+      if((gg.m||[]).length===1 && !(gg.ch||[]).length) return;   /* same name as its one referent */
+      SUGG.push({t:"group",k:g,label:g,n:gg.tn||gg.n,kind:gg.k});
+    });
+    Object.keys(D.families).forEach(function(f){
+      SUGG.push({t:"family",k:f,label:f,n:D.families[f].n,kind:D.families[f].k});
+    });
+    (D.meta.kinds||[]).forEach(function(k){
+      SUGG.push({t:"kind",k:k,label:kindLabel(k),kind:k,n:0});
+    });
+    return SUGG;
+  }
+  var SGNOUN={species:"Pokémon",referent:"referent",group:"cluster",family:"family",kind:"category"};
+  function suggestFor(q){
+    var all=buildSuggest(), out=[];
+    for(var i=0;i<all.length;i++){
+      var it=all[i], low=it.label.toLowerCase(), at=low.indexOf(q);
+      if(at<0) continue;
+      /* a name that starts with what you typed beats one that merely contains it,
+         and a whole-word hit beats a hit inside a word */
+      var rank = at===0 ? 0 : (low.charAt(at-1)===" " ? 1 : 2);
+      if(it.t==="species") rank-=0.5;              /* a dex search usually means the Pokémon */
+      out.push({it:it,rank:rank,at:at});
+    }
+    out.sort(function(a,b){
+      if(a.rank!==b.rank) return a.rank-b.rank;
+      /* Pokémon fall in dex order among themselves — Charmander before
+         Charjabug — while everything else leads with the biggest */
+      if(a.it.t==="species" && b.it.t==="species") return a.it.k-b.it.k;
+      return (b.it.n||0)-(a.it.n||0) || a.it.label.length-b.it.label.length;
+    });
+    return out.slice(0,9).map(function(x){return x.it});
+  }
+  function closeSuggest(){
+    sgItems=[]; sgAt=-1;
+    var box=$("#suggest"); box.hidden=true; box.innerHTML="";
+    $("#q").setAttribute("aria-expanded","false");
+  }
+  function markSuggest(){
+    var opts=$("#suggest").querySelectorAll(".sg");
+    [].forEach.call(opts,function(o,i){ o.classList.toggle("on", i===sgAt) });
+    if(sgAt>=0 && opts[sgAt] && opts[sgAt].scrollIntoView) opts[sgAt].scrollIntoView({block:"nearest"});
+  }
+  function pickSuggest(it){
+    closeSuggest();
+    state.q=""; $("#q").value="";
+    if(it.t==="species"){ select({t:"species",k:it.k}); return }
+    if(it.t==="referent"||it.t==="group"){ select({t:it.t,k:it.k}); return }
+    if(it.t==="family"){ goTo(famSteps(it.k)||[],{top:true}); return }
+    if(it.t==="kind"){ goTo([{t:"kind",k:it.k}],{top:true}) }
+  }
+  function renderSuggest(q){
+    var box=$("#suggest");
+    if(!D || q.length<2){ closeSuggest(); return }
+    sgItems=suggestFor(q); sgAt=-1;
+    if(!sgItems.length){ closeSuggest(); return }
+    box.innerHTML="";
+    var hint=el("div","sghint","enter to jump · ↑↓ to choose");
+    box.appendChild(hint);
+    sgItems.forEach(function(it,i){
+      var b=el("button","sg"); b.type="button"; b.setAttribute("role","option");
+      var im=it.t==="species"?sprite(it.k,"sgspr"):null;
+      if(im){ im.className="spr sgspr"; b.appendChild(im) }
+      else {
+        var d=el("span","sgdot");
+        d.style.background="hsl("+kindHue(it.kind)+" 55% 55%)";
+        b.appendChild(d);
+      }
+      var nm=el("span","sgname");
+      var at=it.label.toLowerCase().indexOf(q);
+      nm.appendChild(document.createTextNode(it.label.slice(0,at)));
+      nm.appendChild(el("b","",it.label.slice(at,at+q.length)));
+      nm.appendChild(document.createTextNode(it.label.slice(at+q.length)));
+      b.appendChild(nm);
+      b.appendChild(el("span","sgkind",SGNOUN[it.t]));
+      if(it.n) b.appendChild(el("span","sgn",it.t==="species"?it.n+" refs":it.n+" Pokémon"));
+      b.onmouseenter=function(){ sgAt=i; markSuggest() };
+      b.onclick=function(){ pickSuggest(it) };
+      box.appendChild(b);
+    });
+    box.hidden=false;
+    $("#q").setAttribute("aria-expanded","true");
+  }
+  $("#q").addEventListener("keydown",function(e){
+    if(!sgItems.length){
+      if(e.key==="Escape"){ state.q=""; e.target.value=""; render() }
+      return;
+    }
+    if(e.key==="ArrowDown"||e.key==="ArrowUp"){
+      e.preventDefault();
+      var step=e.key==="ArrowDown"?1:-1;
+      sgAt=(sgAt+step+sgItems.length)%sgItems.length;
+      markSuggest();
+    } else if(e.key==="Enter"){
+      e.preventDefault(); pickSuggest(sgItems[sgAt<0?0:sgAt]);
+    } else if(e.key==="Escape"){
+      e.preventDefault(); closeSuggest();
+    }
+  });
+  addEventListener("click",function(e){
+    if(!e.target.closest || !e.target.closest(".searchbox")) closeSuggest();
+  });
+
   /* ---------- controls ---------- */
-  $("#q").addEventListener("input",function(e){ state.q=e.target.value.trim().toLowerCase(); state.limit=120; render() });
+  $("#q").addEventListener("input",function(e){
+    state.q=e.target.value.trim().toLowerCase(); state.limit=120;
+    renderSuggest(state.q); render();
+  });
   $("#sort").addEventListener("change",function(e){ state.sort=e.target.value; render() });
   $("#onlymulti").addEventListener("change",function(e){ state.onlymulti=e.target.checked; state.limit=120; render() });
   $("#onlyinf").addEventListener("change",function(e){

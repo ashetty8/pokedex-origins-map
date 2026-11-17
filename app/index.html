@@ -15,7 +15,11 @@
       </div>
     </div>
     <div class="searchrow">
-      <input id="q" type="search" placeholder="Search a referent or a Pokémon — kitsune, chandelier, Gengar…" autocomplete="off">
+      <div class="searchbox">
+        <input id="q" type="search" placeholder="Search a referent or a Pokémon — kitsune, chandelier, Gengar…" autocomplete="off"
+               role="combobox" aria-expanded="false" aria-controls="suggest" aria-autocomplete="list">
+        <div id="suggest" class="suggest" role="listbox" hidden></div>
+      </div>
     </div>
     <nav class="tabs" role="tablist">
       <button class="tab" id="tab-clusters" role="tab" aria-selected="true" aria-controls="results">Browse</button>
