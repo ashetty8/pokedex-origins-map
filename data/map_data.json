@@ -54286,8 +54286,7 @@
 "k": "person",
 "s": [
 675
-],
-"w": "Bancho"
+]
 },
 "banded darter": {
 "g": "banded darter",
@@ -54845,7 +54844,7 @@
 "s": [
 69
 ],
-"w": "Bellflower"
+"w": "Campanula"
 },
 "beluga": {
 "g": "beluga",
@@ -55808,7 +55807,7 @@
 "s": [
 407
 ],
-"w": "Bouquet of Roses"
+"w": "Flower bouquet"
 },
 "bous a la mar": {
 "g": "bous a la mar",
@@ -56324,7 +56323,7 @@
 "s": [
 146
 ],
-"w": "Burnout",
+"w": "Occupational burnout",
 "x": 1
 },
 "burr cutter teeth": {
@@ -58568,7 +58567,7 @@
 "s": [
 597
 ],
-"w": "Conker"
+"w": "Conkers"
 },
 "construction worker": {
 "g": "construction worker",
@@ -60843,7 +60842,7 @@
 "s": [
 978
 ],
-"w": "Tamago"
+"w": "Tamagoyaki"
 },
 "egg cup": {
 "g": "egg cup",
@@ -65781,7 +65780,7 @@
 "s": [
 876
 ],
-"w": "Housekeeper"
+"w": "Housekeeper (domestic worker)"
 },
 "howitzer": {
 "g": "howitzer",
@@ -66149,7 +66148,7 @@
 "s": [
 881
 ],
-"w": "Ichthyosaur"
+"w": "Ichthyosauria"
 },
 "icicle": {
 "g": "icicle",
@@ -67323,7 +67322,7 @@
 "s": [
 786
 ],
-"w": "Kane"
+"w": "Kāne"
 },
 "kanehekili (hawaiian thunder god)": {
 "g": "kanehekili",
@@ -67535,7 +67534,7 @@
 "s": [
 1025
 ],
-"w": "Kibi dango"
+"w": "Kibi dango (Okayama)"
 },
 "kickboxing": {
 "g": "kickboxing",
@@ -67779,7 +67778,7 @@
 85,
 145
 ],
-"w": "Kiwi"
+"w": "Kiwi (bird)"
 },
 "knifefish": {
 "g": "knifefish",
@@ -69280,7 +69279,7 @@
 "s": [
 597
 ],
-"w": "Mace"
+"w": "Mace (bludgeon)"
 },
 "mackerel tabby cat": {
 "g": "cat coat & marking",
@@ -69330,7 +69329,7 @@
 429,
 655
 ],
-"w": "Mage"
+"w": "Magician (fantasy)"
 },
 "mage's wand": {
 "g": "mage's wand",
@@ -70793,7 +70792,7 @@
 "s": [
 873
 ],
-"w": "Morana"
+"w": "Morana (goddess)"
 },
 "moravian star tree-topper": {
 "g": "moravian star tree-topper",
@@ -71302,7 +71301,7 @@
 "s": [
 63
 ],
-"w": "Mystic"
+"w": "Mysticism"
 },
 "mythical salamander": {
 "g": "salamander",
@@ -71849,7 +71848,7 @@
 "s": [
 975
 ],
-"w": "Ningen"
+"w": "Ningen (folklore)"
 },
 "ninja": {
 "g": "ninja",
@@ -72290,8 +72289,7 @@
 },
 "okuri-inu": {
 "g": "wolf",
-"i": 1,
-"k": "life",
+"k": "folklore",
 "s": [
 745
 ],
@@ -72378,7 +72376,7 @@
 "s": [
 487
 ],
-"w": "Giant centipede"
+"w": "Ōmukade"
 },
 "one-eyed yokai": {
 "g": "yokai",
@@ -73496,7 +73494,7 @@
 "s": [
 360
 ],
-"w": "Perseverance"
+"w": "Grit (personality trait)"
 },
 "persian cat": {
 "g": "longhair breed",
@@ -73559,7 +73557,7 @@
 250,
 257
 ],
-"w": "Phoenix"
+"w": "Phoenix (mythology)"
 },
 "phoenix born from a worm": {
 "g": "worm",
@@ -73668,7 +73666,7 @@
 325,
 498
 ],
-"w": "Piglet"
+"w": "Pig"
 },
 "pigtails": {
 "g": "pigtails",
@@ -75573,7 +75571,7 @@
 "s": [
 752
 ],
-"w": "Reed"
+"w": "Reed (plant)"
 },
 "reef triggerfish (humuhumunukunukuapua'a)": {
 "g": "triggerfish",
@@ -76981,7 +76979,7 @@
 "s": [
 504
 ],
-"w": "Scout"
+"w": "Scouting"
 },
 "screen pixels": {
 "g": "screen pixels",
@@ -78616,7 +78614,7 @@
 "s": [
 65
 ],
-"w": "Sorcerer"
+"w": "Magician (fantasy)"
 },
 "sorcerer or warlock": {
 "g": "sorcerer or warlock",
@@ -80170,7 +80168,7 @@
 264,
 447
 ],
-"w": "Tanuki"
+"w": "Japanese raccoon dog"
 },
 "tanuki (japanese raccoon dog)": {
 "g": "tanuki",
@@ -80179,7 +80177,7 @@
 "s": [
 263
 ],
-"w": "Tanuki"
+"w": "Japanese raccoon dog"
 },
 "tanzaku and the tanabata festival": {
 "g": "tanzaku and the tanabata festival",
@@ -83892,7 +83890,7 @@
 "s": [
 830
 ],
-"w": "Windflower"
+"w": "Anemone"
 },
 "windsock": {
 "g": "windsock",
@@ -84598,7 +84596,7 @@
 "s": [
 762
 ],
-"w": "Young Girl",
+"w": "Girl",
 "x": 1
 },
 "yucca": {

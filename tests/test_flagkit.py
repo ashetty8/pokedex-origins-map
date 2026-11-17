@@ -145,6 +145,15 @@ def _(D):
     assert not [1 for v in D["groups"].values() if v.get("f") == "Instruments"]
 
 
+@case("set-wiki sets a title and clears it")
+def _(D):
+    r = next(r for r, v in sorted(D["referents"].items()) if v.get("w"))
+    fk.set_wiki(D, r, "Some Article")
+    assert D["referents"][r]["w"] == "Some Article"
+    fk.set_wiki(D, r)
+    assert "w" not in D["referents"][r], "an empty title must remove the link, not blank it"
+
+
 @case("move-ref rehomes a referent and takes its cluster's category")
 def _(D):
     src = pick(D, lambda v: len(v.get("m") or []) > 1, "move-ref")

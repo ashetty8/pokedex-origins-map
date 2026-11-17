@@ -30,6 +30,22 @@ python3 -I flagkit.py build        # assemble dist/
 then publish `dist/index.html` with `style.css`, `app.js` and `map_data.json` as its files.
 Editing `dist/` directly is pointless — the next build overwrites it.
 
+## Checking the Wikipedia links
+
+```bash
+python3 -I tools/wikiaudit.py data/map_data.json        # inferred referents only
+python3 -I tools/wikiaudit.py data/map_data.json --all  # every referent with a title
+```
+
+Asks Wikipedia for the first paragraph behind every title the dataset names and reports three
+things: titles that no longer resolve, titles that land on a *disambiguation* page (a dead end
+for anyone clicking through), and first sentences whose wording contradicts the category the
+referent carries. It never edits anything.
+
+Wikipedia rate-limits long sweeps, so answers are cached in `tools/.wikicache.json` and a later
+run continues where the last one stopped. Read the wording mismatches with judgement: "is a
+genus of dinosaur" trips the life rule, and recently extinct animals trip the prehistoric one.
+
 ## Tests
 
 ```bash

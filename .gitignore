@@ -9,3 +9,4 @@ dist/form_sprites.json
 # produced by `patch apply`, never a source of truth
 *.patched.json
 .DS_Store
+tools/.wikicache.json

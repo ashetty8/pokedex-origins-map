@@ -25,6 +25,7 @@ dist/map_data.json is the minified copy the page fetches, rewritten on every sav
   python3 flagkit.py rename-family <old> <new>         rename a family everywhere
   python3 flagkit.py merge-ref <from> <into>           fold one referent into another
   python3 flagkit.py move-ref <referent> <cluster>     move a referent into another cluster
+  python3 flagkit.py set-wiki <referent> [title]       set or clear a referent's Wikipedia title
   python3 flagkit.py set-kind <group|referent> <kind>  change a category
   python3 flagkit.py recount                           recompute every family n and cluster tn
 
@@ -536,6 +537,18 @@ def move_ref(D, ref, cluster):
     return "%r moved from %r to %r (now %s)" % (ref, old, cluster, R[ref]["k"])
 
 
+def set_wiki(D, ref, title=""):
+    """Point a referent at a Wikipedia article, or clear the link. An empty
+       title is the honest answer when no article is actually about it —
+       better than sending a reader to a disambiguation page."""
+    R = D["referents"]
+    if ref not in R: sys.exit("no referent called %r" % ref)
+    was = R[ref].get("w") or "-"
+    if title: R[ref]["w"] = title
+    else: R[ref].pop("w", None)
+    return "%r wiki: %s -> %s" % (ref, was, title or "(none)")
+
+
 def set_kind(D, name, kind):
     kinds = D["meta"].get("kinds") or []
     if kind not in kinds + ["unclassified"]:
@@ -556,7 +569,8 @@ def set_kind(D, name, kind):
 WRITES = {"move-family": move_family, "nest": nest, "unnest": unnest,
           "merge": merge, "regroup": regroup, "rename": rename,
           "split-family": split_family, "rename-family": rename_family,
-          "merge-ref": merge_ref, "move-ref": move_ref, "set-kind": set_kind,
+          "merge-ref": merge_ref, "move-ref": move_ref,
+          "set-kind": set_kind, "set-wiki": set_wiki,
           "recount": lambda D: recount(D)}
 
 
