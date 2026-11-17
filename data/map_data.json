@@ -17525,12 +17525,9 @@
 "dwarf",
 "elf",
 "fairy",
-"folklore",
 "goblin",
 "kelpie",
-"mare",
-"mythological lynx",
-"ogre"
+"mare"
 ],
 "k": "folklore",
 "l": [
@@ -17542,17 +17539,17 @@
 "baphomet",
 "barbegazi",
 "basajaun",
+"bergstutz/stollwurm",
 "berserker",
-"bigfoot",
+"black cat superstition",
 "boggart",
 "brian boru and the pooka",
 "brownie",
 "bugbear",
 "buggane",
 "bugul noz",
-"cadejo",
 "cat-sith",
-"changeling",
+"cikavac",
 "clurichaun",
 "cocollona",
 "cu-sith",
@@ -17560,51 +17557,60 @@
 "duende",
 "dwarf blacksmith",
 "easter bunny",
+"ent",
 "fairy dust",
 "fairy godmother",
+"gargoyle",
 "gjenganger",
 "gnome",
 "gremlin",
 "grendel",
 "hag",
 "hellhound",
+"hellmouth",
+"homunculus",
 "imp",
+"iron charm against fae",
+"jack-o'-lantern",
 "kobold",
 "la petite souris",
+"lou carcolh",
 "maypole",
-"ningen",
 "nocnitsa",
+"oracle",
+"patufet",
 "pesanta",
 "pixie",
+"ramidreju",
 "rapunzel",
 "redcap",
+"santa compana",
 "selkie",
-"stingy jack",
 "strzyga",
+"suerale",
 "swedish alvor",
+"tarasque",
 "the dip",
-"the evil eye (malocchio)",
 "the flying dutchman",
 "the frog prince",
-"the iron wolf of lithuania",
 "the lincoln imp grotesque",
 "the sandman",
 "the witch of hansel and gretel",
 "troll",
 "vampire",
 "vasorru baba",
-"vegetable lamb of tartary",
 "viking",
 "wiedergaenger",
-"yeti",
+"will-o'-the-wisp",
 "zmora"
 ],
-"n": 99,
+"n": 105,
 "rg": {
 "Celtic & British Isles": [
 "aillen",
 "banshee",
 "barbegazi",
+"black cat superstition",
 "boggart",
 "brian boru and the pooka",
 "brownie",
@@ -17621,57 +17627,49 @@
 "grendel",
 "hag",
 "imp",
+"iron charm against fae",
+"jack-o'-lantern",
 "kelpie",
 "pixie",
 "redcap",
 "selkie",
 "the dip",
-"the lincoln imp grotesque"
-],
-"China": [
-"changeling"
+"the lincoln imp grotesque",
+"will-o'-the-wisp"
 ],
 "Greece & Rome": [
-"alicornio"
+"alicornio",
+"oracle",
+"santa compana"
 ],
 "Iberia & Mediterranean": [
 "basajaun",
 "cocollona",
 "duende",
-"pesanta"
-],
-"Japan": [
-"vegetable lamb of tartary"
-],
-"Mesoamerica & Andes": [
-"cadejo"
+"lou carcolh",
+"patufet",
+"pesanta",
+"ramidreju",
+"suerale",
+"tarasque"
 ],
 "Norse & Germanic": [
+"bergstutz/stollwurm",
 "berserker",
 "deildegast",
 "dwarf",
 "dwarf blacksmith",
 "elf",
+"hellmouth",
 "kobold",
 "swedish alvor",
 "troll",
 "viking"
 ],
-"North America": [
-"bigfoot"
-],
-"Not tied to one place": [
-"folklore",
-"mythological lynx",
-"ningen",
-"ogre",
-"stingy jack",
-"the evil eye (malocchio)",
-"the iron wolf of lithuania"
-],
 "Slavic & Eastern Europe": [
 "baba roga",
 "baba yaga",
+"cikavac",
 "gjenganger",
 "nocnitsa",
 "strzyga",
@@ -17680,16 +17678,16 @@
 "wiedergaenger",
 "zmora"
 ],
-"South & Southeast Asia": [
-"yeti"
-],
 "Western Europe": [
 "baphomet",
 "doppelganger",
 "easter bunny",
+"ent",
+"gargoyle",
 "gnome",
 "goblin",
 "hellhound",
+"homunculus",
 "la petite souris",
 "mare",
 "maypole",
@@ -18096,151 +18094,55 @@
 },
 "Japanese folklore": {
 "c": [
-"akaname",
-"bakeneko",
-"folktale",
+"animal yokai",
+"folk tales & charms",
+"ghosts & souls",
 "harionago",
-"nightmarchers",
-"nobusuma",
-"nukekubi",
+"haunted objects & places",
+"mountain & snow spirits",
 "nurarihyon",
-"oni",
+"oni & ogres",
 "yokai"
 ],
 "k": "folklore",
 "l": [
-"akuro-o",
-"bake-danuki",
 "cironnup kamuy",
-"dorotabo",
-"enko",
-"hitodama",
-"ikiryo",
-"issun-boshi",
-"jibakurei",
-"jinmenju",
-"kamikiri",
+"futakuchi-onna",
 "kappa",
 "kaso",
-"kinko",
-"kintaro",
-"kitsune-mochi",
 "kodama",
 "komainu",
-"konaki-jiji",
-"korpokkur",
-"mokumokuren",
-"morinji-no-okama / narigama",
-"mujina",
-"namahage",
-"namahage in a judogi",
-"namahage in a karategi",
-"nasu-baba",
-"nekomata",
-"nuppeppo",
-"nurikabe",
-"oboroguruma",
 "oiran",
-"oni-men",
-"onibi",
-"onikuma",
-"onryo",
-"ouni",
-"princess kaguya of the tale of the bamboo cutter",
-"rokurokubi",
+"rei-kyo",
 "satori",
-"shachihoko",
-"shibaten",
-"shibatengu",
 "shisa",
-"tengu",
-"teru teru bozu",
-"tsuchigumo",
 "tsuchikorobi",
-"tsukumogami",
-"tsurube-otoshi",
-"ushi-oni",
-"yama-misaki",
-"yamanba",
-"yamaoroshi",
-"yukinko",
-"yukiwarashi",
-"zashiki-warashi"
+"yamaoroshi"
 ],
-"n": 106,
+"n": 111,
 "rg": {
 "Japan": [
-"akaname",
-"akuro-o",
-"bake-danuki",
-"bakeneko",
+"animal yokai",
 "cironnup kamuy",
-"dorotabo",
-"enko",
+"folk tales & charms",
+"futakuchi-onna",
+"ghosts & souls",
 "harionago",
-"hitodama",
-"ikiryo",
-"issun-boshi",
-"jibakurei",
-"jinmenju",
-"kamikiri",
+"haunted objects & places",
 "kappa",
 "kaso",
-"kinko",
-"kintaro",
-"kitsune-mochi",
 "kodama",
 "komainu",
-"konaki-jiji",
-"korpokkur",
-"mokumokuren",
-"morinji-no-okama / narigama",
-"mujina",
-"namahage",
-"namahage in a judogi",
-"namahage in a karategi",
-"nasu-baba",
-"nekomata",
-"nobusuma",
-"nukekubi",
-"nuppeppo",
+"mountain & snow spirits",
 "nurarihyon",
-"nurikabe",
-"oboroguruma",
 "oiran",
-"oni",
-"oni-men",
-"onibi",
-"onikuma",
-"onryo",
-"ouni",
-"rokurokubi",
+"oni & ogres",
+"rei-kyo",
 "satori",
-"shachihoko",
-"shibaten",
-"shibatengu",
 "shisa",
-"tengu",
-"teru teru bozu",
-"tsuchigumo",
 "tsuchikorobi",
-"tsukumogami",
-"tsurube-otoshi",
-"ushi-oni",
-"yama-misaki",
-"yamanba",
 "yamaoroshi",
-"yokai",
-"yukinko",
-"yukiwarashi",
-"zashiki-warashi"
-],
-"Not tied to one place": [
-"folktale",
-"princess kaguya of the tale of the bamboo cutter"
-],
-"Oceania & Polynesia": [
-"nightmarchers"
+"yokai"
 ]
 }
 },
@@ -18360,7 +18262,7 @@
 ],
 "k": "concept",
 "l": [],
-"n": 169
+"n": 170
 },
 "Marsupials & monotremes": {
 "b": "Mammals",
@@ -18606,13 +18508,17 @@
 "Other folklore": {
 "c": [
 "alien",
-"basan",
 "carbuncle",
+"folklore",
+"folktale",
 "imugi",
 "jinn",
 "legend",
 "mo'o",
 "monster",
+"mythological lynx",
+"nightmarchers",
+"ogre",
 "snowman"
 ],
 "k": "folklore",
@@ -18622,120 +18528,69 @@
 "al-mi'raj",
 "area 51 and roswell lore",
 "bat boy",
-"bergstutz/stollwurm",
-"black cat superstition",
+"bigfoot",
 "bogeyman",
 "bulgasari",
+"cadejo",
 "calavera",
+"changeling",
 "cherufe",
 "chonchon",
-"cikavac",
 "crop circles",
 "curse of the pharaohs",
 "curses",
 "curupira",
 "dowsing",
 "electronic voice phenomena",
-"ent",
 "extraterrestrial",
 "fairies blamed for lost objects",
 "flying saucer",
-"futakuchi-onna",
-"gargoyle",
 "genie",
 "ghoul",
 "great sphinx of giza and the orion correlation theory",
 "hakuturi",
-"hellmouth",
 "hodgson's sargassum weed monsters",
-"homunculus",
 "ifrit",
-"iron charm against fae",
-"jack-o'-lantern",
-"kurage no hinotama",
-"lou carcolh",
 "magic circle",
-"maneki-neko",
 "marid",
 "mokele-mbembe",
 "mothman",
 "mummy",
+"ningen",
 "okuri-inu's aggressive aspect",
-"omizunu and the kunibiki myth",
-"oracle",
 "out-of-place artifact",
-"patufet",
 "pele's curse",
-"ramidreju",
-"rei-kyo",
+"princess kaguya of the tale of the bamboo cutter",
 "saci",
 "santa claus",
-"santa compana",
 "shadow people",
-"shirikodama",
 "skin-walker",
 "sprite",
-"suerale",
-"takaonna",
-"tarasque",
-"tatsu-no-otoshigo dragon myth",
+"stingy jack",
+"the evil eye (malocchio)",
 "the genie of aladdin",
+"the iron wolf of lithuania",
 "the nine-coloured deer of the jataka tales",
 "the rabbit of jataka tale 316",
 "the stork that delivers babies",
-"the tatsuko legend of lake tazawa",
 "third eye",
 "toyol",
 "ufo",
-"will-o'-the-wisp",
+"vegetable lamb of tartary",
 "witch's familiar",
 "witch's ladder",
-"yama-uba",
-"yuki-onna",
-"yurei"
+"yeti"
 ],
-"n": 134,
+"n": 129,
 "rg": {
-"Celtic & British Isles": [
-"black cat superstition",
-"iron charm against fae",
-"jack-o'-lantern",
-"will-o'-the-wisp"
-],
 "China": [
 "\"silk hiding steel\"",
+"changeling",
 "flying saucer"
 ],
 "Egypt & North Africa": [
 "curse of the pharaohs",
 "great sphinx of giza and the orion correlation theory"
-],
-"Greece & Rome": [
-"oracle",
-"santa compana"
-],
-"Iberia & Mediterranean": [
-"lou carcolh",
-"patufet",
-"ramidreju",
-"suerale",
-"tarasque"
-],
-"Japan": [
-"basan",
-"electronic voice phenomena",
-"futakuchi-onna",
-"kurage no hinotama",
-"maneki-neko",
-"omizunu and the kunibiki myth",
-"rei-kyo",
-"shirikodama",
-"takaonna",
-"tatsu-no-otoshigo dragon myth",
-"the tatsuko legend of lake tazawa",
-"yama-uba",
-"yuki-onna",
-"yurei"
 ],
 "Korea": [
 "bulgasari",
@@ -18743,19 +18598,17 @@
 ],
 "Mesoamerica & Andes": [
 "ahuizotl",
+"cadejo",
 "calavera",
 "carbuncle",
 "cherufe",
 "chonchon",
 "curupira"
 ],
-"Norse & Germanic": [
-"bergstutz/stollwurm",
-"hellmouth"
-],
 "North America": [
 "area 51 and roswell lore",
 "bat boy",
+"bigfoot",
 "mothman",
 "skin-walker"
 ],
@@ -18765,38 +18618,48 @@
 "crop circles",
 "curses",
 "dowsing",
+"electronic voice phenomena",
 "extraterrestrial",
 "fairies blamed for lost objects",
+"folklore",
+"folktale",
 "hodgson's sargassum weed monsters",
 "legend",
 "magic circle",
 "monster",
 "mummy",
+"mythological lynx",
+"ningen",
+"ogre",
 "okuri-inu's aggressive aspect",
 "out-of-place artifact",
+"princess kaguya of the tale of the bamboo cutter",
 "saci",
 "santa claus",
 "shadow people",
 "snowman",
 "sprite",
+"stingy jack",
+"the evil eye (malocchio)",
+"the iron wolf of lithuania",
 "the stork that delivers babies",
 "third eye",
 "ufo",
+"vegetable lamb of tartary",
 "witch's familiar",
 "witch's ladder"
 ],
 "Oceania & Polynesia": [
 "hakuturi",
 "mo'o",
+"nightmarchers",
 "pele's curse"
-],
-"Slavic & Eastern Europe": [
-"cikavac"
 ],
 "South & Southeast Asia": [
 "the nine-coloured deer of the jataka tales",
 "the rabbit of jataka tale 316",
-"toyol"
+"toyol",
+"yeti"
 ],
 "Sub-Saharan Africa": [
 "mokele-mbembe"
@@ -18809,11 +18672,6 @@
 "jinn",
 "marid",
 "the genie of aladdin"
-],
-"Western Europe": [
-"ent",
-"gargoyle",
-"homunculus"
 ]
 }
 },
@@ -19111,11 +18969,8 @@
 "trade & industry"
 ],
 "k": "concept",
-"l": [
-"hare boxing behaviour",
-"wrestling bear"
-],
-"n": 76
+"l": [],
+"n": 75
 },
 "Symbols & marks": {
 "b": "Signs & everything else",
@@ -23171,6 +23026,7 @@
 "akaname/akashita (disease spirits)"
 ],
 "n": 3,
+"p": "haunted objects & places",
 "rg": "Japan"
 },
 "akaushi bull named judo": {
@@ -23192,6 +23048,7 @@
 "akuro-o"
 ],
 "n": 1,
+"p": "folk tales & charms",
 "rg": "Japan"
 },
 "al-andalus iconography": {
@@ -23666,6 +23523,7 @@
 "autotomy",
 "breeding & young",
 "feeding & foraging",
+"hare boxing behaviour",
 "moulting shrimp posture",
 "nest",
 "nighttime and nocturnal animals",
@@ -23682,7 +23540,29 @@
 "leaf": 1,
 "m": [],
 "n": 0,
-"tn": 48
+"tn": 49
+},
+"animal yokai": {
+"ch": [
+"bake-danuki",
+"bakeneko",
+"basan",
+"enko",
+"kinko",
+"kitsune-mochi",
+"mujina",
+"nekomata",
+"nobusuma",
+"shachihoko",
+"tsuchigumo",
+"ushi-oni"
+],
+"f": "Japanese folklore",
+"k": "folklore",
+"leaf": 1,
+"m": [],
+"n": 0,
+"tn": 22
 },
 "ankylosaur": {
 "f": "Dinosaurs",
@@ -24630,6 +24510,7 @@
 "bake-danuki (tanuki yokai)"
 ],
 "n": 1,
+"p": "animal yokai",
 "rg": "Japan"
 },
 "baked good": {
@@ -24665,6 +24546,7 @@
 "bakeneko and lamp oil"
 ],
 "n": 5,
+"p": "animal yokai",
 "rg": "Japan"
 },
 "balaclava": {
@@ -24955,13 +24837,14 @@
 "rg": "Iberia & Mediterranean"
 },
 "basan": {
-"f": "Other folklore",
+"f": "Japanese folklore",
 "k": "folklore",
 "m": [
 "basan",
 "basan (fire-breathing chicken)"
 ],
 "n": 3,
+"p": "animal yokai",
 "rg": "Japan"
 },
 "basilisk": {
@@ -25116,9 +24999,10 @@
 "polar bear",
 "sloth bear",
 "sun bear",
-"ussuri brown bear"
+"ussuri brown bear",
+"wrestling bear"
 ],
-"n": 6,
+"n": 7,
 "tn": 16
 },
 "beard": {
@@ -25392,7 +25276,7 @@
 "p": "hat"
 },
 "bergstutz/stollwurm": {
-"f": "Other folklore",
+"f": "European folklore",
 "i": 1,
 "k": "folklore",
 "leaf": 1,
@@ -25450,7 +25334,7 @@
 "tn": 21
 },
 "bigfoot": {
-"f": "European folklore",
+"f": "Other folklore",
 "k": "folklore",
 "leaf": 1,
 "m": [
@@ -25611,7 +25495,7 @@
 "p": "weed & vine"
 },
 "black cat superstition": {
-"f": "Other folklore",
+"f": "European folklore",
 "k": "folklore",
 "leaf": 1,
 "m": [
@@ -26720,7 +26604,7 @@
 "n": 3
 },
 "cadejo": {
-"f": "European folklore",
+"f": "Other folklore",
 "i": 1,
 "k": "folklore",
 "leaf": 1,
@@ -27586,7 +27470,7 @@
 "rg": "China"
 },
 "changeling": {
-"f": "European folklore",
+"f": "Other folklore",
 "k": "folklore",
 "leaf": 1,
 "m": [
@@ -28112,7 +27996,7 @@
 "rg": "Japan"
 },
 "cikavac": {
-"f": "Other folklore",
+"f": "European folklore",
 "i": 1,
 "k": "folklore",
 "leaf": 1,
@@ -30264,6 +30148,7 @@
 "dorotabo (yokai)"
 ],
 "n": 2,
+"p": "haunted objects & places",
 "rg": "Japan"
 },
 "dotaku": {
@@ -31176,6 +31061,7 @@
 "enko"
 ],
 "n": 1,
+"p": "animal yokai",
 "rg": "Japan"
 },
 "enlightenment": {
@@ -31200,7 +31086,7 @@
 "p": "baked good"
 },
 "ent": {
-"f": "Other folklore",
+"f": "European folklore",
 "k": "folklore",
 "leaf": 1,
 "m": [
@@ -32216,8 +32102,27 @@
 "n": 3,
 "rg": "China"
 },
+"folk tales & charms": {
+"ch": [
+"akuro-o",
+"issun-boshi",
+"kintaro",
+"korpokkur",
+"maneki-neko",
+"omizunu and the kunibiki myth",
+"tatsu-no-otoshigo dragon myth",
+"teru teru bozu",
+"the tatsuko legend of lake tazawa"
+],
+"f": "Japanese folklore",
+"k": "folklore",
+"leaf": 1,
+"m": [],
+"n": 0,
+"tn": 10
+},
 "folklore": {
-"f": "European folklore",
+"f": "Other folklore",
 "k": "folklore",
 "m": [
 "black dog of folklore",
@@ -32227,7 +32132,7 @@
 "n": 5
 },
 "folktale": {
-"f": "Japanese folklore",
+"f": "Other folklore",
 "k": "folklore",
 "m": [
 "momotaro",
@@ -32667,7 +32572,7 @@
 "p": "thieves"
 },
 "futakuchi-onna": {
-"f": "Other folklore",
+"f": "Japanese folklore",
 "i": 1,
 "k": "folklore",
 "leaf": 1,
@@ -32801,7 +32706,7 @@
 "tn": 6
 },
 "gargoyle": {
-"f": "Other folklore",
+"f": "European folklore",
 "k": "folklore",
 "leaf": 1,
 "m": [
@@ -33117,6 +33022,28 @@
 ],
 "n": 2,
 "rg": "North America"
+},
+"ghosts & souls": {
+"ch": [
+"hitodama",
+"ikiryo",
+"jibakurei",
+"kurage no hinotama",
+"nukekubi",
+"onibi",
+"onryo",
+"rokurokubi",
+"shirikodama",
+"yama-misaki",
+"yurei",
+"zashiki-warashi"
+],
+"f": "Japanese folklore",
+"k": "folklore",
+"leaf": 1,
+"m": [],
+"n": 0,
+"tn": 18
 },
 "ghoul": {
 "f": "Other folklore",
@@ -34268,14 +34195,15 @@
 "p": "lagomorph"
 },
 "hare boxing behaviour": {
-"f": "Society & work",
+"f": "Life sciences",
 "i": 1,
 "k": "concept",
 "leaf": 1,
 "m": [
 "hare boxing behaviour"
 ],
-"n": 1
+"n": 1,
+"p": "animal behaviour"
 },
 "harionago": {
 "f": "Japanese folklore",
@@ -34364,6 +34292,27 @@
 ],
 "n": 1,
 "rg": "Norse & Germanic"
+},
+"haunted objects & places": {
+"ch": [
+"akaname",
+"dorotabo",
+"jinmenju",
+"kamikiri",
+"mokumokuren",
+"morinji-no-okama / narigama",
+"nuppeppo",
+"nurikabe",
+"oboroguruma",
+"tsukumogami",
+"tsurube-otoshi"
+],
+"f": "Japanese folklore",
+"k": "folklore",
+"leaf": 1,
+"m": [],
+"n": 0,
+"tn": 22
 },
 "hauntings": {
 "ch": [
@@ -34646,7 +34595,7 @@
 "rg": "Western Europe"
 },
 "hellmouth": {
-"f": "Other folklore",
+"f": "European folklore",
 "k": "folklore",
 "leaf": 1,
 "m": [
@@ -34933,6 +34882,7 @@
 "hitodama"
 ],
 "n": 6,
+"p": "ghosts & souls",
 "rg": "Japan"
 },
 "hoatzin": {
@@ -34975,7 +34925,7 @@
 "p": "headwear"
 },
 "homunculus": {
-"f": "Other folklore",
+"f": "European folklore",
 "i": 1,
 "k": "folklore",
 "leaf": 1,
@@ -35538,6 +35488,7 @@
 "ikiryo (kage no yamai)"
 ],
 "n": 1,
+"p": "ghosts & souls",
 "rg": "Japan"
 },
 "imp": {
@@ -35757,7 +35708,7 @@
 "p": "evolution & ecology"
 },
 "iron charm against fae": {
-"f": "Other folklore",
+"f": "European folklore",
 "i": 1,
 "k": "folklore",
 "leaf": 1,
@@ -35838,6 +35789,7 @@
 "issun-boshi"
 ],
 "n": 1,
+"p": "folk tales & charms",
 "rg": "Japan"
 },
 "itaomacip": {
@@ -35902,7 +35854,7 @@
 "p": "doll & figure"
 },
 "jack-o'-lantern": {
-"f": "Other folklore",
+"f": "European folklore",
 "k": "folklore",
 "leaf": 1,
 "m": [
@@ -36142,6 +36094,7 @@
 "jibakurei (place-bound spirit)"
 ],
 "n": 1,
+"p": "ghosts & souls",
 "rg": "Japan"
 },
 "jinmenju": {
@@ -36152,6 +36105,7 @@
 "jinmenju (human-head tree)"
 ],
 "n": 1,
+"p": "haunted objects & places",
 "rg": "Japan"
 },
 "jinn": {
@@ -36330,6 +36284,7 @@
 "kamikiri (hair-cutting yokai)"
 ],
 "n": 1,
+"p": "haunted objects & places",
 "rg": "Japan"
 },
 "kamoiwakura dotaku site": {
@@ -36679,6 +36634,7 @@
 "kinko (golden kitsune)"
 ],
 "n": 1,
+"p": "animal yokai",
 "rg": "Japan"
 },
 "kintaro": {
@@ -36689,6 +36645,7 @@
 "kintaro"
 ],
 "n": 1,
+"p": "folk tales & charms",
 "rg": "Japan"
 },
 "kintsugi": {
@@ -36767,6 +36724,7 @@
 "kitsune-mochi (fox witch)"
 ],
 "n": 2,
+"p": "animal yokai",
 "rg": "Japan"
 },
 "kiwi": {
@@ -36893,6 +36851,7 @@
 "konaki-jiji (yokai)"
 ],
 "n": 1,
+"p": "mountain & snow spirits",
 "rg": "Japan"
 },
 "koro": {
@@ -36913,6 +36872,7 @@
 "korpokkur (ainu folklore)"
 ],
 "n": 1,
+"p": "folk tales & charms",
 "rg": "Japan"
 },
 "kraken": {
@@ -36967,7 +36927,7 @@
 "p": "martial artist"
 },
 "kurage no hinotama": {
-"f": "Other folklore",
+"f": "Japanese folklore",
 "i": 1,
 "k": "folklore",
 "leaf": 1,
@@ -36975,6 +36935,7 @@
 "kurage no hinotama"
 ],
 "n": 1,
+"p": "ghosts & souls",
 "rg": "Japan"
 },
 "kusanagi": {
@@ -37797,7 +37758,7 @@
 "p": "writing system"
 },
 "lou carcolh": {
-"f": "Other folklore",
+"f": "European folklore",
 "i": 1,
 "k": "folklore",
 "leaf": 1,
@@ -38185,13 +38146,14 @@
 "p": "monkey"
 },
 "maneki-neko": {
-"f": "Other folklore",
+"f": "Japanese folklore",
 "k": "folklore",
 "leaf": 1,
 "m": [
 "maneki-neko (lucky cat)"
 ],
 "n": 1,
+"p": "folk tales & charms",
 "rg": "Japan"
 },
 "mangosteen": {
@@ -39154,6 +39116,7 @@
 "mokumokuren (many-eyed yokai)"
 ],
 "n": 1,
+"p": "haunted objects & places",
 "rg": "Japan"
 },
 "mole": {
@@ -39433,6 +39396,7 @@
 "morinji-no-okama / narigama (possessed kettle yokai)"
 ],
 "n": 1,
+"p": "haunted objects & places",
 "rg": "Japan"
 },
 "morning star": {
@@ -39604,6 +39568,23 @@
 ],
 "n": 3
 },
+"mountain & snow spirits": {
+"ch": [
+"konaki-jiji",
+"shibaten",
+"shibatengu",
+"tengu",
+"yuki-onna",
+"yukinko",
+"yukiwarashi"
+],
+"f": "Japanese folklore",
+"k": "folklore",
+"leaf": 1,
+"m": [],
+"n": 0,
+"tn": 7
+},
 "mountaineer's crampons": {
 "f": "Household & tools",
 "k": "object",
@@ -39704,6 +39685,7 @@
 "mujina (shapeshifting yokai)"
 ],
 "n": 1,
+"p": "animal yokai",
 "rg": "Japan"
 },
 "mummy": {
@@ -39920,7 +39902,7 @@
 "tn": 8
 },
 "mythological lynx": {
-"f": "European folklore",
+"f": "Other folklore",
 "k": "folklore",
 "m": [
 "mythological lynx",
@@ -39956,6 +39938,7 @@
 "namahage"
 ],
 "n": 4,
+"p": "oni & ogres",
 "rg": "Japan"
 },
 "namahage in a judogi": {
@@ -39966,6 +39949,7 @@
 "namahage in a judogi"
 ],
 "n": 1,
+"p": "oni & ogres",
 "rg": "Japan"
 },
 "namahage in a karategi": {
@@ -39976,6 +39960,7 @@
 "namahage in a karategi"
 ],
 "n": 1,
+"p": "oni & ogres",
 "rg": "Japan"
 },
 "nanny": {
@@ -40016,6 +40001,7 @@
 "nasu-baba (purple yokai witch)"
 ],
 "n": 1,
+"p": "oni & ogres",
 "rg": "Japan"
 },
 "native american head plume": {
@@ -40107,6 +40093,7 @@
 "nekomata"
 ],
 "n": 5,
+"p": "animal yokai",
 "rg": "Japan"
 },
 "nematode": {
@@ -40244,7 +40231,7 @@
 "p": "lighting & fire"
 },
 "nightmarchers": {
-"f": "Japanese folklore",
+"f": "Other folklore",
 "k": "folklore",
 "m": [
 "nightmarchers",
@@ -40310,7 +40297,7 @@
 "p": "ice age mammal"
 },
 "ningen": {
-"f": "European folklore",
+"f": "Other folklore",
 "i": 1,
 "k": "folklore",
 "leaf": 1,
@@ -40357,6 +40344,7 @@
 "nobusuma (yokai)"
 ],
 "n": 2,
+"p": "animal yokai",
 "rg": "Japan"
 },
 "nocnitsa": {
@@ -40468,6 +40456,7 @@
 "nukekubi (flying severed head)"
 ],
 "n": 2,
+"p": "ghosts & souls",
 "rg": "Japan"
 },
 "nuppeppo": {
@@ -40478,6 +40467,7 @@
 "nuppeppo (blob yokai)"
 ],
 "n": 1,
+"p": "haunted objects & places",
 "rg": "Japan"
 },
 "nurarihyon": {
@@ -40499,6 +40489,7 @@
 "nurikabe (wall yokai)"
 ],
 "n": 1,
+"p": "haunted objects & places",
 "rg": "Japan"
 },
 "nurse": {
@@ -40571,6 +40562,7 @@
 "oboroguruma (haunted ox-cart)"
 ],
 "n": 1,
+"p": "haunted objects & places",
 "rg": "Japan"
 },
 "obsidian": {
@@ -40659,7 +40651,7 @@
 "p": "road vehicle"
 },
 "ogre": {
-"f": "European folklore",
+"f": "Other folklore",
 "k": "folklore",
 "m": [
 "ogre",
@@ -40740,7 +40732,7 @@
 "p": "amphibian"
 },
 "omizunu and the kunibiki myth": {
-"f": "Other folklore",
+"f": "Japanese folklore",
 "i": 1,
 "k": "mythology",
 "leaf": 1,
@@ -40748,6 +40740,7 @@
 "omizunu and the kunibiki myth"
 ],
 "n": 1,
+"p": "folk tales & charms",
 "rg": "Japan"
 },
 "onejaw": {
@@ -40768,7 +40761,29 @@
 "oni and oni masks"
 ],
 "n": 11,
+"p": "oni & ogres",
 "rg": "Japan"
+},
+"oni & ogres": {
+"ch": [
+"namahage",
+"namahage in a judogi",
+"namahage in a karategi",
+"nasu-baba",
+"oni",
+"oni-men",
+"onikuma",
+"ouni",
+"takaonna",
+"yama-uba",
+"yamanba"
+],
+"f": "Japanese folklore",
+"k": "folklore",
+"leaf": 1,
+"m": [],
+"n": 0,
+"tn": 20
 },
 "oni-men": {
 "f": "Japanese folklore",
@@ -40779,6 +40794,7 @@
 "oni-men (furious demon mask)"
 ],
 "n": 1,
+"p": "oni & ogres",
 "rg": "Japan"
 },
 "onibi": {
@@ -40790,6 +40806,7 @@
 "onibi"
 ],
 "n": 3,
+"p": "ghosts & souls",
 "rg": "Japan"
 },
 "onigiri": {
@@ -40832,6 +40849,7 @@
 "onikuma (demon bear)"
 ],
 "n": 1,
+"p": "oni & ogres",
 "rg": "Japan"
 },
 "onion": {
@@ -40864,6 +40882,7 @@
 "onryo (vengeful spirit)"
 ],
 "n": 2,
+"p": "ghosts & souls",
 "rg": "Japan"
 },
 "oomancy": {
@@ -40899,7 +40918,7 @@
 "p": "marsupial"
 },
 "oracle": {
-"f": "Other folklore",
+"f": "European folklore",
 "k": "folklore",
 "leaf": 1,
 "m": [
@@ -41080,6 +41099,7 @@
 "ouni (hairy demon)"
 ],
 "n": 1,
+"p": "oni & ogres",
 "rg": "Japan"
 },
 "ouranosaurus": {
@@ -41528,7 +41548,7 @@
 "p": "breeding & young"
 },
 "patufet": {
-"f": "Other folklore",
+"f": "European folklore",
 "k": "folklore",
 "leaf": 1,
 "m": [
@@ -42672,7 +42692,7 @@
 "p": "baked good"
 },
 "princess kaguya of the tale of the bamboo cutter": {
-"f": "Japanese folklore",
+"f": "Other folklore",
 "k": "folklore",
 "leaf": 1,
 "m": [
@@ -43327,7 +43347,7 @@
 "p": "mouse & rat"
 },
 "ramidreju": {
-"f": "Other folklore",
+"f": "European folklore",
 "i": 1,
 "k": "folklore",
 "leaf": 1,
@@ -43578,7 +43598,7 @@
 "p": "heavy machinery"
 },
 "rei-kyo": {
-"f": "Other folklore",
+"f": "Japanese folklore",
 "i": 1,
 "k": "folklore",
 "leaf": 1,
@@ -43994,6 +44014,7 @@
 "rokurokubi"
 ],
 "n": 1,
+"p": "ghosts & souls",
 "rg": "Japan"
 },
 "rolled wafer": {
@@ -44518,7 +44539,7 @@
 "n": 2
 },
 "santa compana": {
-"f": "Other folklore",
+"f": "European folklore",
 "i": 1,
 "k": "folklore",
 "leaf": 1,
@@ -45214,6 +45235,7 @@
 "shachihoko"
 ],
 "n": 1,
+"p": "animal yokai",
 "rg": "Japan"
 },
 "shackles": {
@@ -45361,6 +45383,7 @@
 "shibaten (lawn tengu)"
 ],
 "n": 1,
+"p": "mountain & snow spirits",
 "rg": "Japan"
 },
 "shibatengu": {
@@ -45371,6 +45394,7 @@
 "shibatengu"
 ],
 "n": 1,
+"p": "mountain & snow spirits",
 "rg": "Japan"
 },
 "shield": {
@@ -45463,7 +45487,7 @@
 "p": "sport & outdoor kit"
 },
 "shirikodama": {
-"f": "Other folklore",
+"f": "Japanese folklore",
 "i": 1,
 "k": "folklore",
 "leaf": 1,
@@ -45471,6 +45495,7 @@
 "shirikodama (soul ball)"
 ],
 "n": 1,
+"p": "ghosts & souls",
 "rg": "Japan"
 },
 "shisa": {
@@ -46961,7 +46986,7 @@
 "p": "measuring & optics"
 },
 "stingy jack": {
-"f": "European folklore",
+"f": "Other folklore",
 "k": "folklore",
 "leaf": 1,
 "m": [
@@ -47277,7 +47302,7 @@
 "p": "rail & tunnel"
 },
 "suerale": {
-"f": "Other folklore",
+"f": "European folklore",
 "k": "folklore",
 "leaf": 1,
 "m": [
@@ -47799,7 +47824,7 @@
 "p": "freshwater fish"
 },
 "takaonna": {
-"f": "Other folklore",
+"f": "Japanese folklore",
 "i": 1,
 "k": "folklore",
 "leaf": 1,
@@ -47807,6 +47832,7 @@
 "takaonna"
 ],
 "n": 1,
+"p": "oni & ogres",
 "rg": "Japan"
 },
 "takeda shingen": {
@@ -47904,7 +47930,7 @@
 "p": "arachnid"
 },
 "tarasque": {
-"f": "Other folklore",
+"f": "European folklore",
 "k": "folklore",
 "leaf": 1,
 "m": [
@@ -47943,7 +47969,7 @@
 "p": "traditional dress"
 },
 "tatsu-no-otoshigo dragon myth": {
-"f": "Other folklore",
+"f": "Japanese folklore",
 "i": 1,
 "k": "folklore",
 "leaf": 1,
@@ -47951,6 +47977,7 @@
 "tatsu-no-otoshigo dragon myth"
 ],
 "n": 1,
+"p": "folk tales & charms",
 "rg": "Japan"
 },
 "teacup": {
@@ -48031,6 +48058,7 @@
 "tengu"
 ],
 "n": 2,
+"p": "mountain & snow spirits",
 "rg": "Japan"
 },
 "tenrec": {
@@ -48116,6 +48144,7 @@
 "teru teru bozu"
 ],
 "n": 3,
+"p": "folk tales & charms",
 "rg": "Japan"
 },
 "tesla coil": {
@@ -48335,7 +48364,7 @@
 "p": "writing system"
 },
 "the evil eye (malocchio)": {
-"f": "European folklore",
+"f": "Other folklore",
 "k": "folklore",
 "leaf": 1,
 "m": [
@@ -48414,7 +48443,7 @@
 "p": "paradoxes"
 },
 "the iron wolf of lithuania": {
-"f": "European folklore",
+"f": "Other folklore",
 "k": "folklore",
 "leaf": 1,
 "m": [
@@ -48680,7 +48709,7 @@
 "n": 1
 },
 "the tatsuko legend of lake tazawa": {
-"f": "Other folklore",
+"f": "Japanese folklore",
 "i": 1,
 "k": "folklore",
 "leaf": 1,
@@ -48688,6 +48717,7 @@
 "the tatsuko legend of lake tazawa"
 ],
 "n": 1,
+"p": "folk tales & charms",
 "rg": "Japan"
 },
 "the tiger tally": {
@@ -49694,6 +49724,7 @@
 "tsuchigumo (spider yokai)"
 ],
 "n": 1,
+"p": "animal yokai",
 "rg": "Japan"
 },
 "tsuchikorobi": {
@@ -49714,6 +49745,7 @@
 "tsukumogami"
 ],
 "n": 11,
+"p": "haunted objects & places",
 "rg": "Japan"
 },
 "tsurube-otoshi": {
@@ -49724,6 +49756,7 @@
 "tsurube-otoshi"
 ],
 "n": 1,
+"p": "haunted objects & places",
 "rg": "Japan"
 },
 "tulip": {
@@ -50175,6 +50208,7 @@
 "ushi-oni"
 ],
 "n": 1,
+"p": "animal yokai",
 "rg": "Japan"
 },
 "uther pendragon's dragon standard": {
@@ -50294,7 +50328,7 @@
 "tn": 15
 },
 "vegetable lamb of tartary": {
-"f": "European folklore",
+"f": "Other folklore",
 "k": "folklore",
 "leaf": 1,
 "m": [
@@ -51075,7 +51109,7 @@
 "rg": "Iberia & Mediterranean"
 },
 "will-o'-the-wisp": {
-"f": "Other folklore",
+"f": "European folklore",
 "k": "folklore",
 "leaf": 1,
 "m": [
@@ -51444,15 +51478,6 @@
 "n": 7,
 "p": "grappling art"
 },
-"wrestling bear": {
-"f": "Society & work",
-"k": "concept",
-"leaf": 1,
-"m": [
-"wrestling bear"
-],
-"n": 1
-},
 "wrestling headgear": {
 "f": "Clothing & adornment",
 "k": "object",
@@ -51609,16 +51634,18 @@
 "yama-misaki (mountain spirits)"
 ],
 "n": 1,
+"p": "ghosts & souls",
 "rg": "Japan"
 },
 "yama-uba": {
-"f": "Other folklore",
+"f": "Japanese folklore",
 "k": "folklore",
 "leaf": 1,
 "m": [
 "yama-uba"
 ],
 "n": 2,
+"p": "oni & ogres",
 "rg": "Japan"
 },
 "yamanba": {
@@ -51629,6 +51656,7 @@
 "yamanba"
 ],
 "n": 1,
+"p": "oni & ogres",
 "rg": "Japan"
 },
 "yamaoroshi": {
@@ -51674,7 +51702,7 @@
 "rg": "Slavic & Eastern Europe"
 },
 "yeti": {
-"f": "European folklore",
+"f": "Other folklore",
 "k": "folklore",
 "leaf": 1,
 "m": [
@@ -51750,13 +51778,14 @@
 "p": "plant part"
 },
 "yuki-onna": {
-"f": "Other folklore",
+"f": "Japanese folklore",
 "k": "folklore",
 "leaf": 1,
 "m": [
 "yuki-onna"
 ],
 "n": 2,
+"p": "mountain & snow spirits",
 "rg": "Japan"
 },
 "yukinko": {
@@ -51767,6 +51796,7 @@
 "yukinko"
 ],
 "n": 1,
+"p": "mountain & snow spirits",
 "rg": "Japan"
 },
 "yukiwarashi": {
@@ -51777,10 +51807,11 @@
 "yukiwarashi (snow child spirit)"
 ],
 "n": 1,
+"p": "mountain & snow spirits",
 "rg": "Japan"
 },
 "yurei": {
-"f": "Other folklore",
+"f": "Japanese folklore",
 "i": 1,
 "k": "folklore",
 "leaf": 1,
@@ -51788,6 +51819,7 @@
 "yurei"
 ],
 "n": 1,
+"p": "ghosts & souls",
 "rg": "Japan"
 },
 "zahhak": {
@@ -51808,6 +51840,7 @@
 "zashiki-warashi"
 ],
 "n": 1,
+"p": "ghosts & souls",
 "rg": "Japan"
 },
 "zebra": {
@@ -51929,7 +51962,7 @@
 "build": "f4b4a145",
 "clusters": 574,
 "families": 59,
-"groups": 2598,
+"groups": 2597,
 "kinds": [
 "concept",
 "earth & sky",
@@ -84203,8 +84236,8 @@
 "w": "Wrestling"
 },
 "wrestling bear": {
-"g": "wrestling bear",
-"k": "concept",
+"g": "bear",
+"k": "life",
 "s": [
 760
 ],
