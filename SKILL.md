@@ -98,7 +98,18 @@ Pass `files` only when the data changed. If another writer published in between,
 refused and hands back a diff — merge it into `work/page.html` and publish again. A publish that
 is refused as "identical content resent" goes through on a straight retry.
 
-### 6. Mark them applied, in one call
+### 6. Commit what changed
+
+The repo is `ashetty8/pokedex-origins-map` (private), checked out at this skill's own
+directory. After publishing, record the same change in git — the overlay's diff is the
+readable account of what moved:
+
+```bash
+python3 -I flagkit.py patch export     # when the data changed
+git add -A && git commit -m "<what changed, and the version id>" && git push
+```
+
+### 7. Mark them applied, in one call
 
 ```
 ArtifactData action=batch url=<artifact> writes=[
