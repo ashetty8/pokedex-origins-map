@@ -1,7 +1,7 @@
 (function(){
   "use strict";
   var D=null, dbNS=null, userNS=null, canWrite=null, viewerId=null;
-  var state={tab:"clusters",q:"",kinds:new Set(),sort:"species",onlymulti:false,sel:null,limit:120,path:[],flagview:"open",poke:null,
+  var state={tab:"clusters",q:"",kinds:new Set(),sort:"species",onlymulti:false,onlyinf:false,sel:null,limit:120,path:[],flagview:"open",poke:null,
              types:new Set(),gens:new Set(),colours:new Set(),misc:new Set(),scope:true};
   var flags=[], flagsReady=false, flagsNote="";
   /* what has been flagged, by target, so the map can show it too */
@@ -198,6 +198,7 @@
     Object.keys(D.groups).forEach(function(name){
       var g=D.groups[name];
       if(state.onlymulti && g.m.length<2) return;
+      if(!hasInferred({t:"group",k:name})) return;
       if(q){
         var hit=name.indexOf(q)>=0 || g.m.some(function(m){return m.indexOf(q)>=0});
         if(!hit) return;
@@ -307,7 +308,7 @@
     });
     var out=Object.keys(tally).map(function(k){
       var t=tally[k]; t.n=speciesIn(t.list); return t;
-    }).filter(function(t){return t.n>0});
+    }).filter(function(t){return t.n>0 && hasInferred({t:"kind",k:t.name})});
     if(state.sort==="az") out.sort(function(a,b){return a.name<b.name?-1:1});
     else out.sort(function(a,b){return b.n-a.n});
     return out;
@@ -328,7 +329,8 @@
     if(!defs) return null;
     return defs.map(function(d){
       return {name:d[0], fams:d[1], n:speciesIn(d[1])};
-    }).filter(function(r){return r.fams.length && r.n>0});
+    }).filter(function(r){return r.fams.length && r.n>0 &&
+      (r.fams.length>1 ? hasInferred({t:"branch",k:r.name}) : hasInferred({t:"family",k:r.fams[0]}))});
   }
   function branchRow(r){
     var b=el("button","row");
@@ -374,14 +376,16 @@
   }
   function famMemberRows(fam){
     var names=nodeNames(), out=[];
-    names.forEach(function(n){ if(D.groups[n] && groupPassesAttrs(n)) out.push({name:n,g:D.groups[n]}) });
+    names.forEach(function(n){
+      if(D.groups[n] && groupPassesAttrs(n) && hasInferred({t:"group",k:n})) out.push({name:n,g:D.groups[n]});
+    });
     /* a node's own referents belong in the list too, beside the nested nodes —
        otherwise the bears inside "bear" are invisible while browsing. */
     var last=lastStep();
     if(last && last.t==="group" && D.groups[last.k]){
       (D.groups[last.k].m||[]).forEach(function(m){
         var r=D.referents[m];
-        if(r) out.push({name:m, ref:r});
+        if(r && (!state.onlyinf || r.i)) out.push({name:m, ref:r});
       });
     }
     var s=state.sort;
@@ -508,6 +512,7 @@
       /* the scope already says which part of the taxonomy you are in, so the
          category chips would only subtract from it — ignore them while it is on */
       if(!passAttrs(id)) return;
+      if(!hasInferred({t:"species",k:id})) return;
       if(scope && !scope.set[id]) return;
       if(q){
         var hit=s[0].toLowerCase().indexOf(q)>=0 || s[1].some(function(r){return r.toLowerCase().indexOf(q)>=0});
@@ -528,7 +533,7 @@
   /* ---------- render ---------- */
   function render(){
     if(!D) return;
-    var host=$("#results"); host.innerHTML=""; ATTRCACHE=null;
+    var host=$("#results"); host.innerHTML=""; ATTRCACHE=null; INFCACHE=null;
     syncClears();
     setTimeout(topbar,0);          /* the heading row may have changed height */
     $("#rail").classList.toggle("hidden",state.tab==="flags");
@@ -585,7 +590,7 @@
         var fams=familiesIn(last);
         if(fams===null){ rows=branchRows(last.k); mode="branch"; }
         else { rows=fams.map(function(n){return {name:n,f:D.families[n],fn:speciesIn([n])}})
-                 .filter(function(r){return r.fn>0})
+                 .filter(function(r){return r.fn>0 && hasInferred({t:"family",k:r.name})})
                  .sort(function(a,b){ return state.sort==="az" ? (a.name<b.name?-1:1) : b.fn-a.fn });
                mode="family"; }
       }
@@ -645,6 +650,7 @@
       var filter=attrsActive();
       var ids=Object.keys(sp).filter(function(i){return !filter||passAttrs(i)});
       if(!ids.length) return;
+      if(state.onlyinf && !rg[name].some(function(g){return hasInferred({t:"group",k:g})})) return;
       out.push({name:name, list:rg[name], n:ids.length});
     });
     if(state.sort==="az") out.sort(function(a,b){return a.name<b.name?-1:1});
@@ -1122,6 +1128,40 @@
     else nodeSpecies(n).forEach(function(i){ sp[i]=1 });
     return Object.keys(sp);
   }
+  /* An inferred category is a guess the pipeline made, not something read off
+     Bulbapedia. This narrows all three columns to what still carries one, so
+     the backlog can be walked through and corrected. */
+  var INFCACHE=null;
+  function refsUnder(n){
+    var out=[];
+    function addGroup(g){
+      var gg=D.groups[g]; if(!gg) return;
+      (gg.m||[]).forEach(function(m){ out.push(m) });
+      (gg.ch||[]).forEach(addGroup);
+    }
+    function addFam(f){ famGroups(f).forEach(addGroup) }
+    if(n.t==="referent") out.push(n.k);
+    else if(n.t==="group") addGroup(n.k);
+    else if(n.t==="family") addFam(n.k);
+    else if(n.t==="kind") Object.keys(D.families).forEach(function(f){
+      if((D.families[f].k||"unclassified")===n.k) addFam(f) });
+    else if(n.t==="branch") Object.keys(D.branches||{}).forEach(function(k){
+      (D.branches[k]||[]).forEach(function(d){ if(d[0]===n.k) d[1].forEach(addFam) }) });
+    else if(n.t==="region") ((((D.families[n.fam]||{}).rg)||{})[n.k]||[]).forEach(addGroup);
+    else if(n.t==="species"){
+      var sp=D.species[String(n.k)];
+      (sp?sp[1]:[]).forEach(function(x){ out.push(String(x).toLowerCase()) });
+    }
+    return out;
+  }
+  function hasInferred(n){
+    if(!state.onlyinf) return true;
+    if(!INFCACHE) INFCACHE={};
+    var key=n.t+":"+n.k;
+    if(INFCACHE[key]!=null) return INFCACHE[key];
+    var hit=refsUnder(n).some(function(m){ var r=D.referents[m]; return r && r.i });
+    return (INFCACHE[key]=hit);
+  }
   function mapCount(n){
     if(!attrsActive()) return n.n||0;
     var ids=nodeAllSpecies(n), k=0;
@@ -1267,10 +1307,11 @@
     var focus=graphFocus(true), all=childrenOf(focus);
     /* a filtered-out node is not drawn, and the counts shown are the filtered
        ones, so the ring says the same thing as the list beside it */
-    var filtering=attrsActive();
+    var filtering=attrsActive()||state.onlyinf;
     if(filtering){
       var keep=[];
       all.forEach(function(c){
+        if(!hasInferred(c)) return;
         var m=mapCount(c); if(!m) return;
         var cc={}; for(var k in c) cc[k]=c[k];
         cc.n=m; keep.push(cc);
@@ -1550,7 +1591,7 @@
                   referent:"referents",species:"Pokémon",region:"places of origin",
                   kind:"categories"}[(all[0]||{}).t]||"inside";
     $("#graphnote").textContent=crumbs.join(" › ")+" · "+all.length+" "+ringNoun+
-      (filtering?" · filtered":"")+
+      (filtering?(state.onlyinf?" · inferred only":" · filtered"):"")+
       (hidden?" · showing the "+GCAP+" biggest":"")+
       (state.path.length?" · click the middle node to go back":"");
   }
@@ -1698,7 +1739,7 @@
      and the list are in, and whatever the panel is showing. It greys out when
      there is nothing left to clear, so it never promises an empty action. */
   function anythingSet(){
-    return !!(state.q || state.path.length || state.sel || state.poke || state.onlymulti ||
+    return !!(state.q || state.path.length || state.sel || state.poke || state.onlymulti || state.onlyinf ||
               attrsActive() || gstate.showAll || !state.scope);
   }
   function syncClears(){
@@ -1708,6 +1749,7 @@
     if(!anythingSet()) return;
     state.types.clear(); state.gens.clear(); state.colours.clear(); state.misc.clear();
     state.onlymulti=false; $("#onlymulti").checked=false;
+    state.onlyinf=false; $("#onlyinf").checked=false; INFCACHE=null;
     state.q=""; $("#q").value="";
     state.scope=true; gstate.showAll=false; state.sel=null; state.poke=null; state.limit=120;
     buildPokeFilters();
@@ -1745,6 +1787,9 @@
   $("#q").addEventListener("input",function(e){ state.q=e.target.value.trim().toLowerCase(); state.limit=120; render() });
   $("#sort").addEventListener("change",function(e){ state.sort=e.target.value; render() });
   $("#onlymulti").addEventListener("change",function(e){ state.onlymulti=e.target.checked; state.limit=120; render() });
+  $("#onlyinf").addEventListener("change",function(e){
+    state.onlyinf=e.target.checked; INFCACHE=null; state.limit=120; render();
+  });
   ["clusters","map","species","flags"].forEach(function(t){
     $("#tab-"+t).addEventListener("click",function(){
       state.tab=t; state.limit=120; record();

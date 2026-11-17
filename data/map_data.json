@@ -55771,8 +55771,7 @@
 },
 "bottle gourd": {
 "g": "gourd",
-"i": 1,
-"k": "object",
+"k": "life",
 "s": [
 711
 ],
@@ -63259,8 +63258,7 @@
 },
 "giant isopod": {
 "g": "isopod",
-"i": 1,
-"k": "folklore",
+"k": "life",
 "s": [
 768
 ],
@@ -67264,8 +67262,7 @@
 },
 "kamaitachi": {
 "g": "weasel",
-"i": 1,
-"k": "life",
+"k": "folklore",
 "s": [
 264,
 461,
@@ -68760,8 +68757,7 @@
 },
 "lindworm": {
 "g": "dragon",
-"i": 1,
-"k": "life",
+"k": "mythology",
 "s": [
 95,
 149,
@@ -77762,8 +77758,7 @@
 },
 "shrimp (ebi) nigiri": {
 "g": "nigiri",
-"i": 1,
-"k": "life",
+"k": "food",
 "s": [
 978
 ],
@@ -80721,8 +80716,7 @@
 },
 "the dog of momotaro": {
 "g": "folktale",
-"i": 1,
-"k": "life",
+"k": "folklore",
 "s": [
 1014
 ]
@@ -81022,8 +81016,7 @@
 },
 "the monkey of momotaro": {
 "g": "folktale",
-"i": 1,
-"k": "life",
+"k": "folklore",
 "s": [
 1015
 ]
@@ -81565,8 +81558,7 @@
 },
 "thunderbird": {
 "g": "firebird",
-"i": 1,
-"k": "life",
+"k": "mythology",
 "s": [
 785,
 940
@@ -81575,8 +81567,7 @@
 },
 "thunderbird (native american legend)": {
 "g": "firebird",
-"i": 1,
-"k": "life",
+"k": "mythology",
 "s": [
 145
 ],
