@@ -1,3 +1,6 @@
+# build output: `flagkit build` rewrites it from app/ and data/
+dist/
+
 # fetched from the artifact when a sprite question comes up (~2 MB of base64)
 app/sprites.json
 app/form_sprites.json
