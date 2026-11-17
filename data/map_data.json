@@ -54958,6 +54958,7 @@
 "s": [
 724
 ],
+"w": "Barn owl",
 "x": 1
 },
 "barn swallow": {
@@ -55885,6 +55886,7 @@
 "s": [
 278
 ],
+"w": "Black-tailed gull",
 "x": 1
 },
 "black-veined white butterfly": {
@@ -56119,7 +56121,8 @@
 "s": [
 418,
 419
-]
+],
+"w": "Propeller"
 },
 "bob cut": {
 "g": "bob cut",
@@ -56336,6 +56339,7 @@
 "s": [
 512
 ],
+"w": "Bōsōzoku",
 "x": 1
 },
 "bottle gourd": {
@@ -56397,6 +56401,7 @@
 "s": [
 722
 ],
+"w": "Bow tie",
 "x": 1
 },
 "bowhead whale": {
@@ -56700,6 +56705,7 @@
 "s": [
 1021
 ],
+"w": "Brontosaurus",
 "x": 1
 },
 "bronze sculpture": {
@@ -57026,7 +57032,8 @@
 "k": "life",
 "s": [
 11
-]
+],
+"w": "Pieris rapae"
 },
 "cable ties": {
 "g": "cable ties",
@@ -58164,6 +58171,7 @@
 898,
 983
 ],
+"w": "Chess King",
 "x": 1
 },
 "chess pawn": {

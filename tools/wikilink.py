@@ -51,7 +51,22 @@ def candidates(name):
         t = t.strip()
         if len(t.split()) <= 4 and t.capitalize() not in out:
             out.append(t.capitalize())
-    return out[:4]
+    # Most of what is left is a phrase about a thing rather than the thing's
+    # name — "1920s flapper", "18th-century pouf hairstyle", "108-bead
+    # japamala". Strip the dating and qualifying words and try the head noun,
+    # which is the article these are really about.
+    stripped = re.sub(r"^\d+(-\d+)?(s)?\s+", "", core)
+    stripped = re.sub(r"^\d+(st|nd|rd|th)[- ]century\s+", "", stripped, flags=re.I)
+    stripped = re.sub(r"^\d+[- ]\w+\s+", "", stripped)          # "108-bead japamala"
+    stripped = re.sub(r"\s+(pun|trope|motif|variant|lore|superstition)$", "", stripped, flags=re.I)
+    if stripped and stripped != core:
+        for t in (stripped, stripped.capitalize()):
+            if t not in out: out.append(t)
+    words = stripped.split()
+    if len(words) > 1:
+        for t in (words[-1], words[-1].capitalize(), " ".join(words[-2:]).capitalize()):
+            if t and t not in out: out.append(t)
+    return out[:8]
 
 
 def load_cache():
@@ -115,15 +130,20 @@ def main():
         titles.extend(candidates(r))
     finished = ask(sorted(set(titles)), cache)
 
-    exact, loose, nothing = {}, [], []
+    exact, loose, nothing, unchecked = {}, [], [], []
     for r in todo:
+        cands = candidates(r)
         hit = None
-        for c in candidates(r):
+        for c in cands:
             p = cache.get(c)
             if p and p["ok"] and not p["dis"]:
                 hit = p
                 break
-        if not hit:
+        if hit is None and not any(c in cache for c in cands):
+            # never asked — a pass cut short by rate limiting is not evidence
+            # that no article exists
+            unchecked.append(r)
+        elif not hit:
             nothing.append(r)
         elif norm(hit["title"]) == norm(r):
             exact[r] = hit["title"]
@@ -138,7 +158,9 @@ def main():
     for r, t, s in sorted(loose)[:40]:
         print("   %-40s -> %-34s %s" % (r[:40], t[:34], s[:52]))
     if len(loose) > 40: print("   … and %d more" % (len(loose) - 40))
-    print("\n=== no article at any candidate spelling: %d ===" % len(nothing))
+    print("\n=== asked, and no article at any candidate spelling: %d ===" % len(nothing))
+    if unchecked:
+        print("=== not asked yet (rate limit): %d — run again to continue ===" % len(unchecked))
     if not finished:
         print("\n(rate-limited part way; run again to continue)")
 
