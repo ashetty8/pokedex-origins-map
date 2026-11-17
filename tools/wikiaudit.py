@@ -119,19 +119,27 @@ def fetch(titles):
 def main():
     data_path = sys.argv[1]
     only_inferred = "--all" not in sys.argv
+    offline = "--offline" in sys.argv          # report on the cache, ask nothing
     D = json.load(open(data_path, encoding="utf-8"))
     R = D["referents"]
     picked = {r: v for r, v in R.items()
               if v.get("w") and (v.get("i") or not only_inferred)}
     titles = sorted({v["w"] for v in picked.values()})
-    sys.stderr.write("asking Wikipedia about %d titles for %d referents\n" % (len(titles), len(picked)))
-    pages = fetch(titles)
+    if offline:
+        pages = load_cache()
+        sys.stderr.write("offline: reporting on %d cached titles\n" % len(pages))
+    else:
+        sys.stderr.write("asking Wikipedia about %d titles for %d referents\n" % (len(titles), len(picked)))
+        pages = fetch(titles)
 
-    missing, disambig, mismatch = [], [], []
+    missing, disambig, mismatch, unchecked = [], [], [], []
     for r, v in sorted(picked.items()):
         page = pages.get(v["w"])
         if not page:
-            missing.append((r, v["w"], "no answer"))
+            # not fetched yet (a sweep cut short by rate limiting) — that is
+            # not the same as a title that does not exist, and saying so would
+            # turn an unfinished run into a false alarm
+            unchecked.append(r)
             continue
         if page["missing"]:
             missing.append((r, v["w"], "no such page"))
@@ -144,6 +152,10 @@ def main():
         if kind and kind != v.get("k"):
             mismatch.append((len(v["s"]), r, v.get("k"), kind, why, sent[:150]))
 
+    print("=== checked %d of %d referents with a title ===" % (
+        len(picked) - len(unchecked), len(picked)))
+    if unchecked:
+        print("   %d not fetched yet — run again to continue" % len(unchecked))
     print("\n=== titles that do not resolve (%d) ===" % len(missing))
     for r, w, why in missing:
         print("   %-40s -> %-40s %s" % (r[:40], w[:40], why))

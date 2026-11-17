@@ -18465,7 +18465,7 @@
 "zhulong",
 "ziz"
 ],
-"n": 120,
+"n": 118,
 "rg": {
 "Abrahamic tradition": [
 "behemoth",
@@ -24969,10 +24969,9 @@
 "k": "mythology",
 "m": [
 "basilisk",
-"basilisk, the king of serpents",
-"common basilisk"
+"basilisk, the king of serpents"
 ],
-"n": 6,
+"n": 4,
 "rg": "Greece & Rome"
 },
 "basque whaling": {
@@ -30027,6 +30026,7 @@
 "m": [
 "basilisk lizard",
 "brown basilisk lizard",
+"common basilisk",
 "draco flying lizard",
 "fan-throated lizard",
 "frilled lizard"
@@ -58397,8 +58397,8 @@
 "x": 1
 },
 "common basilisk": {
-"g": "basilisk",
-"k": "mythology",
+"g": "display lizard",
+"k": "life",
 "s": [
 694,
 695
