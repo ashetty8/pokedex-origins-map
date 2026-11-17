@@ -100,6 +100,20 @@ def _(D):
         assert m in D["groups"][dst]["m"] and D["referents"][m]["g"] == dst
 
 
+@case("split-cluster moves referents into a new sibling")
+def _(D):
+    src = pick(D, lambda v: len(v.get("m") or []) >= 3 and not v.get("p"), "split-cluster")
+    moving = D["groups"][src]["m"][:2]
+    fam = D["groups"][src]["f"]
+    fk.split_cluster(D, src, "split off", *moving)
+    assert D["groups"]["split off"]["m"] == sorted(moving)
+    assert all(m not in D["groups"][src]["m"] for m in moving)
+    for m in moving:
+        assert D["referents"][m]["g"] == "split off"
+    listed = (D["families"][fam].get("c") or []) + (D["families"][fam].get("l") or [])
+    assert "split off" in listed, "a new top-level cluster must be listed by its family"
+
+
 @case("merge-ref folds a referent and rewrites every design list")
 def _(D):
     singles = [r for r, v in sorted(D["referents"].items()) if len(v["s"]) == 1]

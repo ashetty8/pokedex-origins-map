@@ -17297,7 +17297,8 @@
 "families": {
 "Abstract ideas": {
 "c": [
-"age",
+"historical eras",
+"old age",
 "personified"
 ],
 "k": "concept",
@@ -17353,7 +17354,7 @@
 ],
 "k": "concept",
 "l": [],
-"n": 55
+"n": 57
 },
 "Birds": {
 "b": "Birds",
@@ -17383,7 +17384,19 @@
 ],
 "k": "media & art",
 "l": [],
-"n": 27
+"n": 29
+},
+"Buildings & monuments": {
+"c": [
+"building & structure"
+],
+"k": "object",
+"l": [
+"buildings & sites",
+"burial monuments",
+"megaliths & standing stones"
+],
+"n": 44
 },
 "Carnivores": {
 "b": "Mammals",
@@ -17678,8 +17691,10 @@
 "sweet & dessert"
 ],
 "k": "food",
-"l": [],
-"n": 25
+"l": [
+"usagi-ringo"
+],
+"n": 26
 },
 "Fungi": {
 "b": "Fungi",
@@ -17794,6 +17809,7 @@
 "morpheus",
 "nefertem",
 "nezha",
+"nike and victoria",
 "notus",
 "pe'a-pe'a-makawalu",
 "peaches of immortality",
@@ -17822,7 +17838,7 @@
 "zephyrus",
 "zeus"
 ],
-"n": 99,
+"n": 100,
 "rg": {
 "Abrahamic tradition": [
 "angel",
@@ -17866,6 +17882,7 @@
 "hestia",
 "lares",
 "morpheus",
+"nike and victoria",
 "notus",
 "pan",
 "persephone and asphodels",
@@ -18041,6 +18058,7 @@
 "l": [
 "cironnup kamuy",
 "futakuchi-onna",
+"hachiro-taro",
 "kappa",
 "kodama",
 "ningen",
@@ -18049,7 +18067,7 @@
 "princess kaguya of the tale of the bamboo cutter",
 "satori"
 ],
-"n": 113,
+"n": 114,
 "rg": {
 "Japan": [
 "animal yokai",
@@ -18058,6 +18076,7 @@
 "futakuchi-onna",
 "ghosts & souls",
 "guardian figures",
+"hachiro-taro",
 "harionago",
 "haunted objects & places",
 "kappa",
@@ -18077,15 +18096,19 @@
 "Landforms": {
 "c": [
 "ice & cold ground",
+"lake",
+"mountain",
 "rock formation",
 "volcanic ground"
 ],
 "k": "earth & sky",
 "l": [
+"a small hill or nature park",
 "earth's inner core",
+"mauna kea",
 "tectonic plates"
 ],
-"n": 19
+"n": 26
 },
 "Legends & heroes": {
 "c": [
@@ -18111,6 +18134,7 @@
 "sir lancelot",
 "sun wukong",
 "terracotta army",
+"the apple of discord",
 "the black horse of famine",
 "the cowherd and the weaver girl",
 "the knights of the round table",
@@ -18126,7 +18150,7 @@
 "yata no kagami",
 "zhang fei"
 ],
-"n": 37,
+"n": 38,
 "rg": {
 "Abrahamic tradition": [
 "cain and abel",
@@ -18154,6 +18178,7 @@
 "charon's obol",
 "nymph",
 "romulus and remus",
+"the apple of discord",
 "titans and the titanomachy",
 "trident of poseidon"
 ],
@@ -18592,9 +18617,9 @@
 "onejaw",
 "sea-monkeys",
 "two fused beldum",
-"vessels & structures"
+"vessels & decoration"
 ],
-"n": 125
+"n": 96
 },
 "Other plants": {
 "b": "Plants",
@@ -18640,110 +18665,6 @@
 "k": "concept",
 "l": [],
 "n": 36
-},
-"Places": {
-"c": [
-"bridge",
-"castle",
-"lake",
-"mountain",
-"prague",
-"west"
-],
-"k": "earth & sky",
-"l": [
-"\"the big apple\" / new york city",
-"a small hill or nature park",
-"european stone circles",
-"factory",
-"fortress",
-"ghost town",
-"hachiro-taro",
-"igloo",
-"inuksuk",
-"landfill",
-"lighthouse",
-"mauna kea",
-"megalith",
-"naveta d'es tudons tomb",
-"nike and victoria",
-"preseli bluestones",
-"pukao",
-"pyramids of guimar",
-"stone ship burial",
-"stonehenge",
-"talaiotic architecture",
-"the apple of discord",
-"the olympics",
-"the seven deadly sins",
-"the shard",
-"trilithon",
-"tumulus",
-"usagi-ringo",
-"v sign",
-"verraco"
-],
-"n": 31,
-"rg": {
-"Abrahamic tradition": [
-"the seven deadly sins"
-],
-"Celtic & British Isles": [
-"preseli bluestones",
-"stonehenge"
-],
-"Greece & Rome": [
-"nike and victoria",
-"the apple of discord",
-"the olympics"
-],
-"Iberia & Mediterranean": [
-"naveta d'es tudons tomb",
-"pyramids of guimar",
-"talaiotic architecture",
-"verraco"
-],
-"Japan": [
-"hachiro-taro",
-"usagi-ringo"
-],
-"Norse & Germanic": [
-"stone ship burial"
-],
-"North America": [
-"\"the big apple\" / new york city",
-"ghost town",
-"inuksuk"
-],
-"Not tied to one place": [
-"a small hill or nature park",
-"bridge",
-"castle",
-"factory",
-"fortress",
-"igloo",
-"lake",
-"landfill",
-"lighthouse",
-"mountain",
-"the shard",
-"v sign",
-"west"
-],
-"Oceania & Polynesia": [
-"mauna kea",
-"pukao"
-],
-"Slavic & Eastern Europe": [
-"prague"
-],
-"Western Europe": [
-"european stone circles",
-"megalith",
-"trilithon",
-"tumulus"
-]
-}
 },
 "Prehistoric beasts": {
 "c": [
@@ -18856,7 +18777,7 @@
 ],
 "k": "concept",
 "l": [],
-"n": 75
+"n": 76
 },
 "Symbols & marks": {
 "b": "Signs & everything else",
@@ -22524,7 +22445,7 @@
 "rg": "China"
 },
 "\"the big apple\" / new york city": {
-"f": "Places",
+"f": "Belief & custom",
 "i": 1,
 "k": "concept",
 "leaf": 1,
@@ -22532,6 +22453,7 @@
 "\"the big apple\" / new york city"
 ],
 "n": 1,
+"p": "language & wordplay",
 "rg": "North America"
 },
 "\"turtles all the way down\"": {
@@ -22597,7 +22519,7 @@
 "p": "drawing & painting"
 },
 "a small hill or nature park": {
-"f": "Places",
+"f": "Landforms",
 "k": "earth & sky",
 "leaf": 1,
 "m": [
@@ -22685,6 +22607,26 @@
 ],
 "n": 1
 },
+"adaptation & disguise": {
+"ch": [
+"atavism",
+"camouflage",
+"colouration",
+"countershading",
+"mimicry",
+"neoteny",
+"polyphenism",
+"sexual dimorphism",
+"troglomorphism"
+],
+"f": "Life sciences",
+"k": "concept",
+"leaf": 1,
+"m": [],
+"n": 0,
+"p": "evolution & ecology",
+"tn": 21
+},
 "adult antlion": {
 "f": "Insects & spiders",
 "i": 1,
@@ -22748,20 +22690,6 @@
 ],
 "n": 3,
 "p": "lizard"
-},
-"age": {
-"f": "Abstract ideas",
-"k": "concept",
-"m": [
-"bushy eyebrows as a sign of age and wisdom",
-"ice age",
-"iron age",
-"old age",
-"stone age",
-"the ice age",
-"the modern age"
-],
-"n": 7
 },
 "age & stage of life": {
 "ch": [
@@ -22985,7 +22913,7 @@
 "albinism and leucism"
 ],
 "n": 2,
-"p": "medicine & ailments"
+"p": "skin & cold"
 },
 "alchemical lion": {
 "f": "Belief & custom",
@@ -23079,7 +23007,7 @@
 "alien hand syndrome"
 ],
 "n": 1,
-"p": "medicine & ailments"
+"p": "mind & nerves"
 },
 "allium victorialis": {
 "f": "Other plants",
@@ -23211,7 +23139,7 @@
 "amniotic fluid"
 ],
 "n": 1,
-"p": "cells & genetics"
+"p": "how life begins"
 },
 "amoeba": {
 "f": "Other animals",
@@ -23264,27 +23192,12 @@
 "anatomy": {
 "ch": [
 "body part",
-"chameleon casque",
-"cicada exuvia",
-"cochlea",
-"eye",
-"eye bags",
-"eyespots",
-"glands",
-"heart",
+"glands & organs",
+"head & mouthparts",
 "honeycomb",
-"horn",
 "human fist",
-"jaws",
-"leg feathering",
-"patagium",
-"poison gland",
-"rooster comb",
-"salmon kype",
-"swollen veins from labour",
-"tears",
-"tympanum",
-"urticating hairs"
+"sense organs",
+"skin & covering"
 ],
 "f": "Life sciences",
 "k": "concept",
@@ -23407,20 +23320,10 @@
 },
 "animal behaviour": {
 "ch": [
-"autotomy",
 "breeding & young",
-"feeding & foraging",
-"hare boxing behaviour",
-"moulting shrimp posture",
-"nest",
-"nighttime and nocturnal animals",
-"phoresis in mites",
-"rainy-season frogs as harbingers of rain",
-"signals & display",
-"sun gazing",
-"thermoregulation",
-"tool use",
-"v formation"
+"getting by",
+"rhythms of the day and year",
+"signals & company"
 ],
 "f": "Life sciences",
 "k": "concept",
@@ -24097,7 +24000,7 @@
 "atavism"
 ],
 "n": 2,
-"p": "evolution & ecology"
+"p": "adaptation & disguise"
 },
 "attire": {
 "f": "Clothing & adornment",
@@ -24180,7 +24083,7 @@
 "autotomy"
 ],
 "n": 2,
-"p": "animal behaviour"
+"p": "getting by"
 },
 "avalokitesvara": {
 "f": "Gods & deities",
@@ -24323,7 +24226,7 @@
 "bacteriophage"
 ],
 "n": 1,
-"p": "cells & genetics"
+"p": "microbes"
 },
 "badger": {
 "f": "Carnivores",
@@ -24864,7 +24767,7 @@
 "p": "jewellery & adornment"
 },
 "beam": {
-"f": "Other objects",
+"f": "Buildings & monuments",
 "k": "object",
 "m": [
 "steel beam",
@@ -25071,6 +24974,7 @@
 "gnostic aeon",
 "jutsu",
 "the koan mu",
+"the seven deadly sins",
 "utsusemi ninjutsu",
 "virgo",
 "wuji",
@@ -25083,7 +24987,7 @@
 "leaf": 1,
 "m": [],
 "n": 0,
-"tn": 20
+"tn": 21
 },
 "bell": {
 "f": "Instruments",
@@ -25283,7 +25187,7 @@
 "biological cell"
 ],
 "n": 3,
-"p": "cells & genetics"
+"p": "the cell and its parts"
 },
 "bioluminescence": {
 "f": "Life sciences",
@@ -26085,15 +25989,16 @@
 "rg": "Celtic & British Isles"
 },
 "bridge": {
-"f": "Places",
-"k": "earth & sky",
+"f": "Buildings & monuments",
+"k": "object",
 "m": [
 "25 de abril bridge",
 "cable-stayed bridge",
 "folding bridge",
 "guadiana international bridge"
 ],
-"n": 1
+"n": 1,
+"p": "buildings & sites"
 },
 "brigandine": {
 "f": "Clothing & adornment",
@@ -26313,13 +26218,31 @@
 "tower",
 "ziggurat"
 ],
-"f": "Other objects",
+"f": "Buildings & monuments",
 "k": "object",
 "leaf": 1,
 "m": [],
 "n": 0,
-"p": "vessels & structures",
 "tn": 31
+},
+"buildings & sites": {
+"ch": [
+"bridge",
+"castle",
+"factory",
+"fortress",
+"ghost town",
+"igloo",
+"landfill",
+"lighthouse",
+"the shard"
+],
+"f": "Buildings & monuments",
+"k": "object",
+"leaf": 1,
+"m": [],
+"n": 0,
+"tn": 10
 },
 "bulb": {
 "f": "Other plants",
@@ -26366,6 +26289,22 @@
 ],
 "n": 2,
 "p": "weed & vine"
+},
+"burial monuments": {
+"ch": [
+"naveta d'es tudons tomb",
+"pyramids of guimar",
+"stone ship burial",
+"talaiotic architecture",
+"tumulus",
+"verraco"
+],
+"f": "Buildings & monuments",
+"k": "object",
+"leaf": 1,
+"m": [],
+"n": 0,
+"tn": 5
 },
 "burning charcoal": {
 "f": "Earth & fire",
@@ -26622,7 +26561,7 @@
 "cam night-fixing plants"
 ],
 "n": 1,
-"p": "plant science"
+"p": "how plants feed"
 },
 "camarasaurus": {
 "f": "Dinosaurs",
@@ -26663,7 +26602,7 @@
 "desert military camouflage"
 ],
 "n": 3,
-"p": "evolution & ecology"
+"p": "adaptation & disguise"
 },
 "candiru": {
 "f": "Fish",
@@ -26838,7 +26777,7 @@
 "cardiac arrest"
 ],
 "n": 1,
-"p": "medicine & ailments"
+"p": "heart & resuscitation"
 },
 "cardiocrinum cordatum": {
 "f": "Other plants",
@@ -26868,7 +26807,7 @@
 "tn": 8
 },
 "carnival mouth entrance": {
-"f": "Other objects",
+"f": "Buildings & monuments",
 "k": "object",
 "leaf": 1,
 "m": [
@@ -26967,16 +26906,17 @@
 "p": "percussion"
 },
 "castle": {
-"f": "Places",
-"k": "earth & sky",
+"f": "Buildings & monuments",
+"k": "object",
 "m": [
 "haunted castle",
 "sand castle"
 ],
-"n": 1
+"n": 1,
+"p": "buildings & sites"
 },
 "castle wall": {
-"f": "Other objects",
+"f": "Buildings & monuments",
 "k": "object",
 "leaf": 1,
 "m": [
@@ -27183,34 +27123,15 @@
 "cell nucleus"
 ],
 "n": 1,
-"p": "cells & genetics"
+"p": "the cell and its parts"
 },
 "cells & genetics": {
 "ch": [
-"amniotic fluid",
-"bacteriophage",
-"biological cell",
-"cell nucleus",
-"cells and slime moulds",
-"chimera cat",
-"chromosome",
-"clutch of eggs",
-"cytoplasm",
-"dna double helix",
-"genetic chimerism",
-"gynandromorphism",
-"last universal common ancestor",
-"mitosis",
-"morula",
-"mutation",
-"organelles",
+"how life begins",
+"inheritance & variation",
+"microbes",
 "organism",
-"panspermia",
-"parthenogenesis",
-"recombinant dna / gene splicing",
-"spontaneous generation",
-"virus",
-"zygote"
+"the cell and its parts"
 ],
 "f": "Life sciences",
 "k": "concept",
@@ -27227,7 +27148,7 @@
 "cells and slime moulds"
 ],
 "n": 1,
-"p": "cells & genetics"
+"p": "microbes"
 },
 "censer": {
 "f": "Household & tools",
@@ -27354,7 +27275,7 @@
 "chameleon casque"
 ],
 "n": 1,
-"p": "anatomy"
+"p": "head & mouthparts"
 },
 "chang'e": {
 "f": "Gods & deities",
@@ -27727,7 +27648,7 @@
 "chimera cat"
 ],
 "n": 1,
-"p": "cells & genetics"
+"p": "inheritance & variation"
 },
 "chimney and chimney-pot hat": {
 "f": "Clothing & adornment",
@@ -27849,7 +27770,7 @@
 "chromosome"
 ],
 "n": 1,
-"p": "cells & genetics"
+"p": "the cell and its parts"
 },
 "chrysalis": {
 "f": "Insects & spiders",
@@ -27880,7 +27801,7 @@
 "cicada exuvia (shed husk)"
 ],
 "n": 1,
-"p": "anatomy"
+"p": "skin & covering"
 },
 "cikap-kamuy": {
 "f": "Gods & deities",
@@ -28114,7 +28035,7 @@
 "clutch of eggs"
 ],
 "n": 1,
-"p": "cells & genetics"
+"p": "how life begins"
 },
 "clydesdale": {
 "f": "Hoofed mammals",
@@ -28199,7 +28120,7 @@
 "cochlea"
 ],
 "n": 1,
-"p": "anatomy"
+"p": "sense organs"
 },
 "cockatiel": {
 "f": "Birds",
@@ -28336,7 +28257,7 @@
 "coevolution"
 ],
 "n": 2,
-"p": "evolution & ecology"
+"p": "living together"
 },
 "coin": {
 "f": "Other objects",
@@ -28378,7 +28299,7 @@
 "siamese point colouration"
 ],
 "n": 3,
-"p": "evolution & ecology"
+"p": "adaptation & disguise"
 },
 "combover": {
 "f": "Clothing & adornment",
@@ -28658,7 +28579,7 @@
 "coral bleaching and climate change"
 ],
 "n": 1,
-"p": "evolution & ecology"
+"p": "what we have done to it"
 },
 "coriolis effect": {
 "f": "Physical sciences & ideas",
@@ -28756,7 +28677,7 @@
 "countershading"
 ],
 "n": 1,
-"p": "evolution & ecology"
+"p": "adaptation & disguise"
 },
 "court jester": {
 "f": "Performers",
@@ -28788,7 +28709,7 @@
 "cpr"
 ],
 "n": 1,
-"p": "medicine & ailments"
+"p": "heart & resuscitation"
 },
 "crab": {
 "f": "Sea life",
@@ -29260,7 +29181,7 @@
 "cytoplasm"
 ],
 "n": 1,
-"p": "cells & genetics"
+"p": "the cell and its parts"
 },
 "daidarabotchi": {
 "f": "Mythic beasts",
@@ -29496,6 +29417,22 @@
 "n": 0,
 "tn": 17
 },
+"deep time & extinction": {
+"ch": [
+"evolution",
+"living fossil",
+"mesozoic fossil fuel",
+"the \"missing link\"",
+"the k-pg extinction"
+],
+"f": "Life sciences",
+"k": "concept",
+"leaf": 1,
+"m": [],
+"n": 0,
+"p": "evolution & ecology",
+"tn": 11
+},
 "deer": {
 "ch": [
 "elk",
@@ -29522,7 +29459,7 @@
 "defibrillation"
 ],
 "n": 3,
-"p": "medicine & ailments"
+"p": "heart & resuscitation"
 },
 "defibrillator": {
 "f": "Household & tools",
@@ -29697,6 +29634,20 @@
 "n": 1,
 "p": "physics & chemistry"
 },
+"digestion & rest": {
+"ch": [
+"flatulence",
+"food coma",
+"metabolism"
+],
+"f": "Life sciences",
+"k": "concept",
+"leaf": 1,
+"m": [],
+"n": 0,
+"p": "medicine & ailments",
+"tn": 3
+},
 "dilong": {
 "f": "Dinosaurs",
 "k": "prehistoric",
@@ -29735,7 +29686,7 @@
 "ding (ancient chinese cauldron)"
 ],
 "n": 1,
-"p": "vessels & structures"
+"p": "vessels & decoration"
 },
 "dinocampus coccinellae": {
 "f": "Insects & spiders",
@@ -29770,7 +29721,7 @@
 "dioecy"
 ],
 "n": 1,
-"p": "plant science"
+"p": "reproduction & spores"
 },
 "diplocaulus": {
 "f": "Prehistoric beasts",
@@ -29837,7 +29788,7 @@
 "dna double helix"
 ],
 "n": 1,
-"p": "cells & genetics"
+"p": "the cell and its parts"
 },
 "dobsonfly": {
 "f": "Insects & spiders",
@@ -29968,7 +29919,7 @@
 "tn": 43
 },
 "dolmen": {
-"f": "Other objects",
+"f": "Buildings & monuments",
 "k": "object",
 "leaf": 1,
 "m": [
@@ -30686,7 +30637,7 @@
 "rg": "Egypt & North Africa"
 },
 "egyptian sarcophagus": {
-"f": "Other objects",
+"f": "Buildings & monuments",
 "k": "object",
 "leaf": 1,
 "m": [
@@ -30874,7 +30825,7 @@
 "p": "musicians"
 },
 "ema plaques and horse effigies": {
-"f": "Other objects",
+"f": "Buildings & monuments",
 "k": "object",
 "leaf": 1,
 "m": [
@@ -30933,7 +30884,7 @@
 "endolith"
 ],
 "n": 1,
-"p": "evolution & ecology"
+"p": "life at the extremes"
 },
 "engine": {
 "f": "Engines & electronics",
@@ -31123,13 +31074,14 @@
 "p": "seabird"
 },
 "european stone circles": {
-"f": "Places",
-"k": "earth & sky",
+"f": "Buildings & monuments",
+"k": "object",
 "leaf": 1,
 "m": [
 "european stone circles"
 ],
 "n": 1,
+"p": "megaliths & standing stones",
 "rg": "Western Europe"
 },
 "eurus and apeliotes": {
@@ -31160,7 +31112,7 @@
 "eusociality"
 ],
 "n": 2,
-"p": "evolution & ecology"
+"p": "living together"
 },
 "evolution": {
 "f": "Life sciences",
@@ -31170,37 +31122,17 @@
 "stellar evolution"
 ],
 "n": 7,
-"p": "evolution & ecology"
+"p": "deep time & extinction"
 },
 "evolution & ecology": {
 "ch": [
-"atavism",
-"camouflage",
-"coevolution",
-"colouration",
-"coral bleaching and climate change",
-"countershading",
-"endolith",
-"eusociality",
-"evolution",
-"extremophile",
+"adaptation & disguise",
+"deep time & extinction",
 "hybrid infertility",
-"insular dwarfism",
-"invasive species",
-"invasive species in hawaii",
-"island gigantism",
-"living fossil",
-"mesozoic fossil fuel",
-"mimicry",
-"neoteny",
-"pollution",
-"polyphenism",
-"sexual dimorphism",
-"spain's flamingo population",
-"symbiosis",
-"the \"missing link\"",
-"the k-pg extinction",
-"troglomorphism"
+"islands & newcomers",
+"life at the extremes",
+"living together",
+"what we have done to it"
 ],
 "f": "Life sciences",
 "k": "concept",
@@ -31303,7 +31235,7 @@
 "extremophile"
 ],
 "n": 1,
-"p": "evolution & ecology"
+"p": "life at the extremes"
 },
 "eye": {
 "f": "Life sciences",
@@ -31314,7 +31246,7 @@
 "mantis compound eyes"
 ],
 "n": 3,
-"p": "anatomy"
+"p": "sense organs"
 },
 "eye bags": {
 "f": "Life sciences",
@@ -31324,7 +31256,7 @@
 "eye bags"
 ],
 "n": 1,
-"p": "anatomy"
+"p": "sense organs"
 },
 "eyespots": {
 "f": "Life sciences",
@@ -31334,7 +31266,7 @@
 "eyespots"
 ],
 "n": 1,
-"p": "anatomy"
+"p": "sense organs"
 },
 "eyewear": {
 "ch": [
@@ -31361,13 +31293,14 @@
 "p": "jewellery & adornment"
 },
 "factory": {
-"f": "Places",
-"k": "earth & sky",
+"f": "Buildings & monuments",
+"k": "object",
 "leaf": 1,
 "m": [
 "factory"
 ],
-"n": 1
+"n": 1,
+"p": "buildings & sites"
 },
 "fairies blamed for lost objects": {
 "f": "Other folklore",
@@ -31543,6 +31476,7 @@
 "pedigree cats of royalty",
 "pink/blue gender colour coding",
 "subculture",
+"v sign",
 "victorian and elizabethan fashion"
 ],
 "f": "Society & work",
@@ -31550,7 +31484,7 @@
 "leaf": 1,
 "m": [],
 "n": 0,
-"tn": 29
+"tn": 30
 },
 "fashion designer": {
 "f": "Society & work",
@@ -31632,7 +31566,7 @@
 "leaf": 1,
 "m": [],
 "n": 0,
-"p": "animal behaviour",
+"p": "getting by",
 "tn": 11
 },
 "fencing": {
@@ -31849,7 +31783,7 @@
 "rg": "Slavic & Eastern Europe"
 },
 "firebox": {
-"f": "Other objects",
+"f": "Buildings & monuments",
 "k": "object",
 "m": [
 "firebox",
@@ -31957,7 +31891,7 @@
 "flatulence"
 ],
 "n": 1,
-"p": "medicine & ailments"
+"p": "digestion & rest"
 },
 "flea": {
 "f": "Insects & spiders",
@@ -32114,7 +32048,7 @@
 "food coma"
 ],
 "n": 1,
-"p": "medicine & ailments"
+"p": "digestion & rest"
 },
 "food fermentation": {
 "f": "Life sciences",
@@ -32124,7 +32058,7 @@
 "food fermentation"
 ],
 "n": 1,
-"p": "plant science"
+"p": "reproduction & spores"
 },
 "food hoarding": {
 "f": "Life sciences",
@@ -32218,16 +32152,17 @@
 "tn": 15
 },
 "fortress": {
-"f": "Places",
-"k": "earth & sky",
+"f": "Buildings & monuments",
+"k": "object",
 "leaf": 1,
 "m": [
 "fortress"
 ],
-"n": 1
+"n": 1,
+"p": "buildings & sites"
 },
 "fountain": {
-"f": "Other objects",
+"f": "Buildings & monuments",
 "k": "object",
 "leaf": 1,
 "m": [
@@ -32404,7 +32339,7 @@
 "frostbite"
 ],
 "n": 1,
-"p": "medicine & ailments"
+"p": "skin & cold"
 },
 "frostbite sores": {
 "f": "Life sciences",
@@ -32414,7 +32349,7 @@
 "frostbite sores"
 ],
 "n": 1,
-"p": "medicine & ailments"
+"p": "skin & cold"
 },
 "fruit": {
 "ch": [
@@ -32841,7 +32776,7 @@
 "genetic chimerism"
 ],
 "n": 1,
-"p": "cells & genetics"
+"p": "inheritance & variation"
 },
 "genie": {
 "f": "Other folklore",
@@ -32945,6 +32880,22 @@
 "n": 1,
 "p": "traditional dress"
 },
+"getting by": {
+"ch": [
+"autotomy",
+"feeding & foraging",
+"nest",
+"thermoregulation",
+"tool use"
+],
+"f": "Life sciences",
+"k": "concept",
+"leaf": 1,
+"m": [],
+"n": 0,
+"p": "animal behaviour",
+"tn": 22
+},
 "geyser": {
 "f": "Weather & water",
 "k": "earth & sky",
@@ -32978,13 +32929,14 @@
 "n": 6
 },
 "ghost town": {
-"f": "Places",
-"k": "earth & sky",
+"f": "Buildings & monuments",
+"k": "object",
 "leaf": 1,
 "m": [
 "ghost town"
 ],
 "n": 2,
+"p": "buildings & sites",
 "rg": "North America"
 },
 "ghosts & souls": {
@@ -33027,7 +32979,7 @@
 "giant pumpkin growing"
 ],
 "n": 1,
-"p": "plant science"
+"p": "growth & season"
 },
 "gigantopithecus": {
 "f": "Prehistoric beasts",
@@ -33120,7 +33072,22 @@
 "toad parotoid glands"
 ],
 "n": 4,
-"p": "anatomy"
+"p": "glands & organs"
+},
+"glands & organs": {
+"ch": [
+"glands",
+"heart",
+"poison gland",
+"swollen veins from labour"
+],
+"f": "Life sciences",
+"k": "concept",
+"leaf": 1,
+"m": [],
+"n": 0,
+"p": "anatomy",
+"tn": 8
 },
 "glass": {
 "f": "Other objects",
@@ -33359,11 +33326,12 @@
 "golem": {
 "f": "Mythic beasts",
 "k": "mythology",
-"leaf": 1,
 "m": [
-"golem"
+"golem",
+"golem of prague",
+"the golem of prague and its shem"
 ],
-"n": 6,
+"n": 7,
 "rg": "West Asia & Arabia"
 },
 "gong": {
@@ -33693,7 +33661,7 @@
 "group mind"
 ],
 "n": 1,
-"p": "medicine & ailments"
+"p": "mind & nerves"
 },
 "grove": {
 "f": "Other plants",
@@ -33704,6 +33672,21 @@
 ],
 "n": 1,
 "p": "plant part"
+},
+"growth & season": {
+"ch": [
+"giant pumpkin growing",
+"krummholz",
+"seasonal foliage colours",
+"thigmotropism"
+],
+"f": "Life sciences",
+"k": "concept",
+"leaf": 1,
+"m": [],
+"n": 0,
+"p": "plant science",
+"tn": 5
 },
 "grunt sculpin": {
 "f": "Fish",
@@ -33827,7 +33810,7 @@
 "guttation (bleeding tooth fungus)"
 ],
 "n": 1,
-"p": "plant science"
+"p": "how plants feed"
 },
 "gymnast": {
 "f": "Fighters & athletes",
@@ -33848,7 +33831,7 @@
 "gynandromorphism"
 ],
 "n": 1,
-"p": "cells & genetics"
+"p": "inheritance & variation"
 },
 "habanero": {
 "f": "Crops & food plants",
@@ -33871,7 +33854,7 @@
 "p": "snake"
 },
 "hachiro-taro": {
-"f": "Places",
+"f": "Japanese folklore",
 "i": 1,
 "k": "folklore",
 "leaf": 1,
@@ -34183,7 +34166,7 @@
 "hare boxing behaviour"
 ],
 "n": 1,
-"p": "animal behaviour"
+"p": "signals & company"
 },
 "harionago": {
 "f": "Japanese folklore",
@@ -34344,6 +34327,22 @@
 "n": 3,
 "p": "body part"
 },
+"head & mouthparts": {
+"ch": [
+"chameleon casque",
+"horn",
+"jaws",
+"rooster comb",
+"salmon kype"
+],
+"f": "Life sciences",
+"k": "concept",
+"leaf": 1,
+"m": [],
+"n": 0,
+"p": "anatomy",
+"tn": 14
+},
 "headband": {
 "f": "Clothing & adornment",
 "k": "object",
@@ -34418,7 +34417,21 @@
 "heart (hato/hato pun)"
 ],
 "n": 2,
-"p": "anatomy"
+"p": "glands & organs"
+},
+"heart & resuscitation": {
+"ch": [
+"cardiac arrest",
+"cpr",
+"defibrillation"
+],
+"f": "Life sciences",
+"k": "concept",
+"leaf": 1,
+"m": [],
+"n": 0,
+"p": "medicine & ailments",
+"tn": 4
 },
 "heart shape": {
 "f": "Symbols & marks",
@@ -34859,6 +34872,17 @@
 "n": 1,
 "p": "striking art"
 },
+"historical eras": {
+"f": "Abstract ideas",
+"k": "concept",
+"m": [
+"ice age",
+"iron age",
+"stone age",
+"the modern age"
+],
+"n": 5
+},
 "hitodama": {
 "f": "Japanese folklore",
 "k": "folklore",
@@ -34995,7 +35019,7 @@
 "sign of the horns"
 ],
 "n": 8,
-"p": "anatomy"
+"p": "head & mouthparts"
 },
 "horned dinosaur": {
 "ch": [
@@ -35109,6 +35133,40 @@
 ],
 "n": 1,
 "p": "care & medicine"
+},
+"how life begins": {
+"ch": [
+"amniotic fluid",
+"clutch of eggs",
+"last universal common ancestor",
+"morula",
+"panspermia",
+"spontaneous generation",
+"zygote"
+],
+"f": "Life sciences",
+"k": "concept",
+"leaf": 1,
+"m": [],
+"n": 0,
+"p": "cells & genetics",
+"tn": 7
+},
+"how plants feed": {
+"ch": [
+"cam night-fixing plants",
+"guttation",
+"legume root nodules",
+"mycorrhizal network",
+"photosynthesis"
+],
+"f": "Life sciences",
+"k": "concept",
+"leaf": 1,
+"m": [],
+"n": 0,
+"p": "plant science",
+"tn": 5
 },
 "howitzer": {
 "f": "Weapons & armour",
@@ -35453,13 +35511,14 @@
 "rg": "West Asia & Arabia"
 },
 "igloo": {
-"f": "Places",
-"k": "earth & sky",
+"f": "Buildings & monuments",
+"k": "object",
 "leaf": 1,
 "m": [
 "igloo"
 ],
-"n": 1
+"n": 1,
+"p": "buildings & sites"
 },
 "iguana": {
 "f": "Reptiles & amphibians",
@@ -35575,6 +35634,23 @@
 "n": 1,
 "p": "cosmic physics"
 },
+"inheritance & variation": {
+"ch": [
+"chimera cat",
+"genetic chimerism",
+"gynandromorphism",
+"mutation",
+"parthenogenesis",
+"recombinant dna / gene splicing"
+],
+"f": "Life sciences",
+"k": "concept",
+"leaf": 1,
+"m": [],
+"n": 0,
+"p": "cells & genetics",
+"tn": 6
+},
 "inkanyamba": {
 "f": "Mythic beasts",
 "k": "mythology",
@@ -35658,7 +35734,7 @@
 "insular dwarfism"
 ],
 "n": 1,
-"p": "evolution & ecology"
+"p": "islands & newcomers"
 },
 "insular g": {
 "f": "Symbols & marks",
@@ -35671,7 +35747,7 @@
 "p": "writing system"
 },
 "insulation": {
-"f": "Other objects",
+"f": "Buildings & monuments",
 "k": "object",
 "m": [
 "electric charge held by insulation",
@@ -35681,13 +35757,14 @@
 "p": "building & structure"
 },
 "inuksuk": {
-"f": "Places",
-"k": "earth & sky",
+"f": "Buildings & monuments",
+"k": "object",
 "leaf": 1,
 "m": [
 "inuksuk"
 ],
 "n": 1,
+"p": "megaliths & standing stones",
 "rg": "North America"
 },
 "invasive species": {
@@ -35698,7 +35775,7 @@
 "invasive species"
 ],
 "n": 1,
-"p": "evolution & ecology"
+"p": "islands & newcomers"
 },
 "invasive species in hawaii": {
 "f": "Life sciences",
@@ -35708,7 +35785,7 @@
 "invasive species in hawaii"
 ],
 "n": 4,
-"p": "evolution & ecology"
+"p": "islands & newcomers"
 },
 "iron charm against fae": {
 "f": "European folklore",
@@ -35772,7 +35849,23 @@
 "island gigantism"
 ],
 "n": 1,
-"p": "evolution & ecology"
+"p": "islands & newcomers"
+},
+"islands & newcomers": {
+"ch": [
+"insular dwarfism",
+"invasive species",
+"invasive species in hawaii",
+"island gigantism",
+"spain's flamingo population"
+],
+"f": "Life sciences",
+"k": "concept",
+"leaf": 1,
+"m": [],
+"n": 0,
+"p": "evolution & ecology",
+"tn": 8
 },
 "isopod": {
 "f": "Sea life",
@@ -35998,7 +36091,7 @@
 "hippopotamus jaws"
 ],
 "n": 3,
-"p": "anatomy"
+"p": "head & mouthparts"
 },
 "jay": {
 "f": "Birds",
@@ -36901,7 +36994,7 @@
 "krummholz"
 ],
 "n": 1,
-"p": "plant science"
+"p": "growth & season"
 },
 "kukailimoku": {
 "f": "Gods & deities",
@@ -37045,7 +37138,7 @@
 "tn": 33
 },
 "lake": {
-"f": "Places",
+"f": "Landforms",
 "k": "earth & sky",
 "m": [
 "odette's costume from swan lake",
@@ -37138,13 +37231,14 @@
 "n": 1
 },
 "landfill": {
-"f": "Places",
-"k": "earth & sky",
+"f": "Buildings & monuments",
+"k": "object",
 "leaf": 1,
 "m": [
 "landfill"
 ],
-"n": 1
+"n": 1,
+"p": "buildings & sites"
 },
 "language & wordplay": {
 "ch": [
@@ -37152,6 +37246,7 @@
 "\"kilroy was here\" graffiti",
 "\"pearls before swine\"",
 "\"purebred / pure bread\" pun",
+"\"the big apple\" / new york city",
 "japanese saying \"a duck comes bearing spring onions\"",
 "pun",
 "the 'mare' wordplay"
@@ -37161,7 +37256,7 @@
 "leaf": 1,
 "m": [],
 "n": 0,
-"tn": 13
+"tn": 14
 },
 "lanternfish": {
 "f": "Fish",
@@ -37213,7 +37308,7 @@
 "last universal common ancestor"
 ],
 "n": 1,
-"p": "cells & genetics"
+"p": "how life begins"
 },
 "latin alphabet letters": {
 "f": "Symbols & marks",
@@ -37275,7 +37370,7 @@
 "leg feathering"
 ],
 "n": 1,
-"p": "anatomy"
+"p": "skin & covering"
 },
 "legend": {
 "f": "Other folklore",
@@ -37320,7 +37415,7 @@
 "legume root nodules"
 ],
 "n": 1,
-"p": "plant science"
+"p": "how plants feed"
 },
 "lei": {
 "f": "Clothing & adornment",
@@ -37438,6 +37533,19 @@
 "n": 1,
 "p": "gem & crystal"
 },
+"life at the extremes": {
+"ch": [
+"endolith",
+"extremophile"
+],
+"f": "Life sciences",
+"k": "concept",
+"leaf": 1,
+"m": [],
+"n": 0,
+"p": "evolution & ecology",
+"tn": 2
+},
 "life raft": {
 "f": "Household & tools",
 "k": "object",
@@ -37459,13 +37567,14 @@
 "p": "sport & outdoor kit"
 },
 "lighthouse": {
-"f": "Places",
-"k": "earth & sky",
+"f": "Buildings & monuments",
+"k": "object",
 "leaf": 1,
 "m": [
 "lighthouse"
 ],
-"n": 1
+"n": 1,
+"p": "buildings & sites"
 },
 "lighting & fire": {
 "ch": [
@@ -37607,9 +37716,11 @@
 "puss in boots swashbuckler",
 "rikki-tikki-tavi",
 "tarzan",
+"the single horned rhinoceros king of journey to the west",
+"the wicked witch of the west",
 "zhu bajie (journey to the west)"
 ],
-"n": 15
+"n": 17
 },
 "lithops": {
 "f": "Other plants",
@@ -37629,7 +37740,7 @@
 "living fossil"
 ],
 "n": 1,
-"p": "evolution & ecology"
+"p": "deep time & extinction"
 },
 "living sludge": {
 "f": "Abstract ideas",
@@ -37639,6 +37750,20 @@
 "living sludge"
 ],
 "n": 2
+},
+"living together": {
+"ch": [
+"coevolution",
+"eusociality",
+"symbiosis"
+],
+"f": "Life sciences",
+"k": "concept",
+"leaf": 1,
+"m": [],
+"n": 0,
+"p": "evolution & ecology",
+"tn": 7
 },
 "lizard": {
 "ch": [
@@ -38528,7 +38653,7 @@
 "rg": "South & Southeast Asia"
 },
 "mauna kea": {
-"f": "Places",
+"f": "Landforms",
 "k": "earth & sky",
 "leaf": 1,
 "m": [
@@ -38611,24 +38736,11 @@
 },
 "medicine & ailments": {
 "ch": [
-"albinism",
-"alien hand syndrome",
-"cardiac arrest",
 "conjoined twins",
-"cpr",
-"defibrillation",
-"flatulence",
-"food coma",
-"frostbite",
-"frostbite sores",
-"group mind",
-"metabolism",
-"mongolian spots",
-"neuron and synapse network",
-"paper cuts",
-"runny nose from the cold",
-"sleep paralysis",
-"sunburn"
+"digestion & rest",
+"heart & resuscitation",
+"mind & nerves",
+"skin & cold"
 ],
 "f": "Life sciences",
 "k": "concept",
@@ -38676,14 +38788,32 @@
 "tn": 24
 },
 "megalith": {
-"f": "Places",
-"k": "earth & sky",
+"f": "Buildings & monuments",
+"k": "object",
 "leaf": 1,
 "m": [
 "megalith"
 ],
 "n": 1,
+"p": "megaliths & standing stones",
 "rg": "Western Europe"
+},
+"megaliths & standing stones": {
+"ch": [
+"european stone circles",
+"inuksuk",
+"megalith",
+"preseli bluestones",
+"pukao",
+"stonehenge",
+"trilithon"
+],
+"f": "Buildings & monuments",
+"k": "object",
+"leaf": 1,
+"m": [],
+"n": 0,
+"tn": 3
 },
 "meganeura": {
 "f": "Prehistoric beasts",
@@ -38796,7 +38926,7 @@
 "mesozoic fossil fuel"
 ],
 "n": 1,
-"p": "evolution & ecology"
+"p": "deep time & extinction"
 },
 "metabolism": {
 "f": "Life sciences",
@@ -38807,7 +38937,7 @@
 "metabolism"
 ],
 "n": 1,
-"p": "medicine & ailments"
+"p": "digestion & rest"
 },
 "metal & ore": {
 "ch": [
@@ -38914,6 +39044,20 @@
 "n": 2,
 "p": "mouse & rat"
 },
+"microbes": {
+"ch": [
+"bacteriophage",
+"cells and slime moulds",
+"virus"
+],
+"f": "Life sciences",
+"k": "concept",
+"leaf": 1,
+"m": [],
+"n": 0,
+"p": "cells & genetics",
+"tn": 4
+},
 "microraptor": {
 "f": "Dinosaurs",
 "k": "prehistoric",
@@ -38987,7 +39131,22 @@
 "mimicry"
 ],
 "n": 5,
-"p": "evolution & ecology"
+"p": "adaptation & disguise"
+},
+"mind & nerves": {
+"ch": [
+"alien hand syndrome",
+"group mind",
+"neuron and synapse network",
+"sleep paralysis"
+],
+"f": "Life sciences",
+"k": "concept",
+"leaf": 1,
+"m": [],
+"n": 0,
+"p": "medicine & ailments",
+"tn": 4
 },
 "mine": {
 "f": "Weapons & armour",
@@ -39061,7 +39220,7 @@
 "mitosis"
 ],
 "n": 3,
-"p": "cells & genetics"
+"p": "the cell and its parts"
 },
 "mittens": {
 "f": "Clothing & adornment",
@@ -39255,7 +39414,7 @@
 "mongolian spots"
 ],
 "n": 1,
-"p": "medicine & ailments"
+"p": "skin & cold"
 },
 "mongoose": {
 "ch": [
@@ -39432,7 +39591,7 @@
 "rg": "Slavic & Eastern Europe"
 },
 "moravian star tree-topper": {
-"f": "Other objects",
+"f": "Buildings & monuments",
 "k": "object",
 "leaf": 1,
 "m": [
@@ -39501,7 +39660,7 @@
 "morula"
 ],
 "n": 1,
-"p": "cells & genetics"
+"p": "how life begins"
 },
 "mosasaur": {
 "f": "Ancient sea life",
@@ -39620,10 +39779,10 @@
 "moulting shrimp posture"
 ],
 "n": 1,
-"p": "animal behaviour"
+"p": "signals & company"
 },
 "mountain": {
-"f": "Places",
+"f": "Landforms",
 "k": "earth & sky",
 "m": [
 "kanji for mountain",
@@ -39908,7 +40067,7 @@
 "the ultrabithorax mutation"
 ],
 "n": 2,
-"p": "cells & genetics"
+"p": "inheritance & variation"
 },
 "mycorrhizal network": {
 "f": "Life sciences",
@@ -39918,7 +40077,7 @@
 "mycorrhizal network"
 ],
 "n": 1,
-"p": "plant science"
+"p": "how plants feed"
 },
 "myriapod": {
 "ch": [
@@ -40079,13 +40238,14 @@
 "p": "headwear"
 },
 "naveta d'es tudons tomb": {
-"f": "Places",
-"k": "earth & sky",
+"f": "Buildings & monuments",
+"k": "object",
 "leaf": 1,
 "m": [
 "naveta d'es tudons tomb"
 ],
 "n": 1,
+"p": "burial monuments",
 "rg": "Iberia & Mediterranean"
 },
 "nazca lines": {
@@ -40177,7 +40337,7 @@
 "neoteny"
 ],
 "n": 1,
-"p": "evolution & ecology"
+"p": "adaptation & disguise"
 },
 "nepenthes": {
 "f": "Other plants",
@@ -40230,7 +40390,7 @@
 "weaver ant nest"
 ],
 "n": 5,
-"p": "animal behaviour"
+"p": "getting by"
 },
 "neuron and synapse network": {
 "f": "Life sciences",
@@ -40240,7 +40400,7 @@
 "neuron and synapse network"
 ],
 "n": 1,
-"p": "medicine & ailments"
+"p": "mind & nerves"
 },
 "new mexico whiptail": {
 "f": "Reptiles & amphibians",
@@ -40313,7 +40473,7 @@
 "nighttime and nocturnal animals"
 ],
 "n": 1,
-"p": "animal behaviour"
+"p": "rhythms of the day and year"
 },
 "nigiri": {
 "f": "Food & drink",
@@ -40339,9 +40499,9 @@
 "p": "japanese dish"
 },
 "nike and victoria": {
-"f": "Places",
+"f": "Gods & deities",
 "i": 1,
-"k": "earth & sky",
+"k": "mythology",
 "leaf": 1,
 "m": [
 "nike and victoria (victory goddesses)"
@@ -40764,6 +40924,15 @@
 ],
 "n": 1
 },
+"old age": {
+"f": "Abstract ideas",
+"k": "concept",
+"m": [
+"bushy eyebrows as a sign of age and wisdom",
+"old age"
+],
+"n": 2
+},
 "olive": {
 "f": "Crops & food plants",
 "k": "life",
@@ -41049,7 +41218,7 @@
 "organelles"
 ],
 "n": 1,
-"p": "cells & genetics"
+"p": "the cell and its parts"
 },
 "organism": {
 "f": "Life sciences",
@@ -41439,7 +41608,7 @@
 "panspermia"
 ],
 "n": 1,
-"p": "cells & genetics"
+"p": "how life begins"
 },
 "pantomime": {
 "f": "Performers",
@@ -41469,7 +41638,7 @@
 "paper cuts"
 ],
 "n": 1,
-"p": "medicine & ailments"
+"p": "skin & cold"
 },
 "papilio dardanus and its many morphs": {
 "f": "Insects & spiders",
@@ -41542,7 +41711,7 @@
 "parthenogenesis"
 ],
 "n": 1,
-"p": "cells & genetics"
+"p": "inheritance & variation"
 },
 "party & decoration": {
 "ch": [
@@ -41569,7 +41738,7 @@
 "leaf": 1,
 "m": [],
 "n": 0,
-"p": "vessels & structures",
+"p": "vessels & decoration",
 "tn": 43
 },
 "passionflower": {
@@ -41590,7 +41759,7 @@
 "patagium"
 ],
 "n": 1,
-"p": "anatomy"
+"p": "skin & covering"
 },
 "patched fabric": {
 "f": "Clothing & adornment",
@@ -41939,7 +42108,7 @@
 "phoresis in mites"
 ],
 "n": 1,
-"p": "animal behaviour"
+"p": "signals & company"
 },
 "photosynthesis": {
 "f": "Life sciences",
@@ -41949,7 +42118,7 @@
 "photosynthesis"
 ],
 "n": 1,
-"p": "plant science"
+"p": "how plants feed"
 },
 "physician": {
 "f": "Trades & roles",
@@ -42303,19 +42472,9 @@
 },
 "plant science": {
 "ch": [
-"cam night-fixing plants",
-"dioecy",
-"food fermentation",
-"giant pumpkin growing",
-"guttation",
-"krummholz",
-"legume root nodules",
-"mycorrhizal network",
-"photosynthesis",
-"poisonous mushroom lookalikes",
-"pollen",
-"seasonal foliage colours",
-"thigmotropism"
+"growth & season",
+"how plants feed",
+"reproduction & spores"
 ],
 "f": "Life sciences",
 "k": "concept",
@@ -42406,7 +42565,7 @@
 "poison gland"
 ],
 "n": 1,
-"p": "anatomy"
+"p": "glands & organs"
 },
 "poisonous mushroom lookalikes": {
 "f": "Life sciences",
@@ -42416,7 +42575,7 @@
 "poisonous mushroom lookalikes"
 ],
 "n": 1,
-"p": "plant science"
+"p": "reproduction & spores"
 },
 "pokestar studios big monster films": {
 "f": "Film & television",
@@ -42440,7 +42599,7 @@
 "p": "ice & cold ground"
 },
 "pole": {
-"f": "Other objects",
+"f": "Buildings & monuments",
 "k": "object",
 "m": [
 "native american totem pole",
@@ -42505,7 +42664,7 @@
 "pollen"
 ],
 "n": 1,
-"p": "plant science"
+"p": "reproduction & spores"
 },
 "pollution": {
 "f": "Life sciences",
@@ -42515,7 +42674,7 @@
 "water pollution"
 ],
 "n": 3,
-"p": "evolution & ecology"
+"p": "what we have done to it"
 },
 "pollution & decay": {
 "ch": [
@@ -42549,7 +42708,7 @@
 "polyphenism"
 ],
 "n": 2,
-"p": "evolution & ecology"
+"p": "adaptation & disguise"
 },
 "pom-poms": {
 "f": "Other objects",
@@ -42615,7 +42774,7 @@
 "p": "reef fish"
 },
 "portcullis": {
-"f": "Other objects",
+"f": "Buildings & monuments",
 "k": "object",
 "leaf": 1,
 "m": [
@@ -42695,16 +42854,6 @@
 "n": 3,
 "p": "martial artist"
 },
-"prague": {
-"f": "Places",
-"k": "earth & sky",
-"m": [
-"golem of prague",
-"the golem of prague and its shem"
-],
-"n": 2,
-"rg": "Slavic & Eastern Europe"
-},
 "prairie dog": {
 "f": "Rodents & small mammals",
 "k": "life",
@@ -42737,13 +42886,14 @@
 "p": "japanese dish"
 },
 "preseli bluestones": {
-"f": "Places",
-"k": "earth & sky",
+"f": "Buildings & monuments",
+"k": "object",
 "leaf": 1,
 "m": [
 "preseli bluestones"
 ],
 "n": 1,
+"p": "megaliths & standing stones",
 "rg": "Celtic & British Isles"
 },
 "pretzel": {
@@ -42970,13 +43120,14 @@
 "p": "film & screen"
 },
 "pukao": {
-"f": "Places",
-"k": "earth & sky",
+"f": "Buildings & monuments",
+"k": "object",
 "leaf": 1,
 "m": [
 "pukao (moai topknot)"
 ],
 "n": 1,
+"p": "megaliths & standing stones",
 "rg": "Oceania & Polynesia"
 },
 "pulgasari": {
@@ -43072,13 +43223,14 @@
 "p": "monkey"
 },
 "pyramids of guimar": {
-"f": "Places",
-"k": "earth & sky",
+"f": "Buildings & monuments",
+"k": "object",
 "leaf": 1,
 "m": [
 "pyramids of guimar"
 ],
 "n": 1,
+"p": "burial monuments",
 "rg": "Iberia & Mediterranean"
 },
 "pyrenean desman": {
@@ -43400,7 +43552,7 @@
 "rainy-season frogs as harbingers of rain"
 ],
 "n": 1,
-"p": "animal behaviour"
+"p": "rhythms of the day and year"
 },
 "rakali": {
 "f": "Rodents & small mammals",
@@ -43561,7 +43713,7 @@
 "recombinant dna / gene splicing"
 ],
 "n": 1,
-"p": "cells & genetics"
+"p": "inheritance & variation"
 },
 "red fox kit": {
 "f": "Life sciences",
@@ -43708,6 +43860,21 @@
 "n": 3,
 "p": "physics & chemistry"
 },
+"reproduction & spores": {
+"ch": [
+"dioecy",
+"food fermentation",
+"poisonous mushroom lookalikes",
+"pollen"
+],
+"f": "Life sciences",
+"k": "concept",
+"leaf": 1,
+"m": [],
+"n": 0,
+"p": "plant science",
+"tn": 4
+},
 "reptile": {
 "f": "Reptiles & amphibians",
 "k": "life",
@@ -43789,6 +43956,20 @@
 ],
 "n": 1,
 "p": "feeding & foraging"
+},
+"rhythms of the day and year": {
+"ch": [
+"nighttime and nocturnal animals",
+"rainy-season frogs as harbingers of rain",
+"sun gazing"
+],
+"f": "Life sciences",
+"k": "concept",
+"leaf": 1,
+"m": [],
+"n": 0,
+"p": "animal behaviour",
+"tn": 3
 },
 "rhyton": {
 "f": "Household & tools",
@@ -44156,7 +44337,7 @@
 "rooster comb"
 ],
 "n": 1,
-"p": "anatomy"
+"p": "head & mouthparts"
 },
 "root": {
 "f": "Other plants",
@@ -44288,7 +44469,7 @@
 "tn": 5
 },
 "runestone": {
-"f": "Other objects",
+"f": "Buildings & monuments",
 "k": "object",
 "leaf": 1,
 "m": [
@@ -44305,7 +44486,7 @@
 "runny nose from the cold"
 ],
 "n": 1,
-"p": "medicine & ailments"
+"p": "skin & cold"
 },
 "rust": {
 "f": "Earth & fire",
@@ -44466,7 +44647,7 @@
 "salmon kype"
 ],
 "n": 1,
-"p": "anatomy"
+"p": "head & mouthparts"
 },
 "salmon run": {
 "f": "Life sciences",
@@ -44619,7 +44800,7 @@
 "rg": "Greece & Rome"
 },
 "sarcophagus of akhenaten": {
-"f": "Other objects",
+"f": "Buildings & monuments",
 "k": "object",
 "leaf": 1,
 "m": [
@@ -44794,7 +44975,7 @@
 "scarecrow"
 ],
 "n": 2,
-"p": "vessels & structures"
+"p": "vessels & decoration"
 },
 "scarf": {
 "f": "Clothing & adornment",
@@ -45072,7 +45253,7 @@
 "seasonal foliage colours"
 ],
 "n": 1,
-"p": "plant science"
+"p": "growth & season"
 },
 "seaweed & algae": {
 "ch": [
@@ -45181,6 +45362,23 @@
 "n": 1,
 "p": "fairy animals",
 "rg": "Celtic & British Isles"
+},
+"sense organs": {
+"ch": [
+"cochlea",
+"eye",
+"eye bags",
+"eyespots",
+"tears",
+"tympanum"
+],
+"f": "Life sciences",
+"k": "concept",
+"leaf": 1,
+"m": [],
+"n": 0,
+"p": "anatomy",
+"tn": 8
 },
 "sensing & space tech": {
 "ch": [
@@ -45295,7 +45493,7 @@
 "sexual dimorphism"
 ],
 "n": 3,
-"p": "evolution & ecology"
+"p": "adaptation & disguise"
 },
 "shachihoko": {
 "f": "Japanese folklore",
@@ -45581,7 +45779,7 @@
 "rg": "Japan"
 },
 "shishi-odoshi": {
-"f": "Other objects",
+"f": "Buildings & monuments",
 "k": "object",
 "m": [
 "shishi-odoshi",
@@ -45753,6 +45951,22 @@
 "n": 2,
 "p": "dog"
 },
+"signals & company": {
+"ch": [
+"hare boxing behaviour",
+"moulting shrimp posture",
+"phoresis in mites",
+"signals & display",
+"v formation"
+],
+"f": "Life sciences",
+"k": "concept",
+"leaf": 1,
+"m": [],
+"n": 0,
+"p": "animal behaviour",
+"tn": 14
+},
 "signals & display": {
 "ch": [
 "androstenol pheromone",
@@ -45770,7 +45984,7 @@
 "leaf": 1,
 "m": [],
 "n": 0,
-"p": "animal behaviour",
+"p": "signals & company",
 "tn": 10
 },
 "sika deer fawn": {
@@ -45877,6 +46091,39 @@
 "n": 1,
 "p": "ice age mammal"
 },
+"skin & cold": {
+"ch": [
+"albinism",
+"frostbite",
+"frostbite sores",
+"mongolian spots",
+"paper cuts",
+"runny nose from the cold",
+"sunburn"
+],
+"f": "Life sciences",
+"k": "concept",
+"leaf": 1,
+"m": [],
+"n": 0,
+"p": "medicine & ailments",
+"tn": 8
+},
+"skin & covering": {
+"ch": [
+"cicada exuvia",
+"leg feathering",
+"patagium",
+"urticating hairs"
+],
+"f": "Life sciences",
+"k": "concept",
+"leaf": 1,
+"m": [],
+"n": 0,
+"p": "anatomy",
+"tn": 4
+},
 "skin-walker": {
 "f": "Other folklore",
 "i": 1,
@@ -45969,7 +46216,7 @@
 "sleep paralysis"
 ],
 "n": 1,
-"p": "medicine & ailments"
+"p": "mind & nerves"
 },
 "sleipnir": {
 "f": "Mythic beasts",
@@ -46422,7 +46669,7 @@
 "spain's flamingo population"
 ],
 "n": 1,
-"p": "evolution & ecology"
+"p": "islands & newcomers"
 },
 "spain's olive production": {
 "f": "Society & work",
@@ -46603,7 +46850,7 @@
 "spontaneous generation"
 ],
 "n": 1,
-"p": "cells & genetics"
+"p": "how life begins"
 },
 "spool of thread": {
 "f": "Household & tools",
@@ -46662,6 +46909,7 @@
 "spearfishing",
 "surfing",
 "taekwondo",
+"the olympics",
 "trick",
 "water skiing",
 "winter sports"
@@ -46671,7 +46919,7 @@
 "leaf": 1,
 "m": [],
 "n": 0,
-"tn": 32
+"tn": 33
 },
 "sport bike": {
 "f": "Vehicles",
@@ -47008,7 +47256,7 @@
 "p": "physics & chemistry"
 },
 "statue": {
-"f": "Other objects",
+"f": "Buildings & monuments",
 "k": "object",
 "m": [
 "komainu statue",
@@ -47115,23 +47363,25 @@
 "tn": 16
 },
 "stone ship burial": {
-"f": "Places",
-"k": "earth & sky",
+"f": "Buildings & monuments",
+"k": "object",
 "leaf": 1,
 "m": [
 "stone ship burial"
 ],
 "n": 1,
+"p": "burial monuments",
 "rg": "Norse & Germanic"
 },
 "stonehenge": {
-"f": "Places",
-"k": "earth & sky",
+"f": "Buildings & monuments",
+"k": "object",
 "leaf": 1,
 "m": [
 "stonehenge"
 ],
 "n": 1,
+"p": "megaliths & standing stones",
 "rg": "Celtic & British Isles"
 },
 "stork": {
@@ -47458,7 +47708,7 @@
 "sun gazing (aztec and mayan practice)"
 ],
 "n": 1,
-"p": "animal behaviour"
+"p": "rhythms of the day and year"
 },
 "sun wukong": {
 "f": "Legends & heroes",
@@ -47504,7 +47754,7 @@
 "sunburn"
 ],
 "n": 1,
-"p": "medicine & ailments"
+"p": "skin & cold"
 },
 "sunflower": {
 "f": "Other plants",
@@ -47714,7 +47964,7 @@
 "swollen veins from labour"
 ],
 "n": 1,
-"p": "anatomy"
+"p": "glands & organs"
 },
 "sword": {
 "f": "Weapons & armour",
@@ -47758,7 +48008,7 @@
 "symbiosis"
 ],
 "n": 3,
-"p": "evolution & ecology"
+"p": "living together"
 },
 "symbol": {
 "f": "Symbols & marks",
@@ -47943,13 +48193,14 @@
 "rg": "Japan"
 },
 "talaiotic architecture": {
-"f": "Places",
-"k": "earth & sky",
+"f": "Buildings & monuments",
+"k": "object",
 "leaf": 1,
 "m": [
 "talaiotic architecture"
 ],
 "n": 1,
+"p": "burial monuments",
 "rg": "Iberia & Mediterranean"
 },
 "tallow rendering": {
@@ -48095,7 +48346,7 @@
 "tears"
 ],
 "n": 1,
-"p": "anatomy"
+"p": "sense organs"
 },
 "tectonic plates": {
 "f": "Landforms",
@@ -48284,7 +48535,7 @@
 "the \"missing link\""
 ],
 "n": 1,
-"p": "evolution & ecology"
+"p": "deep time & extinction"
 },
 "the 'mare' wordplay": {
 "f": "Belief & custom",
@@ -48297,7 +48548,7 @@
 "p": "language & wordplay"
 },
 "the apple of discord": {
-"f": "Places",
+"f": "Legends & heroes",
 "i": 1,
 "k": "mythology",
 "leaf": 1,
@@ -48356,6 +48607,24 @@
 ],
 "n": 1,
 "p": "ape"
+},
+"the cell and its parts": {
+"ch": [
+"biological cell",
+"cell nucleus",
+"chromosome",
+"cytoplasm",
+"dna double helix",
+"mitosis",
+"organelles"
+],
+"f": "Life sciences",
+"k": "concept",
+"leaf": 1,
+"m": [],
+"n": 0,
+"p": "cells & genetics",
+"tn": 4
 },
 "the cowherd and the weaver girl": {
 "f": "Legends & heroes",
@@ -48550,7 +48819,7 @@
 "the k-pg extinction"
 ],
 "n": 1,
-"p": "evolution & ecology"
+"p": "deep time & extinction"
 },
 "the knights of the round table": {
 "f": "Legends & heroes",
@@ -48676,7 +48945,7 @@
 "p": "festival & ritual"
 },
 "the olympics": {
-"f": "Places",
+"f": "Society & work",
 "i": 1,
 "k": "concept",
 "leaf": 1,
@@ -48684,6 +48953,7 @@
 "the olympics"
 ],
 "n": 1,
+"p": "sport & pastime",
 "rg": "Greece & Rome"
 },
 "the pink boto": {
@@ -48763,7 +49033,7 @@
 "p": "sensing & space tech"
 },
 "the seven deadly sins": {
-"f": "Places",
+"f": "Belief & custom",
 "i": 1,
 "k": "concept",
 "leaf": 1,
@@ -48771,16 +49041,18 @@
 "the seven deadly sins"
 ],
 "n": 1,
+"p": "belief & philosophy",
 "rg": "West Asia & Arabia"
 },
 "the shard": {
-"f": "Places",
-"k": "earth & sky",
+"f": "Buildings & monuments",
+"k": "object",
 "leaf": 1,
 "m": [
 "the shard (london skyscraper)"
 ],
-"n": 1
+"n": 1,
+"p": "buildings & sites"
 },
 "the spartans at thermopylae": {
 "f": "Fighters & athletes",
@@ -48954,7 +49226,7 @@
 "thermoregulation"
 ],
 "n": 2,
-"p": "animal behaviour"
+"p": "getting by"
 },
 "theropod": {
 "f": "Dinosaurs",
@@ -49021,7 +49293,7 @@
 "thigmotropism"
 ],
 "n": 2,
-"p": "plant science"
+"p": "growth & season"
 },
 "thin-film interference": {
 "f": "Earth & fire",
@@ -49053,7 +49325,7 @@
 "p": "wildflower"
 },
 "throne": {
-"f": "Other objects",
+"f": "Buildings & monuments",
 "k": "object",
 "leaf": 1,
 "m": [
@@ -49277,7 +49549,7 @@
 "sea otter tool use"
 ],
 "n": 2,
-"p": "animal behaviour"
+"p": "getting by"
 },
 "toro embolado": {
 "f": "Belief & custom",
@@ -49313,7 +49585,7 @@
 "p": "turtle"
 },
 "tower": {
-"f": "Other objects",
+"f": "Buildings & monuments",
 "k": "object",
 "m": [
 "castle tower",
@@ -49646,13 +49918,14 @@
 "p": "reef fish"
 },
 "trilithon": {
-"f": "Places",
-"k": "earth & sky",
+"f": "Buildings & monuments",
+"k": "object",
 "leaf": 1,
 "m": [
 "trilithon"
 ],
 "n": 1,
+"p": "megaliths & standing stones",
 "rg": "Western Europe"
 },
 "trilobite": {
@@ -49713,7 +49986,7 @@
 "troglomorphism"
 ],
 "n": 1,
-"p": "evolution & ecology"
+"p": "adaptation & disguise"
 },
 "troll": {
 "f": "European folklore",
@@ -49905,13 +50178,14 @@
 "p": "weed & vine"
 },
 "tumulus": {
-"f": "Places",
-"k": "earth & sky",
+"f": "Buildings & monuments",
+"k": "object",
 "leaf": 1,
 "m": [
 "tumulus"
 ],
 "n": 1,
+"p": "burial monuments",
 "rg": "Western Europe"
 },
 "turban": {
@@ -50011,7 +50285,7 @@
 "tympanum"
 ],
 "n": 2,
-"p": "anatomy"
+"p": "sense organs"
 },
 "tyrannosaurus": {
 "f": "Dinosaurs",
@@ -50292,12 +50566,12 @@
 "urticating hairs"
 ],
 "n": 1,
-"p": "anatomy"
+"p": "skin & covering"
 },
 "usagi-ringo": {
-"f": "Places",
+"f": "Food & drink",
 "i": 1,
-"k": "earth & sky",
+"k": "food",
 "leaf": 1,
 "m": [
 "usagi-ringo (rabbit apple slices)"
@@ -50366,17 +50640,18 @@
 "v formation"
 ],
 "n": 1,
-"p": "animal behaviour"
+"p": "signals & company"
 },
 "v sign": {
-"f": "Places",
+"f": "Society & work",
 "i": 1,
 "k": "concept",
 "leaf": 1,
 "m": [
 "v sign"
 ],
-"n": 1
+"n": 1,
+"p": "fashion & manners"
 },
 "vampire": {
 "f": "European folklore",
@@ -50515,13 +50790,14 @@
 "p": "carnivorous plant"
 },
 "verraco": {
-"f": "Places",
-"k": "earth & sky",
+"f": "Buildings & monuments",
+"k": "object",
 "leaf": 1,
 "m": [
 "verraco"
 ],
 "n": 1,
+"p": "burial monuments",
 "rg": "Iberia & Mediterranean"
 },
 "vessel": {
@@ -50532,11 +50808,10 @@
 "small fishing vessel"
 ],
 "n": 3,
-"p": "vessels & structures"
+"p": "vessels & decoration"
 },
-"vessels & structures": {
+"vessels & decoration": {
 "ch": [
-"building & structure",
 "ding",
 "party & decoration",
 "scarecrow",
@@ -50547,7 +50822,7 @@
 "leaf": 1,
 "m": [],
 "n": 0,
-"tn": 80
+"tn": 49
 },
 "vest": {
 "f": "Clothing & adornment",
@@ -50677,7 +50952,7 @@
 "virus"
 ],
 "n": 2,
-"p": "cells & genetics"
+"p": "microbes"
 },
 "viscacha": {
 "f": "Rodents & small mammals",
@@ -51061,15 +51336,6 @@
 "n": 0,
 "tn": 15
 },
-"west": {
-"f": "Places",
-"k": "earth & sky",
-"m": [
-"the single horned rhinoceros king of journey to the west",
-"the wicked witch of the west"
-],
-"n": 2
-},
 "western film cowboy": {
 "f": "Film & television",
 "i": 1,
@@ -51116,6 +51382,19 @@
 ],
 "n": 9,
 "p": "cetacean"
+},
+"what we have done to it": {
+"ch": [
+"coral bleaching and climate change",
+"pollution"
+],
+"f": "Life sciences",
+"k": "concept",
+"leaf": 1,
+"m": [],
+"n": 0,
+"p": "evolution & ecology",
+"tn": 4
 },
 "wheel": {
 "f": "Household & tools",
@@ -52028,7 +52307,7 @@
 "rg": "China"
 },
 "ziggurat": {
-"f": "Other objects",
+"f": "Buildings & monuments",
 "k": "object",
 "leaf": 1,
 "m": [
@@ -52075,14 +52354,14 @@
 "zygote"
 ],
 "n": 1,
-"p": "cells & genetics"
+"p": "how life begins"
 }
 },
 "meta": {
 "build": "f4b4a145",
 "clusters": 574,
 "families": 59,
-"groups": 2597,
+"groups": 2639,
 "kinds": [
 "concept",
 "earth & sky",
@@ -52095,7 +52374,7 @@
 "person",
 "prehistoric"
 ],
-"referents": 3891,
+"referents": 3890,
 "species": 1025
 },
 "referents": {
@@ -52290,7 +52569,7 @@
 "25 de abril bridge": {
 "d": "25 de Abril Bridge",
 "g": "bridge",
-"k": "earth & sky",
+"k": "object",
 "s": [
 1018
 ],
@@ -56678,7 +56957,7 @@
 "x": 1
 },
 "bushy eyebrows as a sign of age and wisdom": {
-"g": "age",
+"g": "old age",
 "k": "concept",
 "s": [
 164
@@ -56759,7 +57038,7 @@
 },
 "cable-stayed bridge": {
 "g": "bridge",
-"k": "earth & sky",
+"k": "object",
 "s": [
 1018
 ],
@@ -61984,7 +62263,7 @@
 "european stone circles": {
 "d": "European stone circles",
 "g": "european stone circles",
-"k": "earth & sky",
+"k": "object",
 "s": [
 605
 ]
@@ -62193,7 +62472,7 @@
 },
 "factory": {
 "g": "factory",
-"k": "earth & sky",
+"k": "object",
 "s": [
 485
 ],
@@ -62926,7 +63205,7 @@
 },
 "folding bridge": {
 "g": "bridge",
-"k": "earth & sky",
+"k": "object",
 "s": [
 1018
 ],
@@ -63022,7 +63301,7 @@
 },
 "fortress": {
 "g": "fortress",
-"k": "earth & sky",
+"k": "object",
 "s": [
 205
 ],
@@ -63732,7 +64011,7 @@
 },
 "ghost town": {
 "g": "ghost town",
-"k": "earth & sky",
+"k": "object",
 "s": [
 946,
 947
@@ -64210,7 +64489,7 @@
 },
 "golem of prague": {
 "d": "Golem of Prague",
-"g": "prague",
+"g": "golem",
 "k": "earth & sky",
 "s": [
 486
@@ -64729,7 +65008,7 @@
 "guadiana international bridge": {
 "d": "Guadiana International Bridge",
 "g": "bridge",
-"k": "earth & sky",
+"k": "object",
 "s": [
 1018
 ],
@@ -65306,7 +65585,7 @@
 },
 "haunted castle": {
 "g": "castle",
-"k": "earth & sky",
+"k": "object",
 "s": [
 770
 ],
@@ -66686,10 +66965,11 @@
 },
 "ice age": {
 "d": "Ice Age",
-"g": "age",
+"g": "historical eras",
 "k": "concept",
 "s": [
-378
+378,
+473
 ],
 "w": "Ice Age",
 "x": 1
@@ -66795,7 +67075,7 @@
 },
 "igloo": {
 "g": "igloo",
-"k": "earth & sky",
+"k": "object",
 "s": [
 27
 ],
@@ -67046,7 +67326,7 @@
 },
 "inuksuk": {
 "g": "inuksuk",
-"k": "earth & sky",
+"k": "object",
 "s": [
 874
 ],
@@ -67085,7 +67365,7 @@
 },
 "iron age": {
 "d": "Iron Age",
-"g": "age",
+"g": "historical eras",
 "k": "concept",
 "s": [
 379
@@ -68985,7 +69265,7 @@
 },
 "landfill": {
 "g": "landfill",
-"k": "earth & sky",
+"k": "object",
 "s": [
 569
 ],
@@ -69381,7 +69661,7 @@
 },
 "lighthouse": {
 "g": "lighthouse",
-"k": "earth & sky",
+"k": "object",
 "s": [
 181
 ],
@@ -70777,7 +71057,7 @@
 },
 "megalith": {
 "g": "megalith",
-"k": "earth & sky",
+"k": "object",
 "s": [
 874
 ],
@@ -72287,7 +72567,7 @@
 "naveta d'es tudons tomb": {
 "d": "Naveta d'Es Tudons tomb",
 "g": "naveta d'es tudons tomb",
-"k": "earth & sky",
+"k": "object",
 "s": [
 805
 ]
@@ -73157,7 +73437,7 @@
 ]
 },
 "old age": {
-"g": "age",
+"g": "old age",
 "k": "concept",
 "s": [
 289
@@ -75389,7 +75669,7 @@
 "preseli bluestones": {
 "d": "Preseli bluestones",
 "g": "preseli bluestones",
-"k": "earth & sky",
+"k": "object",
 "s": [
 874
 ]
@@ -75652,7 +75932,7 @@
 },
 "pukao (moai topknot)": {
 "g": "pukao",
-"k": "earth & sky",
+"k": "object",
 "s": [
 476
 ],
@@ -75822,7 +76102,7 @@
 "pyramids of guimar": {
 "d": "Pyramids of Guimar",
 "g": "pyramids of guimar",
-"k": "earth & sky",
+"k": "object",
 "s": [
 934
 ],
@@ -77552,7 +77832,7 @@
 },
 "sand castle": {
 "g": "castle",
-"k": "earth & sky",
+"k": "object",
 "s": [
 770
 ],
@@ -80386,7 +80666,7 @@
 },
 "stone age": {
 "d": "Stone Age",
-"g": "age",
+"g": "historical eras",
 "k": "concept",
 "s": [
 377
@@ -80396,7 +80676,7 @@
 },
 "stone ship burial": {
 "g": "stone ship burial",
-"k": "earth & sky",
+"k": "object",
 "s": [
 867
 ]
@@ -80404,7 +80684,7 @@
 "stonehenge": {
 "d": "Stonehenge",
 "g": "stonehenge",
-"k": "earth & sky",
+"k": "object",
 "s": [
 874
 ],
@@ -81194,7 +81474,7 @@
 "talaiotic architecture": {
 "d": "Talaiotic architecture",
 "g": "talaiotic architecture",
-"k": "earth & sky",
+"k": "object",
 "s": [
 805
 ]
@@ -81906,7 +82186,7 @@
 },
 "the golem of prague and its shem": {
 "d": "the Golem of Prague and its shem",
-"g": "prague",
+"g": "golem",
 "k": "earth & sky",
 "s": [
 623
@@ -81937,15 +82217,6 @@
 908
 ],
 "w": "Hat-trick",
-"x": 1
-},
-"the ice age": {
-"g": "age",
-"k": "concept",
-"s": [
-473
-],
-"w": "Ice age",
 "x": 1
 },
 "the idiom \"a mantis's axe\"": {
@@ -82101,7 +82372,7 @@
 },
 "the modern age": {
 "d": "the Modern Age",
-"g": "age",
+"g": "historical eras",
 "k": "concept",
 "s": [
 894
@@ -82286,7 +82557,7 @@
 "the shard (london skyscraper)": {
 "d": "The Shard (London skyscraper)",
 "g": "the shard",
-"k": "earth & sky",
+"k": "object",
 "s": [
 884
 ],
@@ -82303,7 +82574,7 @@
 },
 "the single horned rhinoceros king of journey to the west": {
 "d": "the Single Horned Rhinoceros King of Journey to the West",
-"g": "west",
+"g": "literary character",
 "k": "earth & sky",
 "s": [
 720
@@ -82478,7 +82749,7 @@
 },
 "the wicked witch of the west": {
 "d": "the Wicked Witch of the West",
-"g": "west",
+"g": "literary character",
 "k": "earth & sky",
 "s": [
 861
@@ -83291,7 +83562,7 @@
 },
 "trilithon": {
 "g": "trilithon",
-"k": "earth & sky",
+"k": "object",
 "s": [
 874
 ],
@@ -83546,7 +83817,7 @@
 },
 "tumulus": {
 "g": "tumulus",
-"k": "earth & sky",
+"k": "object",
 "s": [
 972
 ],
@@ -84221,7 +84492,7 @@
 },
 "verraco": {
 "g": "verraco",
-"k": "earth & sky",
+"k": "object",
 "s": [
 933
 ],
@@ -92291,7 +92562,7 @@
 "woolly mammoth",
 "wild boar",
 "mangalica pig",
-"the ice age",
+"ice age",
 "Adams mammoth",
 "jade",
 "ski goggles"

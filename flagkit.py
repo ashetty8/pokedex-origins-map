@@ -24,6 +24,7 @@ dist/map_data.json is the minified copy the page fetches, rewritten on every sav
   python3 flagkit.py split-family <old> <new> <cluster>...  move top-level clusters into a new family
   python3 flagkit.py rename-family <old> <new>         rename a family everywhere
   python3 flagkit.py merge-ref <from> <into>           fold one referent into another
+  python3 flagkit.py split-cluster <src> <new> <ref>... move some referents into a new sibling
   python3 flagkit.py move-ref <referent> <cluster>     move a referent into another cluster
   python3 flagkit.py set-wiki <referent> [title]       set or clear a referent's Wikipedia title
   python3 flagkit.py set-region <cluster> <family> <region>   refile a cluster by where it is from
@@ -260,9 +261,18 @@ def fam_list_for(D, g):
 
 
 def fam_remove(D, fam, g):
+    """Take a cluster out of a family completely — its listing and any region
+       bucket it sits in. A cluster left behind in a region it no longer
+       belongs to still renders there, so a move leaves a ghost."""
+    F = D["families"]
+    if fam not in F: return
     for k in ("c", "l"):
-        if g in (D["families"][fam].get(k) or []):
-            D["families"][fam][k].remove(g)
+        if g in (F[fam].get(k) or []):
+            F[fam][k].remove(g)
+    for reg, lst in list((F[fam].get("rg") or {}).items()):
+        if g in lst:
+            lst.remove(g)
+            if not lst: del F[fam]["rg"][reg]
 
 
 def fam_add(D, fam, g):
@@ -636,6 +646,36 @@ def normalize_case(D):
         len(chosen), conflicts, fixed)
 
 
+def split_cluster(D, src, new, *refs):
+    """Move some of a cluster's referents into a new sibling cluster — for a
+       cluster that turns out to hold two different senses of its name."""
+    G, R = D["groups"], D["referents"]
+    if src not in G: sys.exit("no cluster called %r" % src)
+    if new in G: sys.exit("%r already exists" % new)
+    if not refs: sys.exit("name at least one referent to move into %r" % new)
+    own = G[src].get("m") or []
+    missing = [r for r in refs if r not in own]
+    if missing: sys.exit("not in %r: %s" % (src, ", ".join(missing)))
+    if len(refs) >= len(own): sys.exit("that would empty %r" % src)
+    G[new] = {"k": G[src].get("k"), "m": sorted(refs), "n": 0, "f": G[src].get("f")}
+    if G[src].get("p"): G[new]["p"] = G[src]["p"]
+    for r in refs:
+        own.remove(r)
+        R[r]["g"] = new
+    normalize_leaf(D, src); normalize_leaf(D, new)
+    par = G[src].get("p")
+    if par:
+        G[par].setdefault("ch", []).append(new); G[par]["ch"].sort()
+    else:
+        fam_add(D, G[src]["f"], new)
+        for reg, lst in ((D["families"][G[src]["f"]].get("rg")) or {}).items():
+            if src in lst: lst.append(new); lst.sort(); break
+    recount(D)
+    D["meta"]["groups"] = len(G)
+    return "%s split: %s keeps %s; %s takes %s" % (
+        src, src, ", ".join(G[src]["m"]), new, ", ".join(G[new]["m"]))
+
+
 def set_kind(D, name, kind):
     kinds = D["meta"].get("kinds") or []
     if kind not in kinds + ["unclassified"]:
@@ -656,7 +696,7 @@ def set_kind(D, name, kind):
 WRITES = {"move-family": move_family, "nest": nest, "unnest": unnest,
           "merge": merge, "regroup": regroup, "rename": rename,
           "split-family": split_family, "rename-family": rename_family,
-          "merge-ref": merge_ref, "move-ref": move_ref,
+          "merge-ref": merge_ref, "move-ref": move_ref, "split-cluster": split_cluster,
           "set-kind": set_kind, "set-wiki": set_wiki, "set-region": set_region,
           "normalize-case": lambda D: normalize_case(D),
           "recount": lambda D: recount(D)}
