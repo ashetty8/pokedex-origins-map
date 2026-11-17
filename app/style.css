@@ -140,6 +140,8 @@ select{font:inherit;font-size:.82rem;padding:8px 10px;border:1px solid var(--rul
   border-bottom:1px solid var(--rule);padding-bottom:13px;margin-bottom:14px}
 .dtitles{flex:1 1 200px;min-width:0}
 .dactions{display:flex;align-items:center;gap:6px;margin-left:auto;flex:0 0 auto}
+/* the empty panel keeps its arrows, so a step back too far is recoverable */
+.dhead > .dnav{margin-left:auto}
 .dhead .spr{align-self:flex-start}
 .dnav{display:flex;gap:4px;flex-shrink:0}
 .navbtn{width:24px;height:24px;padding:0;line-height:1;font-size:1.05rem;background:none;color:var(--ink-faint);border:1px solid var(--rule);border-radius:6px;cursor:pointer;transition:color .12s,border-color .12s,opacity .12s}

@@ -779,7 +779,8 @@
   }
   function record(){
     if(replaying) return;
-    var now={sel:state.sel?{t:state.sel.t,k:state.sel.k}:null,fam:state.path.join(" › "),tab:state.tab,path:state.path.slice()};
+    var now={sel:state.sel?{t:state.sel.t,k:state.sel.k}:null,fam:state.path.join(" › "),
+             tab:state.tab,path:state.path.slice(),poke:state.poke};
     if(sameStep(hist[hpos],now)) return;
     hist=hist.slice(0,hpos+1);
     hist.push(now); hpos=hist.length-1;
@@ -793,6 +794,7 @@
     replaying=true;
     state.sel=h.sel?{t:h.sel.t,k:h.sel.k}:null;
     state.path=(h.path||[]).slice(); state.limit=120;
+    state.poke=(h.poke==null?null:h.poke);
     if(state.tab!==h.tab){
       state.tab=h.tab;
       ["clusters","map","species","flags"].forEach(function(o){ $("#tab-"+o).setAttribute("aria-selected",o===h.tab?"true":"false") });
@@ -867,7 +869,13 @@
   function renderDetail(){
     var d=$("#detail"); d.innerHTML="";
     var sel=state.sel;
-    if(!sel){ d.appendChild(el("p","empty","Pick a family, then a cluster, to see what sits inside it.")); return; }
+    if(!sel){
+      var hd=el("div","dhead"), ht=el("div","dtitles");
+      hd.appendChild(ht); hd.appendChild(navButtons());
+      d.appendChild(hd);
+      d.appendChild(el("p","empty","Pick a family, then a cluster, to see what sits inside it."));
+      return;
+    }
     var head=el("div","dhead"), titles=el("div","dtitles");
     var title,sub,body=el("div");
 
@@ -1031,15 +1039,7 @@
     if(sel.t==="species"){ var hi=sprite(sel.k); if(hi) head.appendChild(hi) }
     head.appendChild(titles);
     var acts=el("div","dactions");
-    var nav=el("div","dnav");
-    [["\u2039",-1,"Back"],["\u203A",1,"Forward"]].forEach(function(o){
-      var b=el("button","navbtn",o[0]);
-      b.type="button"; b.title=o[2]+(o[1]<0?" (alt \u2190)":" (alt \u2192)"); b.setAttribute("aria-label",o[2]);
-      b.disabled = o[1]<0 ? hpos<=0 : hpos>=hist.length-1;
-      b.onclick=function(){ travel(o[1]) };
-      nav.appendChild(b);
-    });
-    acts.appendChild(nav);
+    acts.appendChild(navButtons());
     var fb=el("button","flagbtn","Flag");
     fb.onclick=function(){ var f=$("#flagform"); if(f) f.classList.toggle("hidden") };
     acts.appendChild(fb);
@@ -1111,6 +1111,18 @@
     });
     scope.addEventListener("mouseleave",clear);
   }
+  function navButtons(){
+    var nav=el("div","dnav");
+    [["\u2039",-1,"Back"],["\u203A",1,"Forward"]].forEach(function(o){
+      var b=el("button","navbtn",o[0]);
+      b.type="button"; b.title=o[2]+(o[1]<0?" (alt \u2190)":" (alt \u2192)");
+      b.setAttribute("aria-label",o[2]);
+      b.disabled = o[1]<0 ? hpos<=0 : hpos>=hist.length-1;
+      b.onclick=function(){ travel(o[1]) };
+      nav.appendChild(b);
+    });
+    return nav;
+  }
   function sectionTitle(t){ return el("div","sectitle",t) }
   function unionSpecies(members){
     var set={}; members.forEach(function(m){ (D.referents[m]?D.referents[m].s:[]).forEach(function(id){set[id]=1}) });
@@ -1163,7 +1175,9 @@
   function graphFocus(forMap){
     /* a search is a place like any other: on the map it becomes the centre,
        with what it found around it. Only the map asks for this. */
-    if(forMap && state.q && state.poke==null){
+    /* the search is a place you start from: once you have gone somewhere, the
+       map shows where you are, even while the box still filters the list */
+    if(forMap && state.q && state.poke==null && !state.path.length){
       return {t:"search",k:state.q,label:"\u201c"+state.q+"\u201d",kind:"concept",n:0,search:true};
     }
     if(state.poke!=null && D.species[String(state.poke)]){
