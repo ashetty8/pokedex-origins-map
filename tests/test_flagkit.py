@@ -145,6 +145,18 @@ def _(D):
     assert not [1 for v in D["groups"].values() if v.get("f") == "Instruments"]
 
 
+@case("move-ref rehomes a referent and takes its cluster's category")
+def _(D):
+    src = pick(D, lambda v: len(v.get("m") or []) > 1, "move-ref")
+    ref = D["groups"][src]["m"][0]
+    dst = pick(D, lambda v: v.get("k") and v.get("k") != D["groups"][src].get("k"), "move-ref")
+    fk.move_ref(D, ref, dst)
+    assert D["referents"][ref]["g"] == dst
+    assert ref in D["groups"][dst]["m"] and ref not in D["groups"][src]["m"]
+    assert D["referents"][ref]["k"] == D["groups"][dst]["k"]
+    assert not D["referents"][ref].get("i"), "a hand-placed referent is no longer a guess"
+
+
 @case("set-kind recategorises and clears the inferred flag")
 def _(D):
     r = next(r for r, v in sorted(D["referents"].items()) if v.get("i"))

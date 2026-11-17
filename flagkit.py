@@ -24,6 +24,7 @@ dist/map_data.json is the minified copy the page fetches, rewritten on every sav
   python3 flagkit.py split-family <old> <new> <cluster>...  move top-level clusters into a new family
   python3 flagkit.py rename-family <old> <new>         rename a family everywhere
   python3 flagkit.py merge-ref <from> <into>           fold one referent into another
+  python3 flagkit.py move-ref <referent> <cluster>     move a referent into another cluster
   python3 flagkit.py set-kind <group|referent> <kind>  change a category
   python3 flagkit.py recount                           recompute every family n and cluster tn
 
@@ -514,6 +515,27 @@ def merge_ref(D, src, dst):
     return "%r folded into %r — now %d Pokemon" % (src, dst, len(a["s"]))
 
 
+def move_ref(D, ref, cluster):
+    """Move a referent into another cluster — for the ones that landed in a
+       cluster by name collision rather than by meaning."""
+    R, G = D["referents"], D["groups"]
+    if ref not in R: sys.exit("no referent called %r" % ref)
+    if cluster not in G: sys.exit("no cluster called %r" % cluster)
+    old = R[ref].get("g")
+    if old == cluster: sys.exit("%r is already in %r" % (ref, cluster))
+    if old in G and ref in (G[old].get("m") or []):
+        G[old]["m"].remove(ref)
+        normalize_leaf(D, old)
+    G[cluster].setdefault("m", []).append(ref)
+    G[cluster]["m"].sort()
+    normalize_leaf(D, cluster)
+    R[ref]["g"] = cluster
+    R[ref]["k"] = G[cluster].get("k") or R[ref].get("k")
+    R[ref].pop("i", None)          # placed by hand now, not guessed
+    recount(D)
+    return "%r moved from %r to %r (now %s)" % (ref, old, cluster, R[ref]["k"])
+
+
 def set_kind(D, name, kind):
     kinds = D["meta"].get("kinds") or []
     if kind not in kinds + ["unclassified"]:
@@ -534,7 +556,7 @@ def set_kind(D, name, kind):
 WRITES = {"move-family": move_family, "nest": nest, "unnest": unnest,
           "merge": merge, "regroup": regroup, "rename": rename,
           "split-family": split_family, "rename-family": rename_family,
-          "merge-ref": merge_ref, "set-kind": set_kind,
+          "merge-ref": merge_ref, "move-ref": move_ref, "set-kind": set_kind,
           "recount": lambda D: recount(D)}
 
 

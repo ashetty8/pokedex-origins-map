@@ -17411,7 +17411,7 @@
 "shoes & accessories",
 "worn on the head"
 ],
-"n": 202
+"n": 203
 },
 "Crops & food plants": {
 "b": "Plants",
@@ -18081,7 +18081,7 @@
 ],
 "k": "life",
 "l": [],
-"n": 114
+"n": 115
 },
 "Instruments": {
 "b": "Home & workshop",
@@ -19146,20 +19146,19 @@
 "baby mobile",
 "carnival target game"
 ],
-"n": 89
+"n": 87
 },
 "Trades & roles": {
 "c": [
 "age & stage of life",
 "care & medicine",
-"cicada",
 "magic & mysticism",
 "social type",
 "worker"
 ],
 "k": "person",
 "l": [],
-"n": 78
+"n": 77
 },
 "Trees & flowers": {
 "b": "Plants",
@@ -19170,7 +19169,7 @@
 ],
 "k": "life",
 "l": [],
-"n": 40
+"n": 41
 },
 "Vehicles": {
 "b": "Machines",
@@ -22764,7 +22763,7 @@
 "\"rub salt in the wound\"": {
 "f": "Rocks & minerals",
 "i": 1,
-"k": "earth & sky",
+"k": "concept",
 "leaf": 1,
 "m": [
 "\"rub salt in the wound\""
@@ -22786,7 +22785,7 @@
 "\"the big apple\" / new york city": {
 "f": "Places",
 "i": 1,
-"k": "earth & sky",
+"k": "concept",
 "leaf": 1,
 "m": [
 "\"the big apple\" / new york city"
@@ -25572,11 +25571,13 @@
 "f": "Birds",
 "i": 1,
 "k": "life",
-"leaf": 1,
 "m": [
-"bird of prey"
+"bird of prey",
+"fire-spreading whistling kite",
+"red kite",
+"swallow-tailed kite"
 ],
-"n": 3,
+"n": 5,
 "tn": 26
 },
 "bison": {
@@ -28081,14 +28082,15 @@
 "p": "insect life stage"
 },
 "cicada": {
-"f": "Trades & roles",
+"f": "Insects & spiders",
 "i": 1,
-"k": "person",
+"k": "life",
 "m": [
 "adult cicada",
 "bush cicada"
 ],
-"n": 1
+"n": 1,
+"p": "true bug & hopper"
 },
 "cicada exuvia": {
 "f": "Life sciences",
@@ -28233,6 +28235,7 @@
 "attire",
 "formal wear",
 "garment",
+"hip-hop and punk hoodies",
 "neckerchief",
 "outfit",
 "shawl",
@@ -28247,7 +28250,7 @@
 "leaf": 1,
 "m": [],
 "n": 0,
-"tn": 85
+"tn": 86
 },
 "cloud": {
 "f": "Weather & water",
@@ -29035,9 +29038,7 @@
 "ch": [
 "acanthus leaf motif",
 "anglo-saxon fish brooch",
-"hip-hop and punk hoodies",
 "kintsugi",
-"mexican marigolds",
 "origami",
 "orizuru",
 "trencadis mosaic",
@@ -29049,7 +29050,7 @@
 "leaf": 1,
 "m": [],
 "n": 0,
-"tn": 16
+"tn": 15
 },
 "crane": {
 "f": "Birds",
@@ -29619,7 +29620,7 @@
 "daruma doll eye-painting custom": {
 "f": "Art & craft",
 "i": 1,
-"k": "media & art",
+"k": "concept",
 "leaf": 1,
 "m": [
 "daruma doll eye-painting custom"
@@ -31707,7 +31708,7 @@
 "fashion designer": {
 "f": "Society & work",
 "i": 1,
-"k": "concept",
+"k": "person",
 "leaf": 1,
 "m": [
 "fashion designer"
@@ -32156,7 +32157,7 @@
 "photonastic flower"
 ],
 "n": 3,
-"tn": 31
+"tn": 32
 },
 "flower meadow": {
 "f": "Trees & flowers",
@@ -33966,7 +33967,7 @@
 "hachiro-taro": {
 "f": "Places",
 "i": 1,
-"k": "earth & sky",
+"k": "folklore",
 "leaf": 1,
 "m": [
 "hachiro-taro"
@@ -34871,15 +34872,15 @@
 "rg": "Oceania & Polynesia"
 },
 "hip-hop and punk hoodies": {
-"f": "Art & craft",
+"f": "Clothing & adornment",
 "i": 1,
-"k": "media & art",
+"k": "object",
 "leaf": 1,
 "m": [
 "hip-hop and punk hoodies"
 ],
 "n": 1,
-"p": "craft & ornament"
+"p": "clothing"
 },
 "hippocamp": {
 "f": "Mythic beasts",
@@ -36751,13 +36752,11 @@
 "f": "Toys & games",
 "i": 1,
 "k": "object",
+"leaf": 1,
 "m": [
-"fire-spreading whistling kite",
-"kite",
-"red kite",
-"swallow-tailed kite"
+"kite"
 ],
-"n": 3,
+"n": 1,
 "p": "outdoor toy"
 },
 "kitsune-mochi": {
@@ -38890,15 +38889,15 @@
 "p": "nut & seed"
 },
 "mexican marigolds": {
-"f": "Art & craft",
+"f": "Trees & flowers",
 "i": 1,
-"k": "media & art",
+"k": "life",
 "leaf": 1,
 "m": [
 "mexican marigolds"
 ],
 "n": 1,
-"p": "craft & ornament"
+"p": "wildflower"
 },
 "mice": {
 "f": "Rodents & small mammals",
@@ -40743,7 +40742,7 @@
 "omizunu and the kunibiki myth": {
 "f": "Other folklore",
 "i": 1,
-"k": "folklore",
+"k": "mythology",
 "leaf": 1,
 "m": [
 "omizunu and the kunibiki myth"
@@ -41125,7 +41124,7 @@
 "leaf": 1,
 "m": [],
 "n": 0,
-"tn": 28
+"tn": 26
 },
 "outfit": {
 "f": "Clothing & adornment",
@@ -43061,7 +43060,7 @@
 "queen elizabeth ii's corgis": {
 "f": "Rulers & nobility",
 "i": 1,
-"k": "person",
+"k": "life",
 "leaf": 1,
 "m": [
 "queen elizabeth ii's corgis"
@@ -43911,7 +43910,7 @@
 "rock climbing": {
 "f": "Rocks & minerals",
 "i": 1,
-"k": "earth & sky",
+"k": "concept",
 "leaf": 1,
 "m": [
 "rock climbing"
@@ -48132,7 +48131,7 @@
 "tessenjutsu": {
 "f": "Fighters & athletes",
 "i": 1,
-"k": "person",
+"k": "concept",
 "leaf": 1,
 "m": [
 "tessenjutsu (war-fan martial art)"
@@ -48184,7 +48183,7 @@
 "the apple of discord": {
 "f": "Places",
 "i": 1,
-"k": "earth & sky",
+"k": "mythology",
 "leaf": 1,
 "m": [
 "the apple of discord"
@@ -48558,7 +48557,7 @@
 "the olympics": {
 "f": "Places",
 "i": 1,
-"k": "earth & sky",
+"k": "concept",
 "leaf": 1,
 "m": [
 "the olympics"
@@ -48644,7 +48643,7 @@
 "the seven deadly sins": {
 "f": "Places",
 "i": 1,
-"k": "earth & sky",
+"k": "concept",
 "leaf": 1,
 "m": [
 "the seven deadly sins"
@@ -49645,6 +49644,7 @@
 },
 "true bug & hopper": {
 "ch": [
+"cicada",
 "treehopper"
 ],
 "f": "Insects & spiders",
@@ -49654,7 +49654,7 @@
 "water strider"
 ],
 "n": 3,
-"tn": 4
+"tn": 5
 },
 "truffle": {
 "f": "Fungi",
@@ -49878,7 +49878,7 @@
 "tyrant-king theme": {
 "f": "Rulers & nobility",
 "i": 1,
-"k": "person",
+"k": "concept",
 "leaf": 1,
 "m": [
 "tyrant-king theme"
@@ -50221,7 +50221,7 @@
 "v sign": {
 "f": "Places",
 "i": 1,
-"k": "earth & sky",
+"k": "concept",
 "leaf": 1,
 "m": [
 "v sign"
@@ -51048,6 +51048,7 @@
 "bellflower",
 "dandelion",
 "flower meadow",
+"mexican marigolds",
 "red trillium",
 "sunflower",
 "thistle",
@@ -51061,7 +51062,7 @@
 ],
 "n": 1,
 "p": "flower",
-"tn": 11
+"tn": 12
 },
 "wilfred the hairy": {
 "f": "Legends & heroes",
@@ -52049,8 +52050,7 @@
 },
 "\"rub salt in the wound\"": {
 "g": "\"rub salt in the wound\"",
-"i": 1,
-"k": "earth & sky",
+"k": "concept",
 "s": [
 934
 ],
@@ -52067,8 +52067,7 @@
 },
 "\"the big apple\" / new york city": {
 "g": "\"the big apple\" / new york city",
-"i": 1,
-"k": "earth & sky",
+"k": "concept",
 "s": [
 494
 ],
@@ -52323,8 +52322,7 @@
 },
 "adult cicada": {
 "g": "cicada",
-"i": 1,
-"k": "person",
+"k": "life",
 "s": [
 291
 ]
@@ -54074,8 +54072,7 @@
 },
 "baku (dream-eating spirit)": {
 "g": "tapir",
-"i": 1,
-"k": "life",
+"k": "folklore",
 "s": [
 96,
 97
@@ -56052,8 +56049,7 @@
 },
 "british folk songs about the windflower": {
 "g": "windflower",
-"i": 1,
-"k": "life",
+"k": "media & art",
 "s": [
 829
 ]
@@ -56354,8 +56350,7 @@
 },
 "bush cicada": {
 "g": "cicada",
-"i": 1,
-"k": "person",
+"k": "life",
 "s": [
 291
 ]
@@ -59144,8 +59139,7 @@
 },
 "crystal onix (anime)": {
 "g": "crystal onix",
-"i": 1,
-"k": "earth & sky",
+"k": "media & art",
 "s": [
 208
 ],
@@ -59515,8 +59509,7 @@
 },
 "daruma doll eye-painting custom": {
 "g": "daruma doll eye-painting custom",
-"i": 1,
-"k": "media & art",
+"k": "concept",
 "s": [
 555
 ],
@@ -61863,8 +61856,7 @@
 },
 "fashion designer": {
 "g": "fashion designer",
-"i": 1,
-"k": "concept",
+"k": "person",
 "s": [
 542
 ],
@@ -62154,9 +62146,8 @@
 "w": "Fire staff"
 },
 "fire-spreading whistling kite": {
-"g": "kite",
-"i": 1,
-"k": "object",
+"g": "bird of prey",
+"k": "life",
 "s": [
 663
 ]
@@ -64366,8 +64357,7 @@
 },
 "hachiro-taro": {
 "g": "hachiro-taro",
-"i": 1,
-"k": "earth & sky",
+"k": "folklore",
 "s": [
 1019
 ]
@@ -64872,8 +64862,7 @@
 },
 "headless men": {
 "g": "men",
-"i": 1,
-"k": "person",
+"k": "folklore",
 "s": [
 106,
 486
@@ -65330,8 +65319,7 @@
 },
 "hip-hop and punk hoodies": {
 "g": "hip-hop and punk hoodies",
-"i": 1,
-"k": "media & art",
+"k": "object",
 "s": [
 945
 ]
@@ -67273,8 +67261,7 @@
 },
 "kamaitachi (sickle weasel yokai)": {
 "g": "weasel",
-"i": 1,
-"k": "life",
+"k": "folklore",
 "s": [
 215,
 619
@@ -70247,8 +70234,7 @@
 },
 "mexican marigolds": {
 "g": "mexican marigolds",
-"i": 1,
-"k": "media & art",
+"k": "life",
 "s": [
 911
 ],
@@ -71832,8 +71818,7 @@
 },
 "nike and victoria (victory goddesses)": {
 "g": "nike and victoria",
-"i": 1,
-"k": "earth & sky",
+"k": "mythology",
 "s": [
 494
 ]
@@ -72373,8 +72358,7 @@
 },
 "omizunu and the kunibiki myth": {
 "g": "omizunu and the kunibiki myth",
-"i": 1,
-"k": "folklore",
+"k": "mythology",
 "s": [
 486
 ]
@@ -75043,8 +75027,7 @@
 },
 "queen elizabeth ii's corgis": {
 "g": "queen elizabeth ii's corgis",
-"i": 1,
-"k": "person",
+"k": "life",
 "s": [
 835
 ],
@@ -75466,9 +75449,8 @@
 "x": 1
 },
 "red kite": {
-"g": "kite",
-"i": 1,
-"k": "object",
+"g": "bird of prey",
+"k": "life",
 "s": [
 663
 ],
@@ -75937,8 +75919,7 @@
 },
 "rock climbing": {
 "g": "rock climbing",
-"i": 1,
-"k": "earth & sky",
+"k": "concept",
 "s": [
 950
 ],
@@ -79850,9 +79831,8 @@
 ]
 },
 "swallow-tailed kite": {
-"g": "kite",
-"i": 1,
-"k": "object",
+"g": "bird of prey",
+"k": "life",
 "s": [
 277
 ],
@@ -80519,8 +80499,7 @@
 },
 "tessenjutsu (war-fan martial art)": {
 "g": "tessenjutsu",
-"i": 1,
-"k": "person",
+"k": "concept",
 "s": [
 502
 ],
@@ -80577,8 +80556,7 @@
 },
 "the apple of discord": {
 "g": "the apple of discord",
-"i": 1,
-"k": "earth & sky",
+"k": "mythology",
 "s": [
 1019
 ],
@@ -81070,8 +81048,7 @@
 },
 "the olympics": {
 "g": "the olympics",
-"i": 1,
-"k": "earth & sky",
+"k": "concept",
 "s": [
 494
 ],
@@ -81158,8 +81135,7 @@
 },
 "the seven deadly sins": {
 "g": "the seven deadly sins",
-"i": 1,
-"k": "earth & sky",
+"k": "concept",
 "s": [
 1019
 ],
@@ -82586,8 +82562,7 @@
 },
 "tyrant-king theme": {
 "g": "tyrant-king theme",
-"i": 1,
-"k": "person",
+"k": "concept",
 "s": [
 696
 ],
@@ -82796,8 +82771,7 @@
 },
 "usagi-ringo (rabbit apple slices)": {
 "g": "usagi-ringo",
-"i": 1,
-"k": "earth & sky",
+"k": "food",
 "s": [
 494
 ]
@@ -82870,8 +82844,7 @@
 },
 "v sign": {
 "g": "v sign",
-"i": 1,
-"k": "earth & sky",
+"k": "concept",
 "s": [
 494
 ],
