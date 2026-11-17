@@ -133,10 +133,14 @@ select{font:inherit;font-size:.82rem;padding:8px 10px;border:1px solid var(--rul
   /* match the content beside it instead of floating as a short card */
   min-height:calc(100dvh - env(safe-area-inset-top,0px) - var(--topbar,128px) - var(--headrow,0px) - 120px);max-height:calc(100dvh - env(safe-area-inset-top,0px) - var(--topbar,128px) - var(--headrow,0px) - 40px);overflow:auto;overscroll-behavior:contain}
 @media (max-width:1000px){.detail{position:static;max-height:none;min-height:0;overflow:visible}}
-.dhead{display:flex;gap:12px;align-items:center}
-.dtitles{flex:1 1 auto;min-width:0}
-.dactions{display:flex;align-items:center;gap:6px;margin:12px 0 2px;padding-top:10px;border-top:1px solid var(--rule)}
-.dactions .dnav{margin-right:auto}
+/* name on the left, controls top-right, one rule under the pair. The row
+   wraps as a whole rather than squeezing the name: a long one keeps its
+   width and the buttons drop to their own line. */
+.dhead{display:flex;gap:10px 12px;align-items:flex-start;flex-wrap:wrap;
+  border-bottom:1px solid var(--rule);padding-bottom:13px;margin-bottom:14px}
+.dtitles{flex:1 1 200px;min-width:0}
+.dactions{display:flex;align-items:center;gap:6px;margin-left:auto;flex:0 0 auto}
+.dhead .spr{align-self:flex-start}
 .dnav{display:flex;gap:4px;flex-shrink:0}
 .navbtn{width:24px;height:24px;padding:0;line-height:1;font-size:1.05rem;background:none;color:var(--ink-faint);border:1px solid var(--rule);border-radius:6px;cursor:pointer;transition:color .12s,border-color .12s,opacity .12s}
 .navbtn:hover:not(:disabled){color:var(--ink);border-color:var(--ink-faint)}

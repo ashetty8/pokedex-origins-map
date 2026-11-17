@@ -1043,7 +1043,8 @@
     var fb=el("button","flagbtn","Flag");
     fb.onclick=function(){ var f=$("#flagform"); if(f) f.classList.toggle("hidden") };
     acts.appendChild(fb);
-    d.appendChild(head); d.appendChild(acts); d.appendChild(body);
+    head.appendChild(acts);
+    d.appendChild(head); d.appendChild(body);
     wireHover(d);
     d.appendChild(flagForm(sel,title));
     d.appendChild(existingFlags(targetKey(sel)));
