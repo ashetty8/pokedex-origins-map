@@ -726,8 +726,24 @@
     };
     return b;
   }
+  /* the categories a Pokémon draws on, for the rail to light up */
+  function kindsOf(id){
+    var out={}, sp=D.species[String(id)];
+    (sp?sp[1]:[]).forEach(function(x){
+      var ref=D.referents[String(x).toLowerCase()];
+      if(ref) out[ref.k||"unclassified"]=1;
+    });
+    return out;
+  }
+  function litRail(kinds){
+    [].forEach.call(document.querySelectorAll("#kinds .chip"),function(c){
+      c.classList.toggle("lit", !!(kinds && kinds[c.dataset.kind]));
+    });
+  }
   function speciesRow(r){
-    var b=el("button","row"); b.setAttribute("aria-current",state.sel&&state.sel.t==="species"&&state.sel.k===r.id?"true":"false");
+    var b=el("button","row");
+    b.addEventListener("mouseenter",function(){ litRail(kindsOf(r.id)) });
+    b.addEventListener("mouseleave",function(){ litRail(null) }); b.setAttribute("aria-current",state.sel&&state.sel.t==="species"&&state.sel.k===r.id?"true":"false");
     var im=sprite(r.id); if(im) b.appendChild(im);
     b.appendChild(el("span","num",dex(r.id)));
     b.appendChild(el("span","rowname",r.s[0]));
@@ -875,6 +891,7 @@
       var tl=el("div","taglist");
       g.m.slice().sort().forEach(function(m){
         var t=el("button","tag"+(D.referents[m]&&D.referents[m].w?" wiki":""),disp(m));
+        t.dataset.ref=m;
         var rk=D.referents[m];
         if(rk && rk.k && rk.k!==g.k) t.appendChild(kindTag(rk.k,rk.i));
         t.onclick=function(){select({t:"referent",k:m})};
@@ -1024,8 +1041,54 @@
     fb.onclick=function(){ var f=$("#flagform"); if(f) f.classList.toggle("hidden") };
     acts.appendChild(fb);
     d.appendChild(head); d.appendChild(acts); d.appendChild(body);
+    wireHover(d);
     d.appendChild(flagForm(sel,title));
     d.appendChild(existingFlags(targetKey(sel)));
+  }
+  /* Hovering a Pokémon in the panel answers "why is it here?": the referents
+     that cite it light up, and so do the category chips in the rail those
+     referents belong to. Hovering a referent does the reverse. Nothing is
+     clicked, nothing navigates — it only shows what is connected. */
+  function wireHover(scope){
+    var dexes=[].slice.call(scope.querySelectorAll(".tag[data-dex]"));
+    var refs=[].slice.call(scope.querySelectorAll(".tag[data-ref]"));
+    if(!dexes.length && !refs.length) return;
+    var chips=[].slice.call(document.querySelectorAll("#kinds .chip"));
+    function clear(){
+      dexes.concat(refs).forEach(function(e){ e.classList.remove("lit") });
+      chips.forEach(function(c){ c.classList.remove("lit") });
+    }
+    function litKinds(kinds){
+      chips.forEach(function(c){ if(kinds[c.dataset.kind]) c.classList.add("lit") });
+    }
+    dexes.forEach(function(d){
+      var id=+d.dataset.dex;
+      d.addEventListener("mouseenter",function(){
+        clear();
+        var kinds={};
+        refs.forEach(function(r){
+          var ref=D.referents[r.dataset.ref];
+          if(ref && ref.s.indexOf(id)>=0){
+            r.classList.add("lit");
+            kinds[ref.k||"unclassified"]=1;
+          }
+        });
+        litKinds(kinds);
+      });
+      d.addEventListener("mouseleave",clear);
+    });
+    refs.forEach(function(r){
+      var ref=D.referents[r.dataset.ref];
+      if(!ref) return;
+      r.addEventListener("mouseenter",function(){
+        clear();
+        var want={}; ref.s.forEach(function(i){ want[i]=1 });
+        dexes.forEach(function(d){ if(want[+d.dataset.dex]) d.classList.add("lit") });
+        var kinds={}; kinds[ref.k||"unclassified"]=1; litKinds(kinds);
+      });
+      r.addEventListener("mouseleave",clear);
+    });
+    scope.addEventListener("mouseleave",clear);
   }
   function sectionTitle(t){ return el("div","sectitle",t) }
   function unionSpecies(members){
@@ -1037,7 +1100,7 @@
     (list||[]).forEach(function(ref){
       var key=String(ref).toLowerCase(), known=!!D.referents[key];
       var t=el(known?"button":"span","tag"+(soft?" soft":""),ref);
-      if(known) t.onclick=function(){ select({t:"referent",k:key}) };
+      if(known){ t.dataset.ref=key; t.onclick=function(){ select({t:"referent",k:key}) } }
       tl.appendChild(t);
     });
     return tl;
@@ -1053,6 +1116,7 @@
     ids.forEach(function(id){
       var sp=D.species[String(id)]; if(!sp) return;
       var t=el("button","tag dex");
+      t.dataset.dex=id;
       var slug=refKey?formFor(refKey,id):null;
       var im=(slug&&formSprite(slug))||sprite(id);
       if(im){ im.classList.add("spr"); t.appendChild(im) }

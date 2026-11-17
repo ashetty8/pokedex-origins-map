@@ -149,6 +149,21 @@ select{font:inherit;font-size:.82rem;padding:8px 10px;border:1px solid var(--rul
 .taglist{display:flex;flex-wrap:wrap;gap:5px}
 .tag{background:none;border:1px solid var(--rule-strong);border-radius:6px;padding:3px 8px;font-size:.8rem;color:var(--ink);text-align:left}
 .tag:hover{border-color:var(--accent)}
+/* Hover feedback with some weight to it: the thing under the cursor lifts a
+   little, and whatever it is connected to lights up without moving, so the
+   eye can follow the relationship instead of hunting for it. */
+.tag[data-dex],.tag[data-ref]{transition:transform .12s cubic-bezier(.2,.8,.3,1),
+  border-color .12s,background .14s,box-shadow .14s}
+.tag[data-dex]:hover,.tag[data-ref]:hover{transform:translateY(-1px) scale(1.015);
+  box-shadow:0 3px 10px color-mix(in srgb,var(--accent) 22%,transparent)}
+.tag.lit{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 14%,transparent);
+  box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 35%,transparent)}
+.chip.lit{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 18%,transparent);
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 12%,transparent)}
+.chip{transition:border-color .12s,color .12s,background .14s,box-shadow .14s}
+@media (prefers-reduced-motion:reduce){
+  .tag[data-dex]:hover,.tag[data-ref]:hover{transform:none}
+}
 .tag.dex{font-family:var(--mono);font-size:.76rem}
 .formrow{margin-bottom:14px}
 .intonode{color:var(--ink-faint);margin-left:3px}
