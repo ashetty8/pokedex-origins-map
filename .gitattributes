@@ -1,2 +1,0 @@
-# minified single-line JSON: diffs are not meaningful, do not try
-work/map_data.json -diff

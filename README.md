@@ -9,14 +9,35 @@ Published as a private Claude Artifact: https://claude.ai/artifact/FP9NhVBPPv8oz
 
 | Path | What it is |
 |---|---|
-| `work/page.html` | The whole application — one file, no build step. Published as the artifact's page. |
-| `work/map_data.json` | The dataset the page fetches. Generated upstream, then hand-corrected (see below). |
-| `work/overlay.json` | The hand-made structure, replayable onto a fresh generated dataset. |
+| `app/index.html` | Markup and head — 80 lines. |
+| `app/style.css` | Every style the page uses. |
+| `app/app.js` | The whole application: data loading, the three views, the map, the flag store. |
+| `data/map_data.json` | The dataset, one key per line so corrections read as diffs. The source of truth. |
+| `dist/` | What gets published: the three app files plus a minified `map_data.json`. Rebuilt by `flagkit build`, never edited. |
 | `flagkit.py` | Inspect and edit the dataset safely: every write recomputes counts and refuses to save if integrity breaks. |
-| `SKILL.md` | The working loop: read flags, diagnose, fix, publish, mark applied. |
+| `tests/test_flagkit.py` | Exercises every write command against a copy of the real data. No framework; run it directly. |
+| `SKILL.md` | The working loop: read flags, diagnose, fix, publish, commit. |
 
-`sprites.json` and `form_sprites.json` (~2 MB of base64 PNGs) are published alongside the page
-but are not kept here; fetch them from the artifact when a sprite question comes up.
+`sprites.json` and `form_sprites.json` (~2 MB of base64 PNGs) live in the artifact only; pull
+them into `dist/` when a sprite question needs a local preview.
+
+## Publishing
+
+```bash
+python3 -I flagkit.py build        # assemble dist/
+```
+
+then publish `dist/index.html` with `style.css`, `app.js` and `map_data.json` as its files.
+Editing `dist/` directly is pointless — the next build overwrites it.
+
+## Tests
+
+```bash
+python3 -I tests/test_flagkit.py
+```
+
+14 cases: every write command, the guard rails that must refuse rather than corrupt, and the
+rebuild path. Run it before publishing a data change.
 
 ## The correction loop
 

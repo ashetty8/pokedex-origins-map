@@ -3,14 +3,17 @@
 
 Everything here runs locally against work/map_data.json. Print small, print facts.
 
+Files: data/map_data.json is the source of truth, one key per line so diffs read;
+dist/map_data.json is the minified copy the page fetches, rewritten on every save.
+
   python3 flagkit.py show <name>...        what the data says about a referent/group/family/species
   python3 flagkit.py grep <text>           referents, groups and families whose name matches
   python3 flagkit.py species <name>        every Pokemon under a referent or cluster (with sprite forms)
   python3 flagkit.py where <pokemon>       which referents/clusters a Pokemon hangs off
   python3 flagkit.py check                 integrity pass (parents, children, family lists, counts)
 
-  python3 flagkit.py patch export          snapshot this structure to work/overlay.json
-  python3 flagkit.py patch apply <file>    replay that snapshot onto a freshly generated dataset
+  python3 flagkit.py patch apply <file>    replay this structure onto a freshly generated dataset
+  python3 flagkit.py build                 rewrite dist/map_data.json (the minified published copy)
 
   python3 flagkit.py move-family <group> <family>      refile a cluster, recount both families
   python3 flagkit.py nest <child> <parent>             make <child> a child cluster of <parent>
@@ -30,7 +33,8 @@ if the check fails. Pass --dry to see the summary without saving.
 import json, os, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-DATA = os.path.join(HERE, "work", "map_data.json")
+DATA = os.path.join(HERE, "data", "map_data.json")      # readable, one key per line
+DIST = os.path.join(HERE, "dist", "map_data.json")      # minified, what gets published
 
 
 def load():
@@ -42,7 +46,23 @@ def load():
 
 def save(D):
     with open(DATA, "w", encoding="utf-8") as f:
+        json.dump(D, f, ensure_ascii=False, indent=0, sort_keys=True)
+    build(D)
+
+
+def build(D):
+    """Assemble dist/: the minified dataset plus the three app files, which is
+       exactly what gets published and what a local preview serves."""
+    import shutil
+    dist = os.path.dirname(DIST)
+    os.makedirs(dist, exist_ok=True)
+    with open(DIST, "w", encoding="utf-8") as f:
         json.dump(D, f, ensure_ascii=False, separators=(",", ":"))
+    for name in ("index.html", "style.css", "app.js"):
+        src = os.path.join(HERE, "app", name)
+        if os.path.exists(src): shutil.copy2(src, os.path.join(dist, name))
+    return "built %s: map_data.json (%d KB) + index.html, style.css, app.js" % (
+        dist, os.path.getsize(DIST) // 1024)
 
 
 # ---------- reading ----------
@@ -520,38 +540,26 @@ WRITES = {"move-family": move_family, "nest": nest, "unnest": unnest,
 
 # ---------- surviving a rebuild ----------
 
-OVERLAY = os.path.join(HERE, "work", "overlay.json")
-
-
-def patch_export(D, path=None):
-    """Snapshot the hand-made structure so it can be replayed onto a fresh
-       build. It records where things sit, not what the generator derives:
-       family and branch of every family, a cluster's family/parent/kind/own
-       referents, and a referent's cluster/category/wiki title."""
-    out = {"build": D["meta"].get("build"), "families": {}, "groups": {}, "referents": {}}
+def overlay_of(D):
+    """The hand-made structure, read straight off the current dataset: where
+       everything sits, never the counts, which are always recomputed."""
+    O = {"families": {}, "groups": {}, "referents": {}}
     for fam, f in D["families"].items():
-        out["families"][fam] = {"k": f.get("k"), "b": f.get("b")}
+        O["families"][fam] = {"k": f.get("k"), "b": f.get("b")}
     for g, v in D["groups"].items():
-        out["groups"][g] = {"f": v.get("f"), "p": v.get("p"), "k": v.get("k"),
-                            "m": list(v.get("m") or [])}
+        O["groups"][g] = {"f": v.get("f"), "p": v.get("p"), "k": v.get("k"),
+                          "m": list(v.get("m") or [])}
     for r, v in D["referents"].items():
-        out["referents"][r] = {"g": v.get("g"), "k": v.get("k"), "w": v.get("w")}
-    p = path or OVERLAY
-    # written one key per line and sorted, so a version-control diff shows the
-    # edits themselves rather than one changed 500 KB line
-    with open(p, "w", encoding="utf-8") as fh:
-        json.dump(out, fh, ensure_ascii=False, indent=0, sort_keys=True)
-    return "overlay written to %s — %d families, %d clusters, %d referents" % (
-        p, len(out["families"]), len(out["groups"]), len(out["referents"]))
+        O["referents"][r] = {"g": v.get("g"), "k": v.get("k"), "w": v.get("w")}
+    return O
 
 
-def patch_apply(D, fresh_path, overlay_path=None):
-    """Replay the overlay onto a freshly generated map_data.json.
+def patch_apply(D, fresh_path):
+    """Replay this dataset's structure onto a freshly generated map_data.json.
        Anything the new build no longer has is reported, never forced."""
     with open(fresh_path, encoding="utf-8") as fh:
         N = json.load(fh)
-    with open(overlay_path or OVERLAY, encoding="utf-8") as fh:
-        O = json.load(fh)
+    O = overlay_of(D)
     G, R, F = N["groups"], N["referents"], N["families"]
     made_f = made_g = moved = recat = 0
     missing = []
@@ -655,13 +663,11 @@ def main():
     if cmd == "check":
         return sys.exit(1 if check(D) else 0)
     if cmd == "patch":
-        sub = rest[0] if rest else ""
-        if sub == "export":
-            print(patch_export(D, *rest[1:])); return
-        if sub == "apply":
-            if len(rest) < 2: sys.exit("patch apply <fresh map_data.json> [overlay.json]")
-            print(patch_apply(D, *rest[1:])); return
-        sys.exit("patch export | patch apply <fresh map_data.json>")
+        if (rest[:1] or [""])[0] != "apply" or len(rest) < 2:
+            sys.exit("patch apply <fresh map_data.json>")
+        print(patch_apply(D, rest[1])); return
+    if cmd == "build":
+        print(build(D)); return
     if cmd in WRITES:
         before = len(check(D, quiet=True))
         summary = WRITES[cmd](D, *rest)

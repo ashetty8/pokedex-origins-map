@@ -9,14 +9,15 @@ The map is artifact `https://claude.ai/artifact/FP9NhVBPPv8ozSKYAfhBR8`. Its vie
 flags into the artifact database collection `corrections`. This skill is the cheap loop for
 clearing them.
 
-Working copies live beside this file in `work/`: `map_data.json` (the dataset the page
-fetches) and `page.html` (the page itself). Treat them as the current published version —
-refresh them at the start of a session, work on them, publish them, leave them in place.
+The project is a git repo rooted at this skill's directory (`ashetty8/pokedex-origins-map`,
+private). Edit `data/map_data.json` through flagkit and `app/index.html` / `app/style.css` /
+`app/app.js` by hand; `python3 -I flagkit.py build` assembles `dist/`, which is what gets
+published. Treat `data/` and `app/` as the current published version.
 
 ## The rules that keep this cheap
 
 1. **Never read the artifact's HTML into the conversation to find something.** `grep -n` it in
-   `work/page.html` and read only the lines you will change.
+   `app/app.js` (or `app/index.html`, `app/style.css`) and read only the lines you will change.
 2. **Never dump `map_data.json`.** It is ~940 KB. Ask `flagkit.py` instead; it prints lines, not
    blobs.
 3. **No screenshots for anything the data or the DOM can answer**, and never a second screenshot
@@ -44,7 +45,8 @@ files all four under that one type.
 Artifact action=read url=<artifact> paths=["map_data.json","index.html"] out_dir=<this skill>/work
 ```
 
-Then `mv work/index.html work/page.html`. Compare `meta.build` with what the flag notes mention:
+Save the dataset over `data/map_data.json` (run `flagkit build` after). Compare `meta.build`
+with what the flag notes mention:
 a flag applied under an older build may have been regenerated away.
 
 ### 3. Diagnose each flag — data or page?
@@ -58,7 +60,7 @@ python3 -I flagkit.py grep aspen             # find the real spelling
 
 - The numbers are wrong, something sits in the wrong family, two clusters should be one → **data**.
 - The number is right but the panel or the map does not show it → **page**. Find the code with
-  `grep -n` in `work/page.html`; the render paths are `renderDetail` (side panel), `drawGraph`
+  `grep -n` in `app/app.js`; the render paths are `renderDetail` (side panel), `drawGraph`
   (map), `groupNode`/`childrenOf` (what is openable), `render` (lists).
 - A flag can be neither: Bulbapedia may simply say what the page says. Then reply, do not patch.
 
@@ -81,21 +83,27 @@ python3 -I flagkit.py check                  # always ends clean before you publ
 ```
 
 Add `--dry` to see the summary without saving. For an edit flagkit has no command for, patch
-`work/map_data.json` with a short python heredoc and then run `check` — it catches stale `tn`,
+`data/map_data.json` with a short python heredoc and then run `check` — it catches stale `tn`,
 stale family `n`, `leaf` flags that disagree with the referent count, orphans and double parents.
 
-Page — edit `work/page.html` in place with a python heredoc (exact-match replace, assert the
+Page — edit the file in `app/` with a python heredoc (exact-match replace, assert the
 count is 1), keeping the file's own comment voice.
 
 ### 5. Publish
 
-```
-Artifact url=<artifact> file_path=<this skill>/work/page.html
-         files={"map_data.json": "<this skill>/work/map_data.json"}
+```bash
+python3 -I tests/test_flagkit.py && python3 -I flagkit.py build
 ```
 
-Pass `files` only when the data changed. If another writer published in between, the call is
-refused and hands back a diff — merge it into `work/page.html` and publish again. A publish that
+```
+Artifact url=<artifact> file_path=<this skill>/dist/index.html
+         files={"style.css": ".../dist/style.css", "app.js": ".../dist/app.js",
+                "map_data.json": ".../dist/map_data.json"}
+```
+
+Pass every file whose content changed; files left out keep their published version, which is
+how `sprites.json` and `form_sprites.json` survive without being in the repo. If another writer published in between, the call is
+refused and hands back a diff — merge it into the file in `app/` and publish again. A publish that
 is refused as "identical content resent" goes through on a straight retry.
 
 ### 6. Commit what changed
@@ -105,9 +113,11 @@ directory. After publishing, record the same change in git — the overlay's dif
 readable account of what moved:
 
 ```bash
-python3 -I flagkit.py patch export     # when the data changed
 git add -A && git commit -m "<what changed, and the version id>" && git push
 ```
+
+`data/map_data.json` diffs show the correction itself, so the commit is the record; there is
+no separate overlay file to keep in step.
 
 ### 7. Mark them applied, in one call
 
@@ -127,11 +137,11 @@ Order of preference:
 
 1. **The data answers it** — `flagkit.py show` after the edit. Enough for every data flag.
 2. **The page's own output as text.** The published page runs cross-origin inside claude.ai, so
-   `read_page` and `javascript_tool` cannot reach it. Serve `work/` locally instead:
+   `read_page` and `javascript_tool` cannot reach it. Serve `dist/` locally instead:
    write `.claude/launch.json` with
-   `{"version":"0.0.1","configurations":[{"name":"verify-pokedex","runtimeExecutable":"python3","runtimeArgs":["-m","http.server","8732","--directory","<this skill>/work"],"port":8732}]}`,
-   `mv work/page.html work/index.html` first (and back after), fetch `sprites.json` /
-   `form_sprites.json` into `work/` only if the flag is about sprites, then `preview_start` by
+   `{"version":"0.0.1","configurations":[{"name":"verify-pokedex","runtimeExecutable":"python3","runtimeArgs":["-m","http.server","8732","--directory","<this skill>/dist"],"port":8732}]}`,
+   run `flagkit build` first, fetch `sprites.json` / `form_sprites.json` into `dist/` only if
+   the flag is about sprites, then `preview_start` by
    name and read with `get_page_text` / `find`. Delete the launch.json afterwards. Running a
    server straight from Bash is blocked; this is the route that works.
 3. **One screenshot**, only for something genuinely visual — overlapping labels, a wrong sprite,
@@ -144,16 +154,11 @@ Every data edit lives only in the published JSON; the file still reports the gen
 `meta.build`, and a regeneration wipes all of it. So after any data change:
 
 ```bash
-python3 -I flagkit.py patch export          # snapshots work/overlay.json
-```
-
-The overlay records placement, not derived numbers: each family's kind and branch, each
-cluster's family / parent / category / own referents, each referent's cluster, category and
-Wikipedia title. When a new build arrives:
-
-```bash
 python3 -I flagkit.py patch apply <fresh map_data.json>
 ```
+
+It reads the structure straight off `data/map_data.json` — where everything sits, never the
+derived counts — and replays it onto the new build.
 
 It recreates missing families and the grouping clusters this work invented, refiles referents,
 rebuilds every family listing and count from the result, runs the integrity check, and writes

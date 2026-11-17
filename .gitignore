@@ -1,8 +1,8 @@
-# fetched from the artifact when needed, ~2 MB of base64 sprites
-work/sprites.json
-work/form_sprites.json
-# produced by `patch apply`, not a source of truth
+# fetched from the artifact when a sprite question comes up (~2 MB of base64)
+app/sprites.json
+app/form_sprites.json
+dist/sprites.json
+dist/form_sprites.json
+# produced by `patch apply`, never a source of truth
 *.patched.json
-# local preview scaffolding
-work/index.html
 .DS_Store
