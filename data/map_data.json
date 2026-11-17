@@ -64315,7 +64315,6 @@
 "s": [
 862
 ],
-"w": "Gnoll",
 "x": 1
 },
 "gnome": {
@@ -64871,7 +64870,7 @@
 "s": [
 495
 ],
-"w": "Green snake"
+"w": "Opheodrys"
 },
 "gremlin": {
 "g": "gremlin",
@@ -64994,7 +64993,7 @@
 "s": [
 805
 ],
-"w": "Hive mind",
+"w": "Group mind (science fiction)",
 "x": 1
 },
 "grunt sculpin": {
@@ -65332,7 +65331,7 @@
 292,
 493
 ],
-"w": "Halo"
+"w": "Halo (religious iconography)"
 },
 "halo or aureole": {
 "g": "halo or aureole",
@@ -65589,7 +65588,7 @@
 "s": [
 770
 ],
-"w": "Haunted Castle"
+"w": "Haunted house"
 },
 "haunted doll": {
 "g": "doll",
@@ -65873,7 +65872,7 @@
 "s": [
 124
 ],
-"w": "Hel"
+"w": "Hel (mythological being)"
 },
 "hel, ruler of helheim": {
 "d": "Hel, ruler of Helheim",
@@ -66971,7 +66970,7 @@
 378,
 473
 ],
-"w": "Ice Age",
+"w": "Ice age",
 "x": 1
 },
 "ice axe": {
@@ -68239,7 +68238,7 @@
 "s": [
 123
 ],
-"w": "Kamikiri"
+"w": "Kamikiri (haircutting)"
 },
 "kamoiwakura dotaku site": {
 "d": "Kamoiwakura dotaku site",
@@ -68409,7 +68408,7 @@
 "s": [
 286
 ],
-"w": "Kasa"
+"w": "Kasa (hat)"
 },
 "kaso (chinese fire mouse)": {
 "d": "kaso (Chinese fire mouse)",
@@ -68417,8 +68416,7 @@
 "k": "folklore",
 "s": [
 155
-],
-"w": "Kaso"
+]
 },
 "katana": {
 "g": "katana",
@@ -68675,7 +68673,7 @@
 "s": [
 238
 ],
-"w": "Kintaro"
+"w": "Kintarō"
 },
 "kintsugi": {
 "g": "kintsugi",
@@ -68693,7 +68691,7 @@
 "s": [
 647
 ],
-"w": "Kirin"
+"w": "Qilin"
 },
 "kissing gourami": {
 "g": "kissing gourami",
@@ -68769,7 +68767,7 @@
 603,
 604
 ],
-"w": "Knifefish"
+"w": "Gymnotiformes"
 },
 "knight": {
 "g": "knight",
@@ -68867,7 +68865,7 @@
 708,
 709
 ],
-"w": "Kodama"
+"w": "Kodama (spirit)"
 },
 "kohaku koi": {
 "g": "koi",
@@ -68978,7 +68976,7 @@
 517,
 518
 ],
-"w": "Koro"
+"w": "Censer"
 },
 "korpokkur (ainu folklore)": {
 "d": "Korpokkur (Ainu folklore)",
@@ -69260,8 +69258,7 @@
 443,
 444,
 445
-],
-"w": "Landshark"
+]
 },
 "landfill": {
 "g": "landfill",
@@ -69412,7 +69409,7 @@
 253,
 254
 ],
-"w": "Leaf-tailed gecko"
+"w": "Uroplatus"
 },
 "leafcutter ant": {
 "g": "ant",
@@ -69681,7 +69678,7 @@
 "s": [
 25
 ],
-"w": "Lightning bolt"
+"w": "Lightning"
 },
 "lightning bolt symbol": {
 "g": "symbol",
@@ -69751,7 +69748,7 @@
 "s": [
 488
 ],
-"w": "Lindu"
+"w": "Milky Way in mythology"
 },
 "lindworm": {
 "g": "dragon",
@@ -69808,7 +69805,7 @@
 "s": [
 134
 ],
-"w": "Lion's mane"
+"w": "Lion's mane jellyfish"
 },
 "lionfish": {
 "g": "lionfish",
@@ -70183,7 +70180,7 @@
 "s": [
 837
 ],
-"w": "Lump of coal"
+"w": "Coal"
 },
 "lunala's bat": {
 "d": "Lunala's bat",
@@ -70407,7 +70404,7 @@
 64,
 65
 ],
-"w": "Magician",
+"w": "Magic (illusion)",
 "x": 1
 },
 "magma personified": {
@@ -70467,7 +70464,7 @@
 792,
 801
 ],
-"w": "Mahina"
+"w": "Hina (goddess)"
 },
 "maid's headdress and apron": {
 "g": "headdress",
@@ -70516,7 +70513,7 @@
 "s": [
 508
 ],
-"w": "Maltese"
+"w": "Maltese dog"
 },
 "mammoth": {
 "g": "mammoth",
@@ -70541,7 +70538,7 @@
 "s": [
 105
 ],
-"w": "Mana",
+"w": "Mana (Oceanic cultures)",
 "x": 1
 },
 "manasa": {
@@ -71116,7 +71113,7 @@
 "s": [
 606
 ],
-"w": "Men in Black",
+"w": "Men in black",
 "x": 1
 },
 "menehune": {
@@ -71144,7 +71141,7 @@
 706,
 809
 ],
-"w": "Mercury"
+"w": "Mercury (element)"
 },
 "mercury and amalgams": {
 "g": "mercury",
@@ -71621,7 +71618,7 @@
 529,
 530
 ],
-"w": "Mole"
+"w": "Mole (animal)"
 },
 "mole lizard": {
 "g": "legless lizard",
@@ -71701,7 +71698,7 @@
 "mongolian death worm": {
 "d": "Mongolian death worm",
 "g": "worm",
-"k": "life",
+"k": "folklore",
 "s": [
 95,
 968
@@ -71829,7 +71826,7 @@
 "s": [
 873
 ],
-"w": "Moon moth"
+"w": "Luna moth"
 },
 "moon rabbit": {
 "d": "Moon rabbit",
@@ -71911,7 +71908,7 @@
 "s": [
 904
 ],
-"w": "Morning Star"
+"w": "Morning star (weapon)"
 },
 "morpheus": {
 "d": "Morpheus",
@@ -72628,7 +72625,7 @@
 "s": [
 13
 ],
-"w": "Needle"
+"w": "Sewing needle"
 },
 "nefertem": {
 "d": "Nefertem",
@@ -72844,7 +72841,7 @@
 "s": [
 841
 ],
-"w": "Newton's apple"
+"w": "Isaac Newton"
 },
 "nezha": {
 "d": "Nezha",
@@ -74193,7 +74190,7 @@
 672,
 673
 ],
-"w": "Pan"
+"w": "Pan (god)"
 },
 "pan (greek god)": {
 "d": "Pan (Greek god)",
@@ -74202,7 +74199,7 @@
 "s": [
 274
 ],
-"w": "Pan"
+"w": "Pan (god)"
 },
 "panda": {
 "g": "panda",
@@ -74458,7 +74455,7 @@
 "s": [
 1025
 ],
-"w": "Peach pit"
+"w": "Peach"
 },
 "peaches of immortality": {
 "g": "peaches of immortality",
@@ -74524,7 +74521,7 @@
 "s": [
 865
 ],
-"w": "Pekin duck"
+"w": "American Pekin"
 },
 "pele (hawaiian volcano goddess)": {
 "d": "Pele (Hawaiian volcano goddess)",
@@ -74578,7 +74575,7 @@
 "s": [
 334
 ],
-"w": "Peng"
+"w": "Peng (mythology)"
 },
 "penghou": {
 "d": "Penghou",
@@ -75838,7 +75835,7 @@
 "s": [
 786
 ],
-"w": "Psyche"
+"w": "Psyche (mythology)"
 },
 "psychedelic art": {
 "g": "art",
@@ -75927,7 +75924,6 @@
 "s": [
 26
 ],
-"w": "Puka",
 "x": 1
 },
 "pukao (moai topknot)": {
@@ -76132,7 +76128,7 @@
 "s": [
 24
 ],
-"w": "Python"
+"w": "Pythonidae"
 },
 "qi and chakra": {
 "g": "qi and chakra",
@@ -76209,7 +76205,7 @@
 "s": [
 763
 ],
-"w": "Queen",
+"w": "Queen regnant",
 "x": 1
 },
 "queen bee": {
@@ -77142,7 +77138,7 @@
 144,
 398
 ],
-"w": "Roc"
+"w": "Roc (mythology)"
 },
 "rock climbing": {
 "g": "rock climbing",
@@ -77182,7 +77178,7 @@
 "s": [
 95
 ],
-"w": "Rock python"
+"w": "Central African rock python"
 },
 "rock salt (halite) in sedimentary rock": {
 "g": "rock",
@@ -77860,7 +77856,7 @@
 "s": [
 551
 ],
-"w": "Sandfish skink"
+"w": "Scincus scincus"
 },
 "sandpiper": {
 "g": "sandpiper",
@@ -78597,7 +78593,7 @@
 "s": [
 642
 ],
-"w": "Serpent"
+"w": "Serpent symbolism"
 },
 "serpent in the shape of the letter z": {
 "d": "serpent in the shape of the letter Z",
@@ -78633,7 +78629,7 @@
 "s": [
 130
 ],
-"w": "Serra"
+"w": "Sea monster"
 },
 "serrano bulldog": {
 "d": "Serrano Bulldog",
@@ -79047,7 +79043,7 @@
 "s": [
 562
 ],
-"w": "Shut"
+"w": "Ancient Egyptian conception of the soul"
 },
 "siamese cat": {
 "d": "Siamese cat",
@@ -79178,7 +79174,7 @@
 "s": [
 208
 ],
-"w": "Silver and Gold"
+"w": "Silver"
 },
 "silver fox": {
 "g": "fox",
@@ -79187,7 +79183,7 @@
 827,
 828
 ],
-"w": "Silver fox"
+"w": "Silver fox (animal)"
 },
 "silver spiny sugar ant": {
 "g": "ant",
@@ -79202,7 +79198,7 @@
 "s": [
 542
 ],
-"w": "Silver-spotted skipper"
+"w": "Epargyreus clarus"
 },
 "silver-spotted skipper caterpillar": {
 "g": "caterpillar",
@@ -79280,7 +79276,7 @@
 730,
 788
 ],
-"w": "Siren"
+"w": "Siren (mythology)"
 },
 "sivatherium": {
 "d": "Sivatherium",
@@ -79597,7 +79593,7 @@
 "s": [
 902
 ],
-"w": "Snakehead"
+"w": "Snakehead (fish)"
 },
 "snapping turtle": {
 "g": "snapping turtle",
@@ -80068,7 +80064,7 @@
 17,
 21
 ],
-"w": "Sparrow"
+"w": "Old World sparrow"
 },
 "sparrowhawk": {
 "g": "sparrowhawk",
@@ -80309,7 +80305,7 @@
 106,
 146
 ],
-"w": "Spring"
+"w": "Spring (device)"
 },
 "spring toy": {
 "g": "toy",
@@ -80326,7 +80322,7 @@
 682,
 743
 ],
-"w": "Sprite"
+"w": "Sprite (folklore)"
 },
 "sprouting acorn": {
 "g": "acorn",
@@ -80406,7 +80402,7 @@
 244,
 508
 ],
-"w": "Saint Bernard"
+"w": "St. Bernard (dog breed)"
 },
 "stag": {
 "g": "stag",
@@ -80513,7 +80509,7 @@
 "s": [
 342
 ],
-"w": "Stars & Stripes"
+"w": "Flag of the United States"
 },
 "static electricity": {
 "g": "static electricity",
@@ -81153,7 +81149,7 @@
 "s": [
 433
 ],
-"w": "Suzu"
+"w": "Suzu (bell)"
 },
 "swag sack": {
 "g": "swag sack",
@@ -82060,7 +82056,7 @@
 971,
 972
 ],
-"w": "The Dip"
+"w": "Dip (Catalan myth)"
 },
 "the dog of momotaro": {
 "d": "the dog of Momotaro",
@@ -82510,7 +82506,7 @@
 "s": [
 648
 ],
-"w": "The Red Shoes"
+"w": "The Red Shoes (fairy tale)"
 },
 "the sandman": {
 "d": "the Sandman",
@@ -82583,7 +82579,7 @@
 "the snow queen": {
 "d": "The Snow Queen",
 "g": "queen",
-"k": "person",
+"k": "folklore",
 "s": [
 478
 ],
@@ -82677,7 +82673,7 @@
 "s": [
 670
 ],
-"w": "Ultimate Weapon"
+"w": "Weapon of mass destruction"
 },
 "the ultrabithorax mutation": {
 "g": "mutation",
@@ -82763,7 +82759,7 @@
 "s": [
 898
 ],
-"w": "Wild Hunt (disambiguation)"
+"w": "Wild Hunt"
 },
 "the witch of hansel and gretel": {
 "d": "the witch of Hansel and Gretel",
@@ -82964,7 +82960,7 @@
 785,
 940
 ],
-"w": "Thunderbird"
+"w": "Thunderbird (mythology)"
 },
 "thunderbird (native american legend)": {
 "d": "thunderbird (Native American legend)",
@@ -82973,7 +82969,7 @@
 "s": [
 145
 ],
-"w": "Thunderbird"
+"w": "Thunderbird (mythology)"
 },
 "thundercloud": {
 "g": "thundercloud",
@@ -83102,7 +83098,7 @@
 "s": [
 821
 ],
-"w": "Tit"
+"w": "Tit (bird)"
 },
 "titan arum": {
 "g": "titan arum",
@@ -83601,7 +83597,7 @@
 "s": [
 457
 ],
-"w": "Tripod fish"
+"w": "Bathypterois grallator"
 },
 "triquetra": {
 "g": "triquetra",
@@ -83935,7 +83931,7 @@
 "s": [
 281
 ],
-"w": "Tutu"
+"w": "Tutu (clothing)"
 },
 "tuxedo": {
 "g": "tuxedo",
@@ -83992,7 +83988,7 @@
 "s": [
 535
 ],
-"w": "Tympanum",
+"w": "Tympanum (anatomy)",
 "x": 1
 },
 "tyrannosaurus": {
@@ -84564,7 +84560,7 @@
 496,
 497
 ],
-"w": "Vine snake"
+"w": "Ahaetulla"
 },
 "vinegarroon": {
 "g": "vinegarroon",
@@ -84634,7 +84630,7 @@
 575,
 576
 ],
-"w": "Virgo",
+"w": "Virgo (constellation)",
 "x": 1
 },
 "virus": {
@@ -84922,7 +84918,7 @@
 "s": [
 183
 ],
-"w": "Water vole"
+"w": "European water vole"
 },
 "waterfall": {
 "g": "waterfall",
@@ -85211,7 +85207,7 @@
 "s": [
 643
 ],
-"w": "White Fire"
+"w": "Flame"
 },
 "white knight chess piece": {
 "g": "chess piece",
@@ -85541,7 +85537,7 @@
 65,
 899
 ],
-"w": "Wizard",
+"w": "Magician (fantasy)",
 "x": 1
 },
 "wolf": {
@@ -85749,7 +85745,7 @@
 "s": [
 646
 ],
-"w": "Wuji",
+"w": "Wuji (philosophy)",
 "x": 1
 },
 "wushu fighter": {
@@ -85770,7 +85766,7 @@
 1011,
 1019
 ],
-"w": "Wyrm"
+"w": "European dragon"
 },
 "wyvern": {
 "g": "dragon",
@@ -85902,7 +85898,7 @@
 "s": [
 381
 ],
-"w": "Yang",
+"w": "Yin and yang",
 "x": 1
 },
 "yasakani no magatama (sacred jewel)": {
@@ -86021,7 +86017,7 @@
 "s": [
 380
 ],
-"w": "Yin",
+"w": "Yin and yang",
 "x": 1
 },
 "yin and yang (black yin)": {
@@ -86269,7 +86265,7 @@
 "s": [
 780
 ],
-"w": "Zhulong"
+"w": "Zhulong (mythology)"
 },
 "ziggurat": {
 "g": "ziggurat",

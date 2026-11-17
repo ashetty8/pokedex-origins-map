@@ -11,3 +11,4 @@ dist/form_sprites.json
 .DS_Store
 tools/.wikicache.json
 tools/.wikisearch.json
+tools/.wikilink.json

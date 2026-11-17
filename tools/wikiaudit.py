@@ -20,8 +20,14 @@ BATCH = 40
 
 # first-sentence wording -> the category it implies, with the phrase that said so
 RULES = [
-    ("prehistoric", r"\b(is|was) an? (extinct|prehistoric)\b|\bextinct (genus|species|family|order|group)\b|\blived during the\b.*\b(period|epoch)\b"),
-    ("life",        r"\bis a (species|genus|family|subspecies|breed|cultivar) of\b|\bis a (small |large |marine |freshwater |flowering |deciduous |evergreen )*(bird|fish|mammal|reptile|amphibian|insect|arachnid|crustacean|mollusc|mollusk|plant|tree|shrub|flower|herb|fungus|alga|beetle|moth|butterfly|snake|lizard|frog|spider)\b"),
+    # "extinct" alone catches the dodo and the great auk, which went in
+    # historical times and are filed as life; a deep-time marker is what makes
+    # something prehistoric here. A dinosaur genus says so without the word.
+    ("prehistoric", r"\bdinosaur\b|\b(prehistoric|mesozoic|cenozoic|palaeozoic|paleozoic)\b"
+                    r"|\b(triassic|jurassic|cretaceous|permian|devonian|cambrian|ordovician|silurian"
+                    r"|miocene|pliocene|pleistocene|eocene|oligocene|paleocene)\b"
+                    r"|\bmillion years ago\b|\bextinct genus\b"),
+    ("life",        r"\bis a (species|genus|family|subspecies|breed|cultivar) of (?!.*dinosaur)\b|\bis a (small |large |marine |freshwater |flowering |deciduous |evergreen )*(bird|fish|mammal|reptile|amphibian|insect|arachnid|crustacean|mollusc|mollusk|plant|tree|shrub|flower|herb|fungus|alga|beetle|moth|butterfly|snake|lizard|frog|spider)\b"),
     ("mythology",   r"\bin (greek|roman|norse|egyptian|hindu|japanese|chinese|aztec|mayan|slavic|celtic|mesopotamian|sumerian|babylonian|polynesian|hawaiian) mytholog|\bis a (god|goddess|deity|titan)\b|\bis the (god|goddess) of\b"),
     ("folklore",    r"\bis a legendary creature\b|\bin folklore\b|\bfolkloric\b|\by[ōo]kai\b|\bis a cryptid\b|\bfairy tale\b"),
     ("food",        r"\bis a (dish|food|dessert|bread|cake|pastry|soup|stew|noodle|candy|confection|sweet|beverage|drink)\b|\bis a traditional .{0,30}(dish|dessert|sweet|bread)\b"),
