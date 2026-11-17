@@ -17524,10 +17524,12 @@
 "deildegast",
 "dwarf",
 "elf",
-"fairy",
-"goblin",
-"kelpie",
-"mare"
+"fairy animals",
+"fairy folk",
+"fairy-tale characters",
+"household & hearth spirits",
+"lights & omens",
+"monsters & spirits"
 ],
 "k": "folklore",
 "l": [
@@ -17535,111 +17537,49 @@
 "alicornio",
 "baba roga",
 "baba yaga",
-"banshee",
-"baphomet",
-"barbegazi",
 "basajaun",
 "bergstutz/stollwurm",
 "berserker",
-"black cat superstition",
-"boggart",
 "brian boru and the pooka",
-"brownie",
-"bugbear",
-"buggane",
-"bugul noz",
-"cat-sith",
 "cikavac",
-"clurichaun",
 "cocollona",
-"cu-sith",
-"doppelganger",
 "duende",
 "dwarf blacksmith",
-"easter bunny",
 "ent",
-"fairy dust",
-"fairy godmother",
-"gargoyle",
 "gjenganger",
-"gnome",
-"gremlin",
 "grendel",
-"hag",
-"hellhound",
 "hellmouth",
-"homunculus",
-"imp",
-"iron charm against fae",
-"jack-o'-lantern",
 "kobold",
-"la petite souris",
 "lou carcolh",
 "maypole",
 "nocnitsa",
 "oracle",
 "patufet",
 "pesanta",
-"pixie",
 "ramidreju",
-"rapunzel",
-"redcap",
 "santa compana",
-"selkie",
-"stingy jack",
 "strzyga",
 "suerale",
 "swedish alvor",
 "tarasque",
-"the dip",
-"the flying dutchman",
-"the frog prince",
 "the iron wolf of lithuania",
-"the lincoln imp grotesque",
-"the sandman",
-"the stork that delivers babies",
-"the witch of hansel and gretel",
 "troll",
 "vampire",
 "vasorru baba",
 "viking",
 "wiedergaenger",
-"will-o'-the-wisp",
 "zmora"
 ],
 "n": 107,
 "rg": {
 "Celtic & British Isles": [
 "aillen",
-"banshee",
-"barbegazi",
-"black cat superstition",
-"boggart",
 "brian boru and the pooka",
-"brownie",
-"bugbear",
-"buggane",
-"bugul noz",
-"cat-sith",
-"clurichaun",
-"cu-sith",
-"fairy",
-"fairy dust",
-"fairy godmother",
-"gremlin",
+"fairy animals",
+"fairy folk",
 "grendel",
-"hag",
-"imp",
-"iron charm against fae",
-"jack-o'-lantern",
-"kelpie",
-"pixie",
-"redcap",
-"selkie",
-"stingy jack",
-"the dip",
-"the lincoln imp grotesque",
-"will-o'-the-wisp"
+"household & hearth spirits",
+"lights & omens"
 ],
 "Greece & Rome": [
 "alicornio",
@@ -17684,24 +17624,10 @@
 "zmora"
 ],
 "Western Europe": [
-"baphomet",
-"doppelganger",
-"easter bunny",
 "ent",
-"gargoyle",
-"gnome",
-"goblin",
-"hellhound",
-"homunculus",
-"la petite souris",
-"mare",
+"fairy-tale characters",
 "maypole",
-"rapunzel",
-"the flying dutchman",
-"the frog prince",
-"the sandman",
-"the stork that delivers babies",
-"the witch of hansel and gretel"
+"monsters & spirits"
 ]
 }
 },
@@ -18103,6 +18029,7 @@
 "animal yokai",
 "folk tales & charms",
 "ghosts & souls",
+"guardian figures",
 "harionago",
 "haunted objects & places",
 "mountain & snow spirits",
@@ -18115,18 +18042,12 @@
 "cironnup kamuy",
 "futakuchi-onna",
 "kappa",
-"kaso",
 "kodama",
-"komainu",
 "ningen",
 "oiran",
 "okuri-inu's aggressive aspect",
 "princess kaguya of the tale of the bamboo cutter",
-"rei-kyo",
-"satori",
-"shisa",
-"tsuchikorobi",
-"yamaoroshi"
+"satori"
 ],
 "n": 113,
 "rg": {
@@ -18136,12 +18057,11 @@
 "folk tales & charms",
 "futakuchi-onna",
 "ghosts & souls",
+"guardian figures",
 "harionago",
 "haunted objects & places",
 "kappa",
-"kaso",
 "kodama",
-"komainu",
 "mountain & snow spirits",
 "ningen",
 "nurarihyon",
@@ -18149,11 +18069,7 @@
 "okuri-inu's aggressive aspect",
 "oni & ogres",
 "princess kaguya of the tale of the bamboo cutter",
-"rei-kyo",
 "satori",
-"shisa",
-"tsuchikorobi",
-"yamaoroshi",
 "yokai"
 ]
 }
@@ -18519,19 +18435,17 @@
 },
 "Other folklore": {
 "c": [
-"alien",
 "carbuncle",
-"folklore",
-"folktale",
 "imugi",
 "jinn",
-"legend",
+"magic & charms",
 "mo'o",
-"monster",
 "mythological lynx",
 "nightmarchers",
 "ogre",
-"snowman"
+"snowman",
+"storytelling itself",
+"the unexplained"
 ],
 "k": "folklore",
 "l": [
@@ -18548,13 +18462,8 @@
 "changeling",
 "cherufe",
 "chonchon",
-"crop circles",
 "curse of the pharaohs",
-"curses",
 "curupira",
-"dowsing",
-"electronic voice phenomena",
-"extraterrestrial",
 "fairies blamed for lost objects",
 "flying saucer",
 "genie",
@@ -18563,28 +18472,20 @@
 "hakuturi",
 "hodgson's sargassum weed monsters",
 "ifrit",
-"magic circle",
 "marid",
 "mokele-mbembe",
 "mothman",
 "mummy",
-"out-of-place artifact",
 "pele's curse",
 "saci",
 "santa claus",
-"shadow people",
 "skin-walker",
 "sprite",
-"the evil eye (malocchio)",
 "the genie of aladdin",
 "the nine-coloured deer of the jataka tales",
 "the rabbit of jataka tale 316",
-"third eye",
 "toyol",
-"ufo",
 "vegetable lamb of tartary",
-"witch's familiar",
-"witch's ladder",
 "yeti"
 ],
 "n": 123,
@@ -18620,34 +18521,19 @@
 "skin-walker"
 ],
 "Not tied to one place": [
-"alien",
 "bogeyman",
-"crop circles",
-"curses",
-"dowsing",
-"electronic voice phenomena",
-"extraterrestrial",
 "fairies blamed for lost objects",
-"folklore",
-"folktale",
 "hodgson's sargassum weed monsters",
-"legend",
-"magic circle",
-"monster",
+"magic & charms",
 "mythological lynx",
 "ogre",
-"out-of-place artifact",
 "saci",
 "santa claus",
-"shadow people",
 "snowman",
 "sprite",
-"the evil eye (malocchio)",
-"third eye",
-"ufo",
-"vegetable lamb of tartary",
-"witch's familiar",
-"witch's ladder"
+"storytelling itself",
+"the unexplained",
+"vegetable lamb of tartary"
 ],
 "Oceania & Polynesia": [
 "hakuturi",
@@ -23182,7 +23068,8 @@
 "intelligent sci-fi alien",
 "science-fiction alien"
 ],
-"n": 11
+"n": 11,
+"p": "the unexplained"
 },
 "alien hand syndrome": {
 "f": "Life sciences",
@@ -24722,6 +24609,7 @@
 "banshee"
 ],
 "n": 2,
+"p": "lights & omens",
 "rg": "Celtic & British Isles"
 },
 "baphomet": {
@@ -24732,6 +24620,7 @@
 "baphomet"
 ],
 "n": 1,
+"p": "monsters & spirits",
 "rg": "Western Europe"
 },
 "barbarian": {
@@ -24753,6 +24642,7 @@
 "barbegazi (alpine gnome)"
 ],
 "n": 1,
+"p": "monsters & spirits",
 "rg": "Celtic & British Isles"
 },
 "barbell": {
@@ -25502,6 +25392,7 @@
 "black cat superstition"
 ],
 "n": 2,
+"p": "lights & omens",
 "rg": "Celtic & British Isles"
 },
 "black hawk-eagle": {
@@ -25802,6 +25693,7 @@
 "boggart"
 ],
 "n": 1,
+"p": "household & hearth spirits",
 "rg": "Celtic & British Isles"
 },
 "boiler": {
@@ -26312,6 +26204,7 @@
 "brownie (british folklore)"
 ],
 "n": 1,
+"p": "fairy folk",
 "rg": "Celtic & British Isles"
 },
 "bruce lee": {
@@ -26363,6 +26256,7 @@
 "bugbear"
 ],
 "n": 1,
+"p": "household & hearth spirits",
 "rg": "Celtic & British Isles"
 },
 "buggane": {
@@ -26373,6 +26267,7 @@
 "buggane"
 ],
 "n": 1,
+"p": "household & hearth spirits",
 "rg": "Celtic & British Isles"
 },
 "bugle": {
@@ -26393,6 +26288,7 @@
 "bugul noz (breton spirit)"
 ],
 "n": 1,
+"p": "fairy folk",
 "rg": "Celtic & British Isles"
 },
 "building & structure": {
@@ -27173,6 +27069,7 @@
 "cat-sith"
 ],
 "n": 1,
+"p": "fairy animals",
 "rg": "Celtic & British Isles"
 },
 "caterpillar": {
@@ -28195,6 +28092,7 @@
 "clurichaun"
 ],
 "n": 1,
+"p": "fairy folk",
 "rg": "Celtic & British Isles"
 },
 "cluster": {
@@ -29087,7 +28985,8 @@
 "m": [
 "crop circles"
 ],
-"n": 1
+"n": 1,
+"p": "the unexplained"
 },
 "crossbow": {
 "f": "Weapons & armour",
@@ -29205,6 +29104,7 @@
 "cu-sith (celtic fairy dog)"
 ],
 "n": 2,
+"p": "fairy animals",
 "rg": "Celtic & British Isles"
 },
 "cub": {
@@ -29258,7 +29158,8 @@
 "m": [
 "curses"
 ],
-"n": 1
+"n": 1,
+"p": "magic & charms"
 },
 "curupira": {
 "f": "Other folklore",
@@ -30117,6 +30018,7 @@
 "doppelganger"
 ],
 "n": 2,
+"p": "monsters & spirits",
 "rg": "Western Europe"
 },
 "dormouse": {
@@ -30201,7 +30103,8 @@
 "m": [
 "dowsing"
 ],
-"n": 1
+"n": 1,
+"p": "the unexplained"
 },
 "draconid meteor shower": {
 "f": "Sky & space",
@@ -30678,6 +30581,7 @@
 "easter bunny and easter eggs"
 ],
 "n": 1,
+"p": "fairy-tale characters",
 "rg": "Western Europe"
 },
 "echidna": {
@@ -30912,6 +30816,7 @@
 "electronic voice phenomena"
 ],
 "n": 1,
+"p": "the unexplained",
 "rg": "Japan"
 },
 "elegant pitviper": {
@@ -31387,7 +31292,8 @@
 "m": [
 "extraterrestrial"
 ],
-"n": 3
+"n": 3,
+"p": "the unexplained"
 },
 "extremophile": {
 "f": "Life sciences",
@@ -31482,7 +31388,23 @@
 "fairy"
 ],
 "n": 19,
+"p": "fairy folk",
 "rg": "Celtic & British Isles"
+},
+"fairy animals": {
+"ch": [
+"cat-sith",
+"cu-sith",
+"kelpie",
+"selkie",
+"the dip"
+],
+"f": "European folklore",
+"k": "folklore",
+"leaf": 1,
+"m": [],
+"n": 0,
+"tn": 8
 },
 "fairy dust": {
 "f": "European folklore",
@@ -31493,7 +31415,28 @@
 "fairy dust"
 ],
 "n": 2,
+"p": "fairy folk",
 "rg": "Celtic & British Isles"
+},
+"fairy folk": {
+"ch": [
+"brownie",
+"bugul noz",
+"clurichaun",
+"fairy",
+"fairy dust",
+"fairy godmother",
+"imp",
+"iron charm against fae",
+"pixie",
+"the lincoln imp grotesque"
+],
+"f": "European folklore",
+"k": "folklore",
+"leaf": 1,
+"m": [],
+"n": 0,
+"tn": 26
 },
 "fairy godmother": {
 "f": "European folklore",
@@ -31504,6 +31447,7 @@
 "fairy godmother"
 ],
 "n": 1,
+"p": "fairy folk",
 "rg": "Celtic & British Isles"
 },
 "fairy lights": {
@@ -31515,6 +31459,23 @@
 ],
 "n": 1,
 "p": "lighting & fire"
+},
+"fairy-tale characters": {
+"ch": [
+"easter bunny",
+"la petite souris",
+"rapunzel",
+"the frog prince",
+"the sandman",
+"the stork that delivers babies",
+"the witch of hansel and gretel"
+],
+"f": "European folklore",
+"k": "folklore",
+"leaf": 1,
+"m": [],
+"n": 0,
+"tn": 6
 },
 "fairyfly": {
 "f": "Insects & spiders",
@@ -32129,7 +32090,8 @@
 "fairy food folklore",
 "thunderstone folklore"
 ],
-"n": 5
+"n": 5,
+"p": "storytelling itself"
 },
 "folktale": {
 "f": "Other folklore",
@@ -32141,7 +32103,8 @@
 "the oni of momotaro",
 "the pheasant of momotaro"
 ],
-"n": 5
+"n": 5,
+"p": "storytelling itself"
 },
 "food coma": {
 "f": "Life sciences",
@@ -32713,6 +32676,7 @@
 "gargoyle"
 ],
 "n": 4,
+"p": "monsters & spirits",
 "rg": "Western Europe"
 },
 "garment": {
@@ -33266,6 +33230,7 @@
 "gnome"
 ],
 "n": 5,
+"p": "monsters & spirits",
 "rg": "Western Europe"
 },
 "gnostic aeon": {
@@ -33313,6 +33278,7 @@
 "hopkinsville goblin (alleged alien encounter)"
 ],
 "n": 5,
+"p": "monsters & spirits",
 "rg": "Western Europe"
 },
 "godzilla": {
@@ -33634,6 +33600,7 @@
 "gremlin"
 ],
 "n": 4,
+"p": "household & hearth spirits",
 "rg": "Celtic & British Isles"
 },
 "grenade": {
@@ -33768,6 +33735,18 @@
 ],
 "n": 9,
 "p": "dog"
+},
+"guardian figures": {
+"ch": [
+"komainu",
+"shisa"
+],
+"f": "Japanese folklore",
+"k": "folklore",
+"leaf": 1,
+"m": [],
+"n": 0,
+"tn": 4
 },
 "guitar": {
 "f": "Instruments",
@@ -33920,6 +33899,7 @@
 "hag"
 ],
 "n": 1,
+"p": "household & hearth spirits",
 "rg": "Celtic & British Isles"
 },
 "hagfish": {
@@ -34299,20 +34279,24 @@
 "dorotabo",
 "jinmenju",
 "kamikiri",
+"kaso",
 "mokumokuren",
 "morinji-no-okama / narigama",
 "nuppeppo",
 "nurikabe",
 "oboroguruma",
+"rei-kyo",
+"tsuchikorobi",
 "tsukumogami",
-"tsurube-otoshi"
+"tsurube-otoshi",
+"yamaoroshi"
 ],
 "f": "Japanese folklore",
 "k": "folklore",
 "leaf": 1,
 "m": [],
 "n": 0,
-"tn": 22
+"tn": 27
 },
 "hauntings": {
 "ch": [
@@ -34592,6 +34576,7 @@
 "hellhound"
 ],
 "n": 2,
+"p": "monsters & spirits",
 "rg": "Western Europe"
 },
 "hellmouth": {
@@ -34933,6 +34918,7 @@
 "homunculus"
 ],
 "n": 1,
+"p": "monsters & spirits",
 "rg": "Western Europe"
 },
 "honeycomb": {
@@ -35096,6 +35082,22 @@
 ],
 "n": 1,
 "p": "ocean fish"
+},
+"household & hearth spirits": {
+"ch": [
+"boggart",
+"bugbear",
+"buggane",
+"gremlin",
+"hag",
+"redcap"
+],
+"f": "European folklore",
+"k": "folklore",
+"leaf": 1,
+"m": [],
+"n": 0,
+"tn": 7
 },
 "housekeeper": {
 "f": "Trades & roles",
@@ -35499,6 +35501,7 @@
 "imp"
 ],
 "n": 2,
+"p": "fairy folk",
 "rg": "Celtic & British Isles"
 },
 "imugi": {
@@ -35716,6 +35719,7 @@
 "iron charm against fae"
 ],
 "n": 1,
+"p": "fairy folk",
 "rg": "Celtic & British Isles"
 },
 "iron filings": {
@@ -35861,6 +35865,7 @@
 "jack-o'-lantern"
 ],
 "n": 5,
+"p": "lights & omens",
 "rg": "Celtic & British Isles"
 },
 "jackal": {
@@ -36440,6 +36445,7 @@
 "kaso (chinese fire mouse)"
 ],
 "n": 1,
+"p": "haunted objects & places",
 "rg": "Japan"
 },
 "katana": {
@@ -36470,6 +36476,7 @@
 "kelpie (scottish water horse)"
 ],
 "n": 2,
+"p": "fairy animals",
 "rg": "Celtic & British Isles"
 },
 "kenzan": {
@@ -36841,6 +36848,7 @@
 "komainu"
 ],
 "n": 4,
+"p": "guardian figures",
 "rg": "Japan"
 },
 "konaki-jiji": {
@@ -36969,6 +36977,7 @@
 "la petite souris (french tooth-fairy mouse)"
 ],
 "n": 1,
+"p": "fairy-tale characters",
 "rg": "Western Europe"
 },
 "lacewing": {
@@ -37279,7 +37288,8 @@
 "king bladud of bath legend",
 "the mugenyama bell legend (kwaidan)"
 ],
-"n": 15
+"n": 15,
+"p": "storytelling itself"
 },
 "legio ix hispana, the lost legion": {
 "f": "Fighters & athletes",
@@ -37490,6 +37500,21 @@
 ],
 "n": 1,
 "p": "wiring & fittings"
+},
+"lights & omens": {
+"ch": [
+"banshee",
+"black cat superstition",
+"jack-o'-lantern",
+"stingy jack",
+"will-o'-the-wisp"
+],
+"f": "European folklore",
+"k": "folklore",
+"leaf": 1,
+"m": [],
+"n": 0,
+"tn": 15
 },
 "lilac": {
 "f": "Trees & flowers",
@@ -37976,6 +38001,22 @@
 ],
 "n": 1
 },
+"magic & charms": {
+"ch": [
+"curses",
+"magic circle",
+"the evil eye (malocchio)",
+"third eye",
+"witch's familiar",
+"witch's ladder"
+],
+"f": "Other folklore",
+"k": "folklore",
+"leaf": 1,
+"m": [],
+"n": 0,
+"tn": 10
+},
 "magic & mysticism": {
 "ch": [
 "abe no seimei",
@@ -38009,7 +38050,8 @@
 "m": [
 "magic circle"
 ],
-"n": 1
+"n": 1,
+"p": "magic & charms"
 },
 "magic smoke": {
 "f": "Earth & fire",
@@ -38231,6 +38273,7 @@
 "mare (nightmare spirit)"
 ],
 "n": 2,
+"p": "monsters & spirits",
 "rg": "Western Europe"
 },
 "marginalia": {
@@ -39321,7 +39364,28 @@
 "swamp monster",
 "the \"green-eyed monster\""
 ],
-"n": 8
+"n": 8,
+"p": "storytelling itself"
+},
+"monsters & spirits": {
+"ch": [
+"baphomet",
+"barbegazi",
+"doppelganger",
+"gargoyle",
+"gnome",
+"goblin",
+"hellhound",
+"homunculus",
+"mare",
+"the flying dutchman"
+],
+"f": "European folklore",
+"k": "folklore",
+"leaf": 1,
+"m": [],
+"n": 0,
+"tn": 24
 },
 "monty python giant-cat sketch": {
 "f": "Film & television",
@@ -41129,7 +41193,8 @@
 "m": [
 "out-of-place artifact"
 ],
-"n": 1
+"n": 1,
+"p": "the unexplained"
 },
 "outdoor toy": {
 "ch": [
@@ -42143,6 +42208,7 @@
 "pixie"
 ],
 "n": 6,
+"p": "fairy folk",
 "rg": "Celtic & British Isles"
 },
 "placerias": {
@@ -43397,6 +43463,7 @@
 "rapunzel"
 ],
 "n": 1,
+"p": "fairy-tale characters",
 "rg": "Western Europe"
 },
 "rat": {
@@ -43545,6 +43612,7 @@
 "redcap"
 ],
 "n": 1,
+"p": "household & hearth spirits",
 "rg": "Celtic & British Isles"
 },
 "reeds": {
@@ -43606,6 +43674,7 @@
 "rei-kyo (japanese bronze mirror)"
 ],
 "n": 1,
+"p": "haunted objects & places",
 "rg": "Japan"
 },
 "reindeer": {
@@ -45110,6 +45179,7 @@
 "selkie"
 ],
 "n": 1,
+"p": "fairy animals",
 "rg": "Celtic & British Isles"
 },
 "sensing & space tech": {
@@ -45264,7 +45334,8 @@
 "m": [
 "shadow people"
 ],
-"n": 1
+"n": 1,
+"p": "the unexplained"
 },
 "shadow person": {
 "f": "Ghosts & spirits",
@@ -45506,6 +45577,7 @@
 "shisa"
 ],
 "n": 4,
+"p": "guardian figures",
 "rg": "Japan"
 },
 "shishi-odoshi": {
@@ -46992,7 +47064,8 @@
 "m": [
 "stingy jack"
 ],
-"n": 1
+"n": 1,
+"p": "lights & omens"
 },
 "stoat": {
 "f": "Carnivores",
@@ -47111,6 +47184,20 @@
 "witch trope"
 ],
 "n": 7
+},
+"storytelling itself": {
+"ch": [
+"folklore",
+"folktale",
+"legend",
+"monster"
+],
+"f": "Other folklore",
+"k": "folklore",
+"leaf": 1,
+"m": [],
+"n": 0,
+"tn": 33
 },
 "stove burner": {
 "f": "Household & tools",
@@ -48319,6 +48406,7 @@
 "the dip (catalan vampire dog)"
 ],
 "n": 2,
+"p": "fairy animals",
 "rg": "Celtic & British Isles"
 },
 "the dorombo gang of yatterman": {
@@ -48370,7 +48458,8 @@
 "m": [
 "the evil eye (malocchio)"
 ],
-"n": 1
+"n": 1,
+"p": "magic & charms"
 },
 "the flying dutchman": {
 "f": "European folklore",
@@ -48380,6 +48469,7 @@
 "the flying dutchman"
 ],
 "n": 1,
+"p": "monsters & spirits",
 "rg": "Western Europe"
 },
 "the four stags of yggdrasil": {
@@ -48400,6 +48490,7 @@
 "the frog prince"
 ],
 "n": 1,
+"p": "fairy-tale characters",
 "rg": "Western Europe"
 },
 "the genie of aladdin": {
@@ -48510,6 +48601,7 @@
 "the lincoln imp grotesque"
 ],
 "n": 1,
+"p": "fairy folk",
 "rg": "Celtic & British Isles"
 },
 "the london \"city gent\"": {
@@ -48656,6 +48748,7 @@
 "the sandman"
 ],
 "n": 1,
+"p": "fairy-tale characters",
 "rg": "Western Europe"
 },
 "the selene  lunar probe": {
@@ -48706,7 +48799,8 @@
 "m": [
 "the stork that delivers babies"
 ],
-"n": 1
+"n": 1,
+"p": "fairy-tale characters"
 },
 "the tatsuko legend of lake tazawa": {
 "f": "Japanese folklore",
@@ -48729,6 +48823,24 @@
 ],
 "n": 1,
 "p": "heraldry"
+},
+"the unexplained": {
+"ch": [
+"alien",
+"crop circles",
+"dowsing",
+"electronic voice phenomena",
+"extraterrestrial",
+"out-of-place artifact",
+"shadow people",
+"ufo"
+],
+"f": "Other folklore",
+"k": "folklore",
+"leaf": 1,
+"m": [],
+"n": 0,
+"tn": 20
 },
 "the unstoppable force": {
 "f": "Abstract ideas",
@@ -48788,6 +48900,7 @@
 "the witch of hansel and gretel"
 ],
 "n": 1,
+"p": "fairy-tale characters",
 "rg": "Western Europe"
 },
 "theories & misconceptions": {
@@ -48926,7 +49039,8 @@
 "m": [
 "third eye"
 ],
-"n": 5
+"n": 5,
+"p": "magic & charms"
 },
 "thistle": {
 "f": "Trees & flowers",
@@ -49735,6 +49849,7 @@
 "tsuchikorobi (yokai)"
 ],
 "n": 2,
+"p": "haunted objects & places",
 "rg": "Japan"
 },
 "tsukumogami": {
@@ -49947,7 +50062,8 @@
 "m": [
 "ufo"
 ],
-"n": 4
+"n": 4,
+"p": "the unexplained"
 },
 "ugajin": {
 "f": "Gods & deities",
@@ -51116,6 +51232,7 @@
 "will-o'-the-wisp"
 ],
 "n": 6,
+"p": "lights & omens",
 "rg": "Celtic & British Isles"
 },
 "wind & brass": {
@@ -51248,7 +51365,8 @@
 "m": [
 "witch's familiar"
 ],
-"n": 1
+"n": 1,
+"p": "magic & charms"
 },
 "witch's ladder": {
 "f": "Other folklore",
@@ -51258,7 +51376,8 @@
 "m": [
 "witch's ladder"
 ],
-"n": 1
+"n": 1,
+"p": "magic & charms"
 },
 "witch-hunt burnings": {
 "f": "Belief & custom",
@@ -51668,6 +51787,7 @@
 "yamaoroshi (radish-grater yokai)"
 ],
 "n": 1,
+"p": "haunted objects & places",
 "rg": "Japan"
 },
 "yang": {

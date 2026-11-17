@@ -10,3 +10,4 @@ dist/form_sprites.json
 *.patched.json
 .DS_Store
 tools/.wikicache.json
+tools/.wikisearch.json
