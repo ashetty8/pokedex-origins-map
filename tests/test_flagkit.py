@@ -145,6 +145,23 @@ def _(D):
     assert not [1 for v in D["groups"].values() if v.get("f") == "Instruments"]
 
 
+@case("set-region refiles a cluster and keeps it visible in a region")
+def _(D):
+    fam = "European folklore"
+    reg = "Celtic & British Isles"
+    src = (D["families"]["Other folklore"]["rg"]["Not tied to one place"])[0]
+    fk.set_region(D, src, fam, reg)
+    assert D["groups"][src]["f"] == fam
+    assert src in D["families"][fam]["rg"][reg], "a cluster in no region is invisible on the page"
+    listed = (D["families"][fam].get("c") or []) + (D["families"][fam].get("l") or [])
+    assert src in listed
+    for other, f in D["families"].items():
+        if other == fam:
+            continue
+        for lst in (f.get("rg") or {}).values():
+            assert src not in lst, "left behind in %s" % other
+
+
 @case("set-wiki sets a title and clears it")
 def _(D):
     r = next(r for r, v in sorted(D["referents"].items()) if v.get("w"))

@@ -26,6 +26,7 @@ dist/map_data.json is the minified copy the page fetches, rewritten on every sav
   python3 flagkit.py merge-ref <from> <into>           fold one referent into another
   python3 flagkit.py move-ref <referent> <cluster>     move a referent into another cluster
   python3 flagkit.py set-wiki <referent> [title]       set or clear a referent's Wikipedia title
+  python3 flagkit.py set-region <cluster> <family> <region>   refile a cluster by where it is from
   python3 flagkit.py set-kind <group|referent> <kind>  change a category
   python3 flagkit.py recount                           recompute every family n and cluster tn
 
@@ -549,6 +550,37 @@ def set_wiki(D, ref, title=""):
     return "%r wiki: %s -> %s" % (ref, was, title or "(none)")
 
 
+def set_region(D, cluster, family, region):
+    """Put a top-level cluster in a family's region bucket — moving it between
+       families if need be. A family that uses regions renders them instead of
+       its clusters, so a cluster in no region is invisible."""
+    F, G = D["families"], D["groups"]
+    if cluster not in G: sys.exit("no cluster called %r" % cluster)
+    if family not in F: sys.exit("no family called %r" % family)
+    if G[cluster].get("p"): sys.exit("%r is nested under %r, not top level" % (cluster, G[cluster]["p"]))
+    old = G[cluster].get("f")
+    for fam in (old, family):
+        if fam not in F: continue
+        for k in ("c", "l"):
+            if cluster in (F[fam].get(k) or []): F[fam][k].remove(cluster)
+        for reg, lst in list((F[fam].get("rg") or {}).items()):
+            if cluster in lst:
+                lst.remove(cluster)
+                if not lst: del F[fam]["rg"][reg]
+    G[cluster]["f"] = family
+    for sub in descendants(D, cluster):
+        if G[sub].get("f") == old: G[sub]["f"] = family
+    for m in (G[cluster].get("m") or []):
+        if m in D["referents"]: D["referents"][m]["g"] = cluster
+    fam_add(D, family, cluster)
+    F[family].setdefault("rg", {}).setdefault(region, [])
+    if cluster not in F[family]["rg"][region]:
+        F[family]["rg"][region].append(cluster)
+        F[family]["rg"][region].sort()
+    recount(D)
+    return "%r -> %s / %s (was %s)" % (cluster, family, region, old)
+
+
 def set_kind(D, name, kind):
     kinds = D["meta"].get("kinds") or []
     if kind not in kinds + ["unclassified"]:
@@ -570,7 +602,7 @@ WRITES = {"move-family": move_family, "nest": nest, "unnest": unnest,
           "merge": merge, "regroup": regroup, "rename": rename,
           "split-family": split_family, "rename-family": rename_family,
           "merge-ref": merge_ref, "move-ref": move_ref,
-          "set-kind": set_kind, "set-wiki": set_wiki,
+          "set-kind": set_kind, "set-wiki": set_wiki, "set-region": set_region,
           "recount": lambda D: recount(D)}
 
 

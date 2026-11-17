@@ -17586,6 +17586,7 @@
 "redcap",
 "santa compana",
 "selkie",
+"stingy jack",
 "strzyga",
 "suerale",
 "swedish alvor",
@@ -17593,8 +17594,10 @@
 "the dip",
 "the flying dutchman",
 "the frog prince",
+"the iron wolf of lithuania",
 "the lincoln imp grotesque",
 "the sandman",
+"the stork that delivers babies",
 "the witch of hansel and gretel",
 "troll",
 "vampire",
@@ -17604,7 +17607,7 @@
 "will-o'-the-wisp",
 "zmora"
 ],
-"n": 105,
+"n": 107,
 "rg": {
 "Celtic & British Isles": [
 "aillen",
@@ -17633,6 +17636,7 @@
 "pixie",
 "redcap",
 "selkie",
+"stingy jack",
 "the dip",
 "the lincoln imp grotesque",
 "will-o'-the-wisp"
@@ -17673,6 +17677,7 @@
 "gjenganger",
 "nocnitsa",
 "strzyga",
+"the iron wolf of lithuania",
 "vampire",
 "vasorru baba",
 "wiedergaenger",
@@ -17695,6 +17700,7 @@
 "the flying dutchman",
 "the frog prince",
 "the sandman",
+"the stork that delivers babies",
 "the witch of hansel and gretel"
 ]
 }
@@ -18112,14 +18118,17 @@
 "kaso",
 "kodama",
 "komainu",
+"ningen",
 "oiran",
+"okuri-inu's aggressive aspect",
+"princess kaguya of the tale of the bamboo cutter",
 "rei-kyo",
 "satori",
 "shisa",
 "tsuchikorobi",
 "yamaoroshi"
 ],
-"n": 111,
+"n": 113,
 "rg": {
 "Japan": [
 "animal yokai",
@@ -18134,9 +18143,12 @@
 "kodama",
 "komainu",
 "mountain & snow spirits",
+"ningen",
 "nurarihyon",
 "oiran",
+"okuri-inu's aggressive aspect",
 "oni & ogres",
+"princess kaguya of the tale of the bamboo cutter",
 "rei-kyo",
 "satori",
 "shisa",
@@ -18556,23 +18568,17 @@
 "mokele-mbembe",
 "mothman",
 "mummy",
-"ningen",
-"okuri-inu's aggressive aspect",
 "out-of-place artifact",
 "pele's curse",
-"princess kaguya of the tale of the bamboo cutter",
 "saci",
 "santa claus",
 "shadow people",
 "skin-walker",
 "sprite",
-"stingy jack",
 "the evil eye (malocchio)",
 "the genie of aladdin",
-"the iron wolf of lithuania",
 "the nine-coloured deer of the jataka tales",
 "the rabbit of jataka tale 316",
-"the stork that delivers babies",
 "third eye",
 "toyol",
 "ufo",
@@ -18581,7 +18587,7 @@
 "witch's ladder",
 "yeti"
 ],
-"n": 129,
+"n": 123,
 "rg": {
 "China": [
 "\"silk hiding steel\"",
@@ -18590,7 +18596,8 @@
 ],
 "Egypt & North Africa": [
 "curse of the pharaohs",
-"great sphinx of giza and the orion correlation theory"
+"great sphinx of giza and the orion correlation theory",
+"mummy"
 ],
 "Korea": [
 "bulgasari",
@@ -18627,22 +18634,15 @@
 "legend",
 "magic circle",
 "monster",
-"mummy",
 "mythological lynx",
-"ningen",
 "ogre",
-"okuri-inu's aggressive aspect",
 "out-of-place artifact",
-"princess kaguya of the tale of the bamboo cutter",
 "saci",
 "santa claus",
 "shadow people",
 "snowman",
 "sprite",
-"stingy jack",
 "the evil eye (malocchio)",
-"the iron wolf of lithuania",
-"the stork that delivers babies",
 "third eye",
 "ufo",
 "vegetable lamb of tartary",
@@ -40297,7 +40297,7 @@
 "p": "ice age mammal"
 },
 "ningen": {
-"f": "Other folklore",
+"f": "Japanese folklore",
 "i": 1,
 "k": "folklore",
 "leaf": 1,
@@ -40691,7 +40691,7 @@
 "p": "megafauna"
 },
 "okuri-inu's aggressive aspect": {
-"f": "Other folklore",
+"f": "Japanese folklore",
 "i": 1,
 "k": "folklore",
 "leaf": 1,
@@ -42692,7 +42692,7 @@
 "p": "baked good"
 },
 "princess kaguya of the tale of the bamboo cutter": {
-"f": "Other folklore",
+"f": "Japanese folklore",
 "k": "folklore",
 "leaf": 1,
 "m": [
@@ -46986,7 +46986,7 @@
 "p": "measuring & optics"
 },
 "stingy jack": {
-"f": "Other folklore",
+"f": "European folklore",
 "k": "folklore",
 "leaf": 1,
 "m": [
@@ -48443,7 +48443,7 @@
 "p": "paradoxes"
 },
 "the iron wolf of lithuania": {
-"f": "Other folklore",
+"f": "European folklore",
 "k": "folklore",
 "leaf": 1,
 "m": [
@@ -48700,7 +48700,7 @@
 "p": "soldier & warrior"
 },
 "the stork that delivers babies": {
-"f": "Other folklore",
+"f": "European folklore",
 "k": "folklore",
 "leaf": 1,
 "m": [
