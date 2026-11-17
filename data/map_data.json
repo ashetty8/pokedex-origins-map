@@ -52271,7 +52271,8 @@
 "s": [
 72,
 73
-]
+],
+"w": "Bug-eyed monster"
 },
 "1980s aerobics outfit": {
 "g": "outfit",
@@ -52666,7 +52667,8 @@
 "k": "folklore",
 "s": [
 93
-]
+],
+"w": "Akaname"
 },
 "akaushi bull named judo": {
 "g": "akaushi bull named judo",
@@ -53474,6 +53476,7 @@
 "s": [
 605
 ],
+"w": "Roswell incident",
 "x": 1
 },
 "argus panoptes": {
@@ -54211,7 +54214,8 @@
 "k": "folklore",
 "s": [
 725
-]
+],
+"w": "Bakeneko"
 },
 "baku (dream eater)": {
 "g": "tapir",
@@ -55059,7 +55063,8 @@
 "k": "folklore",
 "s": [
 208
-]
+],
+"w": "Tatzelwurm"
 },
 "berserker": {
 "g": "berserker",
@@ -55319,6 +55324,7 @@
 197,
 359
 ],
+"w": "Black cat",
 "x": 1
 },
 "black dog of folklore": {
@@ -55328,7 +55334,8 @@
 197,
 228,
 229
-]
+],
+"w": "Black dog (folklore)"
 },
 "black dwarf": {
 "g": "dwarf",
@@ -56154,7 +56161,8 @@
 "s": [
 896,
 897
-]
+],
+"w": "Púca"
 },
 "briard": {
 "g": "herding dog",
@@ -57216,7 +57224,8 @@
 "k": "folklore",
 "s": [
 215
-]
+],
+"w": "Cat-sìth"
 },
 "catalan sheepdog": {
 "g": "herding dog",

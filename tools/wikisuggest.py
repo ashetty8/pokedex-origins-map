@@ -52,12 +52,15 @@ def ask(query, cache):
 
 
 def clean(name):
-    """the searchable core of a referent name"""
-    t = re.sub(r"\s*\([^)]*\)", " ", name)
-    t = t.replace("/", " ").replace('"', " ")
-    t = re.sub(r"\b(folklore|legend|lore|myth|superstition|of|the|a|an)\b", " ", t, flags=re.I) \
-        if len(t.split()) > 3 else t
-    return re.sub(r"\s+", " ", t).strip()
+    """The searchable core of a referent name. These are phrases Bulbapedia
+       wrote, so the article is usually behind the leading term: "bakeneko and
+       lamp oil" is about the bakeneko, "black dog of folklore" the black dog.
+       Searching the whole phrase finds compilation albums and video games."""
+    t = re.sub(r"\s*\([^)]*\)", " ", name).strip().strip('"')
+    t = re.split(r"\s+and\s+|\s*/\s*", t)[0]
+    t = re.sub(r"\s+of\s+(folklore|legend|myth|lore)\b.*$", "", t, flags=re.I)
+    t = re.sub(r"\b(superstition|lore)\b\s*$", "", t, flags=re.I)
+    return re.sub(r"\s+", " ", t).strip() or name
 
 
 def main():
