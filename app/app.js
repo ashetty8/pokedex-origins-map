@@ -559,7 +559,9 @@
          middle takes whatever is left — rows capped at a readable measure,
          the canvas free to use the rest. */
     lay.style.gridTemplateColumns = state.tab==="flags" ? "minmax(0,1fr)"
-      : "232px minmax(0,1fr) minmax(0,380px)";
+      /* wide enough for two Pokémon chips side by side — at 380px a long name
+         like "Brambleghast" or "Poltchageist" took a row to itself */
+      : "232px minmax(0,1fr) minmax(0,clamp(380px, 26vw, 460px))";
     lay.style.maxWidth = "min(1860px, 98vw)";
     $("#graph").classList.toggle("hidden",state.tab!=="map");
     host.classList.toggle("hidden",state.tab==="map");
