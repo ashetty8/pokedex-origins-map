@@ -2013,6 +2013,15 @@
   var AHOME={cx:1000,cy:500,w:2000};   /* the whole globe, exactly filling a 2:1 canvas */
   var AVIEW={cx:AHOME.cx,cy:AHOME.cy,w:AHOME.w};
   var APLACES=null, ABYNAME=null, ALABELS=true, ALASTFOCUS=null;
+  /* Zoom-dependent aggregation. Area encoding assumes one mark per thing
+     being compared, and at world zoom that assumption breaks: Europe is cut
+     into six named traditions and Japan into one, so the eye reads the
+     extent of Europe's scattered cluster rather than the sum of its circles
+     and makes it look larger than a Japan that in fact carries more. Above
+     this view width the places roll up into the regions geo.json already
+     names, one circle each, and they split back apart on the way in — where
+     the clutter is the point rather than a false comparison. */
+  var AGROUP=true, AGROUPW=760, AREGIONS=null;
 
   /* geo.json is 33 KB and the side panel wants it on every tab, so it loads
      with the dataset; world.json is the 134 KB of outlines, and only the
@@ -2116,7 +2125,71 @@
     }
     return null;
   }
-  function atlasRadius(n){ return Math.min(26,3.2+2.5*Math.sqrt(n)) }   /* px */
+  /* A search wants the precise pin, and an opened place fans its referents
+     out around one — both need the places themselves. */
+  function atlasGrouped(){
+    return AGROUP && AVIEW.w>AGROUPW && !state.q && !atlasFocus();
+  }
+  /* One mark per region: the Pokémon are unioned rather than added, so a
+     species reached from two places in the same region counts once. */
+  function atlasRegions(){
+    if(AREGIONS) return AREGIONS;
+    var bag={}, out=[];
+    atlasPlaces().forEach(function(p){
+      var reg=GEO.pr && GEO.pr[p.i];
+      if(!reg){ out.push(p); return }          /* no region: stands alone */
+      var e=bag[reg];
+      if(!e) e=bag[reg]={region:true,name:reg,refs:[],sp:{},kinds:{},
+                         hits:0,conf:[0,0,0,0],places:[]};
+      e.places.push(p);
+      e.refs=e.refs.concat(p.refs);
+      e.hits+=p.hits;
+      Object.keys(p.sp).forEach(function(k){ e.sp[k]=1 });
+      Object.keys(p.kinds).forEach(function(k){ e.kinds[k]=(e.kinds[k]||0)+p.kinds[k] });
+      for(var i=0;i<4;i++) e.conf[i]+=p.conf[i];
+    });
+    Object.keys(bag).forEach(function(k){
+      var e=bag[k];
+      e.n=Object.keys(e.sp).length;
+      /* anchored on the place that carries the region's own name — the
+         hand-picked centroid — and on the weighted middle otherwise */
+      var anchor=null;
+      e.places.forEach(function(p){ if(p.name===k) anchor=p });
+      if(!anchor){
+        var sx=0, sy=0, sw=0;
+        e.places.forEach(function(p){
+          var w=p.n||1; sx+=anear(p.x)*w; sy+=p.y*w; sw+=w;
+        });
+        anchor={x:sx/sw,y:sy/sw};
+      }
+      e.x=anchor.x; e.y=anchor.y;
+      e.soft=e.conf[2]>(e.conf[0]+e.conf[1]);
+      out.push(e);
+    });
+    AREGIONS=out.sort(function(a,b){ return b.n-a.n });
+    return AREGIONS;
+  }
+  /* fit the region's own places, and land inside the split threshold so the
+     click that asked for the detail actually produces it */
+  function atlasZoomToGroup(e){
+    var xs=[], ys=[];
+    e.places.forEach(function(p){ xs.push(anear(p.x)); ys.push(p.y) });
+    var x0=Math.min.apply(null,xs), x1=Math.max.apply(null,xs);
+    var y0=Math.min.apply(null,ys), y1=Math.max.apply(null,ys);
+    var r=arect(), pad=70;
+    var w=Math.max((x1-x0)+pad*2, ((y1-y0)+pad*2)*(r.width/r.height), 150);
+    AVIEW.cx=(x0+x1)/2; AVIEW.cy=(y0+y1)/2;
+    AVIEW.w=Math.min(w, AGROUPW-20);
+    atlasClamp(); drawAtlas();
+  }
+  /* Area proportional to the count, with no ceiling. The old scale capped
+     at 26px and added a 3.2px offset, which was survivable while one mark in
+     186 reached the cap — but rolled up into regions five marks hit it at
+     once, and Japan's 212 Pokémon drew the same circle as Western Europe's
+     100. A cap on an area encoding is a lie about the biggest values, which
+     are the ones the reader came for. The floor is a hit target, not a
+     value: 4.5px is the smallest circle that can still be clicked. */
+  function atlasRadius(n){ return Math.max(4.5,2.06*Math.sqrt(n)) }   /* px */
   /* The map repeats sideways for ever. Plate carrée is the projection that
      lets it: x is a straight multiple of longitude, so the canvas tiles
      exactly and a copy is the same drawing shifted by one world. */
@@ -2129,6 +2202,12 @@
     return out.length?out:[0];
   }
 
+  /* px in an inline style is user units inside a viewBox, so multiplying by
+     the units-per-pixel is what pins a label to a fixed size on screen */
+  function alabelSize(e,size,u){
+    e.style.fontSize=(size*u)+"px";
+    e.style.strokeWidth=(3*u)+"px";
+  }
   var ANS="http://www.w3.org/2000/svg";
   function svgel(t,attrs,cls){
     var e=document.createElementNS(ANS,t);
@@ -2149,6 +2228,14 @@
   function atlasTopKinds(p){
     return Object.keys(p.kinds).sort(function(a,b){ return p.kinds[b]-p.kinds[a] })
       .slice(0,3).map(function(k){ return kindLabel(k)+" "+p.kinds[k] }).join(" · ");
+  }
+  function groupTip(p){
+    return "<b>"+p.name+"</b><span class='tipmeta'>"+p.places.length+
+      " place"+(p.places.length===1?"":"s")+" \u00b7 "+p.refs.length+
+      " referent"+(p.refs.length===1?"":"s")+" \u00b7 "+p.n+" Pok\u00e9mon</span>"+
+      "<span class='tipmeta'>"+atlasTopKinds(p)+"</span>"+
+      "<span class='tipmeta'>a region, rolled up \u2014 click to split it into "+
+      p.places.length+" place"+(p.places.length===1?"":"s")+"</span>";
   }
   function placeTip(p){
     var shaded=GEO && GEO.areas && GEO.areas[p.name];
@@ -2177,12 +2264,13 @@
   function drawAtlas(){
     if(!WORLD||!GEO||!D) return;
     var svg=$("#asvg"); if(!svg) return;
-    APLACES=null;                 /* the rail, the search box and the flags all move it */
+    APLACES=null; AREGIONS=null;  /* the rail, the search box and the flags all move it */
     var v=aview(), u=aunit();
     svg.setAttribute("viewBox",v.x+" "+v.y+" "+v.w+" "+v.h);
     while(svg.firstChild) svg.removeChild(svg.firstChild);
 
-    var places=atlasPlaces(), focus=atlasFocus();
+    var grouped=atlasGrouped();
+    var places=grouped?atlasRegions():atlasPlaces(), focus=atlasFocus();
     /* An opened place fans its referents out around the pin, and a pin near
        the edge would fan them off the map. Nudge the view the first time a
        place opens — never afterwards, or panning away would snap back. Since
@@ -2281,9 +2369,12 @@
       if(focus===p) cls+=" on";
       var fl=flagsOn("place",p.name);
       if(fl && fl.open) cls+=" flagged";
+      if(p.region) cls+=" agroup";
       var c=svgel("circle",{cx:p.x,cy:p.y,r:rpx*u,tabindex:"0",role:"button",
-                            "aria-label":p.name+", "+p.n+" Pokémon"},cls);
-      var tiptext=placeTip(p);
+                            "aria-label":p.region
+                              ? p.name+", "+p.places.length+" places, "+p.n+" Pokémon, click to split"
+                              : p.name+", "+p.n+" Pokémon"},cls);
+      var tiptext=p.region?groupTip(p):placeTip(p);
       function show(e){ atlasTip(tiptext,e.clientX,e.clientY) }
       c.addEventListener("pointerenter",show);
       c.addEventListener("pointermove",show);
@@ -2291,17 +2382,22 @@
       /* Picking is settled on pointerup, not by a click listener: the drag
          handler captures the pointer, and a captured pointer sends its click
          to the element that captured it, so a listener here would never run. */
-      c.__pick=function(){ select({t:"place",k:p.name}) };
-      c.__zoom=function(){ atlasZoomTo(p) };
+      /* a rolled-up region is a door, not a destination: it opens */
+      c.__pick=p.region ? function(){ atlasTip(null); atlasZoomToGroup(p) }
+                        : function(){ select({t:"place",k:p.name}) };
+      c.__zoom=p.region ? function(){ atlasZoomToGroup(p) } : function(){ atlasZoomTo(p) };
       c.addEventListener("keydown",function(e){
-        if(e.key==="Enter"||e.key===" "){ e.preventDefault(); select({t:"place",k:p.name}) }
+        if(e.key==="Enter"||e.key===" "){
+          e.preventDefault();
+          if(p.region) atlasZoomToGroup(p); else select({t:"place",k:p.name});
+        }
       });
       pins.appendChild(c);
 
       if(!ALABELS) return;
       /* a name only where it fits: big pins first, and never over a name
          already drawn — overlapping monospace at this size is unreadable */
-      if(rpx<7 && p.n<6) return;
+      if(!p.region && p.n<3) return;        /* what rpx<7 used to mean */
       if(taken.length>=44) return;
       var s=atoscreen(p.x+ox,p.y);
       var w=p.name.length*5.6+6, h=12;
@@ -2313,9 +2409,17 @@
       if(clash) return;
       taken.push(box);
       var tx=p.x+(rpx+4)*u, ty=p.y+3.4*u;
-      var lab=svgel("text",{x:tx,y:ty},"alabel"+(p.n>=12?" big":""));
-      lab.setAttribute("font-size",(10*u)+"px");
-      lab.setAttribute("stroke-width",(3*u)+"px");
+      var big=(p.region||p.n>=12);
+      var lab=svgel("text",{x:tx,y:ty},"alabel"+(big?" big":""));
+      /* Counter-scale against the viewBox so a label is the same size on
+         screen at every zoom. It has to go through .style: a presentation
+         attribute sits below the stylesheet in the cascade, so the
+         font-size and stroke-width in .alabel were quietly winning and
+         being read as user units — which is why a name grew with the zoom
+         instead of holding still. The 5.6px-per-character box the collision
+         test reserves assumes this is 10px, so it only told the truth once
+         this did. */
+      alabelSize(lab,big?11:10,u);
       lab.textContent=p.name;
       labels.appendChild(lab);
     });
@@ -2353,7 +2457,7 @@
       });
       if(list.length>shown.length){
         var more=svgel("text",{x:focus.x,y:focus.y-(atlasRadius(focus.n)+34)*u},"alabel big");
-        more.setAttribute("font-size",(10*u)+"px");
+        alabelSize(more,11,u);
         more.setAttribute("text-anchor","middle");
         more.textContent="+"+(list.length-shown.length)+" more in the panel";
         fan.appendChild(more);
@@ -2374,11 +2478,15 @@
       shownRefs+=p.refs.length;
       Object.keys(p.sp).forEach(function(i){ sp[i]=1 });
     });
-    $("#atlasnote").textContent=places.length+" places · "+shownRefs+" referents · "+
-      Object.keys(sp).length+" Pokémon"+
+    var nreg=places.filter(function(p){ return p.region }).length;
+    var npl=places.reduce(function(a,p){ return a+(p.region?p.places.length:1) },0);
+    $("#atlasnote").textContent=
+      (grouped ? nreg+" regions + "+(places.length-nreg)+" places · "+npl+" places in all"
+               : places.length+" places")+
+      " · "+shownRefs+" referents · "+Object.keys(sp).length+" Pokémon"+
       (state.q?" · "+places.filter(function(p){return p.hits}).length+" with a match":"")+
-      " · drag to pan, scroll to zoom";
-    $("#resultnote").textContent=places.length+" places of origin · "+
+      (grouped?" · click a region to split it":" · drag to pan, scroll to zoom");
+    $("#resultnote").textContent=npl+" places of origin · "+
       Object.keys(sp).length+" Pokémon placed";
     atlasWire();
   }
@@ -2457,6 +2565,9 @@
     });
     $("#atlaslabels").addEventListener("change",function(e){
       ALABELS=e.target.checked; drawAtlas();
+    });
+    $("#atlasgroup").addEventListener("change",function(e){
+      AGROUP=e.target.checked; drawAtlas();
     });
     addEventListener("resize",function(){ if(state.tab==="atlas" && WORLD) drawAtlas() });
   }

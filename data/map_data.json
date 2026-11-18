@@ -17664,7 +17664,7 @@
 "l": [
 "adverts & memes"
 ],
-"n": 44
+"n": 45
 },
 "Fish": {
 "b": "Fish & sea life",
@@ -29004,15 +29004,14 @@
 "p": "gem & crystal"
 },
 "crystal onix": {
-"f": "Rocks & minerals",
-"i": 1,
-"k": "earth & sky",
+"f": "Film & television",
+"k": "media & art",
 "leaf": 1,
 "m": [
 "crystal onix (anime)"
 ],
 "n": 1,
-"p": "gem & crystal"
+"p": "film & screen"
 },
 "cu-sith": {
 "f": "European folklore",
@@ -31722,6 +31721,7 @@
 },
 "film & screen": {
 "ch": [
+"crystal onix",
 "monty python giant-cat sketch",
 "puka",
 "rubber-hose animation",
@@ -31737,7 +31737,7 @@
 "leaf": 1,
 "m": [],
 "n": 0,
-"tn": 14
+"tn": 15
 },
 "fire & smoke": {
 "ch": [
@@ -32753,7 +32753,6 @@
 "brilliant cut",
 "crystal",
 "crystal formation",
-"crystal onix",
 "diamond",
 "geode",
 "jade",
