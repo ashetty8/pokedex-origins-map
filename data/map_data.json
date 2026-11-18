@@ -17580,8 +17580,7 @@
 "vampire",
 "vasorru baba",
 "viking",
-"wiedergaenger",
-"zmora"
+"wiedergaenger"
 ],
 "n": 107,
 "rg": {
@@ -17633,8 +17632,7 @@
 "the iron wolf of lithuania",
 "vampire",
 "vasorru baba",
-"wiedergaenger",
-"zmora"
+"wiedergaenger"
 ],
 "Western Europe": [
 "ent",
@@ -38391,6 +38389,9 @@
 "p": "around the house"
 },
 "mare": {
+"ch": [
+"zmora"
+],
 "f": "European folklore",
 "k": "folklore",
 "m": [
@@ -38399,7 +38400,8 @@
 ],
 "n": 2,
 "p": "monsters & spirits",
-"rg": "Western Europe"
+"rg": "Western Europe",
+"tn": 3
 },
 "marginalia": {
 "f": "Art & craft",
@@ -39544,7 +39546,7 @@
 "leaf": 1,
 "m": [],
 "n": 0,
-"tn": 24
+"tn": 25
 },
 "monty python giant-cat sketch": {
 "f": "Film & television",
@@ -46302,9 +46304,9 @@
 "smilodon": {
 "f": "Prehistoric beasts",
 "k": "prehistoric",
+"leaf": 1,
 "m": [
-"smilodon",
-"smilodon (sabre-toothed cat)"
+"smilodon"
 ],
 "n": 2,
 "p": "ice age mammal"
@@ -52334,6 +52336,7 @@
 "zmora"
 ],
 "n": 2,
+"p": "mare",
 "rg": "Slavic & Eastern Europe"
 },
 "zoroastrian dualism": {
@@ -52374,7 +52377,7 @@
 "person",
 "prehistoric"
 ],
-"referents": 3890,
+"referents": 3889,
 "species": 1025
 },
 "referents": {
@@ -79508,16 +79511,8 @@
 "g": "smilodon",
 "k": "prehistoric",
 "s": [
+243,
 1002
-],
-"w": "Smilodon"
-},
-"smilodon (sabre-toothed cat)": {
-"d": "Smilodon (sabre-toothed cat)",
-"g": "smilodon",
-"k": "prehistoric",
-"s": [
-243
 ],
 "w": "Smilodon"
 },
@@ -89089,7 +89084,7 @@
 "Raikou",
 [
 "tiger",
-"Smilodon (sabre-toothed cat)",
+"smilodon",
 "Raijin and his taiko drums",
 "oni",
 "raiju",

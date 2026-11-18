@@ -1214,7 +1214,8 @@
      is generated — correcting one means correcting the pass that wrote it,
      not this panel. */
   var ORIGINTIER=["from its own Wikidata entry","one hop out, through what it belongs to",
-                  "from the culture area this dataset files it under"];
+                  "from the culture area this dataset files it under",
+                  "read off its Wikipedia article by hand, after a flag"];
   function originSection(name){
     if(!GEO) return null;                        /* still loading; the panel redraws when it lands */
     var row=GEO.refs[name], r=D.referents[name]||{};
@@ -1229,9 +1230,9 @@
         : "Not placed \u2014 no Wikipedia article is linked, so there was nothing to ask."));
       return box;
     }
-    var p=GEO.places[row[0]], tier=row[2];
+    var p=GEO.places[row[0]], tier=row[2], area=tier===2||(tier===3&&!p[3]);
     var head=el("div","oplace");
-    var btn=el("button","tag origin"+(tier===2?" soft":""),p[0]);
+    var btn=el("button","tag origin"+(area?" soft":""),p[0]);
     btn.title="Show this place on the Atlas";
     btn.onclick=function(){ openOnAtlas() };
     head.appendChild(btn);
@@ -1250,7 +1251,7 @@
     fact("claim",GEO.vias[row[1]]||"?");
     fact("source",ORIGINTIER[tier]||"");
     card.appendChild(facts);
-    if(tier===2) card.appendChild(el("p","onote","A region, not a spot \u2014 the pin stands for the whole area."));
+    if(area) card.appendChild(el("p","onote","A region, not a spot \u2014 the pin stands for the whole area."));
     if(p[3]){
       var wd=el("a","src","Wikidata: "+p[3]+" \u2197");
       wd.href="https://www.wikidata.org/wiki/"+p[3];
@@ -1995,7 +1996,7 @@
       if(!p) return;
       var e=bag[row[0]];
       if(!e) e=bag[row[0]]={i:row[0],name:p[0],lat:p[1],lon:p[2],
-                            refs:[],sp:{},kinds:{},hits:0,conf:[0,0,0]};
+                            refs:[],sp:{},kinds:{},hits:0,conf:[0,0,0,0]};
       e.refs.push(name);
       (r.s||[]).forEach(function(id){ e.sp[id]=1 });
       e.kinds[kind]=(e.kinds[kind]||0)+1;
@@ -2066,6 +2067,7 @@
     if(p.conf[0]) bits.push(p.conf[0]+" from its own entry");
     if(p.conf[1]) bits.push(p.conf[1]+" one hop out");
     if(p.conf[2]) bits.push(p.conf[2]+" by culture area");
+    if(p.conf[3]) bits.push(p.conf[3]+" read by hand");
     return bits.join(", ");
   }
 
