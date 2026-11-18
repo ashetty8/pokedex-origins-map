@@ -2066,6 +2066,17 @@
     return null;
   }
   function atlasRadius(n){ return Math.min(26,3.2+2.5*Math.sqrt(n)) }   /* px */
+  /* The map repeats sideways for ever. Plate carrée is the projection that
+     lets it: x is a straight multiple of longitude, so the canvas tiles
+     exactly and a copy is the same drawing shifted by one world. */
+  function anear(x){                 /* the copy of x nearest the view centre */
+    return x + Math.round((AVIEW.cx-x)/WORLD.w)*WORLD.w;
+  }
+  function awrapOffsets(v){          /* one per whole world the viewport sees */
+    var out=[];
+    for(var k=Math.floor(v.x/WORLD.w); k*WORLD.w < v.x+v.w; k++) out.push(k*WORLD.w);
+    return out.length?out:[0];
+  }
 
   var ANS="http://www.w3.org/2000/svg";
   function svgel(t,attrs,cls){
@@ -2120,38 +2131,51 @@
     svg.setAttribute("viewBox",v.x+" "+v.y+" "+v.w+" "+v.h);
     while(svg.firstChild) svg.removeChild(svg.firstChild);
 
-    /* graticule first, so the land sits on top of it */
-    var grat=svgel("g",{},"agrat");
-    for(var lon=-150;lon<=150;lon+=30)
-      grat.appendChild(svgel("path",{d:"M"+ax(lon)+" 0V"+WORLD.h}));
-    for(var lat=-60;lat<=60;lat+=30)
-      grat.appendChild(svgel("path",{d:"M0 "+ay(lat)+"H"+WORLD.w}));
-    svg.appendChild(grat);
-
-    var land=svgel("g",{},"aland");
-    WORLD.countries.forEach(function(c){
-      var path=svgel("path",{d:c.d});
-      var nm=svgel("title",{});
-      nm.textContent=c.n;
-      path.appendChild(nm);
-      land.appendChild(path);
-    });
-    svg.appendChild(land);
-
     var places=atlasPlaces(), focus=atlasFocus();
     /* An opened place fans its referents out around the pin, and a pin near
        the edge would fan them off the map. Nudge the view the first time a
-       place opens — never afterwards, or panning away would snap back. */
-    if(focus && focus!==ALASTFOCUS){
-      var need=(atlasRadius(focus.n)+26+2*23+14)*u;
-      var nx=Math.min(Math.max(AVIEW.cx, focus.x-(v.w/2-need)), focus.x+(v.w/2-need));
+       place opens — never afterwards, or panning away would snap back. Since
+       the map repeats, nudge towards whichever copy of the pin is nearest
+       the view we already have. */
+    if(focus && focus.name!==ALASTFOCUS){
+      var need=(atlasRadius(focus.n)+26+2*23+14)*u, fx0=anear(focus.x);
+      var nx=Math.min(Math.max(AVIEW.cx, fx0-(v.w/2-need)), fx0+(v.w/2-need));
       var ny=Math.min(Math.max(AVIEW.cy, focus.y-(v.h/2-need)), focus.y+(v.h/2-need));
       if(v.w>2*need && v.h>2*need && (nx!==AVIEW.cx || ny!==AVIEW.cy)){
         AVIEW.cx=nx; AVIEW.cy=ny; atlasClamp();
         v=aview(); svg.setAttribute("viewBox",v.x+" "+v.y+" "+v.w+" "+v.h);
       }
     }
-    ALASTFOCUS=focus;
+    ALASTFOCUS=focus?focus.name:null;
+
+    var taken=[];                       /* label boxes already placed, in px */
+    /* One drawing of the world per whole world the viewport can see. At the
+       default zoom that is a single copy; a second appears only once you pan
+       across a seam or zoom out past the edges. Each copy is its own group
+       with its own pins and handlers, so a pin behaves the same in all of
+       them — which a <use> clone could not do, since the event would arrive
+       at the clone rather than at the pin. */
+    awrapOffsets(v).forEach(function(ox){
+      var layer=svgel("g",{transform:"translate("+ox+",0)"});
+      svg.appendChild(layer);
+
+      /* graticule first, so the land sits on top of it */
+      var grat=svgel("g",{},"agrat");
+      for(var lon=-150;lon<=150;lon+=30)
+        grat.appendChild(svgel("path",{d:"M"+ax(lon)+" 0V"+WORLD.h}));
+      for(var lat=-60;lat<=60;lat+=30)
+        grat.appendChild(svgel("path",{d:"M0 "+ay(lat)+"H"+WORLD.w}));
+      layer.appendChild(grat);
+
+      var land=svgel("g",{},"aland");
+      WORLD.countries.forEach(function(c){
+        var path=svgel("path",{d:c.d});
+        var nm=svgel("title",{});
+        nm.textContent=c.n;
+        path.appendChild(nm);
+        land.appendChild(path);
+      });
+      layer.appendChild(land);
     /* A culture area is not a point. 353 referents sit on one, and each was
        a dot at a hand-picked centroid: "Greece & Rome" in the Ionian Sea
        between its two halves, "Oceania & Polynesia" out near Fiji for a
@@ -2194,11 +2218,10 @@
         grp.addEventListener("pointerleave",function(){ atlasTip(null) });
         shades.appendChild(grp);
       });
-      if(shades.firstChild) svg.appendChild(shades);
+      if(shades.firstChild) layer.appendChild(shades);
     }
 
     var pins=svgel("g",{}), labels=svgel("g",{}), fan=svgel("g",{});
-    var taken=[];                       /* label boxes already placed, in px */
 
     places.forEach(function(p){
       var rpx=atlasRadius(p.n), cls="apin";
@@ -2229,7 +2252,7 @@
          already drawn — overlapping monospace at this size is unreadable */
       if(rpx<7 && p.n<6) return;
       if(taken.length>=44) return;
-      var s=atoscreen(p.x,p.y);
+      var s=atoscreen(p.x+ox,p.y);
       var w=p.name.length*5.6+6, h=12;
       var box=[s.x+rpx+4, s.y-h/2, w, h];
       var clash=taken.some(function(t){
@@ -2285,7 +2308,9 @@
         fan.appendChild(more);
       }
     }
-    svg.appendChild(fan); svg.appendChild(pins); svg.appendChild(labels);
+      layer.appendChild(fan); layer.appendChild(pins); layer.appendChild(labels);
+    });
+
     var old=$("#atlas").querySelector(".atlasempty");
     if(old) old.remove();
     if(!places.length){
@@ -2308,15 +2333,17 @@
   }
 
   function atlasZoomTo(p){
-    AVIEW.cx=p.x; AVIEW.cy=p.y; AVIEW.w=Math.max(90,Math.min(AVIEW.w,420));
+    AVIEW.cx=anear(p.x); AVIEW.cy=p.y; AVIEW.w=Math.max(90,Math.min(AVIEW.w,420));
     atlasClamp(); drawAtlas();
   }
   function atlasClamp(){
     AVIEW.w=Math.max(70,Math.min(2600,AVIEW.w));
     var h=AVIEW.w*(arect().height/arect().width);
-    /* keep at least a quarter of the canvas on screen, so the map cannot be
-       flicked into empty space and lost */
-    AVIEW.cx=Math.max(-AVIEW.w/4,Math.min(WORLD.w+AVIEW.w/4,AVIEW.cx));
+    /* Sideways the map wraps rather than stopping: pan west past the
+       dateline and the Pacific carries on into Asia instead of running out.
+       Up and down still stop, so the map cannot be flicked into empty space
+       and lost — there is no more world above the pole. */
+    AVIEW.cx=((AVIEW.cx%WORLD.w)+WORLD.w)%WORLD.w;
     AVIEW.cy=Math.max(-h/4,Math.min(WORLD.h+h/4,AVIEW.cy));
   }
   function atlasZoom(factor,cx,cy){
