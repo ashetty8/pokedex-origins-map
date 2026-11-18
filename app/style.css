@@ -130,8 +130,9 @@ select{font:inherit;font-size:.82rem;padding:8px 10px;border:1px solid var(--rul
 
 /* detail */
 .detail{margin-top:var(--headrow,0px);position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--topbar,128px) + 18px);background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:18px;
-  /* match the content beside it instead of floating as a short card */
-  min-height:calc(100dvh - env(safe-area-inset-top,0px) - var(--topbar,128px) - var(--headrow,0px) - 120px);max-height:calc(100dvh - env(safe-area-inset-top,0px) - var(--topbar,128px) - var(--headrow,0px) - 40px);overflow:auto;overscroll-behavior:contain}
+  /* the same height as the map beside it, empty or full: a short card
+     beside a tall one reads as a mistake */
+  min-height:calc(100dvh - env(safe-area-inset-top,0px) - var(--topbar,128px) - var(--headrow,0px) - 40px);max-height:calc(100dvh - env(safe-area-inset-top,0px) - var(--topbar,128px) - var(--headrow,0px) - 40px);overflow:auto;overscroll-behavior:contain}
 @media (max-width:1000px){.detail{position:static;max-height:none;min-height:0;overflow:visible}}
 /* name on the left, controls top-right, one rule under the pair. The row
    wraps as a whole rather than squeezing the name: a long one keeps its
@@ -279,8 +280,13 @@ a.src{color:var(--accent);font-size:.8rem;text-decoration:none;border-bottom:1px
    fills with empty ocean; much shorter and it wastes the column. 1.6:1 leaves
    a band of sea above the Arctic and below Antarctica, which is what a map
    looks like anyway. */
-#atlas svg{display:block;width:100%;aspect-ratio:1.6/1;height:auto;min-height:300px;
-  max-height:calc(100dvh - var(--topbar,128px) - 130px);cursor:grab;touch-action:none}
+/* The canvas is the height of the graph and the side panel, so all three
+   boxes end on one line. The world is not stretched to fill it: aview()
+   reads the box's shape and widens the viewBox instead, which leaves sea
+   above the Arctic and below Antarctica with the land still centred. */
+#atlas svg{display:block;width:100%;
+  height:calc(100dvh - env(safe-area-inset-top,0px) - var(--topbar,128px) - var(--headrow,0px) - 42px);
+  min-height:460px;cursor:grab;touch-action:none}
 #atlas svg.dragging{cursor:grabbing}
 .results.atlasmode{display:block}
 
