@@ -8,6 +8,18 @@
     "`place` pins a referent; `unplace` suppresses whatever the passes found."
   ],
   "place": {
+    "asian black bear": {
+      "place": "Asia",
+      "lat": 30.0,
+      "lon": 95.0,
+      "why": "southeastern Iran through Afghanistan, Pakistan and the Himalayan foothills to mainland Southeast Asia, China, Taiwan, Korea, Japan and the Russian Far East"
+    },
+    "bearded vulture": {
+      "place": "Eurasia & Africa",
+      "lat": 25.0,
+      "lon": 40.0,
+      "why": "the mountains of southern Europe, the Caucasus, the Himalaya and east and southern Africa; the Sela Pass is one of them, not the range"
+    },
     "buckskin fringe": {
       "place": "North America",
       "lat": 43.0,
@@ -21,6 +33,12 @@
       "why": "Mapuche, and the Mapuche hop named Chile and Argentina; the Andes region centroid sits far north of it",
       "q": "Q298"
     },
+    "common swift": {
+      "place": "Eurasia",
+      "lat": 50.0,
+      "lon": 80.0,
+      "why": "breeds right across Europe and temperate Asia and winters in Africa; its own entry's 'endemic to Namdapha National Park' was a sighting"
+    },
     "epaulettes": {
       "place": "France",
       "lat": 47.0,
@@ -28,11 +46,29 @@
       "q": "Q142",
       "why": "its article's History section: 17th-century French military dress, and the word is French for 'little shoulder'"
     },
+    "eurasian eagle-owl": {
+      "place": "Eurasia",
+      "lat": 50.0,
+      "lon": 80.0,
+      "why": "across Europe and Asia; 'endemic to Namdapha National Park' was a sighting"
+    },
+    "eurasian teal": {
+      "place": "Eurasia",
+      "lat": 50.0,
+      "lon": 80.0,
+      "why": "breeds across northern Eurasia and winters south of it; 'endemic to Kaziranga National Park' was a sighting"
+    },
     "european dragon": {
       "place": "Western Europe",
       "lat": 48.3,
       "lon": 4.0,
       "why": "its own article; same cluster, same gap"
+    },
+    "great tit": {
+      "place": "Eurasia",
+      "lat": 50.0,
+      "lon": 80.0,
+      "why": "across Europe and Asia from Ireland to Japan; 'endemic to Buxa Tiger Reserve' was a sighting"
     },
     "huma bird": {
       "place": "Iran",
@@ -125,6 +161,12 @@
       "lon": 4.0,
       "why": "as european dragon"
     },
+    "white stork": {
+      "place": "Eurasia & Africa",
+      "lat": 25.0,
+      "lon": 40.0,
+      "why": "breeds in Europe, West Asia and NW Africa and winters in Africa and India; the Little Rann of Kutch is one wintering marsh"
+    },
     "zmei gorynych": {
       "place": "Slavic & Eastern Europe",
       "lat": 52.0,
@@ -139,10 +181,7 @@
     }
   },
   "unplace": {
-    "asian black bear": "its range runs from southeastern Iran through the Himalayas and mainland Southeast Asia to China, Korea, Japan and the Russian Far East — six of this map's regions, so any single pin would be a guess dressed as a fact",
-    "bearded vulture": "its own entry claims it is endemic to the Sela Pass; it ranges across the mountains of Eurasia and Africa, and a single Himalayan pass is a sighting",
     "hadrosaur": "was pinned to the Kanguk Formation, one Arctic site standing in for a clade on five continents; its sibling clade-level referents carry no pin either",
-    "tailor": "reached Germany one hop out through 'a kind of Q778000'; a trade is from nowhere",
-    "white stork": "its own entry claims it is endemic to the Little Rann of Kutch, a salt marsh it winters in; it breeds across Europe, West Asia and NW Africa and winters in Africa and India, so no one place is where it is from"
+    "tailor": "reached Germany one hop out through 'a kind of Q778000'; a trade is from nowhere"
   }
 }

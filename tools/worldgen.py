@@ -12,7 +12,7 @@ page place a pin from coordinates with two multiplications. The canvas is
 W x H units covering the whole globe; the page crops the polar emptiness with
 its viewBox.
 """
-import json, os, sys
+import json, math, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -74,6 +74,67 @@ def simplify(ring, tol=0.35):
     return out if len(out) >= 4 else ring
 
 
+def unwrap(pts):
+    """A ring that crosses the dateline jumps most of the canvas in one step.
+    Undo the jumps so the ring is continuous, even if that puts it outside
+    0..W."""
+    out, off = [pts[0]], 0.0
+    for i in range(1, len(pts)):
+        dx = pts[i][0] - pts[i - 1][0]
+        if dx > W / 2:
+            off -= W
+        elif dx < -W / 2:
+            off += W
+        out.append((pts[i][0] + off, pts[i][1]))
+    return out
+
+
+def clip_strip(ring, lo, hi):
+    """Sutherland-Hodgman against the two vertical edges of the canvas."""
+    def half(r, inside, cut):
+        out = []
+        for i in range(len(r)):
+            a, b = r[i], r[(i + 1) % len(r)]
+            ia, ib = inside(a), inside(b)
+            if ia:
+                out.append(a)
+                if not ib:
+                    out.append(cut(a, b))
+            elif ib:
+                out.append(cut(a, b))
+        return out
+
+    def at(a, b, x):
+        t = (x - a[0]) / (b[0] - a[0])
+        return (x, a[1] + t * (b[1] - a[1]))
+
+    r = half(ring, lambda p: p[0] >= lo, lambda a, b: at(a, b, lo))
+    if not r:
+        return []
+    return half(r, lambda p: p[0] <= hi, lambda a, b: at(a, b, hi))
+
+
+def split_dateline(pts):
+    """Russia, Fiji and Antarctica each have a ring that runs off one side of
+    the world and back on the other. Projected, that ring stretches across the
+    entire canvas as a band — which the land layer has always drawn and which
+    became obvious once culture areas were shaded in. Cut the ring at the
+    canvas edges and keep each side as its own piece."""
+    if all(abs(pts[i][0] - pts[i - 1][0]) <= W / 2 for i in range(1, len(pts))):
+        return [pts]
+    u = unwrap(pts)
+    xs = [p[0] for p in u]
+    pieces = []
+    k = int(math.floor(min(xs) / W))
+    while k * W < max(xs):
+        shifted = [(x - k * W, y) for x, y in u]
+        c = clip_strip(shifted, 0.0, W)
+        if len(c) >= 4 and area(c) >= MIN_AREA:
+            pieces.append(c)
+        k += 1
+    return pieces
+
+
 def path_for(geom, arcs):
     polys = geom["arcs"] if geom["type"] == "MultiPolygon" else [geom["arcs"]]
     d = []
@@ -83,13 +144,40 @@ def path_for(geom, arcs):
             if len(pts) < 4 or area(pts) < MIN_AREA:
                 continue
             pts = simplify(pts)
-            # The dateline: a ring that wraps the whole canvas is Antarctica or
-            # Russia split by the source data already, so no stitching needed.
-            d.append("M" + "L".join("%.1f %.1f" % p for p in pts) + "Z")
+            for piece in split_dateline(pts):
+                d.append("M" + "L".join("%.1f %.1f" % p for p in piece) + "Z")
     return "".join(d)
 
 
+def refit():
+    """Re-cut data/world.json in place, through the same code the generator
+    uses, so the file on disk and a future regeneration cannot disagree."""
+    path = os.path.join(ROOT, "data", "world.json")
+    world = json.load(open(path))
+    fixed = 0
+    for c in world["countries"]:
+        out = []
+        for sp in c["d"].split("M"):
+            sp = sp.strip()
+            if not sp:
+                continue
+            n = [float(v) for v in re.findall(r"-?\d+\.?\d*", sp)]
+            pts = list(zip(n[0::2], n[1::2]))
+            pieces = split_dateline(pts)
+            if len(pieces) != 1:
+                fixed += 1
+            for piece in pieces:
+                out.append("M" + "L".join("%.1f %.1f" % p for p in piece) + "Z")
+        c["d"] = "".join(out)
+    with open(path, "w") as fh:
+        json.dump(world, fh, separators=(",", ":"))
+    print("re-cut %s: %d wrapped rings split, %d KB"
+          % (path, fixed, os.path.getsize(path) // 1024))
+
+
 def main():
+    if len(sys.argv) > 1 and sys.argv[1] == "--refit":
+        return refit()
     src = sys.argv[1]
     topo = json.load(open(src))
     arcs = decode_arcs(topo)

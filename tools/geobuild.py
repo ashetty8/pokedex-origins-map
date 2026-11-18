@@ -15,7 +15,7 @@ into it, so ~1,500 pins cost a few tens of kilobytes rather than a megabyte.
 
     python3 -I tools/geobuild.py
 """
-import json, os, re, sys
+import collections, json, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -57,6 +57,58 @@ REGION_POINTS = {
 # the shapes never overlap and a reader can trust the one they are looking at.
 # Names are world.json's spellings, which is why "United States of America"
 # and "Bosnia and Herz." look like that. Checked against it at build time.
+EUROPE = [
+    "Albania", "Austria", "Belarus", "Belgium", "Bosnia and Herz.", "Bulgaria",
+    "Croatia", "Czechia", "Denmark", "Estonia", "Finland", "France", "Germany",
+    "Greece", "Hungary", "Iceland", "Ireland", "Italy", "Kosovo", "Latvia",
+    "Lithuania", "Luxembourg", "Macedonia", "Moldova", "Montenegro",
+    "Netherlands", "Norway", "Poland", "Portugal", "Romania", "Russia",
+    "Serbia", "Slovakia", "Slovenia", "Spain", "Sweden", "Switzerland",
+    "Ukraine", "United Kingdom"]
+ASIA = [
+    "Afghanistan", "Armenia", "Azerbaijan", "Bangladesh", "Bhutan", "Brunei",
+    "Cambodia", "China", "Cyprus", "Georgia", "India", "Indonesia", "Iran",
+    "Iraq", "Israel", "Japan", "Jordan", "Kazakhstan", "Kuwait", "Kyrgyzstan",
+    "Laos", "Lebanon", "Malaysia", "Mongolia", "Myanmar", "N. Cyprus", "Nepal",
+    "North Korea", "Oman", "Pakistan", "Palestine", "Philippines", "Qatar",
+    "Russia", "Saudi Arabia", "South Korea", "Sri Lanka", "Syria", "Taiwan",
+    "Tajikistan", "Thailand", "Timor-Leste", "Turkey", "Turkmenistan",
+    "United Arab Emirates", "Uzbekistan", "Vietnam", "Yemen"]
+AFRICA = [
+    "Algeria", "Angola", "Benin", "Botswana", "Burkina Faso", "Burundi",
+    "Cameroon", "Central African Rep.", "Chad", "Congo", "Côte d'Ivoire",
+    "Dem. Rep. Congo", "Djibouti", "Egypt", "Eq. Guinea", "Eritrea",
+    "Ethiopia", "Gabon", "Gambia", "Ghana", "Guinea", "Guinea-Bissau",
+    "Kenya", "Lesotho", "Liberia", "Libya", "Madagascar", "Malawi", "Mali",
+    "Mauritania", "Morocco", "Mozambique", "Namibia", "Niger", "Nigeria",
+    "Rwanda", "S. Sudan", "Senegal", "Sierra Leone", "Somalia", "Somaliland",
+    "South Africa", "Sudan", "Tanzania", "Togo", "Tunisia", "Uganda",
+    "W. Sahara", "Zambia", "Zimbabwe", "eSwatini"]
+
+
+def _union(*lists):
+    seen, out = set(), []
+    for l in lists:
+        for c in l:
+            if c not in seen:
+                seen.add(c)
+                out.append(c)
+    return out
+
+
+# A natural range is not a culture area and cannot be drawn like one. Culture
+# areas partition the map — no country twice, so a reader can trust the shape
+# under the pointer. A range overlaps them wholesale: the great tit's Eurasia
+# covers ten culture areas, and painting it over them would turn the map to
+# mud. So a range is shaded only while its own pin is open, and the card gives
+# the real distribution in words. The shape says roughly where; the words say
+# exactly where.
+RANGE_COUNTRIES = {
+    "Eurasia": _union(EUROPE, ASIA),
+    "Eurasia & Africa": _union(EUROPE, ASIA, AFRICA),
+    "Asia": ASIA,
+}
+
 AREA_COUNTRIES = {
     "Japan": ["Japan"],
     "Korea": ["North Korea", "South Korea"],
@@ -169,6 +221,17 @@ def check_areas(world):
             if c in seen:
                 bad.append("%s is in both %s and %s" % (c, seen[c], area))
             seen[c] = area
+    # ranges may overlap culture areas and each other — that is why they are
+    # drawn on demand — but a name world.json does not have still shades
+    # nothing, and a name repeated inside one range draws it twice
+    for rng, members in RANGE_COUNTRIES.items():
+        if rng in AREA_COUNTRIES:
+            bad.append("%s is both a culture area and a range" % rng)
+        for c, n in collections.Counter(members).items():
+            if have and c not in have:
+                bad.append("%s: no country %r in world.json" % (rng, c))
+            if n > 1:
+                bad.append("%s lists %r %d times" % (rng, c, n))
     return bad
 
 
@@ -294,6 +357,7 @@ def main():
     geo = {"places": places, "vias": vias, "refs": out, "why": why,
            "unplaced": refused,
            "areas": {a: c for a, c in AREA_COUNTRIES.items() if a in drawn},
+           "ranges": {r: c for r, c in RANGE_COUNTRIES.items() if r in drawn},
            "regions": sorted(REGION_POINTS),
            "meta": {"referents": len(out), "species": len(species),
                     "places": len(places), "build": D["meta"].get("build"),
@@ -308,8 +372,9 @@ def main():
           % (len(out), counts["direct"], counts["hop"], counts["region"],
              counts["hand"], len(unplaced_by_hand)))
     print("%d referents say why they have no pin" % len(refused))
-    print("%d culture areas shaded, from %d countries"
-          % (len(geo["areas"]), sum(len(c) for c in geo["areas"].values())))
+    print("%d culture areas shaded, from %d countries; %d ranges on demand"
+          % (len(geo["areas"]), sum(len(c) for c in geo["areas"].values()),
+             len(geo["ranges"])))
     print("%d places, %d Pokémon reachable" % (len(places), len(species)))
     top = {}
     for name, row in out.items():

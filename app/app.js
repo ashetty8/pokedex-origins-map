@@ -985,8 +985,10 @@
             " · "+pl.n+" Pokémon";
         /* an area says so, and says the shading is where it means */
         var shaded=GEO.areas && GEO.areas[pl.name];
+        var range=GEO.ranges && GEO.ranges[pl.name];
         var how=el("div","dvia",howPlaced(pl)+(
-          shaded ? " \u2014 a culture area; the shading on the Atlas is the ground it covers"
+          range  ? " \u2014 a natural range, outlined on the Atlas while this is open"
+                 : shaded ? " \u2014 a culture area; the shading on the Atlas is the ground it covers"
                  : pl.soft ? " \u2014 a culture area, so the pin is a region, not a spot" : ""));
         body.appendChild(how);
         var byk={};
@@ -1247,8 +1249,12 @@
       return box;
     }
     var p=GEO.places[row[0]], tier=row[2], area=tier===2||(tier===3&&!p[3]);
+    /* a range is a range whether or not Wikidata happens to have an item for
+       it — "Eurasia" does, "Eurasia & Africa" does not, and they should not
+       read as two different kinds of thing */
+    var isRange=GEO.ranges && GEO.ranges[p[0]];
     var head=el("div","oplace");
-    var btn=el("button","tag origin"+(area?" soft":""),p[0]);
+    var btn=el("button","tag origin"+(area||isRange?" soft":""),p[0]);
     btn.title="Show this place on the Atlas";
     btn.onclick=function(){ openOnAtlas() };
     head.appendChild(btn);
@@ -1267,7 +1273,9 @@
     fact("claim",GEO.vias[row[1]]||"?");
     fact("source",ORIGINTIER[tier]||"");
     card.appendChild(facts);
-    if(area) card.appendChild(el("p","onote","A region, not a spot \u2014 the pin stands for the whole area."));
+    if(isRange) card.appendChild(el("p","onote",
+      "A range, not a spot \u2014 open this place on the Atlas and its extent is outlined."));
+    else if(area) card.appendChild(el("p","onote","A region, not a spot \u2014 the pin stands for the whole area."));
     if(tier===3 && GEO.why && GEO.why[name])
       card.appendChild(el("p","onote","Why: "+GEO.why[name]));
     if(p[3]){
@@ -2082,6 +2090,11 @@
   }
   function placeTip(p){
     var shaded=GEO && GEO.areas && GEO.areas[p.name];
+    var range=GEO && GEO.ranges && GEO.ranges[p.name];
+    if(range) return "<b>"+p.name+"</b><span class='tipmeta'>"+p.refs.length+
+      " referent"+(p.refs.length===1?"":"s")+" \u00b7 "+p.n+" Pok\u00e9mon</span>"+
+      "<span class='tipmeta'>"+atlasTopKinds(p)+"</span>"+
+      "<span class='tipmeta'>a natural range \u2014 open it to see how far it runs</span>";
     return "<b>"+p.name+"</b><span class='tipmeta'>"+p.refs.length+
       " referent"+(p.refs.length===1?"":"s")+" \u00b7 "+p.n+" Pok\u00e9mon</span>"+
       "<span class='tipmeta'>"+atlasTopKinds(p)+"</span>"+
@@ -2147,17 +2160,23 @@
        this same coordinate space, so shade them and let the reader click the
        ground rather than the dot. The pin stays on top: it carries the count,
        anchors the label, and is what the referents fan out from. */
-    if(GEO.areas){
+    if(GEO.areas||GEO.ranges){
       if(!ACOUNTRY){
         ACOUNTRY={};
         WORLD.countries.forEach(function(c){ ACOUNTRY[c.n]=c.d });
       }
       var shades=svgel("g",{},"aareas");
       places.forEach(function(p){
-        var members=GEO.areas[p.name];
+        /* A culture area is always shaded: they partition the map, so they
+           can all be shown at once. A natural range overlaps them wholesale
+           — the great tit's Eurasia covers ten of them — so it is drawn only
+           while its own pin is open, outlined rather than filled. */
+        var isRange=GEO.ranges && GEO.ranges[p.name];
+        var members=(GEO.areas && GEO.areas[p.name]) || isRange;
         if(!members) return;
-        var grp=svgel("g",{},"aarea"+(focus===p?" on":"")+
-                           (state.q&&!p.hits?" dim":""));
+        if(isRange && focus!==p) return;
+        var grp=svgel("g",{},(isRange?"arange":"aarea")+
+                           (focus===p?" on":"")+(state.q&&!p.hits?" dim":""));
         members.forEach(function(cn){
           var d=ACOUNTRY[cn];
           if(!d) return;                      /* too small for a world map */
@@ -2167,8 +2186,8 @@
           grp.appendChild(sh);
         });
         if(!grp.firstChild) return;
-        var tl=svgel("title",{}); tl.textContent=p.name;
-        grp.appendChild(tl);
+        /* no <title> here: the browser would raise its own tooltip on top of
+           the one the atlas draws */
         function shtip(e){ atlasTip(placeTip(p),e.clientX,e.clientY) }
         grp.addEventListener("pointerenter",shtip);
         grp.addEventListener("pointermove",shtip);

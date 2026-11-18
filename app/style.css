@@ -334,6 +334,12 @@ a.src{color:var(--accent);font-size:.8rem;text-decoration:none;border-bottom:1px
   transition:fill-opacity .12s}
 .aarea:hover path{fill-opacity:.24}
 .aarea.on path{fill-opacity:.3;stroke:var(--accent);stroke-width:1.2}
+/* A range overlaps the culture areas it crosses, so it is outlined rather
+   than painted: a wash over ten shaded areas would read as mud, and the
+   question a range answers is "how far", which an edge answers better. */
+.arange path{fill:var(--accent);fill-opacity:.07;stroke:var(--accent);stroke-opacity:.55;
+  stroke-width:1;stroke-dasharray:3 2;stroke-linejoin:round;
+  vector-effect:non-scaling-stroke;cursor:pointer}
 .aarea.dim path{fill-opacity:.05;stroke:color-mix(in srgb,var(--ink-faint) 40%,transparent)}
 .aring{fill:none;stroke:var(--accent);stroke-width:1.4;stroke-dasharray:3 3;vector-effect:non-scaling-stroke;pointer-events:none}
 .alabel{font-family:var(--mono);font-size:10px;fill:var(--ink-soft);paint-order:stroke;
