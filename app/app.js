@@ -942,6 +942,8 @@
         body.appendChild(sectionTitle("In the clusters nested here · "+nested.length));
         body.appendChild(speciesTags(nested));
       }
+      var og=originClusterSection(sel.k);
+      if(og) body.appendChild(og);
     }
     else if(sel.t==="referent"){
       var r=D.referents[sel.k];
@@ -1251,6 +1253,62 @@
       card.appendChild(wrap);
     }
     return box;
+  }
+  /* A cluster is not from one place the way a referent is. Most have no
+     geography at all (1,721 of 2,639 hold nothing placed), and 720 more hold
+     exactly one placed referent, where a card would only repeat what that
+     referent's own panel says — and would read as the cluster's origin, which
+     it is not. So this speaks only when two or more referents under a cluster
+     are placed, and then it reports a distribution with its own coverage:
+     "fairy folk" is mostly Celtic, "baked good" is seven countries, and the
+     unplaced remainder is named rather than quietly dropped. */
+  function originClusterSection(name){
+    if(!GEO) return null;
+    var seen={}, total=0, placed=[];
+    refsUnder({t:"group",k:name}).forEach(function(r){
+      if(seen[r]) return;
+      seen[r]=1; total++;
+      if(GEO.refs[r]) placed.push(r);
+    });
+    if(placed.length<2) return null;
+    var bag={};
+    placed.forEach(function(r){
+      var row=GEO.refs[r], pl=GEO.places[row[0]];
+      var e=bag[pl[0]]||(bag[pl[0]]={name:pl[0],n:0,soft:0});
+      e.n++; if(row[2]===2) e.soft++;
+    });
+    var list=Object.keys(bag).map(function(k){ return bag[k] })
+      .sort(function(a,b){ return b.n-a.n || (a.name<b.name?-1:1) });
+    /* Two stray placements in a cluster of fifty say nothing about the
+       cluster: "bear" has 2 of 17 placed, one each in two countries, and a
+       card there would invent a pattern. Speak when a quarter of the cluster
+       is placed, or when one place has gathered three of them. */
+    if(placed.length/total < 0.25 && list[0].n < 3) return null;
+    var box=el("div");
+    box.appendChild(sectionTitle("Where they are from"));
+    var card=el("div","origincard");
+    var chips=el("div","oplace wrapped");
+    list.slice(0,6).forEach(function(e){
+      var b=el("button","tag origin"+(e.soft*2>e.n?" soft":""),e.name);
+      b.appendChild(el("span","ocount",String(e.n)));
+      b.title="Show "+e.name+" on the Atlas";
+      b.onclick=function(){ openPlaceOnAtlas(e.name) };
+      chips.appendChild(b);
+    });
+    if(list.length>6) chips.appendChild(el("span","onote","+"+(list.length-6)+" more"));
+    card.appendChild(chips);
+    card.appendChild(el("p","onote", placed.length+" of "+total+" referents placed, "+
+      (list.length===1 ? "all in "+list[0].name : "across "+list.length+" places")+"."));
+    box.appendChild(card);
+    return box;
+  }
+  /* a place chip opens that place, not the cluster it was counted under */
+  function openPlaceOnAtlas(place){
+    state.tab="atlas";
+    ["clusters","map","atlas","species","flags"].forEach(function(o){
+      $("#tab-"+o).setAttribute("aria-selected",o==="atlas"?"true":"false");
+    });
+    select({t:"place",k:place});
   }
   /* Keep the selection and switch tabs: the atlas lights up the place the
      open referent came from, with that referent marked in its fan. */
