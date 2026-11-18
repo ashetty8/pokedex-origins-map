@@ -17945,7 +17945,6 @@
 "kanehekili",
 "kukailimoku",
 "leutogi",
-"lindu",
 "lono",
 "mahina",
 "pe'a-pe'a-makawalu",
@@ -17953,6 +17952,7 @@
 "poliahu"
 ],
 "Slavic & Eastern Europe": [
+"lindu",
 "morana"
 ],
 "South & Southeast Asia": [
@@ -19294,6 +19294,9 @@
 "firebox": {
 "839": "coalossal-gmax"
 },
+"fish roe": {
+"978": "tatsugiri-curly-mega"
+},
 "flamenco dancer": {
 "648": "meloetta-pirouette"
 },
@@ -19622,10 +19625,8 @@
 "71": "victreebel-mega"
 },
 "mo'o": {
+"103": "exeggutor-alola",
 "800": "necrozma-ultra"
-},
-"mo'o (hawaiian shapeshifting dragon)": {
-"103": "exeggutor-alola"
 },
 "modern unicorn": {
 "78": "rapidash-galar"
@@ -19666,10 +19667,7 @@
 "nezha": {
 "720": "hoopa-unbound"
 },
-"nightmarchers (hawaiian ghost procession)": {
-"105": "marowak-alola"
-},
-"nightmarchers (hawaiian legend)": {
+"nightmarchers": {
 "105": "marowak-alola"
 },
 "noble gases": {
@@ -19924,7 +19922,7 @@
 "1017": "ogerpon-hearthflame-mask"
 },
 "shrimp (ebi) nigiri": {
-"978": "tatsugiri-curly-mega"
+"978": "tatsugiri-curly"
 },
 "sign of the horns": {
 "689": "barbaracle-mega"
@@ -20723,7 +20721,7 @@
 "island gigantism",
 "Dracaena tree",
 "Coca (dragon)",
-"Mo'o (Hawaiian shapeshifting dragon)"
+"mo'o"
 ],
 "s": 103
 },
@@ -21215,8 +21213,8 @@
 "fire staff",
 "fire knife",
 "mana",
-"Nightmarchers (Hawaiian legend)",
-"Nightmarchers (Hawaiian ghost procession)"
+"nightmarchers",
+"nightmarchers"
 ],
 "s": 105
 },
@@ -36036,7 +36034,6 @@
 "ch": [
 "matcha powder",
 "nigiri",
-"nigiri sushi",
 "onigiri",
 "onigiri wrapped in nori",
 "prepared matcha",
@@ -39237,10 +39234,9 @@
 "mo'o": {
 "f": "Other folklore",
 "k": "folklore",
+"leaf": 1,
 "m": [
-"mo'o",
-"mo'o (hawaiian lizard goddess)",
-"mo'o (hawaiian shapeshifting dragon)"
+"mo'o"
 ],
 "n": 3,
 "rg": "Oceania & Polynesia"
@@ -40459,10 +40455,9 @@
 "nightmarchers": {
 "f": "Other folklore",
 "k": "folklore",
+"leaf": 1,
 "m": [
-"nightmarchers",
-"nightmarchers (hawaiian ghost procession)",
-"nightmarchers (hawaiian legend)"
+"nightmarchers"
 ],
 "n": 2,
 "rg": "Oceania & Polynesia"
@@ -40483,19 +40478,9 @@
 "k": "food",
 "m": [
 "egg (tamago) or herring roe (kazunoko) nigiri",
+"nigiri sushi",
 "shrimp (ebi) nigiri",
 "tuna (maguro) nigiri"
-],
-"n": 1,
-"p": "japanese dish"
-},
-"nigiri sushi": {
-"f": "Food & drink",
-"i": 1,
-"k": "food",
-"leaf": 1,
-"m": [
-"nigiri sushi"
 ],
 "n": 1,
 "p": "japanese dish"
@@ -44255,7 +44240,7 @@
 "fish roe",
 "sea urchin roe"
 ],
-"n": 2,
+"n": 3,
 "p": "japanese dish"
 },
 "rokurokubi": {
@@ -52364,7 +52349,7 @@
 "build": "f4b4a145",
 "clusters": 574,
 "families": 59,
-"groups": 2639,
+"groups": 2638,
 "kinds": [
 "concept",
 "earth & sky",
@@ -52377,7 +52362,7 @@
 "person",
 "prehistoric"
 ],
-"referents": 3889,
+"referents": 3885,
 "species": 1025
 },
 "referents": {
@@ -62982,7 +62967,8 @@
 "g": "roe",
 "k": "food",
 "s": [
-366
+366,
+978
 ],
 "w": "Roe"
 },
@@ -71519,25 +71505,9 @@
 "g": "mo'o",
 "k": "folklore",
 "s": [
+103,
+758,
 800
-],
-"w": "Moʻo"
-},
-"mo'o (hawaiian lizard goddess)": {
-"d": "mo'o (Hawaiian lizard goddess)",
-"g": "mo'o",
-"k": "folklore",
-"s": [
-758
-],
-"w": "Moʻo"
-},
-"mo'o (hawaiian shapeshifting dragon)": {
-"d": "Mo'o (Hawaiian shapeshifting dragon)",
-"g": "mo'o",
-"k": "folklore",
-"s": [
-103
 ],
 "w": "Moʻo"
 },
@@ -72894,25 +72864,8 @@
 "g": "nightmarchers",
 "k": "folklore",
 "s": [
+105,
 802
-],
-"w": "Nightmarchers"
-},
-"nightmarchers (hawaiian ghost procession)": {
-"d": "Nightmarchers (Hawaiian ghost procession)",
-"g": "nightmarchers",
-"k": "folklore",
-"s": [
-105
-],
-"w": "Nightmarchers"
-},
-"nightmarchers (hawaiian legend)": {
-"d": "Nightmarchers (Hawaiian legend)",
-"g": "nightmarchers",
-"k": "folklore",
-"s": [
-105
 ],
 "w": "Nightmarchers"
 },
@@ -72933,7 +72886,7 @@
 "x": 1
 },
 "nigiri sushi": {
-"g": "nigiri sushi",
+"g": "nigiri",
 "k": "food",
 "s": [
 978
@@ -97028,7 +96981,7 @@
 "whiptail lizard",
 "New Mexico whiptail",
 "fire belly newt",
-"mo'o (Hawaiian lizard goddess)"
+"mo'o"
 ],
 [
 "folklore",
