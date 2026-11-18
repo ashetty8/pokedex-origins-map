@@ -344,7 +344,23 @@ a.src{color:var(--accent);font-size:.8rem;text-decoration:none;border-bottom:1px
 /* a referent's own origin, laid out to be read as evidence: the place as a
    chip you can follow to the map, then the point, the claim and how far from
    the referent that claim was made */
-.originrow{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.origincard{border:1px solid var(--rule);border-radius:12px;padding:11px 12px 12px;margin-top:2px;
+  background:color-mix(in srgb,var(--accent) 5%,var(--card))}
+.origincard.empty{background:var(--card)}
+.oplace{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:9px}
+.oshow{margin-left:auto;background:none;border:0;padding:0;font-family:var(--mono);font-size:.68rem;
+  letter-spacing:.06em;color:var(--ink-faint);text-transform:uppercase}
+.oshow:hover{color:var(--accent)}
+/* label and value, so the three facts line up as a specimen label rather
+   than running together as grey prose */
+.ofacts{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 14px;margin:0;align-items:baseline}
+.ofacts dt{font-family:var(--mono);font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink-faint);white-space:nowrap}
+.ofacts dd{margin:0;font-size:.82rem;color:var(--ink-soft);min-width:0}
+.ofacts dd.num{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:.76rem}
+.onote{margin:9px 0 0;font-size:.76rem;color:var(--ink-faint);line-height:1.45}
+.olink{margin:9px 0 0}
+.olink .src{font-size:.76rem}
 .tag.origin{border-color:var(--accent);color:var(--ink)}
 .tag.origin::before{content:"\25c9";color:var(--accent);margin-right:5px;font-size:.8em}
 .tag.origin.soft{border-style:dashed}

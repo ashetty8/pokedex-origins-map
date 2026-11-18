@@ -1208,33 +1208,47 @@
   var ORIGINTIER=["from its own Wikidata entry","one hop out, through what it belongs to",
                   "from the culture area this dataset files it under"];
   function originSection(name){
-    var box=el("div");
-    if(!GEO){ return null }                       /* still loading; the panel redraws when it lands */
+    if(!GEO) return null;                        /* still loading; the panel redraws when it lands */
     var row=GEO.refs[name], r=D.referents[name]||{};
+    var box=el("div");
     box.appendChild(sectionTitle("Where it is from"));
+    var card=el("div","origincard");
+    box.appendChild(card);
     if(!row){
-      box.appendChild(el("p","dvia", r.w
+      card.classList.add("empty");
+      card.appendChild(el("p","onote", r.w
         ? "Not placed \u2014 neither its own Wikidata entry nor what it belongs to says where it is from."
         : "Not placed \u2014 no Wikipedia article is linked, so there was nothing to ask."));
       return box;
     }
     var p=GEO.places[row[0]], tier=row[2];
-    var line=el("div","originrow");
+    var head=el("div","oplace");
     var btn=el("button","tag origin"+(tier===2?" soft":""),p[0]);
     btn.title="Show this place on the Atlas";
     btn.onclick=function(){ openOnAtlas() };
-    line.appendChild(btn);
-    box.appendChild(line);
-    box.appendChild(el("div","dvia",
-      p[1].toFixed(2)+", "+p[2].toFixed(2)+" \u00b7 "+(GEO.vias[row[1]]||"?")));
-    box.appendChild(el("div","dvia",ORIGINTIER[tier]||""));
-    if(tier===2) box.appendChild(el("div","dvia","a region, not a spot \u2014 the pin stands for the whole area"));
+    head.appendChild(btn);
+    var go=el("button","oshow","see the pin \u2192");
+    go.type="button"; go.onclick=function(){ openOnAtlas() };
+    head.appendChild(go);
+    card.appendChild(head);
+    /* the three things an audit needs, labelled: the point, the claim that
+       produced it, and how far from the referent that claim was made */
+    var facts=el("dl","ofacts");
+    function fact(k,v,mono){
+      facts.appendChild(el("dt","",k));
+      facts.appendChild(el("dd",mono?"num":"",v));
+    }
+    fact("pinned at",p[1].toFixed(2)+", "+p[2].toFixed(2),true);
+    fact("claim",GEO.vias[row[1]]||"?");
+    fact("source",ORIGINTIER[tier]||"");
+    card.appendChild(facts);
+    if(tier===2) card.appendChild(el("p","onote","A region, not a spot \u2014 the pin stands for the whole area."));
     if(p[3]){
       var wd=el("a","src","Wikidata: "+p[3]+" \u2197");
       wd.href="https://www.wikidata.org/wiki/"+p[3];
       wd.target="_blank"; wd.rel="noopener noreferrer";
-      var wrap=el("p"); wrap.style.margin="6px 0 0"; wrap.appendChild(wd);
-      box.appendChild(wrap);
+      var wrap=el("p","olink"); wrap.appendChild(wd);
+      card.appendChild(wrap);
     }
     return box;
   }
