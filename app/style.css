@@ -27,13 +27,18 @@ button{font:inherit;color:inherit;cursor:pointer}
 
 /* header */
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--paper);border-bottom:1px solid var(--rule)}
-.top .wrap{padding-block:14px 0}
-.brandrow{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px}
+/* The search box and the tabs shared a column each and cost two rows
+   between them. They sit on one row instead, bottom-aligned, so the tab
+   underline still meets the header's rule while the input keeps a gap
+   under it. Everything below is measured from --topbar, so the panels,
+   the graph and the atlas all grow by what this saves. */
+.top .wrap{padding-block:12px 0;display:flex;flex-wrap:wrap;align-items:flex-end;column-gap:20px}
+.brandrow{flex:1 1 100%;display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px}
 h1{font-size:1.32rem;letter-spacing:-.02em}
 .sub{margin:0;color:var(--ink-soft);font-size:.86rem;min-width:0}
 .headright{margin-left:auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end}
 .counts{font-family:var(--mono);font-size:.74rem;color:var(--ink-faint);font-variant-numeric:tabular-nums}
-.searchrow{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.searchrow{flex:1 1 320px;display:flex;gap:10px;margin:9px 0;flex-wrap:wrap}
 .searchbox{position:relative;flex:1 1 240px;min-width:0;display:flex}
 /* jump straight to a thing, instead of only narrowing the lists */
 .suggest{position:absolute;top:calc(100% + 6px);left:0;right:0;z-index:12;background:var(--card);
@@ -58,9 +63,9 @@ h1{font-size:1.32rem;letter-spacing:-.02em}
 #q{flex:1 1 240px;min-width:0;padding:11px 14px;border:1px solid var(--rule);border-radius:12px;background:var(--card);color:var(--ink);font:inherit;font-size:.9rem;transition:border-color .14s,box-shadow .14s}
 #q:hover{border-color:var(--rule-strong)}
 #q:focus{outline:0;border-color:var(--accent,#6fcf97);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent,#6fcf97) 18%,transparent)}
-.tabs{display:flex;gap:4px;margin-top:12px;overflow-x:auto;scrollbar-width:none}
+.tabs{flex:0 1 auto;display:flex;gap:4px;margin-top:9px;overflow-x:auto;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
-.tab{background:none;border:0;border-radius:9px 9px 0 0;border-bottom:2px solid transparent;padding:9px 14px;color:var(--ink-faint);font-size:.86rem;font-weight:500;white-space:nowrap;transition:color .12s,background .12s}
+.tab{background:none;border:0;border-radius:9px 9px 0 0;border-bottom:2px solid transparent;padding:8px 13px;color:var(--ink-faint);font-size:.86rem;font-weight:500;white-space:nowrap;transition:color .12s,background .12s}
 .tab:hover{color:var(--ink-soft);background:var(--card)}
 .tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
 
@@ -153,10 +158,10 @@ select{font:inherit;font-size:.82rem;padding:8px 10px;border:1px solid var(--rul
   box-shadow:0 8px 10px -10px rgba(0,0,0,.28)}
 .dtop .dhead{margin-bottom:0}
 .detail > .dhead{padding-top:18px}
-.dtop .sectitle{margin-top:12px}
+.dtop .sectitle{margin:9px 0 6px}
 .dtop .taglist{max-height:104px;overflow:auto;overscroll-behavior:contain;padding-bottom:12px}
-.dhead{display:flex;gap:10px 12px;align-items:flex-start;flex-wrap:wrap;
-  border-bottom:1px solid var(--rule);padding-bottom:13px;margin-bottom:14px}
+.dhead{display:flex;gap:7px 12px;align-items:flex-start;flex-wrap:wrap;
+  border-bottom:1px solid var(--rule);padding-bottom:9px;margin-bottom:11px}
 .dtitles{flex:1 1 200px;min-width:0}
 .dactions{display:flex;align-items:center;gap:6px;margin-left:auto;flex:0 0 auto}
 /* the empty panel keeps its arrows, so a step back too far is recoverable */
@@ -167,9 +172,10 @@ select{font:inherit;font-size:.82rem;padding:8px 10px;border:1px solid var(--rul
 .navbtn:hover:not(:disabled){color:var(--ink);border-color:var(--ink-faint)}
 .navbtn:disabled{opacity:.28;cursor:default}
 .dhead .flagbtn{margin-left:0}
-.dtitle{font-family:var(--display);font-size:1.1rem;letter-spacing:-.01em;overflow-wrap:break-word;word-break:normal;hyphens:none}
-.dsub{font-family:var(--mono);font-size:.72rem;color:var(--ink-faint);margin-top:3px}
-.flagbtn{flex-shrink:0;background:var(--flag-soft);color:var(--flag);border:1px solid transparent;border-radius:7px;padding:5px 10px;font-size:.78rem;font-weight:500}
+.dtitle{font-family:var(--display);font-size:1.1rem;line-height:1.22;letter-spacing:-.01em;overflow-wrap:break-word;word-break:normal;hyphens:none}
+.dsub{font-family:var(--mono);font-size:.72rem;line-height:1.35;color:var(--ink-faint);margin-top:2px}
+.flagbtn{flex-shrink:0;width:24px;height:24px;padding:0;display:inline-flex;align-items:center;justify-content:center;
+  background:var(--flag-soft);color:var(--flag);border:1px solid transparent;border-radius:7px;font-size:.92rem;line-height:1}
 .sectitle{font-family:var(--mono);font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);margin:16px 0 7px}
 .taglist{display:flex;flex-wrap:wrap;gap:5px}
 .tag{background:none;border:1px solid var(--rule-strong);border-radius:6px;padding:3px 8px;font-size:.8rem;color:var(--ink);text-align:left}

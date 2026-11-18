@@ -1098,7 +1098,10 @@
     head.appendChild(titles);
     var acts=el("div","dactions");
     acts.appendChild(navButtons());
-    var fb=el("button","flagbtn","Flag");
+    /* a flag, not the word: the panel heading is the one place where a
+       line of vertical space is worth more than a label */
+    var fb=el("button","flagbtn","\u2691");
+    fb.title="Flag a problem with this"; fb.setAttribute("aria-label","Flag a problem with this");
     fb.onclick=function(){ var f=$("#flagform"); if(f) f.classList.toggle("hidden") };
     acts.appendChild(fb);
     head.appendChild(acts);
