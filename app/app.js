@@ -942,7 +942,7 @@
         body.appendChild(sectionTitle("In the clusters nested here · "+nested.length));
         body.appendChild(speciesTags(nested));
       }
-      var og=originClusterSection(sel.k);
+      var og=originSpread(refsUnder({t:"group",k:sel.k}));
       if(og) body.appendChild(og);
     }
     else if(sel.t==="referent"){
@@ -1036,6 +1036,12 @@
       if(pkids.length){
         body.appendChild(sectionTitle(pkids.length>120?"Pokémon · first 120 of "+pkids.length:"Pokémon"));
         body.appendChild(speciesTags(pkids.slice(0,120)));
+      }
+      /* A region node is already a place — "Norse & Germanic" saying it is
+         mostly Norse & Germanic helps nobody — so only the other three ask. */
+      if(sel.nt!=="region"){
+        var ng=originSpread(refsUnder(f));
+        if(ng) body.appendChild(ng);
       }
     }
     else {
@@ -1254,18 +1260,18 @@
     }
     return box;
   }
-  /* A cluster is not from one place the way a referent is. Most have no
-     geography at all (1,721 of 2,639 hold nothing placed), and 720 more hold
-     exactly one placed referent, where a card would only repeat what that
-     referent's own panel says — and would read as the cluster's origin, which
-     it is not. So this speaks only when two or more referents under a cluster
-     are placed, and then it reports a distribution with its own coverage:
-     "fairy folk" is mostly Celtic, "baked good" is seven countries, and the
-     unplaced remainder is named rather than quietly dropped. */
-  function originClusterSection(name){
-    if(!GEO) return null;
+  /* A cluster or a family is not from one place the way a referent is. Most
+     hold no geography at all (1,721 of 2,639 clusters), and 720 more hold
+     exactly one placed referent, where a card would only repeat that
+     referent's own panel while reading as the whole group's origin. So this
+     speaks only for a group whose placements amount to something, and what it
+     then shows is a distribution with its own coverage: "fairy folk" is
+     mostly Celtic, "baked good" is seven countries, and the unplaced
+     remainder is named rather than quietly dropped. */
+  function originSpread(names){
+    if(!GEO || !names) return null;
     var seen={}, total=0, placed=[];
-    refsUnder({t:"group",k:name}).forEach(function(r){
+    names.forEach(function(r){
       if(seen[r]) return;
       seen[r]=1; total++;
       if(GEO.refs[r]) placed.push(r);
@@ -1279,11 +1285,14 @@
     });
     var list=Object.keys(bag).map(function(k){ return bag[k] })
       .sort(function(a,b){ return b.n-a.n || (a.name<b.name?-1:1) });
-    /* Two stray placements in a cluster of fifty say nothing about the
-       cluster: "bear" has 2 of 17 placed, one each in two countries, and a
-       card there would invent a pattern. Speak when a quarter of the cluster
-       is placed, or when one place has gathered three of them. */
-    if(placed.length/total < 0.25 && list[0].n < 3) return null;
+    /* Two stray placements in a group of fifty say nothing about the group:
+       "bear" has 2 of 17 placed, one each in two countries, and a card there
+       would invent a pattern. Speak when a quarter of the group is placed, or
+       when one place has gathered three of them and they are not a rounding
+       error either — three of 214 pieces of clothing is still nothing. The
+       same rule at both scales: 143 clusters and 21 families. */
+    var cover=placed.length/total;
+    if(cover<0.25 && !(list[0].n>=3 && cover>=0.15)) return null;
     var box=el("div");
     box.appendChild(sectionTitle("Where they are from"));
     var card=el("div","origincard");
