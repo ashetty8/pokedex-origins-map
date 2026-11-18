@@ -136,6 +136,15 @@ select{font:inherit;font-size:.82rem;padding:8px 10px;border:1px solid var(--rul
 /* name on the left, controls top-right, one rule under the pair. The row
    wraps as a whole rather than squeezing the name: a long one keeps its
    width and the buttons drop to their own line. */
+/* The name and what sits inside hold at the top of the panel while the
+   Pokemon scroll under them: in a panel of 115 chips those are the two
+   things you keep scrolling back for. The chip list is capped, so a
+   category with eighty children cannot swallow the whole panel. */
+.dtop{position:sticky;top:0;z-index:3;background:var(--card);
+  box-shadow:0 8px 10px -10px rgba(0,0,0,.28)}
+.dtop .dhead{margin-bottom:0}
+.dtop .sectitle{margin-top:12px}
+.dtop .taglist{max-height:104px;overflow:auto;overscroll-behavior:contain;padding-bottom:12px}
 .dhead{display:flex;gap:10px 12px;align-items:flex-start;flex-wrap:wrap;
   border-bottom:1px solid var(--rule);padding-bottom:13px;margin-bottom:14px}
 .dtitles{flex:1 1 200px;min-width:0}
@@ -185,7 +194,9 @@ select{font:inherit;font-size:.82rem;padding:8px 10px;border:1px solid var(--rul
 .results.mapmode .row .kind{display:none}
 .results.mapmode .rowmeta{gap:6px}
 .results.mapmode #results{max-height:calc(100dvh - var(--topbar,128px) - 140px);overflow:auto;padding-right:4px;overscroll-behavior:contain}
-.results.mapmode #graph svg{height:calc(100dvh - var(--topbar,128px) - 120px);min-height:460px}
+/* the map ends where the side panel ends: same formula, less the two
+   border lines of #graph, so the pair bottoms out on one line */
+.results.mapmode #graph svg{height:calc(100dvh - env(safe-area-inset-top,0px) - var(--topbar,128px) - var(--headrow,0px) - 42px);min-height:460px}
 @media (max-width:1240px){.results.mapmode{grid-template-columns:minmax(0,1fr)}
   .results.mapmode .row .kind{display:none}
 .results.mapmode .rowmeta{gap:6px}
@@ -257,3 +268,56 @@ a.src{color:var(--accent);font-size:.8rem;text-decoration:none;border-bottom:1px
 .pill.open{background:var(--flag-soft);color:var(--flag);border-color:transparent}
 .pill.done{background:var(--accent-soft);color:var(--accent);border-color:transparent}
 .hidden{display:none!important}
+
+/* ---------- atlas ----------
+   The graph answers "what sits inside what"; the atlas answers "where did it
+   come from". Land is pre-projected path data (Natural Earth 110m), so the
+   map themes with the page instead of fighting a tile server's colours. */
+#atlas{position:relative;border:1px solid var(--rule);border-radius:14px;background:var(--card);overflow:hidden;
+  background-image:radial-gradient(120% 90% at 50% 30%,color-mix(in srgb,var(--card) 90%,var(--accent) 4%),var(--card))}
+/* The world is twice as wide as it is tall. A canvas much taller than that
+   fills with empty ocean; much shorter and it wastes the column. 1.6:1 leaves
+   a band of sea above the Arctic and below Antarctica, which is what a map
+   looks like anyway. */
+#atlas svg{display:block;width:100%;aspect-ratio:1.6/1;height:auto;min-height:300px;
+  max-height:calc(100dvh - var(--topbar,128px) - 130px);cursor:grab;touch-action:none}
+#atlas svg.dragging{cursor:grabbing}
+.results.atlasmode{display:block}
+
+.atlasbar{position:absolute;left:14px;right:14px;top:11px;z-index:3;display:flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:.71rem;color:var(--ink-faint);pointer-events:none}
+#atlasnote{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.atlastools{margin-left:auto;display:flex;align-items:center;gap:6px;pointer-events:auto;flex:0 0 auto}
+.atlastoggle{display:inline-flex;align-items:center;gap:4px;cursor:pointer;letter-spacing:.06em;text-transform:uppercase}
+.atlasbtn{width:26px;height:26px;border:1px solid var(--rule-strong);border-radius:8px;background:var(--card);
+  color:var(--ink-soft);font-family:var(--mono);font-size:.8rem;line-height:1;display:inline-flex;align-items:center;justify-content:center}
+.atlasbtn.wide{width:auto;padding:0 9px;font-size:.66rem;letter-spacing:.07em;text-transform:uppercase}
+.atlasbtn:hover{color:var(--ink);border-color:var(--ink-faint)}
+/* the land itself: a flat wash, one shade off the card, with countries hairlined */
+.aland{fill:color-mix(in srgb,var(--ink) 8%,var(--card));stroke:color-mix(in srgb,var(--ink) 17%,var(--card));
+  stroke-width:.6;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.agrat{stroke:color-mix(in srgb,var(--ink) 7%,transparent);fill:none;stroke-width:.5;vector-effect:non-scaling-stroke}
+.apin{fill:var(--accent);fill-opacity:.62;stroke:var(--card);stroke-width:1;cursor:pointer;
+  vector-effect:non-scaling-stroke;transition:fill-opacity .12s}
+.apin:hover{fill-opacity:.9}
+.apin.soft{fill:var(--ink-faint);fill-opacity:.3}       /* no search match */
+.apin.guessed{stroke-dasharray:2 2}                      /* placed by culture area, not a claim */
+.apin.on{fill-opacity:.95;stroke:var(--ink);stroke-width:1.5}
+.apin.flagged{stroke:var(--flag);stroke-width:1.6}
+.aring{fill:none;stroke:var(--accent);stroke-width:1.4;stroke-dasharray:3 3;vector-effect:non-scaling-stroke;pointer-events:none}
+.alabel{font-family:var(--mono);font-size:10px;fill:var(--ink-soft);paint-order:stroke;
+  stroke:var(--card);stroke-width:3px;pointer-events:none;letter-spacing:.02em}
+.alabel.big{fill:var(--ink);font-size:11px}
+.aspoke{stroke:color-mix(in srgb,var(--accent) 45%,transparent);stroke-width:.8;vector-effect:non-scaling-stroke;pointer-events:none}
+.afan{fill:var(--card);stroke:var(--accent);stroke-width:1.2;cursor:pointer;vector-effect:non-scaling-stroke}
+.afan:hover{fill:var(--accent)}
+.afan.on{fill:var(--accent);stroke:var(--ink)}
+.atlastip{position:absolute;z-index:4;pointer-events:none;background:var(--card);border:1px solid var(--rule-strong);
+  border-radius:9px;padding:6px 9px;font-size:.78rem;box-shadow:0 8px 22px rgba(0,0,0,.18);max-width:260px}
+.atlastip[hidden]{display:none}
+.atlastip b{font-family:var(--display)}
+.atlastip .tipmeta{display:block;font-family:var(--mono);font-size:.68rem;color:var(--ink-faint);margin-top:2px}
+.atlasempty{position:absolute;inset:auto 14px 14px;font-size:.8rem;color:var(--ink-soft)}
+/* the panel's own place header: how the point was arrived at, never implied */
+.dvia{font-family:var(--mono);font-size:.68rem;color:var(--ink-faint);margin-top:4px}
+

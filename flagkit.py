@@ -66,8 +66,18 @@ def build(D):
     for name in ("index.html", "style.css", "app.js"):
         src = os.path.join(HERE, "app", name)
         if os.path.exists(src): shutil.copy2(src, os.path.join(dist, name))
-    return "built %s: map_data.json (%d KB) + index.html, style.css, app.js" % (
-        dist, os.path.getsize(DIST) // 1024)
+    # The atlas layer: pre-projected land outlines and the geography of each
+    # referent. Both are generated (tools/worldgen.py, tools/geobuild.py) and
+    # already minified, so they are copied rather than re-dumped.
+    extra = []
+    for name in ("world.json", "geo.json"):
+        src = os.path.join(HERE, "data", name)
+        if os.path.exists(src):
+            shutil.copy2(src, os.path.join(dist, name))
+            extra.append(name)
+    return "built %s: map_data.json (%d KB) + index.html, style.css, app.js%s" % (
+        dist, os.path.getsize(DIST) // 1024,
+        (" + " + ", ".join(extra)) if extra else "")
 
 
 # ---------- reading ----------

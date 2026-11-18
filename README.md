@@ -13,6 +13,9 @@ Published as a private Claude Artifact: https://claude.ai/artifact/FP9NhVBPPv8oz
 | `app/style.css` | Every style the page uses. |
 | `app/app.js` | The whole application: data loading, the three views, the map, the flag store. |
 | `data/map_data.json` | The dataset, one key per line so corrections read as diffs. The source of truth. |
+| `data/geo.json` | The atlas layer: a place table and one row per placed referent. Built, not edited. |
+| `data/world.json` | Country outlines, already projected to the page's own coordinates. Built, not edited. |
+| `data/geo_raw.json`, `data/geo_deep.json` | What the two Wikidata passes found, before they are merged. |
 | `dist/` | What gets published: the three app files plus a minified `map_data.json`. Rebuilt by `flagkit build`, never edited. |
 | `flagkit.py` | Inspect and edit the dataset safely: every write recomputes counts and refuses to save if integrity breaks. |
 | `tests/test_flagkit.py` | Exercises every write command against a copy of the real data. No framework; run it directly. |
@@ -29,6 +32,30 @@ python3 -I flagkit.py build        # assemble dist/
 
 then publish `dist/index.html` with `style.css`, `app.js` and `map_data.json` as its files.
 Editing `dist/` directly is pointless — the next build overwrites it.
+
+## The atlas
+
+The **Atlas** tab plots where each design came from. Nothing about it needs a
+tile server or a map API: `tools/worldgen.py` pre-projects Natural Earth 110m
+outlines (public domain) into plate carree path data the page draws as SVG, so
+the land takes its colours from the page's own theme and works offline.
+
+Where a referent is *from* comes from Wikidata, in two passes, merged with the
+culture areas the dataset already carries:
+
+```bash
+python3 -I tools/geofetch.py     # the referent's own item: endemic to, country of origin, coordinates…
+python3 -I tools/geodeep.py      # one hop out: what it is an instance of, part of, or whose culture it is
+python3 -I tools/geobuild.py     # merge both with the families' own `rg` regions -> data/geo.json
+python3 -I tools/worldgen.py <countries-110m.json>   # only when the outlines change
+```
+
+Both passes query the Wikidata Query Service a few hundred articles at a time
+and cache in `tools/.geocache.json` / `tools/.geodeep.json`, so a stopped run
+continues. Roughly 935 of 3,890 referents land somewhere — a chandelier has no
+homeland, and the map says so by leaving it off rather than guessing. A pin
+placed by culture area is drawn dashed, because "Celtic & British Isles" is a
+region, not a coordinate.
 
 ## Checking the Wikipedia links
 
@@ -90,6 +117,8 @@ the referent count. It has caught several of my own mistakes; run it before publ
 
 ## Sources and licensing
 
+Map outlines are [Natural Earth](https://www.naturalearthdata.com) (public domain) and the
+origin geography is from [Wikidata](https://www.wikidata.org) (CC0).
 Origin text is from [Bulbapedia](https://bulbapedia.bulbagarden.net) (CC BY-NC-SA 2.5);
 species data and sprites are from [PokéAPI](https://pokeapi.co). Pokémon is © Nintendo /
 Creatures Inc. / GAME FREAK Inc. This is a non-commercial fan project — keep the repository

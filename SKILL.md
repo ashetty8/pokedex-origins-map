@@ -35,9 +35,11 @@ ArtifactData action=query url=<artifact> collection=corrections
   query={"where": [["status", "ne", "done"]], "limit": 50}
 ```
 
-Each doc: `targetType` (`referent` | `group` | `node` | `species`), `target`, `label`, `issue`,
-`suggestion`, `note`, `status`. `node` covers a category, branch, family or region — the page
-files all four under that one type.
+Each doc: `targetType` (`referent` | `group` | `node` | `species` | `place`), `target`, `label`,
+`issue`, `suggestion`, `note`, `status`. `node` covers a category, branch, family or region — the
+page files all four under that one type. `place` is a pin on the Atlas tab, and its target is the
+place name as `data/geo.json` spells it; those are fixed in `data/geo.json` (or in the pass that
+produced it), never in `map_data.json`.
 
 ### 2. Refresh the working copies if the session is new
 
@@ -61,7 +63,8 @@ python3 -I flagkit.py grep aspen             # find the real spelling
 - The numbers are wrong, something sits in the wrong family, two clusters should be one → **data**.
 - The number is right but the panel or the map does not show it → **page**. Find the code with
   `grep -n` in `app/app.js`; the render paths are `renderDetail` (side panel), `drawGraph`
-  (map), `groupNode`/`childrenOf` (what is openable), `render` (lists).
+  (map), `drawAtlas`/`atlasPlaces` (the Atlas tab), `groupNode`/`childrenOf` (what is openable),
+  `render` (lists).
 - A flag can be neither: Bulbapedia may simply say what the page says. Then reply, do not patch.
 
 ### 4. Fix
@@ -98,7 +101,8 @@ python3 -I tests/test_flagkit.py && python3 -I flagkit.py build
 ```
 Artifact url=<artifact> file_path=<this skill>/dist/index.html
          files={"style.css": ".../dist/style.css", "app.js": ".../dist/app.js",
-                "map_data.json": ".../dist/map_data.json"}
+                "map_data.json": ".../dist/map_data.json",
+                "world.json": ".../dist/world.json", "geo.json": ".../dist/geo.json"}
 ```
 
 Pass every file whose content changed; files left out keep their published version, which is

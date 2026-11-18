@@ -1,0 +1,3341 @@
+{
+"25 de abril bridge": {
+"lat": 38.69,
+"lon": -9.18,
+"place": "25 de Abril Bridge",
+"placeq": null,
+"via": "coordinates"
+},
+"abe no seimei": {
+"lat": 34.64,
+"lon": 135.52,
+"place": "Abeno-ku",
+"placeq": "Q489009",
+"via": "born in"
+},
+"accordion": {
+"lat": 43.3,
+"lon": -0.37,
+"place": "Pau",
+"placeq": "Q132671",
+"via": "indigenous to"
+},
+"adams mammoth": {
+"lat": 60.0,
+"lon": 105.0,
+"place": "Siberia",
+"placeq": "Q5428",
+"via": "found in"
+},
+"afghan hound": {
+"lat": 33.0,
+"lon": 66.0,
+"place": "Afghanistan",
+"placeq": "Q889",
+"via": "country of origin"
+},
+"ahuizotl": {
+"lat": 23.0,
+"lon": -102.0,
+"place": "Mexico",
+"placeq": "Q96",
+"via": "country"
+},
+"akaname": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"akaname (filth-licking yokai)": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"akaname/akashita (disease spirits)": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"alano espanol": {
+"lat": 40.2,
+"lon": -3.5,
+"place": "Spain",
+"placeq": "Q29",
+"via": "country of origin"
+},
+"albertosaurus": {
+"lat": 56.0,
+"lon": -109.0,
+"place": "Canada",
+"placeq": "Q16",
+"via": "found in"
+},
+"alligator snapping turtle": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "endemic to"
+},
+"allosaurus": {
+"lat": 38.7,
+"lon": -9.18,
+"place": "Portugal",
+"placeq": "Q45",
+"via": "found in"
+},
+"amargasaurus": {
+"lat": -34.0,
+"lon": -64.0,
+"place": "Argentina",
+"placeq": "Q414",
+"via": "found in"
+},
+"american alligator": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "endemic to"
+},
+"ankylosaurus": {
+"lat": 56.0,
+"lon": -109.0,
+"place": "Canada",
+"placeq": "Q16",
+"via": "found in"
+},
+"anthousai": {
+"lat": 38.5,
+"lon": 23.0,
+"place": "Greece",
+"placeq": "Q41",
+"via": "country"
+},
+"antikythera mechanism": {
+"lat": 35.86,
+"lon": 23.3,
+"place": "Antikythera mechanism",
+"placeq": null,
+"via": "coordinates"
+},
+"apatosaurus": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "found in"
+},
+"apep": {
+"lat": 29.8,
+"lon": 31.3,
+"place": "Ancient Egypt",
+"placeq": "Q11768",
+"via": "country of origin"
+},
+"apricorn": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country"
+},
+"archaeopteryx": {
+"lat": 51.0,
+"lon": 10.0,
+"place": "Germany",
+"placeq": "Q183",
+"via": "found in"
+},
+"area 51 and roswell lore": {
+"lat": 33.95,
+"lon": -105.31,
+"place": "Roswell incident",
+"placeq": null,
+"via": "coordinates"
+},
+"armadillo girdled lizard": {
+"lat": -29.0,
+"lon": 24.0,
+"place": "South Africa",
+"placeq": "Q258",
+"via": "endemic to"
+},
+"association football player": {
+"lat": 51.51,
+"lon": -0.13,
+"place": "United Kingdom of Great Britain and Ireland",
+"placeq": "Q174193",
+"via": "country of origin"
+},
+"australian kelpie": {
+"lat": -25.0,
+"lon": 133.0,
+"place": "Australia",
+"placeq": "Q408",
+"via": "country of origin"
+},
+"aye-aye": {
+"lat": -20.0,
+"lon": 47.0,
+"place": "Madagascar",
+"placeq": "Q1019",
+"via": "endemic to"
+},
+"bajiquan (hard style)": {
+"lat": 35.84,
+"lon": 103.45,
+"place": "People's Republic of China",
+"placeq": "Q148",
+"via": "country of origin"
+},
+"baku (dream eater)": {
+"lat": 40.37,
+"lon": 49.84,
+"place": "Baku",
+"placeq": null,
+"via": "coordinates"
+},
+"baku (dream-eating spirit)": {
+"lat": 40.37,
+"lon": 49.84,
+"place": "Baku",
+"placeq": null,
+"via": "coordinates"
+},
+"barong (balinese lion spirit)": {
+"lat": -2.0,
+"lon": 118.0,
+"place": "Indonesia",
+"placeq": "Q252",
+"via": "country"
+},
+"baryonyx": {
+"lat": 53.0,
+"lon": -1.0,
+"place": "England",
+"placeq": "Q21",
+"via": "found in"
+},
+"basque whaling": {
+"lat": 42.88,
+"lon": -1.94,
+"place": "Basque Country",
+"placeq": "Q47588",
+"via": "located at"
+},
+"beagle": {
+"lat": 54.6,
+"lon": -2.0,
+"place": "United Kingdom",
+"placeq": "Q145",
+"via": "country of origin"
+},
+"bearded vulture": {
+"lat": 27.5,
+"lon": 92.1,
+"place": "Sela Pass",
+"placeq": "Q7447387",
+"via": "endemic to"
+},
+"beigoma (shell spinning top)": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"belgian endive (chicory)": {
+"lat": 50.85,
+"lon": 4.37,
+"place": "Botanical Garden of Brussels",
+"placeq": "Q739334",
+"via": "found in"
+},
+"beret": {
+"lat": 40.2,
+"lon": -3.5,
+"place": "Spain",
+"placeq": "Q29",
+"via": "country of origin"
+},
+"bergstutz/stollwurm (burrowing dragon)": {
+"lat": 46.58,
+"lon": 8.62,
+"place": "Alps",
+"placeq": "Q1286",
+"via": "endemic to"
+},
+"bigfoot": {
+"lat": 47.0,
+"lon": -105.0,
+"place": "North America",
+"placeq": "Q49",
+"via": "endemic to"
+},
+"bikini": {
+"lat": 50.63,
+"lon": 3.06,
+"place": "Lille",
+"placeq": "Q648",
+"via": "made in"
+},
+"bison latifrons": {
+"lat": 17.55,
+"lon": -99.5,
+"place": "Chilpancingo de los Bravo",
+"placeq": "Q207935",
+"via": "found in"
+},
+"black iberian pig": {
+"lat": 38.7,
+"lon": -9.18,
+"place": "Portugal",
+"placeq": "Q45",
+"via": "country of origin"
+},
+"black lemur": {
+"lat": -20.0,
+"lon": 47.0,
+"place": "Madagascar",
+"placeq": "Q1019",
+"via": "endemic to"
+},
+"black-and-white ruffed lemur": {
+"lat": -20.0,
+"lon": 47.0,
+"place": "Madagascar",
+"placeq": "Q1019",
+"via": "endemic to"
+},
+"bodhidharma": {
+"lat": 12.83,
+"lon": 79.71,
+"place": "Kanchipuram",
+"placeq": "Q212332",
+"via": "born in"
+},
+"boggart": {
+"lat": 54.6,
+"lon": -2.0,
+"place": "United Kingdom",
+"placeq": "Q145",
+"via": "country"
+},
+"bonsai tree": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"bosozoku": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"bosozoku/yankee pompadour": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"boxer": {
+"lat": 53.0,
+"lon": -1.0,
+"place": "England",
+"placeq": "Q21",
+"via": "country of origin"
+},
+"boxing kangaroo": {
+"lat": -25.0,
+"lon": 133.0,
+"place": "Australia",
+"placeq": "Q408",
+"via": "country of origin"
+},
+"brachiosaurus": {
+"lat": 28.0,
+"lon": 1.0,
+"place": "Algeria",
+"placeq": "Q262",
+"via": "found in"
+},
+"brachytrachelopan": {
+"lat": -34.0,
+"lon": -64.0,
+"place": "Argentina",
+"placeq": "Q414",
+"via": "found in"
+},
+"braille": {
+"lat": 47.0,
+"lon": 2.0,
+"place": "France",
+"placeq": "Q142",
+"via": "country of origin"
+},
+"bread rolls": {
+"lat": 42.5,
+"lon": 12.5,
+"place": "Italy",
+"placeq": "Q38",
+"via": "country of origin"
+},
+"briard": {
+"lat": 47.0,
+"lon": 2.0,
+"place": "France",
+"placeq": "Q142",
+"via": "country of origin"
+},
+"brioche": {
+"lat": 47.0,
+"lon": 2.0,
+"place": "France",
+"placeq": "Q142",
+"via": "country of origin"
+},
+"british saddleback pig": {
+"lat": 54.6,
+"lon": -2.0,
+"place": "United Kingdom",
+"placeq": "Q145",
+"via": "country of origin"
+},
+"british shorthair cat": {
+"lat": 54.6,
+"lon": -2.0,
+"place": "United Kingdom",
+"placeq": "Q145",
+"via": "country of origin"
+},
+"brownie (british folklore)": {
+"lat": 54.6,
+"lon": -2.0,
+"place": "United Kingdom",
+"placeq": "Q145",
+"via": "country"
+},
+"bruce lee": {
+"lat": 37.8,
+"lon": -122.41,
+"place": "San Francisco Chinese Hospital",
+"placeq": "Q7413971",
+"via": "born in"
+},
+"bulgasari (korean iron-eating monster)": {
+"lat": 36.0,
+"lon": 128.0,
+"place": "South Korea",
+"placeq": "Q884",
+"via": "country of origin"
+},
+"bulldog": {
+"lat": 54.6,
+"lon": -2.0,
+"place": "United Kingdom",
+"placeq": "Q145",
+"via": "country of origin"
+},
+"cadejo": {
+"lat": 13.67,
+"lon": -88.87,
+"place": "El Salvador",
+"placeq": "Q792",
+"via": "country"
+},
+"calaca": {
+"lat": 23.0,
+"lon": -102.0,
+"place": "Mexico",
+"placeq": "Q96",
+"via": "country"
+},
+"calavera": {
+"lat": 23.0,
+"lon": -102.0,
+"place": "Mexico",
+"placeq": "Q96",
+"via": "country of origin"
+},
+"camarasaurus": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "found in"
+},
+"candy apple": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country of origin"
+},
+"cane corso": {
+"lat": 42.5,
+"lon": 12.5,
+"place": "Italy",
+"placeq": "Q38",
+"via": "country of origin"
+},
+"cape dwarf chameleon": {
+"lat": -34.0,
+"lon": 20.0,
+"place": "Western Cape",
+"placeq": "Q127167",
+"via": "endemic to"
+},
+"capoeirista": {
+"lat": -14.0,
+"lon": -53.0,
+"place": "Brazil",
+"placeq": "Q155",
+"via": "country of origin"
+},
+"captain ahab": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "citizen of"
+},
+"caramel apple": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country of origin"
+},
+"carcharodontosaurus": {
+"lat": 28.0,
+"lon": 1.0,
+"place": "Algeria",
+"placeq": "Q262",
+"via": "found in"
+},
+"carpet moth": {
+"lat": 23.77,
+"lon": 121.0,
+"place": "Taiwan Island",
+"placeq": "Q22502",
+"via": "endemic to"
+},
+"cat-sith": {
+"lat": 54.6,
+"lon": -2.0,
+"place": "United Kingdom",
+"placeq": "Q145",
+"via": "country"
+},
+"celtic pig": {
+"lat": 40.2,
+"lon": -3.5,
+"place": "Spain",
+"placeq": "Q29",
+"via": "country"
+},
+"challah": {
+"lat": 49.0,
+"lon": 31.0,
+"place": "Eastern Europe",
+"placeq": "Q27468",
+"via": "country of origin"
+},
+"changeling": {
+"lat": 53.5,
+"lon": 15.5,
+"place": "Europe",
+"placeq": "Q46",
+"via": "indigenous to"
+},
+"charging bull": {
+"lat": 40.71,
+"lon": -74.01,
+"place": "Charging Bull",
+"placeq": null,
+"via": "coordinates"
+},
+"chasmosaurus": {
+"lat": 56.0,
+"lon": -109.0,
+"place": "Canada",
+"placeq": "Q16",
+"via": "found in"
+},
+"chess king": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country"
+},
+"chinese dragon": {
+"lat": 35.0,
+"lon": 105.0,
+"place": "China",
+"placeq": "Q29520",
+"via": "country of origin"
+},
+"chonmage": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"claddagh ring": {
+"lat": 53.35,
+"lon": -7.92,
+"place": "Ireland",
+"placeq": "Q22890",
+"via": "indigenous to"
+},
+"claymore": {
+"lat": 57.0,
+"lon": -5.0,
+"place": "Scotland",
+"placeq": "Q22",
+"via": "country of origin"
+},
+"cleopatra": {
+"lat": 31.2,
+"lon": 29.89,
+"place": "Alexandria",
+"placeq": "Q87",
+"via": "born in"
+},
+"clydesdale": {
+"lat": 57.0,
+"lon": -5.0,
+"place": "Scotland",
+"placeq": "Q22",
+"via": "country of origin"
+},
+"cochin chicken": {
+"lat": 35.84,
+"lon": 103.45,
+"place": "People's Republic of China",
+"placeq": "Q148",
+"via": "country of origin"
+},
+"cockatiel": {
+"lat": -25.0,
+"lon": 133.0,
+"place": "Australia",
+"placeq": "Q408",
+"via": "endemic to"
+},
+"cocollona": {
+"lat": 41.98,
+"lon": 2.82,
+"place": "Girona",
+"placeq": "Q7038",
+"via": "located at"
+},
+"coelophysis": {
+"lat": -29.0,
+"lon": 24.0,
+"place": "South Africa",
+"placeq": "Q258",
+"via": "found in"
+},
+"common brushtail possum": {
+"lat": -25.0,
+"lon": 133.0,
+"place": "Australia",
+"placeq": "Q408",
+"via": "endemic to"
+},
+"common swift": {
+"lat": 27.65,
+"lon": 96.11,
+"place": "Namdapha National Park",
+"placeq": "Q1815612",
+"via": "endemic to"
+},
+"concavenator": {
+"lat": 40.2,
+"lon": -3.5,
+"place": "Spain",
+"placeq": "Q29",
+"via": "found in"
+},
+"copper pheasant": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "endemic to"
+},
+"correfoc": {
+"lat": 40.57,
+"lon": 0.65,
+"place": "Catalan countries",
+"placeq": "Q234963",
+"via": "country of origin"
+},
+"cotton candy (fairy floss)": {
+"lat": -6.75,
+"lon": 107.5,
+"place": "West Java",
+"placeq": "Q3724",
+"via": "located at"
+},
+"cream puff": {
+"lat": 47.0,
+"lon": 2.0,
+"place": "France",
+"placeq": "Q142",
+"via": "country of origin"
+},
+"cricket": {
+"lat": 53.0,
+"lon": -1.0,
+"place": "England",
+"placeq": "Q21",
+"via": "country of origin"
+},
+"crystal onix (anime)": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"cupcake": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country of origin"
+},
+"curling stone": {
+"lat": 57.0,
+"lon": -5.0,
+"place": "Scotland",
+"placeq": "Q22",
+"via": "country of origin"
+},
+"curse of the pharaohs": {
+"lat": 25.75,
+"lon": 32.61,
+"place": "Curse of the pharaohs",
+"placeq": null,
+"via": "coordinates"
+},
+"curupira": {
+"lat": -14.0,
+"lon": -53.0,
+"place": "Brazil",
+"placeq": "Q155",
+"via": "country"
+},
+"custard": {
+"lat": 49.0,
+"lon": 32.0,
+"place": "Ukraine",
+"placeq": "Q212",
+"via": "country of origin"
+},
+"cymbal-banging monkey toy": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"dachshund": {
+"lat": 51.0,
+"lon": 10.0,
+"place": "Germany",
+"placeq": "Q183",
+"via": "country of origin"
+},
+"daifuku": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"daimyo": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"daspletosaurus": {
+"lat": 56.0,
+"lon": -109.0,
+"place": "Canada",
+"placeq": "Q16",
+"via": "found in"
+},
+"deer stone": {
+"lat": 47.75,
+"lon": 101.37,
+"place": "Deer stones culture",
+"placeq": null,
+"via": "coordinates"
+},
+"devon rex cat": {
+"lat": 53.0,
+"lon": -1.0,
+"place": "England",
+"placeq": "Q21",
+"via": "country of origin"
+},
+"diamondback terrapin": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "endemic to"
+},
+"dilophosaurus": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "found in"
+},
+"dimetrodon": {
+"lat": 33.61,
+"lon": -98.69,
+"place": "Red Beds of Texas and Oklahoma",
+"placeq": "Q7303735",
+"via": "found in"
+},
+"diplocaulus": {
+"lat": 40.12,
+"lon": -87.63,
+"place": "Danville",
+"placeq": "Q577334",
+"via": "found in"
+},
+"dobermann": {
+"lat": 51.0,
+"lon": 10.0,
+"place": "Germany",
+"placeq": "Q183",
+"via": "country of origin"
+},
+"dodo": {
+"lat": -20.3,
+"lon": 57.58,
+"place": "Mauritius Island",
+"placeq": "Q2656389",
+"via": "endemic to"
+},
+"dorodango (polished mud ball)": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"dorotabo (yokai)": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"dr jekyll and mr hyde": {
+"lat": 54.6,
+"lon": -2.0,
+"place": "United Kingdom",
+"placeq": "Q145",
+"via": "country of origin"
+},
+"dracula": {
+"lat": 51.51,
+"lon": -0.13,
+"place": "United Kingdom of Great Britain and Ireland",
+"placeq": "Q174193",
+"via": "country of origin"
+},
+"dragon": {
+"lat": 53.5,
+"lon": 15.5,
+"place": "Europe",
+"placeq": "Q46",
+"via": "indigenous to"
+},
+"dragon (tatsu-no-otoshigo myth)": {
+"lat": 53.5,
+"lon": 15.5,
+"place": "Europe",
+"placeq": "Q46",
+"via": "indigenous to"
+},
+"dromaeosaurus": {
+"lat": 56.0,
+"lon": -109.0,
+"place": "Canada",
+"placeq": "Q16",
+"via": "found in"
+},
+"drunken boxing": {
+"lat": 35.84,
+"lon": 103.45,
+"place": "People's Republic of China",
+"placeq": "Q148",
+"via": "country of origin"
+},
+"duroc pig": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country of origin"
+},
+"dutch cap": {
+"lat": 52.32,
+"lon": 5.55,
+"place": "Netherlands",
+"placeq": "Q55",
+"via": "country of origin"
+},
+"easter bunny and easter eggs": {
+"lat": 50.0,
+"lon": 10.0,
+"place": "Holy Roman Empire",
+"placeq": "Q12548",
+"via": "country"
+},
+"egg (tamago) or herring roe (kazunoko) nigiri": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"elasmosaurus": {
+"lat": 44.4,
+"lon": -100.41,
+"place": "Pierre Shale",
+"placeq": "Q7192447",
+"via": "found in"
+},
+"elderly woman": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country of origin"
+},
+"electric guitar": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country of origin"
+},
+"elephant bird": {
+"lat": -20.0,
+"lon": 47.0,
+"place": "Madagascar",
+"placeq": "Q1019",
+"via": "endemic to"
+},
+"elvis presley": {
+"lat": 34.26,
+"lon": -88.7,
+"place": "Tupelo",
+"placeq": "Q667727",
+"via": "born in"
+},
+"emu": {
+"lat": -25.0,
+"lon": 133.0,
+"place": "Australia",
+"placeq": "Q408",
+"via": "endemic to"
+},
+"english foxhound": {
+"lat": 53.0,
+"lon": -1.0,
+"place": "England",
+"placeq": "Q21",
+"via": "country of origin"
+},
+"ensaimada": {
+"lat": 39.62,
+"lon": 2.98,
+"place": "Mallorca",
+"placeq": "Q8828",
+"via": "indigenous to"
+},
+"eremotherium": {
+"lat": -20.25,
+"lon": -40.25,
+"place": "Esp\u00edrito Santo",
+"placeq": "Q43233",
+"via": "found in"
+},
+"eton mess": {
+"lat": 54.6,
+"lon": -2.0,
+"place": "United Kingdom",
+"placeq": "Q145",
+"via": "country of origin"
+},
+"eucladoceros": {
+"lat": 53.5,
+"lon": 15.5,
+"place": "Europe",
+"placeq": "Q46",
+"via": "found in"
+},
+"eurasian eagle-owl": {
+"lat": 27.65,
+"lon": 96.11,
+"place": "Namdapha National Park",
+"placeq": "Q1815612",
+"via": "endemic to"
+},
+"eurasian red squirrel": {
+"lat": 53.5,
+"lon": 15.5,
+"place": "Europe",
+"placeq": "Q46",
+"via": "indigenous to"
+},
+"eurasian teal": {
+"lat": 26.67,
+"lon": 93.35,
+"place": "Kaziranga National Park",
+"placeq": "Q192764",
+"via": "endemic to"
+},
+"excalibur": {
+"lat": 52.35,
+"lon": -3.63,
+"place": "Wales",
+"placeq": "Q25",
+"via": "country of origin"
+},
+"eye of horus": {
+"lat": 29.8,
+"lon": 31.3,
+"place": "Ancient Egypt",
+"placeq": "Q11768",
+"via": "country of origin"
+},
+"fat-tailed dunnart": {
+"lat": -25.0,
+"lon": 133.0,
+"place": "Australia",
+"placeq": "Q408",
+"via": "endemic to"
+},
+"feathertail glider": {
+"lat": -25.0,
+"lon": 133.0,
+"place": "Australia",
+"placeq": "Q408",
+"via": "endemic to"
+},
+"fenghuang": {
+"lat": 35.84,
+"lon": 103.45,
+"place": "People's Republic of China",
+"placeq": "Q148",
+"via": "country"
+},
+"flame robin": {
+"lat": -25.0,
+"lon": 133.0,
+"place": "Australia",
+"placeq": "Q408",
+"via": "endemic to"
+},
+"flamenco dancer": {
+"lat": 40.2,
+"lon": -3.5,
+"place": "Spain",
+"placeq": "Q29",
+"via": "country of origin"
+},
+"flatwoods monster": {
+"lat": 38.72,
+"lon": -80.65,
+"place": "Flatwoods monster",
+"placeq": null,
+"via": "coordinates"
+},
+"flying head (iroquois legend)": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country"
+},
+"football (soccer ball)": {
+"lat": 51.51,
+"lon": -0.13,
+"place": "United Kingdom of Great Britain and Ireland",
+"placeq": "Q174193",
+"via": "country of origin"
+},
+"forest red gum": {
+"lat": -25.0,
+"lon": 133.0,
+"place": "Australia",
+"placeq": "Q408",
+"via": "endemic to"
+},
+"foxfire": {
+"lat": 65.0,
+"lon": 27.0,
+"place": "Finland",
+"placeq": "Q33",
+"via": "country"
+},
+"french tricolour": {
+"lat": 47.0,
+"lon": 2.0,
+"place": "France",
+"placeq": "Q142",
+"via": "country"
+},
+"friesian horse": {
+"lat": 52.32,
+"lon": 5.55,
+"place": "Netherlands",
+"placeq": "Q55",
+"via": "country of origin"
+},
+"geisha": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"german shepherd": {
+"lat": 51.0,
+"lon": 10.0,
+"place": "Germany",
+"placeq": "Q183",
+"via": "country of origin"
+},
+"ghost bat": {
+"lat": -25.0,
+"lon": 133.0,
+"place": "Australia",
+"placeq": "Q408",
+"via": "endemic to"
+},
+"giant earthworm": {
+"lat": -25.0,
+"lon": 133.0,
+"place": "Australia",
+"placeq": "Q408",
+"via": "endemic to"
+},
+"gigantopithecus": {
+"lat": 24.66,
+"lon": 109.24,
+"place": "Liucheng County",
+"placeq": "Q944242",
+"via": "found in"
+},
+"gladiator": {
+"lat": 41.89,
+"lon": 12.48,
+"place": "Ancient Rome",
+"placeq": "Q1747689",
+"via": "country"
+},
+"glyptodon": {
+"lat": -33.0,
+"lon": -56.0,
+"place": "Uruguay",
+"placeq": "Q77",
+"via": "found in"
+},
+"godzilla (1954)": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"golden hamster": {
+"lat": 35.22,
+"lon": 38.58,
+"place": "Syria",
+"placeq": "Q858",
+"via": "endemic to"
+},
+"golden snub-nosed monkey": {
+"lat": 35.84,
+"lon": 103.45,
+"place": "People's Republic of China",
+"placeq": "Q148",
+"via": "endemic to"
+},
+"golem": {
+"lat": 50.09,
+"lon": 14.42,
+"place": "Kingdom of Bohemia",
+"placeq": "Q42585",
+"via": "country"
+},
+"golem of hebrew legend": {
+"lat": 50.09,
+"lon": 14.42,
+"place": "Kingdom of Bohemia",
+"placeq": "Q42585",
+"via": "country"
+},
+"golem of prague": {
+"lat": 50.09,
+"lon": 14.42,
+"place": "Kingdom of Bohemia",
+"placeq": "Q42585",
+"via": "country"
+},
+"goliath heron": {
+"lat": 21.75,
+"lon": 88.75,
+"place": "Sundarbans National Park",
+"placeq": "Q532440",
+"via": "endemic to"
+},
+"gong": {
+"lat": -2.0,
+"lon": 118.0,
+"place": "Indonesia",
+"placeq": "Q252",
+"via": "country of origin"
+},
+"gorgosaurus": {
+"lat": 56.0,
+"lon": -109.0,
+"place": "Canada",
+"placeq": "Q16",
+"via": "found in"
+},
+"great auk": {
+"lat": 47.0,
+"lon": -33.0,
+"place": "North Atlantic Ocean",
+"placeq": "Q350134",
+"via": "found in"
+},
+"great hornbill": {
+"lat": 26.67,
+"lon": 93.35,
+"place": "Kaziranga National Park",
+"placeq": "Q192764",
+"via": "endemic to"
+},
+"great sphinx of giza and the orion correlation theory": {
+"lat": 29.98,
+"lon": 31.14,
+"place": "Great Sphinx of Giza",
+"placeq": null,
+"via": "coordinates"
+},
+"great tit": {
+"lat": 26.65,
+"lon": 89.58,
+"place": "Buxa Tiger Reserve",
+"placeq": "Q2340037",
+"via": "endemic to"
+},
+"greyhound": {
+"lat": 54.6,
+"lon": -2.0,
+"place": "United Kingdom",
+"placeq": "Q145",
+"via": "country of origin"
+},
+"guadiana international bridge": {
+"lat": 37.24,
+"lon": -7.42,
+"place": "Guadiana International Bridge",
+"placeq": null,
+"via": "coordinates"
+},
+"hadrosaur": {
+"lat": 79.24,
+"lon": -92.37,
+"place": "Kanguk Formation",
+"placeq": "Q6362912",
+"via": "found in"
+},
+"hadrosaur crest (saurolophus)": {
+"lat": 56.0,
+"lon": -109.0,
+"place": "Canada",
+"placeq": "Q16",
+"via": "found in"
+},
+"hand fan": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"happy-face spider": {
+"lat": 21.5,
+"lon": -158.0,
+"place": "Hawaii",
+"placeq": "Q782",
+"via": "endemic to"
+},
+"haradashi yokai": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"harlequin": {
+"lat": 42.5,
+"lon": 12.5,
+"place": "Italy",
+"placeq": "Q38",
+"via": "country of origin"
+},
+"hawaiian happy-face spider": {
+"lat": 21.5,
+"lon": -158.0,
+"place": "Hawaii",
+"placeq": "Q782",
+"via": "endemic to"
+},
+"hawaiian hoary bat": {
+"lat": 21.5,
+"lon": -158.0,
+"place": "Hawaii",
+"placeq": "Q782",
+"via": "endemic to"
+},
+"hawaiian poi dog": {
+"lat": 20.99,
+"lon": -157.86,
+"place": "Kingdom of Hawai\u02bbi",
+"placeq": "Q156418",
+"via": "country of origin"
+},
+"heterodontosaurus": {
+"lat": -29.55,
+"lon": 28.25,
+"place": "Lesotho",
+"placeq": "Q1013",
+"via": "found in"
+},
+"hieroglyphs": {
+"lat": 29.8,
+"lon": 31.3,
+"place": "Ancient Egypt",
+"placeq": "Q11768",
+"via": "located at"
+},
+"highland cattle": {
+"lat": 57.0,
+"lon": -5.0,
+"place": "Scotland",
+"placeq": "Q22",
+"via": "country of origin"
+},
+"himalayan cat": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country of origin"
+},
+"hip hop subculture": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country of origin"
+},
+"hiroyuki ebihara (boxer)": {
+"lat": 35.74,
+"lon": 139.33,
+"place": "Fussa",
+"placeq": "Q317813",
+"via": "born in"
+},
+"hopkinsville goblin (alleged alien encounter)": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country"
+},
+"hornpipe": {
+"lat": 53.0,
+"lon": -8.0,
+"place": "Ireland",
+"placeq": "Q27",
+"via": "country of origin"
+},
+"i'iwi": {
+"lat": 21.5,
+"lon": -158.0,
+"place": "Hawaii",
+"placeq": "Q782",
+"via": "endemic to"
+},
+"iaido": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"iberian lynx": {
+"lat": 40.24,
+"lon": -4.24,
+"place": "Iberian Peninsula",
+"placeq": "Q12837",
+"via": "endemic to"
+},
+"ice cream cone": {
+"lat": 42.5,
+"lon": 12.5,
+"place": "Italy",
+"placeq": "Q38",
+"via": "country of origin"
+},
+"ice skater": {
+"lat": 65.0,
+"lon": 27.0,
+"place": "Finland",
+"placeq": "Q33",
+"via": "country"
+},
+"inkanyamba": {
+"lat": -29.0,
+"lon": 24.0,
+"place": "South Africa",
+"placeq": "Q258",
+"via": "country"
+},
+"invasive species in hawaii": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country"
+},
+"iron age": {
+"lat": 28.0,
+"lon": 45.0,
+"place": "Middle East",
+"placeq": "Q7204",
+"via": "located at"
+},
+"issun-boshi": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"jacob sheep": {
+"lat": 54.6,
+"lon": -2.0,
+"place": "United Kingdom",
+"placeq": "Q145",
+"via": "country of origin"
+},
+"james webb space telescope": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country of origin"
+},
+"japanese akita": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"japanese badger": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "endemic to"
+},
+"japanese idol": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"japanese macaque": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "endemic to"
+},
+"jinmenju (human-head tree)": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"judoka": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"kakapo": {
+"lat": -41.2,
+"lon": 174.0,
+"place": "New Zealand",
+"placeq": "Q664",
+"via": "endemic to"
+},
+"kamen rider": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"kangaroo": {
+"lat": -26.0,
+"lon": 141.0,
+"place": "Australian continent",
+"placeq": "Q3960",
+"via": "endemic to"
+},
+"karakuri puppet": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"karateka": {
+"lat": 26.2,
+"lon": 127.68,
+"place": "Ryukyu Kingdom",
+"placeq": "Q28025",
+"via": "country of origin"
+},
+"kasa (japanese wide-brimmed hat)": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"katana": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"kenzan (ikebana pin holder)": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"kibi dango (millet mochi)": {
+"lat": 34.66,
+"lon": 133.92,
+"place": "Okayama",
+"placeq": "Q200078",
+"via": "indigenous to"
+},
+"kickboxing": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"kimono": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"king of saxony bird-of-paradise": {
+"lat": -5.0,
+"lon": 140.0,
+"place": "New Guinea",
+"placeq": "Q40285",
+"via": "endemic to"
+},
+"kinko (golden kitsune)": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country"
+},
+"kinnikuman": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"kintaro": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "citizen of"
+},
+"kirin (chinese unicorn)": {
+"lat": 35.84,
+"lon": 103.45,
+"place": "People's Republic of China",
+"placeq": "Q148",
+"via": "country"
+},
+"kitsune": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"kiwi": {
+"lat": -41.2,
+"lon": 174.0,
+"place": "New Zealand",
+"placeq": "Q664",
+"via": "endemic to"
+},
+"koala": {
+"lat": -25.0,
+"lon": 133.0,
+"place": "Australia",
+"placeq": "Q408",
+"via": "endemic to"
+},
+"kodama (tree spirit)": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"koinobori": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"koinobori (carp streamer)": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"kokeshi doll": {
+"lat": 38.9,
+"lon": 140.67,
+"place": "T\u014dhoku region",
+"placeq": "Q129465",
+"via": "indigenous to"
+},
+"komainu": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"komondor": {
+"lat": 47.0,
+"lon": 19.0,
+"place": "Hungary",
+"placeq": "Q28",
+"via": "country of origin"
+},
+"konaki-jiji (yokai)": {
+"lat": 34.07,
+"lon": 134.56,
+"place": "Tokushima Prefecture",
+"placeq": "Q160734",
+"via": "indigenous to"
+},
+"kusanagi (sacred sword)": {
+"lat": 35.43,
+"lon": 133.1,
+"place": "Izumo Province",
+"placeq": "Q582846",
+"via": "found in"
+},
+"kyubi no kitsune": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"la calavera catrina": {
+"lat": 23.0,
+"lon": -102.0,
+"place": "Mexico",
+"placeq": "Q96",
+"via": "country"
+},
+"latin alphabet letters": {
+"lat": 42.5,
+"lon": 12.5,
+"place": "Italy",
+"placeq": "Q38",
+"via": "country"
+},
+"leaf-tailed gecko": {
+"lat": -20.0,
+"lon": 47.0,
+"place": "Madagascar",
+"placeq": "Q1019",
+"via": "endemic to"
+},
+"leafy seadragon": {
+"lat": -25.0,
+"lon": 133.0,
+"place": "Australia",
+"placeq": "Q408",
+"via": "endemic to"
+},
+"lernaean hydra": {
+"lat": 38.5,
+"lon": 23.0,
+"place": "Ancient Greece",
+"placeq": "Q11772",
+"via": "country"
+},
+"lightning bird": {
+"lat": -29.0,
+"lon": 24.0,
+"place": "South Africa",
+"placeq": "Q258",
+"via": "country"
+},
+"loch ness monster": {
+"lat": 57.21,
+"lon": -4.57,
+"place": "Loch Ness Monster",
+"placeq": null,
+"via": "coordinates"
+},
+"lolita fashion": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"lonesome george": {
+"lat": 0.58,
+"lon": -90.75,
+"place": "Pinta Island",
+"placeq": "Q1064098",
+"via": "born in"
+},
+"lou carcolh (french folklore)": {
+"lat": 43.53,
+"lon": -1.15,
+"place": "Hastingues",
+"placeq": "Q1008195",
+"via": "located at"
+},
+"luchador": {
+"lat": 23.0,
+"lon": -102.0,
+"place": "Mexico",
+"placeq": "Q96",
+"via": "country"
+},
+"luchador mask": {
+"lat": 23.0,
+"lon": -102.0,
+"place": "Mexico",
+"placeq": "Q96",
+"via": "country"
+},
+"maine coon": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country of origin"
+},
+"mammoth": {
+"lat": 56.0,
+"lon": -109.0,
+"place": "Canada",
+"placeq": "Q16",
+"via": "found in"
+},
+"mana": {
+"lat": -16.85,
+"lon": 148.41,
+"place": "Polynesia",
+"placeq": "Q35942",
+"via": "country of origin"
+},
+"maneki-neko (lucky cat)": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"mapinguari": {
+"lat": -3.16,
+"lon": -60.03,
+"place": "Amazon rainforest",
+"placeq": "Q177567",
+"via": "endemic to"
+},
+"mariachi": {
+"lat": 23.0,
+"lon": -102.0,
+"place": "Mexico",
+"placeq": "Q96",
+"via": "country of origin"
+},
+"marimba": {
+"lat": 23.0,
+"lon": -102.0,
+"place": "Mexico",
+"placeq": "Q96",
+"via": "country of origin"
+},
+"mastodon": {
+"lat": 47.0,
+"lon": -105.0,
+"place": "North America",
+"placeq": "Q49",
+"via": "found in"
+},
+"mauna kea": {
+"lat": 19.82,
+"lon": -155.47,
+"place": "Mauna Kea",
+"placeq": null,
+"via": "coordinates"
+},
+"megatherium": {
+"lat": -21.0,
+"lon": -59.0,
+"place": "South America",
+"placeq": "Q18",
+"via": "found in"
+},
+"meiolania": {
+"lat": -16.63,
+"lon": 168.02,
+"place": "Vanuatu",
+"placeq": "Q686",
+"via": "found in"
+},
+"merlion": {
+"lat": 1.29,
+"lon": 103.85,
+"place": "Merlion",
+"placeq": null,
+"via": "coordinates"
+},
+"microraptor": {
+"lat": 35.84,
+"lon": 103.45,
+"place": "People's Republic of China",
+"placeq": "Q148",
+"via": "found in"
+},
+"mille-feuille": {
+"lat": 47.0,
+"lon": 2.0,
+"place": "France",
+"placeq": "Q142",
+"via": "country of origin"
+},
+"moa": {
+"lat": -41.2,
+"lon": 174.0,
+"place": "New Zealand",
+"placeq": "Q664",
+"via": "endemic to"
+},
+"mokele-mbembe": {
+"lat": 0.0,
+"lon": 22.0,
+"place": "Congo Basin",
+"placeq": "Q932289",
+"via": "endemic to"
+},
+"mole lizard": {
+"lat": 28.0,
+"lon": -113.5,
+"place": "Baja California peninsula",
+"placeq": "Q178543",
+"via": "endemic to"
+},
+"mollete de antequera": {
+"lat": 40.2,
+"lon": -3.5,
+"place": "Spain",
+"placeq": "Q29",
+"via": "country of origin"
+},
+"momotaro": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "citizen of"
+},
+"mongolian death worm": {
+"lat": 42.5,
+"lon": 103.0,
+"place": "Gobi Desert",
+"placeq": "Q42070",
+"via": "endemic to"
+},
+"monkey kung fu": {
+"lat": 35.84,
+"lon": 103.45,
+"place": "People's Republic of China",
+"placeq": "Q148",
+"via": "country of origin"
+},
+"morning star": {
+"lat": 51.0,
+"lon": 4.5,
+"place": "Flanders",
+"placeq": "Q234",
+"via": "country of origin"
+},
+"mothman": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country"
+},
+"muay thai": {
+"lat": 14.0,
+"lon": 101.0,
+"place": "Thailand",
+"placeq": "Q869",
+"via": "country of origin"
+},
+"munchkin cat": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country of origin"
+},
+"namahage": {
+"lat": 39.92,
+"lon": 139.78,
+"place": "Oga Peninsula",
+"placeq": "Q1132109",
+"via": "indigenous to"
+},
+"napoleon bonaparte": {
+"lat": 41.93,
+"lon": 8.74,
+"place": "Ajaccio",
+"placeq": "Q40104",
+"via": "born in"
+},
+"nazca lines": {
+"lat": -14.7,
+"lon": -75.14,
+"place": "Nazca lines",
+"placeq": null,
+"via": "coordinates"
+},
+"nazca lines (bird figures)": {
+"lat": -14.7,
+"lon": -75.14,
+"place": "Nazca lines",
+"placeq": null,
+"via": "coordinates"
+},
+"nekomata": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"newton's apple": {
+"lat": 52.81,
+"lon": -0.63,
+"place": "Woolsthorpe Manor",
+"placeq": "Q3316008",
+"via": "born in"
+},
+"nidhoggr": {
+"lat": 64.0,
+"lon": 13.0,
+"place": "Nordic countries",
+"placeq": "Q52062",
+"via": "country of origin"
+},
+"nigiri sushi": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "indigenous to"
+},
+"ningen (antarctic cryptid)": {
+"lat": -90.0,
+"lon": 0.0,
+"place": "Antarctica",
+"placeq": "Q51",
+"via": "endemic to"
+},
+"ninja": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"northern lapwing": {
+"lat": 26.75,
+"lon": 88.59,
+"place": "Gajoldoba",
+"placeq": "Q97273801",
+"via": "endemic to"
+},
+"norwegian forest cat": {
+"lat": 59.93,
+"lon": 10.68,
+"place": "Norway",
+"placeq": "Q20",
+"via": "country of origin"
+},
+"nukekubi": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"nukekubi (flying severed head)": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"nurikabe (wall yokai)": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"nutcracker doll": {
+"lat": 50.5,
+"lon": 13.0,
+"place": "Ore Mountains",
+"placeq": "Q4198",
+"via": "indigenous to"
+},
+"nymph": {
+"lat": 38.5,
+"lon": 23.0,
+"place": "Greece",
+"placeq": "Q41",
+"via": "country"
+},
+"okuri-inu": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"onibi": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"onigiri": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"onikuma (demon bear)": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"opera singer": {
+"lat": 53.5,
+"lon": 15.5,
+"place": "Europe",
+"placeq": "Q46",
+"via": "country of origin"
+},
+"oriental shorthair": {
+"lat": 53.0,
+"lon": -1.0,
+"place": "England",
+"placeq": "Q21",
+"via": "country of origin"
+},
+"origami": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"osborne bull": {
+"lat": 40.2,
+"lon": -3.5,
+"place": "Spain",
+"placeq": "Q29",
+"via": "country"
+},
+"ouni (hairy demon)": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"ouranosaurus": {
+"lat": 17.0,
+"lon": 10.0,
+"place": "Niger",
+"placeq": "Q1032",
+"via": "found in"
+},
+"oviraptor": {
+"lat": 46.0,
+"lon": 105.0,
+"place": "Mongolia",
+"placeq": "Q711",
+"via": "found in"
+},
+"pachycephalosaurus": {
+"lat": 56.0,
+"lon": -109.0,
+"place": "Canada",
+"placeq": "Q16",
+"via": "found in"
+},
+"padron pepper": {
+"lat": 40.2,
+"lon": -3.5,
+"place": "Spain",
+"placeq": "Q29",
+"via": "country of origin"
+},
+"panda": {
+"lat": 35.84,
+"lon": 103.45,
+"place": "People's Republic of China",
+"placeq": "Q148",
+"via": "endemic to"
+},
+"pantomime": {
+"lat": 54.6,
+"lon": -2.0,
+"place": "United Kingdom",
+"placeq": "Q145",
+"via": "country of origin"
+},
+"parasaurolophus": {
+"lat": 56.0,
+"lon": -109.0,
+"place": "Canada",
+"placeq": "Q16",
+"via": "found in"
+},
+"peaches of immortality": {
+"lat": 35.0,
+"lon": 105.0,
+"place": "China",
+"placeq": "Q29520",
+"via": "country of origin"
+},
+"pekin duck": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country of origin"
+},
+"pele (hawaiian volcano goddess)": {
+"lat": -21.69,
+"lon": -45.26,
+"place": "Tr\u00eas Cora\u00e7\u00f5es",
+"placeq": "Q1439211",
+"via": "born in"
+},
+"peng (giant chinese bird)": {
+"lat": 35.84,
+"lon": 103.45,
+"place": "People's Republic of China",
+"placeq": "Q148",
+"via": "country"
+},
+"peregrine falcon": {
+"lat": -2.0,
+"lon": 118.0,
+"place": "Indonesia",
+"placeq": "Q252",
+"via": "endemic to"
+},
+"permafrost": {
+"lat": 56.0,
+"lon": -109.0,
+"place": "Canada",
+"placeq": "Q16",
+"via": "country"
+},
+"persian cat": {
+"lat": 32.0,
+"lon": 53.0,
+"place": "Iran",
+"placeq": "Q794",
+"via": "country of origin"
+},
+"phoenix": {
+"lat": 38.5,
+"lon": 23.0,
+"place": "Ancient Greece",
+"placeq": "Q11772",
+"via": "country"
+},
+"pinocchio": {
+"lat": 43.77,
+"lon": 11.25,
+"place": "Florence",
+"placeq": "Q2044",
+"via": "made in"
+},
+"pipe organ": {
+"lat": 38.5,
+"lon": 23.0,
+"place": "Ancient Greece",
+"placeq": "Q11772",
+"via": "country of origin"
+},
+"pixie": {
+"lat": 54.6,
+"lon": -2.0,
+"place": "United Kingdom",
+"placeq": "Q145",
+"via": "country"
+},
+"plague doctor's mask": {
+"lat": 45.44,
+"lon": 12.33,
+"place": "Carnival of Venice",
+"placeq": null,
+"via": "coordinates"
+},
+"plateosaurus": {
+"lat": 47.0,
+"lon": 2.0,
+"place": "France",
+"placeq": "Q142",
+"via": "found in"
+},
+"platypus": {
+"lat": -25.0,
+"lon": 133.0,
+"place": "Australia",
+"placeq": "Q408",
+"via": "endemic to"
+},
+"pretzel": {
+"lat": 51.0,
+"lon": 10.0,
+"place": "Germany",
+"placeq": "Q183",
+"via": "country of origin"
+},
+"proboscis monkey": {
+"lat": -1.0,
+"lon": 114.0,
+"place": "Borneo",
+"placeq": "Q36117",
+"via": "endemic to"
+},
+"procoptodon": {
+"lat": -32.0,
+"lon": 147.0,
+"place": "New South Wales",
+"placeq": "Q3224",
+"via": "found in"
+},
+"professional wrestler": {
+"lat": 56.0,
+"lon": -109.0,
+"place": "Canada",
+"placeq": "Q16",
+"via": "country"
+},
+"protarchaeopteryx": {
+"lat": 35.84,
+"lon": 103.45,
+"place": "People's Republic of China",
+"placeq": "Q148",
+"via": "found in"
+},
+"protoceratops": {
+"lat": 35.84,
+"lon": 103.45,
+"place": "People's Republic of China",
+"placeq": "Q148",
+"via": "found in"
+},
+"protostega": {
+"lat": 32.28,
+"lon": -86.42,
+"place": "Mooreville Chalk Formation",
+"placeq": "Q6908372",
+"via": "found in"
+},
+"pulgasari (korean iron-eating monster)": {
+"lat": 40.0,
+"lon": 127.0,
+"place": "North Korea",
+"placeq": "Q423",
+"via": "country of origin"
+},
+"punk rock": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country of origin"
+},
+"pyramids of guimar": {
+"lat": 28.32,
+"lon": -16.41,
+"place": "Pyramids of G\u00fc\u00edmar",
+"placeq": null,
+"via": "coordinates"
+},
+"qilin": {
+"lat": 35.84,
+"lon": 103.45,
+"place": "People's Republic of China",
+"placeq": "Q148",
+"via": "country"
+},
+"queen charlotte of mecklenburg-strelitz": {
+"lat": 53.27,
+"lon": 12.8,
+"place": "Mirow",
+"placeq": "Q20320",
+"via": "born in"
+},
+"quetzalcoatl": {
+"lat": 16.0,
+"lon": -93.0,
+"place": "Mesoamerica",
+"placeq": "Q13703",
+"via": "country of origin"
+},
+"rafflesia arnoldii": {
+"lat": -0.3,
+"lon": 101.27,
+"place": "Sumatra",
+"placeq": "Q3492",
+"via": "endemic to"
+},
+"rafflesia hasseltii": {
+"lat": -0.3,
+"lon": 101.27,
+"place": "Sumatra",
+"placeq": "Q3492",
+"via": "endemic to"
+},
+"rakali": {
+"lat": -42.0,
+"lon": 147.0,
+"place": "Tasmania",
+"placeq": "Q34366",
+"via": "endemic to"
+},
+"red squirrel": {
+"lat": 53.5,
+"lon": 15.5,
+"place": "Europe",
+"placeq": "Q46",
+"via": "indigenous to"
+},
+"red-tailed black cockatoo": {
+"lat": -25.0,
+"lon": 133.0,
+"place": "Australia",
+"placeq": "Q408",
+"via": "endemic to"
+},
+"rhyton": {
+"lat": 50.0,
+"lon": 80.0,
+"place": "Eurasia",
+"placeq": "Q5401",
+"via": "located at"
+},
+"ring-tailed lemur": {
+"lat": -20.0,
+"lon": 47.0,
+"place": "Madagascar",
+"placeq": "Q1019",
+"via": "endemic to"
+},
+"robin hood": {
+"lat": 53.0,
+"lon": -1.0,
+"place": "England",
+"placeq": "Q21",
+"via": "country of origin"
+},
+"rokurokubi": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"roman goose": {
+"lat": 42.5,
+"lon": 12.5,
+"place": "Italy",
+"placeq": "Q38",
+"via": "country of origin"
+},
+"rooster comb": {
+"lat": 37.24,
+"lon": -121.36,
+"place": "Rooster Comb",
+"placeq": null,
+"via": "coordinates"
+},
+"royal penguin": {
+"lat": -54.63,
+"lon": 158.86,
+"place": "Macquarie Island",
+"placeq": "Q46650",
+"via": "endemic to"
+},
+"salt lamp": {
+"lat": 30.0,
+"lon": 71.0,
+"place": "Pakistan",
+"placeq": "Q843",
+"via": "country of origin"
+},
+"samson": {
+"lat": 31.78,
+"lon": 34.99,
+"place": "Zorah",
+"placeq": "Q2916162",
+"via": "born in"
+},
+"samurai": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"sanpei hayashiya (rakugo performer)": {
+"lat": 35.71,
+"lon": 139.78,
+"place": "Tait\u014d-ku",
+"placeq": "Q232641",
+"via": "born in"
+},
+"santa claus": {
+"lat": 53.0,
+"lon": -1.0,
+"place": "England",
+"placeq": "Q21",
+"via": "country of origin"
+},
+"satyr": {
+"lat": 38.5,
+"lon": 23.0,
+"place": "Greece",
+"placeq": "Q41",
+"via": "country"
+},
+"savate": {
+"lat": 47.0,
+"lon": 2.0,
+"place": "France",
+"placeq": "Q142",
+"via": "country of origin"
+},
+"scottish fold cat": {
+"lat": 57.0,
+"lon": -5.0,
+"place": "Scotland",
+"placeq": "Q22",
+"via": "country of origin"
+},
+"scottish terrier": {
+"lat": 57.0,
+"lon": -5.0,
+"place": "Scotland",
+"placeq": "Q22",
+"via": "country of origin"
+},
+"sea-monkeys": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country"
+},
+"serpopard": {
+"lat": 29.8,
+"lon": 31.3,
+"place": "Ancient Egypt",
+"placeq": "Q11768",
+"via": "country"
+},
+"serrano bulldog": {
+"lat": -14.0,
+"lon": -53.0,
+"place": "Brazil",
+"placeq": "Q155",
+"via": "country of origin"
+},
+"set animal": {
+"lat": 29.8,
+"lon": 31.3,
+"place": "Ancient Egypt",
+"placeq": "Q11768",
+"via": "country"
+},
+"seville fair": {
+"lat": 37.37,
+"lon": -6.0,
+"place": "Seville Fair",
+"placeq": null,
+"via": "coordinates"
+},
+"shakoki-dogu clay figurine (jomon period)": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"shamo chicken": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"shaolin monk": {
+"lat": 34.51,
+"lon": 112.94,
+"place": "Shaolin Monastery",
+"placeq": null,
+"via": "coordinates"
+},
+"shetland pony": {
+"lat": 57.0,
+"lon": -5.0,
+"place": "Scotland",
+"placeq": "Q22",
+"via": "country of origin"
+},
+"shiba inu": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"shih tzu": {
+"lat": 35.84,
+"lon": 103.45,
+"place": "People's Republic of China",
+"placeq": "Q148",
+"via": "country of origin"
+},
+"shire horse": {
+"lat": 53.0,
+"lon": -1.0,
+"place": "England",
+"placeq": "Q21",
+"via": "country of origin"
+},
+"shirikodama (soul ball)": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "indigenous to"
+},
+"shisa": {
+"lat": 26.2,
+"lon": 127.68,
+"place": "Ryukyu Kingdom",
+"placeq": "Q28025",
+"via": "country of origin"
+},
+"shogun": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"shrimp (ebi) nigiri": {
+"lat": 35.69,
+"lon": 51.39,
+"place": "Tehran",
+"placeq": "Q3616",
+"via": "born in"
+},
+"shuriken": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"siamese cat": {
+"lat": 14.0,
+"lon": 101.0,
+"place": "Thailand",
+"placeq": "Q869",
+"via": "country of origin"
+},
+"sierra luminous millipede": {
+"lat": 37.0,
+"lon": -120.0,
+"place": "California",
+"placeq": "Q99",
+"via": "endemic to"
+},
+"sivatherium": {
+"lat": -29.0,
+"lon": 24.0,
+"place": "South Africa",
+"placeq": "Q258",
+"via": "found in"
+},
+"skull mask": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country of origin"
+},
+"smilodon": {
+"lat": -21.0,
+"lon": -59.0,
+"place": "South America",
+"placeq": "Q18",
+"via": "found in"
+},
+"smilodon (sabre-toothed cat)": {
+"lat": -21.0,
+"lon": -59.0,
+"place": "South America",
+"placeq": "Q18",
+"via": "found in"
+},
+"snow blower": {
+"lat": 56.0,
+"lon": -109.0,
+"place": "Canada",
+"placeq": "Q16",
+"via": "country of origin"
+},
+"soft serve ice cream": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country of origin"
+},
+"space shuttle": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country of origin"
+},
+"spanish fighting bull": {
+"lat": 40.2,
+"lon": -3.5,
+"place": "Spain",
+"placeq": "Q29",
+"via": "country"
+},
+"spanish mastiff": {
+"lat": 40.2,
+"lon": -3.5,
+"place": "Spain",
+"placeq": "Q29",
+"via": "country of origin"
+},
+"spatha": {
+"lat": 46.5,
+"lon": 2.9,
+"place": "Gaul",
+"placeq": "Q38060",
+"via": "country of origin"
+},
+"sphinx": {
+"lat": 38.5,
+"lon": 23.0,
+"place": "Ancient Greece",
+"placeq": "Q11772",
+"via": "country of origin"
+},
+"sphynx cat": {
+"lat": 56.0,
+"lon": -109.0,
+"place": "Canada",
+"placeq": "Q16",
+"via": "country of origin"
+},
+"spinosaurus": {
+"lat": 27.0,
+"lon": 29.0,
+"place": "Egypt",
+"placeq": "Q79",
+"via": "found in"
+},
+"spiny seahorse": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "endemic to"
+},
+"st bernard": {
+"lat": 46.8,
+"lon": 8.23,
+"place": "Switzerland",
+"placeq": "Q39",
+"via": "country"
+},
+"stars and stripes": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country of origin"
+},
+"statue of liberty": {
+"lat": 40.69,
+"lon": -74.04,
+"place": "Statue of Liberty",
+"placeq": null,
+"via": "coordinates"
+},
+"steelblue ladybird": {
+"lat": -25.0,
+"lon": 133.0,
+"place": "Australia",
+"placeq": "Q408",
+"via": "endemic to"
+},
+"stegosaurus": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "found in"
+},
+"stoat": {
+"lat": 64.0,
+"lon": -150.0,
+"place": "Alaska",
+"placeq": "Q797",
+"via": "endemic to"
+},
+"stonehenge": {
+"lat": 51.18,
+"lon": -1.83,
+"place": "Stonehenge",
+"placeq": null,
+"via": "coordinates"
+},
+"stymphalian birds": {
+"lat": 38.5,
+"lon": 23.0,
+"place": "Greece",
+"placeq": "Q41",
+"via": "country"
+},
+"styracosaurus": {
+"lat": 56.0,
+"lon": -109.0,
+"place": "Canada",
+"placeq": "Q16",
+"via": "found in"
+},
+"sumo wrestler": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"sumo wrestler (rikishi)": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"sun bear": {
+"lat": -2.0,
+"lon": 118.0,
+"place": "Indonesia",
+"placeq": "Q252",
+"via": "endemic to"
+},
+"superman": {
+"lat": 41.5,
+"lon": -81.69,
+"place": "Cleveland",
+"placeq": "Q37320",
+"via": "made in"
+},
+"swamp rabbit": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "endemic to"
+},
+"tadashi sawamura (kickboxer)": {
+"lat": 43.88,
+"lon": 125.32,
+"place": "Manchukuo",
+"placeq": "Q30623",
+"via": "born in"
+},
+"taekwondo": {
+"lat": 40.0,
+"lon": 127.0,
+"place": "North Korea",
+"placeq": "Q423",
+"via": "country of origin"
+},
+"taijiquan (soft style)": {
+"lat": 35.84,
+"lon": 103.45,
+"place": "People's Republic of China",
+"placeq": "Q148",
+"via": "country of origin"
+},
+"takeda shingen": {
+"lat": 35.7,
+"lon": 138.6,
+"place": "Yogaisan Castle",
+"placeq": "Q11630039",
+"via": "born in"
+},
+"takemikazuchi": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"tarasque": {
+"lat": 43.8,
+"lon": 4.66,
+"place": "Tarascon",
+"placeq": "Q234924",
+"via": "located at"
+},
+"tarzan": {
+"lat": 54.6,
+"lon": -2.0,
+"place": "United Kingdom",
+"placeq": "Q145",
+"via": "citizen of"
+},
+"tasmanian devil": {
+"lat": -25.0,
+"lon": 133.0,
+"place": "Australia",
+"placeq": "Q408",
+"via": "endemic to"
+},
+"terracotta army": {
+"lat": 34.38,
+"lon": 109.27,
+"place": "Terracotta Army",
+"placeq": null,
+"via": "coordinates"
+},
+"teru teru bozu": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"tesla coil": {
+"lat": 40.81,
+"lon": -73.96,
+"place": "Columbia University",
+"placeq": "Q49088",
+"via": "made in"
+},
+"the beast of revelation": {
+"lat": 41.9,
+"lon": 12.5,
+"place": "Roman Empire",
+"placeq": "Q2277",
+"via": "country of origin"
+},
+"the big apple": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country"
+},
+"the blob": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country of origin"
+},
+"the cowherd and the weaver girl": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"the crystal palace dinosaurs": {
+"lat": 51.42,
+"lon": -0.07,
+"place": "Crystal Palace Dinosaurs",
+"placeq": null,
+"via": "coordinates"
+},
+"the deccan traps": {
+"lat": 18.85,
+"lon": 73.72,
+"place": "Deccan Traps",
+"placeq": null,
+"via": "coordinates"
+},
+"the dip (catalan vampire dog)": {
+"lat": 41.05,
+"lon": 0.87,
+"place": "Pratdip",
+"placeq": "Q763959",
+"via": "located at"
+},
+"the england runestones": {
+"lat": 61.0,
+"lon": 15.0,
+"place": "Sweden",
+"placeq": "Q34",
+"via": "country"
+},
+"the eye of ra": {
+"lat": 29.8,
+"lon": 31.3,
+"place": "Ancient Egypt",
+"placeq": "Q11768",
+"via": "country of origin"
+},
+"the great gama": {
+"lat": 31.19,
+"lon": 75.16,
+"place": "Jabbowal",
+"placeq": "Q26254670",
+"via": "born in"
+},
+"the lernaean hydra": {
+"lat": 38.5,
+"lon": 23.0,
+"place": "Ancient Greece",
+"placeq": "Q11772",
+"via": "country"
+},
+"the middle ages": {
+"lat": 53.5,
+"lon": 15.5,
+"place": "Europe",
+"placeq": "Q46",
+"via": "located at"
+},
+"the ravens of the tower of london": {
+"lat": 51.51,
+"lon": -0.08,
+"place": "Tower of London",
+"placeq": "Q62378",
+"via": "located at"
+},
+"the red shoes": {
+"lat": 56.0,
+"lon": 10.0,
+"place": "Denmark",
+"placeq": "Q35",
+"via": "country of origin"
+},
+"the shard (london skyscraper)": {
+"lat": 51.5,
+"lon": -0.09,
+"place": "The Shard",
+"placeq": null,
+"via": "coordinates"
+},
+"the shug monkey": {
+"lat": 52.14,
+"lon": 0.33,
+"place": "Shug Monkey",
+"placeq": null,
+"via": "coordinates"
+},
+"the snow queen": {
+"lat": 56.0,
+"lon": 10.0,
+"place": "Kingdom of Denmark",
+"placeq": "Q756617",
+"via": "country of origin"
+},
+"the ugly duckling": {
+"lat": 56.0,
+"lon": 10.0,
+"place": "Denmark",
+"placeq": "Q35",
+"via": "country of origin"
+},
+"the velveteen rabbit": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "country of origin"
+},
+"the war of the worlds (1953)": {
+"lat": 51.51,
+"lon": -0.13,
+"place": "United Kingdom of Great Britain and Ireland",
+"placeq": "Q174193",
+"via": "country of origin"
+},
+"thylacine": {
+"lat": -42.0,
+"lon": 147.0,
+"place": "Tasmania",
+"placeq": "Q34366",
+"via": "endemic to"
+},
+"tibetan mastiff": {
+"lat": 35.84,
+"lon": 103.45,
+"place": "People's Republic of China",
+"placeq": "Q148",
+"via": "country of origin"
+},
+"titan arum": {
+"lat": -0.3,
+"lon": 101.27,
+"place": "Sumatra",
+"placeq": "Q3492",
+"via": "endemic to"
+},
+"tonfa": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"toro embolado": {
+"lat": 40.2,
+"lon": -3.5,
+"place": "Spain",
+"placeq": "Q29",
+"via": "country"
+},
+"tosakin goldfish": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"tower of the sun": {
+"lat": 34.81,
+"lon": 135.53,
+"place": "Tower of the Sun",
+"placeq": null,
+"via": "coordinates"
+},
+"traje de flamenca": {
+"lat": 40.2,
+"lon": -3.5,
+"place": "Spain",
+"placeq": "Q29",
+"via": "country"
+},
+"triceratops": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "found in"
+},
+"troll": {
+"lat": 64.78,
+"lon": 14.76,
+"place": "Scandinavia",
+"placeq": "Q21195",
+"via": "indigenous to"
+},
+"tsuchikorobi (yokai)": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"tsuchinoko": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"tsuchinoko (japanese cryptid)": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"tsurube-otoshi": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"turkey": {
+"lat": 39.0,
+"lon": 36.0,
+"place": "Turkey",
+"placeq": null,
+"via": "coordinates"
+},
+"turkish angora": {
+"lat": 39.0,
+"lon": 36.0,
+"place": "Turkey",
+"placeq": "Q43",
+"via": "country of origin"
+},
+"turnspit dog": {
+"lat": 54.6,
+"lon": -2.0,
+"place": "United Kingdom",
+"placeq": "Q145",
+"via": "country of origin"
+},
+"tutu": {
+"lat": 47.0,
+"lon": 2.0,
+"place": "France",
+"placeq": "Q142",
+"via": "country of origin"
+},
+"tyrannosaurus": {
+"lat": 56.0,
+"lon": -109.0,
+"place": "Canada",
+"placeq": "Q16",
+"via": "found in"
+},
+"ugajin (snake-bodied harvest kami)": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"uintatherium": {
+"lat": 39.83,
+"lon": -98.58,
+"place": "United States",
+"placeq": "Q30",
+"via": "found in"
+},
+"ultramarine lorikeet": {
+"lat": -8.9,
+"lon": -139.6,
+"place": "Marquesas Islands",
+"placeq": "Q172697",
+"via": "endemic to"
+},
+"ushanka": {
+"lat": 66.42,
+"lon": 94.25,
+"place": "Russia",
+"placeq": "Q159",
+"via": "country of origin"
+},
+"ushi-oni": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"verraco": {
+"lat": 40.2,
+"lon": -3.5,
+"place": "Spain",
+"placeq": "Q29",
+"via": "country"
+},
+"warning from space (1956)": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country of origin"
+},
+"welsh corgi": {
+"lat": 52.35,
+"lon": -3.63,
+"place": "Wales",
+"placeq": "Q25",
+"via": "country of origin"
+},
+"weta": {
+"lat": -41.2,
+"lon": 174.0,
+"place": "New Zealand",
+"placeq": "Q664",
+"via": "endemic to"
+},
+"white stork": {
+"lat": 23.3,
+"lon": 71.2,
+"place": "Little Rann of Kutch",
+"placeq": "Q1850393",
+"via": "endemic to"
+},
+"white tiger": {
+"lat": 22.8,
+"lon": 83.0,
+"place": "India",
+"placeq": "Q668",
+"via": "country"
+},
+"wilfred the hairy": {
+"lat": 41.98,
+"lon": 2.82,
+"place": "Girona",
+"placeq": "Q7038",
+"via": "born in"
+},
+"yasakani no magatama (sacred jewel)": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"yata no kagami (sacred mirror)": {
+"lat": 35.0,
+"lon": 136.0,
+"place": "Japan",
+"placeq": "Q17",
+"via": "country"
+},
+"yeti": {
+"lat": 28.0,
+"lon": 84.0,
+"place": "Nepal",
+"placeq": "Q837",
+"via": "country of origin"
+},
+"yorkshire terrier": {
+"lat": 53.0,
+"lon": -1.0,
+"place": "England",
+"placeq": "Q21",
+"via": "country of origin"
+},
+"zhang fei": {
+"lat": 39.49,
+"lon": 115.99,
+"place": "Zhuozhou",
+"placeq": "Q198244",
+"via": "born in"
+},
+"ziggurat": {
+"lat": 33.7,
+"lon": 43.5,
+"place": "Mesopotamia",
+"placeq": "Q11767",
+"via": "country"
+}
+}

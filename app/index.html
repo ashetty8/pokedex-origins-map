@@ -24,6 +24,7 @@
     <nav class="tabs" role="tablist">
       <button class="tab" id="tab-clusters" role="tab" aria-selected="true" aria-controls="results">Browse</button>
       <button class="tab" id="tab-map" role="tab" aria-selected="false" aria-controls="results">Map</button>
+      <button class="tab" id="tab-atlas" role="tab" aria-selected="false" aria-controls="results">Atlas</button>
       <button class="tab" id="tab-species" role="tab" aria-selected="false" aria-controls="results">Pokémon</button>
       <button class="tab" id="tab-flags" role="tab" aria-selected="false" aria-controls="results">Flags <span class="num" id="flagcount"></span></button>
       <button class="tab clearall" id="tab-clear" type="button" title="Clear the search, the filters, the place you are in and the panel">Clear</button>
@@ -75,6 +76,19 @@
       <span class="resultnote" id="resultnote"></span>
     </div>
     <div id="results"></div>
+    <div id="atlas" class="hidden">
+      <div class="atlasbar">
+        <span id="atlasnote">loading the atlas…</span>
+        <span class="atlastools">
+          <label class="atlastoggle"><input type="checkbox" id="atlaslabels" checked> names</label>
+          <button type="button" class="atlasbtn" id="atlasout" title="Zoom out">−</button>
+          <button type="button" class="atlasbtn" id="atlasin" title="Zoom in">+</button>
+          <button type="button" class="atlasbtn wide" id="atlasreset" title="Back to the whole world">world</button>
+        </span>
+      </div>
+      <svg id="asvg" role="img" aria-label="World map of where each Pokémon's design came from"></svg>
+      <div class="atlastip" id="atlastip" hidden></div>
+    </div>
     <div id="graph" class="hidden"><div class="graphhint"><span id="graphnote">Click a node to open it · drag to move · scroll to zoom</span></div><svg id="gsvg"></svg></div>
   </section>
 

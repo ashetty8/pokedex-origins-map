@@ -564,8 +564,25 @@
       : "232px minmax(0,1fr) minmax(0,clamp(380px, 26vw, 460px))";
     lay.style.maxWidth = "min(1860px, 98vw)";
     $("#graph").classList.toggle("hidden",state.tab!=="map");
-    host.classList.toggle("hidden",state.tab==="map");
+    $("#atlas").classList.toggle("hidden",state.tab!=="atlas");
+    host.classList.toggle("hidden",state.tab==="map"||state.tab==="atlas");
     document.querySelector(".results").classList.toggle("mapmode",state.tab==="map");
+    document.querySelector(".results").classList.toggle("atlasmode",state.tab==="atlas");
+    if(state.tab==="atlas"){
+      $("#resulttitle").textContent="Atlas";
+      $("#resultnote").textContent=atlasBroken?"":"placing the referents\u2026";
+      if(atlasBroken){
+        $("#atlas").classList.add("hidden");
+        host.classList.remove("hidden");
+        host.appendChild(el("p","empty","The atlas layer could not be loaded \u2014 the other tabs still work."));
+      } else {
+        ensureAtlas().then(drawAtlas).catch(function(){
+          atlasBroken=true; render();
+        });
+      }
+      syncClears();
+      return;
+    }
     if(state.tab==="map"){
       var mf=graphFocus(true);
       $("#resulttitle").textContent=mf.label||mf.k;
@@ -799,7 +816,7 @@
     state.poke=(h.poke==null?null:h.poke);
     if(state.tab!==h.tab){
       state.tab=h.tab;
-      ["clusters","map","species","flags"].forEach(function(o){ $("#tab-"+o).setAttribute("aria-selected",o===h.tab?"true":"false") });
+      ["clusters","map","atlas","species","flags"].forEach(function(o){ $("#tab-"+o).setAttribute("aria-selected",o===h.tab?"true":"false") });
     }
     renderDetail(); render();
     replaying=false;
@@ -941,6 +958,45 @@
         var wp=el("p"); wp.style.marginTop="14px"; wp.appendChild(wa); body.appendChild(wp);
       }
     }
+    else if(sel.t==="place"){
+      /* A place is not a node in the tree — it is where the things in the
+         tree came from, so it lists its referents by category and then every
+         Pokémon that reaches it through them. */
+      var pl=atlasPlace(sel.k);
+      title=sel.k;
+      if(!pl){
+        sub="place of origin";
+        body.appendChild(el("p","empty","Nothing is placed here with these filters."));
+      } else {
+        sub="place of origin · "+pl.refs.length+" referent"+(pl.refs.length===1?"":"s")+
+            " · "+pl.n+" Pokémon";
+        var how=el("div","dvia",howPlaced(pl)+(pl.soft?" — a culture area, so the pin is a region, not a spot":""));
+        body.appendChild(how);
+        var byk={};
+        pl.refs.forEach(function(m){
+          var k=(D.referents[m]||{}).k||"unclassified";
+          (byk[k]||(byk[k]=[])).push(m);
+        });
+        Object.keys(byk).sort(function(a,b){ return byk[b].length-byk[a].length }).forEach(function(k){
+          body.appendChild(sectionTitle(kindLabel(k)+" · "+byk[k].length));
+          var tl=el("div","taglist");
+          byk[k].sort(function(a,b){
+            return (D.referents[b].s||[]).length-(D.referents[a].s||[]).length || (a<b?-1:1);
+          }).forEach(function(m){
+            var r=D.referents[m];
+            var t=el("button","tag"+(r.w?" wiki":""),disp(m));
+            t.dataset.ref=m;
+            t.title=(GEO.vias[GEO.refs[m][1]]||"")+" · "+(r.s||[]).length+" Pokémon";
+            if(r.i) t.appendChild(kindTag(r.k,true));
+            t.onclick=function(){ select({t:"referent",k:m}) };
+            tl.appendChild(t);
+          });
+          body.appendChild(tl);
+        });
+        body.appendChild(sectionTitle("Pokémon · "+pl.n));
+        body.appendChild(speciesTags(Object.keys(pl.sp).map(Number).sort(function(a,b){return a-b})));
+      }
+    }
     else if(sel.t==="node"){
       /* a kind, branch, family or region: describe the place, list what is in it */
       /* Count the whole subtree. Walking only the children missed every child
@@ -1046,7 +1102,17 @@
     fb.onclick=function(){ var f=$("#flagform"); if(f) f.classList.toggle("hidden") };
     acts.appendChild(fb);
     head.appendChild(acts);
-    d.appendChild(head); d.appendChild(body);
+    /* keep the heading and the "inside" chips in view while the rest of the
+       panel scrolls under them */
+    var top=el("div","dtop");
+    top.appendChild(head);
+    var first=body.firstChild;
+    if(first && first.className==="sectitle" && /^(Inside|Nested inside)$/.test(first.textContent)){
+      var list=first.nextSibling;
+      top.appendChild(first);
+      if(list) top.appendChild(list);
+    }
+    d.appendChild(top); d.appendChild(body);
     wireHover(d);
     d.appendChild(flagForm(sel,title));
     d.appendChild(existingFlags(targetKey(sel)));
@@ -1715,6 +1781,379 @@
       (state.path.length?" · click the middle node to go back":"");
   }
 
+  /* ---------- atlas ----------
+     The visual map above answers "what sits inside what". This one answers
+     "where did it come from": one pin per place, sized by how many Pokémon
+     trace back to it, with the place's own referents fanned out around it
+     when you open one.
+
+     No tiles and no projection library. tools/worldgen.py pre-projects
+     Natural Earth 110m outlines (public domain) to plate carrée path data, so
+     a point goes on the map with two multiplications and the land takes its
+     colours from the page's own theme. data/geo.json says where each referent
+     is from, and how that was arrived at — a claim on its own Wikidata item,
+     one hop out through what it belongs to, or the culture area the dataset
+     already files it under. The third is a region, not a spot, so its pins
+     are drawn hollow-dashed: Celtic folklore is not at one coordinate. */
+  var WORLD=null, GEO=null, atlasWant=null, atlasWired=false, atlasBroken=false;
+  var AHOME={cx:1000,cy:500,w:2000};   /* the whole globe, exactly filling a 2:1 canvas */
+  var AVIEW={cx:AHOME.cx,cy:AHOME.cy,w:AHOME.w};
+  var APLACES=null, ABYNAME=null, ALABELS=true, ALASTFOCUS=null;
+
+  function ensureAtlas(){
+    if(atlasWant) return atlasWant;
+    atlasWant=Promise.all([
+      fetch("world.json").then(function(r){ if(!r.ok) throw new Error("world"); return r.json() }),
+      fetch("geo.json").then(function(r){ if(!r.ok) throw new Error("geo"); return r.json() })
+    ]).then(function(a){ WORLD=a[0]; GEO=a[1]; APLACES=null });
+    return atlasWant;
+  }
+  /* plate carrée: the whole globe across WORLD.w by WORLD.h units */
+  function ax(lon){ return (lon+180)/360*WORLD.w }
+  function ay(lat){ return (90-lat)/180*WORLD.h }
+  function arect(){
+    var svg=$("#asvg");
+    var r=svg?svg.getBoundingClientRect():null;
+    return (r && r.width && r.height) ? r : {left:0,top:0,width:1000,height:520};
+  }
+  /* the viewBox follows the box's own shape, so the map never letterboxes */
+  function aview(){
+    var r=arect(), h=AVIEW.w*(r.height/r.width);
+    return {x:AVIEW.cx-AVIEW.w/2, y:AVIEW.cy-h/2, w:AVIEW.w, h:h};
+  }
+  /* world units per CSS pixel — what keeps a pin the same size at any zoom */
+  function aunit(){ return AVIEW.w/arect().width }
+  function atoworld(cx,cy){
+    var r=arect(), v=aview();
+    return {x:v.x+(cx-r.left)/r.width*v.w, y:v.y+(cy-r.top)/r.height*v.h};
+  }
+  function atoscreen(x,y){
+    var r=arect(), v=aview();
+    return {x:r.left+(x-v.x)/v.w*r.width, y:r.top+(y-v.y)/v.h*r.height};
+  }
+
+  /* Pins obey the rail and the search box, like every other view: the
+     category chips filter which referents count, and a search dims the
+     places that have nothing matching rather than hiding them — an empty
+     Japan would read as "no Japanese origins", which is not what it means. */
+  function atlasPlaces(){
+    if(APLACES) return APLACES;
+    if(!GEO||!D) return [];
+    var bag={};
+    Object.keys(GEO.refs).forEach(function(name){
+      var r=D.referents[name];
+      if(!r) return;                                  /* dataset moved on */
+      var kind=r.k||"unclassified";
+      if(state.kinds.size && !state.kinds.has(kind)) return;
+      if(state.onlyinf && !r.i) return;
+      var row=GEO.refs[name], p=GEO.places[row[0]];
+      if(!p) return;
+      var e=bag[row[0]];
+      if(!e) e=bag[row[0]]={i:row[0],name:p[0],lat:p[1],lon:p[2],
+                            refs:[],sp:{},kinds:{},hits:0,conf:[0,0,0]};
+      e.refs.push(name);
+      (r.s||[]).forEach(function(id){ e.sp[id]=1 });
+      e.kinds[kind]=(e.kinds[kind]||0)+1;
+      e.conf[row[2]]++;
+      if(state.q && atlasHit(name,r,state.q)) e.hits++;
+    });
+    APLACES=Object.keys(bag).map(function(k){
+      var e=bag[k];
+      e.n=Object.keys(e.sp).length;
+      e.x=ax(e.lon); e.y=ay(e.lat);
+      /* a place is "regional" when most of what sits there was placed by
+         culture area rather than by a claim about the thing itself */
+      e.soft=e.conf[2] > (e.conf[0]+e.conf[1]);
+      return e;
+    }).sort(function(a,b){ return b.n-a.n });
+    ABYNAME={};
+    APLACES.forEach(function(p){ ABYNAME[p.name]=p });
+    return APLACES;
+  }
+  function atlasHit(name,r,q){
+    if(name.indexOf(q)>=0) return true;
+    if((r.d||"").toLowerCase().indexOf(q)>=0) return true;
+    var s=r.s||[];
+    for(var i=0;i<s.length;i++){
+      var sp=D.species[String(s[i])];
+      if(sp && sp[0].toLowerCase().indexOf(q)>=0) return true;
+    }
+    return false;
+  }
+  function atlasPlace(name){ atlasPlaces(); return (ABYNAME&&ABYNAME[name])||null }
+  /* which place the panel is pointing at — a place itself, or the place the
+     selected referent came from, so opening a referent lights up its pin */
+  function atlasFocus(){
+    var sel=state.sel;
+    if(!sel) return null;
+    if(sel.t==="place") return atlasPlace(sel.k);
+    if(sel.t==="referent" && GEO && GEO.refs[sel.k]){
+      var p=GEO.places[GEO.refs[sel.k][0]];
+      return p?atlasPlace(p[0]):null;
+    }
+    return null;
+  }
+  function atlasRadius(n){ return Math.min(26,3.2+2.5*Math.sqrt(n)) }   /* px */
+
+  var ANS="http://www.w3.org/2000/svg";
+  function svgel(t,attrs,cls){
+    var e=document.createElementNS(ANS,t);
+    if(cls) e.setAttribute("class",cls);
+    for(var k in attrs) e.setAttribute(k,attrs[k]);
+    return e;
+  }
+  function atlasTip(html,cx,cy){
+    var tip=$("#atlastip"); if(!tip) return;
+    if(!html){ tip.hidden=true; return }
+    tip.innerHTML=html; tip.hidden=false;
+    var box=$("#atlas").getBoundingClientRect(), t=tip.getBoundingClientRect();
+    var x=cx-box.left+14, y=cy-box.top+14;
+    if(x+t.width>box.width-8) x=cx-box.left-t.width-14;
+    if(y+t.height>box.height-8) y=cy-box.top-t.height-14;
+    tip.style.left=Math.max(6,x)+"px"; tip.style.top=Math.max(6,y)+"px";
+  }
+  function atlasTopKinds(p){
+    return Object.keys(p.kinds).sort(function(a,b){ return p.kinds[b]-p.kinds[a] })
+      .slice(0,3).map(function(k){ return kindLabel(k)+" "+p.kinds[k] }).join(" · ");
+  }
+  function howPlaced(p){
+    var bits=[];
+    if(p.conf[0]) bits.push(p.conf[0]+" from its own entry");
+    if(p.conf[1]) bits.push(p.conf[1]+" one hop out");
+    if(p.conf[2]) bits.push(p.conf[2]+" by culture area");
+    return bits.join(", ");
+  }
+
+  function drawAtlas(){
+    if(!WORLD||!GEO||!D) return;
+    var svg=$("#asvg"); if(!svg) return;
+    APLACES=null;                 /* the rail, the search box and the flags all move it */
+    var v=aview(), u=aunit();
+    svg.setAttribute("viewBox",v.x+" "+v.y+" "+v.w+" "+v.h);
+    while(svg.firstChild) svg.removeChild(svg.firstChild);
+
+    /* graticule first, so the land sits on top of it */
+    var grat=svgel("g",{},"agrat");
+    for(var lon=-150;lon<=150;lon+=30)
+      grat.appendChild(svgel("path",{d:"M"+ax(lon)+" 0V"+WORLD.h}));
+    for(var lat=-60;lat<=60;lat+=30)
+      grat.appendChild(svgel("path",{d:"M0 "+ay(lat)+"H"+WORLD.w}));
+    svg.appendChild(grat);
+
+    var land=svgel("g",{},"aland");
+    WORLD.countries.forEach(function(c){
+      var path=svgel("path",{d:c.d});
+      var nm=svgel("title",{});
+      nm.textContent=c.n;
+      path.appendChild(nm);
+      land.appendChild(path);
+    });
+    svg.appendChild(land);
+
+    var places=atlasPlaces(), focus=atlasFocus();
+    /* An opened place fans its referents out around the pin, and a pin near
+       the edge would fan them off the map. Nudge the view the first time a
+       place opens — never afterwards, or panning away would snap back. */
+    if(focus && focus!==ALASTFOCUS){
+      var need=(atlasRadius(focus.n)+26+2*23+14)*u;
+      var nx=Math.min(Math.max(AVIEW.cx, focus.x-(v.w/2-need)), focus.x+(v.w/2-need));
+      var ny=Math.min(Math.max(AVIEW.cy, focus.y-(v.h/2-need)), focus.y+(v.h/2-need));
+      if(v.w>2*need && v.h>2*need && (nx!==AVIEW.cx || ny!==AVIEW.cy)){
+        AVIEW.cx=nx; AVIEW.cy=ny; atlasClamp();
+        v=aview(); svg.setAttribute("viewBox",v.x+" "+v.y+" "+v.w+" "+v.h);
+      }
+    }
+    ALASTFOCUS=focus;
+    var pins=svgel("g",{}), labels=svgel("g",{}), fan=svgel("g",{});
+    var taken=[];                       /* label boxes already placed, in px */
+
+    places.forEach(function(p){
+      var rpx=atlasRadius(p.n), cls="apin";
+      if(state.q && !p.hits) cls+=" soft";
+      if(p.soft) cls+=" guessed";
+      if(focus===p) cls+=" on";
+      var fl=flagsOn("place",p.name);
+      if(fl && fl.open) cls+=" flagged";
+      var c=svgel("circle",{cx:p.x,cy:p.y,r:rpx*u,tabindex:"0",role:"button",
+                            "aria-label":p.name+", "+p.n+" Pokémon"},cls);
+      var tiptext="<b>"+p.name+"</b><span class='tipmeta'>"+p.refs.length+
+        " referent"+(p.refs.length===1?"":"s")+" · "+p.n+" Pok\u00e9mon</span>"+
+        "<span class='tipmeta'>"+atlasTopKinds(p)+"</span>"+
+        "<span class='tipmeta'>"+howPlaced(p)+"</span>"+
+        (p.soft?"<span class='tipmeta'>a culture area, not a single spot</span>":"");
+      function show(e){ atlasTip(tiptext,e.clientX,e.clientY) }
+      c.addEventListener("pointerenter",show);
+      c.addEventListener("pointermove",show);
+      c.addEventListener("pointerleave",function(){ atlasTip(null) });
+      /* Picking is settled on pointerup, not by a click listener: the drag
+         handler captures the pointer, and a captured pointer sends its click
+         to the element that captured it, so a listener here would never run. */
+      c.__pick=function(){ select({t:"place",k:p.name}) };
+      c.__zoom=function(){ atlasZoomTo(p) };
+      c.addEventListener("keydown",function(e){
+        if(e.key==="Enter"||e.key===" "){ e.preventDefault(); select({t:"place",k:p.name}) }
+      });
+      pins.appendChild(c);
+
+      if(!ALABELS) return;
+      /* a name only where it fits: big pins first, and never over a name
+         already drawn — overlapping monospace at this size is unreadable */
+      if(rpx<7 && p.n<6) return;
+      if(taken.length>=44) return;
+      var s=atoscreen(p.x,p.y);
+      var w=p.name.length*5.6+6, h=12;
+      var box=[s.x+rpx+4, s.y-h/2, w, h];
+      var clash=taken.some(function(t){
+        return !(box[0]>t[0]+t[2]+3 || box[0]+box[2]+3<t[0] ||
+                 box[1]>t[1]+t[3]+2 || box[1]+box[3]+2<t[1]);
+      });
+      if(clash) return;
+      taken.push(box);
+      var tx=p.x+(rpx+4)*u, ty=p.y+3.4*u;
+      var lab=svgel("text",{x:tx,y:ty},"alabel"+(p.n>=12?" big":""));
+      lab.setAttribute("font-size",(10*u)+"px");
+      lab.setAttribute("stroke-width",(3*u)+"px");
+      lab.textContent=p.name;
+      labels.appendChild(lab);
+    });
+
+    /* the open place, opened out: its referents on a ring around the pin */
+    if(focus){
+      var list=focus.refs.slice().sort(function(a,b){
+        var sa=(D.referents[a].s||[]).length, sb=(D.referents[b].s||[]).length;
+        return sb-sa || (a<b?-1:1);
+      });
+      var shown=list.slice(0,48);
+      fan.appendChild(svgel("circle",{cx:focus.x,cy:focus.y,
+        r:(atlasRadius(focus.n)+7)*u},"aring"));
+      shown.forEach(function(name,i){
+        var ring=Math.floor(i/12), slot=i%12;
+        var rad=(atlasRadius(focus.n)+26+ring*23)*u;
+        var ang=slot/12*Math.PI*2 + ring*0.26 - Math.PI/2;
+        var fx=focus.x+Math.cos(ang)*rad, fy=focus.y+Math.sin(ang)*rad;
+        fan.appendChild(svgel("line",{x1:focus.x,y1:focus.y,x2:fx,y2:fy},"aspoke"));
+        var on=state.sel && state.sel.t==="referent" && state.sel.k===name;
+        var dot=svgel("circle",{cx:fx,cy:fy,r:4.6*u,tabindex:"0",role:"button",
+                                "aria-label":disp(name)},"afan"+(on?" on":""));
+        dot.addEventListener("pointerenter",function(e){
+          var r=D.referents[name];
+          atlasTip("<b>"+disp(name)+"</b><span class='tipmeta'>"+(r.k||"unclassified")+
+                   " · "+(r.s||[]).length+" Pokémon</span><span class='tipmeta'>"+
+                   GEO.vias[GEO.refs[name][1]]+"</span>",e.clientX,e.clientY);
+        });
+        dot.addEventListener("pointerleave",function(){ atlasTip(null) });
+        dot.__pick=function(){ select({t:"referent",k:name}) };
+        dot.addEventListener("keydown",function(e){
+          if(e.key==="Enter"||e.key===" "){ e.preventDefault(); select({t:"referent",k:name}) }
+        });
+        fan.appendChild(dot);
+      });
+      if(list.length>shown.length){
+        var more=svgel("text",{x:focus.x,y:focus.y-(atlasRadius(focus.n)+34)*u},"alabel big");
+        more.setAttribute("font-size",(10*u)+"px");
+        more.setAttribute("text-anchor","middle");
+        more.textContent="+"+(list.length-shown.length)+" more in the panel";
+        fan.appendChild(more);
+      }
+    }
+    svg.appendChild(fan); svg.appendChild(pins); svg.appendChild(labels);
+    var old=$("#atlas").querySelector(".atlasempty");
+    if(old) old.remove();
+    if(!places.length){
+      var e2=el("p","atlasempty","Nothing on the map matches these filters \u2014 drop a category chip, or clear the search.");
+      $("#atlas").appendChild(e2);
+    }
+
+    var sp={}, shownRefs=0;
+    places.forEach(function(p){
+      shownRefs+=p.refs.length;
+      Object.keys(p.sp).forEach(function(i){ sp[i]=1 });
+    });
+    $("#atlasnote").textContent=places.length+" places · "+shownRefs+" referents · "+
+      Object.keys(sp).length+" Pokémon"+
+      (state.q?" · "+places.filter(function(p){return p.hits}).length+" with a match":"")+
+      " · drag to pan, scroll to zoom";
+    $("#resultnote").textContent=places.length+" places of origin · "+
+      Object.keys(sp).length+" Pokémon placed";
+    atlasWire();
+  }
+
+  function atlasZoomTo(p){
+    AVIEW.cx=p.x; AVIEW.cy=p.y; AVIEW.w=Math.max(90,Math.min(AVIEW.w,420));
+    atlasClamp(); drawAtlas();
+  }
+  function atlasClamp(){
+    AVIEW.w=Math.max(70,Math.min(2600,AVIEW.w));
+    var h=AVIEW.w*(arect().height/arect().width);
+    /* keep at least a quarter of the canvas on screen, so the map cannot be
+       flicked into empty space and lost */
+    AVIEW.cx=Math.max(-AVIEW.w/4,Math.min(WORLD.w+AVIEW.w/4,AVIEW.cx));
+    AVIEW.cy=Math.max(-h/4,Math.min(WORLD.h+h/4,AVIEW.cy));
+  }
+  function atlasZoom(factor,cx,cy){
+    var before=(cx!=null)?atoworld(cx,cy):null;
+    AVIEW.w=AVIEW.w*factor;
+    atlasClamp();
+    if(before){
+      var after=atoworld(cx,cy);
+      AVIEW.cx+=before.x-after.x; AVIEW.cy+=before.y-after.y;
+      atlasClamp();
+    }
+    drawAtlas();
+  }
+  function atlasWire(){
+    if(atlasWired) return;
+    atlasWired=true;
+    var svg=$("#asvg"), drag=null, moved=0, down=null;
+    svg.addEventListener("wheel",function(e){
+      e.preventDefault();
+      atlasZoom(Math.pow(1.0016,e.deltaY), e.clientX, e.clientY);
+    },{passive:false});
+    svg.addEventListener("pointerdown",function(e){
+      if(e.button) return;
+      drag={x:e.clientX,y:e.clientY}; moved=0; down=e.target;
+      svg.classList.add("dragging");
+      try{ svg.setPointerCapture(e.pointerId) }catch(err){}
+    });
+    svg.addEventListener("pointermove",function(e){
+      if(!drag) return;
+      var u=aunit();
+      AVIEW.cx-=(e.clientX-drag.x)*u; AVIEW.cy-=(e.clientY-drag.y)*u;
+      moved+=Math.abs(e.clientX-drag.x)+Math.abs(e.clientY-drag.y);
+      drag={x:e.clientX,y:e.clientY};
+      atlasClamp();
+      var v=aview();
+      svg.setAttribute("viewBox",v.x+" "+v.y+" "+v.w+" "+v.h);
+    });
+    function endDrag(e,pick){
+      if(!drag) return;
+      drag=null; svg.classList.remove("dragging");
+      var target=down; down=null;
+      if(pick && moved<=6){
+        /* a tap, not a pan: whatever was under the finger decides */
+        if(target && target.__pick){ target.__pick(); atlasTip(null); return }
+        if(state.sel){ state.sel=null; record(); renderDetail(); drawAtlas(); return }
+      }
+      /* a drag redraws once at the end: pin sizes and labels are computed in
+         pixels, so they only need settling when the panning stops */
+      drawAtlas();
+    }
+    svg.addEventListener("pointerup",function(e){ endDrag(e,true) });
+    svg.addEventListener("pointercancel",function(e){ endDrag(e,false) });
+    svg.addEventListener("dblclick",function(e){
+      if(e.target && e.target.__zoom){ e.preventDefault(); e.target.__zoom() }
+    });
+    $("#atlasin").addEventListener("click",function(){ atlasZoom(1/1.6) });
+    $("#atlasout").addEventListener("click",function(){ atlasZoom(1.6) });
+    $("#atlasreset").addEventListener("click",function(){
+      AVIEW={cx:AHOME.cx,cy:AHOME.cy,w:AHOME.w}; drawAtlas();
+    });
+    $("#atlaslabels").addEventListener("change",function(e){
+      ALABELS=e.target.checked; drawAtlas();
+    });
+    addEventListener("resize",function(){ if(state.tab==="atlas" && WORLD) drawAtlas() });
+  }
+
   /* ---------- flags ---------- */
   function targetKey(sel){ return sel.t+":"+sel.k }
   function flagForm(sel,label){
@@ -1900,6 +2339,7 @@
     applyTheme(THEMES[(i+1)%THEMES.length].k);
     /* the map paints strokes and haloes from the theme's own variables */
     if(state.tab==="map" && D3 && D) drawGraph();
+    if(state.tab==="atlas" && WORLD) drawAtlas();
   });
 
   /* ---------- search suggestions ----------
@@ -2030,10 +2470,10 @@
   $("#onlyinf").addEventListener("change",function(e){
     state.onlyinf=e.target.checked; INFCACHE=null; state.limit=120; render();
   });
-  ["clusters","map","species","flags"].forEach(function(t){
+  ["clusters","map","atlas","species","flags"].forEach(function(t){
     $("#tab-"+t).addEventListener("click",function(){
       state.tab=t; state.limit=120; record();
-      ["clusters","map","species","flags"].forEach(function(o){ $("#tab-"+o).setAttribute("aria-selected",o===t?"true":"false") });
+      ["clusters","map","atlas","species","flags"].forEach(function(o){ $("#tab-"+o).setAttribute("aria-selected",o===t?"true":"false") });
       render();
     });
   });
@@ -2061,6 +2501,7 @@
         $("#flagcount").textContent=openN?"("+openN+")":"";
         if(state.tab==="flags") render();
         else if(state.tab==="map" && D3 && D) drawGraph();
+        else if(state.tab==="atlas" && WORLD) drawAtlas();
         if(state.sel) renderDetail();
       },function(){
         clearTimeout(timer); flagsReady=true;
