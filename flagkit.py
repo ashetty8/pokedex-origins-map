@@ -26,7 +26,8 @@ dist/map_data.json is the minified copy the page fetches, rewritten on every sav
   python3 flagkit.py merge-ref <from> <into>           fold one referent into another
   python3 flagkit.py split-cluster <src> <new> <ref>... move some referents into a new sibling
   python3 flagkit.py move-ref <referent> <cluster>     move a referent into another cluster
-  python3 flagkit.py set-wiki <referent> [title]       set or clear a referent's Wikipedia title
+  python3 flagkit.py set-wiki <referent> [title]       set or clear a referent's Wikipedia title ("Page#Section" allowed)
+  python3 flagkit.py set-url <referent> [url]          a source that is no Wikipedia article (Wiktionary, say)
   python3 flagkit.py set-region <cluster> <family> <region>   refile a cluster by where it is from
   python3 flagkit.py set-kind <group|referent> <kind>  change a category
   python3 flagkit.py normalize-case                    one spelling per referent, from its source text
@@ -239,6 +240,14 @@ def check(D, quiet=False):
             top = set((f.get("c") or []) + (f.get("l") or []))
             for g in sorted(top - placed):
                 bad.append(("cluster in no region", fam, g))
+    for r, v in D["referents"].items():
+        w = v.get("w")
+        if w and ("#" in w or w.lower().startswith(("http://", "https://"))):
+            bad.append(("w is not a bare article title", r, w))
+        if v.get("ws") and not w:
+            bad.append(("section with no article", r, v["ws"]))
+        if v.get("u") and w:
+            bad.append(("both an article and a stand-in link", r, w, v["u"]))
     for g, v in G.items():
         fam = v.get("f")
         if fam and not v.get("p"):
@@ -562,13 +571,49 @@ def move_ref(D, ref, cluster):
 def set_wiki(D, ref, title=""):
     """Point a referent at a Wikipedia article, or clear the link. An empty
        title is the honest answer when no article is actually about it —
-       better than sending a reader to a disambiguation page."""
+       better than sending a reader to a disambiguation page.
+
+       A title may name a section — "Aphrodite#Symbolism" — and the section is
+       kept apart in `ws`, because `w` is fed straight to Wikipedia's API by
+       the geo and audit passes and an anchor is not a page title."""
     R = D["referents"]
     if ref not in R: sys.exit("no referent called %r" % ref)
+    if title.lower().startswith(("http://", "https://")):
+        sys.exit("that is a URL, not an article title — use set-url for an "
+                 "off-Wikipedia source, or pass just the title")
     was = R[ref].get("w") or "-"
-    if title: R[ref]["w"] = title
-    else: R[ref].pop("w", None)
-    return "%r wiki: %s -> %s" % (ref, was, title or "(none)")
+    if was != "-" and R[ref].get("ws"): was += "#" + R[ref]["ws"]
+    title, _, section = title.partition("#")
+    title, section = title.strip(), section.strip()
+    if title:
+        R[ref]["w"] = title
+        R[ref].pop("u", None)          # a real article beats a stand-in link
+        if section: R[ref]["ws"] = section
+        else: R[ref].pop("ws", None)
+    else:
+        R[ref].pop("w", None); R[ref].pop("ws", None)
+    now = title + ("#" + section if section else "") if title else "(none)"
+    return "%r wiki: %s -> %s" % (ref, was, now)
+
+
+def set_url(D, ref, url=""):
+    """Point a referent at a source that is not a Wikipedia article — a
+       Wiktionary entry for an idiom, say. It is only read when `w` is empty,
+       so the geo and audit passes never see it; the page names the site from
+       the URL's own host."""
+    R = D["referents"]
+    if ref not in R: sys.exit("no referent called %r" % ref)
+    if url and not url.lower().startswith(("http://", "https://")):
+        sys.exit("a full http(s) URL, or nothing to clear it")
+    was = R[ref].get("u") or "-"
+    if url:
+        if R[ref].get("w"):
+            sys.exit("%r already has the Wikipedia article %r — clear it with "
+                     "set-wiki first if the other source is the better one"
+                     % (ref, R[ref]["w"]))
+        R[ref]["u"] = url
+    else: R[ref].pop("u", None)
+    return "%r url: %s -> %s" % (ref, was, url or "(none)")
 
 
 def set_region(D, cluster, family, region):
@@ -707,7 +752,8 @@ WRITES = {"move-family": move_family, "nest": nest, "unnest": unnest,
           "merge": merge, "regroup": regroup, "rename": rename,
           "split-family": split_family, "rename-family": rename_family,
           "merge-ref": merge_ref, "move-ref": move_ref, "split-cluster": split_cluster,
-          "set-kind": set_kind, "set-wiki": set_wiki, "set-region": set_region,
+          "set-kind": set_kind, "set-wiki": set_wiki, "set-url": set_url,
+          "set-region": set_region,
           "normalize-case": lambda D: normalize_case(D),
           "recount": lambda D: recount(D)}
 
@@ -724,7 +770,8 @@ def overlay_of(D):
         O["groups"][g] = {"f": v.get("f"), "p": v.get("p"), "k": v.get("k"),
                           "m": list(v.get("m") or [])}
     for r, v in D["referents"].items():
-        O["referents"][r] = {"g": v.get("g"), "k": v.get("k"), "w": v.get("w")}
+        O["referents"][r] = {"g": v.get("g"), "k": v.get("k"), "w": v.get("w"),
+                             "ws": v.get("ws"), "u": v.get("u")}
     return O
 
 
@@ -785,6 +832,8 @@ def patch_apply(D, fresh_path):
         if meta.get("k") and R[r].get("k") != meta["k"]:
             R[r]["k"] = meta["k"]; R[r].pop("i", None); recat += 1
         if meta.get("w"): R[r]["w"] = meta["w"]
+        if meta.get("ws"): R[r]["ws"] = meta["ws"]
+        if meta.get("u"): R[r]["u"] = meta["u"]
     # rebuild the family listings and every count from the result
     for fam in F:
         F[fam]["c"] = []; F[fam]["l"] = []

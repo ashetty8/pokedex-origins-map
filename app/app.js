@@ -33,6 +33,33 @@
   /* Referent keys are lowercase because everything looks them up by key; the
      spelling to SHOW is on the referent itself, taken from its source text.
      A cluster named after a referent is that referent, so it reads the same. */
+  /* Where a referent's reading comes from, as a link. Wikipedia is the usual
+     answer and gets its title spelled out; anything else names itself from its
+     own host, so a Wiktionary idiom reads "Wiktionary: heart of gold" rather
+     than a bare URL. */
+  function srclink(r){
+    if(r.w){
+      var href="https://en.wikipedia.org/wiki/"+encodeURIComponent(r.w.replace(/ /g,"_")),
+          label="Wikipedia: "+r.w;
+      if(r.ws){
+        /* encodeURIComponent would eat the # itself, so the section is
+           encoded on its own and joined after. */
+        href+="#"+encodeURIComponent(r.ws.replace(/ /g,"_"));
+        label+=" \u00a7 "+r.ws;
+      }
+      return {href:href, label:label};
+    }
+    if(r.u && /^https?:\/\//i.test(r.u)){
+      var m=/^https?:\/\/([^\/]+)\/(?:wiki\/)?([^?#]*)/.exec(r.u);
+      if(!m) return {href:r.u, label:r.u};
+      var site=m[1].replace(/^(?:en|www)\./,"").replace(/\.(?:org|com|net)$/,""),
+          page=decodeURIComponent(m[2]||"").replace(/_/g," ");
+      site=site.charAt(0).toUpperCase()+site.slice(1);
+      return {href:r.u, label:page ? site+": "+page : site};
+    }
+    return null;
+  }
+
   function disp(name){
     var r=D && D.referents[name];
     if(r && r.d) return r.d;
@@ -424,7 +451,7 @@
     var b=el("button","row");
     b.setAttribute("aria-current", state.sel&&state.sel.t==="referent"&&state.sel.k===r.name ? "true":"false");
     var nm=el("span","rowname",disp(r.name));
-    if(r.ref.w) nm.appendChild(el("span","wikimark"," ↗"));
+    if(srclink(r.ref)) nm.appendChild(el("span","wikimark"," ↗"));
     b.appendChild(nm);
     var meta=el("span","rowmeta");
     if(r.ref.x) meta.appendChild(el("span","num soft","allusion"));
@@ -927,7 +954,7 @@
       body.appendChild(sectionTitle("Referents in this cluster"));
       var tl=el("div","taglist");
       g.m.slice().sort().forEach(function(m){
-        var t=el("button","tag"+(D.referents[m]&&D.referents[m].w?" wiki":""),disp(m));
+        var t=el("button","tag"+(D.referents[m]&&srclink(D.referents[m])?" wiki":""),disp(m));
         t.dataset.ref=m;
         var rk=D.referents[m];
         if(rk && rk.k && rk.k!==g.k) t.appendChild(kindTag(rk.k,rk.i));
@@ -964,9 +991,15 @@
       body.appendChild(speciesTags(r.s,sel.k));
       var og=originSection(sel.k);
       if(og) body.appendChild(og);
-      if(r.w){
-        var wa=el("a","src","Wikipedia: "+r.w+" ↗");
-        wa.href="https://en.wikipedia.org/wiki/"+encodeURIComponent(r.w.replace(/ /g,"_"));
+      /* The source line. `w` stays a bare article title because the geo and
+         audit passes feed it straight to Wikipedia's API — a section goes in
+         `ws` and an off-Wikipedia source in `u`, where neither can poison a
+         lookup. A referent with no article at all keeps all three empty
+         rather than being sent to a disambiguation page. */
+      var src=srclink(r);
+      if(src){
+        var wa=el("a","src",src.label+" ↗");
+        wa.href=src.href;
         wa.target="_blank"; wa.rel="noopener noreferrer";
         var wp=el("p"); wp.style.marginTop="14px"; wp.appendChild(wa); body.appendChild(wp);
       }
@@ -1003,7 +1036,7 @@
             return (D.referents[b].s||[]).length-(D.referents[a].s||[]).length || (a<b?-1:1);
           }).forEach(function(m){
             var r=D.referents[m];
-            var t=el("button","tag"+(r.w?" wiki":""),disp(m));
+            var t=el("button","tag"+(srclink(r)?" wiki":""),disp(m));
             t.dataset.ref=m;
             t.title=(GEO.vias[GEO.refs[m][1]]||"")+" · "+(r.s||[]).length+" Pokémon";
             if(r.i) t.appendChild(kindTag(r.k,true));

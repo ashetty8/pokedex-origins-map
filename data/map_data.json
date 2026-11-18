@@ -52415,6 +52415,7 @@
 "s": [
 370
 ],
+"u": "https://en.wiktionary.org/wiki/heart_of_gold",
 "x": 1
 },
 "\"kilroy was here\" graffiti": {
@@ -52614,7 +52615,8 @@
 "s": [
 778
 ],
-"w": "Child art"
+"w": "Child art",
+"ws": "Stages of child art"
 },
 "a hand crossed with a serpent": {
 "g": "serpent",
@@ -53657,7 +53659,8 @@
 "s": [
 519
 ],
-"w": "Aphrodite"
+"w": "Aphrodite",
+"ws": "Symbolism"
 },
 "apple pie": {
 "g": "apple pie",
@@ -67303,7 +67306,8 @@
 "s": [
 714
 ],
-"w": "Bat"
+"w": "Bat",
+"ws": "Insects and invertebrates"
 },
 "insular dwarfism": {
 "g": "insular dwarfism",
@@ -68645,6 +68649,7 @@
 905
 ],
 "w": "Minos",
+"ws": "In poetry",
 "x": 1
 },
 "king of saxony bird-of-paradise": {
@@ -83162,7 +83167,8 @@
 "s": [
 731
 ],
-"w": "Toco toucan"
+"w": "Toco toucan",
+"ws": "Breeding"
 },
 "toddler": {
 "g": "toddler",
