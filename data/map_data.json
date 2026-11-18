@@ -17713,8 +17713,10 @@
 "game character"
 ],
 "k": "media & art",
-"l": [],
-"n": 17
+"l": [
+"two fused beldum"
+],
+"n": 18
 },
 "Ghosts & spirits": {
 "c": [
@@ -18614,10 +18616,9 @@
 "halo",
 "onejaw",
 "sea-monkeys",
-"two fused beldum",
 "vessels & decoration"
 ],
-"n": 96
+"n": 95
 },
 "Other plants": {
 "b": "Plants",
@@ -50221,9 +50222,9 @@
 "p": "formal wear"
 },
 "two fused beldum": {
-"f": "Other objects",
+"f": "Games",
 "i": 1,
-"k": "object",
+"k": "media & art",
 "leaf": 1,
 "m": [
 "two fused beldum"
@@ -64693,7 +64694,7 @@
 "gracidea flower": {
 "d": "Gracidea flower",
 "g": "tropical flower",
-"k": "media & art",
+"k": "life",
 "mr": 1,
 "s": [
 492
@@ -84029,8 +84030,7 @@
 "two fused beldum": {
 "d": "two fused Beldum",
 "g": "two fused beldum",
-"i": 1,
-"k": "object",
+"k": "media & art",
 "mr": 1,
 "s": [
 375
