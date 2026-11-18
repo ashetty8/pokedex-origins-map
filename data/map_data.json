@@ -17384,7 +17384,7 @@
 ],
 "k": "media & art",
 "l": [],
-"n": 29
+"n": 30
 },
 "Buildings & monuments": {
 "c": [
@@ -22707,7 +22707,7 @@
 "leaf": 1,
 "m": [],
 "n": 0,
-"tn": 28
+"tn": 27
 },
 "agustin ibarrola's painted oma forest": {
 "f": "Art & craft",
@@ -33002,11 +33002,11 @@
 "f": "Trades & roles",
 "i": 1,
 "k": "person",
+"leaf": 1,
 "m": [
-"magical girl",
 "young girl"
 ],
-"n": 2,
+"n": 1,
 "p": "age & stage of life"
 },
 "gjenganger": {
@@ -47415,12 +47415,13 @@
 "k": "media & art",
 "m": [
 "antihero",
+"magical girl",
 "picaresque rogue",
 "supervillain trope",
 "the \"small girl with a giant weapon\" trope",
 "witch trope"
 ],
-"n": 7
+"n": 8
 },
 "storytelling itself": {
 "ch": [
@@ -54800,7 +54801,8 @@
 "k": "object",
 "s": [
 797
-]
+],
+"w": "Rocket Festival"
 },
 "banana plant": {
 "g": "plant",
@@ -54972,7 +54974,8 @@
 "k": "life",
 "s": [
 213
-]
+],
+"w": "Ceroplastes cirripediformis"
 },
 "baron munchausen's cherry-tree stag": {
 "d": "Baron Munchausen's cherry-tree stag",
@@ -66569,7 +66572,8 @@
 "k": "mythology",
 "s": [
 77
-]
+],
+"w": "Helios"
 },
 "horses of the ashvins": {
 "d": "horses of the Ashvins",
@@ -69525,7 +69529,8 @@
 "k": "object",
 "s": [
 9
-]
+],
+"w": "Leonardo's fighting vehicle"
 },
 "leopard": {
 "g": "leopard",
@@ -70377,9 +70382,8 @@
 "w": "Magic smoke"
 },
 "magical girl": {
-"g": "girl",
-"i": 1,
-"k": "person",
+"g": "story archetype",
+"k": "media & art",
 "s": [
 531
 ],
@@ -75659,6 +75663,7 @@
 "s": [
 797
 ],
+"w": "The Tale of the Bamboo Cutter",
 "x": 1
 },
 "princess-cut diamond": {
@@ -75726,7 +75731,8 @@
 "k": "object",
 "s": [
 713
-]
+],
+"w": "Project Habakkuk"
 },
 "propeller": {
 "g": "propeller",
@@ -82480,7 +82486,8 @@
 "k": "object",
 "s": [
 797
-]
+],
+"w": "SELENE"
 },
 "the serpent and the forbidden fruit": {
 "g": "serpent",
@@ -83236,7 +83243,8 @@
 "k": "life",
 "s": [
 213
-]
+],
+"w": "Scale insect"
 },
 "tosakin goldfish": {
 "g": "goldfish",
