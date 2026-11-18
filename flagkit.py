@@ -30,6 +30,7 @@ dist/map_data.json is the minified copy the page fetches, rewritten on every sav
   python3 flagkit.py split-ref <src> <new> [id]...    break a compound referent in two (<src> keeps its own name)
   python3 flagkit.py rename-ref <old> <new>           rename a referent everywhere it is named
   python3 flagkit.py set-allusion <referent> on|off   a nod to, rather than drawn from
+  python3 flagkit.py set-meta <referent> on|off      from inside the franchise, not from the world
   python3 flagkit.py set-wiki <referent> [title]       set or clear a referent's Wikipedia title ("Page#Section" allowed)
   python3 flagkit.py set-url <referent> [url]          a source that is no Wikipedia article (Wiktionary, say)
   python3 flagkit.py set-region <cluster> <family> <region>   refile a cluster by where it is from
@@ -695,6 +696,26 @@ def split_ref(D, src, new, *species):
     return "%r split out of %r — %d Pokemon, cluster %r" % (key, src, len(ids), g)
 
 
+def set_meta(D, ref, flag="on"):
+    """Mark a referent as something from inside the franchise — the Gracidea,
+       a Poke Ball, Puka from the anime — or take the mark off. These are real
+       readings Bulbapedia makes, but they point at the games rather than at
+       the world, so there is no article to reach and nothing to check them
+       against; the page says so rather than letting them pass as design
+       sources read off the world. A Wikipedia link is still fine where one
+       exists — Ash Ketchum has an article; the mark is about where the
+       reading comes from, not about whether anyone has written it up. Where a real-world twin already exists,
+       prefer merge-ref: Necrozma's bat was better served by the bat."""
+    R = D["referents"]
+    if ref not in R: sys.exit("no referent called %r" % ref)
+    if flag not in ("on", "off"): sys.exit("on or off")
+    was = "in-universe" if R[ref].get("mr") else "from the world"
+    if flag == "on": R[ref]["mr"] = 1
+    else: R[ref].pop("mr", None)
+    return "%r: %s -> %s" % (ref, was,
+                             "in-universe" if flag == "on" else "from the world")
+
+
 def set_allusion(D, ref, flag="on"):
     """Mark a referent as something the design alludes to rather than is drawn
        from, or take the mark off. The page prints these softer, because
@@ -892,7 +913,7 @@ WRITES = {"move-family": move_family, "nest": nest, "unnest": unnest,
           "merge": merge, "regroup": regroup, "rename": rename,
           "split-family": split_family, "rename-family": rename_family,
           "merge-ref": merge_ref, "move-ref": move_ref, "split-cluster": split_cluster,
-          "split-ref": split_ref, "rename-ref": rename_ref, "set-allusion": set_allusion,
+          "split-ref": split_ref, "rename-ref": rename_ref, "set-allusion": set_allusion, "set-meta": set_meta,
           "add-ref": add_ref,
           "set-kind": set_kind, "set-wiki": set_wiki, "set-url": set_url,
           "set-region": set_region,
@@ -913,7 +934,8 @@ def overlay_of(D):
                           "m": list(v.get("m") or [])}
     for r, v in D["referents"].items():
         O["referents"][r] = {"g": v.get("g"), "k": v.get("k"), "w": v.get("w"),
-                             "ws": v.get("ws"), "u": v.get("u")}
+                             "ws": v.get("ws"), "u": v.get("u"),
+                             "x": v.get("x"), "mr": v.get("mr")}
     return O
 
 
@@ -976,6 +998,8 @@ def patch_apply(D, fresh_path):
         if meta.get("w"): R[r]["w"] = meta["w"]
         if meta.get("ws"): R[r]["ws"] = meta["ws"]
         if meta.get("u"): R[r]["u"] = meta["u"]
+        if meta.get("x"): R[r]["x"] = 1
+        if meta.get("mr"): R[r]["mr"] = 1
     # rebuild the family listings and every count from the result
     for fam in F:
         F[fam]["c"] = []; F[fam]["l"] = []

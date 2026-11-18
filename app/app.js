@@ -467,6 +467,11 @@
     if(srclink(r.ref)) nm.appendChild(el("span","wikimark"," ↗"));
     b.appendChild(nm);
     var meta=el("span","rowmeta");
+    /* "in-universe" is a different claim from "allusion": the source is
+       something inside the games or the anime rather than anything in the
+       world, so there is no article to reach and nothing to compare against.
+       A referent can be both. */
+    if(r.ref.mr) meta.appendChild(el("span","num soft","in-universe"));
     if(r.ref.x) meta.appendChild(el("span","num soft","allusion"));
     meta.appendChild(kindTag(r.ref.k,r.ref.i));
     meta.appendChild(el("span","num",shownCount({t:"referent",k:r.name},r.ref.s.length)+" Pokémon"));
@@ -994,7 +999,7 @@
     else if(sel.t==="referent"){
       var r=D.referents[sel.k];
       var rg=D.groups[r.g]||{};
-      title=disp(sel.k); sub=((rg.f?rg.f+" · ":"")+(r.k||"unclassified"))+(r.x?" · allusion":"")+(r.i?" · inferred":"")+" · "+r.s.length+" Pokémon";
+      title=disp(sel.k); sub=((rg.f?rg.f+" · ":"")+(r.k||"unclassified"))+(r.mr?" · in-universe":"")+(r.x?" · allusion":"")+(r.i?" · inferred":"")+" · "+r.s.length+" Pokémon";
       if(rg.m && rg.m.length>1){
         var up=el("button","tag","↑ see the whole “"+r.g+"” cluster ("+rg.m.length+" referents)");
         up.onclick=function(){select({t:"group",k:r.g})};

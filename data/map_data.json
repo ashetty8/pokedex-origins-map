@@ -52591,6 +52591,7 @@
 "d": "a child's crayon drawing of Pikachu",
 "g": "a child's crayon drawing of pikachu",
 "k": "media & art",
+"mr": 1,
 "s": [
 778
 ],
@@ -53666,6 +53667,7 @@
 "d": "Apricorn",
 "g": "apricorn",
 "k": "life",
+"mr": 1,
 "s": [
 100,
 101
@@ -53935,9 +53937,11 @@
 "d": "Ash Ketchum's attire and hair",
 "g": "attire",
 "k": "object",
+"mr": 1,
 "s": [
 658
-]
+],
+"w": "Ash Ketchum"
 },
 "ashigaru armour": {
 "g": "armour",
@@ -59818,10 +59822,10 @@
 "d": "Crystal Onix (anime)",
 "g": "crystal onix",
 "k": "media & art",
+"mr": 1,
 "s": [
 208
-],
-"w": "Anime"
+]
 },
 "cu-sith (celtic fairy dog)": {
 "d": "cu-sith (Celtic fairy dog)",
@@ -64690,6 +64694,7 @@
 "d": "Gracidea flower",
 "g": "tropical flower",
 "k": "media & art",
+"mr": 1,
 "s": [
 492
 ],
@@ -75337,6 +75342,7 @@
 "d": "Poke Ball",
 "g": "ball",
 "k": "object",
+"mr": 1,
 "s": [
 100,
 101,
@@ -75348,6 +75354,7 @@
 "d": "Pokestar Studios Big Monster films",
 "g": "pokestar studios big monster films",
 "k": "media & art",
+"mr": 1,
 "s": [
 995
 ],
@@ -75982,6 +75989,7 @@
 "d": "Puka (surfing Pikachu from the anime)",
 "g": "puka",
 "k": "media & art",
+"mr": 1,
 "s": [
 26
 ],
@@ -84023,6 +84031,7 @@
 "g": "two fused beldum",
 "i": 1,
 "k": "object",
+"mr": 1,
 "s": [
 375
 ]

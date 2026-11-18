@@ -1,17 +1,11 @@
-Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
+Referents with no source link — build f4b4a145, published version 1794992198-2e26
+973 of 3884 referents (25%). Regenerated 2026-11-18.
+Excludes the 6 referents linked off Wikipedia (Wiktionary, ja.wikipedia, Bulbapedia), listed at the end.
 
-== Abstract ideas (7)
-  "heart of gold"                                             concept        cluster="heart of gold"  [allusion]
-  "turtles all the way down"                                  concept        cluster="turtles all the way down"  [allusion]
-  blob                                                        concept        cluster=blob  [allusion]
+== Abstract ideas (1)
   bushy eyebrows as a sign of age and wisdom                  concept        cluster=old age  [allusion]
-  living sludge                                               concept        cluster=living sludge  [allusion]
-  magma personified                                           concept        cluster=personified  [allusion]
-  nightmares personified                                      concept        cluster=personified  [allusion]
 
-== Art & craft (22)
-  a child's crayon drawing of pikachu                         media & art    cluster=a child's crayon drawing of pikachu
-  acanthus leaf motif                                         media & art    cluster=acanthus leaf motif  [allusion]
+== Art & craft (20)
   agustin ibarrola's painted oma forest                       media & art    cluster=agustin ibarrola's painted oma forest
   al-andalus iconography                                      media & art    cluster=al-andalus iconography
   anglo-saxon fish brooch                                     media & art    cluster=anglo-saxon fish brooch
@@ -33,12 +27,7 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   shikami lion's gaze                                         media & art    cluster=shikami lion's gaze
   trencadis mosaic                                            media & art    cluster=trencadis mosaic
 
-== Bats (3)
-  insect-eating bat                                           life           cluster=bat
-  lunala's bat                                                life           cluster=bat
-  new world leaf-nosed bat                                    life           cluster=bat
-
-== Belief & custom (33)
+== Belief & custom (34)
   "bookworm" pun                                              concept        cluster=pun  [allusion]
   "brains and brawn" team-up trope                            concept        cluster="brains and brawn" team-up trope  [allusion]
   "cold-hearted" visual pun                                   concept        cluster=pun  [allusion]
@@ -54,6 +43,7 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   bous a la mar                                               concept        cluster=bous a la mar  [allusion]
   buddhist 108 bell rings on new year's eve                   concept        cluster=buddhist 108 bell rings on new year's eve  [allusion]
   bushido katana lore                                         concept        cluster=bushido katana lore  [allusion]
+  chinese "dragon shrimp" (longxia)                           concept        cluster=pun  [allusion]
   daimonji bonfire                                            concept        cluster=bonfire  [allusion]
   daimonji bonfire (kanji 大)                                  concept        cluster=bonfire  [allusion]
   doton no jutsu (earth-escape technique)                     concept        cluster=jutsu  [allusion]
@@ -73,50 +63,27 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   witch-hunt burnings                                         concept        cluster=witch-hunt burnings  [allusion]
   zoroastrian dualism                                         concept        cluster=zoroastrian dualism  [allusion]
 
-== Birds (18)
-  aphrodite's dove                                            life           cluster=dove
+== Birds (12)
   baby bird                                                   life           cluster=bird
   baby hatchling                                              life           cluster=hatchling
   bald eagle chick                                            life           cluster=chick
   bird chick                                                  life           cluster=chick
-  bone-dropping bearded vulture                               life           cluster=vulture
   chicken hatchling                                           life           cluster=hatchling
   cockfighting chicken                                        life           cluster=chicken
   emperor penguin chick                                       life           cluster=chick
-  english pouter pigeon                                       life           cluster=pigeon
   extinct stilt-owl                                           life           cluster=extinct stilt-owl
   fire-spreading whistling kite                               life           cluster=bird of prey
-  hawaiian pueo owl                                           life           cluster=owl
   newly hatched chick                                         life           cluster=chick
   painted festival chick                                      life           cluster=chick
-  plastic lawn flamingo                                       life           cluster=flamingo
-  toco toucan chick                                           life           cluster=chick
   vulture chick                                               life           cluster=chick
 
-== Books & stories (10)
-  dune's sandworms                                            media & art    cluster=science fiction & horror  [allusion]
-  king minos in dante's inferno                               media & art    cluster=literary character  [allusion]
-  lovecraftian abomination                                    media & art    cluster=science fiction & horror  [allusion]
-  picaresque rogue                                            media & art    cluster=story archetype  [allusion]
-  puss in boots swashbuckler                                  media & art    cluster=literary character  [allusion]
-  supervillain trope                                          media & art    cluster=story archetype  [allusion]
-  swamp monster from sturgeon's "it!"                         media & art    cluster=science fiction & horror  [allusion]
-  the "small girl with a giant weapon" trope                  media & art    cluster=story archetype  [allusion]
-  the single horned rhinoceros king of journey to the west    earth & sky    cluster=literary character
-  witch trope                                                 media & art    cluster=story archetype  [allusion]
-
-== Buildings & monuments (17)
+== Buildings & monuments (12)
   carnival mouth entrance                                     object         cluster=carnival mouth entrance
-  egyptian sarcophagus                                        object         cluster=egyptian sarcophagus
-  electric charge held by insulation                          object         cluster=insulation
-  ema plaques and horse effigies                              object         cluster=ema plaques and horse effigies
-  european stone circles                                      object         cluster=european stone circles
   komainu statue                                              object         cluster=statue
   moravian star tree-topper                                   object         cluster=moravian star tree-topper
   native american totem pole                                  object         cluster=pole
   naveta d'es tudons tomb                                     object         cluster=naveta d'es tudons tomb
   preseli bluestones                                          object         cluster=preseli bluestones
-  sarcophagus of akhenaten                                    object         cluster=sarcophagus of akhenaten
   steam engine firebox                                        object         cluster=firebox
   steel beam                                                  object         cluster=beam
   stone ship burial                                           object         cluster=stone ship burial
@@ -124,7 +91,7 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   tiki statue                                                 object         cluster=statue
   transmission tower and insulators                           object         cluster=tower
 
-== Carnivores (18)
+== Carnivores (17)
   "british blue" colour variant                               life           cluster=shorthair breed  [allusion]
   adolescent lion                                             life           cluster=lion
   adult male lion                                             life           cluster=lion
@@ -140,11 +107,10 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   pampered pet dog                                            life           cluster=companion dog
   panda cub                                                   life           cluster=cub
   polar bear cub                                              life           cluster=cub
-  solgaleo's lion                                             life           cluster=lion
   spitz dog                                                   life           cluster=spitz & asian dog
   wrestling bear                                              life           cluster=bear  [allusion]
 
-== Clothing & adornment (111)
+== Clothing & adornment (109)
   18th-century pouf hairstyle                                 object         cluster=hairstyle
   1980s aerobics outfit                                       object         cluster=outfit
   acorn cupule as a cap                                       object         cluster=cap
@@ -172,7 +138,6 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   chonmage topknot                                            object         cluster=chonmage topknot
   coat-like cape                                              object         cluster=cape
   coin dispenser belt                                         object         cluster=belt
-  dolphin bubble rings                                        object         cluster=ring
   early 1600s high-class hairstyles                           object         cluster=early 1600s high-class hairstyles
   emo hairstyle                                               object         cluster=hairstyle
   faceted gem jewellery                                       object         cluster=jewellery
@@ -252,7 +217,6 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   tenkan headband                                             object         cluster=headband
   thief's mask and gloves                                     object         cluster=mask
   traditional mexican dress                                   object         cluster=dress
-  tutankhamun's coffin and mask                               object         cluster=tutankhamun's coffin and mask
   wild yak fur skirt                                          object         cluster=skirt
   witch's or birthday hat                                     object         cluster=hat
   zorro-style eye mask                                        object         cluster=mask
@@ -674,7 +638,7 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   titans and the titanomachy                                  mythology      cluster=titans and the titanomachy
   water margin's 108 demons                                   mythology      cluster=water margin's 108 demons
 
-== Life sciences (75)
+== Life sciences (72)
   albinism and leucism                                        concept        cluster=albinism  [allusion]
   androstenol pheromone                                       concept        cluster=androstenol pheromone  [allusion]
   arctic fox's seasonal coat                                  concept        cluster=arctic fox's seasonal coat  [allusion]
@@ -689,14 +653,12 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   crocodile carrying young in its jaws                        concept        cluster=jaws  [allusion]
   crown-of-thorns starfish predation                          concept        cluster=crown-of-thorns starfish predation  [allusion]
   cuttlefish hypnosis                                         concept        cluster=cuttlefish hypnosis  [allusion]
-  cuyaba dwarf frog's false eyes                              concept        cluster=eye  [allusion]
   desert military camouflage                                  concept        cluster=camouflage  [allusion]
   drumming for social dominance                               concept        cluster=drumming for social dominance  [allusion]
   egyptian plover symbiosis                                   concept        cluster=symbiosis  [allusion]
   eyespot mimicry                                             concept        cluster=mimicry  [allusion]
   food hoarding                                               concept        cluster=food hoarding  [allusion]
   frog foam nest                                              concept        cluster=nest  [allusion]
-  frog tympanum                                               concept        cluster=tympanum  [allusion]
   frostbite sores                                             concept        cluster=frostbite sores  [allusion]
   gazelle horns                                               concept        cluster=horn  [allusion]
   giant pumpkin growing                                       concept        cluster=giant pumpkin growing  [allusion]
@@ -725,7 +687,6 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   phoresis in mites                                           concept        cluster=phoresis in mites  [allusion]
   poison gland                                                concept        cluster=poison gland  [allusion]
   poisonous mushroom lookalikes                               concept        cluster=poisonous mushroom lookalikes  [allusion]
-  pollution and toxic waste                                   concept        cluster=pollution  [allusion]
   post-spawning deterioration                                 concept        cluster=post-spawning deterioration  [allusion]
   pseudopod organism                                          concept        cluster=organism  [allusion]
   queen marking                                               concept        cluster=queen marking  [allusion]
@@ -792,7 +753,7 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   thunderstone folklore                                       folklore       cluster=folklore
   tiger-skin ogre                                             folklore       cluster=ogre
 
-== Other objects (33)
+== Other objects (32)
   air filter intake                                           object         cluster=air filter intake
   amplifier input port                                        object         cluster=amplifier input port
   angler's lure                                               object         cluster=lure
@@ -806,7 +767,6 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   ethmoid bone and magnetoreception                           object         cluster=bone
   exposed wire                                                object         cluster=exposed wire
   frog on a lily pad                                          object         cluster=pad
-  hawaiian pueo owl facial disc                               object         cluster=disc
   kin no unko charm                                           object         cluster=charm
   koban and oban coins                                        object         cluster=coin
   koban coin                                                  object         cluster=coin
@@ -827,7 +787,8 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   the white tiger of the four symbols                         object         cluster=symbols
   two fused beldum                                            object         cluster=two fused beldum
 
-== Other plants (19)
+== Other plants (20)
+  apricorn                                                    life           cluster=apricorn
   british folk songs about the windflower                     media & art    cluster=windflower
   cherry infructescence                                       life           cluster=cherry infructescence
   dead man's fingers seaweed                                  life           cluster=dead man's fingers seaweed
@@ -848,14 +809,7 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   uv-blue pitcher rim                                         life           cluster=uv-blue pitcher rim
   yew aril                                                    life           cluster=yew aril
 
-== Outlaws & rogues (3)
-  bancho (delinquent gang leader)                             person         cluster=bancho
-  highwayman dick turpin                                      person         cluster=highwayman dick turpin
-  spy or secret agent                                         person         cluster=spy or secret agent  [allusion]
-
-== Performers (16)
-  arabian belly dancer                                        person         cluster=dancer  [allusion]
-  can-can cabaret dancer                                      person         cluster=dancer  [allusion]
+== Performers (11)
   carnival performer                                          person         cluster=performer  [allusion]
   carnival performer of santa cruz de tenerife                person         cluster=carnival performer of santa cruz de tenerife  [allusion]
   carny clown                                                 person         cluster=clown  [allusion]
@@ -863,19 +817,15 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   glam rock bands                                             person         cluster=glam rock bands  [allusion]
   hula dancer                                                 person         cluster=dancer  [allusion]
   kabuki onnagata                                             person         cluster=kabuki onnagata  [allusion]
-  mariachi singer                                             person         cluster=singer  [allusion]
-  mexican folk dancer                                         person         cluster=dancer  [allusion]
-  orchestra musician                                          person         cluster=orchestra musician
   rock drummer                                                person         cluster=drummer  [allusion]
   samba bateria                                               person         cluster=samba bateria  [allusion]
   samoan fire dancer                                          person         cluster=dancer  [allusion]
   singer with a headset microphone                            person         cluster=singer  [allusion]
 
-== Physical sciences & ideas (16)
+== Physical sciences & ideas (15)
   3d polygon rendering                                        concept        cluster=rendering  [allusion]
   3d rendering and subdivision surfaces                       concept        cluster=rendering  [allusion]
   fused magnet cluster                                        concept        cluster=cluster  [allusion]
-  galvani's frog-leg experiments                              concept        cluster=galvani's frog-leg experiments  [allusion]
   living slime                                                concept        cluster=slime  [allusion]
   magnet cluster                                              concept        cluster=cluster  [allusion]
   negative electric charge                                    concept        cluster=charge  [allusion]
@@ -889,43 +839,27 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   the dinosaurs-into-fossil-fuel misconception                concept        cluster=the dinosaurs-into-fossil-fuel misconception  [allusion]
   the fims fungal-extinction hypothesis                       concept        cluster=hypothesis  [allusion]
 
-== Prehistoric beasts (2)
+== Prehistoric beasts (1)
   paleozoic giant insects                                     prehistoric    cluster=paleozoic giant insects
-  the walking ancestors of whales                             prehistoric    cluster=the walking ancestors of whales
 
-== Primates (4)
-  gibraltar barbary macaque                                   life           cluster=macaque
-  the carew ape                                               life           cluster=the carew ape
+== Primates (2)
   young baboon                                                life           cluster=baboon
   young chimpanzee                                            life           cluster=chimpanzee
 
-== Reptiles & amphibians (19)
-  albino frog                                                 life           cluster=frog
+== Reptiles & amphibians (7)
   baby crocodile                                              life           cluster=crocodile
   baby crocodilian                                            life           cluster=crocodilian
   baby iguana                                                 life           cluster=iguana
   baby turtle                                                 life           cluster=freshwater turtle
   brown basilisk lizard                                       life           cluster=display lizard
-  draco flying lizard                                         life           cluster=display lizard
-  fan-throated lizard                                         life           cluster=display lizard
-  galapagos green sea turtle                                  life           cluster=sea turtle
   larval salamander                                           life           cluster=salamander
-  leopard gecko shedding its skin                             life           cluster=leopard gecko shedding its skin
-  mata mata turtle                                            life           cluster=freshwater turtle
   moulting lizard                                             life           cluster=lizard
-  mythical salamander                                         life           cluster=salamander
-  nozuchi                                                     life           cluster=snake
-  taro urashima's turtle                                      life           cluster=mythic turtle
-  the rainbow turtle of urashima taro                         life           cluster=the rainbow turtle of urashima taro
-  toad tadpole                                                life           cluster=tadpole
-  world-bearing tortoise                                      life           cluster=tortoise
 
-== Rocks & minerals (22)
+== Rocks & minerals (20)
   "rub salt in the wound"                                     concept        cluster="rub salt in the wound"  [allusion]
   alchemical symbol for mercury                               earth & sky    cluster=mercury
   alchemical symbol for salt                                  earth & sky    cluster=alchemical symbol for salt
   block of rock strata                                        earth & sky    cluster=strata
-  copper verdigris                                            earth & sky    cluster=copper verdigris
   copper(ii) sulfate crystals                                 earth & sky    cluster=crystal
   graphite compressed into diamond                            earth & sky    cluster=diamond
   heap of sand                                                earth & sky    cluster=sand
@@ -942,18 +876,14 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   salt roads                                                  earth & sky    cluster=salt roads
   salt-throwing dohyo ritual                                  concept        cluster=salt-throwing dohyo ritual  [allusion]
   tarnishing copper                                           earth & sky    cluster=copper
-  tumbaga and quimbaya artifacts                              earth & sky    cluster=tumbaga and quimbaya artifacts
 
-== Rodents & small mammals (9)
-  alpine marmot of the pyrenees                               life           cluster=alpine marmot of the pyrenees
+== Rodents & small mammals (6)
   baby porcupine                                              life           cluster=porcupine
   family of mice                                              life           cluster=mice
   lop rabbit ears                                             life           cluster=lop rabbit ears
   microgale tenrec                                            life           cluster=tenrec
-  momonga and musasabi flying squirrels                       life           cluster=momonga and musasabi flying squirrels
   moulting mountain hare                                      life           cluster=hare
   pair of mice                                                life           cluster=mice
-  whac-a-mole arcade mole                                     life           cluster=mole
 
 == Rulers & nobility (6)
   bearded king                                                person         cluster=king  [allusion]
@@ -963,37 +893,9 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   the mirror of reason from the snow queen                    person         cluster=queen  [allusion]
   tyrant-king theme                                           concept        cluster=tyrant-king theme  [allusion]
 
-== Sea life (23)
-  bleached coral                                              life           cluster=coral
+== Sea life (2)
   bleached coral skeleton                                     life           cluster=coral
-  blue dragon sea slug                                        life           cluster=slug
-  burrowing urchin                                            life           cluster=urchin
-  cardisoma land crab                                         life           cluster=crab
-  carnivorous sea sponge                                      life           cluster=sponge
-  cephalopod hyponome                                         life           cluster=mollusc & shellfish
-  chinese "dragon shrimp" (longxia)                           life           cluster=shrimp  [allusion]
-  colobocentrotus atratus urchin                              life           cluster=urchin
-  crab pincers                                                life           cluster=crustacean
-  gorgonian coral and gorgonin                                life           cluster=coral
-  heffernan's starfish                                        life           cluster=starfish
-  mutated blue american lobster                               life           cluster=lobster
-  necklace starfish                                           life           cluster=starfish
   phoenix born from a worm                                    life           cluster=worm
-  polychaete parapodia                                        life           cluster=echinoderm & worm
-  rare-spined murex shell                                     life           cluster=shell
-  rock shell                                                  life           cluster=shell
-  scaphinotus and drilus snail-eating beetles                 life           cluster=scaphinotus and drilus snail-eating beetles
-  sea bunny slug                                              life           cluster=slug
-  sea cucumber and its cuvierian tubules                      life           cluster=echinoderm & worm
-  stony coral skeleton                                        life           cluster=coral
-  upside-down squid                                           life           cluster=squid
-
-== Sea mammals (5)
-  arctic cetaceans                                            life           cluster=arctic cetaceans
-  canine pup                                                  life           cluster=pup
-  harp seal pup                                               life           cluster=pup
-  sea otter pup                                               life           cluster=pup
-  the pink boto (shapeshifting river dolphin)                 life           cluster=the pink boto
 
 == Sky & space (9)
   draconid meteor shower                                      earth & sky    cluster=draconid meteor shower
@@ -1006,9 +908,7 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   ultraviolet and blueshift                                   earth & sky    cluster=ultraviolet and blueshift
   wishing upon a star                                         earth & sky    cluster=star
 
-== Society & work (33)
-  1750-1775 western women's fashion                           concept        cluster=fashion  [allusion]
-  ainu ethnobotany                                            concept        cluster=ainu ethnobotany  [allusion]
+== Society & work (29)
   aragoto kabuki style                                        concept        cluster=aragoto kabuki style  [allusion]
   boxing and muay thai attire                                 concept        cluster=boxing  [allusion]
   buyo fan dance                                              concept        cluster=dance  [allusion]
@@ -1021,7 +921,6 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   ganguro gyaru fashion                                       concept        cluster=fashion  [allusion]
   gyaru fashion                                               concept        cluster=fashion  [allusion]
   habu-versus-mongoose shows                                  concept        cluster=shows  [allusion]
-  haka war dance                                              concept        cluster=dance  [allusion]
   hake in spanish cuisine                                     concept        cluster=hake in spanish cuisine  [allusion]
   hawaiian surf culture                                       concept        cluster=culture  [allusion]
   hime gyaru subculture                                       concept        cluster=subculture  [allusion]
@@ -1035,13 +934,12 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   sand play                                                   concept        cluster=sand play  [allusion]
   sea lion balancing trick                                    concept        cluster=trick  [allusion]
   son cubano dance                                            concept        cluster=dance  [allusion]
-  spain's olive production                                    concept        cluster=spain's olive production  [allusion]
   stoneware forgeries                                         concept        cluster=forgeries  [allusion]
   the libero position                                         concept        cluster=position  [allusion]
   velvet antler medicine                                      concept        cluster=velvet antler medicine  [allusion]
   victorian and elizabethan fashion                           concept        cluster=victorian and elizabethan fashion  [allusion]
 
-== Symbols & marks (31)
+== Symbols & marks (22)
   :) emoticon                                                 object         cluster=:) emoticon
   alchemical symbol for sulfur                                object         cluster=alchemical symbol for sulfur
   brahmi and siddham scripts                                  object         cluster=brahmi and siddham scripts
@@ -1057,22 +955,13 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   heraldic sea-lion                                           object         cluster=heraldic sea-lion
   hojo clan crest                                             object         cluster=crest
   hypnotic spiral                                             object         cluster=hypnotic spiral
-  jessant-de-lys heraldic charge                              object         cluster=jessant-de-lys heraldic charge
-  kanji 大 calligraphy                                         object         cluster=kanji 大 calligraphy
   lightning symbol                                            object         cluster=symbol
   lion and sun motif                                          object         cluster=lion and sun motif  [allusion]
   lotus hieroglyph                                            object         cluster=lotus hieroglyph
-  mexican flag colours                                        object         cluster=mexican flag colours
   music clef                                                  object         cluster=music clef
   red, white and blue of the us flag                          object         cluster=red, white and blue of the us flag
   roundel insignia                                            object         cluster=roundel insignia
-  skull hazard icon                                           object         cluster=icon
-  skull-and-crossbones hazard symbol                          object         cluster=skull-and-crossbones hazard symbol
   sound-wave volume icon                                      object         cluster=icon
-  taijitu symbol                                              object         cluster=symbol
-  the map symbol for a tea plantation                         object         cluster=the map symbol for a tea plantation
-  uther pendragon's dragon standard                           object         cluster=uther pendragon's dragon standard
-  wave motifs                                                 object         cluster=wave motifs
 
 == Toys & games (27)
   anesama ningyo paper doll                                   object         cluster=doll
@@ -1103,11 +992,10 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   tunjo figurines                                             object         cluster=figurine
   white knight chess piece                                    object         cluster=chess piece
 
-== Trades & roles (25)
+== Trades & roles (22)
   1920s flapper                                               person         cluster=1920s flapper
   a child led astray                                          person         cluster=a child led astray  [allusion]
   baby witch                                                  person         cluster=witch  [allusion]
-  bodhidharma in meditation                                   person         cluster=bodhidharma in meditation
   carnival muscleman                                          person         cluster=carnival muscleman
   crying toddler                                              person         cluster=toddler  [allusion]
   elderly ainu men                                            person         cluster=men
@@ -1121,16 +1009,14 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   magritte's the rights of man                                person         cluster=man  [allusion]
   masquerade ball patron                                      person         cluster=masquerade ball patron  [allusion]
   nordic or viking woman                                      person         cluster=woman  [allusion]
-  sniper on a rooftop                                         person         cluster=sniper on a rooftop
   sorcerer or warlock                                         person         cluster=sorcerer or warlock
   spoon bender                                                person         cluster=spoon bender
   the london "city gent"                                      person         cluster=the london "city gent"  [allusion]
-  victorian british gentleman                                 person         cluster=victorian british gentleman  [allusion]
   witch's and gorgon's hair                                   person         cluster=witch  [allusion]
   young child                                                 person         cluster=child  [allusion]
   yuki-onna's child                                           person         cluster=child  [allusion]
 
-== Trees & flowers (18)
+== Trees & flowers (14)
   anemone seedpods                                            life           cluster=flower
   autumn deciduous leaves                                     life           cluster=leaf
   bamboo and wooden writing slips                             life           cluster=bamboo
@@ -1142,12 +1028,8 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   fern spores                                                 life           cluster=fern spores
   flower meadow                                               life           cluster=flower meadow
   fuchsia bud                                                 life           cluster=bud
-  gracidea flower                                             life           cluster=tropical flower
   leaf and footprint camouflage                               life           cluster=leaf
   photonastic flower                                          life           cluster=flower
-  rafflesia bud                                               life           cluster=bud
-  rafflesia flower                                            life           cluster=rafflesia arnoldii
-  tiger lily petals                                           life           cluster=tiger lily petals
   tropical palm                                               life           cluster=palm
 
 == Vehicles (8)
@@ -1160,7 +1042,7 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   unmanned aerial drone                                       object         cluster=unmanned aerial drone
   walking tank                                                object         cluster=tank
 
-== Weapons & armour (36)
+== Weapons & armour (27)
   anti-kaiju weapon                                           object         cluster=weapon
   arm cannon                                                  object         cluster=cannon
   arrow and fletching                                         object         cluster=arrow and fletching
@@ -1173,18 +1055,11 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   floating naval mine                                         object         cluster=mine
   glaive blade                                                object         cluster=blade
   jian sword                                                  object         cluster=sword
-  kabuto helmet                                               object         cluster=helmet
-  kanabo club                                                 object         cluster=club
-  khakkhara staff                                             object         cluster=staff
   king arthur's magical armour                                object         cluster=armour
-  king arthur's shield wynebgwrthucher                        object         cluster=king arthur's shield wynebgwrthucher
   knight or gladiator armour                                  object         cluster=armour
   knight or gladiator helmet                                  object         cluster=helmet
   menpo (samurai face armour)                                 object         cluster=armour
-  mongolian laminar armour                                    object         cluster=armour
   mortar cannon                                               object         cluster=cannon
-  murmillo gladiator helmet                                   object         cluster=helmet
-  navaja knife                                                object         cluster=knife
   paired possessed swords                                     object         cluster=paired possessed swords
   possessed magic sword                                       object         cluster=sword
   possessed suit of armour                                    object         cluster=armour
@@ -1192,19 +1067,22 @@ Referents with no Wikipedia article (w) — build f4b4a145, 1096 of 3885
   roman cestus                                                object         cluster=roman cestus
   snowplough blade                                            object         cluster=blade
   soldier's helmet                                            object         cluster=helmet
-  tekko-kagi climbing claws                                   object         cluster=tekko-kagi climbing claws
   the idiom "a mantis's axe"                                  object         cluster=axe  [allusion]
   war-trophy cannons                                          object         cluster=war-trophy cannons
   wheeled cannon                                              object         cluster=cannon
-  zhang fei's serpent spear                                   object         cluster=spear
 
-== Weather & water (8)
-  "head in the clouds"                                        earth & sky    cluster=cloud  [allusion]
+== Weather & water (6)
   cumulonimbus storm cloud                                    earth & sky    cluster=cloud
   gust of wind                                                earth & sky    cluster=gust of wind
-  juhyou ("snow monster" trees)                               earth & sky    cluster=juhyou  [allusion]
   pea-soup fog                                                earth & sky    cluster=pea-soup fog
   poison gas cloud                                            earth & sky    cluster=cloud
   raindrop on a dark cloud                                    earth & sky    cluster=cloud
   the sun on a cloud                                          earth & sky    cluster=cloud
 
+== linked off Wikipedia (6)
+  "head in the clouds"                                        https://en.wiktionary.org/wiki/head_in_the_clouds
+  "heart of gold"                                             https://en.wiktionary.org/wiki/heart_of_gold
+  "zero to hero"                                              https://en.wiktionary.org/wiki/go_from_zero_to_hero
+  gracidea flower                                             https://bulbapedia.bulbagarden.net/wiki/Gracidea
+  juhyou ("snow monster" trees)                               https://en.wiktionary.org/wiki/juhyou
+  tekko-kagi climbing claws                                   https://ja.wikipedia.org/wiki/%E6%89%8B%E7%94%B2%E9%89%A4
