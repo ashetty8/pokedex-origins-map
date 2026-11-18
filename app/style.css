@@ -129,7 +129,7 @@ select{font:inherit;font-size:.82rem;padding:8px 10px;border:1px solid var(--rul
 .more{margin-top:12px;background:var(--card);border:1px solid var(--rule-strong);border-radius:7px;padding:8px 14px;font-size:.84rem;width:100%}
 
 /* detail */
-.detail{margin-top:var(--headrow,0px);position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--topbar,128px) + 18px);background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:18px;
+.detail{margin-top:var(--headrow,0px);position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--topbar,128px) + 18px);background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:0 18px 18px;
   /* the same height as the map beside it, empty or full: a short card
      beside a tall one reads as a mistake */
   min-height:calc(100dvh - env(safe-area-inset-top,0px) - var(--topbar,128px) - var(--headrow,0px) - 40px);max-height:calc(100dvh - env(safe-area-inset-top,0px) - var(--topbar,128px) - var(--headrow,0px) - 40px);overflow:auto;overscroll-behavior:contain}
@@ -144,14 +144,15 @@ select{font:inherit;font-size:.82rem;padding:8px 10px;border:1px solid var(--rul
    things you keep scrolling back for. The chip list is capped, so a
    category with eighty children cannot swallow the whole panel. */
 .dtop{position:sticky;top:0;z-index:3;background:var(--card);
-  /* The panel's own padding sits above this block, so a block that began
-     at the padding's inner edge left an 18px slot for chips to scroll
-     through. Pull it out to the panel's edges and carry the padding
-     inside it instead: the position on screen is unchanged, the
-     background now reaches the top and sides. */
-  margin:-18px -18px 0;padding:18px 18px 0;
+  /* A sticky box is held by its MARGIN box, so pulling this one up with a
+     negative margin only pushed the visible block down by the same amount
+     and left the slot above it open. The panel gives up its top padding
+     instead and this block carries it, so the block's own top edge is the
+     scrollport's: nothing can pass above it. */
+  margin:0 -18px;padding:18px 18px 0;
   box-shadow:0 8px 10px -10px rgba(0,0,0,.28)}
 .dtop .dhead{margin-bottom:0}
+.detail > .dhead{padding-top:18px}
 .dtop .sectitle{margin-top:12px}
 .dtop .taglist{max-height:104px;overflow:auto;overscroll-behavior:contain;padding-bottom:12px}
 .dhead{display:flex;gap:10px 12px;align-items:flex-start;flex-wrap:wrap;
