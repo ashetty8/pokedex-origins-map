@@ -18454,7 +18454,7 @@
 "tardigrade",
 "toxoplasma gondii"
 ],
-"n": 30
+"n": 29
 },
 "Other folklore": {
 "c": [
@@ -18791,7 +18791,7 @@
 "greek letter alpha",
 "greek letter omega"
 ],
-"n": 69
+"n": 70
 },
 "Toys & games": {
 "b": "Home & workshop",
@@ -23200,7 +23200,7 @@
 "leaf": 1,
 "m": [],
 "n": 0,
-"tn": 57
+"tn": 56
 },
 "ancient fish": {
 "ch": [
@@ -25563,7 +25563,7 @@
 "m": [],
 "n": 0,
 "p": "anatomy",
-"tn": 24
+"tn": 23
 },
 "bodybuilder": {
 "f": "Fighters & athletes",
@@ -35491,11 +35491,11 @@
 "icon": {
 "f": "Symbols & marks",
 "k": "object",
+"leaf": 1,
 "m": [
-"skull hazard icon",
 "sound-wave volume icon"
 ],
-"n": 2,
+"n": 1,
 "p": "modern sign"
 },
 "ifrit": {
@@ -39287,7 +39287,6 @@
 "hypnotic spiral",
 "icon",
 "mark",
-"skull-and-crossbones hazard symbol",
 "smiley face",
 "symbol",
 "the map symbol for a tea plantation",
@@ -39298,7 +39297,7 @@
 "leaf": 1,
 "m": [],
 "n": 0,
-"tn": 22
+"tn": 23
 },
 "mokele-mbembe": {
 "f": "Other folklore",
@@ -46148,21 +46147,10 @@
 "k": "life",
 "m": [
 "human skull",
-"skull",
-"skull and crossbones"
+"skull"
 ],
-"n": 3,
+"n": 2,
 "p": "body part"
-},
-"skull-and-crossbones hazard symbol": {
-"f": "Symbols & marks",
-"k": "object",
-"leaf": 1,
-"m": [
-"skull-and-crossbones hazard symbol"
-],
-"n": 1,
-"p": "modern sign"
 },
 "skunk": {
 "f": "Carnivores",
@@ -47993,9 +47981,10 @@
 "heart symbol",
 "lightning bolt symbol",
 "lightning symbol",
+"skull-and-crossbones hazard symbol",
 "taijitu symbol"
 ],
-"n": 4,
+"n": 7,
 "p": "modern sign"
 },
 "symbols": {
@@ -52326,7 +52315,7 @@
 "build": "f4b4a145",
 "clusters": 574,
 "families": 59,
-"groups": 2636,
+"groups": 2635,
 "kinds": [
 "concept",
 "earth & sky",
@@ -52339,7 +52328,7 @@
 "person",
 "prehistoric"
 ],
-"referents": 3886,
+"referents": 3884,
 "species": 1025
 },
 "referents": {
@@ -52384,6 +52373,7 @@
 "s": [
 1021
 ],
+"u": "https://en.wiktionary.org/wiki/head_in_the_clouds",
 "x": 1
 },
 "\"heart of gold\"": {
@@ -52508,6 +52498,8 @@
 "s": [
 549
 ],
+"w": "1750–1775 in Western fashion",
+"ws": "Women's fashion",
 "x": 1
 },
 "18th-century pouf hairstyle": {
@@ -52896,6 +52888,7 @@
 "s": [
 549
 ],
+"w": "Ainu people",
 "x": 1
 },
 "air filter intake": {
@@ -53676,8 +53669,7 @@
 "s": [
 100,
 101
-],
-"w": "Apricorn, Inc."
+]
 },
 "arabian belly dancer": {
 "d": "Arabian belly dancer",
@@ -56143,7 +56135,8 @@
 "k": "person",
 "s": [
 555
-]
+],
+"w": "Bodhidharma"
 },
 "bodhisattva janguli": {
 "d": "Bodhisattva Janguli",
@@ -64696,10 +64689,12 @@
 "gracidea flower": {
 "d": "Gracidea flower",
 "g": "tropical flower",
-"k": "life",
+"k": "media & art",
 "s": [
 492
-]
+],
+"u": "https://bulbapedia.bulbagarden.net/wiki/Gracidea",
+"x": 1
 },
 "graffiti art": {
 "g": "art",
@@ -65370,6 +65365,7 @@
 "s": [
 783
 ],
+"w": "Haka",
 "x": 1
 },
 "hake": {
@@ -67973,7 +67969,8 @@
 "k": "object",
 "s": [
 906
-]
+],
+"w": "Jessant-de-lys"
 },
 "jester's cap and bells": {
 "g": "cap",
@@ -68133,6 +68130,7 @@
 "s": [
 460
 ],
+"u": "https://en.wiktionary.org/wiki/juhyou",
 "x": 1
 },
 "jujutsu fighter": {
@@ -68207,7 +68205,8 @@
 "s": [
 851,
 983
-]
+],
+"w": "Kabuto"
 },
 "kachina doll": {
 "g": "doll",
@@ -68346,7 +68345,8 @@
 "k": "object",
 "s": [
 1017
-]
+],
+"w": "Kanabō"
 },
 "kanaloa (hawaiian ocean god)": {
 "d": "Kanaloa (Hawaiian ocean god)",
@@ -68409,7 +68409,8 @@
 "k": "object",
 "s": [
 52
-]
+],
+"w": "Japanese calligraphy"
 },
 "kanzashi hairpins": {
 "g": "kanzashi hairpins",
@@ -68567,7 +68568,8 @@
 "k": "object",
 "s": [
 784
-]
+],
+"w": "Khakkhara"
 },
 "khepri": {
 "d": "Khepri",
@@ -68651,7 +68653,9 @@
 "k": "object",
 "s": [
 889
-]
+],
+"w": "Excalibur",
+"ws": "Arthur's other weapons"
 },
 "king bladud of bath legend": {
 "d": "King Bladud of Bath legend",
@@ -71337,7 +71341,8 @@
 "k": "object",
 "s": [
 701
-]
+],
+"w": "Flag of Mexico"
 },
 "mexican folk dancer": {
 "d": "Mexican folk dancer",
@@ -71774,7 +71779,8 @@
 "k": "object",
 "s": [
 115
-]
+],
+"w": "Mongolian armour"
 },
 "mongolian spots": {
 "d": "Mongolian spots",
@@ -72302,7 +72308,8 @@
 "s": [
 259,
 475
-]
+],
+"w": "Murmillo"
 },
 "mushroom": {
 "g": "mushroom",
@@ -72616,7 +72623,8 @@
 "s": [
 919,
 920
-]
+],
+"w": "Navaja"
 },
 "naval mine": {
 "g": "mine",
@@ -76483,7 +76491,8 @@
 "k": "life",
 "s": [
 44
-]
+],
+"w": "Rafflesia"
 },
 "rafflesia flower": {
 "d": "Rafflesia flower",
@@ -76491,7 +76500,8 @@
 "k": "life",
 "s": [
 2
-]
+],
+"w": "Rafflesia"
 },
 "rafflesia hasseltii": {
 "d": "Rafflesia hasseltii",
@@ -79417,21 +79427,6 @@
 ],
 "w": "Skull"
 },
-"skull and crossbones": {
-"g": "skull",
-"k": "life",
-"s": [
-109
-],
-"w": "Skull and crossbones"
-},
-"skull hazard icon": {
-"g": "icon",
-"k": "object",
-"s": [
-966
-]
-},
 "skull mask": {
 "g": "mask",
 "k": "object",
@@ -79441,11 +79436,15 @@
 "w": "Skull mask"
 },
 "skull-and-crossbones hazard symbol": {
-"g": "skull-and-crossbones hazard symbol",
+"g": "symbol",
 "k": "object",
 "s": [
-194
-]
+109,
+194,
+966
+],
+"w": "Skull and crossbones",
+"ws": "Symbol for poisonous substances"
 },
 "skunk": {
 "g": "skunk",
@@ -79687,7 +79686,8 @@
 "k": "person",
 "s": [
 818
-]
+],
+"w": "Sniper"
 },
 "snood scarf": {
 "g": "scarf",
@@ -80074,6 +80074,8 @@
 928,
 929
 ],
+"w": "Olive",
+"ws": "Production",
 "x": 1
 },
 "spanish fighting bull": {
@@ -81458,7 +81460,8 @@
 "k": "object",
 "s": [
 359
-]
+],
+"w": "Taijitu"
 },
 "taiko drummer": {
 "g": "drummer",
@@ -81777,7 +81780,8 @@
 "k": "object",
 "s": [
 903
-]
+],
+"u": "https://ja.wikipedia.org/wiki/%E6%89%8B%E7%94%B2%E9%89%A4"
 },
 "telescope-eye and celestial-eye goldfish": {
 "g": "telescope-eye and celestial-eye goldfish",
@@ -82406,7 +82410,8 @@
 "k": "object",
 "s": [
 1012
-]
+],
+"w": "List of Japanese map symbols"
 },
 "the middle ages": {
 "d": "the Middle Ages",
@@ -83116,7 +83121,8 @@
 "k": "life",
 "s": [
 637
-]
+],
+"w": "Lilium lancifolium"
 },
 "tiger-skin ogre": {
 "g": "ogre",
@@ -84329,7 +84335,8 @@
 "k": "object",
 "s": [
 890
-]
+],
+"w": "Uther Pendragon"
 },
 "utsusemi ninjutsu": {
 "g": "utsusemi ninjutsu",
@@ -84576,6 +84583,7 @@
 "s": [
 110
 ],
+"w": "Society and culture of the Victorian era",
 "x": 1
 },
 "victorian dress": {
@@ -85023,7 +85031,8 @@
 "k": "object",
 "s": [
 503
-]
+],
+"w": "Wind wave"
 },
 "waxwing": {
 "g": "waxwing",
@@ -86304,7 +86313,8 @@
 "k": "object",
 "s": [
 500
-]
+],
+"w": "Serpent spear"
 },
 "zhu bajie (journey to the west)": {
 "d": "Zhu Bajie (Journey to the West)",
@@ -86998,7 +87008,7 @@
 "floating naval mine",
 "meteorite",
 "smog and air pollution",
-"skull and crossbones"
+"skull-and-crossbones hazard symbol"
 ],
 [
 "earth & sky",
@@ -100417,7 +100427,7 @@
 "flying car",
 "dekotora",
 "road rage",
-"skull hazard icon"
+"skull-and-crossbones hazard symbol"
 ],
 [
 "folklore",

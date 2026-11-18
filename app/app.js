@@ -52,9 +52,22 @@
     if(r.u && /^https?:\/\//i.test(r.u)){
       var m=/^https?:\/\/([^\/]+)\/(?:wiki\/)?([^?#]*)/.exec(r.u);
       if(!m) return {href:r.u, label:r.u};
-      var site=m[1].replace(/^(?:en|www)\./,"").replace(/\.(?:org|com|net)$/,""),
-          page=decodeURIComponent(m[2]||"").replace(/_/g," ");
-      site=site.charAt(0).toUpperCase()+site.slice(1);
+      var host=m[1].toLowerCase().replace(/^www\./,""),
+          page=decodeURIComponent(m[2]||"").replace(/_/g," "),
+          part=host.split("."),
+          cap=function(w){ return w.charAt(0).toUpperCase()+w.slice(1) },
+          site;
+      if(part.length>1 && /^(?:wikipedia|wiktionary|wikisource|wikiquote|wikivoyage|wikibooks|wikinews|wikidata|commons)$/.test(part[1])
+         && /^[a-z]{2,3}(?:-[a-z]+)?$/.test(part[0])){
+        /* a language-prefixed Wikimedia site: name the project and then the
+           language, so a Japanese article reads "Wikipedia (ja)" rather than
+           the nonsense "Ja.wikipedia". English needs no label. */
+        site=cap(part[1])+(part[0]==="en" ? "" : " ("+part[0]+")");
+      } else {
+        /* anything else answers to its own first label: bulbapedia.bulbagarden.net
+           is Bulbapedia, not Bulbapedia.bulbagarden. */
+        site=cap(part[0]);
+      }
       return {href:r.u, label:page ? site+": "+page : site};
     }
     return null;
