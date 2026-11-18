@@ -102,6 +102,9 @@
     D=j;
     $("#counts").textContent=j.meta.species+" Pokémon · "+j.meta.referents+" referents · "+j.meta.clusters+" clusters · "+j.meta.families+" families";
     buildKinds(); buildPokeFilters(); buildParentList(); render(); loadSprites();
+    /* the panel reports where a referent is from on every tab, so the
+       geography loads with the dataset rather than with the Atlas tab */
+    ensureGeo().then(function(){ if(state.sel) renderDetail() }).catch(function(){});
   }).catch(function(){
     $("#results").innerHTML='<p class="empty">The dataset could not be loaded. Reload the page to try again.</p>';
   });
@@ -951,6 +954,8 @@
       }
       body.appendChild(sectionTitle("Pokémon"));
       body.appendChild(speciesTags(r.s,sel.k));
+      var og=originSection(sel.k);
+      if(og) body.appendChild(og);
       if(r.w){
         var wa=el("a","src","Wikipedia: "+r.w+" ↗");
         wa.href="https://en.wikipedia.org/wiki/"+encodeURIComponent(r.w.replace(/ /g,"_"));
@@ -1195,6 +1200,53 @@
     return nav;
   }
   function sectionTitle(t){ return el("div","sectitle",t) }
+  /* Where a referent is from, said plainly enough to audit: the place, the
+     point it is pinned at, the claim that put it there, and how far from the
+     referent that claim was made. Everything here comes from geo.json, which
+     is generated — correcting one means correcting the pass that wrote it,
+     not this panel. */
+  var ORIGINTIER=["from its own Wikidata entry","one hop out, through what it belongs to",
+                  "from the culture area this dataset files it under"];
+  function originSection(name){
+    var box=el("div");
+    if(!GEO){ return null }                       /* still loading; the panel redraws when it lands */
+    var row=GEO.refs[name], r=D.referents[name]||{};
+    box.appendChild(sectionTitle("Where it is from"));
+    if(!row){
+      box.appendChild(el("p","dvia", r.w
+        ? "Not placed \u2014 neither its own Wikidata entry nor what it belongs to says where it is from."
+        : "Not placed \u2014 no Wikipedia article is linked, so there was nothing to ask."));
+      return box;
+    }
+    var p=GEO.places[row[0]], tier=row[2];
+    var line=el("div","originrow");
+    var btn=el("button","tag origin"+(tier===2?" soft":""),p[0]);
+    btn.title="Show this place on the Atlas";
+    btn.onclick=function(){ openOnAtlas() };
+    line.appendChild(btn);
+    box.appendChild(line);
+    box.appendChild(el("div","dvia",
+      p[1].toFixed(2)+", "+p[2].toFixed(2)+" \u00b7 "+(GEO.vias[row[1]]||"?")));
+    box.appendChild(el("div","dvia",ORIGINTIER[tier]||""));
+    if(tier===2) box.appendChild(el("div","dvia","a region, not a spot \u2014 the pin stands for the whole area"));
+    if(p[3]){
+      var wd=el("a","src","Wikidata: "+p[3]+" \u2197");
+      wd.href="https://www.wikidata.org/wiki/"+p[3];
+      wd.target="_blank"; wd.rel="noopener noreferrer";
+      var wrap=el("p"); wrap.style.margin="6px 0 0"; wrap.appendChild(wd);
+      box.appendChild(wrap);
+    }
+    return box;
+  }
+  /* Keep the selection and switch tabs: the atlas lights up the place the
+     open referent came from, with that referent marked in its fan. */
+  function openOnAtlas(){
+    state.tab="atlas";
+    ["clusters","map","atlas","species","flags"].forEach(function(o){
+      $("#tab-"+o).setAttribute("aria-selected",o==="atlas"?"true":"false");
+    });
+    record(); render();
+  }
   function unionSpecies(members){
     var set={}; members.forEach(function(m){ (D.referents[m]?D.referents[m].s:[]).forEach(function(id){set[id]=1}) });
     return Object.keys(set).map(Number).sort(function(a,b){return a-b});
@@ -1798,17 +1850,26 @@
      one hop out through what it belongs to, or the culture area the dataset
      already files it under. The third is a region, not a spot, so its pins
      are drawn hollow-dashed: Celtic folklore is not at one coordinate. */
-  var WORLD=null, GEO=null, atlasWant=null, atlasWired=false, atlasBroken=false;
+  var WORLD=null, GEO=null, atlasWant=null, geoWant=null, atlasWired=false, atlasBroken=false;
   var AHOME={cx:1000,cy:500,w:2000};   /* the whole globe, exactly filling a 2:1 canvas */
   var AVIEW={cx:AHOME.cx,cy:AHOME.cy,w:AHOME.w};
   var APLACES=null, ABYNAME=null, ALABELS=true, ALASTFOCUS=null;
 
+  /* geo.json is 33 KB and the side panel wants it on every tab, so it loads
+     with the dataset; world.json is the 134 KB of outlines, and only the
+     Atlas tab ever needs those. */
+  function ensureGeo(){
+    if(geoWant) return geoWant;
+    geoWant=fetch("geo.json").then(function(r){ if(!r.ok) throw new Error("geo"); return r.json() })
+      .then(function(j){ GEO=j; APLACES=null; return j });
+    return geoWant;
+  }
   function ensureAtlas(){
     if(atlasWant) return atlasWant;
     atlasWant=Promise.all([
       fetch("world.json").then(function(r){ if(!r.ok) throw new Error("world"); return r.json() }),
-      fetch("geo.json").then(function(r){ if(!r.ok) throw new Error("geo"); return r.json() })
-    ]).then(function(a){ WORLD=a[0]; GEO=a[1]; APLACES=null });
+      ensureGeo()
+    ]).then(function(a){ WORLD=a[0]; APLACES=null });
     return atlasWant;
   }
   /* plate carrée: the whole globe across WORLD.w by WORLD.h units */

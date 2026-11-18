@@ -341,4 +341,12 @@ a.src{color:var(--accent);font-size:.8rem;text-decoration:none;border-bottom:1px
 .atlasempty{position:absolute;inset:auto 14px 14px;font-size:.8rem;color:var(--ink-soft)}
 /* the panel's own place header: how the point was arrived at, never implied */
 .dvia{font-family:var(--mono);font-size:.68rem;color:var(--ink-faint);margin-top:4px}
+/* a referent's own origin, laid out to be read as evidence: the place as a
+   chip you can follow to the map, then the point, the claim and how far from
+   the referent that claim was made */
+.originrow{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.tag.origin{border-color:var(--accent);color:var(--ink)}
+.tag.origin::before{content:"\25c9";color:var(--accent);margin-right:5px;font-size:.8em}
+.tag.origin.soft{border-style:dashed}
+.tag.origin.soft::before{content:"\25cb"}
 

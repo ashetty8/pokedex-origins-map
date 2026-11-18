@@ -107,14 +107,18 @@ def main():
 
     places, index = [], {}
 
-    def place_id(name, lat, lon):
+    def place_id(name, lat, lon, qid=None):
         # One pin per name: the same country reached two ways (its own claim,
         # or a culture area that happens to be a country) came back with
         # points a degree apart and drew two pins on top of each other.
         name = ALIAS.get(name, name)
         if name not in index:
             index[name] = len(places)
-            places.append([name, round(lat, 2), round(lon, 2)])
+            # the Wikidata item for the place, so the panel can link what it
+            # is claiming — a culture area is ours, and has none
+            places.append([name, round(lat, 2), round(lon, 2), qid])
+        elif qid and places[index[name]][3] is None:
+            places[index[name]][3] = qid
         return index[name]
 
     vias, viaidx = [], {}
@@ -140,7 +144,8 @@ def main():
         if not hit:
             continue
         counts[kind] += 1
-        out[name] = [place_id(hit["place"], hit["lat"], hit["lon"]),
+        out[name] = [place_id(hit["place"], hit["lat"], hit["lon"],
+                              hit.get("placeq") or (hit.get("q") if kind == "direct" else None)),
                      via_id(hit["via"]),
                      {"direct": 0, "hop": 1, "region": 2}[kind]]
 
