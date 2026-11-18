@@ -10,12 +10,15 @@ Four sources, strongest first:
   3. the dataset's own curated `rg` regions on mythology and folklore
      families, which name a culture area rather than a country
 
+Each place also carries the culture area it rolls up into for the Atlas's
+regions view (`pr`), read off world.json rather than off the place's name.
+
 Output is deliberately small: a place table, and one row per referent pointing
 into it, so ~1,500 pins cost a few tens of kilobytes rather than a megabyte.
 
     python3 -I tools/geobuild.py
 """
-import collections, json, os, re, sys
+import collections, json, math, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -207,6 +210,88 @@ ALIAS = {
 }
 
 
+def place_regions(places, world):
+    """Which culture area each place rolls up into, for the Atlas's regions
+    view: one circle per region at world zoom, where one circle per place
+    makes Europe's six traditions look bigger than a Japan that carries more.
+
+    A place is read off the map rather than off its name: the country whose
+    shape contains the pin decides, and that country's culture area is the
+    answer. Islands the world map is too coarse to carry — Mallorca, Mauritius,
+    the Ryukyus — fall to the nearest country instead, which is also the honest
+    answer for the Guanche pyramids in the Canaries, politically Spanish and
+    culturally North African.
+
+    Places that get no region, and so stand on their own in the Atlas: a
+    natural range, because Eurasia spans ten areas and belongs to none; a
+    country no culture area claims, like Argentina or Taiwan, because
+    inventing one would file a pin under a tradition it has nothing to do
+    with; and anything more than ~1,500 km from the nearest coast the map
+    draws, which is open ocean and the far-flung Pacific. A place that is a
+    culture area already answers with itself.
+    """
+    # AREA_COUNTRIES is a shading table and says so: it lists the cultural
+    # core of each area, which is why Australia is in none of them — shading
+    # it "Oceania & Polynesia" would claim Aboriginal Australia for Polynesia.
+    # Rolling a pin up into a circle makes no such claim, and Australia is in
+    # Oceania by any reading, so the rollup knows what the shading will not.
+    ROLLUP_ONLY = {"Australia": "Oceania & Polynesia"}
+    country_area = {c: a for a, cs in AREA_COUNTRIES.items() for c in cs}
+    country_area.update(ROLLUP_ONLY)
+    W, H = (world or {}).get("w") or 2000.0, (world or {}).get("h") or 1000.0
+    # Beyond this, "nearest coast" stops meaning anything: the nearest land
+    # to the Marquesas that this map draws is 3,500 km away in North America,
+    # and the nearest to the North Atlantic is Ireland. Guessing from that
+    # distance is how Antarctica ends up in Sub-Saharan Africa, so a place
+    # this far out to sea gets no region and the Atlas leaves it standing on
+    # its own — the same answer a country no culture area claims gets.
+    FAR = 1500.0 / 111.0 * (W / 360.0)        # ~1,500 km in projected units
+
+    def rings(d):
+        out = []
+        for chunk in (d or "").split("M")[1:]:
+            pts = [(float(x), float(y)) for x, y in
+                   re.findall(r"(-?\d+\.?\d*)\s+(-?\d+\.?\d*)", chunk)]
+            if len(pts) > 2: out.append(pts)
+        return out
+
+    shapes = [(c["n"], rings(c.get("d")))
+              for c in (world or {}).get("countries") or []]
+
+    def xy(lat, lon): return ((lon + 180) / 360.0 * W, (90 - lat) / 180.0 * H)
+
+    def within(pt, ring):
+        x, y = pt
+        n, inside = len(ring), False
+        for i in range(n):
+            x1, y1 = ring[i]
+            x2, y2 = ring[(i + 1) % n]
+            if (y1 > y) != (y2 > y) and x < (x2 - x1) * (y - y1) / (y2 - y1) + x1:
+                inside = not inside
+        return inside
+
+    def country_of(lat, lon):
+        pt = xy(lat, lon)
+        for name, rs in shapes:
+            if any(within(pt, r) for r in rs): return name
+        # at sea, or on an island this map does not draw: the nearest coast
+        best, how_far = None, None
+        for name, rs in shapes:
+            for r in rs:
+                for x, y in r:
+                    d2 = (x - pt[0]) ** 2 + (y - pt[1]) ** 2
+                    if how_far is None or d2 < how_far: best, how_far = name, d2
+        if how_far is not None and how_far > FAR * FAR: return None
+        return best
+
+    out = []
+    for name, lat, lon in ((p[0], p[1], p[2]) for p in places):
+        if name in RANGE_COUNTRIES: out.append(None)
+        elif name in REGION_POINTS: out.append(name)
+        else: out.append(country_area.get(country_of(lat, lon)))
+    return out
+
+
 def check_areas(world):
     """A country named here that world.json does not have would silently
     shade nothing, and a country in two areas would shade twice."""
@@ -359,6 +444,10 @@ def main():
            "areas": {a: c for a, c in AREA_COUNTRIES.items() if a in drawn},
            "ranges": {r: c for r, c in RANGE_COUNTRIES.items() if r in drawn},
            "regions": sorted(REGION_POINTS),
+           # one entry per place, parallel to "places": the region it rolls
+           # up into in the Atlas's regions view, or null for a place that
+           # stands on its own
+           "pr": place_regions(places, world),
            "meta": {"referents": len(out), "species": len(species),
                     "places": len(places), "build": D["meta"].get("build"),
                     "direct": counts["direct"], "hop": counts["hop"],
