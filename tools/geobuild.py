@@ -49,6 +49,23 @@ REGION_POINTS = {
 # A continent-sized answer is still worth a pin; a planet is not.
 SKIP_PLACES = {"Earth", "Solar System", "universe", "outer space", "Milky Way"}
 
+# A protected area is where someone recorded a species, not where it is from.
+# Wikidata's "endemic to" is used loosely enough that six widespread birds came
+# back endemic to an Indian national park: the common swift and the Eurasian
+# eagle-owl to Namdapha, the Eurasian teal and the great hornbill to Kaziranga,
+# the great tit to a tiger reserve, the African goliath heron to the
+# Sundarbans. None of them is endemic to anything. An island, a basin, a
+# desert or a fossil formation is a real origin and is left alone — the royal
+# penguin really is Macquarie Island's, dimetrodon really is from the Red Beds
+# — so this names the one kind of place that is always a sighting.
+PROTECTED = ("National Park", "Nature Reserve", "Tiger Reserve",
+             "Wildlife Sanctuary", "Wildlife Refuge", "Game Reserve",
+             "Conservation Area", "Biosphere Reserve")
+
+
+def a_sighting(place):
+    return any(w in (place or "") for w in PROTECTED)
+
 # Wikidata's formal or historical name for a place a reader knows by another.
 # Only exact synonyms of the same modern place: a genuinely historical polity
 # (Manchukuo, the Holy Roman Empire) keeps its own name and its own pin.
@@ -134,19 +151,33 @@ def main():
             vias.append(text)
         return viaidx[text]
 
+    # why a referent has no pin, but only where we turned something down: the
+    # card would otherwise tell a reader that nothing says where it is from,
+    # which is not the same as "what it said was not evidence"
+    refused = {}
     out, counts = {}, {"direct": 0, "hop": 0, "region": 0, "hand": 0}
     for name in sorted(refs):
         hit, kind = None, None
         if name in unplaced_by_hand:
+            refused[name] = unplaced_by_hand[name]
             continue              # audited and found to be from nowhere
+        for src in (raw, deep):
+            if name in src and a_sighting(src[name].get("place")):
+                refused.setdefault(
+                    name, "its only claim was a sighting in %s, which is where "
+                          "it was recorded rather than where it is from"
+                          % src[name]["place"])
         if name in placed_by_hand:
+            refused.pop(name, None)
             h = placed_by_hand[name]
             hit, kind = {"lat": h["lat"], "lon": h["lon"], "place": h["place"],
                          "placeq": h.get("q"),
                          "via": "placed by hand after checking"}, "hand"
-        elif name in raw and raw[name].get("place") not in SKIP_PLACES:
+        elif name in raw and raw[name].get("place") not in SKIP_PLACES \
+                and not a_sighting(raw[name].get("place")):
             hit, kind = raw[name], "direct"
-        elif name in deep and deep[name].get("place") not in SKIP_PLACES:
+        elif name in deep and deep[name].get("place") not in SKIP_PLACES \
+                and not a_sighting(deep[name].get("place")):
             hit, kind = deep[name], "hop"
         elif name in region_of_ref:
             region = region_of_ref[name]
@@ -168,7 +199,9 @@ def main():
 
     why = {n: h["why"] for n, h in placed_by_hand.items()
            if n in out and h.get("why")}
+    refused = {n: t for n, t in refused.items() if n not in out}
     geo = {"places": places, "vias": vias, "refs": out, "why": why,
+           "unplaced": refused,
            "regions": sorted(REGION_POINTS),
            "meta": {"referents": len(out), "species": len(species),
                     "places": len(places), "build": D["meta"].get("build"),
@@ -182,6 +215,7 @@ def main():
           "%d by hand; %d suppressed by hand)"
           % (len(out), counts["direct"], counts["hop"], counts["region"],
              counts["hand"], len(unplaced_by_hand)))
+    print("%d referents say why they have no pin" % len(refused))
     print("%d places, %d Pokémon reachable" % (len(places), len(species)))
     top = {}
     for name, row in out.items():

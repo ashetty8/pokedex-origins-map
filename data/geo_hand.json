@@ -8,12 +8,25 @@
     "`place` pins a referent; `unplace` suppresses whatever the passes found."
   ],
   "place": {
+    "buckskin fringe": {
+      "place": "North America",
+      "lat": 43.0,
+      "lon": -99.0,
+      "why": "no Wikipedia link; buckskins are Native American deerskin clothing, later taken up by frontiersmen"
+    },
     "cherufe (chilean magma creature)": {
       "place": "Chile",
       "lat": -33.0,
       "lon": -71.0,
       "why": "Mapuche, and the Mapuche hop named Chile and Argentina; the Andes region centroid sits far north of it",
       "q": "Q298"
+    },
+    "epaulettes": {
+      "place": "France",
+      "lat": 47.0,
+      "lon": 2.0,
+      "q": "Q142",
+      "why": "its article's History section: 17th-century French military dress, and the word is French for 'little shoulder'"
     },
     "european dragon": {
       "place": "Western Europe",
@@ -92,6 +105,13 @@
       "q": "Q17",
       "why": "as japanese war fan — same article, same reason"
     },
+    "the iron wolf of lithuania": {
+      "place": "Lithuania",
+      "lat": 55.17,
+      "lon": 23.88,
+      "q": "Q37",
+      "why": "Lithuanian, from the founding legend of Vilnius; its cluster's culture area said Slavic & Eastern Europe, and Lithuanian is Baltic, not Slavic"
+    },
     "tree-kangaroo": {
       "place": "New Guinea",
       "lat": -5.0,
@@ -119,7 +139,10 @@
     }
   },
   "unplace": {
+    "asian black bear": "its range runs from southeastern Iran through the Himalayas and mainland Southeast Asia to China, Korea, Japan and the Russian Far East — six of this map's regions, so any single pin would be a guess dressed as a fact",
+    "bearded vulture": "its own entry claims it is endemic to the Sela Pass; it ranges across the mountains of Eurasia and Africa, and a single Himalayan pass is a sighting",
+    "hadrosaur": "was pinned to the Kanguk Formation, one Arctic site standing in for a clade on five continents; its sibling clade-level referents carry no pin either",
     "tailor": "reached Germany one hop out through 'a kind of Q778000'; a trade is from nowhere",
-    "hadrosaur": "was pinned to the Kanguk Formation, one Arctic site standing in for a clade on five continents; its sibling clade-level referents carry no pin either"
+    "white stork": "its own entry claims it is endemic to the Little Rann of Kutch, a salt marsh it winters in; it breeds across Europe, West Asia and NW Africa and winters in Africa and India, so no one place is where it is from"
   }
 }

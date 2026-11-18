@@ -1224,8 +1224,14 @@
     var card=el("div","origincard");
     box.appendChild(card);
     if(!row){
+      /* "nothing says where it is from" is not the same as "what it said was
+         not evidence". Where the build turned a claim down it says so, and
+         that reason belongs here rather than in the commit that made it. */
+      var refused=GEO.unplaced && GEO.unplaced[name];
       card.classList.add("empty");
-      card.appendChild(el("p","onote", r.w
+      card.appendChild(el("p","onote", refused
+        ? "Not placed \u2014 "+refused+"."
+        : r.w
         ? "Not placed \u2014 neither its own Wikidata entry nor what it belongs to says where it is from."
         : "Not placed \u2014 no Wikipedia article is linked, so there was nothing to ask."));
       return box;
