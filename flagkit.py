@@ -26,6 +26,7 @@ dist/map_data.json is the minified copy the page fetches, rewritten on every sav
   python3 flagkit.py merge-ref <from> <into>           fold one referent into another
   python3 flagkit.py split-cluster <src> <new> <ref>... move some referents into a new sibling
   python3 flagkit.py move-ref <referent> <cluster>     move a referent into another cluster
+  python3 flagkit.py add-ref <new> <cluster> <id>...   a referent the build missed, on those Pokemon
   python3 flagkit.py split-ref <src> <new> [id]...    break a compound referent in two (<src> keeps its own name)
   python3 flagkit.py rename-ref <old> <new>           rename a referent everywhere it is named
   python3 flagkit.py set-allusion <referent> on|off   a nod to, rather than drawn from
@@ -633,6 +634,34 @@ def rename_ref(D, old, new):
     return "%r renamed to %r (shown as %r)" % (old, key, new)
 
 
+def add_ref(D, new, cluster, *species):
+    """Add a referent Bulbapedia names and the build missed. It takes the
+       cluster's category, the Pokemon are named by id, and it appears in each
+       of their design lists — the same shape the generator would have made.
+       Link it afterwards with set-wiki or set-url, and mark it with
+       set-allusion if the design only nods at it."""
+    R, G, S = D["referents"], D["groups"], D["species"]
+    key = new.lower()
+    if key in R: sys.exit("%r already exists — add the Pokemon to it instead" % key)
+    if cluster not in G: sys.exit("no cluster called %r" % cluster)
+    if not species: sys.exit("name at least one Pokemon by id")
+    ids = sorted({int(x) for x in species})
+    stray = [i for i in ids if str(i) not in S]
+    if stray: sys.exit("no such Pokemon: %s" % stray)
+    R[key] = {"g": cluster, "k": G[cluster].get("k"), "s": ids}
+    if key != new: R[key]["d"] = new
+    G[cluster].setdefault("m", []).append(key)
+    G[cluster]["m"].sort()
+    normalize_leaf(D, cluster)
+    for i in ids:
+        sp = S[str(i)]
+        if new not in sp[1]: sp[1].append(new)
+    recount(D)
+    D["meta"]["referents"] = len(R)
+    return "%r added to %r (%s) — %s" % (
+        key, cluster, R[key]["k"], ", ".join("#%d %s" % (i, S[str(i)][0]) for i in ids))
+
+
 def split_ref(D, src, new, *species):
     """Break a compound referent in two. A name like "highwayman dick turpin"
        makes two claims — a role and a man — and a reader cannot follow either
@@ -864,6 +893,7 @@ WRITES = {"move-family": move_family, "nest": nest, "unnest": unnest,
           "split-family": split_family, "rename-family": rename_family,
           "merge-ref": merge_ref, "move-ref": move_ref, "split-cluster": split_cluster,
           "split-ref": split_ref, "rename-ref": rename_ref, "set-allusion": set_allusion,
+          "add-ref": add_ref,
           "set-kind": set_kind, "set-wiki": set_wiki, "set-url": set_url,
           "set-region": set_region,
           "normalize-case": lambda D: normalize_case(D),

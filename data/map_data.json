@@ -17354,7 +17354,7 @@
 ],
 "k": "concept",
 "l": [],
-"n": 57
+"n": 59
 },
 "Birds": {
 "b": "Birds",
@@ -28559,7 +28559,8 @@
 "m": [
 "bleached coral",
 "bleached coral skeleton",
-"gorgonian coral and gorgonin",
+"gorgonian coral",
+"gorgonin",
 "precious coral",
 "stony coral skeleton"
 ],
@@ -29928,6 +29929,7 @@
 "k": "life",
 "m": [
 "bottlenose dolphin",
+"chilean dolphin",
 "dolphin",
 "striped dolphin"
 ],
@@ -30551,12 +30553,13 @@
 "f": "Sea life",
 "k": "life",
 "m": [
+"cuvierian tubules",
 "earthworm",
 "larvacean",
 "leech",
 "polychaete parapodia",
 "predatory tunicate",
-"sea cucumber and its cuvierian tubules"
+"sea cucumber"
 ],
 "n": 10,
 "tn": 23
@@ -33588,7 +33591,7 @@
 },
 "ground beetle": {
 "ch": [
-"scaphinotus and drilus snail-eating beetles"
+"snail-eating beetle"
 ],
 "f": "Insects & spiders",
 "k": "life",
@@ -37248,9 +37251,11 @@
 "f": "Belief & custom",
 "k": "concept",
 "leaf": 1,
-"m": [],
-"n": 0,
-"tn": 14
+"m": [
+"\"zero to hero\""
+],
+"n": 1,
+"tn": 16
 },
 "lanternfish": {
 "f": "Fish",
@@ -41519,7 +41524,7 @@
 "m": [
 "paladin"
 ],
-"n": 1,
+"n": 2,
 "p": "tabletop rpg"
 },
 "paleozoic giant insects": {
@@ -43131,10 +43136,11 @@
 "\"bookworm\" pun",
 "\"cold-hearted\" visual pun",
 "\"live wire\" pun",
+"chinese \"dragon shrimp\" (longxia)",
 "hitode (\"human hand\") visual pun",
 "takonaguri (\"octopus beating\") pun"
 ],
-"n": 5,
+"n": 6,
 "p": "language & wordplay"
 },
 "punk rock guitarist": {
@@ -44915,17 +44921,6 @@
 "n": 1,
 "p": "bladed weapon"
 },
-"scaphinotus and drilus snail-eating beetles": {
-"f": "Sea life",
-"i": 1,
-"k": "life",
-"leaf": 1,
-"m": [
-"scaphinotus and drilus snail-eating beetles"
-],
-"n": 1,
-"p": "ground beetle"
-},
 "scarab & dung beetle": {
 "ch": [
 "sacred scarab"
@@ -45875,11 +45870,10 @@
 "k": "life",
 "m": [
 "brine shrimp",
-"chinese \"dragon shrimp\" (longxia)",
 "cleaner shrimp",
 "pistol shrimp"
 ],
-"n": 5,
+"n": 4,
 "p": "crustacean"
 },
 "shuriken": {
@@ -46315,6 +46309,17 @@
 ],
 "n": 6,
 "p": "mollusc & shellfish"
+},
+"snail-eating beetle": {
+"f": "Sea life",
+"i": 1,
+"k": "life",
+"m": [
+"drilus",
+"scaphinotus"
+],
+"n": 1,
+"p": "ground beetle"
 },
 "snake": {
 "ch": [
@@ -48058,7 +48063,7 @@
 "m": [],
 "n": 0,
 "p": "game character",
-"tn": 13
+"tn": 14
 },
 "tadashi sawamura": {
 "f": "Fighters & athletes",
@@ -52334,7 +52339,7 @@
 "person",
 "prehistoric"
 ],
-"referents": 3881,
+"referents": 3886,
 "species": 1025
 },
 "referents": {
@@ -52477,6 +52482,15 @@
 1024
 ],
 "w": "Turtles all the way down",
+"x": 1
+},
+"\"zero to hero\"": {
+"g": "language & wordplay",
+"k": "concept",
+"s": [
+964
+],
+"u": "https://en.wiktionary.org/wiki/go_from_zero_to_hero",
 "x": 1
 },
 "108-bead japamala": {
@@ -53745,7 +53759,8 @@
 "k": "life",
 "s": [
 974
-]
+],
+"w": "List of Arctic cetaceans"
 },
 "arctic fox": {
 "d": "Arctic fox",
@@ -55886,7 +55901,8 @@
 "k": "life",
 "s": [
 222
-]
+],
+"w": "Coral bleaching"
 },
 "bleached coral skeleton": {
 "g": "coral",
@@ -56009,7 +56025,8 @@
 "s": [
 704,
 706
-]
+],
+"w": "Glaucus atlanticus"
 },
 "blue flame": {
 "g": "flame",
@@ -56915,7 +56932,8 @@
 "k": "life",
 "s": [
 871
-]
+],
+"w": "Echinometra mathaei"
 },
 "bursting garbage bag": {
 "g": "bag",
@@ -57246,7 +57264,8 @@
 "k": "life",
 "s": [
 309
-]
+],
+"w": "Puppy"
 },
 "cannon": {
 "g": "cannon",
@@ -57432,7 +57451,8 @@
 "k": "life",
 "s": [
 99
-]
+],
+"w": "Cardisoma"
 },
 "carnival mouth entrance": {
 "g": "carnival mouth entrance",
@@ -57489,7 +57509,8 @@
 "s": [
 969,
 970
-]
+],
+"w": "Demosponge"
 },
 "carnosaur facial crest": {
 "g": "crest",
@@ -57829,7 +57850,9 @@
 "k": "life",
 "s": [
 949
-]
+],
+"w": "Siphon (mollusc)",
+"ws": "Hyponome of cephalopods"
 },
 "ceratophrys": {
 "d": "Ceratophrys",
@@ -58252,6 +58275,14 @@
 ],
 "w": "Toy"
 },
+"chilean dolphin": {
+"g": "dolphin",
+"k": "life",
+"s": [
+964
+],
+"w": "Chilean dolphin"
+},
 "chili pepper": {
 "g": "pepper",
 "k": "life",
@@ -58332,8 +58363,8 @@
 },
 "chinese \"dragon shrimp\" (longxia)": {
 "d": "Chinese \"dragon shrimp\" (longxia)",
-"g": "shrimp",
-"k": "life",
+"g": "pun",
+"k": "concept",
 "s": [
 341
 ],
@@ -58996,7 +59027,8 @@
 "k": "life",
 "s": [
 748
-]
+],
+"w": "Colobocentrotus atratus"
 },
 "colonial organism": {
 "g": "organism",
@@ -59481,7 +59513,9 @@
 "s": [
 212,
 799
-]
+],
+"w": "Chelae",
+"ws": "In crustaceans"
 },
 "crab threat display": {
 "g": "display",
@@ -59922,6 +59956,14 @@
 687
 ],
 "x": 1
+},
+"cuvierian tubules": {
+"g": "echinoderm & worm",
+"k": "life",
+"s": [
+771
+],
+"w": "Cuvierian tubules"
 },
 "cuyaba dwarf frog": {
 "d": "Cuyaba dwarf frog",
@@ -60791,7 +60833,8 @@
 "s": [
 963,
 964
-]
+],
+"w": "Bubble ring"
 },
 "domestic cat": {
 "g": "cat",
@@ -61096,6 +61139,15 @@
 530
 ],
 "w": "Drill"
+},
+"drilus": {
+"g": "snail-eating beetle",
+"i": 1,
+"k": "life",
+"s": [
+589
+],
+"w": "Drilus"
 },
 "drinking bird toy": {
 "g": "toy",
@@ -64542,12 +64594,21 @@
 ],
 "w": "Gopher"
 },
-"gorgonian coral and gorgonin": {
+"gorgonian coral": {
 "g": "coral",
 "k": "life",
 "s": [
 864
-]
+],
+"w": "Alcyonacea"
+},
+"gorgonin": {
+"g": "coral",
+"k": "life",
+"s": [
+864
+],
+"w": "Gorgonin"
 },
 "gorgons": {
 "d": "Gorgons",
@@ -65559,7 +65620,9 @@
 "k": "life",
 "s": [
 86
-]
+],
+"w": "Harp seal",
+"ws": "Life history"
 },
 "harpy eagle": {
 "g": "eagle",
@@ -65870,7 +65933,8 @@
 "k": "life",
 "s": [
 121
-]
+],
+"w": "Fromia heffernani"
 },
 "heikegani (samurai crab)": {
 "g": "crustacean",
@@ -72332,7 +72396,9 @@
 "s": [
 692,
 693
-]
+],
+"w": "American lobster",
+"ws": "Coloration"
 },
 "mutation": {
 "g": "mutation",
@@ -72617,7 +72683,8 @@
 "k": "life",
 "s": [
 120
-]
+],
+"w": "Fromia monilis"
 },
 "needle": {
 "g": "needle",
@@ -74115,6 +74182,7 @@
 "g": "paladin",
 "k": "media & art",
 "s": [
+964,
 1006
 ],
 "w": "Paladin",
@@ -75362,7 +75430,8 @@
 "k": "life",
 "s": [
 968
-]
+],
+"w": "Parapodium"
 },
 "polynesian rat": {
 "d": "Polynesian rat",
@@ -76564,7 +76633,8 @@
 "k": "life",
 "s": [
 503
-]
+],
+"w": "Murex trapa"
 },
 "rat": {
 "g": "rat",
@@ -77195,7 +77265,8 @@
 "k": "life",
 "s": [
 219
-]
+],
+"w": "Rock (geology)"
 },
 "rock strata": {
 "g": "strata",
@@ -78075,14 +78146,14 @@
 ],
 "w": "Scaly-foot gastropod"
 },
-"scaphinotus and drilus snail-eating beetles": {
-"d": "Scaphinotus and Drilus snail-eating beetles",
-"g": "scaphinotus and drilus snail-eating beetles",
+"scaphinotus": {
+"g": "snail-eating beetle",
 "i": 1,
 "k": "life",
 "s": [
 589
-]
+],
+"w": "Scaphinotus"
 },
 "scarab beetle": {
 "g": "scarab & dung beetle",
@@ -78302,15 +78373,16 @@
 "k": "life",
 "s": [
 771
-]
+],
+"w": "Jorunna parva"
 },
-"sea cucumber and its cuvierian tubules": {
-"d": "sea cucumber and its Cuvierian tubules",
+"sea cucumber": {
 "g": "echinoderm & worm",
 "k": "life",
 "s": [
 771
-]
+],
+"w": "Sea cucumber"
 },
 "sea goat": {
 "g": "goat",
@@ -78365,7 +78437,9 @@
 "k": "life",
 "s": [
 501
-]
+],
+"w": "Sea otter",
+"ws": "Reproduction and life cycle"
 },
 "sea otter tool use": {
 "g": "tool use",
@@ -80680,7 +80754,8 @@
 "k": "life",
 "s": [
 222
-]
+],
+"w": "Scleractinia"
 },
 "stork": {
 "g": "stork",
@@ -82456,7 +82531,9 @@
 "k": "life",
 "s": [
 964
-]
+],
+"w": "Boto",
+"ws": "Folklore"
 },
 "the rabbit of jataka tale 316": {
 "d": "the rabbit of Jataka tale 316",
@@ -84156,7 +84233,8 @@
 "k": "life",
 "s": [
 687
-]
+],
+"w": "Squid"
 },
 "uraeus": {
 "g": "uraeus",
@@ -94330,10 +94408,11 @@
 "589": [
 "Escavalier",
 [
-"Scaphinotus and Drilus snail-eating beetles",
+"scaphinotus",
 "jousting knight",
 "medieval knight-versus-snail marginalia",
-"cuirass"
+"cuirass",
+"drilus"
 ],
 [
 "life",
@@ -97193,10 +97272,11 @@
 "771": [
 "Pyukumuku",
 [
-"sea cucumber and its Cuvierian tubules",
+"sea cucumber",
 "sea bunny slug",
 "Wiwaxia",
-"human fist"
+"human fist",
+"cuvierian tubules"
 ],
 [
 "life",
@@ -98656,9 +98736,10 @@
 "Cursola",
 [
 "bleached coral skeleton",
-"gorgonian coral and gorgonin",
+"gorgonian coral",
 "Gorgons",
-"larvacean"
+"larvacean",
+"gorgonin"
 ],
 [
 "life",
@@ -100303,7 +100384,10 @@
 "Superman",
 "Ultraman",
 "the Pink Boto (shapeshifting river dolphin)",
-"dolphin bubble rings"
+"dolphin bubble rings",
+"paladin",
+"chilean dolphin",
+"\"zero to hero\""
 ],
 [
 "life",
