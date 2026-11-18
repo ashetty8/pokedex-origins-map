@@ -35,7 +35,7 @@ published. Treat `data/` and `app/` as the current published version.
 
 ```
 ArtifactData action=query url=<artifact> collection=corrections
-  query={"where": [["status", "ne", "done"]], "limit": 50}
+  query={"where": [["status", "not-in", ["done", "declined"]]], "limit": 50}
 ```
 
 Each doc: `targetType` (`referent` | `group` | `node` | `species` | `place`), `target`, `label`,
@@ -150,6 +150,13 @@ ArtifactData action=batch url=<artifact> writes=[
 `if_version` is the `version` from the read in step 1. Note what changed and why, name the
 version, and for a `map_data.json` edit add that the generator will revert it. A geography fix
 made in `data/geo_hand.json` survives a rebuild, so do not claim otherwise.
+
+**A flag you decline gets `"status":"declined"`, not `"done"` and never left open.** The page
+reads it as settled and shows it as "answered", so it stops counting against the open total and
+stops coming back round the loop. Use it when the flag is wrong, when the page already says what
+Bulbapedia says, or when the change would cost more than it is worth — and put the reasoning in
+the note, because that note is the whole of what the flagger gets. Not every flag is a defect,
+which is why the step 1 query excludes both states.
 
 ## Verifying without burning tokens
 

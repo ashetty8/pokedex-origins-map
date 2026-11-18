@@ -5,13 +5,19 @@
              types:new Set(),gens:new Set(),colours:new Set(),misc:new Set(),scope:true};
   var flags=[], flagsReady=false, flagsNote="";
   /* what has been flagged, by target, so the map can show it too */
+  /* A flag is settled either way: "done" means the data or the page changed,
+     "declined" means it was looked at and answered — the referent really is
+     what it says, or the change would cost more than it is worth. Without the
+     second state a flag that deserves an answer can only be left open for ever
+     or marked applied, which is a lie. */
+  function settled(f){ return f.d.status==="done" || f.d.status==="declined" }
   var FLAGIDX={};
   function buildFlagIndex(){
     FLAGIDX={};
     flags.forEach(function(f){
       var k=(f.d.targetType||"")+":"+(f.d.target||"");
       var e=FLAGIDX[k]||(FLAGIDX[k]={open:0,total:0});
-      e.total++; if(f.d.status!=="done") e.open++;
+      e.total++; if(!settled(f)) e.open++;
     });
   }
   /* a family/kind/branch/region is selected as a "node", so a flag on it is
@@ -2383,7 +2389,8 @@
     var c=el("div","flagcard");
     var top=el("div","fm");
     top.textContent=(f.d.issue||"other")+" · "+(f.d.created||"").slice(0,10);
-    var st=el("span","pill "+(f.d.status==="done"?"done":"open"),f.d.status==="done"?"applied":"open");
+    var st=el("span","pill "+(settled(f)?"done":"open"),
+              f.d.status==="done"?"applied":f.d.status==="declined"?"answered":"open");
     st.style.marginLeft="6px"; top.appendChild(st);
     if(!compact) c.appendChild(el("div","ft",(f.d.targetType||"")+" · "+(f.d.label||f.d.target)));
     c.appendChild(top);
@@ -2394,10 +2401,10 @@
     if(f.d.resolution){ var r=el("div","fn"); r.style.cssText="border-left:2px solid var(--accent);padding-left:8px;color:var(--ink)"; r.textContent="Fixed: "+f.d.resolution; c.appendChild(r) }
     if(canWrite!==false){
       var act=el("div","actions");
-      var tog=el("button","ghost",f.d.status==="done"?"Reopen":"Mark applied");
+      var tog=el("button","ghost",settled(f)?"Reopen":"Mark applied");
       tog.onclick=function(){
         tog.disabled=true;
-        dbNS.collection("corrections").doc(f.id).update({status:f.d.status==="done"?"open":"done"})
+        dbNS.collection("corrections").doc(f.id).update({status:settled(f)?"open":"done"})
           .catch(function(){tog.disabled=false});
       };
       var del=el("button","ghost","Delete");
@@ -2417,10 +2424,10 @@
       var e=el("p","empty","No flags yet. Open any cluster, referent or Pokémon and press Flag to record what looks wrong — the notes are saved with the artifact, and I can read them back and fix the source data.");
       host.appendChild(e); return;
     }
-    var openF=flags.filter(function(f){return f.d.status!=="done"});
-    var doneF=flags.filter(function(f){return f.d.status==="done"});
+    var openF=flags.filter(function(f){return !settled(f)});
+    var doneF=flags.filter(settled);
     var bar=el("div","actions"); bar.style.marginBottom="12px";
-    [["open","Open ("+openF.length+")"],["done","Applied ("+doneF.length+")"],["all","All ("+flags.length+")"]]
+    [["open","Open ("+openF.length+")"],["done","Settled ("+doneF.length+")"],["all","All ("+flags.length+")"]]
       .forEach(function(o){
         var b=el("button","chip",o[1]);
         b.setAttribute("aria-pressed",state.flagview===o[0]?"true":"false");
@@ -2652,7 +2659,7 @@
         if(!snap.metadata.fromCache){ clearTimeout(timer); flagsReady=true; flagsNote="" }
         flags=snap.docs.map(function(doc){ return {id:doc.id,d:doc.data()||{}} });
         buildFlagIndex();
-        var openN=flags.filter(function(f){return f.d.status!=="done"}).length;
+        var openN=flags.filter(function(f){return !settled(f)}).length;
         $("#flagcount").textContent=openN?"("+openN+")":"";
         if(state.tab==="flags") render();
         else if(state.tab==="map" && D3 && D) drawGraph();
