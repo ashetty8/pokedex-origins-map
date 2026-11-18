@@ -34762,13 +34762,13 @@
 "n": 1,
 "p": "writing system"
 },
-"highwayman dick turpin": {
+"highwayman": {
 "f": "Outlaws & rogues",
 "i": 1,
 "k": "person",
-"leaf": 1,
 "m": [
-"highwayman dick turpin"
+"dick turpin",
+"highwayman"
 ],
 "n": 1,
 "p": "thieves"
@@ -38947,7 +38947,7 @@
 "mercury",
 "ore",
 "silver and gold",
-"tumbaga and quimbaya artifacts"
+"tumbaga & quimbaya goldwork"
 ],
 "f": "Rocks & minerals",
 "k": "earth & sky",
@@ -39375,16 +39375,6 @@
 ],
 "n": 15,
 "tn": 40
-},
-"momonga and musasabi flying squirrels": {
-"f": "Rodents & small mammals",
-"k": "life",
-"leaf": 1,
-"m": [
-"momonga and musasabi flying squirrels"
-],
-"n": 1,
-"p": "squirrel & marmot"
 },
 "monarchs": {
 "ch": [
@@ -40103,9 +40093,6 @@
 "p": "magic & mysticism"
 },
 "mythic turtle": {
-"ch": [
-"the rainbow turtle of urashima taro"
-],
 "f": "Reptiles & amphibians",
 "k": "life",
 "m": [
@@ -40113,12 +40100,13 @@
 "minogame",
 "minogame (japanese legend)",
 "taro urashima's turtle",
+"the rainbow turtle of urashima taro",
 "world turtle",
 "world turtle (akupara)"
 ],
-"n": 8,
+"n": 9,
 "p": "turtle",
-"tn": 8
+"tn": 9
 },
 "mythological lynx": {
 "f": "Other folklore",
@@ -46346,11 +46334,9 @@
 "blind snake",
 "egg-eating snake",
 "green snake",
-"nozuchi",
 "ring-necked snake",
 "snake",
 "tsuchinoko",
-"tsuchinoko (japanese cryptid)",
 "vine snake"
 ],
 "n": 11,
@@ -47026,7 +47012,7 @@
 "ring-tailed ground squirrel",
 "squirrel"
 ],
-"n": 7,
+"n": 8,
 "p": "squirrel & marmot"
 },
 "squirrel & marmot": {
@@ -47035,7 +47021,6 @@
 "alpine marmot of the pyrenees",
 "chipmunk",
 "groundhog",
-"momonga and musasabi flying squirrels",
 "prairie dog",
 "squirrel"
 ],
@@ -48975,17 +48960,6 @@
 "n": 1,
 "rg": "South & Southeast Asia"
 },
-"the rainbow turtle of urashima taro": {
-"f": "Reptiles & amphibians",
-"i": 1,
-"k": "life",
-"leaf": 1,
-"m": [
-"the rainbow turtle of urashima taro"
-],
-"n": 1,
-"p": "mythic turtle"
-},
 "the ravens of the tower of london": {
 "f": "Birds",
 "k": "life",
@@ -49262,7 +49236,7 @@
 "cat burglar",
 "furoshiki cloth of a dorobo",
 "gentleman thief",
-"highwayman dick turpin"
+"highwayman"
 ],
 "f": "Outlaws & rogues",
 "k": "person",
@@ -49564,10 +49538,9 @@
 "galapagos tortoise",
 "giant tortoise",
 "red-footed tortoise (chelonoidis carbonarius)",
-"tortoise",
-"world-bearing tortoise"
+"tortoise"
 ],
-"n": 7,
+"n": 6,
 "p": "turtle"
 },
 "tower": {
@@ -50143,12 +50116,12 @@
 "n": 1,
 "p": "garden flower"
 },
-"tumbaga and quimbaya artifacts": {
+"tumbaga & quimbaya goldwork": {
 "f": "Rocks & minerals",
 "k": "earth & sky",
-"leaf": 1,
 "m": [
-"tumbaga and quimbaya artifacts"
+"quimbaya artifacts",
+"tumbaga"
 ],
 "n": 1,
 "p": "metal & ore"
@@ -52348,7 +52321,7 @@
 "build": "f4b4a145",
 "clusters": 574,
 "families": 59,
-"groups": 2638,
+"groups": 2636,
 "kinds": [
 "concept",
 "earth & sky",
@@ -52361,7 +52334,7 @@
 "person",
 "prehistoric"
 ],
-"referents": 3883,
+"referents": 3881,
 "species": 1025
 },
 "referents": {
@@ -53057,7 +53030,9 @@
 "k": "life",
 "s": [
 939
-]
+],
+"w": "Albinism",
+"ws": "In amphibians"
 },
 "alchemical lion": {
 "g": "alchemical lion",
@@ -53182,7 +53157,8 @@
 "k": "life",
 "s": [
 921
-]
+],
+"w": "Alpine marmot"
 },
 "amanita": {
 "d": "Amanita",
@@ -53696,6 +53672,7 @@
 "s": [
 308
 ],
+"w": "Belly dance",
 "x": 1
 },
 "aragoto kabuki style": {
@@ -54823,7 +54800,9 @@
 "k": "person",
 "s": [
 675
-]
+],
+"w": "Banchō (position)",
+"ws": "Juvenile delinquency"
 },
 "banded darter": {
 "g": "banded darter",
@@ -57196,6 +57175,7 @@
 "s": [
 683
 ],
+"w": "Can-can",
 "x": 1
 },
 "can-can costume": {
@@ -59314,7 +59294,8 @@
 "k": "earth & sky",
 "s": [
 968
-]
+],
+"w": "Verdigris"
 },
 "copper wiring": {
 "g": "copper wiring",
@@ -59958,6 +59939,7 @@
 "s": [
 939
 ],
+"w": "Physalaemus nattereri",
 "x": 1
 },
 "cyborg": {
@@ -60478,6 +60460,16 @@
 "w": "Diaphonization",
 "x": 1
 },
+"dick turpin": {
+"d": "Dick Turpin",
+"g": "highwayman",
+"i": 1,
+"k": "person",
+"s": [
+828
+],
+"w": "Dick Turpin"
+},
 "digger bee": {
 "g": "bee",
 "k": "life",
@@ -60972,7 +60964,8 @@
 "k": "life",
 "s": [
 818
-]
+],
+"w": "Draco (lizard)"
 },
 "draconid meteor shower": {
 "d": "Draconid meteor shower",
@@ -62631,7 +62624,8 @@
 967,
 1007,
 1008
-]
+],
+"w": "Sitana"
 },
 "fashion designer": {
 "g": "fashion designer",
@@ -63522,6 +63516,7 @@
 "s": [
 939
 ],
+"w": "Tympanum (anatomy)",
 "x": 1
 },
 "frostbite": {
@@ -63657,7 +63652,9 @@
 "k": "life",
 "s": [
 1024
-]
+],
+"w": "Green sea turtle",
+"ws": "Galápagos green turtle"
 },
 "galapagos tortoise": {
 "d": "Galapagos tortoise",
@@ -63694,6 +63691,7 @@
 "s": [
 939
 ],
+"w": "Galvanism",
 "x": 1
 },
 "gang leader": {
@@ -64157,7 +64155,8 @@
 "k": "life",
 "s": [
 979
-]
+],
+"w": "Barbary macaques in Gibraltar"
 },
 "gigantopithecus": {
 "d": "Gigantopithecus",
@@ -66123,14 +66122,14 @@
 ],
 "w": "Highland cattle"
 },
-"highwayman dick turpin": {
-"d": "highwayman Dick Turpin",
-"g": "highwayman dick turpin",
+"highwayman": {
+"g": "highwayman",
 "i": 1,
 "k": "person",
 "s": [
 828
-]
+],
+"w": "Highwayman"
 },
 "hikikomori": {
 "g": "hikikomori",
@@ -67666,6 +67665,7 @@
 "g": "squirrel",
 "k": "life",
 "s": [
+207,
 587
 ],
 "w": "Japanese dwarf flying squirrel"
@@ -67693,7 +67693,8 @@
 "g": "squirrel",
 "k": "life",
 "s": [
-161
+161,
+207
 ],
 "w": "Japanese giant flying squirrel"
 },
@@ -69583,7 +69584,8 @@
 "k": "life",
 "s": [
 560
-]
+],
+"w": "Leopard gecko"
 },
 "lernaean hydra": {
 "d": "Lernaean Hydra",
@@ -70711,6 +70713,7 @@
 "s": [
 911
 ],
+"w": "Mariachi",
 "x": 1
 },
 "marid": {
@@ -70903,7 +70906,8 @@
 "k": "life",
 "s": [
 776
-]
+],
+"w": "Amazon mata mata"
 },
 "matador's cape": {
 "g": "cape",
@@ -71279,6 +71283,7 @@
 271,
 272
 ],
+"w": "Mexican folk dance",
 "x": 1
 },
 "mexican free-tailed bat": {
@@ -71663,13 +71668,6 @@
 213
 ],
 "w": "Mollusca"
-},
-"momonga and musasabi flying squirrels": {
-"g": "momonga and musasabi flying squirrels",
-"k": "life",
-"s": [
-207
-]
 },
 "momotaro": {
 "d": "Momotaro",
@@ -72394,7 +72392,8 @@
 "k": "life",
 "s": [
 373
-]
+],
+"w": "Salamanders in folklore"
 },
 "mythological lynx": {
 "g": "mythological lynx",
@@ -73113,13 +73112,6 @@
 ],
 "w": "Notus"
 },
-"nozuchi": {
-"g": "snake",
-"k": "life",
-"s": [
-206
-]
-},
 "nuclear family": {
 "g": "nuclear family",
 "k": "concept",
@@ -73730,7 +73722,8 @@
 "k": "person",
 "s": [
 401
-]
+],
+"w": "Orchestra"
 },
 "orchid flower": {
 "g": "tropical flower",
@@ -76288,6 +76281,15 @@
 770
 ],
 "w": "Quicksand"
+},
+"quimbaya artifacts": {
+"d": "Quimbaya artifacts",
+"g": "tumbaga & quimbaya goldwork",
+"k": "earth & sky",
+"s": [
+1000
+],
+"w": "Quimbaya artifacts"
 },
 "quinkana": {
 "d": "Quinkana",
@@ -80322,6 +80324,7 @@
 "s": [
 818
 ],
+"w": "Espionage",
 "x": 1
 },
 "squid": {
@@ -81602,7 +81605,8 @@
 "k": "life",
 "s": [
 131
-]
+],
+"w": "Urashima Tarō"
 },
 "tarzan": {
 "d": "Tarzan",
@@ -81989,7 +81993,9 @@
 "k": "life",
 "s": [
 893
-]
+],
+"w": "Carew Castle",
+"x": 1
 },
 "the cowherd and the weaver girl": {
 "d": "The Cowherd and the Weaver Girl",
@@ -82463,12 +82469,12 @@
 },
 "the rainbow turtle of urashima taro": {
 "d": "the rainbow turtle of Urashima Taro",
-"g": "the rainbow turtle of urashima taro",
-"i": 1,
+"g": "mythic turtle",
 "k": "life",
 "s": [
 1024
-]
+],
+"w": "Urashima Tarō"
 },
 "the ravens of the tower of london": {
 "d": "the Ravens of the Tower of London",
@@ -82688,7 +82694,8 @@
 "k": "prehistoric",
 "s": [
 974
-]
+],
+"w": "Evolution of cetaceans"
 },
 "the war of the worlds (1953)": {
 "d": "The War of the Worlds (1953)",
@@ -83131,7 +83138,8 @@
 "s": [
 535,
 536
-]
+],
+"w": "Tadpole"
 },
 "tochukaso (ophiocordyceps sinensis)": {
 "d": "tochukaso (Ophiocordyceps sinensis)",
@@ -83695,17 +83703,9 @@
 "g": "snake",
 "k": "life",
 "s": [
+206,
 718,
 982
-],
-"w": "Tsuchinoko"
-},
-"tsuchinoko (japanese cryptid)": {
-"d": "tsuchinoko (Japanese cryptid)",
-"g": "snake",
-"k": "life",
-"s": [
-206
 ],
 "w": "Tsuchinoko"
 },
@@ -83777,13 +83777,13 @@
 ],
 "w": "Tulip"
 },
-"tumbaga and quimbaya artifacts": {
-"d": "tumbaga and Quimbaya artifacts",
-"g": "tumbaga and quimbaya artifacts",
+"tumbaga": {
+"g": "tumbaga & quimbaya goldwork",
 "k": "earth & sky",
 "s": [
 1000
-]
+],
+"w": "Tumbaga"
 },
 "tumbleweed": {
 "g": "tumbleweed",
@@ -85136,7 +85136,8 @@
 "s": [
 50,
 51
-]
+],
+"w": "Whac-A-Mole"
 },
 "wheel": {
 "g": "wheel",
@@ -85627,6 +85628,7 @@
 "g": "mythic turtle",
 "k": "life",
 "s": [
+76,
 387,
 389,
 1024
@@ -85641,13 +85643,6 @@
 388
 ],
 "w": "World Turtle"
-},
-"world-bearing tortoise": {
-"g": "tortoise",
-"k": "life",
-"s": [
-76
-]
 },
 "worm in an apple": {
 "g": "apple",
@@ -86376,11 +86371,12 @@
 "coin wrapper",
 "koban and oban coins",
 "coin dispenser belt",
-"tumbaga and Quimbaya artifacts",
+"tumbaga",
 "tunjo figurines",
 "El Dorado",
 "surfing",
-"Charon's obol"
+"Charon's obol",
+"Quimbaya artifacts"
 ],
 [
 "earth & sky",
@@ -88467,13 +88463,12 @@
 "206": [
 "Dunsparce",
 [
-"tsuchinoko (Japanese cryptid)",
+"tsuchinoko",
 "digger bee",
 "blind snake",
 "rattlesnake rattle",
 "drill",
 "sphinx moth caterpillar",
-"nozuchi",
 "amphiptere"
 ],
 [
@@ -88489,8 +88484,9 @@
 "scorpion",
 "gargoyle",
 "sci-fi face-hugger",
-"momonga and musasabi flying squirrels",
-"nobusuma (yokai)"
+"japanese giant flying squirrel",
+"nobusuma (yokai)",
+"japanese dwarf flying squirrel"
 ],
 [
 "folklore",
@@ -97037,7 +97033,7 @@
 "golem",
 "RPG stone ogre",
 "tsuchikorobi (yokai)",
-"world-bearing tortoise",
+"world turtle",
 "tectonic plates",
 "septarian nodule"
 ],
@@ -98093,9 +98089,10 @@
 "cross fox",
 "silver fox",
 "gentleman thief",
-"highwayman Dick Turpin",
+"highwayman",
 "Guy Fawkes mask",
-"fox hunting"
+"fox hunting",
+"Dick Turpin"
 ],
 [
 "life",

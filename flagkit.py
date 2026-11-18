@@ -26,6 +26,9 @@ dist/map_data.json is the minified copy the page fetches, rewritten on every sav
   python3 flagkit.py merge-ref <from> <into>           fold one referent into another
   python3 flagkit.py split-cluster <src> <new> <ref>... move some referents into a new sibling
   python3 flagkit.py move-ref <referent> <cluster>     move a referent into another cluster
+  python3 flagkit.py split-ref <src> <new> [id]...    break a compound referent in two (<src> keeps its own name)
+  python3 flagkit.py rename-ref <old> <new>           rename a referent everywhere it is named
+  python3 flagkit.py set-allusion <referent> on|off   a nod to, rather than drawn from
   python3 flagkit.py set-wiki <referent> [title]       set or clear a referent's Wikipedia title ("Page#Section" allowed)
   python3 flagkit.py set-url <referent> [url]          a source that is no Wikipedia article (Wiktionary, say)
   python3 flagkit.py set-region <cluster> <family> <region>   refile a cluster by where it is from
@@ -508,6 +511,25 @@ def rename_family(D, old, new):
     return "family %r renamed to %r" % (old, new)
 
 
+def drop_empty_cluster(D, g):
+    """A cluster with no referents of its own and no children is a node the
+       page would draw with nothing inside it. Folding the last referent out
+       of a leaf cluster should take the cluster with it; a grouping cluster
+       that still has children is left alone, since holding children is its
+       whole job."""
+    G = D["groups"]
+    v = G.get(g)
+    if not v or (v.get("m") or []) or (v.get("ch") or []): return None
+    par = v.get("p")
+    if par in G:
+        G[par]["ch"] = [c for c in (G[par].get("ch") or []) if c != g]
+        if not G[par]["ch"]: G[par].pop("ch", None)
+    if v.get("f") in D["families"]: fam_remove(D, v["f"], g)
+    del G[g]
+    D["meta"]["groups"] = len(G)
+    return g
+
+
 def merge_ref(D, src, dst):
     """Fold one referent into another: the Pokemon join, the name disappears
        from every species' design list, and the cluster drops the stray."""
@@ -542,9 +564,12 @@ def merge_ref(D, src, dst):
     del R[src]
     for gg, v in G.items():
         if src in (v.get("m") or []): v["m"].remove(src)
+    gone = drop_empty_cluster(D, g)
     recount(D)
     D["meta"]["referents"] = len(R)
-    return "%r folded into %r — now %d Pokemon" % (src, dst, len(a["s"]))
+    return "%r folded into %r — now %d Pokemon%s" % (
+        src, dst, len(a["s"]),
+        ("; empty cluster %r dropped" % gone) if gone else "")
 
 
 def move_ref(D, ref, cluster):
@@ -564,8 +589,94 @@ def move_ref(D, ref, cluster):
     R[ref]["g"] = cluster
     R[ref]["k"] = G[cluster].get("k") or R[ref].get("k")
     R[ref].pop("i", None)          # placed by hand now, not guessed
+    gone = drop_empty_cluster(D, old)
     recount(D)
-    return "%r moved from %r to %r (now %s)" % (ref, old, cluster, R[ref]["k"])
+    return "%r moved from %r to %r (now %s)%s" % (
+        ref, old, cluster, R[ref]["k"],
+        ("; empty cluster %r dropped" % gone) if gone else "")
+
+
+def _disp_of(D, ref):
+    """What the species panels print for a referent — the stored display
+       spelling if it has one, else the key itself."""
+    return (D["referents"].get(ref) or {}).get("d") or ref
+
+
+def rename_ref(D, old, new):
+    """Rename a referent everywhere it is named: the key, its cluster's list,
+       every species' design list, the form overrides. A capitalised <new>
+       is kept as the display spelling over a lower-case key, the way the
+       generator stores proper nouns."""
+    R, G, S = D["referents"], D["groups"], D["species"]
+    if old not in R: sys.exit("no referent called %r" % old)
+    key = new.lower()
+    if key != old and key in R:
+        sys.exit("%r already exists — merge-ref if they are the same thing" % key)
+    was_disp = _disp_of(D, old)
+    v = R.pop(old)
+    if key != new: v["d"] = new
+    else: v.pop("d", None)
+    R[key] = v
+    for g, gv in G.items():
+        m = gv.get("m") or []
+        if old in m:
+            gv["m"] = sorted([x for x in m if x != old] + [key])
+    low = was_disp.lower()
+    for i, sp in S.items():
+        sp[1] = [new if x.lower() == low else x for x in sp[1]]
+    for slug, fm in (D.get("forms") or {}).items():
+        if fm.get("own"):
+            fm["own"] = [new if x.lower() == low else x for x in fm["own"]]
+    fr = D.get("formrefs") or {}
+    if old in fr: fr[key] = fr.pop(old)
+    recount(D)
+    return "%r renamed to %r (shown as %r)" % (old, key, new)
+
+
+def split_ref(D, src, new, *species):
+    """Break a compound referent in two. A name like "highwayman dick turpin"
+       makes two claims — a role and a man — and a reader cannot follow either
+       to an article. The new referent lands in the same cluster with the same
+       category and, by default, the same Pokemon, because a compound name is
+       usually two readings of one design rather than a split of the roster;
+       name species ids to give the new one only those. <src> keeps what it
+       had, so rename it afterwards to whatever half is left."""
+    R, G, S = D["referents"], D["groups"], D["species"]
+    if src not in R: sys.exit("no referent called %r" % src)
+    key = new.lower()
+    if key in R: sys.exit("%r already exists" % key)
+    ids = [int(x) for x in species] if species else list(R[src]["s"])
+    stray = [i for i in ids if i not in R[src]["s"]]
+    if stray: sys.exit("%r does not cover %s" % (src, stray))
+    v = R[src]
+    R[key] = {"g": v.get("g"), "k": v.get("k"), "s": sorted(ids)}
+    if key != new: R[key]["d"] = new
+    if v.get("x"): R[key]["x"] = 1
+    if v.get("i"): R[key]["i"] = 1
+    g = v.get("g")
+    if g in G:
+        G[g].setdefault("m", []).append(key)
+        G[g]["m"].sort()
+        normalize_leaf(D, g)
+    for i in ids:
+        sp = S.get(str(i)) or S.get(i)
+        if sp and new not in sp[1]: sp[1].append(new)
+    recount(D)
+    D["meta"]["referents"] = len(R)
+    return "%r split out of %r — %d Pokemon, cluster %r" % (key, src, len(ids), g)
+
+
+def set_allusion(D, ref, flag="on"):
+    """Mark a referent as something the design alludes to rather than is drawn
+       from, or take the mark off. The page prints these softer, because
+       "a nod to" and "based on" are not the same claim."""
+    R = D["referents"]
+    if ref not in R: sys.exit("no referent called %r" % ref)
+    if flag not in ("on", "off"): sys.exit("on or off")
+    was = "allusion" if R[ref].get("x") else "design source"
+    if flag == "on": R[ref]["x"] = 1
+    else: R[ref].pop("x", None)
+    return "%r: %s -> %s" % (ref, was, "allusion" if flag == "on" else "design source")
 
 
 def set_wiki(D, ref, title=""):
@@ -752,6 +863,7 @@ WRITES = {"move-family": move_family, "nest": nest, "unnest": unnest,
           "merge": merge, "regroup": regroup, "rename": rename,
           "split-family": split_family, "rename-family": rename_family,
           "merge-ref": merge_ref, "move-ref": move_ref, "split-cluster": split_cluster,
+          "split-ref": split_ref, "rename-ref": rename_ref, "set-allusion": set_allusion,
           "set-kind": set_kind, "set-wiki": set_wiki, "set-url": set_url,
           "set-region": set_region,
           "normalize-case": lambda D: normalize_case(D),
