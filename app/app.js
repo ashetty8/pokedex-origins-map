@@ -1215,7 +1215,7 @@
      not this panel. */
   var ORIGINTIER=["from its own Wikidata entry","one hop out, through what it belongs to",
                   "from the culture area this dataset files it under",
-                  "read off its Wikipedia article by hand, after a flag"];
+                  "read from the sources by hand, not inferred"];
   function originSection(name){
     if(!GEO) return null;                        /* still loading; the panel redraws when it lands */
     var row=GEO.refs[name], r=D.referents[name]||{};
@@ -1252,6 +1252,8 @@
     fact("source",ORIGINTIER[tier]||"");
     card.appendChild(facts);
     if(area) card.appendChild(el("p","onote","A region, not a spot \u2014 the pin stands for the whole area."));
+    if(tier===3 && GEO.why && GEO.why[name])
+      card.appendChild(el("p","onote","Why: "+GEO.why[name]));
     if(p[3]){
       var wd=el("a","src","Wikidata: "+p[3]+" \u2197");
       wd.href="https://www.wikidata.org/wiki/"+p[3];

@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Assemble data/geo.json — the atlas layer the page loads.
 
-Three sources, strongest first:
+Four sources, strongest first:
 
+  0. data/geo_hand.json  what a person read off the article, and what they
+     ruled out; the only source a rebuild cannot undo
   1. data/geo_raw.json   what the referent's own Wikidata item says
   2. data/geo_deep.json  what the thing it belongs to says (one hop out)
   3. the dataset's own curated `rg` regions on mythology and folklore
@@ -82,9 +84,12 @@ def load(name, default=None):
 
 def main():
     D = load("map_data.json")
+    hand = load("geo_hand.json", {})
     raw = load("geo_raw.json", {})
     deep = load("geo_deep.json", {})
     refs = D["referents"]
+    placed_by_hand = hand.get("place") or {}
+    unplaced_by_hand = hand.get("unplace") or {}
 
     # which cluster sits in which curated region, and so which referents do
     region_of_ref = {}
@@ -129,10 +134,17 @@ def main():
             vias.append(text)
         return viaidx[text]
 
-    out, counts = {}, {"direct": 0, "hop": 0, "region": 0}
+    out, counts = {}, {"direct": 0, "hop": 0, "region": 0, "hand": 0}
     for name in sorted(refs):
         hit, kind = None, None
-        if name in raw and raw[name].get("place") not in SKIP_PLACES:
+        if name in unplaced_by_hand:
+            continue              # audited and found to be from nowhere
+        if name in placed_by_hand:
+            h = placed_by_hand[name]
+            hit, kind = {"lat": h["lat"], "lon": h["lon"], "place": h["place"],
+                         "placeq": h.get("q"),
+                         "via": "placed by hand after checking"}, "hand"
+        elif name in raw and raw[name].get("place") not in SKIP_PLACES:
             hit, kind = raw[name], "direct"
         elif name in deep and deep[name].get("place") not in SKIP_PLACES:
             hit, kind = deep[name], "hop"
@@ -147,25 +159,29 @@ def main():
         out[name] = [place_id(hit["place"], hit["lat"], hit["lon"],
                               hit.get("placeq") or (hit.get("q") if kind == "direct" else None)),
                      via_id(hit["via"]),
-                     {"direct": 0, "hop": 1, "region": 2}[kind]]
+                     {"direct": 0, "hop": 1, "region": 2, "hand": 3}[kind]]
 
     # Pokémon reachable through placed referents, for the header count
     species = set()
     for name in out:
         species.update(refs[name].get("s") or [])
 
-    geo = {"places": places, "vias": vias, "refs": out,
+    why = {n: h["why"] for n, h in placed_by_hand.items()
+           if n in out and h.get("why")}
+    geo = {"places": places, "vias": vias, "refs": out, "why": why,
            "regions": sorted(REGION_POINTS),
            "meta": {"referents": len(out), "species": len(species),
                     "places": len(places), "build": D["meta"].get("build"),
                     "direct": counts["direct"], "hop": counts["hop"],
-                    "region": counts["region"]}}
+                    "region": counts["region"], "hand": counts["hand"]}}
     path = os.path.join(DATA, "geo.json")
     with open(path, "w") as fh:
         json.dump(geo, fh, separators=(",", ":"), sort_keys=True)
     print("wrote %s — %d KB" % (path, os.path.getsize(path) // 1024))
-    print("%d referents placed (%d direct, %d one hop out, %d by culture area)"
-          % (len(out), counts["direct"], counts["hop"], counts["region"]))
+    print("%d referents placed (%d direct, %d one hop out, %d by culture area, "
+          "%d by hand; %d suppressed by hand)"
+          % (len(out), counts["direct"], counts["hop"], counts["region"],
+             counts["hand"], len(unplaced_by_hand)))
     print("%d places, %d Pokémon reachable" % (len(places), len(species)))
     top = {}
     for name, row in out.items():

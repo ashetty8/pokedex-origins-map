@@ -23,8 +23,11 @@ published. Treat `data/` and `app/` as the current published version.
 3. **No screenshots for anything the data or the DOM can answer**, and never a second screenshot
    of the same screen. Most flags are settled by `flagkit.py show` plus the page source.
 4. **One batch write at the end**, not a write per flag.
-5. Published JSON edits are overwritten whenever the dataset is regenerated (`meta.build`).
-   Say so in the flag note every time.
+5. A `map_data.json` edit lives only in the published JSON and is overwritten whenever the
+   dataset is regenerated (`meta.build`) — say so in the flag note every time, and see
+   "Surviving a rebuild". **Geography is different:** a pin belongs in `data/geo_hand.json`,
+   which the generator reads as its strongest source, so it survives. Never hand-edit a pin
+   into `data/geo.json`; that file is generated output.
 
 ## Loop
 
@@ -38,8 +41,20 @@ ArtifactData action=query url=<artifact> collection=corrections
 Each doc: `targetType` (`referent` | `group` | `node` | `species` | `place`), `target`, `label`,
 `issue`, `suggestion`, `note`, `status`. `node` covers a category, branch, family or region — the
 page files all four under that one type. `place` is a pin on the Atlas tab, and its target is the
-place name as `data/geo.json` spells it; those are fixed in `data/geo.json` (or in the pass that
-produced it), never in `map_data.json`.
+place name as `data/geo.json` spells it. Fix geography in `data/geo_hand.json` and re-run
+`python3 -I tools/geobuild.py`, never in `map_data.json` and never in `data/geo.json` itself:
+
+```json
+{"place":   {"<referent>": {"place":"Mongolia","lat":46.0,"lon":105.0,"q":"Q711","why":"..."}},
+ "unplace": {"<referent>": "why it is from nowhere"}}
+```
+
+`place` pins a referent and `unplace` suppresses whatever the passes found; `why` is shown on
+the card, so write it for a reader. Use a place name and coordinates that already appear in
+`data/geo.json` so one place keeps one pin, and omit `q` for one of our own culture areas —
+the card then reads it as an area rather than a spot. If a hop put the referent somewhere
+absurd, fix the hop in `tools/geodeep.py` (`BROAD`, `SCRIPTISH`, and the rule that refuses a
+parent naming several places) rather than papering over it here.
 
 ### 2. Refresh the working copies if the session is new
 
@@ -133,7 +148,8 @@ ArtifactData action=batch url=<artifact> writes=[
 ```
 
 `if_version` is the `version` from the read in step 1. Note what changed and why, name the
-version, and for a data edit add that the generator will revert it.
+version, and for a `map_data.json` edit add that the generator will revert it. A geography fix
+made in `data/geo_hand.json` survives a rebuild, so do not claim otherwise.
 
 ## Verifying without burning tokens
 

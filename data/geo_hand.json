@@ -1,0 +1,125 @@
+{
+  "_": [
+    "Curated geography: the strongest source, because a person read the article.",
+    "Everything else in geo.json is generated, so a correction made in the output",
+    "lasts until the next build and no longer. These last. Each entry says why,",
+    "and the panel labels them so a reader can tell a hand-read pin from a claim",
+    "Wikidata made. Added when a flag on the published map turns out to be right.",
+    "`place` pins a referent; `unplace` suppresses whatever the passes found."
+  ],
+  "place": {
+    "cherufe (chilean magma creature)": {
+      "place": "Chile",
+      "lat": -33.0,
+      "lon": -71.0,
+      "why": "Mapuche, and the Mapuche hop named Chile and Argentina; the Andes region centroid sits far north of it",
+      "q": "Q298"
+    },
+    "european dragon": {
+      "place": "Western Europe",
+      "lat": 48.3,
+      "lon": 4.0,
+      "why": "its own article; same cluster, same gap"
+    },
+    "huma bird": {
+      "place": "Iran",
+      "lat": 32.0,
+      "lon": 53.0,
+      "why": "Persian, but it sits in the firebird cluster and so inherited Slavic & Eastern Europe",
+      "q": "Q794"
+    },
+    "iberian sculpture (bicha of balazote)": {
+      "place": "Iberia & Mediterranean",
+      "lat": 39.6,
+      "lon": -3.8,
+      "why": "Iberian, but 'people Iberians (Spain)' named the Iberian Peninsula and Occitania, so the hop was refused"
+    },
+    "inuksuk": {
+      "place": "North America",
+      "lat": 43.0,
+      "lon": -99.0,
+      "why": "Inuit; 'culture Inuit' named four countries, so the hop was refused"
+    },
+    "japanese dragon": {
+      "place": "Japan",
+      "lat": 35.0,
+      "lon": 136.0,
+      "why": "its own article; the dragon cluster is rightly tied to no one place, so nothing else reaches it"
+    },
+    "japanese dragon (ryu)": {
+      "place": "Japan",
+      "lat": 35.0,
+      "lon": 136.0,
+      "why": "as japanese dragon"
+    },
+    "japanese war fan": {
+      "place": "Japan",
+      "lat": 35.0,
+      "lon": 136.0,
+      "q": "Q17",
+      "why": "was reached through 'a kind of hand fan', which is no evidence; the thing is Japanese regardless"
+    },
+    "king ghidorah": {
+      "place": "Japan",
+      "lat": 35.0,
+      "lon": 136.0,
+      "q": "Q17",
+      "why": "was right only by luck, through 'a kind of movie monster'; Toho, 1964"
+    },
+    "lamassu": {
+      "place": "West Asia & Arabia",
+      "lat": 29.5,
+      "lon": 45.0,
+      "why": "Assyrian, but it sits in the chimera cluster and so inherited Greece & Rome"
+    },
+    "mongolian laminar armour": {
+      "place": "Mongolia",
+      "lat": 46.0,
+      "lon": 105.0,
+      "q": "Q711",
+      "why": "no Wikipedia link, so no pass could ask; en.wikipedia.org/wiki/Mongolian_armour"
+    },
+    "nepenthes lower pitcher": {
+      "place": "South & Southeast Asia",
+      "lat": 17.0,
+      "lon": 92.0,
+      "why": "no Wikipedia link; the genus's native range, so an area rather than a spot"
+    },
+    "tessen (japanese war fan)": {
+      "place": "Japan",
+      "lat": 35.0,
+      "lon": 136.0,
+      "q": "Q17",
+      "why": "as japanese war fan — same article, same reason"
+    },
+    "tree-kangaroo": {
+      "place": "New Guinea",
+      "lat": -5.0,
+      "lon": 140.0,
+      "q": "Q40285",
+      "why": "its article's Distribution section: New Guinea, far NE Australia and the islands between"
+    },
+    "western dragon": {
+      "place": "Western Europe",
+      "lat": 48.3,
+      "lon": 4.0,
+      "why": "as european dragon"
+    },
+    "zmei gorynych": {
+      "place": "Slavic & Eastern Europe",
+      "lat": 52.0,
+      "lon": 27.0,
+      "why": "Zmei (Russian folklore); same cluster, same gap"
+    },
+    "zmora": {
+      "place": "Slavic & Eastern Europe",
+      "lat": 52.0,
+      "lon": 27.0,
+      "why": "Polish; nesting it under the mare cluster made it inherit that cluster's Western Europe"
+    }
+  },
+  "unplace": {
+    "tailor": "reached Germany one hop out through 'a kind of Q778000'; a trade is from nowhere",
+    "hadrosaur": "was pinned to the Kanguk Formation, one Arctic site standing in for a clade on five continents; its sibling clade-level referents carry no pin either"
+  }
+}
