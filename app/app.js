@@ -983,7 +983,11 @@
       } else {
         sub="place of origin · "+pl.refs.length+" referent"+(pl.refs.length===1?"":"s")+
             " · "+pl.n+" Pokémon";
-        var how=el("div","dvia",howPlaced(pl)+(pl.soft?" — a culture area, so the pin is a region, not a spot":""));
+        /* an area says so, and says the shading is where it means */
+        var shaded=GEO.areas && GEO.areas[pl.name];
+        var how=el("div","dvia",howPlaced(pl)+(
+          shaded ? " \u2014 a culture area; the shading on the Atlas is the ground it covers"
+                 : pl.soft ? " \u2014 a culture area, so the pin is a region, not a spot" : ""));
         body.appendChild(how);
         var byk={};
         pl.refs.forEach(function(m){
@@ -1946,7 +1950,7 @@
      one hop out through what it belongs to, or the culture area the dataset
      already files it under. The third is a region, not a spot, so its pins
      are drawn hollow-dashed: Celtic folklore is not at one coordinate. */
-  var WORLD=null, GEO=null, atlasWant=null, geoWant=null, atlasWired=false, atlasBroken=false;
+  var WORLD=null, GEO=null, ACOUNTRY=null, atlasWant=null, geoWant=null, atlasWired=false, atlasBroken=false;
   var AHOME={cx:1000,cy:500,w:2000};   /* the whole globe, exactly filling a 2:1 canvas */
   var AVIEW={cx:AHOME.cx,cy:AHOME.cy,w:AHOME.w};
   var APLACES=null, ABYNAME=null, ALABELS=true, ALASTFOCUS=null;
@@ -2076,6 +2080,16 @@
     return Object.keys(p.kinds).sort(function(a,b){ return p.kinds[b]-p.kinds[a] })
       .slice(0,3).map(function(k){ return kindLabel(k)+" "+p.kinds[k] }).join(" · ");
   }
+  function placeTip(p){
+    var shaded=GEO && GEO.areas && GEO.areas[p.name];
+    return "<b>"+p.name+"</b><span class='tipmeta'>"+p.refs.length+
+      " referent"+(p.refs.length===1?"":"s")+" \u00b7 "+p.n+" Pok\u00e9mon</span>"+
+      "<span class='tipmeta'>"+atlasTopKinds(p)+"</span>"+
+      "<span class='tipmeta'>"+howPlaced(p)+"</span>"+
+      (shaded
+        ? "<span class='tipmeta'>a culture area \u2014 the shading is the ground it covers</span>"
+        : p.soft ? "<span class='tipmeta'>a culture area, not a single spot</span>" : "");
+  }
   function howPlaced(p){
     var bits=[];
     if(p.conf[0]) bits.push(p.conf[0]+" from its own entry");
@@ -2125,6 +2139,45 @@
       }
     }
     ALASTFOCUS=focus;
+    /* A culture area is not a point. 353 referents sit on one, and each was
+       a dot at a hand-picked centroid: "Greece & Rome" in the Ionian Sea
+       between its two halves, "Oceania & Polynesia" out near Fiji for a
+       region spanning a third of the planet. geo.json names the countries
+       each area is drawn from, and world.json already holds their outlines in
+       this same coordinate space, so shade them and let the reader click the
+       ground rather than the dot. The pin stays on top: it carries the count,
+       anchors the label, and is what the referents fan out from. */
+    if(GEO.areas){
+      if(!ACOUNTRY){
+        ACOUNTRY={};
+        WORLD.countries.forEach(function(c){ ACOUNTRY[c.n]=c.d });
+      }
+      var shades=svgel("g",{},"aareas");
+      places.forEach(function(p){
+        var members=GEO.areas[p.name];
+        if(!members) return;
+        var grp=svgel("g",{},"aarea"+(focus===p?" on":"")+
+                           (state.q&&!p.hits?" dim":""));
+        members.forEach(function(cn){
+          var d=ACOUNTRY[cn];
+          if(!d) return;                      /* too small for a world map */
+          var sh=svgel("path",{d:d});
+          sh.__pick=function(){ select({t:"place",k:p.name}) };
+          sh.__zoom=function(){ atlasZoomTo(p) };
+          grp.appendChild(sh);
+        });
+        if(!grp.firstChild) return;
+        var tl=svgel("title",{}); tl.textContent=p.name;
+        grp.appendChild(tl);
+        function shtip(e){ atlasTip(placeTip(p),e.clientX,e.clientY) }
+        grp.addEventListener("pointerenter",shtip);
+        grp.addEventListener("pointermove",shtip);
+        grp.addEventListener("pointerleave",function(){ atlasTip(null) });
+        shades.appendChild(grp);
+      });
+      if(shades.firstChild) svg.appendChild(shades);
+    }
+
     var pins=svgel("g",{}), labels=svgel("g",{}), fan=svgel("g",{});
     var taken=[];                       /* label boxes already placed, in px */
 
@@ -2137,11 +2190,7 @@
       if(fl && fl.open) cls+=" flagged";
       var c=svgel("circle",{cx:p.x,cy:p.y,r:rpx*u,tabindex:"0",role:"button",
                             "aria-label":p.name+", "+p.n+" Pokémon"},cls);
-      var tiptext="<b>"+p.name+"</b><span class='tipmeta'>"+p.refs.length+
-        " referent"+(p.refs.length===1?"":"s")+" · "+p.n+" Pok\u00e9mon</span>"+
-        "<span class='tipmeta'>"+atlasTopKinds(p)+"</span>"+
-        "<span class='tipmeta'>"+howPlaced(p)+"</span>"+
-        (p.soft?"<span class='tipmeta'>a culture area, not a single spot</span>":"");
+      var tiptext=placeTip(p);
       function show(e){ atlasTip(tiptext,e.clientX,e.clientY) }
       c.addEventListener("pointerenter",show);
       c.addEventListener("pointermove",show);

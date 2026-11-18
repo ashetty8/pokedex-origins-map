@@ -325,6 +325,16 @@ a.src{color:var(--accent);font-size:.8rem;text-decoration:none;border-bottom:1px
 .apin.guessed{stroke-dasharray:2 2}                      /* placed by culture area, not a claim */
 .apin.on{fill-opacity:.95;stroke:var(--ink);stroke-width:1.5}
 .apin.flagged{stroke:var(--flag);stroke-width:1.6}
+/* A culture area is shaded over the ground it covers, under the pins. Light
+   enough that the land and the graticule still read through it, and the
+   country outlines stay visible so it reads as "these places" rather than as
+   one painted blob. */
+.aarea path{fill:var(--accent);fill-opacity:.18;stroke:color-mix(in srgb,var(--accent) 55%,transparent);
+  stroke-width:.7;stroke-linejoin:round;vector-effect:non-scaling-stroke;cursor:pointer;
+  transition:fill-opacity .12s}
+.aarea:hover path{fill-opacity:.24}
+.aarea.on path{fill-opacity:.3;stroke:var(--accent);stroke-width:1.2}
+.aarea.dim path{fill-opacity:.05;stroke:color-mix(in srgb,var(--ink-faint) 40%,transparent)}
 .aring{fill:none;stroke:var(--accent);stroke-width:1.4;stroke-dasharray:3 3;vector-effect:non-scaling-stroke;pointer-events:none}
 .alabel{font-family:var(--mono);font-size:10px;fill:var(--ink-soft);paint-order:stroke;
   stroke:var(--card);stroke-width:3px;pointer-events:none;letter-spacing:.02em}

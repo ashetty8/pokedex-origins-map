@@ -45,6 +45,71 @@ REGION_POINTS = {
     # "Not tied to one place" is exactly that — it gets no pin.
 }
 
+# The countries each culture area is drawn from, so the Atlas can shade it
+# instead of dropping a dot at a centroid. 353 referents — 39% of every pin —
+# sit on one of these, and a point is the wrong shape for all of them:
+# "Greece & Rome" was a dot in the Ionian Sea and "Oceania & Polynesia" one
+# near Fiji, for a region spanning a third of the planet.
+#
+# These are the core of each area, not the greatest extent it ever reached:
+# the Roman empire ran to Hadrian's Wall, and shading Britain for it would
+# fight the Celtic area for the same ground. No country is listed twice, so
+# the shapes never overlap and a reader can trust the one they are looking at.
+# Names are world.json's spellings, which is why "United States of America"
+# and "Bosnia and Herz." look like that. Checked against it at build time.
+AREA_COUNTRIES = {
+    "Japan": ["Japan"],
+    "Korea": ["North Korea", "South Korea"],
+    "China": ["China"],
+    "South & Southeast Asia": [
+        "India", "Pakistan", "Bangladesh", "Nepal", "Bhutan", "Sri Lanka",
+        "Myanmar", "Thailand", "Laos", "Cambodia", "Vietnam", "Malaysia",
+        "Indonesia", "Philippines", "Brunei", "Timor-Leste"],
+    "West Asia & Arabia": [
+        "Saudi Arabia", "Yemen", "Oman", "United Arab Emirates", "Qatar",
+        "Kuwait", "Iraq", "Iran", "Syria", "Turkey", "Afghanistan"],
+    # where it began, not where it is practised — the whole point of shading
+    # is to stop a pin claiming more than it should
+    "Abrahamic tradition": ["Israel", "Palestine", "Jordan", "Lebanon"],
+    "Egypt & North Africa": [
+        "Egypt", "Libya", "Tunisia", "Algeria", "Morocco", "W. Sahara",
+        "Sudan"],
+    "Sub-Saharan Africa": [
+        "Nigeria", "Ghana", "Mali", "Senegal", "Ethiopia", "Kenya",
+        "Tanzania", "Uganda", "Dem. Rep. Congo", "Congo", "Cameroon",
+        "Angola", "Zambia", "Zimbabwe", "Mozambique", "Botswana", "Namibia",
+        "South Africa", "Somalia", "Chad", "Niger", "Burkina Faso", "Benin",
+        "Togo", "Guinea", "Sierra Leone", "Liberia", "Côte d'Ivoire",
+        "Gabon", "Central African Rep.", "S. Sudan", "Eritrea", "Rwanda",
+        "Burundi", "Malawi", "Lesotho", "eSwatini", "Gambia",
+        "Guinea-Bissau", "Mauritania", "Djibouti", "Eq. Guinea",
+        "Somaliland", "Madagascar"],
+    "Greece & Rome": ["Greece", "Italy"],
+    "Iberia & Mediterranean": ["Spain", "Portugal", "Cyprus"],
+    "Western Europe": [
+        "France", "Germany", "Belgium", "Netherlands", "Luxembourg",
+        "Switzerland", "Austria"],
+    "Celtic & British Isles": ["Ireland", "United Kingdom"],
+    # Finland is Nordic but not Germanic, and the Kalevala is its own thing
+    "Norse & Germanic": ["Norway", "Sweden", "Denmark", "Iceland"],
+    "Slavic & Eastern Europe": [
+        "Russia", "Ukraine", "Belarus", "Poland", "Czechia", "Slovakia",
+        "Hungary", "Romania", "Bulgaria", "Serbia", "Croatia", "Slovenia",
+        "Bosnia and Herz.", "Montenegro", "Macedonia", "Kosovo", "Moldova",
+        "Albania", "Lithuania", "Latvia", "Estonia"],
+    # Mexico southward is Mesoamerica; this is the indigenous north
+    "North America": ["United States of America", "Canada"],
+    "Mesoamerica & Andes": [
+        "Mexico", "Guatemala", "Belize", "Honduras", "El Salvador",
+        "Nicaragua", "Costa Rica", "Panama", "Peru", "Bolivia", "Ecuador",
+        "Colombia", "Chile"],
+    # Polynesia proper is mostly islands too small for a 177-country world
+    # map, so this shades what there is and the panel says as much
+    "Oceania & Polynesia": [
+        "New Zealand", "Fiji", "Vanuatu", "Solomon Is.", "Papua New Guinea",
+        "New Caledonia"],
+}
+
 # Place names Wikidata hands back that are not where a reader would look.
 # A continent-sized answer is still worth a pin; a planet is not.
 SKIP_PLACES = {"Earth", "Solar System", "universe", "outer space", "Milky Way"}
@@ -90,6 +155,23 @@ ALIAS = {
 }
 
 
+def check_areas(world):
+    """A country named here that world.json does not have would silently
+    shade nothing, and a country in two areas would shade twice."""
+    have = {c["n"] for c in (world or {}).get("countries") or []}
+    seen, bad = {}, []
+    for area, members in AREA_COUNTRIES.items():
+        if area not in REGION_POINTS:
+            bad.append("%s is not a culture area" % area)
+        for c in members:
+            if have and c not in have:
+                bad.append("%s: no country %r in world.json" % (area, c))
+            if c in seen:
+                bad.append("%s is in both %s and %s" % (c, seen[c], area))
+            seen[c] = area
+    return bad
+
+
 def load(name, default=None):
     path = os.path.join(DATA, name)
     if not os.path.exists(path):
@@ -101,6 +183,12 @@ def load(name, default=None):
 
 def main():
     D = load("map_data.json")
+    world = load("world.json", {})
+    bad = check_areas(world)
+    if bad:
+        for b in bad:
+            print("culture area: %s" % b, file=sys.stderr)
+        sys.exit("culture areas do not line up with world.json")
     hand = load("geo_hand.json", {})
     raw = load("geo_raw.json", {})
     deep = load("geo_deep.json", {})
@@ -200,8 +288,12 @@ def main():
     why = {n: h["why"] for n, h in placed_by_hand.items()
            if n in out and h.get("why")}
     refused = {n: t for n, t in refused.items() if n not in out}
+    # only the areas something is actually pinned to; the rest would be a
+    # shape with nothing behind it
+    drawn = {p[0] for p in places}
     geo = {"places": places, "vias": vias, "refs": out, "why": why,
            "unplaced": refused,
+           "areas": {a: c for a, c in AREA_COUNTRIES.items() if a in drawn},
            "regions": sorted(REGION_POINTS),
            "meta": {"referents": len(out), "species": len(species),
                     "places": len(places), "build": D["meta"].get("build"),
@@ -216,6 +308,8 @@ def main():
           % (len(out), counts["direct"], counts["hop"], counts["region"],
              counts["hand"], len(unplaced_by_hand)))
     print("%d referents say why they have no pin" % len(refused))
+    print("%d culture areas shaded, from %d countries"
+          % (len(geo["areas"]), sum(len(c) for c in geo["areas"].values())))
     print("%d places, %d Pokémon reachable" % (len(places), len(species)))
     top = {}
     for name, row in out.items():
