@@ -18999,6 +18999,9 @@
 "bass guitar": {
 "849": "toxtricity-low-key"
 },
+"bat": {
+"800": "necrozma-dawn"
+},
 "battleship": {
 "9": "blastoise-gmax"
 },
@@ -19541,6 +19544,9 @@
 "lindworm": {
 "149": "dragonite-mega"
 },
+"lion": {
+"800": "necrozma-dusk"
+},
 "locomotive pilot": {
 "839": "coalossal-gmax"
 },
@@ -19561,9 +19567,6 @@
 },
 "lucifer the fallen angel": {
 "800": "necrozma-ultra"
-},
-"lunala's bat": {
-"800": "necrozma-dawn"
 },
 "lunar eclipse": {
 "800": "necrozma-dawn"
@@ -19953,9 +19956,6 @@
 },
 "solar eclipse": {
 "491": "darkrai-mega",
-"800": "necrozma-dusk"
-},
-"solgaleo's lion": {
 "800": "necrozma-dusk"
 },
 "sorcerer": {
@@ -21440,7 +21440,7 @@
 "f": "dawn",
 "own": [
 "lunar eclipse",
-"Lunala's bat"
+"bat"
 ],
 "s": 800
 },
@@ -21448,7 +21448,7 @@
 "f": "dusk",
 "own": [
 "solar eclipse",
-"Solgaleo's lion"
+"lion"
 ],
 "s": 800
 },
@@ -24690,7 +24690,6 @@
 "insect-eating bat",
 "leaf-nosed bat",
 "long-eared bat",
-"lunala's bat",
 "mexican free-tailed bat",
 "new world leaf-nosed bat",
 "vampire bat"
@@ -37660,8 +37659,7 @@
 "m": [
 "adolescent lion",
 "adult male lion",
-"lion",
-"solgaleo's lion"
+"lion"
 ],
 "n": 7,
 "p": "big cat"
@@ -52363,7 +52361,7 @@
 "person",
 "prehistoric"
 ],
-"referents": 3885,
+"referents": 3883,
 "species": 1025
 },
 "referents": {
@@ -52504,6 +52502,7 @@
 "s": [
 1024
 ],
+"w": "Turtles all the way down",
 "x": 1
 },
 "108-bead japamala": {
@@ -52614,7 +52613,8 @@
 "k": "media & art",
 "s": [
 778
-]
+],
+"w": "Child art"
 },
 "a hand crossed with a serpent": {
 "g": "serpent",
@@ -52674,6 +52674,7 @@
 496,
 497
 ],
+"w": "Acanthus (ornament)",
 "x": 1
 },
 "accordion": {
@@ -53655,7 +53656,8 @@
 "k": "life",
 "s": [
 519
-]
+],
+"w": "Aphrodite"
 },
 "apple pie": {
 "g": "apple pie",
@@ -55112,6 +55114,7 @@
 472,
 710,
 792,
+800,
 985
 ],
 "w": "Bat"
@@ -55943,6 +55946,7 @@
 "s": [
 132
 ],
+"w": "Physarum polycephalum",
 "x": 1
 },
 "blob of cream": {
@@ -56258,7 +56262,8 @@
 "k": "life",
 "s": [
 962
-]
+],
+"w": "Bearded vulture"
 },
 "bone-wearing cultures": {
 "g": "bone-wearing cultures",
@@ -61267,6 +61272,7 @@
 "s": [
 968
 ],
+"w": "Sandworm (Dune)",
 "x": 1
 },
 "dung beetle": {
@@ -61616,7 +61622,8 @@
 "k": "object",
 "s": [
 563
-]
+],
+"w": "Ancient Egyptian coffins"
 },
 "egyptian vulture": {
 "d": "Egyptian vulture",
@@ -61722,7 +61729,8 @@
 "k": "object",
 "s": [
 894
-]
+],
+"w": "Insulator (electricity)"
 },
 "electric desk fan": {
 "g": "fan",
@@ -61901,7 +61909,8 @@
 "k": "object",
 "s": [
 896
-]
+],
+"w": "Ema (Shinto)"
 },
 "embryo": {
 "g": "embryo",
@@ -62005,7 +62014,8 @@
 "k": "life",
 "s": [
 145
-]
+],
+"w": "English Pouter"
 },
 "enko": {
 "g": "enko",
@@ -62265,7 +62275,8 @@
 "k": "object",
 "s": [
 605
-]
+],
+"w": "Stone circle"
 },
 "european wildcat": {
 "d": "European wildcat",
@@ -65661,7 +65672,8 @@
 "s": [
 722,
 724
-]
+],
+"w": "Pueo"
 },
 "hawaiian pueo owl facial disc": {
 "d": "Hawaiian pueo owl facial disc",
@@ -65669,7 +65681,8 @@
 "k": "object",
 "s": [
 723
-]
+],
+"w": "Facial disc"
 },
 "hawaiian surf culture": {
 "d": "Hawaiian surf culture",
@@ -67289,7 +67302,8 @@
 "k": "life",
 "s": [
 714
-]
+],
+"w": "Bat"
 },
 "insular dwarfism": {
 "g": "insular dwarfism",
@@ -68630,6 +68644,7 @@
 "s": [
 905
 ],
+"w": "Minos",
 "x": 1
 },
 "king of saxony bird-of-paradise": {
@@ -69771,7 +69786,8 @@
 136,
 244,
 668,
-791
+791,
+800
 ],
 "w": "Lion"
 },
@@ -69871,6 +69887,7 @@
 88,
 89
 ],
+"w": "Sludge",
 "x": 1
 },
 "lizard": {
@@ -70104,6 +70121,7 @@
 "s": [
 799
 ],
+"w": "Lovecraftian horror",
 "x": 1
 },
 "lovecraftian horror": {
@@ -70183,14 +70201,6 @@
 837
 ],
 "w": "Coal"
-},
-"lunala's bat": {
-"d": "Lunala's bat",
-"g": "bat",
-"k": "life",
-"s": [
-800
-]
 },
 "lunar eclipse": {
 "g": "eclipse",
@@ -70414,6 +70424,7 @@
 "s": [
 485
 ],
+"w": "Magma",
 "x": 1
 },
 "magnet": {
@@ -70669,7 +70680,7 @@
 "s": [
 491
 ],
-"w": "Mare"
+"w": "Mare (folklore)"
 },
 "mare (nightmare spirit)": {
 "g": "mare",
@@ -72782,7 +72793,8 @@
 "k": "life",
 "s": [
 528
-]
+],
+"w": "Leaf-nosed bat"
 },
 "new world monkey": {
 "d": "New World monkey",
@@ -72879,6 +72891,7 @@
 "s": [
 491
 ],
+"w": "Nightmare",
 "x": 1
 },
 "nighttime and nocturnal animals": {
@@ -74753,6 +74766,7 @@
 "s": [
 907
 ],
+"w": "Picaresque novel",
 "x": 1
 },
 "pickaxe": {
@@ -75091,7 +75105,8 @@
 "k": "life",
 "s": [
 973
-]
+],
+"w": "Plastic flamingo"
 },
 "plate armour": {
 "g": "armour",
@@ -75331,6 +75346,7 @@
 88,
 89
 ],
+"w": "Toxic waste",
 "x": 1
 },
 "poltergeist": {
@@ -76032,6 +76048,7 @@
 "s": [
 215
 ],
+"w": "Puss in Boots",
 "x": 1
 },
 "puss moth caterpillar": {
@@ -77895,7 +77912,8 @@
 "k": "object",
 "s": [
 563
-]
+],
+"w": "Royal Tomb of Akhenaten"
 },
 "sargassum pneumatocysts": {
 "d": "Sargassum pneumatocysts",
@@ -79848,14 +79866,6 @@
 484
 ]
 },
-"solgaleo's lion": {
-"d": "Solgaleo's lion",
-"g": "lion",
-"k": "life",
-"s": [
-800
-]
-},
 "sombrero": {
 "g": "sombrero",
 "k": "object",
@@ -81076,6 +81086,7 @@
 "s": [
 687
 ],
+"w": "Supervillain",
 "x": 1
 },
 "surfing": {
@@ -81167,6 +81178,7 @@
 114,
 465
 ],
+"w": "It! (short story)",
 "x": 1
 },
 "swamp rabbit": {
@@ -81850,6 +81862,7 @@
 "s": [
 959
 ],
+"w": "Girls with guns",
 "x": 1
 },
 "the 'mare' wordplay": {
@@ -82537,7 +82550,8 @@
 "k": "earth & sky",
 "s": [
 720
-]
+],
+"w": "List of Journey to the West characters"
 },
 "the snow queen": {
 "d": "The Snow Queen",
@@ -83147,7 +83161,8 @@
 "k": "life",
 "s": [
 731
-]
+],
+"w": "Toco toucan"
 },
 "toddler": {
 "g": "toddler",
@@ -83887,7 +83902,8 @@
 "k": "object",
 "s": [
 563
-]
+],
+"w": "Mask of Tutankhamun"
 },
 "tutu": {
 "g": "tutu",
@@ -85423,6 +85439,7 @@
 575,
 576
 ],
+"w": "Witchcraft",
 "x": 1
 },
 "witch's and gorgon's hair": {
