@@ -1,320 +1,361 @@
 {
- "_": [
-  "Curated geography: the strongest source, because a person read the article.",
-  "Everything else in geo.json is generated, so a correction made in the output",
-  "lasts until the next build and no longer. These last. Each entry says why,",
-  "and the panel labels them so a reader can tell a hand-read pin from a claim",
-  "Wikidata made. Added when a flag on the published map turns out to be right.",
-  "`place` pins a referent; `unplace` suppresses whatever the passes found."
- ],
- "place": {
-  "asian black bear": {
-   "lat": 30.0,
-   "lon": 95.0,
-   "place": "Asia",
-   "why": "southeastern Iran through Afghanistan, Pakistan and the Himalayan foothills to mainland Southeast Asia, China, Taiwan, Korea, Japan and the Russian Far East"
+  "_": [
+    "Curated geography: the strongest source, because a person read the article.",
+    "Everything else in geo.json is generated, so a correction made in the output",
+    "lasts until the next build and no longer. These last. Each entry says why,",
+    "and the panel labels them so a reader can tell a hand-read pin from a claim",
+    "Wikidata made. Added when a flag on the published map turns out to be right.",
+    "`place` pins a referent; `unplace` suppresses whatever the passes found."
+  ],
+  "place": {
+    "asian black bear": {
+      "lat": 30.0,
+      "lon": 95.0,
+      "place": "Asia",
+      "why": "southeastern Iran through Afghanistan, Pakistan and the Himalayan foothills to mainland Southeast Asia, China, Taiwan, Korea, Japan and the Russian Far East"
+    },
+    "aumakua (ancestral spirit)": {
+      "lat": 21.5,
+      "lon": -158.0,
+      "place": "Hawaii",
+      "q": "Q782",
+      "why": "a Hawaiian family guardian spirit; the ʻaumakua belief is Hawaiian, not Polynesian at large"
+    },
+    "barbegazi (alpine gnome)": {
+      "place": "Alps",
+      "lat": 46.58,
+      "lon": 8.62,
+      "why": "Alpine folklore of Switzerland and the French Alps; its cluster's culture area only reached Western Europe",
+      "q": "Q1286"
+    },
+    "bat boy": {
+      "place": "United States",
+      "lat": 39.83,
+      "lon": -98.58,
+      "why": "a Weekly World News invention of 1992; the North America culture area is for indigenous tradition, which this is not",
+      "q": "Q30"
+    },
+    "bearded vulture": {
+      "lat": 25.0,
+      "lon": 40.0,
+      "place": "Eurasia & Africa",
+      "why": "the mountains of southern Europe, the Caucasus, the Himalaya and east and southern Africa; the Sela Pass is one of them, not the range"
+    },
+    "buckskin fringe": {
+      "lat": 43.0,
+      "lon": -99.0,
+      "place": "North America",
+      "why": "no Wikipedia link; buckskins are Native American deerskin clothing, later taken up by frontiersmen"
+    },
+    "cherufe (chilean magma creature)": {
+      "lat": -33.0,
+      "lon": -71.0,
+      "place": "Chile",
+      "q": "Q298",
+      "why": "Mapuche, and the Mapuche hop named Chile and Argentina; the Andes region centroid sits far north of it"
+    },
+    "comic-book superhero": {
+      "place": "United States",
+      "lat": 39.83,
+      "lon": -98.58,
+      "why": "American comic books from Superman in 1938; its cluster separates this from the tokusatsu kind for exactly this reason",
+      "q": "Q30"
+    },
+    "common swift": {
+      "lat": 50.0,
+      "lon": 80.0,
+      "place": "Eurasia",
+      "why": "breeds right across Europe and temperate Asia and winters in Africa; its own entry's 'endemic to Namdapha National Park' was a sighting"
+    },
+    "emperor penguin": {
+      "lat": -90.0,
+      "lon": 0.0,
+      "place": "Antarctica",
+      "q": "Q51",
+      "why": "endemic to Antarctica — it breeds on the fast ice of the coast and nowhere else"
+    },
+    "emperor penguin chick": {
+      "lat": -90.0,
+      "lon": 0.0,
+      "place": "Antarctica",
+      "q": "Q51",
+      "why": "hatched and reared on the Antarctic fast ice, the only place emperor penguins breed"
+    },
+    "epaulettes": {
+      "lat": 47.0,
+      "lon": 2.0,
+      "place": "France",
+      "q": "Q142",
+      "why": "its article's History section: 17th-century French military dress, and the word is French for 'little shoulder'"
+    },
+    "eurasian eagle-owl": {
+      "lat": 50.0,
+      "lon": 80.0,
+      "place": "Eurasia",
+      "why": "across Europe and Asia; 'endemic to Namdapha National Park' was a sighting"
+    },
+    "eurasian teal": {
+      "lat": 50.0,
+      "lon": 80.0,
+      "place": "Eurasia",
+      "why": "breeds across northern Eurasia and winters south of it; 'endemic to Kaziranga National Park' was a sighting"
+    },
+    "european dragon": {
+      "lat": 48.3,
+      "lon": 4.0,
+      "place": "Western Europe",
+      "why": "its own article; same cluster, same gap"
+    },
+    "great tit": {
+      "lat": 50.0,
+      "lon": 80.0,
+      "place": "Eurasia",
+      "why": "across Europe and Asia from Ireland to Japan; 'endemic to Buxa Tiger Reserve' was a sighting"
+    },
+    "hakuturi": {
+      "lat": -41.2,
+      "lon": 174.0,
+      "place": "New Zealand",
+      "q": "Q664",
+      "why": "the Hākuturi are Māori forest guardians, from Aotearoa New Zealand"
+    },
+    "hine-nui-te-po": {
+      "lat": -41.2,
+      "lon": 174.0,
+      "place": "New Zealand",
+      "q": "Q664",
+      "why": "Hine-nui-te-pō is Māori, from Aotearoa New Zealand; Māui meets her at the end of his life"
+    },
+    "horses of the ashvins": {
+      "place": "India",
+      "lat": 22.8,
+      "lon": 83.0,
+      "why": "the Ashvins are Vedic, so India rather than the whole of South & Southeast Asia",
+      "q": "Q668"
+    },
+    "huma bird": {
+      "lat": 32.0,
+      "lon": 53.0,
+      "place": "Iran",
+      "q": "Q794",
+      "why": "Persian, but it sits in the firebird cluster and so inherited Slavic & Eastern Europe"
+    },
+    "iberian sculpture (bicha of balazote)": {
+      "lat": 39.6,
+      "lon": -3.8,
+      "place": "Iberia & Mediterranean",
+      "why": "Iberian, but 'people Iberians (Spain)' named the Iberian Peninsula and Occitania, so the hop was refused"
+    },
+    "inuksuk": {
+      "lat": 43.0,
+      "lon": -99.0,
+      "place": "North America",
+      "why": "Inuit; 'culture Inuit' named four countries, so the hop was refused"
+    },
+    "japanese dragon": {
+      "lat": 35.0,
+      "lon": 136.0,
+      "place": "Japan",
+      "why": "its own article; the dragon cluster is rightly tied to no one place, so nothing else reaches it"
+    },
+    "japanese dragon (ryu)": {
+      "lat": 35.0,
+      "lon": 136.0,
+      "place": "Japan",
+      "why": "as japanese dragon"
+    },
+    "japanese war fan": {
+      "lat": 35.0,
+      "lon": 136.0,
+      "place": "Japan",
+      "q": "Q17",
+      "why": "was reached through 'a kind of hand fan', which is no evidence; the thing is Japanese regardless"
+    },
+    "kanaloa (hawaiian ocean god)": {
+      "lat": 21.5,
+      "lon": -158.0,
+      "place": "Hawaii",
+      "q": "Q782",
+      "why": "worshipped across Polynesia as Tangaroa, but this is the Hawaiian Kanaloa"
+    },
+    "kane (hawaiian creator god)": {
+      "lat": 21.5,
+      "lon": -158.0,
+      "place": "Hawaii",
+      "q": "Q782",
+      "why": "the Hawaiian Kāne, the creator of the four great Hawaiian gods"
+    },
+    "kanehekili (hawaiian thunder god)": {
+      "lat": 21.5,
+      "lon": -158.0,
+      "place": "Hawaii",
+      "q": "Q782",
+      "why": "Kānehekili, the thunder form of Kāne, named and worshipped in Hawaii"
+    },
+    "king ghidorah": {
+      "lat": 35.0,
+      "lon": 136.0,
+      "place": "Japan",
+      "q": "Q17",
+      "why": "was right only by luck, through 'a kind of movie monster'; Toho, 1964"
+    },
+    "kukailimoku (hawaiian war god)": {
+      "lat": 21.5,
+      "lon": -158.0,
+      "place": "Hawaii",
+      "q": "Q782",
+      "why": "Kūkaʻilimoku, Kamehameha I's war god, carried on the Hawaiian islands"
+    },
+    "lamassu": {
+      "lat": 29.5,
+      "lon": 45.0,
+      "place": "West Asia & Arabia",
+      "why": "Assyrian, but it sits in the chimera cluster and so inherited Greece & Rome"
+    },
+    "leutogi": {
+      "lat": -13.74,
+      "lon": -172.22,
+      "place": "Samoa",
+      "q": "Q683",
+      "why": "Leutogi is a Samoan princess saved by bats; the tale is Samoan and Tongan"
+    },
+    "lindu (estonian goddess of birds)": {
+      "lat": 58.6,
+      "lon": 25.0,
+      "place": "Estonia",
+      "q": "Q191",
+      "why": "Lindu is Estonian, from the Finnic bird-goddess tale of the Milky Way; nothing about her is Polynesian"
+    },
+    "lono (hawaiian god of agriculture)": {
+      "lat": 21.5,
+      "lon": -158.0,
+      "place": "Hawaii",
+      "q": "Q782",
+      "why": "the Hawaiian Lono, whose Makahiki season is a Hawaiian festival"
+    },
+    "magical girl transformation": {
+      "place": "Japan",
+      "lat": 35.0,
+      "lon": 136.0,
+      "why": "mahō shōjo, a Japanese television genre from Mahōtsukai Sally in 1966",
+      "q": "Q17"
+    },
+    "mahina (hawaiian moon goddess)": {
+      "lat": 21.5,
+      "lon": -158.0,
+      "place": "Hawaii",
+      "q": "Q782",
+      "why": "Mahina, the Hawaiian moon goddess"
+    },
+    "menehune": {
+      "lat": 21.5,
+      "lon": -158.0,
+      "place": "Hawaii",
+      "q": "Q782",
+      "why": "the little people of Hawaiian legend, said to build the islands' fishponds and heiau overnight"
+    },
+    "mo'o": {
+      "lat": 21.5,
+      "lon": -158.0,
+      "place": "Hawaii",
+      "q": "Q782",
+      "why": "the Hawaiian moʻo, lizard spirits of particular fishponds and streams on the islands"
+    },
+    "mongolian laminar armour": {
+      "lat": 46.0,
+      "lon": 105.0,
+      "place": "Mongolia",
+      "q": "Q711",
+      "why": "no Wikipedia link, so no pass could ask; en.wikipedia.org/wiki/Mongolian_armour"
+    },
+    "nepenthes lower pitcher": {
+      "lat": 17.0,
+      "lon": 92.0,
+      "place": "South & Southeast Asia",
+      "why": "no Wikipedia link; the genus's native range, so an area rather than a spot"
+    },
+    "nightmarchers": {
+      "lat": 21.5,
+      "lon": -158.0,
+      "place": "Hawaii",
+      "q": "Q782",
+      "why": "huakaʻi pō, the Hawaiian procession of ancestral warriors, walked on named trails on the islands"
+    },
+    "pe'a-pe'a-makawalu": {
+      "lat": 21.5,
+      "lon": -158.0,
+      "place": "Hawaii",
+      "q": "Q782",
+      "why": "Peʻapeʻa-maka-walu, the eight-eyed bat of Hawaiian legend"
+    },
+    "pele's curse": {
+      "lat": 21.5,
+      "lon": -158.0,
+      "place": "Hawaii",
+      "q": "Q782",
+      "why": "a modern tourist legend rather than an old Hawaiian taboo, but it is entirely about rock taken from Hawaii, and Pele is the Hawaiian volcano goddess"
+    },
+    "poliahu (hawaiian snow goddess)": {
+      "place": "Mauna Kea",
+      "lat": 19.82,
+      "lon": -155.47,
+      "why": "she is held to live on Mauna Kea itself, which this map already pins separately; Hawaii was the island, not the mountain"
+    },
+    "tessen (japanese war fan)": {
+      "lat": 35.0,
+      "lon": 136.0,
+      "place": "Japan",
+      "q": "Q17",
+      "why": "as japanese war fan — same article, same reason"
+    },
+    "the iron wolf of lithuania": {
+      "lat": 55.17,
+      "lon": 23.88,
+      "place": "Lithuania",
+      "q": "Q37",
+      "why": "Lithuanian, from the founding legend of Vilnius; its cluster's culture area said Slavic & Eastern Europe, and Lithuanian is Baltic, not Slavic"
+    },
+    "tokusatsu costumed superhero": {
+      "place": "Japan",
+      "lat": 35.0,
+      "lon": 136.0,
+      "why": "the Japanese half of the same cluster — not flagged, but leaving it blank beside the American one would hide the distinction the cluster draws",
+      "q": "Q17"
+    },
+    "tree-kangaroo": {
+      "lat": -5.0,
+      "lon": 140.0,
+      "place": "New Guinea",
+      "q": "Q40285",
+      "why": "its article's Distribution section: New Guinea, far NE Australia and the islands between"
+    },
+    "western dragon": {
+      "lat": 48.3,
+      "lon": 4.0,
+      "place": "Western Europe",
+      "why": "as european dragon"
+    },
+    "white stork": {
+      "lat": 25.0,
+      "lon": 40.0,
+      "place": "Eurasia & Africa",
+      "why": "breeds in Europe, West Asia and NW Africa and winters in Africa and India; the Little Rann of Kutch is one wintering marsh"
+    },
+    "zmei gorynych": {
+      "lat": 52.0,
+      "lon": 27.0,
+      "place": "Slavic & Eastern Europe",
+      "why": "Zmei (Russian folklore); same cluster, same gap"
+    },
+    "zmora": {
+      "lat": 52.0,
+      "lon": 27.0,
+      "place": "Slavic & Eastern Europe",
+      "why": "Polish; nesting it under the mare cluster made it inherit that cluster's Western Europe"
+    }
   },
-  "aumakua (ancestral spirit)": {
-   "lat": 21.5,
-   "lon": -158.0,
-   "place": "Hawaii",
-   "q": "Q782",
-   "why": "a Hawaiian family guardian spirit; the ʻaumakua belief is Hawaiian, not Polynesian at large"
-  },
-  "bearded vulture": {
-   "lat": 25.0,
-   "lon": 40.0,
-   "place": "Eurasia & Africa",
-   "why": "the mountains of southern Europe, the Caucasus, the Himalaya and east and southern Africa; the Sela Pass is one of them, not the range"
-  },
-  "buckskin fringe": {
-   "lat": 43.0,
-   "lon": -99.0,
-   "place": "North America",
-   "why": "no Wikipedia link; buckskins are Native American deerskin clothing, later taken up by frontiersmen"
-  },
-  "cherufe (chilean magma creature)": {
-   "lat": -33.0,
-   "lon": -71.0,
-   "place": "Chile",
-   "q": "Q298",
-   "why": "Mapuche, and the Mapuche hop named Chile and Argentina; the Andes region centroid sits far north of it"
-  },
-  "common swift": {
-   "lat": 50.0,
-   "lon": 80.0,
-   "place": "Eurasia",
-   "why": "breeds right across Europe and temperate Asia and winters in Africa; its own entry's 'endemic to Namdapha National Park' was a sighting"
-  },
-  "emperor penguin": {
-   "lat": -90.0,
-   "lon": 0.0,
-   "place": "Antarctica",
-   "q": "Q51",
-   "why": "endemic to Antarctica — it breeds on the fast ice of the coast and nowhere else"
-  },
-  "emperor penguin chick": {
-   "lat": -90.0,
-   "lon": 0.0,
-   "place": "Antarctica",
-   "q": "Q51",
-   "why": "hatched and reared on the Antarctic fast ice, the only place emperor penguins breed"
-  },
-  "epaulettes": {
-   "lat": 47.0,
-   "lon": 2.0,
-   "place": "France",
-   "q": "Q142",
-   "why": "its article's History section: 17th-century French military dress, and the word is French for 'little shoulder'"
-  },
-  "eurasian eagle-owl": {
-   "lat": 50.0,
-   "lon": 80.0,
-   "place": "Eurasia",
-   "why": "across Europe and Asia; 'endemic to Namdapha National Park' was a sighting"
-  },
-  "eurasian teal": {
-   "lat": 50.0,
-   "lon": 80.0,
-   "place": "Eurasia",
-   "why": "breeds across northern Eurasia and winters south of it; 'endemic to Kaziranga National Park' was a sighting"
-  },
-  "european dragon": {
-   "lat": 48.3,
-   "lon": 4.0,
-   "place": "Western Europe",
-   "why": "its own article; same cluster, same gap"
-  },
-  "great tit": {
-   "lat": 50.0,
-   "lon": 80.0,
-   "place": "Eurasia",
-   "why": "across Europe and Asia from Ireland to Japan; 'endemic to Buxa Tiger Reserve' was a sighting"
-  },
-  "hakuturi": {
-   "lat": -41.2,
-   "lon": 174.0,
-   "place": "New Zealand",
-   "q": "Q664",
-   "why": "the Hākuturi are Māori forest guardians, from Aotearoa New Zealand"
-  },
-  "hine-nui-te-po": {
-   "lat": -41.2,
-   "lon": 174.0,
-   "place": "New Zealand",
-   "q": "Q664",
-   "why": "Hine-nui-te-pō is Māori, from Aotearoa New Zealand; Māui meets her at the end of his life"
-  },
-  "huma bird": {
-   "lat": 32.0,
-   "lon": 53.0,
-   "place": "Iran",
-   "q": "Q794",
-   "why": "Persian, but it sits in the firebird cluster and so inherited Slavic & Eastern Europe"
-  },
-  "iberian sculpture (bicha of balazote)": {
-   "lat": 39.6,
-   "lon": -3.8,
-   "place": "Iberia & Mediterranean",
-   "why": "Iberian, but 'people Iberians (Spain)' named the Iberian Peninsula and Occitania, so the hop was refused"
-  },
-  "inuksuk": {
-   "lat": 43.0,
-   "lon": -99.0,
-   "place": "North America",
-   "why": "Inuit; 'culture Inuit' named four countries, so the hop was refused"
-  },
-  "japanese dragon": {
-   "lat": 35.0,
-   "lon": 136.0,
-   "place": "Japan",
-   "why": "its own article; the dragon cluster is rightly tied to no one place, so nothing else reaches it"
-  },
-  "japanese dragon (ryu)": {
-   "lat": 35.0,
-   "lon": 136.0,
-   "place": "Japan",
-   "why": "as japanese dragon"
-  },
-  "japanese war fan": {
-   "lat": 35.0,
-   "lon": 136.0,
-   "place": "Japan",
-   "q": "Q17",
-   "why": "was reached through 'a kind of hand fan', which is no evidence; the thing is Japanese regardless"
-  },
-  "kanaloa (hawaiian ocean god)": {
-   "lat": 21.5,
-   "lon": -158.0,
-   "place": "Hawaii",
-   "q": "Q782",
-   "why": "worshipped across Polynesia as Tangaroa, but this is the Hawaiian Kanaloa"
-  },
-  "kane (hawaiian creator god)": {
-   "lat": 21.5,
-   "lon": -158.0,
-   "place": "Hawaii",
-   "q": "Q782",
-   "why": "the Hawaiian Kāne, the creator of the four great Hawaiian gods"
-  },
-  "kanehekili (hawaiian thunder god)": {
-   "lat": 21.5,
-   "lon": -158.0,
-   "place": "Hawaii",
-   "q": "Q782",
-   "why": "Kānehekili, the thunder form of Kāne, named and worshipped in Hawaii"
-  },
-  "king ghidorah": {
-   "lat": 35.0,
-   "lon": 136.0,
-   "place": "Japan",
-   "q": "Q17",
-   "why": "was right only by luck, through 'a kind of movie monster'; Toho, 1964"
-  },
-  "kukailimoku (hawaiian war god)": {
-   "lat": 21.5,
-   "lon": -158.0,
-   "place": "Hawaii",
-   "q": "Q782",
-   "why": "Kūkaʻilimoku, Kamehameha I's war god, carried on the Hawaiian islands"
-  },
-  "lamassu": {
-   "lat": 29.5,
-   "lon": 45.0,
-   "place": "West Asia & Arabia",
-   "why": "Assyrian, but it sits in the chimera cluster and so inherited Greece & Rome"
-  },
-  "leutogi": {
-   "lat": -13.74,
-   "lon": -172.22,
-   "place": "Samoa",
-   "q": "Q683",
-   "why": "Leutogi is a Samoan princess saved by bats; the tale is Samoan and Tongan"
-  },
-  "lindu (estonian goddess of birds)": {
-   "lat": 58.6,
-   "lon": 25.0,
-   "place": "Estonia",
-   "q": "Q191",
-   "why": "Lindu is Estonian, from the Finnic bird-goddess tale of the Milky Way; nothing about her is Polynesian"
-  },
-  "lono (hawaiian god of agriculture)": {
-   "lat": 21.5,
-   "lon": -158.0,
-   "place": "Hawaii",
-   "q": "Q782",
-   "why": "the Hawaiian Lono, whose Makahiki season is a Hawaiian festival"
-  },
-  "mahina (hawaiian moon goddess)": {
-   "lat": 21.5,
-   "lon": -158.0,
-   "place": "Hawaii",
-   "q": "Q782",
-   "why": "Mahina, the Hawaiian moon goddess"
-  },
-  "menehune": {
-   "lat": 21.5,
-   "lon": -158.0,
-   "place": "Hawaii",
-   "q": "Q782",
-   "why": "the little people of Hawaiian legend, said to build the islands' fishponds and heiau overnight"
-  },
-  "mo'o": {
-   "lat": 21.5,
-   "lon": -158.0,
-   "place": "Hawaii",
-   "q": "Q782",
-   "why": "the Hawaiian moʻo, lizard spirits of particular fishponds and streams on the islands"
-  },
-  "mongolian laminar armour": {
-   "lat": 46.0,
-   "lon": 105.0,
-   "place": "Mongolia",
-   "q": "Q711",
-   "why": "no Wikipedia link, so no pass could ask; en.wikipedia.org/wiki/Mongolian_armour"
-  },
-  "nepenthes lower pitcher": {
-   "lat": 17.0,
-   "lon": 92.0,
-   "place": "South & Southeast Asia",
-   "why": "no Wikipedia link; the genus's native range, so an area rather than a spot"
-  },
-  "nightmarchers": {
-   "lat": 21.5,
-   "lon": -158.0,
-   "place": "Hawaii",
-   "q": "Q782",
-   "why": "huakaʻi pō, the Hawaiian procession of ancestral warriors, walked on named trails on the islands"
-  },
-  "pe'a-pe'a-makawalu": {
-   "lat": 21.5,
-   "lon": -158.0,
-   "place": "Hawaii",
-   "q": "Q782",
-   "why": "Peʻapeʻa-maka-walu, the eight-eyed bat of Hawaiian legend"
-  },
-  "pele's curse": {
-   "lat": 21.5,
-   "lon": -158.0,
-   "place": "Hawaii",
-   "q": "Q782",
-   "why": "a modern tourist legend rather than an old Hawaiian taboo, but it is entirely about rock taken from Hawaii, and Pele is the Hawaiian volcano goddess"
-  },
-  "poliahu (hawaiian snow goddess)": {
-   "lat": 21.5,
-   "lon": -158.0,
-   "place": "Hawaii",
-   "q": "Q782",
-   "why": "Poliʻahu, the snow goddess of Mauna Kea on Hawaiʻi island"
-  },
-  "tessen (japanese war fan)": {
-   "lat": 35.0,
-   "lon": 136.0,
-   "place": "Japan",
-   "q": "Q17",
-   "why": "as japanese war fan — same article, same reason"
-  },
-  "the iron wolf of lithuania": {
-   "lat": 55.17,
-   "lon": 23.88,
-   "place": "Lithuania",
-   "q": "Q37",
-   "why": "Lithuanian, from the founding legend of Vilnius; its cluster's culture area said Slavic & Eastern Europe, and Lithuanian is Baltic, not Slavic"
-  },
-  "tree-kangaroo": {
-   "lat": -5.0,
-   "lon": 140.0,
-   "place": "New Guinea",
-   "q": "Q40285",
-   "why": "its article's Distribution section: New Guinea, far NE Australia and the islands between"
-  },
-  "western dragon": {
-   "lat": 48.3,
-   "lon": 4.0,
-   "place": "Western Europe",
-   "why": "as european dragon"
-  },
-  "white stork": {
-   "lat": 25.0,
-   "lon": 40.0,
-   "place": "Eurasia & Africa",
-   "why": "breeds in Europe, West Asia and NW Africa and winters in Africa and India; the Little Rann of Kutch is one wintering marsh"
-  },
-  "zmei gorynych": {
-   "lat": 52.0,
-   "lon": 27.0,
-   "place": "Slavic & Eastern Europe",
-   "why": "Zmei (Russian folklore); same cluster, same gap"
-  },
-  "zmora": {
-   "lat": 52.0,
-   "lon": 27.0,
-   "place": "Slavic & Eastern Europe",
-   "why": "Polish; nesting it under the mare cluster made it inherit that cluster's Western Europe"
+  "unplace": {
+    "hadrosaur": "was pinned to the Kanguk Formation, one Arctic site standing in for a clade on five continents; its sibling clade-level referents carry no pin either",
+    "tailor": "reached Germany one hop out through 'a kind of Q778000'; a trade is from nowhere"
   }
- },
- "unplace": {
-  "hadrosaur": "was pinned to the Kanguk Formation, one Arctic site standing in for a clade on five continents; its sibling clade-level referents carry no pin either",
-  "tailor": "reached Germany one hop out through 'a kind of Q778000'; a trade is from nowhere"
- }
 }
