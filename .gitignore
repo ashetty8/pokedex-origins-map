@@ -14,3 +14,7 @@ tools/.wikisearch.json
 tools/.wikilink.json
 tools/.geocache.json
 tools/.geodeep.json
+
+# session scratch: EnterWorktree puts worktrees in .claude/worktrees/, and the
+# local-preview launch.json from SKILL.md's verification route lands here too
+.claude/
