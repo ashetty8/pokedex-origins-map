@@ -17424,7 +17424,7 @@
 "shoes & accessories",
 "worn on the head"
 ],
-"n": 203
+"n": 205
 },
 "Crops & food plants": {
 "b": "Plants",
@@ -18513,7 +18513,7 @@
 "vegetable lamb of tartary",
 "yeti"
 ],
-"n": 123,
+"n": 124,
 "rg": {
 "China": [
 "\"silk hiding steel\"",
@@ -19535,6 +19535,9 @@
 "leopard gecko shedding its skin": {
 "560": "scrafty-mega"
 },
+"lernaean hydra": {
+"890": "eternatus-eternamax"
+},
 "leviathan": {
 "130": "gyarados-mega",
 "487": "giratina-origin"
@@ -19690,7 +19693,7 @@
 "okuri-inu's aggressive aspect": {
 "745": "lycanroc-midnight"
 },
-"omukade (giant centipede)": {
+"omukade": {
 "487": "giratina-origin"
 },
 "oni horns": {
@@ -20039,9 +20042,6 @@
 },
 "the green flash": {
 "745": "lycanroc-dusk"
-},
-"the lernaean hydra": {
-"890": "eternatus-eternamax"
 },
 "the number seven in shinto and buddhist culture": {
 "358": "chimecho-mega"
@@ -20702,7 +20702,7 @@
 "f": "eternamax",
 "own": [
 "a hand crossed with a serpent",
-"the Lernaean Hydra"
+"lernaean hydra"
 ],
 "s": 890
 },
@@ -20853,7 +20853,7 @@
 "own": [
 "Chinese dragon",
 "amphiptere",
-"Omukade (giant centipede)",
+"omukade",
 "dobsonfly",
 "seraph",
 "Leviathan",
@@ -27174,7 +27174,6 @@
 "fire centipede",
 "fire centipede (orphnaeus brevilabiatus)",
 "omukade",
-"omukade (giant centipede)",
 "scolopendra gigantea centipede"
 ],
 "n": 6,
@@ -27947,7 +27946,7 @@
 "leaf": 1,
 "m": [],
 "n": 0,
-"tn": 86
+"tn": 88
 },
 "cloud": {
 "f": "Weather & water",
@@ -32626,6 +32625,8 @@
 "glove",
 "hoodie",
 "jacket",
+"judogi",
+"karategi",
 "kigurumi onesie",
 "mittens",
 "patched fabric",
@@ -32638,7 +32639,7 @@
 "m": [],
 "n": 0,
 "p": "clothing",
-"tn": 35
+"tn": 37
 },
 "garmr": {
 "f": "Mythic beasts",
@@ -35282,9 +35283,9 @@
 "hydra": {
 "f": "Dragons & serpents",
 "k": "mythology",
+"leaf": 1,
 "m": [
-"lernaean hydra",
-"the lernaean hydra"
+"lernaean hydra"
 ],
 "n": 5,
 "rg": "Greece & Rome"
@@ -36210,7 +36211,7 @@
 "jinn",
 "jinn (genie)"
 ],
-"n": 2,
+"n": 3,
 "rg": "West Asia & Arabia"
 },
 "jousting": {
@@ -36222,6 +36223,17 @@
 ],
 "n": 1,
 "p": "sportsperson"
+},
+"judogi": {
+"f": "Clothing & adornment",
+"k": "object",
+"leaf": 1,
+"m": [
+"judogi"
+],
+"n": 1,
+"p": "garment",
+"rg": "Japan"
 },
 "judoka": {
 "f": "Fighters & athletes",
@@ -36486,6 +36498,17 @@
 "n": 7,
 "rg": "Japan"
 },
+"karategi": {
+"f": "Clothing & adornment",
+"k": "object",
+"leaf": 1,
+"m": [
+"karategi"
+],
+"n": 1,
+"p": "garment",
+"rg": "Japan"
+},
 "karateka": {
 "f": "Fighters & athletes",
 "i": 1,
@@ -36582,9 +36605,9 @@
 "keys and keychain": {
 "f": "Household & tools",
 "k": "object",
-"leaf": 1,
 "m": [
-"keys and keychain"
+"keychain",
+"keys"
 ],
 "n": 1,
 "p": "around the house"
@@ -37179,7 +37202,6 @@
 "k": "object",
 "m": [
 "bedside lamp",
-"jinn's oil lamp",
 "oil lamp",
 "oil street lamp",
 "salt lamp"
@@ -39470,7 +39492,7 @@
 "monkey kung fu": {
 "f": "Primates",
 "i": 1,
-"k": "life",
+"k": "concept",
 "leaf": 1,
 "m": [
 "monkey kung fu"
@@ -40148,29 +40170,7 @@
 "m": [
 "namahage"
 ],
-"n": 4,
-"p": "oni & ogres",
-"rg": "Japan"
-},
-"namahage in a judogi": {
-"f": "Japanese folklore",
-"k": "folklore",
-"leaf": 1,
-"m": [
-"namahage in a judogi"
-],
-"n": 1,
-"p": "oni & ogres",
-"rg": "Japan"
-},
-"namahage in a karategi": {
-"f": "Japanese folklore",
-"k": "folklore",
-"leaf": 1,
-"m": [
-"namahage in a karategi"
-],
-"n": 1,
+"n": 6,
 "p": "oni & ogres",
 "rg": "Japan"
 },
@@ -40977,8 +40977,6 @@
 "oni & ogres": {
 "ch": [
 "namahage",
-"namahage in a judogi",
-"namahage in a karategi",
 "nasu-baba",
 "oni",
 "oni-men",
@@ -52328,7 +52326,7 @@
 "person",
 "prehistoric"
 ],
-"referents": 3884,
+"referents": 3882,
 "species": 1025
 },
 "referents": {
@@ -52955,7 +52953,8 @@
 "k": "life",
 "s": [
 538
-]
+],
+"w": "Japanese Brown"
 },
 "akuro-o": {
 "d": "Akuro-o",
@@ -54307,7 +54306,9 @@
 "k": "object",
 "s": [
 711
-]
+],
+"w": "Baba Yaga",
+"ws": "In popular culture"
 },
 "baba yaga's mortar, pestle and broom": {
 "d": "Baba Yaga's mortar, pestle and broom",
@@ -54446,7 +54447,8 @@
 "k": "object",
 "s": [
 879
-]
+],
+"w": "Backhoe"
 },
 "bacteriophage": {
 "g": "bacteriophage",
@@ -54506,7 +54508,8 @@
 "k": "life",
 "s": [
 412
-]
+],
+"w": "Bagworm moth"
 },
 "bahamut": {
 "d": "Bahamut",
@@ -56922,7 +56925,8 @@
 "k": "object",
 "s": [
 529
-]
+],
+"w": "Burr (cutter)"
 },
 "burrowing urchin": {
 "g": "urchin",
@@ -62146,7 +62150,9 @@
 "k": "object",
 "s": [
 588
-]
+],
+"w": "Snails as food",
+"ws": "Consumption"
 },
 "escutcheon": {
 "g": "escutcheon",
@@ -63378,7 +63384,8 @@
 "k": "object",
 "s": [
 687
-]
+],
+"w": "Nib (pen)"
 },
 "four-winged wyvern": {
 "g": "dragon",
@@ -66244,7 +66251,8 @@
 "k": "mythology",
 "s": [
 307
-]
+],
+"w": "Shiva"
 },
 "hine-nui-te-po": {
 "d": "Hine-nui-te-po",
@@ -67796,7 +67804,8 @@
 "k": "life",
 "s": [
 269
-]
+],
+"w": "Actias artemis"
 },
 "japanese macaque": {
 "d": "Japanese macaque",
@@ -68054,7 +68063,8 @@
 "g": "jinn",
 "k": "folklore",
 "s": [
-491
+491,
+855
 ],
 "w": "Jinn"
 },
@@ -68065,13 +68075,6 @@
 385
 ],
 "w": "Jinn"
-},
-"jinn's oil lamp": {
-"g": "lamp",
-"k": "object",
-"s": [
-855
-]
 },
 "jiraiya the toad-shapeshifting ninja": {
 "d": "Jiraiya the toad-shapeshifting ninja",
@@ -68120,6 +68123,14 @@
 ],
 "x": 1
 },
+"judogi": {
+"g": "judogi",
+"k": "object",
+"s": [
+538
+],
+"w": "Judogi"
+},
 "judoka": {
 "g": "judoka",
 "i": 1,
@@ -68161,7 +68172,8 @@
 "k": "life",
 "s": [
 915
-]
+],
+"w": "Black Iberian pig"
 },
 "juvenile dragon": {
 "g": "dragon",
@@ -68454,6 +68466,14 @@
 ],
 "w": "Karakuri puppet"
 },
+"karategi": {
+"g": "karategi",
+"k": "object",
+"s": [
+539
+],
+"w": "Karate gi"
+},
 "karateka": {
 "g": "karateka",
 "i": 1,
@@ -68542,12 +68562,21 @@
 ],
 "w": "Kenzan"
 },
-"keys and keychain": {
+"keychain": {
 "g": "keys and keychain",
 "k": "object",
 "s": [
 707
-]
+],
+"w": "Keychain"
+},
+"keys": {
+"g": "keys and keychain",
+"k": "object",
+"s": [
+707
+],
+"w": "Lock and key"
 },
 "khakkhara": {
 "g": "staff",
@@ -69667,6 +69696,7 @@
 "s": [
 634,
 635,
+890,
 993,
 1019
 ],
@@ -70452,7 +70482,8 @@
 "k": "object",
 "s": [
 654
-]
+],
+"w": "Wand"
 },
 "magic circle": {
 "g": "magic circle",
@@ -70684,7 +70715,8 @@
 "k": "life",
 "s": [
 473
-]
+],
+"w": "Mangalica"
 },
 "mangosteen": {
 "g": "mangosteen",
@@ -70904,6 +70936,7 @@
 "s": [
 539
 ],
+"w": "Mas Oyama",
 "x": 1
 },
 "mascot costume": {
@@ -71842,8 +71875,7 @@
 "monkey kung fu": {
 "d": "Monkey Kung Fu",
 "g": "monkey kung fu",
-"i": 1,
-"k": "life",
+"k": "concept",
 "s": [
 391,
 392
@@ -72513,23 +72545,11 @@
 355,
 362,
 466,
+538,
+539,
 1017
 ],
 "w": "Namahage"
-},
-"namahage in a judogi": {
-"g": "namahage in a judogi",
-"k": "folklore",
-"s": [
-538
-]
-},
-"namahage in a karategi": {
-"g": "namahage in a karategi",
-"k": "folklore",
-"s": [
-539
-]
 },
 "namazu (earthquake catfish)": {
 "d": "Namazu (earthquake catfish)",
@@ -73423,14 +73443,16 @@
 "k": "life",
 "s": [
 918
-]
+],
+"w": "Deinopis"
 },
 "oil lamp": {
 "g": "lamp",
 "k": "object",
 "s": [
 609,
-616
+616,
+855
 ],
 "w": "Oil lamp"
 },
@@ -73554,19 +73576,10 @@
 "omukade": {
 "d": "Omukade",
 "g": "centipede",
-"i": 1,
-"k": "life",
+"k": "folklore",
 "s": [
+487,
 851
-]
-},
-"omukade (giant centipede)": {
-"d": "Omukade (giant centipede)",
-"g": "centipede",
-"i": 1,
-"k": "life",
-"s": [
-487
 ],
 "w": "Ōmukade"
 },
@@ -77590,7 +77603,8 @@
 "k": "object",
 "s": [
 601
-]
+],
+"w": "Jewel bearing"
 },
 "ruff and jabot": {
 "g": "ruff",
@@ -78256,7 +78270,8 @@
 "k": "life",
 "s": [
 545
-]
+],
+"w": "Scolopendra gigantea"
 },
 "scoria": {
 "g": "scoria",
@@ -78348,7 +78363,8 @@
 "k": "object",
 "s": [
 260
-]
+],
+"w": "Scuba set"
 },
 "scythe": {
 "g": "scythe",
@@ -78885,7 +78901,8 @@
 "k": "life",
 "s": [
 181
-]
+],
+"w": "Sheep shearing"
 },
 "sheep": {
 "g": "sheep",
@@ -79277,7 +79294,8 @@
 "k": "life",
 "s": [
 632
-]
+],
+"w": "Polyrhachis"
 },
 "silver-spotted skipper": {
 "g": "silver-spotted skipper",
@@ -81403,7 +81421,8 @@
 "k": "object",
 "s": [
 803
-]
+],
+"w": "Syringe"
 },
 "syzygites parasitic mould": {
 "d": "Syzygites parasitic mould",
@@ -82349,15 +82368,6 @@
 888
 ],
 "w": "Lady of the Lake"
-},
-"the lernaean hydra": {
-"d": "the Lernaean Hydra",
-"g": "hydra",
-"k": "mythology",
-"s": [
-890
-],
-"w": "Lernaean Hydra"
 },
 "the letter x": {
 "d": "the letter X",
@@ -83397,7 +83407,8 @@
 "k": "life",
 "s": [
 269
-]
+],
+"w": "Pyrrolizidine alkaloid sequestration"
 },
 "toxoplasma gondii": {
 "d": "Toxoplasma gondii",
@@ -84630,7 +84641,8 @@
 "k": "life",
 "s": [
 832
-]
+],
+"w": "Old Norwegian Sheep"
 },
 "vine snake": {
 "g": "snake",
@@ -86131,6 +86143,7 @@
 307,
 308
 ],
+"w": "Yoga",
 "x": 1
 },
 "yorkshire terrier": {
@@ -93683,7 +93696,8 @@
 "judoka",
 "ushi-oni",
 "Akaushi bull named Judo",
-"namahage in a judogi"
+"namahage",
+"judogi"
 ],
 [
 "folklore",
@@ -93696,7 +93710,8 @@
 [
 "karateka",
 "Mas Oyama's shaved eyebrow",
-"namahage in a karategi"
+"namahage",
+"karategi"
 ],
 [
 "folklore",
@@ -96312,10 +96327,11 @@
 "707": [
 "Klefki",
 [
-"keys and keychain",
+"keys",
 "fairies blamed for lost objects",
 "iron charm against fae",
-"music clef"
+"music clef",
+"keychain"
 ],
 [
 "folklore",
@@ -98607,9 +98623,10 @@
 "poltergeist",
 "teapot",
 "British tea culture",
-"jinn's oil lamp",
+"oil lamp",
 "porcelain forgeries",
-"Morinji-no-okama / Narigama (possessed kettle yokai)"
+"Morinji-no-okama / Narigama (possessed kettle yokai)",
+"jinn"
 ],
 [
 "folklore",
