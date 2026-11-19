@@ -13,6 +13,7 @@ dist/map_data.json is the minified copy the page fetches, rewritten on every sav
   python3 flagkit.py check                 integrity pass (parents, children, family lists, counts)
 
   python3 flagkit.py patch apply <file>    replay this structure onto a freshly generated dataset
+  python3 flagkit.py rebased               after a replay: record the build these corrections now sit on
   python3 flagkit.py build                 rewrite dist/map_data.json (the minified published copy)
 
   python3 flagkit.py move-family <group> <family>      refile a cluster, recount both families
@@ -41,11 +42,60 @@ dist/map_data.json is the minified copy the page fetches, rewritten on every sav
 Write commands print a one-line diff summary, re-run `check`, and refuse to save
 if the check fails. Pass --dry to see the summary without saving.
 """
-import json, os, sys
+import datetime, json, os, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "data", "map_data.json")      # readable, one key per line
 DIST = os.path.join(HERE, "dist", "map_data.json")      # minified, what gets published
+STAMP = os.path.join(HERE, "data", "applied_build.json")
+
+
+# ---------- the one hazard the data cannot describe ----------
+# Corrections live in map_data.json itself — that is the point of dropping the
+# overlay, and it is right. The cost is that the single thing which can quietly
+# undo them is a fresh generator build dropped over the top: the file still
+# parses, still passes every integrity check, and is simply missing the work.
+#
+# Nothing inside the dataset can catch that, because the evidence leaves with
+# the file. So the build the corrections were made on is recorded beside it,
+# and every command that could publish or extend the work checks the two still
+# agree. The alternative is remembering, which is what a warning repeated in
+# every correction note was standing in for.
+
+def stamp_read():
+    try:
+        with open(STAMP, encoding="utf-8") as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return None
+
+
+def stamp_write(D):
+    rec = {"build": (D.get("meta") or {}).get("build"),
+           "updated": datetime.datetime.now(datetime.timezone.utc)
+                      .strftime("%Y-%m-%dT%H:%M:%SZ")}
+    with open(STAMP, "w", encoding="utf-8") as f:
+        json.dump(rec, f, ensure_ascii=False, indent=1, sort_keys=True)
+        f.write("\n")
+    return rec
+
+
+def guard_build(D):
+    """None when the dataset is the one the corrections were made on, else the
+       reason it is not — returned rather than printed, so callers decide."""
+    rec = stamp_read()
+    if not rec or not rec.get("build"):
+        return None                      # nothing recorded yet; nothing to lose
+    now = (D.get("meta") or {}).get("build")
+    if now == rec["build"]:
+        return None
+    return ("STOP — data/map_data.json says build %s, but the corrections here were\n"
+            "made on %s (recorded %s). A fresh build has replaced the corrected\n"
+            "file and the edits are not in it. Replay them before anything else:\n"
+            "    python3 -I flagkit.py patch apply <the fresh map_data.json>\n"
+            "put the resulting .patched.json at data/map_data.json, then:\n"
+            "    python3 -I flagkit.py rebased"
+            % (now or "no build", rec["build"], rec.get("updated", "?")))
 
 
 def load():
@@ -58,6 +108,7 @@ def load():
 def save(D):
     with open(DATA, "w", encoding="utf-8") as f:
         json.dump(D, f, ensure_ascii=False, indent=0, sort_keys=True)
+    stamp_write(D)
     build(D)
 
 
@@ -1050,14 +1101,24 @@ def main():
     if cmd == "where":
         return where(D, " ".join(rest))
     if cmd == "check":
-        return sys.exit(1 if check(D) else 0)
+        stop = guard_build(D)
+        if stop: print(stop)
+        return sys.exit(1 if (check(D) or stop) else 0)
+    if cmd == "rebased":
+        rec = stamp_write(D)
+        print("recorded: the corrections in data/map_data.json sit on build %s" % rec["build"])
+        return
     if cmd == "patch":
         if (rest[:1] or [""])[0] != "apply" or len(rest) < 2:
             sys.exit("patch apply <fresh map_data.json>")
         print(patch_apply(D, rest[1])); return
     if cmd == "build":
+        stop = guard_build(D)
+        if stop: print(stop); return sys.exit(1)
         print(build(D)); return
     if cmd in WRITES:
+        stop = guard_build(D)
+        if stop: print(stop); return sys.exit(1)
         before = len(check(D, quiet=True))
         summary = WRITES[cmd](D, *rest)
         bad = check(D, quiet=True)

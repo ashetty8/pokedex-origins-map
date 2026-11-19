@@ -24,8 +24,8 @@ published. Treat `data/` and `app/` as the current published version.
    of the same screen. Most flags are settled by `flagkit.py show` plus the page source.
 4. **One batch write at the end**, not a write per flag.
 5. A `map_data.json` edit lives only in the published JSON and is overwritten whenever the
-   dataset is regenerated (`meta.build`) — say so in the flag note every time, and see
-   "Surviving a rebuild". **Geography is different:** a pin belongs in `data/geo_hand.json`,
+   dataset is regenerated (`meta.build`). Do **not** say so in the flag note — the tool guards
+   it now; see "Surviving a rebuild". **Geography is different:** a pin belongs in `data/geo_hand.json`,
    which the generator reads as its strongest source, so it survives. Never hand-edit a pin
    into `data/geo.json`; that file is generated output.
 
@@ -146,9 +146,14 @@ ArtifactData action=batch url=<artifact> writes=[
   …]
 ```
 
-`if_version` is the `version` from the read in step 1. Note what changed and why, name the
-version, and for a `map_data.json` edit add that the generator will revert it. A geography fix
-made in `data/geo_hand.json` survives a rebuild, so do not claim otherwise.
+`if_version` is the `version` from the read in step 1. Note what changed and why, and name the
+version. That note is the whole of what the flagger gets, so spend all of it on their
+correction — what you changed, and where you went against what they suggested and why.
+
+**Nothing about builds, the generator or the overlay.** That hazard is ours, the flagger can do
+nothing with it, and it is now guarded by the tool rather than by remembering to mention it
+(see "Surviving a rebuild"). A note that ends in a disclaimer about `meta.build` has spent its
+last line on the one reader who cannot act on it.
 
 **A flag you decline gets `"status":"declined"`, not `"done"` and never left open.** The page
 reads it as settled and shows it as "answered", so it stops counting against the open total and
@@ -176,8 +181,14 @@ Order of preference:
 
 ## Surviving a rebuild
 
-Every data edit lives only in the published JSON; the file still reports the generator's
-`meta.build`, and a regeneration wipes all of it. So after any data change:
+Corrections live in `data/map_data.json` itself — there is no overlay, by design, because
+every field in one was a copy of a field here. The cost of that choice is a single hazard: a
+freshly generated dataset dropped over the top takes the corrections with it, and the file
+still parses and still passes `check`, because the evidence left with the file.
+
+So the build they were made on is recorded in `data/applied_build.json`, and `check`, `build`
+and every write command refuse to run when the dataset's `meta.build` no longer matches it.
+You do not have to remember this; you will be stopped. When you are:
 
 ```bash
 python3 -I flagkit.py patch apply <fresh map_data.json>
@@ -191,6 +202,13 @@ rebuilds every family listing and count from the result, runs the integrity chec
 `<fresh>.patched.json`. It never deletes: it reports what the overlay knows but the build
 lacks, and what the build has but the overlay does not — the second list is where merged-away
 duplicates reappear, so re-merge those by hand and export again.
+
+Put the result at `data/map_data.json`, then record that the corrections now sit on the new
+build, which is what lifts the refusal:
+
+```bash
+python3 -I flagkit.py rebased
+```
 
 ## What the dataset means
 

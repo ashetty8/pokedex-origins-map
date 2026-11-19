@@ -273,5 +273,41 @@ for p in (fresh, fresh + ".patched.json"):
     try: os.unlink(p)
     except OSError: pass
 
+
+# ---------- the regeneration guard ----------
+# The one failure the integrity check cannot see: a fresh build drops in, the
+# file is perfectly sound, and every correction is simply gone. These pin the
+# three states of the stamp without touching the real one on disk.
+print("\nregeneration guard")
+_real_stamp = fk.STAMP
+fk.STAMP = os.path.join(tempfile.mkdtemp(), "applied_build.json")
+try:
+    D = json.loads(json.dumps(BASE))
+    D.setdefault("meta", {})["build"] = "aaaa1111"
+
+    def guard(name, want, fn):
+        try:
+            got = fn()
+            assert (got is not None) == want, (
+                "expected %s, got %r" % ("a refusal" if want else "no complaint", got))
+            PASS.append(name); print("  ok    %s" % name)
+        except AssertionError as e:
+            FAIL.append((name, str(e))); print("  FAIL  %s — %s" % (name, e))
+
+    guard("no stamp yet is not a complaint", False, lambda: fk.guard_build(D))
+    fk.stamp_write(D)
+    guard("the build it was stamped on passes", False, lambda: fk.guard_build(D))
+    fresh = json.loads(json.dumps(D))
+    fresh["meta"]["build"] = "bbbb2222"
+    guard("a different build is refused", True, lambda: fk.guard_build(fresh))
+    guard("a build that went missing is refused", True,
+          lambda: fk.guard_build({"meta": {}, "groups": {}, "families": {}, "referents": {}}))
+    fk.stamp_write(fresh)
+    guard("rebased clears it", False, lambda: fk.guard_build(fresh))
+finally:
+    try: os.unlink(fk.STAMP)
+    except OSError: pass
+    fk.STAMP = _real_stamp
+
 print("\n%d passed, %d failed" % (len(PASS), len(FAIL)))
 sys.exit(1 if FAIL else 0)

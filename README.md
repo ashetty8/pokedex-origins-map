@@ -18,6 +18,7 @@ Published as a private Claude Artifact: https://claude.ai/artifact/FP9NhVBPPv8oz
 | `data/geo_raw.json`, `data/geo_deep.json` | What the two Wikidata passes found, before they are merged. |
 | `dist/` | What gets published: the three app files plus a minified `map_data.json`. Rebuilt by `flagkit build`, never edited. |
 | `flagkit.py` | Inspect and edit the dataset safely: every write recomputes counts and refuses to save if integrity breaks. |
+| `data/applied_build.json` | The generator build the corrections in `map_data.json` were made on. Guards against a rebuild silently dropping them. |
 | `tests/test_flagkit.py` | Exercises every write command against a copy of the real data. No framework; run it directly. |
 | `SKILL.md` | The working loop: read flags, diagnose, fix, publish, commit. |
 
@@ -91,13 +92,18 @@ whether it is a data error or a rendering one, fix, publish, and write back what
 
 ## Hand edits and rebuilds
 
-`map_data.json` carries a `meta.build` from the generator that produced it. Every correction
-applied here lives only in the published JSON, so a regeneration erases all of it. The overlay
-is the insurance:
+`map_data.json` carries a `meta.build` from the generator that produced it, and corrections
+are made in that file rather than in an overlay beside it. The one thing that can undo them is
+a freshly generated dataset dropped over the top: it parses, it passes `check`, and the work is
+simply absent, because the evidence left with the file.
+
+So the build the corrections sit on is recorded in `data/applied_build.json`, and `check`,
+`build` and every write command refuse to run while the two disagree. Nobody has to remember;
+the tool stops you.
 
 ```bash
-python3 -I flagkit.py patch export            # snapshot the structure
-python3 -I flagkit.py patch apply <fresh.json>  # replay it onto a new build
+python3 -I flagkit.py patch apply <fresh.json>  # replay the corrections onto the new build
+python3 -I flagkit.py rebased                   # then record the build they now sit on
 ```
 
 The replay recreates families and grouping clusters, refiles referents, rebuilds every count,
