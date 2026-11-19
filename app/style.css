@@ -71,9 +71,14 @@ h1{font-size:1.32rem;letter-spacing:-.02em}
 
 /* layout */
 .layout{display:grid;grid-template-columns:232px minmax(0,1fr) minmax(0,clamp(380px, 26vw, 460px));gap:22px;padding-block:18px 48px;align-items:start}
-@media (max-width:1000px){.layout{grid-template-columns:minmax(0,1fr)}.rail{order:-1}}
+/* Three columns need roughly 1180px before the middle one — which carries the
+   map and the atlas — drops under a readable width. Below that the panel
+   becomes a sheet over the page instead of a third of it, and below 860 the
+   rail becomes a drawer rather than a wall you scroll past to reach anything. */
+@media (max-width:1180px){.layout{grid-template-columns:200px minmax(0,1fr)}}
+@media (max-width:860px){.layout{grid-template-columns:minmax(0,1fr)}}
 .rail{margin-top:var(--raildrop,0px);position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--topbar,128px) + 18px);display:flex;flex-direction:column;gap:14px;max-height:calc(100dvh - env(safe-area-inset-top,0px) - var(--topbar,128px) - var(--raildrop,0px) - 40px);overflow:auto;overscroll-behavior:contain;padding-right:2px}
-@media (max-width:1000px){.rail{position:static;max-height:none;overflow:visible;margin-top:0}}
+@media (max-width:1180px){.rail{top:calc(env(safe-area-inset-top,0px) + var(--topbar,128px) + 18px)}}
 .railtitle{font-family:var(--mono);font-size:.66rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:9px}
 .chips{display:grid;grid-template-columns:1fr 1fr;gap:6px;align-items:stretch}
 #kinds{grid-template-columns:1fr}
@@ -138,9 +143,6 @@ select{font:inherit;font-size:.82rem;padding:8px 10px;border:1px solid var(--rul
   /* the same height as the map beside it, empty or full: a short card
      beside a tall one reads as a mistake */
   min-height:calc(100dvh - env(safe-area-inset-top,0px) - var(--topbar,128px) - var(--headrow,0px) - 40px);max-height:calc(100dvh - env(safe-area-inset-top,0px) - var(--topbar,128px) - var(--headrow,0px) - 40px);overflow:auto;overscroll-behavior:contain}
-@media (max-width:1000px){.detail{position:static;max-height:none;min-height:0;overflow:visible}}
-@media (max-width:1000px){.dtop{position:static;margin:0;padding:0;box-shadow:none}
-  .dtop .dhead{margin-bottom:14px}.dtop .taglist{max-height:none;overflow:visible}}
 /* name on the left, controls top-right, one rule under the pair. The row
    wraps as a whole rather than squeezing the name: a long one keeps its
    width and the buttons drop to their own line. */
@@ -325,6 +327,10 @@ a.src{color:var(--accent);font-size:.8rem;text-decoration:none;border-bottom:1px
 .apin.guessed{stroke-dasharray:2 2}                      /* placed by culture area, not a claim */
 .apin.on{fill-opacity:.95;stroke:var(--ink);stroke-width:1.5}
 .apin.flagged{stroke:var(--flag);stroke-width:1.6}
+/* a rolled-up region: one mark standing for many places, so it is drawn as a
+   door rather than a pin — a touch more solid, and ringed to say it opens */
+.apin.agroup{fill-opacity:.52;stroke:var(--accent);stroke-width:1.4;stroke-opacity:.85}
+.apin.agroup:hover{fill-opacity:.82}
 /* A culture area is shaded over the ground it covers, under the pins. Light
    enough that the land and the graticule still read through it, and the
    country outlines stay visible so it reads as "these places" rather than as
@@ -385,3 +391,209 @@ a.src{color:var(--accent);font-size:.8rem;text-decoration:none;border-bottom:1px
 .tag.origin.soft{border-style:dashed}
 .tag.origin.soft::before{content:"\25cb"}
 
+
+/* ============================================================
+   Quality-of-life layer
+   ============================================================ */
+
+/* --- helpers --- */
+.sronly{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+.skiplink{position:absolute;left:-9999px;top:0;z-index:40;background:var(--accent);color:#06211c;
+  padding:9px 15px;border-radius:0 0 10px 0;font-size:.85rem;font-weight:600}
+.skiplink:focus{left:0}
+.hidenarrow{display:inline}
+
+/* --- header extras --- */
+.counts{display:flex;flex-wrap:wrap;gap:0 4px;align-items:baseline}
+.countbtn{background:none;border:0;padding:1px 3px;margin:0;border-radius:5px;
+  font:inherit;color:var(--ink-faint);font-variant-numeric:tabular-nums;
+  border-bottom:1px dotted transparent;transition:color .12s,border-color .12s}
+.countbtn:hover{color:var(--ink);border-bottom-color:var(--rule-strong)}
+.countsep{color:var(--ink-faint);opacity:.6}
+.slashhint{position:absolute;right:11px;top:50%;transform:translateY(-50%);pointer-events:none;
+  font-family:var(--mono);font-size:.68rem;color:var(--ink-faint);border:1px solid var(--rule);
+  border-radius:5px;padding:1px 5px;background:var(--paper);transition:opacity .12s}
+#q:focus ~ .slashhint,#q:not(:placeholder-shown) ~ .slashhint{opacity:0}
+.tabs.scrolls{-webkit-mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 26px),transparent 100%);
+  mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 26px),transparent 100%)}
+.railtoggle{display:none;align-items:center;gap:5px;border:1px solid var(--rule);
+  border-radius:999px;margin-right:6px;padding:5px 12px;align-self:center}
+.railtoggle[aria-expanded="true"]{border-color:var(--accent);color:var(--ink)}
+.railtoggle .num{font-family:var(--mono);font-size:.7rem;color:var(--accent)}
+
+/* --- notice bar (a load that failed, said once, dismissible) --- */
+.noticewrap{padding-top:10px}
+.notice{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--flag-soft);
+  border:1px solid var(--flag);border-radius:11px;padding:9px 13px;font-size:.84rem;color:var(--ink)}
+.notice button{background:none;border:1px solid var(--rule-strong);border-radius:7px;
+  padding:3px 9px;font-size:.78rem;color:var(--ink-soft)}
+.notice button:hover{color:var(--ink)}
+.notice .nspacer{margin-left:auto}
+
+/* --- active-filter pills --- */
+.filterbar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:11px;
+  padding-bottom:10px;border-bottom:1px dashed var(--rule)}
+.filterbar[hidden]{display:none}
+.fbtitle{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-faint);margin-right:2px}
+.fpill{display:inline-flex;align-items:center;gap:6px;background:var(--accent-soft);
+  border:1px solid var(--accent);border-radius:999px;padding:3px 7px 3px 10px;
+  font-size:.76rem;color:var(--ink);max-width:260px}
+.fpill .fptext{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fpill .fpx{font-family:var(--mono);font-size:.8rem;line-height:1;color:var(--ink-soft);
+  border-radius:50%;width:15px;height:15px;display:grid;place-items:center;flex:0 0 auto}
+.fpill:hover .fpx{color:var(--ink);background:var(--rule-strong)}
+.fpill.wipe{background:none;border-style:dashed;border-color:var(--rule-strong);color:var(--ink-soft)}
+.fpill.wipe:hover{color:var(--ink);border-color:var(--ink-faint)}
+
+/* --- result head tools --- */
+.resulthead{max-width:none}
+.headtools{margin-left:auto;display:flex;gap:6px;flex:0 0 auto}
+.headbtn{background:var(--card);border:1px solid var(--rule);border-radius:999px;
+  padding:3px 11px;font-family:var(--mono);font-size:.68rem;letter-spacing:.05em;
+  color:var(--ink-faint);transition:color .12s,border-color .12s}
+.headbtn:hover:not(:disabled){color:var(--ink);border-color:var(--rule-strong)}
+.headbtn:disabled{opacity:.4;cursor:default}
+.headbtn.ok{color:var(--accent);border-color:var(--accent)}
+
+/* --- loading skeleton --- */
+.skel{display:grid;gap:7px}
+.skelrow{height:42px;border:1px solid var(--rule);border-radius:11px;background:
+  linear-gradient(90deg,var(--card) 0%,color-mix(in srgb,var(--card) 70%,var(--rule)) 50%,var(--card) 100%);
+  background-size:220% 100%;animation:shimmer 1.5s linear infinite}
+@keyframes shimmer{from{background-position:120% 0}to{background-position:-120% 0}}
+@media (prefers-reduced-motion:reduce){.skelrow{animation:none}}
+.sprph{display:inline-block;width:34px;height:34px;margin:-6px 0;flex:0 0 auto;
+  border-radius:7px;background:var(--rule);opacity:.5}
+
+/* --- empty states that offer a way out --- */
+.emptyacts{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.emptyacts button{background:var(--card);border:1px solid var(--rule-strong);border-radius:9px;
+  padding:6px 13px;font-size:.84rem;color:var(--ink-soft)}
+.emptyacts button:hover{color:var(--ink);border-color:var(--accent)}
+.didyou{margin:6px 0 0;font-size:.86rem;color:var(--ink-soft)}
+.didyou .crumblink{padding-left:0;padding-right:0;color:var(--accent)}
+
+/* --- detail panel additions --- */
+.sheetclose{display:none;position:absolute;top:10px;right:12px;z-index:5;background:var(--card);
+  border:1px solid var(--rule-strong);border-radius:50%;width:30px;height:30px;
+  color:var(--ink-soft);font-size:.8rem;line-height:1}
+.sheetclose:hover{color:var(--ink)}
+.sheetscrim[hidden],.railscrim[hidden]{display:none}
+.panelfilter{width:100%;margin:2px 0 9px;padding:6px 10px;border:1px solid var(--rule);
+  border-radius:9px;background:var(--paper);color:var(--ink);font:inherit;font-size:.82rem}
+.panelfilter:focus{outline:0;border-color:var(--accent)}
+.showall{display:block;width:100%;margin-top:9px;background:none;border:1px dashed var(--rule-strong);
+  border-radius:9px;padding:7px;font-size:.8rem;color:var(--ink-soft)}
+.showall:hover{color:var(--ink);border-color:var(--accent)}
+.tag.gone{display:none}
+
+/* --- focus mode for the two canvases --- */
+.graphexpand{position:absolute;top:10px;right:12px;z-index:3}
+body.focusmode .layout{grid-template-columns:minmax(0,1fr)!important}
+body.focusmode .rail,body.focusmode .detail,body.focusmode .sheetscrim{display:none!important}
+body.focusmode .resulthead{display:none}
+.atlasbtn[aria-pressed="true"],.graphexpand[aria-pressed="true"]{border-color:var(--accent);color:var(--accent)}
+
+/* --- a keyboard route through the two SVGs ---
+   A ring of circles is nothing to a keyboard. The same nodes are here as real
+   buttons, out of the way until a Tab reaches them, at which point the list
+   opens and shows where the focus is. */
+.svgalt{position:absolute;left:0;right:0;bottom:0;z-index:4;
+  height:1px;overflow:hidden;opacity:0;padding:0;
+  display:flex;flex-wrap:wrap;gap:5px;background:var(--card);
+  border-top:1px dashed var(--rule-strong)}
+.svgalt:empty{display:none}
+.svgalt:focus-within{height:auto;max-height:42%;overflow:auto;opacity:1;padding:10px 12px 12px}
+.svgalt button{background:none;border:1px solid transparent;border-radius:7px;padding:2px 8px;
+  font-size:.78rem;color:var(--ink-faint)}
+.svgalt button:hover,.svgalt button:focus-visible{color:var(--ink);border-color:var(--rule-strong)}
+.svgalt .altlabel{font-family:var(--mono);font-size:.62rem;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--ink-faint);width:100%;margin-bottom:1px}
+#atlas,#graph{position:relative}
+/* the three-column frame is wider than the text wrapper it shares a class with */
+.layout{max-width:min(1860px,98vw)}
+
+/* --- toasts (an undo that is kinder than a dialog) --- */
+.toastwrap{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:60;
+  display:flex;flex-direction:column;gap:8px;align-items:center;pointer-events:none;
+  padding-bottom:env(safe-area-inset-bottom,0px)}
+.toast{pointer-events:auto;display:flex;align-items:center;gap:12px;background:var(--card);
+  border:1px solid var(--rule-strong);border-radius:11px;padding:9px 11px 9px 15px;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);font-size:.86rem;color:var(--ink);max-width:min(92vw,460px);
+  animation:toastin .18s ease}
+@keyframes toastin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.toast{animation:none}}
+.toast button{background:none;border:1px solid var(--rule-strong);border-radius:8px;
+  padding:3px 11px;font-size:.8rem;color:var(--accent);white-space:nowrap}
+.toast button:hover{border-color:var(--accent)}
+
+/* --- shortcuts dialog --- */
+.helpwrap{position:fixed;inset:0;z-index:70;display:grid;place-items:center;padding:18px;
+  background:rgba(0,0,0,.5)}
+.helpwrap[hidden]{display:none}
+.helpbox{background:var(--card);border:1px solid var(--rule-strong);border-radius:16px;
+  padding:20px 22px;max-width:520px;width:100%;max-height:86dvh;overflow:auto;
+  box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.helphead{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.helphead h2{font-size:1.02rem;flex:1 1 auto}
+.helplist{display:grid;grid-template-columns:auto 1fr;gap:9px 18px;margin:0;align-items:baseline}
+.helplist dt{display:flex;gap:3px;align-items:center;white-space:nowrap}
+.helplist dd{margin:0;color:var(--ink-soft);font-size:.86rem}
+.helplist .or{color:var(--ink-faint);font-size:.76rem;margin:0 2px}
+kbd{font-family:var(--mono);font-size:.72rem;border:1px solid var(--rule-strong);
+  border-bottom-width:2px;border-radius:6px;padding:2px 6px;background:var(--paper);color:var(--ink)}
+.helpnote{margin:16px 0 0;font-size:.82rem;color:var(--ink-faint);line-height:1.6}
+.railclose{background:none;border:1px solid var(--rule);border-radius:50%;width:28px;height:28px;
+  color:var(--ink-soft);font-size:.78rem;line-height:1;flex:0 0 auto}
+.railclose:hover{color:var(--ink);border-color:var(--rule-strong)}
+.railhead{display:none;align-items:center;gap:10px;margin-bottom:4px}
+.railheadname{font-family:var(--display);font-size:1rem;flex:1 1 auto}
+
+/* ============================================================
+   Narrow: the panel becomes a sheet, the rail becomes a drawer
+   ============================================================ */
+@media (max-width:1180px){
+  .detail{position:fixed;left:0;right:0;bottom:0;top:auto;z-index:30;margin:0;
+    width:auto;max-width:none;border-radius:17px 17px 0 0;border:1px solid var(--rule-strong);
+    border-bottom:0;padding:0 16px 26px;max-height:min(80dvh,780px);min-height:0;overflow:auto;
+    transform:translateY(101%);visibility:hidden;
+    transition:transform .22s ease,visibility .22s;
+    box-shadow:0 -16px 44px rgba(0,0,0,.3);
+    padding-bottom:calc(26px + env(safe-area-inset-bottom,0px))}
+  body.sheetopen .detail{transform:none;visibility:visible}
+  .detail.hidden{display:none}
+  .sheetclose{display:block}
+  .sheetscrim{position:fixed;inset:0;z-index:29;background:rgba(0,0,0,.45);
+    opacity:0;transition:opacity .2s}
+  body.sheetopen .sheetscrim{opacity:1}
+  .dtop{position:sticky;top:0}
+  .dtop .taglist{max-height:none;overflow:visible}
+  .headtools .headbtn{padding:3px 9px}
+}
+@media (max-width:860px){
+  .rail{position:fixed;top:0;bottom:0;left:0;width:min(88vw,330px);z-index:40;margin:0;
+    background:var(--paper);border-right:1px solid var(--rule-strong);
+    padding:calc(16px + env(safe-area-inset-top,0px)) 16px calc(30px + env(safe-area-inset-bottom,0px));
+    max-height:none;overflow:auto;transform:translateX(-101%);visibility:hidden;
+    transition:transform .2s ease,visibility .2s;box-shadow:14px 0 40px rgba(0,0,0,.3)}
+  body.railopen .rail{transform:none;visibility:visible}
+  .rail.hidden{display:none}
+  .railhead{display:flex}
+  .railtoggle{display:inline-flex}
+  .railscrim{position:fixed;inset:0;z-index:39;background:rgba(0,0,0,.45)}
+  h1{font-size:1.14rem}
+  .sub{flex:1 1 100%;font-size:.8rem}
+  .headright{margin-left:0;width:100%;justify-content:flex-start;gap:8px}
+  .counts{order:-1;width:100%}
+  .top .wrap{column-gap:12px}
+  .searchrow{margin:8px 0}
+  .resulthead{gap:6px}
+  .headtools{width:100%;margin-left:0}
+  #graph svg{height:62vh}
+  .results.mapmode #results{max-height:220px}
+}
+@media (prefers-reduced-motion:reduce){
+  .detail,.rail,.sheetscrim{transition:none}
+}

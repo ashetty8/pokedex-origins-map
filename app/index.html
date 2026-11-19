@@ -4,6 +4,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="style.css">
 
+<a class="skiplink" href="#results">Skip to results</a>
+
 <header class="top">
   <div class="wrap">
     <div class="brandrow">
@@ -11,17 +13,21 @@
       <p class="sub">What Bulbapedia says each Pokémon was drawn from</p>
       <div class="headright">
         <div class="counts" id="counts">loading…</div>
-        <button class="themebtn" id="theme" type="button"><span class="tglyph" id="themeglyph">◐</span><span id="themelabel">system</span></button>
+        <button class="themebtn" id="surprise" type="button" title="Open a cluster at random (R)"><span class="tglyph">⚄</span><span class="hidenarrow">surprise</span></button>
+        <button class="themebtn" id="helpbtn" type="button" title="Keyboard shortcuts (?)" aria-haspopup="dialog"><span class="tglyph">?</span></button>
+        <button class="themebtn" id="theme" type="button"><span class="tglyph" id="themeglyph">◐</span><span id="themelabel" class="hidenarrow">system</span></button>
       </div>
     </div>
     <div class="searchrow">
       <div class="searchbox">
         <input id="q" type="search" placeholder="Search a referent or a Pokémon — kitsune, chandelier, Gengar…" autocomplete="off"
                role="combobox" aria-expanded="false" aria-controls="suggest" aria-autocomplete="list">
+        <kbd class="slashhint" id="slashhint" aria-hidden="true">/</kbd>
         <div id="suggest" class="suggest" role="listbox" hidden></div>
       </div>
     </div>
-    <nav class="tabs" role="tablist">
+    <nav class="tabs" id="tabs" role="tablist">
+      <button class="tab railtoggle" id="railtoggle" type="button" aria-expanded="false" aria-controls="rail">Filters <span class="num" id="railcount"></span></button>
       <button class="tab" id="tab-clusters" role="tab" aria-selected="true" aria-controls="results">Browse</button>
       <button class="tab" id="tab-map" role="tab" aria-selected="false" aria-controls="results">Map</button>
       <button class="tab" id="tab-atlas" role="tab" aria-selected="false" aria-controls="results">Atlas</button>
@@ -32,8 +38,15 @@
   </div>
 </header>
 
+<div class="noticewrap wrap" id="noticewrap" hidden><div class="notice" id="notice" role="status"></div></div>
+
 <main class="wrap layout">
-  <aside class="rail" id="rail">
+  <div class="railscrim" id="railscrim" hidden></div>
+  <aside class="rail" id="rail" aria-label="Filters and sorting">
+    <div class="railhead">
+      <span class="railheadname">Filters</span>
+      <button class="railclose" id="railclose" type="button" aria-label="Close filters">✕</button>
+    </div>
     <div>
       <div class="railtitle">Category</div>
       <div class="chips" id="kinds"></div>
@@ -71,11 +84,16 @@
   </aside>
 
   <section class="results">
+    <div class="filterbar" id="filterbar" hidden></div>
     <div class="resulthead">
       <h2 id="resulttitle">Clusters</h2>
       <span class="resultnote" id="resultnote"></span>
+      <span class="headtools">
+        <button type="button" class="headbtn" id="exportbtn" title="Download what is listed here as CSV">↓ CSV</button>
+        <button type="button" class="headbtn" id="copybtn" title="Copy a link to exactly this view">⧉ Link</button>
+      </span>
     </div>
-    <div id="results"></div>
+    <div id="results" role="region" aria-label="Results"></div>
     <div id="atlas" class="hidden">
       <div class="atlasbar">
         <span id="atlasnote">loading the atlas…</span>
@@ -85,18 +103,48 @@
           <button type="button" class="atlasbtn" id="atlasout" title="Zoom out">−</button>
           <button type="button" class="atlasbtn" id="atlasin" title="Zoom in">+</button>
           <button type="button" class="atlasbtn wide" id="atlasreset" title="Back to the whole world">world</button>
+          <button type="button" class="atlasbtn" id="atlasexpand" title="Give the atlas the full width (F)" aria-pressed="false">⤢</button>
         </span>
       </div>
       <svg id="asvg" role="img" aria-label="World map of where each Pokémon's design came from"></svg>
       <div class="atlastip" id="atlastip" hidden></div>
+      <div class="svgalt" id="asvgalt" aria-label="Places on the atlas, as a list"></div>
     </div>
-    <div id="graph" class="hidden"><div class="graphhint"><span id="graphnote">Click a node to open it · drag to move · scroll to zoom</span></div><svg id="gsvg"></svg></div>
+    <div id="graph" class="hidden">
+      <div class="graphhint"><span id="graphnote">Click a node to open it · drag to move · scroll to zoom</span></div>
+      <button type="button" class="atlasbtn graphexpand" id="graphexpand" title="Give the map the full width (F)" aria-pressed="false">⤢</button>
+      <svg id="gsvg" role="img" aria-label="Node map of clusters"></svg>
+      <div class="svgalt" id="gsvgalt" aria-label="Nodes on the map, as a list"></div>
+    </div>
   </section>
 
-  <aside class="detail" id="detail">
+  <aside class="detail" id="detail" aria-label="Details">
+    <button type="button" class="sheetclose" id="sheetclose" aria-label="Close the detail panel">✕</button>
     <p class="empty">Pick a family, then a cluster, to see what sits inside it.</p>
   </aside>
+  <div class="sheetscrim" id="sheetscrim" hidden></div>
 </main>
+
+<div class="helpwrap" id="helpwrap" hidden>
+  <div class="helpbox" role="dialog" aria-modal="true" aria-labelledby="helptitle" id="helpbox" tabindex="-1">
+    <div class="helphead"><h2 id="helptitle">Keyboard &amp; shortcuts</h2>
+      <button type="button" class="railclose" id="helpclose" aria-label="Close">✕</button></div>
+    <dl class="helplist">
+      <dt><kbd>/</kbd> <span class="or">or</span> <kbd>⌘K</kbd></dt><dd>Jump to the search box</dd>
+      <dt><kbd>Esc</kbd></dt><dd>Step out one level — then clear the panel, then the search</dd>
+      <dt><kbd>⌥</kbd><kbd>←</kbd> / <kbd>⌥</kbd><kbd>→</kbd></dt><dd>Back and forward through where you have been</dd>
+      <dt><kbd>1</kbd>–<kbd>5</kbd></dt><dd>Browse, Map, Atlas, Pokémon, Flags</dd>
+      <dt><kbd>F</kbd></dt><dd>Give the Map or the Atlas the full width</dd>
+      <dt><kbd>R</kbd></dt><dd>Open something at random</dd>
+      <dt><kbd>C</kbd></dt><dd>Copy a link to exactly this view</dd>
+      <dt><kbd>?</kbd></dt><dd>This list</dd>
+    </dl>
+    <p class="helpnote">The address bar follows you, so any view can be bookmarked or shared. Where you were is remembered the next time you open the page; <b>Clear</b> forgets it.</p>
+  </div>
+</div>
+
+<div class="toastwrap" id="toastwrap" aria-live="polite"></div>
+<div class="sronly" id="live" role="status" aria-live="polite"></div>
 
 <script src="app.js"></script>
 

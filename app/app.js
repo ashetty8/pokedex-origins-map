@@ -2,7 +2,7 @@
   "use strict";
   var D=null, dbNS=null, userNS=null, canWrite=null, viewerId=null;
   var state={tab:"clusters",q:"",kinds:new Set(),sort:"species",onlymulti:false,onlyinf:false,sel:null,limit:120,path:[],flagview:"open",poke:null,
-             types:new Set(),gens:new Set(),colours:new Set(),misc:new Set(),scope:true};
+             types:new Set(),gens:new Set(),colours:new Set(),misc:new Set(),scope:true,showall:false,pfilter:""};
   var flags=[], flagsReady=false, flagsNote="";
   /* what has been flagged, by target, so the map can show it too */
   /* A flag is settled either way: "done" means the data or the page changed,
@@ -117,13 +117,24 @@
   /* 1025 base64 PNGs, ~1.4 MB — fetched after the map so it never delays
      first paint, and the page is perfectly usable if it never arrives. */
   var SPR=null, FSPR=null;
-  function sprite(id,cls){
+  /* `alt` is empty where the name is right beside the picture and the picture
+     would only repeat it, and carries the name where the sprite stands alone. */
+  function sprite(id,cls,alt){
     if(!SPR || !SPR[String(id)]) return null;
     var i=document.createElement("img");
     i.className="spr"+(cls?" "+cls:"");
     i.src="data:image/png;base64,"+SPR[String(id)];
-    i.alt=""; i.loading="lazy"; i.decoding="async";
+    i.alt=alt||""; i.loading="lazy"; i.decoding="async";
     return i;
+  }
+  /* A row whose sprite never arrived still has to line up with the rows whose
+     sprite did, so the gap is drawn rather than left out. */
+  function spriteOrGap(id,cls){
+    var i=sprite(id,cls);
+    if(i) return i;
+    var ph=el("span","sprph"+(cls?" "+cls:""));
+    ph.setAttribute("aria-hidden","true");
+    return ph;
   }
   function formSprite(slug){
     if(!FSPR || !FSPR[slug]) return null;
@@ -133,27 +144,57 @@
     return i;
   }
   function loadSprites(){
-    fetch("sprites.json").then(function(r){return r.json()}).then(function(j){
+    fetch("sprites.json").then(function(r){ if(!r.ok) throw new Error("sprites"); return r.json() }).then(function(j){
       SPR=j; buildPokeFilters(); render(); if(state.sel) renderDetail();
       if(state.tab==="clusters" && D3) drawGraph();
-    }).catch(function(){});
-    fetch("form_sprites.json").then(function(r){return r.json()}).then(function(j){
+    }).catch(function(){
+      /* a swallowed failure here reads as a page full of blank squares, so it
+         says what happened and offers the one thing that can fix it */
+      notice("The Pokémon sprites couldn’t be loaded — every name and number still works.",
+             "Retry",function(){ loadSprites() });
+    });
+    fetch("form_sprites.json").then(function(r){ if(!r.ok) throw new Error("forms"); return r.json() }).then(function(j){
       FSPR=j; if(state.sel) renderDetail();
       if(state.tab==="map" && D3 && D) drawGraph();
     }).catch(function(){});
   }
 
-  /* ---------- data ---------- */
-  fetch("map_data.json").then(function(r){return r.json()}).then(function(j){
-    D=j;
-    $("#counts").textContent=j.meta.species+" Pokémon · "+j.meta.referents+" referents · "+j.meta.clusters+" clusters · "+j.meta.families+" families";
-    buildKinds(); buildPokeFilters(); buildParentList(); render(); loadSprites();
-    /* the panel reports where a referent is from on every tab, so the
-       geography loads with the dataset rather than with the Atlas tab */
-    ensureGeo().then(function(){ if(state.sel) renderDetail() }).catch(function(){});
-  }).catch(function(){
-    $("#results").innerHTML='<p class="empty">The dataset could not be loaded. Reload the page to try again.</p>';
-  });
+  /* ---------- data ----------
+     A megabyte of JSON is a second or two of nothing to look at. The shape of
+     the answer goes up first, so the wait reads as loading rather than as a
+     page that failed. */
+  function skeleton(){
+    var host=$("#results"); host.innerHTML="";
+    var s=el("div","skel");
+    for(var i=0;i<9;i++){ var r=el("div","skelrow"); r.style.opacity=String(1-i*0.085); s.appendChild(r) }
+    s.setAttribute("aria-hidden","true");
+    host.appendChild(s);
+    $("#resultnote").textContent="loading the dataset…";
+  }
+  function loadData(){
+    skeleton();
+    $("#counts").textContent="loading…";
+    fetch("map_data.json").then(function(r){ if(!r.ok) throw new Error("data"); return r.json() }).then(function(j){
+      D=j;
+      buildCounts(j.meta);
+      buildKinds(); buildPokeFilters(); buildParentList();
+      restoreView();                 /* the link you followed, or where you left off */
+      render(); loadSprites();
+      /* the panel reports where a referent is from on every tab, so the
+         geography loads with the dataset rather than with the Atlas tab */
+      ensureGeo().then(function(){ if(state.sel) renderDetail() }).catch(function(){});
+    }).catch(function(){
+      $("#resultnote").textContent="";
+      $("#counts").textContent="couldn’t load";
+      var host=$("#results"); host.innerHTML="";
+      host.appendChild(el("p","empty","The dataset could not be loaded."));
+      var acts=el("div","emptyacts");
+      var b=el("button","","Try again");
+      b.onclick=function(){ loadData() };
+      acts.appendChild(b); host.appendChild(acts);
+    });
+  }
+  loadData();
 
   function buildParentList(){
     var dl=document.createElement("datalist"); dl.id="parentlist";
@@ -350,12 +391,13 @@
     goTo(path);
   }
   function goTo(path,opts){
-    state.path=collapse(path); state.limit=120; state.scope=true; state.poke=null;
+    state.path=collapse(path); state.limit=120; state.scope=true; state.poke=null; state.showall=false; state.pfilter="";
     var st=stepsOf(), last=st[st.length-1];
     if(!last) state.sel=null;
     else if(last.t==="group"||last.t==="referent") state.sel={t:last.t,k:last.k};
     else state.sel={t:"node",k:last.k,nt:last.t};
     if(!opts||opts.record!==false) record();
+    closeRail();                   /* a move is the end of choosing a filter */
     renderDetail(); render(); markKindChips();
     if(opts&&opts.top) window.scrollTo({top:0,behavior:"smooth"});
   }
@@ -601,7 +643,7 @@
   function render(){
     if(!D) return;
     var host=$("#results"); host.innerHTML=""; ATTRCACHE=null; INFCACHE=null;
-    syncClears();
+    syncClears(); renderFilterBar(); syncURL(false);
     setTimeout(topbar,0);          /* the heading row may have changed height */
     $("#rail").classList.toggle("hidden",state.tab==="flags");
     $("#pokefilters").classList.toggle("hidden",state.tab==="flags");
@@ -611,12 +653,13 @@
        switching feel continuous. What changes is where the slack goes:
          both side columns hold still at the same width on every tab, and the
          middle takes whatever is left — rows capped at a readable measure,
-         the canvas free to use the rest. */
-    lay.style.gridTemplateColumns = state.tab==="flags" ? "minmax(0,1fr)"
-      /* wide enough for two Pokémon chips side by side — at 380px a long name
-         like "Brambleghast" or "Poltchageist" took a row to itself */
-      : "232px minmax(0,1fr) minmax(0,clamp(380px, 26vw, 460px))";
-    lay.style.maxWidth = "min(1860px, 98vw)";
+         the canvas free to use the rest.
+       The column widths themselves now live in the stylesheet, so the
+       breakpoints can actually win: setting them inline here is what used to
+       keep three columns on a phone. */
+    lay.classList.toggle("onecol",state.tab==="flags");
+    $("#railtoggle").hidden = state.tab==="flags";   /* nothing to open there */
+    syncSheet(); syncFocusBtns();
     $("#graph").classList.toggle("hidden",state.tab!=="map");
     $("#atlas").classList.toggle("hidden",state.tab!=="atlas");
     host.classList.toggle("hidden",state.tab==="map"||state.tab==="atlas");
@@ -691,13 +734,8 @@
     else { rows=kindRows(); mode="kind"; $("#resulttitle").textContent="Categories"; }
     var noun = mode==="species"?" Pokémon":(mode==="family"?" families":(mode==="region"?" places of origin":(mode==="kind"?" categories":(mode==="branch"?" groups":" clusters & referents"))));
     $("#resultnote").textContent = rows.length + noun + (state.q?" matching “"+state.q+"”":"");
-    if(!rows.length){
-      var why=(state.tab==="species" && (attrsActive()||state.scope))
-        ? "No Pokémon match all of these filters at once. Drop one — the type chips, or the “within” scope above."
-        : "Nothing matches that. Try a broader word — “fox”, “bell”, “wrestler”.";
-      host.appendChild(el("p","empty",why));
-      return;
-    }
+    LASTROWS=rows; LASTMODE=mode; syncExport();
+    if(!rows.length){ host.appendChild(noMatch()); return }
     var list=el("div","rows");
     rows.slice(0,state.limit).forEach(function(r){
       list.appendChild(
@@ -710,9 +748,56 @@
     host.appendChild(list);
     if(rows.length>state.limit){
       var m=el("button","more","Show "+Math.min(200,rows.length-state.limit)+" more of "+rows.length);
-      m.onclick=function(){state.limit+=200; render()};
+      /* growing a list should not move it. Hold the scroll position and put
+         the caret on the first row that just arrived, so the keyboard keeps
+         its place too. */
+      m.onclick=function(){
+        var at=state.limit, y=window.scrollY;
+        state.limit+=200; render();
+        window.scrollTo(0,y);
+        requestAnimationFrame(function(){
+          var rs=$("#results").querySelectorAll(".rows > *");
+          if(rs[at]){ try{ rs[at].focus({preventScroll:true}) }catch(e){} }
+          window.scrollTo(0,y);
+          say((rows.length>state.limit?200:rows.length-at)+" more shown");
+        });
+      };
       host.appendChild(m);
     }
+  }
+  /* Nothing matched. Say why, offer the way out, and — when it looks like a
+     near miss rather than a filter problem — name the closest thing there is. */
+  function noMatch(){
+    var box=el("div");
+    var tight=(state.tab==="species" && (attrsActive()||state.scope));
+    box.appendChild(el("p","empty", tight
+      ? "No Pokémon match all of these filters at once."
+      : (state.q ? "Nothing here is called “"+state.q+"”." : "Nothing matches that.")));
+    if(state.q && D){
+      var near=suggestFor(state.q.slice(0,Math.max(3,state.q.length-2)))
+               .filter(function(s){return s.label.toLowerCase()!==state.q})[0];
+      if(near){
+        var p=el("p","didyou"); p.appendChild(document.createTextNode("Did you mean "));
+        var b=el("button","crumblink",near.label);
+        b.onclick=function(){ pickSuggest(near) };
+        p.appendChild(b); p.appendChild(document.createTextNode("?"));
+        box.appendChild(p);
+      }
+    }
+    var acts=el("div","emptyacts"), any=false;
+    function act(label,fn){ var b=el("button","",label); b.onclick=fn; acts.appendChild(b); any=true }
+    if(state.q) act("Clear the search “"+state.q+"”",function(){ state.q=""; $("#q").value=""; closeSuggest(); state.limit=120; render() });
+    if(attrsActive()) act("Drop the "+filterCount()+" attribute filters",function(){
+      state.types.clear(); state.gens.clear(); state.colours.clear(); state.misc.clear();
+      buildPokeFilters(); state.limit=120; render();
+    });
+    if(state.tab==="species" && state.scope) act("Search every Pokémon",function(){ state.scope=false; state.limit=120; render() });
+    if(state.onlymulti) act("Include single referents",function(){ state.onlymulti=false; $("#onlymulti").checked=false; render() });
+    if(state.onlyinf) act("Include read categories",function(){ state.onlyinf=false; $("#onlyinf").checked=false; INFCACHE=null; render() });
+    if(state.path.length) act("Leave "+(lastStep().t==="kind"?kindLabel(lastStep().k):lastStep().k),function(){ goBackTo(state.path.slice(0,-1)) });
+    if(!any) act("Back to the categories",function(){ goTo([]) });
+    box.appendChild(acts);
+    return box;
   }
   var KINDLABEL={object:"objects",person:"people",concept:"concepts",
                  prehistoric:"prehistoric life"};
@@ -817,7 +902,7 @@
     var b=el("button","row");
     b.addEventListener("mouseenter",function(){ litRail(kindsOf(r.id)) });
     b.addEventListener("mouseleave",function(){ litRail(null) }); b.setAttribute("aria-current",state.sel&&state.sel.t==="species"&&state.sel.k===r.id?"true":"false");
-    var im=sprite(r.id); if(im) b.appendChild(im);
+    b.appendChild(spriteOrGap(r.id));
     b.appendChild(el("span","num",dex(r.id)));
     b.appendChild(el("span","rowname",r.s[0]));
     var meta=el("span","rowmeta");
@@ -858,6 +943,7 @@
     hist=hist.slice(0,hpos+1);
     hist.push(now); hpos=hist.length-1;
     if(hist.length>300){ hist.shift(); hpos-- }
+    syncURL(true);
   }
   function travel(step){
     var n=hpos+step;
@@ -874,18 +960,38 @@
     }
     renderDetail(); render();
     replaying=false;
+    syncURL(false);
   }
+  var TABKEYS={"1":"clusters","2":"map","3":"atlas","4":"species","5":"flags"};
   addEventListener("keydown",function(e){
-    if(e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return;
-    /* Escape steps out one level, wherever you are — the map's middle node
-       and Browse's "Up" button do the same thing, so the key should too */
+    var typing = e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName);
+    /* ⌘K reaches the box from anywhere, including from inside the box */
+    if((e.metaKey||e.ctrlKey) && (e.key==="k"||e.key==="K")){ e.preventDefault(); focusSearch(); return }
+    if(typing) return;
     if(e.key==="Escape"){
+      if(!$("#helpwrap").hidden){ e.preventDefault(); closeHelp(); return }
+      if(document.body.classList.contains("railopen")){ e.preventDefault(); closeRail(); return }
+      if(document.body.classList.contains("sheetopen")){ e.preventDefault(); state.sel=null; record(); renderDetail(); render(); return }
+      /* Escape steps out one level, wherever you are — the map's middle node
+         and Browse's "Up" button do the same thing, so the key should too */
       if(state.poke!=null || state.path.length){ e.preventDefault(); graphUp(); return }
       if(state.sel){ e.preventDefault(); state.sel=null; record(); renderDetail(); render(); return }
+      if(state.q){ e.preventDefault(); state.q=""; $("#q").value=""; render(); return }
     }
-    if(!(e.altKey||e.metaKey)) return;
-    if(e.key==="ArrowLeft"){ e.preventDefault(); travel(-1) }
-    if(e.key==="ArrowRight"){ e.preventDefault(); travel(1) }
+    if(e.altKey||e.metaKey||e.ctrlKey){
+      if(e.key==="ArrowLeft"){ e.preventDefault(); travel(-1) }
+      if(e.key==="ArrowRight"){ e.preventDefault(); travel(1) }
+      return;
+    }
+    if(e.key==="/"){ e.preventDefault(); focusSearch(); return }
+    if(e.key==="?"){ e.preventDefault(); openHelp(); return }
+    if(TABKEYS[e.key]){ e.preventDefault(); setTab(TABKEYS[e.key]); return }
+    if(e.key==="f"||e.key==="F"){
+      if(state.tab==="map"||state.tab==="atlas"){ e.preventDefault(); toggleFocusMode() }
+      return;
+    }
+    if(e.key==="r"||e.key==="R"){ e.preventDefault(); surprise(); return }
+    if(e.key==="c"||e.key==="C"){ e.preventDefault(); copyLink(); return }
   });
 
   /* Where a cluster or referent sits, as a full path from its category down:
@@ -926,12 +1032,15 @@
     /* A Pokémon is not a place in the tree — it hangs off many referents at
        once. So the map centres on it instead, and shows that whole fan. */
     state.poke = (sel && sel.t==="species") ? sel.k : null;
+    state.showall=false; state.pfilter="";
     var route=pathTo(sel);
     if(route){ goTo(route) }
     else { state.sel=sel; record(); renderDetail(); render() }
     var d=$("#detail");
     if(d){
       d.scrollTop=0;                       /* a new selection starts at its own top */
+      /* where the panel is a sheet it has to be raised, not scrolled to */
+      if(narrow()){ syncSheet(); return }
       var r=d.getBoundingClientRect();
       if(r.top>innerHeight-40 || r.bottom<40){   /* only when it is genuinely off screen */
         try{ d.scrollIntoView({block:"nearest"}) }catch(e){}
@@ -940,7 +1049,12 @@
   }
 
   function renderDetail(){
-    var d=$("#detail"); d.innerHTML="";
+    var d=$("#detail");
+    /* the sheet's close button is part of the frame, not of the contents */
+    var close=$("#sheetclose");
+    d.innerHTML="";
+    if(close) d.appendChild(close);
+    syncSheet();
     var sel=state.sel;
     if(!sel){
       var hd=el("div","dhead"), ht=el("div","dtitles");
@@ -1085,8 +1199,9 @@
       title=sel.nt==="kind"?kindLabel(sel.k):sel.k;
       sub=label+(pk?" · "+pk+" Pokémon":"")+(kids.length?" · "+kids.length+" "+noun:"");
       body.appendChild(sectionTitle("Inside"));
+      var kcap=state.showall?kids.length:80;
       var nl=el("div","taglist");
-      kids.slice(0,80).forEach(function(c){
+      kids.slice(0,kcap).forEach(function(c){
         var t=el("button","tag",disp(c.label)+(c.n?" ("+c.n+")":""));
         t.dataset.node=c.t+":"+c.k;
         if(c.fam) t.dataset.fam=c.fam;          /* a region belongs to a family */
@@ -1094,11 +1209,24 @@
         nl.appendChild(t);
       });
       body.appendChild(nl);
+      if(kids.length>kcap) body.appendChild(showAllBtn(kids.length-kcap,"more inside"));
       /* and the Pokémon themselves: a place that counts 19 of them should let
          you see them, not only the names of its boxes */
       if(pkids.length){
-        body.appendChild(sectionTitle(pkids.length>120?"Pokémon · first 120 of "+pkids.length:"Pokémon"));
-        body.appendChild(speciesTags(pkids.slice(0,120)));
+        /* A cap with no way past it is a dead end in a panel whose whole job
+           is to show what is in a place. The cap stays — 800 chips is not a
+           list anyone reads — but it lifts, and the box above it narrows the
+           chips by name without leaving the panel. */
+        /* the box narrows the whole set, not the slice that happens to be
+           drawn — searching inside a cap finds nothing and says so wrongly */
+        var hits=filterIds(pkids), pcap=state.showall?hits.length:120;
+        body.appendChild(sectionTitle(
+          state.pfilter ? "Pokémon · "+hits.length+" of "+pkids.length+" match “"+state.pfilter+"”"
+          : (pkids.length>pcap ? "Pokémon · first "+pcap+" of "+pkids.length : "Pokémon ("+pkids.length+")")));
+        if(pkids.length>24) body.appendChild(chipFilter());
+        if(!hits.length) body.appendChild(el("p","fnote","Nothing here is called that."));
+        body.appendChild(speciesTags(hits.slice(0,pcap)));
+        if(hits.length>pcap) body.appendChild(showAllBtn(hits.length-pcap,"more Pokémon"));
       }
       /* A region node is already a place — "Norse & Germanic" saying it is
          mostly Norse & Germanic helps nobody — so only the other three ask. */
@@ -1174,6 +1302,12 @@
     head.appendChild(titles);
     var acts=el("div","dactions");
     acts.appendChild(navButtons());
+    /* every view has an address now, so the panel can hand it over */
+    var cb=el("button","flagbtn","\u29c9");
+    cb.type="button";
+    cb.title="Copy a link to this (C)"; cb.setAttribute("aria-label","Copy a link to this");
+    cb.onclick=function(){ copyLink() };
+    acts.appendChild(cb);
     /* a flag, not the word: the panel heading is the one place where a
        line of vertical space is worth more than a label */
     var fb=el("button","flagbtn","\u2691");
@@ -1957,6 +2091,20 @@
     var ticks=0;
     sim.on("tick.fit",function(){ if(++ticks===60) fit(false) });
     setTimeout(function(){ if(!fitted) fit(false) },1400);   /* belt and braces */
+    /* Someone who has asked for less motion should not be handed a ring of
+       nodes that drifts for two seconds. Settle the whole simulation in one
+       frame and draw the result. */
+    if(REDUCE){
+      sim.stop();
+      for(var ti=0;ti<300;ti++) sim.tick();
+      var onTick=sim.on("tick"); if(onTick) onTick();
+      fit(true);
+    }
+    buildSvgAlt($("#gsvgalt"),"Nodes here",all,function(c){
+      if(c.open!==false) openGraph(c);
+      else if(c.t==="species") select({t:"species",k:c.k});
+      else select({t:c.t,k:c.only||c.k});
+    },function(c){ return disp(c.label||c.k)+(c.n?" ("+c.n+")":"") });
     node.call(d3.drag()
       .on("start",function(e,d){ if(!e.active) sim.alphaTarget(0.25).restart(); d.fx=d.x; d.fy=d.y })
       .on("drag",function(e,d){ d.fx=e.x; d.fy=e.y })
@@ -2488,6 +2636,11 @@
       (grouped?" · click a region to split it":" · drag to pan, scroll to zoom");
     $("#resultnote").textContent=npl+" places of origin · "+
       Object.keys(sp).length+" Pokémon placed";
+    /* An SVG full of circles is nothing to a keyboard or a screen reader.
+       The same places, as buttons that do the same thing. */
+    buildSvgAlt($("#asvgalt"),"Places here",places.slice(0,60),function(p){
+      select({t:"place",k:p.name});
+    },function(p){ return p.name+" ("+Object.keys(p.sp).length+")" });
     atlasWire();
   }
 
@@ -2665,7 +2818,22 @@
           .catch(function(){tog.disabled=false});
       };
       var del=el("button","ghost","Delete");
-      del.onclick=function(){ del.disabled=true; dbNS.collection("corrections").doc(f.id).delete().catch(function(){del.disabled=false}) };
+      /* A flag is somebody's note about a real mistake, and the old button
+         destroyed one on a single click. The card goes now, the row goes in
+         five seconds, and in between the deletion is one click to call off —
+         kinder than a dialog, and it stops nothing. */
+      del.onclick=function(){
+        del.disabled=true; c.style.display="none";
+        var timer=setTimeout(function(){
+          dbNS.collection("corrections").doc(f.id).delete().catch(function(){
+            c.style.display=""; del.disabled=false;
+            notice("That flag couldn’t be deleted.");
+          });
+        },5000);
+        toast("Flag deleted.","Undo",function(){
+          clearTimeout(timer); c.style.display=""; del.disabled=false;
+        });
+      };
       act.appendChild(tog); act.appendChild(del); c.appendChild(act);
     }
     return c;
@@ -2729,8 +2897,13 @@
     state.onlyinf=false; $("#onlyinf").checked=false; INFCACHE=null;
     state.q=""; $("#q").value="";
     state.scope=true; gstate.showAll=false; state.sel=null; state.poke=null; state.limit=120;
-    buildPokeFilters();
+    state.showall=false; state.pfilter="";
+    buildPokeFilters(); closeRail();
+    /* Clear means clear: the remembered view goes too, or the next visit
+       quietly puts back what was just thrown away. */
+    try{ localStorage.removeItem(VIEWKEY) }catch(e){}
     goTo([]);                       /* re-renders, clears the panel, re-marks the chips */
+    say("Cleared");
   });
 
   /* ---------- theme ----------
@@ -2889,13 +3062,498 @@
   $("#onlyinf").addEventListener("change",function(e){
     state.onlyinf=e.target.checked; INFCACHE=null; state.limit=120; render();
   });
-  ["clusters","map","atlas","species","flags"].forEach(function(t){
-    $("#tab-"+t).addEventListener("click",function(){
-      state.tab=t; state.limit=120; record();
-      ["clusters","map","atlas","species","flags"].forEach(function(o){ $("#tab-"+o).setAttribute("aria-selected",o===t?"true":"false") });
-      render();
+  var TABS=["clusters","map","atlas","species","flags"];
+  function markTabs(t){
+    TABS.forEach(function(o){ $("#tab-"+o).setAttribute("aria-selected",o===t?"true":"false") });
+    /* on a narrow strip the chosen tab can be the one off the right edge */
+    var b=$("#tab-"+t);
+    if(b && b.scrollIntoView) try{ b.scrollIntoView({block:"nearest",inline:"nearest"}) }catch(e){}
+    syncTabFade();
+  }
+  function setTab(t){
+    if(state.tab===t && t!=="flags") return;
+    state.tab=t; state.limit=120;
+    if(t!=="map" && t!=="atlas") setFocusMode(false);
+    closeRail(); markTabs(t); record(); render();
+    say(t==="clusters"?"Browse":t.charAt(0).toUpperCase()+t.slice(1));
+  }
+  TABS.forEach(function(t){ $("#tab-"+t).addEventListener("click",function(){ setTab(t) }) });
+
+  /* ============================================================
+     Quality-of-life layer
+     ============================================================ */
+
+  var REDUCE=false;
+  try{ REDUCE=matchMedia("(prefers-reduced-motion: reduce)").matches }catch(e){}
+  var SHEETMQ=null, NARROWMQ=null;
+  try{ SHEETMQ=matchMedia("(max-width:1180px)"); NARROWMQ=matchMedia("(max-width:860px)") }catch(e){}
+  function sheetMode(){ return !!(SHEETMQ && SHEETMQ.matches) }
+  function narrow(){ return !!(NARROWMQ && NARROWMQ.matches) }
+
+  /* ---------- the address bar ----------
+     Everything that decides what is on screen goes in the fragment, so a view
+     can be bookmarked, shared, and walked back through with the browser's own
+     Back button rather than only with alt-arrow. The same string is kept in
+     localStorage, which is what makes a reload land where you left off. */
+  var VIEWKEY="pokedex:view", lastURL=null, applying=false;
+  function stepStr(s){ return s.t+":"+encodeURIComponent(String(s.k)) }
+  function parseStep(s){
+    var at=s.indexOf(":"); if(at<0) return null;
+    return {t:s.slice(0,at), k:decodeURIComponent(s.slice(at+1))};
+  }
+  function encodeView(){
+    var p=[];
+    function put(k,v){ if(v!==""&&v!=null&&v!==false) p.push(k+"="+encodeURIComponent(v)) }
+    if(state.tab!=="clusters") put("tab",state.tab);
+    put("q",state.q);
+    if(state.path.length) p.push("path="+stepsOf().map(stepStr).join("/"));
+    if(state.sel) p.push("sel="+stepStr(state.sel));
+    if(state.poke!=null) put("poke",state.poke);
+    if(state.sort!=="species") put("sort",state.sort);
+    if(state.types.size) put("type",Array.from(state.types).join(","));
+    if(state.gens.size) put("gen",Array.from(state.gens).join(","));
+    if(state.colours.size) put("col",Array.from(state.colours).join(","));
+    if(state.misc.size) put("misc",Array.from(state.misc).join(","));
+    if(state.onlymulti) put("multi",1);
+    if(state.onlyinf) put("inf",1);
+    if(!state.scope) put("all",1);
+    if(document.body.classList.contains("focusmode")) put("focus",1);
+    return p.join("&");
+  }
+  function syncURL(push){
+    if(applying||!D) return;
+    var s=encodeView();
+    if(s===lastURL) return;
+    lastURL=s;
+    var url=location.pathname+location.search+(s?"#"+s:"#");
+    try{
+      if(push && history.pushState) history.pushState(null,"",url);
+      else if(history.replaceState) history.replaceState(null,"",url);
+      else location.hash=s;
+    }catch(e){ try{ location.hash=s }catch(e2){} }
+    try{ localStorage.setItem(VIEWKEY,s) }catch(e){}
+  }
+  function readView(s){
+    var out={};
+    (s||"").replace(/^#/,"").split("&").forEach(function(kv){
+      if(!kv) return;
+      var at=kv.indexOf("="), k=at<0?kv:kv.slice(0,at), v=at<0?"":kv.slice(at+1);
+      try{ out[k]=decodeURIComponent(v) }catch(e){ out[k]=v }
     });
+    return out;
+  }
+  /* A saved view can outlive the data it points at — a cluster gets renamed
+     and the link in somebody's bookmarks names a thing that is gone. Drop
+     what no longer exists rather than throwing on it. */
+  function stepExists(s){
+    if(!D) return false;
+    if(s.t==="kind") return Object.keys(D.families).some(function(f){ return (D.families[f].k||"unclassified")===s.k });
+    if(s.t==="branch") return Object.keys(D.branches||{}).some(function(k){
+      return (D.branches[k]||[]).some(function(d){ return d[0]===s.k }) });
+    if(s.t==="family") return !!D.families[s.k];
+    if(s.t==="group") return !!D.groups[s.k];
+    if(s.t==="referent") return !!D.referents[s.k];
+    if(s.t==="species") return !!D.species[String(s.k)];
+    return true;                       /* region and place are checked by their parent */
+  }
+  function applyView(v,opts){
+    applying=true;
+    try{
+      var bag=function(set,str,num){
+        set.clear();
+        (str||"").split(",").forEach(function(x){ if(x) set.add(num?+x:x) });
+      };
+      state.tab=/^(clusters|map|atlas|species|flags)$/.test(v.tab||"")?v.tab:"clusters";
+      state.q=(v.q||"").toLowerCase();
+      state.sort=v.sort||"species";
+      bag(state.types,v.type); bag(state.gens,v.gen,true);
+      bag(state.colours,v.col); bag(state.misc,v.misc);
+      state.onlymulti=v.multi==="1"; state.onlyinf=v.inf==="1";
+      state.scope=v.all!=="1";
+      state.poke=v.poke?+v.poke:null;
+      state.limit=120; state.showall=false; state.pfilter="";
+      var path=(v.path||"").split("/").map(parseStep).filter(Boolean);
+      var keep=[];
+      for(var i=0;i<path.length;i++){ if(!stepExists(path[i])) break; keep.push(path[i]) }
+      state.path=keep;
+      var sel=v.sel?parseStep(v.sel):null;
+      if(sel && sel.t==="species") sel.k=+sel.k;
+      state.sel=(sel && stepExists(sel))?sel:null;
+      /* the controls are state too */
+      $("#q").value=v.q||"";
+      $("#sort").value=state.sort;
+      $("#onlymulti").checked=state.onlymulti;
+      $("#onlyinf").checked=state.onlyinf;
+      buildPokeFilters(); markTabs(state.tab); markKindChips();
+      setFocusMode(v.focus==="1" && (state.tab==="map"||state.tab==="atlas"));
+    }catch(e){
+      state.path=[]; state.sel=null; state.poke=null;
+    }
+    applying=false;
+    /* what we just applied IS the current address: record() must not push it
+       a second time, or Back needs two presses to go one step */
+    lastURL=encodeView();
+    if(!opts||opts.render!==false){ renderDetail(); render(); record() }
+  }
+  function restoreView(){
+    var from=location.hash.replace(/^#/,"");
+    if(!from){ try{ from=localStorage.getItem(VIEWKEY)||"" }catch(e){} }
+    if(!from){ markTabs(state.tab); return }
+    applyView(readView(from),{render:false});
+    markTabs(state.tab);
+    lastURL=null; syncURL(false);     /* a restored view gets its address back */
+  }
+  function onHashNav(){
+    if(applying) return;
+    var s=location.hash.replace(/^#/,"");
+    if(s===lastURL) return;
+    lastURL=s;
+    applyView(readView(s));
+  }
+  addEventListener("popstate",onHashNav);
+  addEventListener("hashchange",onHashNav);
+
+  /* ---------- active filters, said where you can reach them ----------
+     The rail scrolls away, and on a phone it is behind a button. A filter you
+     cannot see is a filter you cannot undo, so each one also sits above the
+     results as a pill that removes just itself — the Clear button is all or
+     nothing, which is the wrong grain when four chips are on. */
+  function filterCount(){
+    return state.types.size+state.gens.size+state.colours.size+state.misc.size+
+           (state.onlymulti?1:0)+(state.onlyinf?1:0);
+  }
+  function activeFilters(){
+    var out=[];
+    function fromBag(bag,label,rebuild){
+      Array.from(bag).forEach(function(k){
+        out.push({label:label+" "+k, off:function(){ bag.delete(k); if(rebuild) buildPokeFilters() }});
+      });
+    }
+    if(state.q) out.push({label:"“"+state.q+"”", off:function(){ state.q=""; $("#q").value=""; closeSuggest() }});
+    fromBag(state.types,"type:",true);
+    fromBag(state.gens,"gen",true);
+    fromBag(state.colours,"colour:",true);
+    fromBag(state.misc,"",true);
+    if(state.onlymulti) out.push({label:"clusters only", off:function(){ state.onlymulti=false; $("#onlymulti").checked=false }});
+    if(state.onlyinf) out.push({label:"inferred only", off:function(){ state.onlyinf=false; $("#onlyinf").checked=false; INFCACHE=null }});
+    if(state.tab==="species" && !state.scope) out.push({label:"every Pokémon", off:function(){ state.scope=true }});
+    if(state.sort!=="species") out.push({label:"sorted: "+$("#sort").options[$("#sort").selectedIndex].text,
+      off:function(){ state.sort="species"; $("#sort").value="species" }});
+    return out;
+  }
+  function renderFilterBar(){
+    var bar=$("#filterbar"); if(!bar) return;
+    var list=activeFilters();
+    var rc=$("#railcount"); if(rc) rc.textContent=filterCount()?String(filterCount()):"";
+    var rt=$("#railtoggle"); if(rt) rt.setAttribute("aria-expanded",document.body.classList.contains("railopen")?"true":"false");
+    bar.innerHTML="";
+    if(!list.length || state.tab==="flags"){ bar.hidden=true; return }
+    bar.hidden=false;
+    bar.appendChild(el("span","fbtitle","filtering by"));
+    list.forEach(function(f){
+      var b=el("button","fpill");
+      b.type="button"; b.title="Remove this filter";
+      b.appendChild(el("span","fptext",f.label));
+      b.appendChild(el("span","fpx","✕"));
+      b.onclick=function(){ f.off(); state.limit=120; render(); say("Removed "+f.label) };
+      bar.appendChild(b);
+    });
+    if(list.length>1){
+      var w=el("button","fpill wipe");
+      w.type="button";
+      w.appendChild(el("span","fptext","clear all"));
+      w.onclick=function(){ $("#tab-clear").click() };
+      bar.appendChild(w);
+    }
+  }
+
+  /* ---------- export and share ---------- */
+  var LASTROWS=[], LASTMODE="";
+  function syncExport(){
+    var b=$("#exportbtn");
+    if(b) b.disabled=!LASTROWS.length || state.tab==="flags";
+  }
+  function csvCell(v){
+    v=v==null?"":String(v);
+    return /[",\n]/.test(v) ? '"'+v.replace(/"/g,'""')+'"' : v;
+  }
+  function exportRows(){
+    var mode=LASTMODE, head, lines=[];
+    if(mode==="species"){
+      head=["dex","name","types","generation","referents","drawn from"];
+      LASTROWS.forEach(function(r){
+        var a=(D.attrs||{})[String(r.id)]||{};
+        lines.push([r.id,r.s[0],(a.t||[]).join(" / "),a.g||"",r.s[1].length,r.s[1].join(" | ")]);
+      });
+    } else if(mode==="kind"){
+      head=["category","families","pokemon"];
+      LASTROWS.forEach(function(r){ lines.push([kindLabel(r.name),r.fams,r.n]) });
+    } else if(mode==="family"){
+      head=["family","category","clusters","pokemon"];
+      LASTROWS.forEach(function(r){ lines.push([r.name,r.f.k||"",r.f.c.length+(r.f.l||[]).length,r.fn!=null?r.fn:r.f.n]) });
+    } else if(mode==="branch"){
+      head=["group","families","pokemon"];
+      LASTROWS.forEach(function(r){ lines.push([r.name,r.fams.length,r.n]) });
+    } else if(mode==="region"){
+      head=["place of origin","clusters","pokemon"];
+      LASTROWS.forEach(function(r){ lines.push([r.name,r.list.length,r.n]) });
+    } else {
+      head=["name","kind","inferred","referents","pokemon","source"];
+      LASTROWS.forEach(function(r){
+        if(r.ref){
+          var sl=srclink(r.ref);
+          lines.push([disp(r.name),r.ref.k||"",r.ref.i?"yes":"",1,r.ref.s.length,sl?sl.href:""]);
+        } else {
+          lines.push([disp(r.name),r.g.k||"",r.g.i?"yes":"",r.g.m.length,r.g.tn||r.g.n,""]);
+        }
+      });
+    }
+    return [head].concat(lines).map(function(row){ return row.map(csvCell).join(",") }).join("\r\n");
+  }
+  function slug(s){ return String(s||"view").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,48)||"view" }
+  function exportCSV(){
+    if(!LASTROWS.length) return;
+    var name="pokedex-origins-"+slug($("#resulttitle").textContent)+".csv";
+    var blob=new Blob(["﻿"+exportRows()],{type:"text/csv;charset=utf-8"});
+    var url=URL.createObjectURL(blob), a=document.createElement("a");
+    a.href=url; a.download=name; document.body.appendChild(a); a.click();
+    setTimeout(function(){ document.body.removeChild(a); URL.revokeObjectURL(url) },0);
+    say("Downloaded "+LASTROWS.length+" rows");
+    flash($("#exportbtn"),"↓ saved");
+  }
+  /* The page runs in a frame; the address worth sharing is the one the person
+     is actually looking at, which is the referrer when there is one. */
+  function shareURL(){
+    var base=location.origin+location.pathname;
+    try{
+      var r=document.referrer||"";
+      if(/^https?:\/\/[^\/]*claude\.ai\//.test(r)) base=r.split("#")[0];
+    }catch(e){}
+    var s=encodeView();
+    return base+(s?"#"+s:"");
+  }
+  function copyLink(){
+    var url=shareURL();
+    function done(){ flash($("#copybtn"),"⧉ copied"); toast("Link to this view copied."); say("Link copied") }
+    function fail(){ toast("Couldn’t copy — the address bar has the link."); }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(done,function(){ legacyCopy(url)?done():fail() });
+    } else { legacyCopy(url)?done():fail() }
+  }
+  function legacyCopy(text){
+    try{
+      var t=document.createElement("textarea");
+      t.value=text; t.setAttribute("readonly",""); t.style.cssText="position:fixed;top:-100px;opacity:0";
+      document.body.appendChild(t); t.select();
+      var ok=document.execCommand("copy");
+      document.body.removeChild(t);
+      return ok;
+    }catch(e){ return false }
+  }
+  function flash(btn,text){
+    if(!btn) return;
+    var was=btn.textContent;
+    btn.textContent=text; btn.classList.add("ok");
+    setTimeout(function(){ btn.textContent=was; btn.classList.remove("ok") },1400);
+  }
+
+  /* ---------- the counts are the shortest route in ---------- */
+  function buildCounts(meta){
+    var box=$("#counts"); box.innerHTML="";
+    [[meta.species,"Pokémon",function(){ setTab("species") }],
+     [meta.referents,"referents",function(){ setTab("clusters"); goTo([],{top:true}) }],
+     [meta.clusters,"clusters",function(){
+        setTab("clusters"); state.onlymulti=true; $("#onlymulti").checked=true; goTo([],{top:true}) }],
+     [meta.families,"families",function(){ setTab("clusters"); goTo([],{top:true}) }]
+    ].forEach(function(c,i){
+      if(i) box.appendChild(el("span","countsep"," · "));
+      var b=el("button","countbtn",c[0]+" "+c[1]);
+      b.type="button"; b.title="Show "+c[1];
+      b.onclick=c[2];
+      box.appendChild(b);
+    });
+  }
+
+  /* ---------- notices, toasts, and something to announce with ---------- */
+  function say(msg){ var l=$("#live"); if(l) l.textContent=msg }
+  function notice(msg,label,fn){
+    var wrap=$("#noticewrap"), box=$("#notice");
+    if(!wrap) return;
+    box.innerHTML=""; box.appendChild(document.createTextNode(msg));
+    var sp=el("span","nspacer"); box.appendChild(sp);
+    if(label && fn){
+      var a=el("button","",label);
+      a.onclick=function(){ wrap.hidden=true; fn() };
+      box.appendChild(a);
+    }
+    var x=el("button","","Dismiss");
+    x.onclick=function(){ wrap.hidden=true };
+    box.appendChild(x);
+    wrap.hidden=false;
+    setTimeout(topbar,0);
+  }
+  function toast(msg,label,fn){
+    var wrap=$("#toastwrap"); if(!wrap) return;
+    var t=el("div","toast"); t.appendChild(el("span","",msg));
+    var timer=setTimeout(close,label?5200:2600);
+    function close(){ clearTimeout(timer); if(t.parentNode) t.parentNode.removeChild(t) }
+    if(label && fn){
+      var b=el("button","",label);
+      b.onclick=function(){ close(); fn() };
+      t.appendChild(b);
+    }
+    wrap.appendChild(t);
+    say(msg);
+  }
+
+  /* ---------- narrow-screen frames ---------- */
+  function syncSheet(){
+    var on = sheetMode() && !!state.sel && state.tab!=="flags" &&
+             !document.body.classList.contains("focusmode");
+    document.body.classList.toggle("sheetopen",on);
+    var s=$("#sheetscrim"); if(s) s.hidden=!on;
+  }
+  function openRail(){
+    document.body.classList.add("railopen");
+    $("#railscrim").hidden=false;
+    $("#railtoggle").setAttribute("aria-expanded","true");
+    var first=$("#rail").querySelector(".chip,select,input");
+    if(first) try{ first.focus({preventScroll:true}) }catch(e){}
+  }
+  function closeRail(){
+    if(!document.body.classList.contains("railopen")) return;
+    document.body.classList.remove("railopen");
+    $("#railscrim").hidden=true;
+    $("#railtoggle").setAttribute("aria-expanded","false");
+    try{ $("#railtoggle").focus({preventScroll:true}) }catch(e){}
+  }
+  function syncTabFade(){
+    var t=$("#tabs"); if(!t) return;
+    t.classList.toggle("scrolls", t.scrollWidth>t.clientWidth+4);
+  }
+
+  /* ---------- focus mode: the canvas gets the whole frame ---------- */
+  function setFocusMode(on){
+    document.body.classList.toggle("focusmode",!!on);
+    syncFocusBtns(); syncSheet();
+    if(on) say("Full width");
+    setTimeout(function(){
+      topbar();
+      if(state.tab==="map" && D3 && D) drawGraph();
+      if(state.tab==="atlas" && WORLD) drawAtlas();
+    },30);
+  }
+  function toggleFocusMode(){ setFocusMode(!document.body.classList.contains("focusmode")) }
+  function syncFocusBtns(){
+    var on=document.body.classList.contains("focusmode")?"true":"false";
+    ["#atlasexpand","#graphexpand"].forEach(function(s){
+      var b=$(s); if(b){ b.setAttribute("aria-pressed",on); b.textContent=on==="true"?"⤡":"⤢" }
+    });
+  }
+
+  /* ---------- a way in when you have no particular question ---------- */
+  function surprise(){
+    if(!D) return;
+    var pool=Object.keys(D.groups).filter(function(g){
+      var x=D.groups[g]; return (x.m||[]).length>1 || (x.ch||[]).length;
+    });
+    if(!pool.length) pool=Object.keys(D.referents);
+    var pick=pool[Math.floor(Math.random()*pool.length)];
+    if(!pick) return;
+    state.q=""; $("#q").value=""; closeSuggest();
+    if(state.tab==="flags") setTab("clusters");
+    select(D.groups[pick]?{t:"group",k:pick}:{t:"referent",k:pick});
+    say("Opened "+disp(pick));
+  }
+
+  /* ---------- the panel's own caps, with a way past them ---------- */
+  function showAllBtn(n,noun){
+    var b=el("button","showall","Show the other "+n+" "+noun);
+    b.type="button";
+    b.onclick=function(){ state.showall=true; renderDetail() };
+    return b;
+  }
+  /* the Pokémon in a panel, narrowed by the box above them — by name or by
+     dex number, because "#0145" is how half of them are known */
+  function filterIds(ids){
+    var q=state.pfilter;
+    if(!q) return ids;
+    return ids.filter(function(id){
+      var sp=D.species[String(id)];
+      return (sp && sp[0].toLowerCase().indexOf(q)>=0) || dex(id).indexOf(q)>=0 || String(id)===q;
+    });
+  }
+  function chipFilter(){
+    var i=document.createElement("input");
+    i.className="panelfilter"; i.type="search";
+    i.value=state.pfilter||"";
+    i.placeholder="narrow these by name or number…";
+    i.setAttribute("aria-label","Narrow the Pokémon listed below");
+    i.addEventListener("input",function(){
+      state.pfilter=i.value.trim().toLowerCase();
+      state.showall=false;
+      renderDetail();
+      /* the panel is rebuilt under the caret, so put it back */
+      var again=$("#detail").querySelector(".panelfilter");
+      if(again){ try{ again.focus(); again.setSelectionRange(again.value.length,again.value.length) }catch(e){} }
+    });
+    return i;
+  }
+
+  /* ---------- the SVGs, for a keyboard ---------- */
+  function buildSvgAlt(host,label,items,pick,labelFn){
+    if(!host) return;
+    host.innerHTML="";
+    if(!items||!items.length) return;
+    host.appendChild(el("span","altlabel",label));
+    items.forEach(function(it){
+      var b=el("button","",labelFn(it));
+      b.type="button";
+      b.onclick=function(){ pick(it) };
+      host.appendChild(b);
+    });
+  }
+
+  /* ---------- the shortcuts people cannot otherwise discover ---------- */
+  var helpReturn=null;
+  function openHelp(){
+    helpReturn=document.activeElement;
+    $("#helpwrap").hidden=false;
+    try{ $("#helpbox").focus() }catch(e){}
+  }
+  function closeHelp(){
+    $("#helpwrap").hidden=true;
+    if(helpReturn && helpReturn.focus) try{ helpReturn.focus() }catch(e){}
+  }
+  function focusSearch(){
+    var q=$("#q");
+    closeRail();
+    try{ q.focus(); q.select() }catch(e){}
+  }
+
+  /* ---------- wiring ---------- */
+  $("#railtoggle").addEventListener("click",function(){
+    document.body.classList.contains("railopen")?closeRail():openRail();
   });
+  $("#railclose").addEventListener("click",closeRail);
+  $("#railscrim").addEventListener("click",closeRail);
+  $("#sheetscrim").addEventListener("click",function(){
+    state.sel=null; record(); renderDetail(); render();
+  });
+  $("#sheetclose").addEventListener("click",function(){
+    state.sel=null; record(); renderDetail(); render();
+  });
+  $("#helpbtn").addEventListener("click",openHelp);
+  $("#helpclose").addEventListener("click",closeHelp);
+  $("#helpwrap").addEventListener("click",function(e){ if(e.target===$("#helpwrap")) closeHelp() });
+  $("#surprise").addEventListener("click",surprise);
+  $("#copybtn").addEventListener("click",copyLink);
+  $("#exportbtn").addEventListener("click",exportCSV);
+  $("#atlasexpand").addEventListener("click",toggleFocusMode);
+  $("#graphexpand").addEventListener("click",toggleFocusMode);
+  addEventListener("resize",function(){ syncTabFade(); syncSheet() });
+  if(SHEETMQ && SHEETMQ.addEventListener) SHEETMQ.addEventListener("change",syncSheet);
+  syncTabFade(); syncExport();
 
   /* ---------- capabilities ---------- */
   if(window.claude && window.claude.use){

@@ -9,8 +9,8 @@ The map is artifact `https://claude.ai/artifact/FP9NhVBPPv8ozSKYAfhBR8`. Its vie
 flags into the artifact database collection `corrections`. This skill is the cheap loop for
 clearing them.
 
-The project is a git repo rooted at this skill's directory (`ashetty8/pokedex-origins-map`,
-private). Edit `data/map_data.json` through flagkit and `app/index.html` / `app/style.css` /
+The project is a git repo at `~/pokedex-origins-map` (`ashetty8/pokedex-origins-map`,
+private); every path below is relative to it, so `cd` there first. Edit `data/map_data.json` through flagkit and `app/index.html` / `app/style.css` /
 `app/app.js` by hand; `python3 -I flagkit.py build` assembles `dist/`, which is what gets
 published. Treat `data/` and `app/` as the current published version.
 
@@ -59,7 +59,7 @@ parent naming several places) rather than papering over it here.
 ### 2. Refresh the working copies if the session is new
 
 ```
-Artifact action=read url=<artifact> paths=["map_data.json","index.html"] out_dir=<this skill>/work
+Artifact action=read url=<artifact> paths=["map_data.json","index.html"] out_dir=~/pokedex-origins-map/work
 ```
 
 Save the dataset over `data/map_data.json` (run `flagkit build` after). Compare `meta.build`
@@ -114,7 +114,7 @@ python3 -I tests/test_flagkit.py && python3 -I flagkit.py build
 ```
 
 ```
-Artifact url=<artifact> file_path=<this skill>/dist/index.html
+Artifact url=<artifact> file_path=~/pokedex-origins-map/dist/index.html
          files={"style.css": ".../dist/style.css", "app.js": ".../dist/app.js",
                 "map_data.json": ".../dist/map_data.json",
                 "world.json": ".../dist/world.json", "geo.json": ".../dist/geo.json"}
@@ -127,8 +127,7 @@ is refused as "identical content resent" goes through on a straight retry.
 
 ### 6. Commit what changed
 
-The repo is `ashetty8/pokedex-origins-map` (private), checked out at this skill's own
-directory. After publishing, record the same change in git — the overlay's diff is the
+The repo is `ashetty8/pokedex-origins-map` (private), checked out at `~/pokedex-origins-map`. After publishing, record the same change in git — the overlay's diff is the
 readable account of what moved:
 
 ```bash
@@ -166,7 +165,7 @@ Order of preference:
 2. **The page's own output as text.** The published page runs cross-origin inside claude.ai, so
    `read_page` and `javascript_tool` cannot reach it. Serve `dist/` locally instead:
    write `.claude/launch.json` with
-   `{"version":"0.0.1","configurations":[{"name":"verify-pokedex","runtimeExecutable":"python3","runtimeArgs":["-m","http.server","8732","--directory","<this skill>/dist"],"port":8732}]}`,
+   `{"version":"0.0.1","configurations":[{"name":"verify-pokedex","runtimeExecutable":"python3","runtimeArgs":["-m","http.server","8732","--directory","/Users/adityashetty/pokedex-origins-map/dist"],"port":8732}]}`,
    run `flagkit build` first, fetch `sprites.json` / `form_sprites.json` into `dist/` only if
    the flag is about sprites, then `preview_start` by
    name and read with `get_page_text` / `find`. Delete the launch.json afterwards. Running a
