@@ -2634,18 +2634,20 @@
       }
     }
       /* The selected Pokémon, standing on every place it traces back to.
-         It sits above the pin rather than on it: the circle is the count and
-         covering it would trade one answer for another. A stem keeps the
-         sprite tied to its pin once two of them land close together. */
+         It sits ON the pin, not above it. Floating it clear kept the count
+         circle visible, but 30px up is a long way at this zoom: Empoleon's
+         Ancient Rome pin put its sprite level with the label on Italy, a
+         different pin 60km north, and read as though it came from there.
+         Which pin a sprite belongs to is the whole question the overlay
+         answers, so nothing may be ambiguous about it. The count is still
+         on the card, and on every other pin on the map. */
       if(state.poke!=null && SPR && SPR[String(state.poke)]){
         var pid=String(state.poke), sz=30*u;
         var pname=(D.species[pid]||[])[0]||"";
         var durl="data:image/png;base64,"+SPR[pid];
         places.forEach(function(p){
           if(!p.sp[pid]) return;
-          var top=p.y-(atlasRadius(p.n)+6)*u-sz;
-          pokes.appendChild(svgel("line",{x1:p.x,y1:p.y,x2:p.x,y2:top+sz},"apokestem"));
-          var im=svgel("image",{x:p.x-sz/2,y:top,width:sz,height:sz,
+          var im=svgel("image",{x:p.x-sz/2,y:p.y-sz/2,width:sz,height:sz,
                                 preserveAspectRatio:"xMidYMid meet"},"apoke");
           im.setAttribute("href",durl);
           im.setAttributeNS("http://www.w3.org/1999/xlink","href",durl);
