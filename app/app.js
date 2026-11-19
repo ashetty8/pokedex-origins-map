@@ -157,6 +157,7 @@
     fetch("form_sprites.json").then(function(r){ if(!r.ok) throw new Error("forms"); return r.json() }).then(function(j){
       FSPR=j; if(state.sel) renderDetail();
       if(state.tab==="map" && D3 && D) drawGraph();
+      if(state.tab==="atlas" && WORLD && GEO && D) drawAtlas();
     }).catch(function(){});
   }
 
@@ -2358,6 +2359,27 @@
      100. A cap on an area encoding is a lie about the biggest values, which
      are the ones the reader came for. The floor is a hit target, not a
      value: 4.5px is the smallest circle that can still be clicked. */
+  /* Which face a pin should wear. A referent can be about one FORM of a
+     Pokémon rather than the species — the British Shorthair is Alolan
+     Persian, not Persian — and the form is the honest answer for the place
+     that referent pins. So Britain shows the Alolan cat while Iran, Thailand
+     and Mesoamerica show the ordinary one, which is the whole point: the
+     reason Persian is in Britain at all is the Alolan form.
+
+     One dissenter is enough to fall back to the species. If two referents
+     here name different forms, or any of them is about the plain Pokémon,
+     the map must not pick a side the data has not picked. */
+  function atlasFormAt(p,pid){
+    var slug=null, n=0, id=+pid, refs=p.refs||[];
+    for(var i=0;i<refs.length;i++){
+      var r=D.referents[refs[i]];
+      if(!r || (r.s||[]).indexOf(id)<0) continue;
+      var f=formFor(refs[i],id);
+      if(!f || (slug && f!==slug)) return null;
+      slug=f; n++;
+    }
+    return n?slug:null;
+  }
   function atlasRadius(n){ return Math.max(4.5,2.06*Math.sqrt(n)) }   /* px */
   /* The map repeats sideways for ever. Plate carrée is the projection that
      lets it: x is a straight multiple of longitude, so the canvas tiles
@@ -2644,15 +2666,18 @@
       if(state.poke!=null && SPR && SPR[String(state.poke)]){
         var pid=String(state.poke), sz=30*u;
         var pname=(D.species[pid]||[])[0]||"";
-        var durl="data:image/png;base64,"+SPR[pid];
         places.forEach(function(p){
           if(!p.sp[pid]) return;
+          var slug=atlasFormAt(p,pid);
+          var b64=(slug && FSPR && FSPR[slug]) || SPR[pid];
+          var durl="data:image/png;base64,"+b64;
           var im=svgel("image",{x:p.x-sz/2,y:p.y-sz/2,width:sz,height:sz,
                                 preserveAspectRatio:"xMidYMid meet"},"apoke");
           im.setAttribute("href",durl);
           im.setAttributeNS("http://www.w3.org/1999/xlink","href",durl);
           var ti=svgel("title",{});
-          ti.textContent=pname+" \u2014 "+p.name;
+          ti.textContent=pname+(slug&&FSPR&&FSPR[slug]
+            ? " ("+slug.split("-").slice(1).join(" ")+")" : "")+" \u2014 "+p.name;
           im.appendChild(ti);
           pokes.appendChild(im);
         });
