@@ -68,17 +68,15 @@
       "why": "breeds right across Europe and temperate Asia and winters in Africa; its own entry's 'endemic to Namdapha National Park' was a sighting"
     },
     "emperor penguin": {
-      "lat": -90.0,
-      "lon": 0.0,
+      "lat": -79.0,
+      "lon": 10.0,
       "place": "Antarctica",
-      "q": "Q51",
       "why": "endemic to Antarctica — it breeds on the fast ice of the coast and nowhere else"
     },
     "emperor penguin chick": {
-      "lat": -90.0,
-      "lon": 0.0,
+      "lat": -79.0,
+      "lon": 10.0,
       "place": "Antarctica",
-      "q": "Q51",
       "why": "hatched and reared on the Antarctic fast ice, the only place emperor penguins breed"
     },
     "epaulettes": {

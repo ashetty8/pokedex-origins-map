@@ -147,6 +147,7 @@
     fetch("sprites.json").then(function(r){ if(!r.ok) throw new Error("sprites"); return r.json() }).then(function(j){
       SPR=j; buildPokeFilters(); render(); if(state.sel) renderDetail();
       if(state.tab==="clusters" && D3) drawGraph();
+      if(state.tab==="atlas" && WORLD && GEO && D) drawAtlas();
     }).catch(function(){
       /* a swallowed failure here reads as a page full of blank squares, so it
          says what happened and offers the one thing that can fix it */
@@ -1156,6 +1157,25 @@
                  : shaded ? " \u2014 a culture area; the shading on the Atlas is the ground it covers"
                  : pl.soft ? " \u2014 a culture area, so the pin is a region, not a spot" : ""));
         body.appendChild(how);
+        /* An area is a lid. Its pin carries the whole region's count, and
+           while the Atlas is rolled up the places underneath have no mark of
+           their own to click — so the card is the way in to them. */
+        var kids=atlasPlaces().filter(function(o){
+          return o.name!==pl.name && GEO.pr && GEO.pr[o.i]===pl.name;
+        }).sort(function(a,b){ return b.n-a.n || (a.name<b.name?-1:1) });
+        if(kids.length){
+          body.appendChild(sectionTitle("Places in this area · "+kids.length));
+          var pcs=el("div","oplace wrapped");
+          kids.forEach(function(o){
+            var b=el("button","tag origin"+(o.soft?" soft":""),o.name);
+            b.appendChild(el("span","ocount",String(o.n)));
+            b.title=o.refs.length+" referent"+(o.refs.length===1?"":"s")+
+                    " \u00b7 "+o.n+" Pok\u00e9mon \u2014 open it on the Atlas";
+            b.onclick=function(){ openPlaceOnAtlas(o.name) };
+            pcs.appendChild(b);
+          });
+          body.appendChild(pcs);
+        }
         var byk={};
         pl.refs.forEach(function(m){
           var k=(D.referents[m]||{}).k||"unclassified";
@@ -2273,10 +2293,11 @@
     }
     return null;
   }
-  /* A search wants the precise pin, and an opened place fans its referents
-     out around one — both need the places themselves. */
+  /* A search wants the precise pin, an opened place fans its referents out
+     around one, and a Pokémon stands on the places it actually came from —
+     all three need the places themselves, not the regions. */
   function atlasGrouped(){
-    return AGROUP && AVIEW.w>AGROUPW && !state.q && !atlasFocus();
+    return AGROUP && AVIEW.w>AGROUPW && !state.q && state.poke==null && !atlasFocus();
   }
   /* One mark per region: the Pokémon are unioned rather than added, so a
      species reached from two places in the same region counts once. */
@@ -2508,11 +2529,12 @@
       if(shades.firstChild) layer.appendChild(shades);
     }
 
-    var pins=svgel("g",{}), labels=svgel("g",{}), fan=svgel("g",{});
+    var pins=svgel("g",{}), labels=svgel("g",{}), fan=svgel("g",{}), pokes=svgel("g",{});
 
     places.forEach(function(p){
       var rpx=atlasRadius(p.n), cls="apin";
       if(state.q && !p.hits) cls+=" soft";
+      else if(state.poke!=null && !p.sp[String(state.poke)]) cls+=" soft";
       if(p.soft) cls+=" guessed";
       if(focus===p) cls+=" on";
       var fl=flagsOn("place",p.name);
@@ -2611,7 +2633,30 @@
         fan.appendChild(more);
       }
     }
+      /* The selected Pokémon, standing on every place it traces back to.
+         It sits above the pin rather than on it: the circle is the count and
+         covering it would trade one answer for another. A stem keeps the
+         sprite tied to its pin once two of them land close together. */
+      if(state.poke!=null && SPR && SPR[String(state.poke)]){
+        var pid=String(state.poke), sz=30*u;
+        var pname=(D.species[pid]||[])[0]||"";
+        var durl="data:image/png;base64,"+SPR[pid];
+        places.forEach(function(p){
+          if(!p.sp[pid]) return;
+          var top=p.y-(atlasRadius(p.n)+6)*u-sz;
+          pokes.appendChild(svgel("line",{x1:p.x,y1:p.y,x2:p.x,y2:top+sz},"apokestem"));
+          var im=svgel("image",{x:p.x-sz/2,y:top,width:sz,height:sz,
+                                preserveAspectRatio:"xMidYMid meet"},"apoke");
+          im.setAttribute("href",durl);
+          im.setAttributeNS("http://www.w3.org/1999/xlink","href",durl);
+          var ti=svgel("title",{});
+          ti.textContent=pname+" \u2014 "+p.name;
+          im.appendChild(ti);
+          pokes.appendChild(im);
+        });
+      }
       layer.appendChild(fan); layer.appendChild(pins); layer.appendChild(labels);
+      layer.appendChild(pokes);
     });
 
     var old=$("#atlas").querySelector(".atlasempty");
@@ -2633,6 +2678,10 @@
                : places.length+" places")+
       " · "+shownRefs+" referents · "+Object.keys(sp).length+" Pokémon"+
       (state.q?" · "+places.filter(function(p){return p.hits}).length+" with a match":"")+
+      (state.poke!=null && D.species[String(state.poke)]
+        ? " · "+D.species[String(state.poke)][0]+" on "+
+          places.filter(function(p){ return p.sp[String(state.poke)] }).length+" of them"
+        : "")+
       (grouped?" · click a region to split it":" · drag to pan, scroll to zoom");
     $("#resultnote").textContent=npl+" places of origin · "+
       Object.keys(sp).length+" Pokémon placed";

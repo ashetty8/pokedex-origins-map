@@ -45,6 +45,11 @@ REGION_POINTS = {
     "North America":            (43.0, -99.0),
     "Mesoamerica & Andes":      (12.0, -85.0),
     "Oceania & Polynesia":      (-17.0, 178.0),
+    # The one area with no culture in it. It earns a shape anyway: what is
+    # pinned here is endemic to the continent rather than to a spot on it,
+    # and a dot at the pole sat off the bottom of the map saying nothing.
+    # The point is on the drawn landmass, not at 90°S.
+    "Antarctica":               (-79.0, 10.0),
     # "Not tied to one place" is exactly that — it gets no pin.
 }
 
@@ -113,6 +118,7 @@ RANGE_COUNTRIES = {
 }
 
 AREA_COUNTRIES = {
+    "Antarctica": ["Antarctica"],
     "Japan": ["Japan"],
     "Korea": ["North Korea", "South Korea"],
     "China": ["China"],
