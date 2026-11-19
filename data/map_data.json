@@ -69207,7 +69207,8 @@
 "k": "folklore",
 "s": [
 702
-]
+],
+"w": "The Little Mouse"
 },
 "laboratory goggles": {
 "g": "goggles",
@@ -82688,7 +82689,9 @@
 "k": "folklore",
 "s": [
 962
-]
+],
+"w": "White stork",
+"ws": "Storks and delivery of babies"
 },
 "the sun": {
 "d": "the Sun",
@@ -82857,7 +82860,8 @@
 "k": "folklore",
 "s": [
 858
-]
+],
+"w": "Hansel and Gretel"
 },
 "the world egg": {
 "g": "egg",
