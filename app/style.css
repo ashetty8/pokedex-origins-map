@@ -131,8 +131,12 @@ select{font:inherit;font-size:.82rem;padding:8px 10px;border:1px solid var(--rul
 .chip.tinted:hover{border-color:color-mix(in srgb,var(--tc) 75%,transparent);background:color-mix(in srgb,var(--tc) 18%,transparent)}
 .chip.tinted[aria-pressed="true"]{background:color-mix(in srgb,var(--tc) 30%,transparent);border-color:var(--tc);color:#fff}
 .chip.tinted .n{color:inherit;opacity:.65}
-.chip[aria-pressed="true"][class*="k-"]{border-color:hsl(var(--kh) 45% 45%);background:hsl(var(--kh) 45% 50% / .14)}
+.chip[aria-pressed="true"][class*="k-"]{border-color:hsl(var(--kh) 52% 46%);background:hsl(var(--kh) 52% 38%);
+  color:#fff;font-weight:600;box-shadow:0 0 0 3px hsl(var(--kh) 52% 50% / .2)}
+.chip[aria-pressed="true"][class*="k-"] .dot{background:#fff;box-shadow:0 0 0 2px hsl(var(--kh) 52% 30% / .5)}
+.chip[aria-pressed="true"][class*="k-"] .n{color:#fff;opacity:.72}
 :root:not([data-theme="dark"]) .kind[class*="k-"]{color:hsl(var(--kh) 55% 32%);border-color:hsl(var(--kh) 35% 72%);background:hsl(var(--kh) 50% 55% / .10)}
+:root:not([data-theme="dark"]) .akindtag{color:hsl(var(--kh) 55% 30%);border-color:hsl(var(--kh) 35% 68%);background:hsl(var(--kh) 50% 55% / .14)}
 .kind{font-family:var(--mono);font-size:.67rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);border:1px solid var(--rule-strong);border-radius:4px;padding:1px 5px;white-space:nowrap}
 .kind.guess{border-style:dashed;color:var(--ink-faint)}
 .num{font-family:var(--mono);font-size:.78rem;color:var(--ink-soft);font-variant-numeric:tabular-nums}
@@ -310,6 +314,13 @@ a.src{color:var(--accent);font-size:.8rem;text-decoration:none;border-bottom:1px
 .atlasbar{position:absolute;left:14px;right:14px;top:11px;z-index:3;display:flex;align-items:center;gap:10px;
   font-family:var(--mono);font-size:.71rem;color:var(--ink-faint);pointer-events:none}
 #atlasnote{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+/* the open category, named in the bar in its own hue — the legend for what
+   the pins have just been coloured by */
+.akindtag{flex:0 0 auto;display:inline-flex;align-items:center;gap:5px;padding:2px 9px;border-radius:999px;
+  border:1px solid hsl(var(--kh) 45% 42%);background:hsl(var(--kh) 50% 50% / .18);
+  color:hsl(var(--kh) 55% 66%);letter-spacing:.07em;text-transform:uppercase;pointer-events:auto}
+.akindtag::before{content:"";width:7px;height:7px;border-radius:50%;background:hsl(var(--kh) 58% 54%)}
+.akindtag[hidden]{display:none}
 .atlastools{margin-left:auto;display:flex;align-items:center;gap:6px;pointer-events:auto;flex:0 0 auto}
 .atlastoggle{display:inline-flex;align-items:center;gap:4px;cursor:pointer;letter-spacing:.06em;text-transform:uppercase}
 .atlasbtn{width:26px;height:26px;border:1px solid var(--rule-strong);border-radius:8px;background:var(--card);
@@ -331,6 +342,15 @@ a.src{color:var(--accent);font-size:.8rem;text-decoration:none;border-bottom:1px
    door rather than a pin — a touch more solid, and ringed to say it opens */
 .apin.agroup{fill-opacity:.52;stroke:var(--accent);stroke-width:1.4;stroke-opacity:.85}
 .apin.agroup:hover{fill-opacity:.82}
+/* A category open in the rail is the atlas's subject too: a pin that carries
+   it takes its hue, and one that carries none of it falls back towards the
+   land instead of disappearing. */
+.apin.inkind{fill:hsl(var(--kh) 58% 46%);fill-opacity:.85}
+.apin.inkind:hover{fill-opacity:.97}
+.apin.inkind.on{fill-opacity:1;stroke:var(--ink)}
+.apin.inkind.agroup{stroke:hsl(var(--kh) 55% 50%)}
+.apin.offkind{fill:var(--ink-faint);fill-opacity:.16;stroke-opacity:.45}
+.apin.offkind:hover{fill-opacity:.42;stroke-opacity:1}
 /* A culture area is shaded over the ground it covers, under the pins. Light
    enough that the land and the graticule still read through it, and the
    country outlines stay visible so it reads as "these places" rather than as
@@ -360,6 +380,12 @@ a.src{color:var(--accent);font-size:.8rem;text-decoration:none;border-bottom:1px
 .afan{fill:var(--card);stroke:var(--accent);stroke-width:1.2;cursor:pointer;vector-effect:non-scaling-stroke}
 .afan:hover{fill:var(--accent)}
 .afan.on{fill:var(--accent);stroke:var(--ink)}
+/* each referent on the ring in its own category's hue, the hue its chip wears */
+.afan[class*="k-"]{stroke:hsl(var(--kh) 55% 50%)}
+.afan[class*="k-"]:hover{fill:hsl(var(--kh) 58% 52%)}
+.afan[class*="k-"].on{fill:hsl(var(--kh) 58% 48%);stroke:var(--ink)}
+.afan.offkind{stroke:var(--ink-faint);opacity:.4}
+.afan.offkind:hover{opacity:1}
 .atlastip{position:absolute;z-index:4;pointer-events:none;background:var(--card);border:1px solid var(--rule-strong);
   border-radius:9px;padding:6px 9px;font-size:.78rem;box-shadow:0 8px 22px rgba(0,0,0,.18);max-width:260px}
 .atlastip[hidden]{display:none}

@@ -270,7 +270,7 @@
                       {key:"stage1",label:"base form"},{key:"fully",label:"final form"}],state.misc);
   }
   function markKindChips(){
-    var st=stepsOf(), at=(st.length && st[0].t==="kind") ? st[0].k : null;
+    var at=activeKind();
     [].forEach.call(document.querySelectorAll("#kinds .chip"),function(c){
       c.setAttribute("aria-pressed",c.dataset.kind===at?"true":"false");
     });
@@ -805,6 +805,9 @@
                  prehistoric:"prehistoric life"};
   function kindLabel(k){ return KINDLABEL[k]||k }
   function kindClass(k){ return "k-"+String(k||"unclassified").replace(/[^a-z]/gi,"") }
+  /* Which category is open, if one is. A category is the first step of the
+     path, never a deeper one, so this is the whole of it. */
+  function activeKind(){ var st=stepsOf(); return (st.length && st[0].t==="kind") ? st[0].k : null }
   function kindTag(k,guess){
     var t=el("span","kind "+kindClass(k)+(guess?" guess":""),k||"unclassified");
     if(guess) t.title="Category inferred from the Pokémon citing it — correct it if it looks wrong";
@@ -2461,7 +2464,7 @@
     while(svg.firstChild) svg.removeChild(svg.firstChild);
 
     var grouped=atlasGrouped();
-    var places=grouped?atlasRegions():atlasPlaces(), focus=atlasFocus();
+    var places=grouped?atlasRegions():atlasPlaces(), focus=atlasFocus(), ak=activeKind();
     /* An opened place fans its referents out around the pin, and a pin near
        the edge would fan them off the map. Nudge the view the first time a
        place opens — never afterwards, or panning away would snap back. Since
@@ -2554,9 +2557,17 @@
     var pins=svgel("g",{}), labels=svgel("g",{}), fan=svgel("g",{}), pokes=svgel("g",{});
 
     places.forEach(function(p){
-      var rpx=atlasRadius(p.n), cls="apin";
-      if(state.q && !p.hits) cls+=" soft";
-      else if(state.poke!=null && !p.sp[String(state.poke)]) cls+=" soft";
+      var rpx=atlasRadius(p.n), cls="apin", dim=false;
+      if(state.q && !p.hits){ cls+=" soft"; dim=true }
+      else if(state.poke!=null && !p.sp[String(state.poke)]){ cls+=" soft"; dim=true }
+      /* A category in the rail is a place you move to, not a filter, so the
+         atlas used to ignore one entirely: the same uniform accent pins
+         whichever category was open. A pin takes the open category's hue
+         instead, and a place holding none of it fades towards the ground
+         rather than vanishing — an empty Japan would read as "no Japanese
+         origins", which is not what it means. A search or a chosen Pokémon
+         has already dimmed what it dims, and that answer wins. */
+      if(ak && !dim) cls += (p.kinds[ak] ? " inkind "+kindClass(ak) : " offkind");
       if(p.soft) cls+=" guessed";
       if(focus===p) cls+=" on";
       var fl=flagsOn("place",p.name);
@@ -2632,8 +2643,17 @@
         var fx=focus.x+Math.cos(ang)*rad, fy=focus.y+Math.sin(ang)*rad;
         fan.appendChild(svgel("line",{x1:focus.x,y1:focus.y,x2:fx,y2:fy},"aspoke"));
         var on=state.sel && state.sel.t==="referent" && state.sel.k===name;
+        /* Every dot on the ring was the same colour, so an opened place said
+           nothing about what kind of thing it held. Each takes its own
+           category's hue — the same hue that category's chip wears in the
+           rail — and while a category is open the dots outside it step
+           back, which is what makes the open place readable as a share of
+           that category. */
+        var rk=(D.referents[name]||{}).k;
         var dot=svgel("circle",{cx:fx,cy:fy,r:4.6*u,tabindex:"0",role:"button",
-                                "aria-label":disp(name)},"afan"+(on?" on":""));
+                                "aria-label":disp(name)+", "+(rk||"unclassified")},
+                      "afan "+kindClass(rk)+(on?" on":"")+
+                      (ak && rk!==ak ? " offkind":""));
         dot.addEventListener("pointerenter",function(e){
           var r=D.referents[name];
           atlasTip("<b>"+disp(name)+"</b><span class='tipmeta'>"+(r.k||"unclassified")+
@@ -2698,6 +2718,14 @@
       shownRefs+=p.refs.length;
       Object.keys(p.sp).forEach(function(i){ sp[i]=1 });
     });
+    var akpl=ak?places.filter(function(p){ return p.kinds[ak] }).length:0;
+    var ktag=$("#atlaskind");
+    if(ktag){
+      ktag.hidden=!ak;
+      ktag.className="akindtag"+(ak?" "+kindClass(ak):"");
+      ktag.textContent=ak?kindLabel(ak):"";
+      ktag.title=ak?kindLabel(ak)+" is open \u2014 "+akpl+" of these places carry it":"";
+    }
     var nreg=places.filter(function(p){ return p.region }).length;
     var npl=places.reduce(function(a,p){ return a+(p.region?p.places.length:1) },0);
     $("#atlasnote").textContent=
@@ -2709,6 +2737,7 @@
         ? " · "+D.species[String(state.poke)][0]+" on "+
           places.filter(function(p){ return p.sp[String(state.poke)] }).length+" of them"
         : "")+
+      (ak?" · "+kindLabel(ak)+" on "+akpl+" of them":"")+
       (grouped?" · click a region to split it":" · drag to pan, scroll to zoom");
     $("#resultnote").textContent=npl+" places of origin · "+
       Object.keys(sp).length+" Pokémon placed";
