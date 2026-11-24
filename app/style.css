@@ -38,6 +38,13 @@ h1{font-size:1.32rem;letter-spacing:-.02em}
 .sub{margin:0;color:var(--ink-soft);font-size:.86rem;min-width:0}
 .headright{margin-left:auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end}
 .counts{font-family:var(--mono);font-size:.74rem;color:var(--ink-faint);font-variant-numeric:tabular-nums}
+/* The way to the page's other home. It sits with the counts rather than with
+   the buttons: it is a fact about where you are, not a control, and dressing
+   it as a button would put it in the tab order ahead of the search. */
+.otherhome{font-family:var(--mono);font-size:.74rem;color:var(--accent);
+  text-decoration:none;border-bottom:1px solid transparent;white-space:nowrap}
+.otherhome:hover,.otherhome:focus-visible{border-bottom-color:var(--accent)}
+.otherhome[hidden]{display:none}
 .searchrow{flex:1 1 320px;display:flex;gap:10px;margin:9px 0;flex-wrap:wrap}
 .searchbox{position:relative;flex:1 1 240px;min-width:0;display:flex}
 /* jump straight to a thing, instead of only narrowing the lists */
