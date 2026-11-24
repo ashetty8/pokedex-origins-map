@@ -35,7 +35,6 @@ button{font:inherit;color:inherit;cursor:pointer}
 .top .wrap{padding-block:12px 0;display:flex;flex-wrap:wrap;align-items:flex-end;column-gap:20px}
 .brandrow{flex:1 1 100%;display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px}
 h1{font-size:1.32rem;letter-spacing:-.02em}
-.sub{margin:0;color:var(--ink-soft);font-size:.86rem;min-width:0}
 .headright{margin-left:auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end}
 .counts{font-family:var(--mono);font-size:.74rem;color:var(--ink-faint);font-variant-numeric:tabular-nums}
 /* The way to the page's other home. It sits with the counts rather than with
@@ -655,7 +654,6 @@ kbd{font-family:var(--mono);font-size:.72rem;border:1px solid var(--rule-strong)
   .railtoggle{display:inline-flex}
   .railscrim{position:fixed;inset:0;z-index:39;background:rgba(0,0,0,.45)}
   h1{font-size:1.14rem}
-  .sub{flex:1 1 100%;font-size:.8rem}
   .headright{margin-left:0;width:100%;justify-content:flex-start;gap:8px}
   .counts{order:-1;width:100%}
   .top .wrap{column-gap:12px}
