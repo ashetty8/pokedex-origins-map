@@ -3306,6 +3306,10 @@
     if(!from){ markTabs(state.tab); return }
     applyView(readView(from),{render:false});
     markTabs(state.tab);
+    /* the view you arrive on is the first step of the trail, not a step
+       before it: without this the back arrow is dead until you have moved
+       twice, because the place you started from was never written down */
+    record();
     lastURL=null; syncURL(false);     /* a restored view gets its address back */
   }
   function onHashNav(){

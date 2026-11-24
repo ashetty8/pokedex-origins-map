@@ -166,9 +166,14 @@ select{font:inherit;font-size:.82rem;padding:8px 10px;border:1px solid var(--rul
 .detail > .dhead{padding-top:18px}
 .dtop .sectitle{margin:9px 0 6px}
 .dtop .taglist{max-height:104px;overflow:auto;overscroll-behavior:contain;padding-bottom:12px}
-.dhead{display:flex;gap:7px 12px;align-items:flex-start;flex-wrap:wrap;
+/* The arrows and the flag hold one spot: top right of the heading, on the
+   title's own line, whatever the card is. They used to ride a wrapping row,
+   so a card with a sprite pushed them onto a second line and the buttons
+   moved between one card and the next. The row never wraps now and the
+   titles give up the width instead — they can afford to, the buttons cannot. */
+.dhead{display:flex;gap:7px 12px;align-items:flex-start;flex-wrap:nowrap;
   border-bottom:1px solid var(--rule);padding-bottom:9px;margin-bottom:11px}
-.dtitles{flex:1 1 200px;min-width:0}
+.dtitles{flex:1 1 auto;min-width:0}
 .dactions{display:flex;align-items:center;gap:6px;margin-left:auto;flex:0 0 auto}
 /* the empty panel keeps its arrows, so a step back too far is recoverable */
 .dhead > .dnav{margin-left:auto}
@@ -596,6 +601,10 @@ kbd{font-family:var(--mono);font-size:.72rem;border:1px solid var(--rule-strong)
   body.sheetopen .detail{transform:none;visibility:visible}
   .detail.hidden{display:none}
   .sheetclose{display:block}
+  /* the sheet's round ✕ floats over the top right of the panel, which is
+     where the heading's buttons now sit. Keep that corner clear for it, or
+     the last button in the row takes the click and the sheet shuts. */
+  .detail .dhead{padding-right:34px}
   .sheetscrim{position:fixed;inset:0;z-index:29;background:rgba(0,0,0,.45);
     opacity:0;transition:opacity .2s}
   body.sheetopen .sheetscrim{opacity:1}
