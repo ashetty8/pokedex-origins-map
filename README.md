@@ -22,8 +22,9 @@ Published as a private Claude Artifact: https://claude.ai/artifact/FP9NhVBPPv8oz
 | `tests/test_flagkit.py` | Exercises every write command against a copy of the real data. No framework; run it directly. |
 | `SKILL.md` | The working loop: read flags, diagnose, fix, publish, commit. |
 
-`sprites.json` and `form_sprites.json` (~2 MB of base64 PNGs) live in the artifact only; pull
-them into `dist/` when a sprite question needs a local preview.
+`data/sprites.json` and `data/form_sprites.json` are ~2 MB of base64 PNGs. They used to live in
+the artifact only, which was fine while the artifact was the only place the page ran; the static
+site has no such store, so they are in the repo now and `build` copies them like any other asset.
 
 ## Publishing
 
@@ -31,8 +32,17 @@ them into `dist/` when a sprite question needs a local preview.
 python3 -I flagkit.py build        # assemble dist/
 ```
 
-then publish `dist/index.html` with `style.css`, `app.js` and `map_data.json` as its files.
-Editing `dist/` directly is pointless — the next build overwrites it.
+`dist/` is the whole site — eight files, 3.3 MB, no server and no build step beyond this copy.
+Editing it directly is pointless; the next build overwrites it. It goes to two places:
+
+- **The Claude artifact**, where the flag store exists. Publish `dist/index.html` with the
+  others as its files, then `flagkit.py published stamp <version-id>`.
+- **GitHub Pages**, from `.github/workflows/pages.yml` on every push to `main`. The workflow
+  runs `check` and the tests first, because a dataset that fails integrity should not reach
+  the web.
+
+The page detects which it is in — `window.claude.use` exists in one and not the other — and
+everything except flagging behaves identically.
 
 ## The atlas
 

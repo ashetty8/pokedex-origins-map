@@ -2942,7 +2942,10 @@
     if(canWrite===false){ sub.disabled=true; st.textContent="Read-only access — flags can't be saved from this view."; }
     f.onsubmit=function(e){
       e.preventDefault();
-      if(!dbNS){ st.textContent="Not connected to the store; sign in to save flags."; return; }
+      /* no store at all means the static site, where there is nothing to sign
+         in to — pointing at a login that does not exist is worse than saying
+         where flagging does work */
+      if(!dbNS){ st.textContent="There's nowhere to save a flag here — the Claude version of this page takes them."; return; }
       sub.disabled=true; st.textContent="Saving…";
       var body={targetType:sel.t,target:String(sel.k),label:label,issue:sel2.value,
                 suggestion:sugg.value.trim(),note:note.value.trim(),
@@ -3765,6 +3768,12 @@
       });
     }).catch(function(){});
   } else {
-    flagsNote="Flagging needs the published page — it is off in this preview.";
+    /* The page runs in two places now: inside the Claude artifact, where the
+       flag store exists, and on the static site, where it cannot. Everything
+       else works identically, so say what is missing and nothing more — the
+       old wording called this a preview, which stopped being true the moment
+       the site went up. */
+    flagsNote="Flagging works on the Claude version of this page, which has somewhere "
+             +"to save a flag. Everything else here is the same.";
   }
 })();

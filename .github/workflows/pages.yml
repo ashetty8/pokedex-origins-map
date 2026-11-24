@@ -1,0 +1,60 @@
+# The site is what `flagkit build` already assembles. There is no bundler and
+# no node_modules: app/ is hand-written, so the build is a copy plus one
+# minified JSON, and the only thing CI adds is doing it on every push instead
+# of from somebody's laptop.
+name: Deploy the map to Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# One deploy at a time, and let a newer push win rather than queue behind an
+# older one — the site is a snapshot of main, so the newest is the only one
+# worth publishing.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # The guards are the point of flagkit, so the deploy runs them rather
+      # than trusting that whoever pushed did. A dataset that fails integrity
+      # should not reach the web.
+      - name: Check the dataset
+        run: |
+          python3 -I flagkit.py check
+          python3 -I tests/test_flagkit.py
+
+      - name: Build dist/
+        run: python3 -I flagkit.py build
+
+      # Without this GitHub serves the site through Jekyll, which skips files
+      # and folders beginning with an underscore and costs a build step we
+      # have no use for.
+      - name: Tell Pages this is not a Jekyll site
+        run: touch dist/.nojekyll
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

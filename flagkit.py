@@ -55,7 +55,8 @@ DIST = os.path.join(HERE, "dist", "map_data.json")      # minified, what gets pu
 STAMP = os.path.join(HERE, "data", "applied_build.json")
 PUB = os.path.join(HERE, "data", "published.json")
 PUBLISHED_FILES = ("index.html", "style.css", "app.js",
-                   "map_data.json", "world.json", "geo.json")
+                   "map_data.json", "world.json", "geo.json",
+                   "sprites.json", "form_sprites.json")
 
 
 # ---------- the one hazard the data cannot describe ----------
@@ -282,7 +283,11 @@ def build(D):
     # referent. Both are generated (tools/worldgen.py, tools/geobuild.py) and
     # already minified, so they are copied rather than re-dumped.
     extra = []
-    for name in ("world.json", "geo.json"):
+    # sprites.json and form_sprites.json used to live in the artifact only,
+    # which was fine while the artifact was the only place the page ran. A
+    # static host has no such store, so they are in data/ now and copied like
+    # any other generated asset.
+    for name in ("world.json", "geo.json", "sprites.json", "form_sprites.json"):
         src = os.path.join(HERE, "data", name)
         if os.path.exists(src):
             shutil.copy2(src, os.path.join(dist, name))
