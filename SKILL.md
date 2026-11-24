@@ -125,17 +125,74 @@ how `sprites.json` and `form_sprites.json` survive without being in the repo. If
 refused and hands back a diff — merge it into the file in `app/` and publish again. A publish that
 is refused as "identical content resent" goes through on a straight retry.
 
-### 6. Commit what changed
-
-The repo is `ashetty8/pokedex-origins-map` (private), checked out at `~/pokedex-origins-map`. After publishing, record the same change in git — the overlay's diff is the
-readable account of what moved:
+Afterwards, record the version id the publish returned, which is what lets the next session
+know the artifact is still where this one left it:
 
 ```bash
-git add -A && git commit -m "<what changed, and the version id>" && git push
+python3 -I flagkit.py published stamp <version-id>
+```
+
+### 5a. Before you build: is the artifact still where we left it?
+
+The refusal above only guards the files you actually send. A file you leave out is a file
+you can revert without ever being told — `build` copies `app/` into `dist/` and the publish
+sends it. Nothing in the repo can see that, because the evidence is the version id, so bring
+it in before you build anything:
+
+```
+Artifact action=list scope=files url=<artifact>
+```
+
+```bash
+python3 -I flagkit.py published seen <the version id in that listing>
+```
+
+If it is not the id we stamped, `build`, `check` and every write refuse until the live files
+are in `app/`:
+
+```
+Artifact action=read url=<artifact> paths=["app.js","style.css","index.html"] out_dir=work/live
+```
+
+```bash
+python3 -I flagkit.py published adopt work/live
+```
+
+Read the diff it leaves and commit it on its own — that is somebody else's work arriving, and
+it should not ride into history inside a commit about a flag.
+
+### 6. Commit what changed
+
+The repo is `ashetty8/pokedex-origins-map` (private), checked out at `~/pokedex-origins-map`,
+and `CLAUDE.md` says to work in a worktree, because several sessions write to it at once. So
+**add the files you changed by name** — never `git add -A`, which would sweep up whatever
+another session has half-finished in a shared tree:
+
+```bash
+git status --short
+git add data/map_data.json data/published.json
+git commit -m "<what changed, and the version id>"
+git push
 ```
 
 `data/map_data.json` diffs show the correction itself, so the commit is the record; there is
 no separate overlay file to keep in step.
+
+A worktree branch is not the map. `app/` and `data/` on `main` are supposed to BE the
+published version, so a branch that has been published and left unmerged makes that false for
+everyone else. Merge it when the work is done, and check the claim rather than assuming it:
+
+```bash
+git -C ~/pokedex-origins-map merge --no-ff <branch> && git -C ~/pokedex-origins-map push
+```
+
+```bash
+python3 -I flagkit.py build && shasum -a 256 dist/app.js dist/style.css dist/geo.json dist/map_data.json
+```
+
+Those hashes should be the ones the artifact's file listing prints. If they are not, `main`
+does not build to what is live, and saying otherwise is the mistake this whole section exists
+to stop.
 
 ### 7. Mark them applied, in one call
 

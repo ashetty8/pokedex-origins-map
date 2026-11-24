@@ -1,0 +1,18 @@
+{
+ "live": {
+  "seen": "2026-11-24T03:28:06Z",
+  "version": "1795489358-a45f"
+ },
+ "ours": {
+  "at": "2026-11-24T03:28:06Z",
+  "files": {
+   "app.js": "16d2cef8fb4edde124e72647a2fc68abbdba352df10f076ec07b6c38dd0864ee",
+   "geo.json": "c32d2ccfcf7df2f992e2de92482855da39ebb1b993f87275e40e5c27f4eabc17",
+   "index.html": "87bd6137297f7b7e5cdf5ae9939b5b715af27f165e1fe60d34774262ed7e366b",
+   "map_data.json": "7cd4741736f965309079f57c2ccb63cba54edc7c7b6714c9cd8dc10cd4dd346e",
+   "style.css": "4a5652b33a351ad52c4e6e90274683c217efca694c9c8e38ea668275d5c2db95",
+   "world.json": "b8ef53ddc7852a2dbf78d5fe6ece9e36813e904c9f74e4bcc493508b76bc3cd9"
+  },
+  "version": "1795489358-a45f"
+ }
+}

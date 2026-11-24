@@ -33,8 +33,12 @@ Skip the worktree only for a question that reads and changes nothing.
    `grep`, `species`, `where`. It prints lines, not blobs.
 3. **No screenshots for anything the data or the DOM can answer**, and never a second screenshot
    of the same screen.
-4. `data/` and `app/` are the current published version — treat them as the source of truth, not
-   as a stale copy to refresh from the artifact.
+4. `data/` and `app/` are *meant to be* the current published version — treat them as the source
+   of truth, not as a stale copy to refresh from the artifact. It stops being true the moment
+   another session publishes without committing, which has happened, so check before you build:
+   list the artifact's files and hand the version id to `flagkit.py published seen <id>`. If it
+   is not the one we stamped, `build`, `check` and every write refuse until you adopt the live
+   files. See step 5a in `SKILL.md`.
 
 ## Changing the data
 

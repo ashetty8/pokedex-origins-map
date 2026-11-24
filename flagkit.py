@@ -16,6 +16,11 @@ dist/map_data.json is the minified copy the page fetches, rewritten on every sav
   python3 flagkit.py rebased               after a replay: record the build these corrections now sit on
   python3 flagkit.py build                 rewrite dist/map_data.json (the minified published copy)
 
+  python3 flagkit.py published             is the live artifact what this tree last sent?
+  python3 flagkit.py published seen <id>   the version id the artifact's file listing reports
+  python3 flagkit.py published stamp <id>  after our own publish: the two are in step again
+  python3 flagkit.py published adopt <dir> take live app files we did not write into app/
+
   python3 flagkit.py move-family <group> <family>      refile a cluster, recount both families
   python3 flagkit.py nest <child> <parent>             make <child> a child cluster of <parent>
   python3 flagkit.py unnest <child>                    move a cluster back up to its family
@@ -48,6 +53,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "data", "map_data.json")      # readable, one key per line
 DIST = os.path.join(HERE, "dist", "map_data.json")      # minified, what gets published
 STAMP = os.path.join(HERE, "data", "applied_build.json")
+PUB = os.path.join(HERE, "data", "published.json")
+PUBLISHED_FILES = ("index.html", "style.css", "app.js",
+                   "map_data.json", "world.json", "geo.json")
 
 
 # ---------- the one hazard the data cannot describe ----------
@@ -96,6 +104,153 @@ def guard_build(D):
             "put the resulting .patched.json at data/map_data.json, then:\n"
             "    python3 -I flagkit.py rebased"
             % (now or "no build", rec["build"], rec.get("updated", "?")))
+
+
+# ---------- the second hazard: the artifact is ahead of app/ ----------
+# CLAUDE.md says data/ and app/ ARE the published version. Nothing made that
+# true. Another session can publish a fix straight from its own tree and never
+# commit it, and this tree goes on believing its app/ is current: `build`
+# assembles dist/ from whatever app/ holds, a publish only guards the files you
+# actually send, and so the other session's work goes back out reverted — no
+# refusal, no conflict, no diff to read. It happened on 2026-11-23; three fixes
+# lived only in the artifact and were caught by comparing byte counts by eye.
+#
+# The build stamp above can check itself, because the build id is inside the
+# file. This one cannot: the evidence is the version id the artifact reports,
+# which lives outside the repo. So it is carried in by hand — one cheap file
+# listing, then `published seen <id>` — and what the guard buys is that
+# forgetting to look is no longer silent. `published stamp <id>` after our own
+# publish says the two are in step again.
+
+def pub_read():
+    try:
+        with open(PUB, encoding="utf-8") as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return None
+
+
+def pub_save(rec):
+    with open(PUB, "w", encoding="utf-8") as f:
+        json.dump(rec, f, ensure_ascii=False, indent=1, sort_keys=True)
+        f.write("\n")
+    return rec
+
+
+def now_utc():
+    return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def pub_hashes(root):
+    """sha256 of every published file under root, in the same form the
+       artifact's own file listing prints — so the two can be compared path by
+       path instead of by size, which is how the near-miss was nearly missed."""
+    import hashlib
+    out = {}
+    for name in PUBLISHED_FILES:
+        p = os.path.join(root, name)
+        if not os.path.exists(p):
+            continue
+        h = hashlib.sha256()
+        with open(p, "rb") as f:
+            for chunk in iter(lambda: f.read(1 << 20), b""):
+                h.update(chunk)
+        out[name] = h.hexdigest()
+    return out
+
+
+def guard_published():
+    """None when the live artifact is the version this tree last sent, else the
+       reason it is not — returned rather than printed, as guard_build does."""
+    rec = pub_read()
+    if not rec:
+        return None                      # never stamped; nothing to compare
+    ours = (rec.get("ours") or {}).get("version")
+    live = (rec.get("live") or {}).get("version")
+    if not ours or not live or ours == live:
+        return None
+    return ("STOP — the artifact is live at %s (seen %s), but the last version\n"
+            "this tree published was %s. Someone published from another tree, so\n"
+            "app/ may be missing their work, and a build from here would revert\n"
+            "it with nothing to read. Fetch the live files and reconcile:\n"
+            "    Artifact read paths=[\"app.js\",\"style.css\",\"index.html\"] out_dir=<dir>\n"
+            "    python3 -I flagkit.py published adopt <dir>"
+            % (live, (rec.get("live") or {}).get("seen", "?"), ours))
+
+
+def published_adopt(rec, src):
+    """Take the live app files into app/. It names the files it left alone as
+       well as the ones it took, because 'nothing changed' is the answer that
+       most needs saying out loud here."""
+    import filecmp, shutil
+    if not os.path.isdir(src):
+        sys.exit("%s is not a directory" % src)
+    took, same, missing = [], [], []
+    for name in ("index.html", "style.css", "app.js"):
+        s, d = os.path.join(src, name), os.path.join(HERE, "app", name)
+        if not os.path.exists(s):
+            missing.append(name)
+        elif os.path.exists(d) and filecmp.cmp(s, d, shallow=False):
+            same.append(name)
+        else:
+            shutil.copy2(s, d)
+            took.append(name)
+    for n in took:
+        print("  adopted   app/%s" % n)
+    for n in same:
+        print("  unchanged app/%s" % n)
+    for n in missing:
+        print("  not in %s: %s" % (src, n))
+    live = (rec.get("live") or {}).get("version")
+    if live:
+        # the hashes recorded at stamp time describe dist/, which has not been
+        # rebuilt yet — claiming them here would be claiming a publish we did
+        # not make
+        rec["ours"] = {"version": live, "at": now_utc(), "files": {}}
+        pub_save(rec)
+        print("recorded: app/ now holds version %s" % live)
+    if took:
+        print("Read the diff before you build — `git diff app/`. This is somebody\n"
+              "else's work arriving, and the commit for it should say so.")
+    return 0
+
+
+def published_cmd(rest):
+    rec = pub_read() or {}
+    sub = (rest[:1] or ["status"])[0]
+    if sub == "status":
+        ours, live = rec.get("ours") or {}, rec.get("live") or {}
+        if not ours and not live:
+            return print("nothing recorded yet — run `published stamp <version-id>`\n"
+                         "after the next publish and the guard starts working")
+        print("ours: %s (%s)" % (ours.get("version") or "—", ours.get("at", "?")))
+        print("live: %s (seen %s)" % (live.get("version") or "—", live.get("seen", "?")))
+        stop = guard_published()
+        print(stop if stop else "in step — the live artifact is what this tree last sent")
+        return sys.exit(1 if stop else 0)
+    if sub == "stamp":
+        if len(rest) < 2:
+            sys.exit("published stamp <version-id>   (the id the publish returned)")
+        rec["ours"] = {"version": rest[1], "at": now_utc(),
+                       "files": pub_hashes(os.path.dirname(DIST))}
+        rec["live"] = {"version": rest[1], "seen": now_utc()}
+        pub_save(rec)
+        return print("recorded: the live artifact is version %s, sent from this tree "
+                     "(%d files hashed)" % (rest[1], len(rec["ours"]["files"])))
+    if sub == "seen":
+        if len(rest) < 2:
+            sys.exit("published seen <version-id>   (from the artifact's file listing)")
+        rec.setdefault("ours", {})
+        rec["live"] = {"version": rest[1], "seen": now_utc()}
+        pub_save(rec)
+        stop = guard_published()
+        print(stop if stop else "in step — the live artifact is what this tree last sent")
+        return sys.exit(1 if stop else 0)
+    if sub == "adopt":
+        if len(rest) < 2:
+            sys.exit("published adopt <dir holding the files fetched from the artifact>")
+        return published_adopt(rec, rest[1])
+    sys.exit("published [status | stamp <id> | seen <id> | adopt <dir>]")
 
 
 def load():
@@ -1100,8 +1255,10 @@ def main():
         return species_cmd(D, " ".join(rest))
     if cmd == "where":
         return where(D, " ".join(rest))
+    if cmd == "published":
+        return published_cmd(rest)
     if cmd == "check":
-        stop = guard_build(D)
+        stop = guard_build(D) or guard_published()
         if stop: print(stop)
         return sys.exit(1 if (check(D) or stop) else 0)
     if cmd == "rebased":
@@ -1113,11 +1270,11 @@ def main():
             sys.exit("patch apply <fresh map_data.json>")
         print(patch_apply(D, rest[1])); return
     if cmd == "build":
-        stop = guard_build(D)
+        stop = guard_build(D) or guard_published()
         if stop: print(stop); return sys.exit(1)
         print(build(D)); return
     if cmd in WRITES:
-        stop = guard_build(D)
+        stop = guard_build(D) or guard_published()
         if stop: print(stop); return sys.exit(1)
         before = len(check(D, quiet=True))
         summary = WRITES[cmd](D, *rest)

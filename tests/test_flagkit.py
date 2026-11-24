@@ -309,5 +309,66 @@ finally:
     except OSError: pass
     fk.STAMP = _real_stamp
 
+
+# ---------- the publish guard ----------
+# The other failure nothing in the data can see: the live artifact is ahead of
+# app/, because another tree published and never committed. A build from here
+# would send that work back out reverted. These pin the states of the record
+# without touching the real one on disk.
+print("\npublish guard")
+_real_pub = fk.PUB
+_pubdir = tempfile.mkdtemp()
+fk.PUB = os.path.join(_pubdir, "published.json")
+try:
+    def pguard(name, want, fn):
+        try:
+            got = fn()
+            assert (got is not None) == want, (
+                "expected %s, got %r" % ("a refusal" if want else "no complaint", got))
+            PASS.append(name); print("  ok    %s" % name)
+        except AssertionError as e:
+            FAIL.append((name, str(e))); print("  FAIL  %s — %s" % (name, e))
+
+    pguard("nothing recorded is not a complaint", False, fk.guard_published)
+    fk.pub_save({"ours": {"version": "v1", "at": "t", "files": {}},
+                 "live": {"version": "v1", "seen": "t"}})
+    pguard("the version we sent ourselves passes", False, fk.guard_published)
+    fk.pub_save({"ours": {"version": "v1", "at": "t", "files": {}},
+                 "live": {"version": "v2", "seen": "t"}})
+    pguard("a version we did not send is refused", True, fk.guard_published)
+    # half a record is not evidence of anything, so it must not refuse: the
+    # first `published seen` on a tree that has never stamped would otherwise
+    # lock the tree out over a version it has no opinion about
+    fk.pub_save({"ours": {}, "live": {"version": "v2", "seen": "t"}})
+    pguard("a live id with nothing to compare it to passes", False, fk.guard_published)
+    fk.pub_save({"ours": {"version": "v2", "at": "t", "files": {}},
+                 "live": {"version": "v2", "seen": "t"}})
+    pguard("adopting or publishing clears it", False, fk.guard_published)
+
+    # adopt takes the files it does not already have, and says which
+    name = "adopt takes only the files that differ"
+    try:
+        src, app = os.path.join(_pubdir, "live"), os.path.join(_pubdir, "app")
+        os.makedirs(src); os.makedirs(app)
+        for n, body in (("index.html", "same"), ("style.css", "same"), ("app.js", "theirs")):
+            open(os.path.join(src, n), "w").write(body)
+        for n, body in (("index.html", "same"), ("style.css", "same"), ("app.js", "ours")):
+            open(os.path.join(app, n), "w").write(body)
+        _real_here = fk.HERE
+        fk.HERE = _pubdir
+        try:
+            fk.published_adopt({"live": {"version": "v3"}}, src)
+        finally:
+            fk.HERE = _real_here
+        assert open(os.path.join(app, "app.js")).read() == "theirs", "app.js was not adopted"
+        assert fk.pub_read()["ours"]["version"] == "v3", "adopt did not record the version"
+        PASS.append(name); print("  ok    %s" % name)
+    except AssertionError as e:
+        FAIL.append((name, str(e))); print("  FAIL  %s — %s" % (name, e))
+finally:
+    try: os.unlink(fk.PUB)
+    except OSError: pass
+    fk.PUB = _real_pub
+
 print("\n%d passed, %d failed" % (len(PASS), len(FAIL)))
 sys.exit(1 if FAIL else 0)
