@@ -35,8 +35,13 @@ jobs:
           python3 -I flagkit.py check
           python3 -I tests/test_flagkit.py
 
+      # --bust puts each asset's content hash in the URL that asks for it.
+      # Pages serves everything with max-age=600 on its own clock, so without
+      # this a returning visitor can pair a fresh index.html with yesterday's
+      # geo.json — a build that never existed. The artifact does not need it
+      # and does not get it.
       - name: Build dist/
-        run: python3 -I flagkit.py build
+        run: python3 -I flagkit.py build --bust
 
       # Without this GitHub serves the site through Jekyll, which skips files
       # and folders beginning with an underscore and costs a build step we

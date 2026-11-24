@@ -11,6 +11,13 @@
      works decides which link to show. */
   var ARTIFACT_URL="https://claude.ai/artifact/FP9NhVBPPv8ozSKYAfhBR8";
   var SITE_URL="https://ashetty8.github.io/pokedex-origins-map/";
+  /* Flagging needs somewhere to put a flag, and only the artifact has one.
+     On the site the whole apparatus goes rather than sitting there greyed
+     out: a tab that explains why it cannot do anything is worse than no tab,
+     and the reader of the public map did not come to file corrections. The
+     runtime is injected before this script runs, so this is settled once
+     here and everything else reads it. */
+  var FLAGGING=!!(window.claude && window.claude.use);
   /* what has been flagged, by target, so the map can show it too */
   /* A flag is settled either way: "done" means the data or the page changed,
      "declined" means it was looked at and answered — the referent really is
@@ -975,6 +982,7 @@
     syncURL(false);
   }
   var TABKEYS={"1":"clusters","2":"map","3":"atlas","4":"species","5":"flags"};
+  if(!FLAGGING) delete TABKEYS["5"];
   addEventListener("keydown",function(e){
     var typing = e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName);
     /* ⌘K reaches the box from anywhere, including from inside the box */
@@ -1346,10 +1354,12 @@
     acts.appendChild(cb);
     /* a flag, not the word: the panel heading is the one place where a
        line of vertical space is worth more than a label */
-    var fb=el("button","flagbtn","\u2691");
-    fb.title="Flag a problem with this"; fb.setAttribute("aria-label","Flag a problem with this");
-    fb.onclick=function(){ var f=$("#flagform"); if(f) f.classList.toggle("hidden") };
-    acts.appendChild(fb);
+    if(FLAGGING){
+      var fb=el("button","flagbtn","\u2691");
+      fb.title="Flag a problem with this"; fb.setAttribute("aria-label","Flag a problem with this");
+      fb.onclick=function(){ var f=$("#flagform"); if(f) f.classList.toggle("hidden") };
+      acts.appendChild(fb);
+    }
     head.appendChild(acts);
     /* keep the heading and the "inside" chips in view while the rest of the
        panel scrolls under them */
@@ -1363,8 +1373,10 @@
     }
     d.appendChild(top); d.appendChild(body);
     wireHover(d);
-    d.appendChild(flagForm(sel,title));
-    d.appendChild(existingFlags(targetKey(sel)));
+    if(FLAGGING){
+      d.appendChild(flagForm(sel,title));
+      d.appendChild(existingFlags(targetKey(sel)));
+    }
   }
   /* Hovering a Pokémon in the panel answers "why is it here?": the referents
      that cite it light up, and so do the category chips in the rail those
@@ -3255,6 +3267,7 @@
     syncTabFade();
   }
   function setTab(t){
+    if(t==="flags" && !FLAGGING) t="clusters";   /* a bookmark from the artifact */
     if(state.tab===t && t!=="flags") return;
     state.tab=t; state.limit=120;
     if(t!=="map" && t!=="atlas") setFocusMode(false);
@@ -3348,6 +3361,9 @@
         (str||"").split(",").forEach(function(x){ if(x) set.add(num?+x:x) });
       };
       state.tab=/^(clusters|map|atlas|species|flags)$/.test(v.tab||"")?v.tab:"clusters";
+      /* a link copied out of the artifact can name a tab this copy has not
+         got; land on Browse rather than on a blank panel */
+      if(state.tab==="flags" && !FLAGGING) state.tab="clusters";
       state.q=(v.q||"").toLowerCase();
       state.sort=v.sort||"species";
       bag(state.types,v.type); bag(state.gens,v.gen,true);
@@ -3745,6 +3761,13 @@
 
   /* ---------- capabilities ---------- */
   function showOtherHome(inClaude){
+    if(!inClaude){
+      /* the tab, its count, and the line in the help dialog that promises a
+         key for it — all three or none, or the page contradicts itself */
+      var ft=$("#tab-flags"); if(ft) ft.hidden=true;
+      var hk=$("#helpkeys"); if(hk) hk.textContent="Browse, Map, Atlas, Pokémon";
+      var hd=$("#helpnum2"); if(hd) hd.textContent="4";
+    }
     var a=$("#otherhome"); if(!a) return;
     a.href      = inClaude ? SITE_URL : ARTIFACT_URL;
     a.textContent = inClaude ? "public version ↗" : "flag a correction ↗";

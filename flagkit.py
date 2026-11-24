@@ -15,6 +15,7 @@ dist/map_data.json is the minified copy the page fetches, rewritten on every sav
   python3 flagkit.py patch apply <file>    replay this structure onto a freshly generated dataset
   python3 flagkit.py rebased               after a replay: record the build these corrections now sit on
   python3 flagkit.py build                 rewrite dist/map_data.json (the minified published copy)
+  python3 flagkit.py build --bust          and stamp each asset URL with its content hash (the site)
 
   python3 flagkit.py published             is the live artifact what this tree last sent?
   python3 flagkit.py published seen <id>   the version id the artifact's file listing reports
@@ -268,7 +269,71 @@ def save(D):
     build(D)
 
 
-def build(D):
+def short_hash(path):
+    import hashlib
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()[:10]
+
+
+def cache_bust(dist):
+    """Put each asset's own content hash in the URL that asks for it.
+
+       GitHub Pages serves everything with max-age=600 and no way to change it,
+       and each file's ten minutes runs on its own clock. So a browser that has
+       been here before can pair a fresh index.html with a stale app.js, or —
+       the one that matters for this project, where most changes are data — a
+       current app.js with yesterday's geo.json. That is not a slow update, it
+       is a build that never existed, and it is what you get today.
+
+       A hash in the query makes a changed file a different URL, so it is
+       fetched rather than remembered, and an unchanged one keeps its cache.
+       The HTML itself still takes up to ten minutes to turn over; what this
+       buys is that when it does, everything it names turns over with it.
+
+       Only the static site needs this. The artifact serves a version at a
+       time and replaces the lot, so its build is left alone."""
+    stamped = {}
+    # app.js asks for these itself, so they are rewritten there — and app.js
+    # has to be hashed after that, or its own stamp would describe a file that
+    # no longer exists
+    with open(os.path.join(dist, "app.js"), encoding="utf-8") as f:
+        js = f.read()
+    for name in ("sprites.json", "form_sprites.json", "map_data.json",
+                 "geo.json", "world.json"):
+        p = os.path.join(dist, name)
+        if not os.path.exists(p):
+            continue
+        needle = 'fetch("%s")' % name
+        if js.count(needle) != 1:
+            sys.exit("cache_bust: expected one fetch(%r) in app.js, found %d"
+                     % (name, js.count(needle)))
+        h = short_hash(p)
+        js = js.replace(needle, 'fetch("%s?v=%s")' % (name, h))
+        stamped[name] = h
+    with open(os.path.join(dist, "app.js"), "w", encoding="utf-8") as f:
+        f.write(js)
+
+    # index.html asks for these two
+    with open(os.path.join(dist, "index.html"), encoding="utf-8") as f:
+        html = f.read()
+    for name, needle in (("style.css", 'href="style.css"'),
+                         ("app.js", 'src="app.js"')):
+        p = os.path.join(dist, name)
+        if html.count(needle) != 1:
+            sys.exit("cache_bust: expected one %s in index.html, found %d"
+                     % (needle, html.count(needle)))
+        h = short_hash(p)
+        html = html.replace(needle, needle[:-1] + "?v=" + h + '"')
+        stamped[name] = h
+    with open(os.path.join(dist, "index.html"), "w", encoding="utf-8") as f:
+        f.write(html)
+    return stamped
+
+
+def build(D, bust=False):
     """Assemble dist/: the minified dataset plus the three app files, which is
        exactly what gets published and what a local preview serves."""
     import shutil
@@ -292,9 +357,12 @@ def build(D):
         if os.path.exists(src):
             shutil.copy2(src, os.path.join(dist, name))
             extra.append(name)
-    return "built %s: map_data.json (%d KB) + index.html, style.css, app.js%s" % (
+    note = ""
+    if bust:
+        note = " · %d assets stamped with their content hash" % len(cache_bust(dist))
+    return "built %s: map_data.json (%d KB) + index.html, style.css, app.js%s%s" % (
         dist, os.path.getsize(DIST) // 1024,
-        (" + " + ", ".join(extra)) if extra else "")
+        (" + " + ", ".join(extra)) if extra else "", note)
 
 
 # ---------- reading ----------
@@ -1243,8 +1311,9 @@ def patch_apply(D, fresh_path):
 
 
 def main():
-    args = [a for a in sys.argv[1:] if a != "--dry"]
+    args = [a for a in sys.argv[1:] if a not in ("--dry", "--bust")]
     dry = "--dry" in sys.argv
+    bust = "--bust" in sys.argv
     if not args:
         return print(__doc__)
     cmd, rest = args[0], args[1:]
@@ -1277,7 +1346,7 @@ def main():
     if cmd == "build":
         stop = guard_build(D) or guard_published()
         if stop: print(stop); return sys.exit(1)
-        print(build(D)); return
+        print(build(D, bust)); return
     if cmd in WRITES:
         stop = guard_build(D) or guard_published()
         if stop: print(stop); return sys.exit(1)

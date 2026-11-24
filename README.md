@@ -39,7 +39,13 @@ Editing it directly is pointless; the next build overwrites it. It goes to two p
   others as its files, then `flagkit.py published stamp <version-id>`.
 - **GitHub Pages**, from `.github/workflows/pages.yml` on every push to `main`. The workflow
   runs `check` and the tests first, because a dataset that fails integrity should not reach
-  the web.
+  the web, and builds with `--bust` so each asset URL carries its own content hash. Pages
+  serves everything `max-age=600` on its own clock, so without that a returning visitor can
+  pair a fresh `index.html` with yesterday's `geo.json`.
+
+The site has no Flags tab. Flagging needs somewhere to put a flag and only the artifact has
+one, so on the site the tab, the ⚑ button and the form are all absent rather than present and
+inert — `FLAGGING` in `app.js` decides, from the same runtime test as everything else.
 
 The page detects which it is in — `window.claude.use` exists in one and not the other — and
 everything except flagging behaves identically.
