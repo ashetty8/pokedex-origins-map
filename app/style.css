@@ -166,9 +166,14 @@ select{font:inherit;font-size:.82rem;padding:8px 10px;border:1px solid var(--rul
 .detail > .dhead{padding-top:18px}
 .dtop .sectitle{margin:9px 0 6px}
 .dtop .taglist{max-height:104px;overflow:auto;overscroll-behavior:contain;padding-bottom:12px}
-.dhead{display:flex;gap:7px 12px;align-items:flex-start;flex-wrap:wrap;
+/* The arrows and the flag hold one spot: top right of the heading, on the
+   title's own line, whatever the card is. They used to ride a wrapping row,
+   so a card with a sprite pushed them onto a second line and the buttons
+   moved between one card and the next. The row never wraps now and the
+   titles give up the width instead — they can afford to, the buttons cannot. */
+.dhead{display:flex;gap:7px 12px;align-items:flex-start;flex-wrap:nowrap;
   border-bottom:1px solid var(--rule);padding-bottom:9px;margin-bottom:11px}
-.dtitles{flex:1 1 200px;min-width:0}
+.dtitles{flex:1 1 auto;min-width:0}
 .dactions{display:flex;align-items:center;gap:6px;margin-left:auto;flex:0 0 auto}
 /* the empty panel keeps its arrows, so a step back too far is recoverable */
 .dhead > .dnav{margin-left:auto}
