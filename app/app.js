@@ -4,6 +4,13 @@
   var state={tab:"clusters",q:"",kinds:new Set(),sort:"species",onlymulti:false,onlyinf:false,sel:null,limit:120,path:[],flagview:"open",poke:null,
              types:new Set(),gens:new Set(),colours:new Set(),misc:new Set(),scope:true,showall:false,pfilter:""};
   var flags=[], flagsReady=false, flagsNote="";
+  /* The map has two homes, and each is worth reaching from the other: the
+     Claude artifact is the only one with somewhere to save a flag, the GitHub
+     Pages copy is the only one you can send to somebody without an account.
+     There is no third case, so the same test that decides whether flagging
+     works decides which link to show. */
+  var ARTIFACT_URL="https://claude.ai/artifact/FP9NhVBPPv8ozSKYAfhBR8";
+  var SITE_URL="https://ashetty8.github.io/pokedex-origins-map/";
   /* what has been flagged, by target, so the map can show it too */
   /* A flag is settled either way: "done" means the data or the page changed,
      "declined" means it was looked at and answered — the referent really is
@@ -3737,7 +3744,20 @@
   syncTabFade(); syncExport();
 
   /* ---------- capabilities ---------- */
+  function showOtherHome(inClaude){
+    var a=$("#otherhome"); if(!a) return;
+    a.href      = inClaude ? SITE_URL : ARTIFACT_URL;
+    a.textContent = inClaude ? "public version ↗" : "flag a correction ↗";
+    a.title     = inClaude
+      ? "The same map on GitHub Pages — no account, nothing to sign in to, "
+        +"and a link you can send to anyone"
+      : "The same map as a Claude artifact, which is the copy with somewhere "
+        +"to save a flag";
+    a.target="_blank"; a.rel="noopener";
+    a.hidden=false;
+  }
   if(window.claude && window.claude.use){
+    showOtherHome(true);
     window.claude.use("user").then(function(u){
       userNS=u; if(!u) return;
       try{ canWrite = u.can ? u.can("data.write") : null }catch(e){}
@@ -3773,7 +3793,9 @@
        else works identically, so say what is missing and nothing more — the
        old wording called this a preview, which stopped being true the moment
        the site went up. */
+    showOtherHome(false);
     flagsNote="Flagging works on the Claude version of this page, which has somewhere "
-             +"to save a flag. Everything else here is the same.";
+             +"to save a flag — the link is up in the header. Everything else here "
+             +"is the same.";
   }
 })();

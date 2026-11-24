@@ -13,6 +13,11 @@
       <p class="sub">What Bulbapedia says each Pokémon was drawn from</p>
       <div class="headright">
         <div class="counts" id="counts">loading…</div>
+        <!-- The page has two homes and app.js fills this in with whichever one
+             you are not in: the Claude artifact takes flags, the public site
+             needs no login. Hidden until it knows, so it never flashes the
+             wrong one. -->
+        <a class="otherhome" id="otherhome" hidden></a>
         <button class="themebtn" id="surprise" type="button" title="Open a cluster at random (R)"><span class="tglyph">⚄</span><span class="hidenarrow">surprise</span></button>
         <button class="themebtn" id="helpbtn" type="button" title="Keyboard shortcuts (?)" aria-haspopup="dialog"><span class="tglyph">?</span></button>
         <button class="themebtn" id="theme" type="button"><span class="tglyph" id="themeglyph">◐</span><span id="themelabel" class="hidenarrow">system</span></button>
