@@ -47,6 +47,13 @@
       "place": "North America",
       "why": "no Wikipedia link; buckskins are Native American deerskin clothing, later taken up by frontiersmen"
     },
+    "capuchin monkey": {
+      "lat": -21.0,
+      "lon": -59.0,
+      "place": "South America",
+      "q": "Q18",
+      "why": "the genera Cebus and Sapajus, from Honduras and Costa Rica down through the Amazon basin to northern Argentina; Wikidata carries no range on the group article"
+    },
     "cherufe (chilean magma creature)": {
       "lat": -33.0,
       "lon": -71.0,
@@ -231,6 +238,12 @@
       "q": "Q782",
       "why": "the Hawaiian Lono, whose Makahiki season is a Hawaiian festival"
     },
+    "macaque": {
+      "lat": 30.0,
+      "lon": 95.0,
+      "place": "Asia",
+      "why": "Afghanistan and the Himalaya east to Japan and south through Southeast Asia, with the Barbary macaque in North Africa and Gibraltar; Wikidata ranges the species but not the genus, which is why japanese macaque has a pin and this had none"
+    },
     "magical girl transformation": {
       "place": "Japan",
       "lat": 35.0,
@@ -258,6 +271,13 @@
       "place": "Hawaii",
       "q": "Q782",
       "why": "the Hawaiian moʻo, lizard spirits of particular fishponds and streams on the islands"
+    },
+    "mohawk hairstyle": {
+      "lat": 43.0,
+      "lon": -99.0,
+      "place": "North America",
+      "q": "Q49",
+      "why": "Pawnee and Huron practice that took the Mohawk name later, by way of Drums Along the Mohawk and American paratroopers; Clonycavan Man and the Scythian burials are independent convergence rather than this style's line"
     },
     "mongolian laminar armour": {
       "lat": 46.0,
@@ -298,6 +318,13 @@
       "lat": 19.82,
       "lon": -155.47,
       "why": "she is held to live on Mauna Kea itself, which this map already pins separately; Hawaii was the island, not the mountain"
+    },
+    "pygmy marmoset": {
+      "lat": -3.16,
+      "lon": -60.03,
+      "place": "Amazon rainforest",
+      "q": "Q177567",
+      "why": "the western Amazon basin of Brazil, Peru, Ecuador, Colombia and northern Bolivia"
     },
     "tessen (japanese war fan)": {
       "lat": 35.0,

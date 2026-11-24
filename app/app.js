@@ -1055,6 +1055,11 @@
 
   function renderDetail(){
     var d=$("#detail");
+    /* A chip torn out from under the pointer never gets its pointerleave, so
+       clicking one would leave the map dimmed around a hint for a chip that
+       no longer exists. The panel being rebuilt is the end of any hint it
+       was showing. */
+    atlasHilite(null);
     /* the sheet's close button is part of the frame, not of the contents */
     var close=$("#sheetclose");
     d.innerHTML="";
@@ -1573,7 +1578,16 @@
     (list||[]).forEach(function(ref){
       var key=String(ref).toLowerCase(), known=!!D.referents[key];
       var t=el(known?"button":"span","tag"+(soft?" soft":""),ref);
-      if(known){ t.dataset.ref=key; t.onclick=function(){ select({t:"referent",k:key}) } }
+      if(known){
+        t.dataset.ref=key;
+        t.onclick=function(){ select({t:"referent",k:key}) };
+        /* point at a chip, see where it is — on the pointer and on focus,
+           so the keyboard gets the same answer the mouse does */
+        t.onpointerenter=function(){ atlasHilite(key) };
+        t.onpointerleave=function(){ atlasHilite(null) };
+        t.onfocus=function(){ atlasHilite(key) };
+        t.onblur=function(){ atlasHilite(null) };
+      }
       tl.appendChild(t);
     });
     return tl;
@@ -2185,6 +2199,31 @@
   var AHOME={cx:1000,cy:500,w:2000};   /* the whole globe, exactly filling a 2:1 canvas */
   var AVIEW={cx:AHOME.cx,cy:AHOME.cy,w:AHOME.w};
   var APLACES=null, ABYNAME=null, ALABELS=true, ALASTFOCUS=null;
+  /* Pointing at a referent chip in the panel lights the pins that carry it.
+     The panel and the map answer the same question, and until now you had to
+     click to find out which pins a chip meant — which costs you the card you
+     were reading. Redrawing per hover would be wasteful and would fight the
+     pointer, so the marks the last drawAtlas left are kept and only their
+     class changes. Both lists are rebuilt from scratch on every draw. */
+  var AHL=null, AHLPINS=[];
+  function atlasApplyHilite(){
+    var svg=$("#asvg"), any=false;
+    AHLPINS.forEach(function(e){
+      var on=!!AHL && e.refs.indexOf(AHL)>=0;
+      if(on) any=true;
+      e.el.classList.toggle("hl",on);
+    });
+    /* Most referents carry no pin at all — only 924 of 3,882 are placed —
+       and dimming the whole map to point at nothing is worse than leaving it
+       alone. The map answers only when it has an answer. */
+    if(svg) svg.classList.toggle("hinting",any);
+  }
+  function atlasHilite(ref){
+    ref=ref?String(ref).toLowerCase():null;
+    if(ref===AHL) return;
+    AHL=ref;
+    atlasApplyHilite();
+  }
   /* Zoom-dependent aggregation. Area encoding assumes one mark per thing
      being compared, and at world zoom that assumption breaks: Europe is cut
      into six named traditions and Japan into one, so the eye reads the
@@ -2462,6 +2501,7 @@
     var v=aview(), u=aunit();
     svg.setAttribute("viewBox",v.x+" "+v.y+" "+v.w+" "+v.h);
     while(svg.firstChild) svg.removeChild(svg.firstChild);
+    AHLPINS=[];      /* the old ones went out with the children above */
 
     var grouped=atlasGrouped();
     var places=grouped?atlasRegions():atlasPlaces(), focus=atlasFocus(), ak=activeKind();
@@ -2596,6 +2636,7 @@
         }
       });
       pins.appendChild(c);
+      AHLPINS.push({el:c,refs:p.refs||[]});
 
       if(!ALABELS) return;
       /* a name only where it fits: big pins first, and never over a name
@@ -2666,6 +2707,7 @@
           if(e.key==="Enter"||e.key===" "){ e.preventDefault(); select({t:"referent",k:name}) }
         });
         fan.appendChild(dot);
+        AHLPINS.push({el:dot,refs:[name]});
       });
       if(list.length>shown.length){
         var more=svgel("text",{x:focus.x,y:focus.y-(atlasRadius(focus.n)+34)*u},"alabel big");
@@ -2691,14 +2733,40 @@
           var slug=atlasFormAt(p,pid);
           var b64=(slug && FSPR && FSPR[slug]) || SPR[pid];
           var durl="data:image/png;base64,"+b64;
+          var fname=(slug&&FSPR&&FSPR[slug]
+            ? " ("+slug.split("-").slice(1).join(" ")+")" : "");
           var im=svgel("image",{x:p.x-sz/2,y:p.y-sz/2,width:sz,height:sz,
-                                preserveAspectRatio:"xMidYMid meet"},"apoke");
+                                preserveAspectRatio:"xMidYMid meet",
+                                tabindex:"0",role:"button",
+                                "aria-label":pname+fname+" on "+p.name+
+                                  (p.region?", click to split":", click to open")},"apoke");
           im.setAttribute("href",durl);
           im.setAttributeNS("http://www.w3.org/1999/xlink","href",durl);
           var ti=svgel("title",{});
-          ti.textContent=pname+(slug&&FSPR&&FSPR[slug]
-            ? " ("+slug.split("-").slice(1).join(" ")+")" : "")+" \u2014 "+p.name;
+          ti.textContent=pname+fname+" \u2014 "+p.name;
           im.appendChild(ti);
+          /* The sprite sits on its pin and is wider than it, so leaving it
+             inert made the pin under the one thing you came to the map to
+             find the one pin you could not hover or click. It answers for
+             the pin now \u2014 same tip, same pick \u2014 with the Pok\u00e9mon named
+             first, because that is what you are pointing at. */
+          /* the place's own tip opens with a bold name too, so the two run
+             together on one line without the break */
+          var ptip="<b>"+pname+fname+"</b><br>"+(p.region?groupTip(p):placeTip(p));
+          var pshow=function(e){ atlasTip(ptip,e.clientX,e.clientY) };
+          im.addEventListener("pointerenter",pshow);
+          im.addEventListener("pointermove",pshow);
+          im.addEventListener("pointerleave",function(){ atlasTip(null) });
+          im.__pick=p.region ? function(){ atlasTip(null); atlasZoomToGroup(p) }
+                             : function(){ select({t:"place",k:p.name}) };
+          im.__zoom=p.region ? function(){ atlasZoomToGroup(p) }
+                             : function(){ atlasZoomTo(p) };
+          im.addEventListener("keydown",function(e){
+            if(e.key==="Enter"||e.key===" "){
+              e.preventDefault();
+              if(p.region) atlasZoomToGroup(p); else select({t:"place",k:p.name});
+            }
+          });
           pokes.appendChild(im);
         });
       }
@@ -2746,6 +2814,7 @@
     buildSvgAlt($("#asvgalt"),"Places here",places.slice(0,60),function(p){
       select({t:"place",k:p.name});
     },function(p){ return p.name+" ("+Object.keys(p.sp).length+")" });
+    atlasApplyHilite();   /* a redraw under a held pointer keeps the hint */
     atlasWire();
   }
 

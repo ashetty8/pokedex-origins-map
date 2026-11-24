@@ -374,9 +374,18 @@ a.src{color:var(--accent);font-size:.8rem;text-decoration:none;border-bottom:1px
 .aarea.dim path{fill-opacity:.05;stroke:color-mix(in srgb,var(--ink-faint) 40%,transparent)}
 /* The selected Pokémon where it came from. The sprites are pixel art, so
    smoothing them turns a crisp 96px sheet to mush; the shadow is what keeps
-   one legible over land that is nearly its own colour. */
-.apoke{image-rendering:pixelated;pointer-events:none;
+   one legible over land that is nearly its own colour.
+   It answers for the pin it covers, so it takes the pointer rather than
+   letting it through, and grows under one: at map zoom a 30px sprite over
+   patterned land is small, and the lift is what tells you it is a thing you
+   can press rather than a decoration printed on the map. */
+.apoke{image-rendering:pixelated;cursor:pointer;
+  transform-box:fill-box;transform-origin:center;transition:transform .12s ease;
   filter:drop-shadow(0 0 2px var(--card)) drop-shadow(0 1px 1.5px rgba(0,0,0,.45))}
+.apoke:hover,.apoke:focus-visible{transform:scale(1.4);outline:none;
+  filter:drop-shadow(0 0 3px var(--card)) drop-shadow(0 0 7px var(--accent))
+         drop-shadow(0 2px 3px rgba(0,0,0,.5))}
+@media (prefers-reduced-motion:reduce){ .apoke{transition:none} }
 .aring{fill:none;stroke:var(--accent);stroke-width:1.4;stroke-dasharray:3 3;vector-effect:non-scaling-stroke;pointer-events:none}
 .alabel{font-family:var(--mono);font-size:10px;fill:var(--ink-soft);paint-order:stroke;
   stroke:var(--card);stroke-width:3px;pointer-events:none;letter-spacing:.02em}
@@ -391,6 +400,21 @@ a.src{color:var(--accent);font-size:.8rem;text-decoration:none;border-bottom:1px
 .afan[class*="k-"].on{fill:hsl(var(--kh) 58% 48%);stroke:var(--ink)}
 .afan.offkind{stroke:var(--ink-faint);opacity:.4}
 .afan.offkind:hover{opacity:1}
+/* A referent chip under the pointer lights the pins that carry it. Marking
+   the matches alone was not enough to find them — one changed dot among 185
+   is a hunt — so the rest of the map steps back and the answer is whatever
+   is still bright. The ring is drawn in --ink rather than a hue so it reads
+   the same whichever category is open and tinting the pins. */
+#asvg.hinting .apin,#asvg.hinting .afan,#asvg.hinting .apoke{opacity:.28}
+#asvg.hinting .aarea,#asvg.hinting .arange{opacity:.4}
+#asvg.hinting .apin.hl,#asvg.hinting .afan.hl{opacity:1;
+  stroke:var(--ink);stroke-width:2.2;stroke-opacity:1}
+#asvg.hinting .apin.hl{fill-opacity:.95}
+#asvg.hinting .afan.hl{fill:var(--accent)}
+@media (prefers-reduced-motion:no-preference){
+  #asvg.hinting .apin.hl,#asvg.hinting .afan.hl{animation:apulse .9s ease-out}
+}
+@keyframes apulse{ from{stroke-width:5.5;stroke-opacity:.35} to{stroke-width:2.2;stroke-opacity:1} }
 .atlastip{position:absolute;z-index:4;pointer-events:none;background:var(--card);border:1px solid var(--rule-strong);
   border-radius:9px;padding:6px 9px;font-size:.78rem;box-shadow:0 8px 22px rgba(0,0,0,.18);max-width:260px}
 .atlastip[hidden]{display:none}
