@@ -83,6 +83,11 @@ h1{font-size:1.32rem;letter-spacing:-.02em}
    rail becomes a drawer rather than a wall you scroll past to reach anything. */
 @media (max-width:1180px){.layout{grid-template-columns:200px minmax(0,1fr)}}
 @media (max-width:860px){.layout{grid-template-columns:minmax(0,1fr)}}
+/* The Flags tab has no rail and no panel, so app.js puts .onecol on the frame.
+   Without this the hidden columns leave their tracks behind and the cards get
+   squeezed into the 232px rail slot; and with one column there is no reason to
+   be wider than the header, so it lines up with it again. */
+.layout.onecol{grid-template-columns:minmax(0,1fr);max-width:1400px}
 .rail{margin-top:var(--raildrop,0px);position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--topbar,128px) + 18px);display:flex;flex-direction:column;gap:14px;max-height:calc(100dvh - env(safe-area-inset-top,0px) - var(--topbar,128px) - var(--raildrop,0px) - 40px);overflow:auto;overscroll-behavior:contain;padding-right:2px}
 @media (max-width:1180px){.rail{top:calc(env(safe-area-inset-top,0px) + var(--topbar,128px) + 18px)}}
 .railtitle{font-family:var(--mono);font-size:.66rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:9px}
