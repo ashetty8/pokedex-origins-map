@@ -61,6 +61,12 @@
       "q": "Q298",
       "why": "Mapuche, and the Mapuche hop named Chile and Argentina; the Andes region centroid sits far north of it"
     },
+    "chimpanzee": {
+      "place": "Sub-Saharan Africa",
+      "lat": 0.5,
+      "lon": 22.0,
+      "why": "found in the forests and savannas of equatorial Africa"
+    },
     "comic-book superhero": {
       "place": "United States",
       "lat": 39.83,
@@ -176,6 +182,13 @@
       "q": "Q17",
       "why": "was reached through 'a kind of hand fan', which is no evidence; the thing is Japanese regardless"
     },
+    "kaiju": {
+      "place": "Japan",
+      "lat": 35.0,
+      "lon": 136.0,
+      "why": "a Japanese film genre; the word and the giant-monster tradition it names are both Japanese",
+      "q": "Q17"
+    },
     "kanaloa (hawaiian ocean god)": {
       "lat": 21.5,
       "lon": -158.0,
@@ -216,6 +229,13 @@
       "lon": 45.0,
       "place": "West Asia & Arabia",
       "why": "Assyrian, but it sits in the chimera cluster and so inherited Greece & Rome"
+    },
+    "leonardo da vinci's armored fighting vehicle": {
+      "place": "Milan",
+      "lat": 45.46,
+      "lon": 9.19,
+      "why": "proposed to Ludovico Sforza, Duke of Milan, in a letter of about 1482; the drawing is in the Codex Atlanticus",
+      "q": "Q490"
     },
     "leutogi": {
       "lat": -13.74,
@@ -290,7 +310,7 @@
       "lat": 17.0,
       "lon": 92.0,
       "place": "South & Southeast Asia",
-      "why": "no Wikipedia link; the genus's native range, so an area rather than a spot"
+      "why": "the genus's native range across South & Southeast Asia, so an area rather than a spot"
     },
     "nightmarchers": {
       "lat": 21.5,
@@ -379,6 +399,18 @@
       "lon": 40.0,
       "place": "Eurasia & Africa",
       "why": "breeds in Europe, West Asia and NW Africa and winters in Africa and India; the Little Rann of Kutch is one wintering marsh"
+    },
+    "zebra": {
+      "place": "Sub-Saharan Africa",
+      "lat": 0.5,
+      "lon": 22.0,
+      "why": "African equines of eastern and southern Africa, across savannah, grassland, woodland, shrubland and mountain"
+    },
+    "zebra foal": {
+      "place": "Sub-Saharan Africa",
+      "lat": 0.5,
+      "lon": 22.0,
+      "why": "a foal is the same African animal young; zebras live in eastern and southern Africa"
     },
     "zmei gorynych": {
       "lat": 52.0,

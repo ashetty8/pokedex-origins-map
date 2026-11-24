@@ -1126,13 +1126,15 @@
       var all=Object.keys(speciesOfGroup(g)).map(Number).sort(function(a,b){return a-b});
       var seen={}; own.forEach(function(i){ seen[i]=1 });
       var nested=all.filter(function(i){ return !seen[i] });
+      var under=refsUnder({t:"group",k:sel.k});
+      var ownForms=formsAcross(g.m), allForms=formsAcross(under);
       body.appendChild(sectionTitle("Pokémon"));
-      body.appendChild(speciesTags(own.length?own:all));
+      body.appendChild(speciesTags(own.length?own:all,own.length?ownForms:allForms));
       if(own.length && nested.length){
         body.appendChild(sectionTitle("In the clusters nested here · "+nested.length));
-        body.appendChild(speciesTags(nested));
+        body.appendChild(speciesTags(nested,allForms));
       }
-      var og=originSpread(refsUnder({t:"group",k:sel.k}));
+      var og=originSpread(under);
       if(og) body.appendChild(og);
     }
     else if(sel.t==="referent"){
@@ -1617,13 +1619,34 @@
     var m=D.formrefs && D.formrefs[String(refKey).toLowerCase()];
     return m ? m[String(id)] : null;
   }
+  /* A cluster's Pokémon list spans several referents, so there is no one
+     refKey to ask — and asking none of them showed plain Zapdos under
+     "ratite", whose referent is about the Galarian form. So collect the
+     forms the referents in play name, and keep a form only while they all
+     agree about that Pokémon: two referents pointing at different forms give
+     us no basis to pick one, and the default face is the honest answer. */
+  function formsAcross(refs){
+    var out={}, clash={};
+    (refs||[]).forEach(function(ref){
+      var m=D.formrefs && D.formrefs[String(ref).toLowerCase()];
+      if(!m) return;
+      Object.keys(m).forEach(function(id){
+        if(out[id]!=null && out[id]!==m[id]) clash[id]=1;
+        out[id]=m[id];
+      });
+    });
+    Object.keys(clash).forEach(function(id){ delete out[id] });
+    return out;
+  }
+  /* refKey is one referent's key, or a {dex: form slug} map from formsAcross */
   function speciesTags(ids,refKey){
     var tl=el("div","taglist");
     ids.forEach(function(id){
       var sp=D.species[String(id)]; if(!sp) return;
       var t=el("button","tag dex");
       t.dataset.dex=id;
-      var slug=refKey?formFor(refKey,id):null;
+      var slug=!refKey?null:
+        (typeof refKey==="string"?formFor(refKey,id):refKey[String(id)]||null);
       var im=(slug&&formSprite(slug))||sprite(id);
       if(im){ im.classList.add("spr"); t.appendChild(im) }
       t.appendChild(el("span","dexno",dex(id)));

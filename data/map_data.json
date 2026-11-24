@@ -18776,7 +18776,7 @@
 ],
 "k": "concept",
 "l": [],
-"n": 76
+"n": 77
 },
 "Symbols & marks": {
 "b": "Signs & everything else",
@@ -26847,7 +26847,6 @@
 "carnivorous plant": {
 "ch": [
 "nepenthes",
-"nepenthes lower pitcher",
 "uv-blue pitcher rim",
 "venus flytrap"
 ],
@@ -40328,6 +40327,9 @@
 "p": "adaptation & disguise"
 },
 "nepenthes": {
+"ch": [
+"nepenthes lower pitcher"
+],
 "f": "Other plants",
 "k": "life",
 "leaf": 1,
@@ -40335,7 +40337,8 @@
 "nepenthes"
 ],
 "n": 1,
-"p": "carnivorous plant"
+"p": "carnivorous plant",
+"tn": 2
 },
 "nepenthes lower pitcher": {
 "f": "Other plants",
@@ -40346,7 +40349,7 @@
 "nepenthes lower pitcher"
 ],
 "n": 1,
-"p": "carnivorous plant"
+"p": "nepenthes"
 },
 "nerd stereotype": {
 "f": "Society & work",
@@ -46881,7 +46884,7 @@
 "leaf": 1,
 "m": [],
 "n": 0,
-"tn": 33
+"tn": 34
 },
 "sport bike": {
 "f": "Vehicles",
@@ -49835,7 +49838,7 @@
 "sea lion balancing trick",
 "the hat trick"
 ],
-"n": 3,
+"n": 4,
 "p": "sport & pastime"
 },
 "trick-or-treating": {
@@ -55884,7 +55887,8 @@
 "k": "life",
 "s": [
 12
-]
+],
+"w": "Aporia crataegi"
 },
 "blakiston's fish owl": {
 "d": "Blakiston's fish owl",
@@ -56691,7 +56695,9 @@
 "s": [
 522,
 523
-]
+],
+"w": "Helios",
+"ws": "Horses of Helios"
 },
 "brontosaurus (\"thunder lizard\")": {
 "d": "Brontosaurus (\"thunder lizard\")",
@@ -57159,6 +57165,7 @@
 "s": [
 332
 ],
+"w": "Crassulacean acid metabolism",
 "x": 1
 },
 "camarasaurus": {
@@ -71575,7 +71582,8 @@
 7,
 8
 ],
-"w": "Cultural depictions of turtles"
+"w": "Cultural depictions of turtles",
+"ws": "Japan"
 },
 "mirror": {
 "g": "mirror",
@@ -72813,7 +72821,8 @@
 "k": "life",
 "s": [
 71
-]
+],
+"w": "Nepenthes"
 },
 "nerd stereotype (glasses and bow tie)": {
 "g": "nerd stereotype",
@@ -73116,7 +73125,8 @@
 "k": "prehistoric",
 "s": [
 304
-]
+],
+"w": "Nodosauridae"
 },
 "noh and kyogen masks": {
 "d": "Noh and Kyogen masks",
@@ -78450,7 +78460,8 @@
 "k": "concept",
 "s": [
 363,
-364
+364,
+728
 ],
 "x": 1
 },
@@ -86294,7 +86305,8 @@
 "k": "life",
 "s": [
 522
-]
+],
+"w": "Zebra"
 },
 "zener cards": {
 "d": "Zener cards",
