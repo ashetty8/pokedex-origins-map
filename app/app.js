@@ -107,10 +107,13 @@
     /* the middle column carries a heading row that the side panel does not,
        so measure it and drop the panel by the same amount — otherwise the two
        boxes start on different lines */
-    var rh=document.querySelector(".resulthead");
+    /* measure the sticky block as a whole: the trail and the filter pills are
+       part of what stands between the top of the column and its first row */
+    var rh=document.querySelector("#resultstick")||document.querySelector(".resulthead");
     if(rh){
       var st=getComputedStyle(rh);
-      var drop=rh.getBoundingClientRect().height+parseFloat(st.marginBottom||0);
+      var drop=rh.getBoundingClientRect().height+parseFloat(st.marginBottom||0)
+               -parseFloat(st.paddingTop||0);
       document.documentElement.style.setProperty("--headrow", Math.round(drop)+"px");
       /* the rail leads with its own small CATEGORY label, so it needs the
          remainder of that drop for its first chips to meet the boxes */
@@ -602,25 +605,62 @@
     };
     return b;
   }
-  function crumb(){
-    var c=el("div"); c.style.cssText="display:flex;gap:6px;align-items:center;margin-bottom:10px;flex-wrap:wrap";
-    var up=el("button","ghost", state.path.length>1 ? "← Up" : "← All categories");
-    up.onclick=function(){ goBackTo(state.path.slice(0,-1)) };
-    c.appendChild(up);
-    var all=el("button","crumblink","Categories");
-    all.onclick=function(){ goTo([]) };
-    c.appendChild(all);
-    var allsteps=stepsOf();
-    allsteps.forEach(function(step,i){
-      var nx=allsteps[i+1];
-      if(step.t==="group" && nx && nx.t==="referent" && nx.k===step.k) return;   /* same name twice */
-      c.appendChild(el("span","crumbsep","›"));
-      if(i===state.path.length-1){ c.appendChild(el("span","crumbhere",step.t==="kind"?kindLabel(step.k):disp(step.k))); return }
-      var b=el("button","crumblink",step.t==="kind"?kindLabel(step.k):disp(step.k));
-      b.onclick=function(){ goBackTo(state.path.slice(0,i+1)) };
-      c.appendChild(b);
-    });
-    return c;
+  /* ---------- where you are, on every tab ----------
+     The four tabs have always shared one place — the same path drives Browse,
+     the Map, the Atlas and the scoping of the Pokémon list — but each one said
+     so in its own way: a breadcrumb here, a bare title there, a "within ..."
+     bar on the fourth and nothing at all on the Atlas. Four idioms for one
+     fact is why moving between them felt like losing the thread. This is that
+     fact, written once, in the same spot on every tab.
+
+     It is also the honest place to admit where the shared place is NOT
+     applied: the Atlas still draws the whole world, and the Pokémon tab can be
+     widened past it. Saying so beats letting the reader infer it from a count
+     that looks wrong. */
+  function renderWhere(){
+    var bar=$("#wherebar"); if(!bar) return;
+    bar.innerHTML="";
+    if(state.tab==="flags"){ bar.hidden=true; return }
+    /* a flat list is a Browse view; saying "Every cluster" over the Pokémon
+       tab would name a list that tab is not showing */
+    var st=stepsOf(), inPlace=st.length>0, inList=!!state.all && state.tab==="clusters";
+    if(!inPlace && !inList){ bar.hidden=true; return }
+    bar.hidden=false;
+    if(inPlace){
+      var up=el("button","ghost", st.length>1 ? "← Up" : "← All categories");
+      up.title="Step out one level (Esc)";
+      up.onclick=function(){ goBackTo(state.path.slice(0,-1)) };
+      bar.appendChild(up);
+      var all=el("button","crumblink","Categories");
+      all.onclick=function(){ goTo([]) };
+      bar.appendChild(all);
+      st.forEach(function(step,i){
+        var nx=st[i+1];
+        if(step.t==="group" && nx && nx.t==="referent" && nx.k===step.k) return;   /* same name twice */
+        bar.appendChild(el("span","crumbsep","›"));
+        var label=step.t==="kind"?kindLabel(step.k):disp(step.k);
+        if(i===st.length-1){ bar.appendChild(el("span","crumbhere",label)); return }
+        var b=el("button","crumblink",label);
+        b.onclick=function(){ goBackTo(state.path.slice(0,i+1)) };
+        bar.appendChild(b);
+      });
+    }
+    else bar.appendChild(el("span","crumbhere",ALLTITLE[state.all]));
+    if(inPlace && state.tab==="atlas")
+      bar.appendChild(el("span","whereflag","· the atlas still draws the whole world"));
+    if(inPlace && state.tab==="species"){
+      var w=el("button","crumblink", state.scope ? "· every Pokémon" : "· narrow to this");
+      w.title=state.scope ? "Widen the list past this place" : "Show only the Pokémon under this place";
+      w.onclick=function(){ state.scope=!state.scope; state.limit=120; render() };
+      bar.appendChild(w);
+    }
+    var x=el("button","whereclear", inPlace ? "✕ leave" : "✕ close the list");
+    x.title=inPlace ? "Back out to the categories" : "Stop listing every one of them";
+    x.onclick=function(){
+      if(inPlace) goTo([],{top:true});
+      else { state.all=""; state.limit=120; renderDetail(); render(); record() }
+    };
+    bar.appendChild(x);
   }
   var ATTRCACHE=null;
   function attrsActive(){
@@ -722,7 +762,7 @@
   function render(){
     if(!D) return;
     var host=$("#results"); host.innerHTML=""; ATTRCACHE=null; INFCACHE=null;
-    syncClears(); renderFilterBar(); syncURL(false);
+    syncClears(); renderFilterBar(); renderWhere(); syncURL(false);
     setTimeout(topbar,0);          /* the heading row may have changed height */
     $("#rail").classList.toggle("hidden",state.tab==="flags");
     $("#pokefilters").classList.toggle("hidden",state.tab==="flags");
@@ -773,22 +813,6 @@
     var rows,mode;
     if(state.tab==="species"){
       rows=speciesRows(); mode="species"; $("#resulttitle").textContent="Pokémon";
-      var sc=state.scope?speciesUnder():null;
-      if(sc){
-        var bar=el("div","scopebar");
-        bar.appendChild(el("span","scopelabel","within"));
-        var sb=stepsOf();
-        var crumbs=sb.filter(function(x,i){
-          var nx=sb[i+1];
-          return !(x.t==="group" && nx && nx.t==="referent" && nx.k===x.k);
-        }).map(function(x){return x.t==="kind"?kindLabel(x.k):x.k});
-        bar.appendChild(el("span","scopename",crumbs.join(" › ")));
-        var x=el("button","scopeclear","✕ clear");
-        x.title="Show every Pokémon again";
-        x.onclick=function(){ state.scope=false; state.limit=120; render() };
-        bar.appendChild(x);
-        host.appendChild(bar);
-      }
     }
     else if(state.all){
       rows = state.all==="referents" ? everyRefRow()
@@ -800,7 +824,7 @@
     else if(state.q){ rows=groupRows(); mode="group"; $("#resulttitle").textContent="Search"; }
     else if(state.path.length){
       var st=stepsOf(), last=st[st.length-1];
-      $("#resulttitle").textContent=last.t==="kind"?kindLabel(last.k):last.k; host.appendChild(crumb());
+      $("#resulttitle").textContent=last.t==="kind"?kindLabel(last.k):last.k;
       if(last.t==="kind" || last.t==="branch"){
         var fams=familiesIn(last);
         if(fams===null){ rows=branchRows(last.k); mode="branch"; }
@@ -1024,12 +1048,12 @@
     if(!a||!b) return false;
     var x=a.sel,y=b.sel;
     var s = (!x&&!y) || (x&&y&&x.t===y.t&&String(x.k)===String(y.k));
-    return s && a.fam===b.fam && a.tab===b.tab;
+    return s && a.fam===b.fam && a.tab===b.tab && (a.all||"")===(b.all||"");
   }
   function record(){
     if(replaying) return;
     var now={sel:state.sel?{t:state.sel.t,k:state.sel.k}:null,fam:state.path.join(" › "),
-             tab:state.tab,path:state.path.slice(),poke:state.poke};
+             tab:state.tab,path:state.path.slice(),poke:state.poke,all:state.all};
     if(sameStep(hist[hpos],now)) return;
     hist=hist.slice(0,hpos+1);
     hist.push(now); hpos=hist.length-1;
@@ -1045,6 +1069,7 @@
     state.sel=h.sel?{t:h.sel.t,k:h.sel.k}:null;
     state.path=(h.path||[]).slice(); state.limit=120;
     state.poke=(h.poke==null?null:h.poke);
+    state.all=h.all||"";          /* alt-← out of a flat list lands back in it */
     if(state.tab!==h.tab){
       state.tab=h.tab;
       ["clusters","map","atlas","species","flags"].forEach(function(o){ $("#tab-"+o).setAttribute("aria-selected",o===h.tab?"true":"false") });
@@ -3542,7 +3567,6 @@
     if(state.onlymulti) out.push({label:"clusters only", off:function(){ state.onlymulti=false; $("#onlymulti").checked=false }});
     if(state.onlyinf) out.push({label:"inferred only", off:function(){ state.onlyinf=false; $("#onlyinf").checked=false; INFCACHE=null }});
     if(state.tab==="species" && !state.scope) out.push({label:"every Pokémon", off:function(){ state.scope=true }});
-    if(state.all) out.push({label:ALLTITLE[state.all].toLowerCase(), off:function(){ state.all="" }});
     if(state.sort!=="species") out.push({label:"sorted: "+$("#sort").options[$("#sort").selectedIndex].text,
       off:function(){ state.sort="species"; $("#sort").value="species" }});
     return out;

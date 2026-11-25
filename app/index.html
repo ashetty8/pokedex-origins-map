@@ -88,14 +88,21 @@
   </aside>
 
   <section class="results">
-    <div class="filterbar" id="filterbar" hidden></div>
-    <div class="resulthead">
-      <h2 id="resulttitle">Clusters</h2>
-      <span class="resultnote" id="resultnote"></span>
-      <span class="headtools">
-        <button type="button" class="headbtn" id="exportbtn" title="Download what is listed here as CSV">↓ CSV</button>
-        <button type="button" class="headbtn" id="copybtn" title="Copy a link to exactly this view">⧉ Link</button>
-      </span>
+    <!-- Where you are, what is listed, and the tools for listing it: one block,
+         and it holds at the top of the column the way the rail and the panel
+         beside it already do. The three columns then move as one. -->
+    <div class="resultstick" id="resultstick">
+      <div class="filterbar" id="filterbar" hidden></div>
+      <!-- the same trail on every tab, filled by app.js -->
+      <div class="wherebar" id="wherebar" hidden></div>
+      <div class="resulthead">
+        <h2 id="resulttitle">Clusters</h2>
+        <span class="resultnote" id="resultnote"></span>
+        <span class="headtools">
+          <button type="button" class="headbtn" id="exportbtn" title="Download what is listed here as CSV">↓ CSV</button>
+          <button type="button" class="headbtn" id="copybtn" title="Copy a link to exactly this view">⧉ Link</button>
+        </span>
+      </div>
     </div>
     <div id="results" role="region" aria-label="Results"></div>
     <div id="atlas" class="hidden">

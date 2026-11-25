@@ -110,8 +110,22 @@ select{font:inherit;font-size:.82rem;padding:8px 10px;border:1px solid var(--rul
 *{scrollbar-width:thin;scrollbar-color:var(--rule-strong) transparent}
 
 /* results */
+/* The rail and the panel were sticky and the middle column's head was not, so
+   scrolling a long list left the two side columns pinned either side of a
+   column whose title, count, trail and tools had gone. The negative margin
+   cancels the frame's own 18px of top padding, which is what lets this box
+   start exactly where it used to and still finish flush against the header
+   once it is held. */
+.resultstick{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--topbar,128px));
+  z-index:8;background:var(--paper);margin-top:-18px;padding:18px 0 12px}
+/* the gap under the title belongs to the sticky box, so rows pass under a
+   solid edge and the panel beside it can be measured in one piece */
+.resultstick .resulthead{margin-bottom:0}
+/* On one column the header is already a third of the screen, and pinning a
+   second block under it would leave the rows a strip to live in. The trail
+   still prints, it just travels with the list. */
+@media (max-width:860px){.resultstick{position:static;margin-top:0;padding-top:0}}
 .resulthead{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;flex-wrap:wrap;max-width:1000px}
-.scopebar{max-width:1000px}
 .resulthead h2{font-size:.95rem}
 .resultnote{font-family:var(--mono);font-size:.72rem;color:var(--ink-faint);font-variant-numeric:tabular-nums}
 .rows{max-width:1000px;display:flex;flex-direction:column;gap:1px;background:var(--rule);border-radius:12px;overflow:hidden;border:1px solid var(--rule)}
@@ -224,6 +238,19 @@ select{font:inherit;font-size:.82rem;padding:8px 10px;border:1px solid var(--rul
 .type{font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;padding:2px 6px;border-radius:5px;white-space:nowrap;color:hsl(var(--th) 55% 64%);background:hsl(var(--th) 50% 50% / .13);border:1px solid hsl(var(--th) 40% 40% / .5)}
 .num.rare{color:var(--flag,#e0a94a);font-style:normal;letter-spacing:.04em}
 .num.nest{color:var(--accent,#6fcf97)}
+/* --- where you are, on every tab ---
+   Browse used to print a breadcrumb, the Map a bare title, the Atlas nothing
+   at all and the Pokemon tab a "within ..." bar: four ways of saying the one
+   thing all four tabs share. This is that one thing, in one place. */
+.wherebar{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:10px;max-width:1000px}
+.wherebar[hidden]{display:none}
+.whereflag{font-family:var(--mono);font-size:.68rem;color:var(--ink-faint);letter-spacing:.02em}
+.wherebar .ghost{flex:0 0 auto}
+/* leaving the place altogether sits at the end of the trail, away from the
+   crumbs, so it is never mistaken for one more step */
+.whereclear{margin-left:auto;background:none;border:1px solid var(--rule);border-radius:999px;
+  color:var(--ink-faint);font-family:var(--mono);font-size:.7rem;cursor:pointer;padding:2px 9px}
+.whereclear:hover{color:var(--ink);border-color:var(--ink-faint)}
 .crumblink{background:none;border:0;color:var(--ink-soft);font:inherit;font-size:.85rem;cursor:pointer;padding:2px 3px;border-radius:5px}
 .crumblink:hover{color:var(--ink);text-decoration:underline}
 .crumbsep{color:var(--ink-faint);font-size:.85rem}
@@ -273,11 +300,6 @@ select{font:inherit;font-size:.82rem;padding:8px 10px;border:1px solid var(--rul
 .dhead .spr{width:88px;height:88px;margin:-12px 2px -12px -8px}
 .tag.dex{display:inline-flex;align-items:center}
 .row{align-items:center}
-.scopebar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px;padding:7px 11px;border:1px solid var(--rule);border-radius:10px;background:var(--card)}
-.scopelabel{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint)}
-.scopename{font-size:.85rem;font-weight:500}
-.scopeclear{margin-left:auto;background:none;border:0;color:var(--ink-faint);font-size:.76rem;cursor:pointer;padding:2px 4px;border-radius:6px}
-.scopeclear:hover{color:var(--ink);background:var(--paper)}
 /* one quiet 'clear' per panel: it only appears when there is something to clear */
 /* one Clear for the whole view, sitting in the tab row after Flags */
 .tab.clearall{color:var(--danger);margin-left:6px}
