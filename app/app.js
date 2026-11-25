@@ -2,7 +2,7 @@
   "use strict";
   var D=null, dbNS=null, userNS=null, canWrite=null, viewerId=null;
   var state={tab:"clusters",q:"",kinds:new Set(),sort:"species",onlymulti:false,onlyinf:false,sel:null,limit:120,path:[],flagview:"open",poke:null,
-             types:new Set(),gens:new Set(),colours:new Set(),misc:new Set(),scope:true,showall:false,pfilter:"",all:""};
+             types:new Set(),gens:new Set(),colours:new Set(),misc:new Set(),scope:true,showall:false,pfilter:"",all:"",awide:false};
   var flags=[], flagsReady=false, flagsNote="";
   /* The map has two homes, and each is worth reaching from the other: the
      Claude artifact is the only one with somewhere to save a flag, the GitHub
@@ -646,8 +646,12 @@
       });
     }
     else bar.appendChild(el("span","crumbhere",ALLTITLE[state.all]));
-    if(inPlace && state.tab==="atlas")
-      bar.appendChild(el("span","whereflag","· the atlas still draws the whole world"));
+    if(inPlace && state.tab==="atlas"){
+      var aw=el("button","crumblink", state.awide ? "· narrow to this" : "· whole world");
+      aw.title=state.awide ? "Pin only what sits under this place" : "Draw every pin again";
+      aw.onclick=function(){ state.awide=!state.awide; render() };
+      bar.appendChild(aw);
+    }
     if(inPlace && state.tab==="species"){
       var w=el("button","crumblink", state.scope ? "· every Pokémon" : "· narrow to this");
       w.title=state.scope ? "Widen the list past this place" : "Show only the Pokémon under this place";
@@ -2422,13 +2426,26 @@
      category chips filter which referents count, and a search dims the
      places that have nothing matching rather than hiding them — an empty
      Japan would read as "no Japanese origins", which is not what it means. */
+  /* The Atlas was the one tab that threw away the place the other three
+     agree on: standing in "lagomorph" it still drew all 187 places, and the
+     only clue was a count that looked wrong. It narrows to what sits under
+     where you are now, and state.awide is the way back to the whole world —
+     an explicit choice, with a button on the trail, rather than a silent one
+     made for you. */
+  function atlasScope(){
+    if(state.awide || !state.path.length || !D) return null;
+    var want={};
+    refsUnder(graphFocusFor(stepsOf())).forEach(function(m){ want[m]=1 });
+    return want;
+  }
   function atlasPlaces(){
     if(APLACES) return APLACES;
     if(!GEO||!D) return [];
-    var bag={};
+    var bag={}, scope=atlasScope();
     Object.keys(GEO.refs).forEach(function(name){
       var r=D.referents[name];
       if(!r) return;                                  /* dataset moved on */
+      if(scope && !scope[name]) return;               /* not under this place */
       var kind=r.k||"unclassified";
       if(state.kinds.size && !state.kinds.has(kind)) return;
       if(state.onlyinf && !r.i) return;
@@ -2949,7 +2966,8 @@
           places.filter(function(p){ return p.sp[String(state.poke)] }).length+" of them"
         : "")+
       (ak?" · "+kindLabel(ak)+" on "+akpl+" of them":"")+
-      (grouped?" · click a region to split it":" · drag to pan, scroll to zoom");
+      (!places.length?"" : grouped?" · click a region to split it":" · drag to pan, scroll to zoom")+
+      (atlasScope()&&!places.length?" — nothing under this place has been placed":"");
     $("#resultnote").textContent=npl+" places of origin · "+
       Object.keys(sp).length+" Pokémon placed";
     /* An SVG full of circles is nothing to a keyboard or a screen reader.
@@ -3204,7 +3222,7 @@
      and the list are in, and whatever the panel is showing. It greys out when
      there is nothing left to clear, so it never promises an empty action. */
   function anythingSet(){
-    return !!(state.q || state.path.length || state.sel || state.poke || state.all || state.onlymulti || state.onlyinf ||
+    return !!(state.q || state.path.length || state.sel || state.poke || state.all || state.awide || state.onlymulti || state.onlyinf ||
               attrsActive() || gstate.showAll || !state.scope);
   }
   function syncClears(){
@@ -3217,7 +3235,7 @@
     state.onlyinf=false; $("#onlyinf").checked=false; INFCACHE=null;
     state.q=""; $("#q").value="";
     state.scope=true; gstate.showAll=false; state.sel=null; state.poke=null; state.limit=120;
-    state.showall=false; state.pfilter="";
+    state.showall=false; state.pfilter=""; state.awide=false;
     buildPokeFilters(); closeRail();
     /* Clear means clear: the remembered view goes too, or the next visit
        quietly puts back what was just thrown away. */
@@ -3439,6 +3457,7 @@
     if(state.onlyinf) put("inf",1);
     if(!state.scope) put("all",1);
     if(state.all) put("list",state.all);
+    if(state.awide) put("world",1);
     if(document.body.classList.contains("focusmode")) put("focus",1);
     return p.join("&");
   }
@@ -3496,6 +3515,7 @@
       state.onlymulti=v.multi==="1"; state.onlyinf=v.inf==="1";
       state.scope=v.all!=="1";
       state.all=/^(referents|clusters|families)$/.test(v.list||"")?v.list:"";
+      state.awide=v.world==="1";
       state.poke=v.poke?+v.poke:null;
       state.limit=120; state.showall=false; state.pfilter="";
       var path=(v.path||"").split("/").map(parseStep).filter(Boolean);
