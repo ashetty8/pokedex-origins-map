@@ -2,7 +2,7 @@
   "use strict";
   var D=null, dbNS=null, userNS=null, canWrite=null, viewerId=null;
   var state={tab:"clusters",q:"",kinds:new Set(),sort:"species",onlymulti:false,onlyinf:false,sel:null,limit:120,path:[],flagview:"open",poke:null,
-             types:new Set(),gens:new Set(),colours:new Set(),misc:new Set(),scope:true,showall:false,pfilter:""};
+             types:new Set(),gens:new Set(),colours:new Set(),misc:new Set(),scope:true,showall:false,pfilter:"",all:""};
   var flags=[], flagsReady=false, flagsNote="";
   /* The map has two homes, and each is worth reaching from the other: the
      Claude artifact is the only one with somewhere to save a flag, the GitHub
@@ -346,6 +346,68 @@
     });
     return out;
   }
+  /* ---------- the flat lists behind the header counts ----------
+     The counts in the header name four whole populations, and a count you can
+     click should show you the thing it counted — not a filter that leaves you
+     where you already were. So each one opens its own flat list: every
+     referent, every cluster, every family, in one scrollable run. The search
+     box still narrows it, which is what makes 3883 referents usable. */
+  function everyRefRow(){
+    var q=state.q, out=[];
+    Object.keys(D.referents).forEach(function(name){
+      var r=D.referents[name];
+      if(state.onlyinf && !r.i) return;
+      if(q && name.indexOf(q)<0 && String(r.d||"").toLowerCase().indexOf(q)<0) return;
+      if(attrsActive() && !r.s.some(function(i){ return passAttrs(i) })) return;
+      out.push({name:name,ref:r});
+    });
+    var s=state.sort;
+    out.sort(function(a,b){
+      if(s==="az") return a.name<b.name?-1:1;
+      return b.ref.s.length-a.ref.s.length || (a.name<b.name?-1:1);
+    });
+    return out;
+  }
+  /* A cluster is a node holding more than one referent — the same test the
+     rail's "clusters only" uses, so the list and the checkbox agree. */
+  function everyClusterRow(){
+    var q=state.q, out=[];
+    Object.keys(D.groups).forEach(function(name){
+      var g=D.groups[name];
+      if((g.m||[]).length<2) return;
+      if(state.onlyinf && !hasInferred({t:"group",k:name})) return;
+      if(!groupPassesAttrs(name)) return;
+      if(q && name.indexOf(q)<0 && !g.m.some(function(m){return m.indexOf(q)>=0})) return;
+      out.push({name:name,g:g});
+    });
+    var s=state.sort;
+    out.sort(function(a,b){
+      if(s==="az") return a.name<b.name?-1:1;
+      if(s==="members") return b.g.m.length-a.g.m.length || b.g.n-a.g.n;
+      return (b.g.tn||b.g.n)-(a.g.tn||a.g.n) || b.g.m.length-a.g.m.length;
+    });
+    return out;
+  }
+  function everyFamilyRow(){
+    var q=state.q;
+    return familyRows()
+      .filter(function(r){ return !q || r.name.toLowerCase().indexOf(q)>=0 })
+      .map(function(r){ return {name:r.name,f:r.f,fn:speciesIn([r.name])} })
+      .filter(function(r){ return r.fn>0 });
+  }
+  var ALLTITLE={referents:"Every referent",clusters:"Every cluster",families:"Every family"};
+  /* Open one of those lists. It is not a step in the tree, so it clears the
+     path rather than adding to it, and the panel goes back to its prompt. */
+  function openAll(which){
+    state.all=which; state.tab="clusters";
+    state.path=[]; state.sel=null; state.poke=null;
+    state.limit=120; state.scope=true; state.showall=false; state.pfilter="";
+    markTabs("clusters"); markKindChips(); closeRail();
+    record(); renderDetail(); render();
+    window.scrollTo({top:0,behavior:"smooth"});
+    say(ALLTITLE[which]);
+  }
+
   /* children of whatever node the path currently points at: a family shows its
      top-level clusters, a cluster shows the clusters nested inside it. */
   var FAMGROUPS=null;
@@ -408,6 +470,7 @@
   }
   function goTo(path,opts){
     state.path=collapse(path); state.limit=120; state.scope=true; state.poke=null; state.showall=false; state.pfilter="";
+    state.all="";   /* stepping into the tree leaves the flat list behind */
     var st=stepsOf(), last=st[st.length-1];
     if(!last) state.sel=null;
     else if(last.t==="group"||last.t==="referent") state.sel={t:last.t,k:last.k};
@@ -727,6 +790,13 @@
         host.appendChild(bar);
       }
     }
+    else if(state.all){
+      rows = state.all==="referents" ? everyRefRow()
+           : state.all==="clusters"  ? everyClusterRow()
+           : everyFamilyRow();
+      mode = state.all==="families" ? "family" : "group";
+      $("#resulttitle").textContent=ALLTITLE[state.all];
+    }
     else if(state.q){ rows=groupRows(); mode="group"; $("#resulttitle").textContent="Search"; }
     else if(state.path.length){
       var st=stepsOf(), last=st[st.length-1];
@@ -749,6 +819,8 @@
     }
     else { rows=kindRows(); mode="kind"; $("#resulttitle").textContent="Categories"; }
     var noun = mode==="species"?" Pokémon":(mode==="family"?" families":(mode==="region"?" places of origin":(mode==="kind"?" categories":(mode==="branch"?" groups":" clusters & referents"))));
+    if(state.all) noun = state.all==="referents" ? " referents"
+                       : state.all==="clusters"  ? " clusters" : " families";
     $("#resultnote").textContent = rows.length + noun + (state.q?" matching “"+state.q+"”":"");
     LASTROWS=rows; LASTMODE=mode; syncExport();
     if(!rows.length){ host.appendChild(noMatch()); return }
@@ -1224,7 +1296,8 @@
           body.appendChild(tl);
         });
         body.appendChild(sectionTitle("Pokémon · "+pl.n));
-        body.appendChild(speciesTags(Object.keys(pl.sp).map(Number).sort(function(a,b){return a-b})));
+        body.appendChild(speciesTags(Object.keys(pl.sp).map(Number).sort(function(a,b){return a-b}),
+                                     formsAcross(pl.refs)));
       }
     }
     else if(sel.t==="node"){
@@ -1271,7 +1344,7 @@
           : (pkids.length>pcap ? "Pokémon · first "+pcap+" of "+pkids.length : "Pokémon ("+pkids.length+")")));
         if(pkids.length>24) body.appendChild(chipFilter());
         if(!hits.length) body.appendChild(el("p","fnote","Nothing here is called that."));
-        body.appendChild(speciesTags(hits.slice(0,pcap)));
+        body.appendChild(speciesTags(hits.slice(0,pcap),formsAcross(refsUnder(f))));
         if(hits.length>pcap) body.appendChild(showAllBtn(hits.length-pcap,"more Pokémon"));
       }
       /* A region node is already a place — "Norse & Germanic" saying it is
@@ -1619,12 +1692,15 @@
     var m=D.formrefs && D.formrefs[String(refKey).toLowerCase()];
     return m ? m[String(id)] : null;
   }
-  /* A cluster's Pokémon list spans several referents, so there is no one
+  /* Only the referent panel lists one referent's Pokémon. The cluster, the
+     Atlas place and the node panels each span several, so there is no one
      refKey to ask — and asking none of them showed plain Zapdos under
      "ratite", whose referent is about the Galarian form. So collect the
      forms the referents in play name, and keep a form only while they all
      agree about that Pokémon: two referents pointing at different forms give
-     us no basis to pick one, and the default face is the honest answer. */
+     us no basis to pick one, and the default face is the honest answer.
+     A node with no referents under it (the root, a search) yields {}, which
+     is the same as asking nobody — the default face, as before. */
   function formsAcross(refs){
     var out={}, clash={};
     (refs||[]).forEach(function(ref){
@@ -3103,7 +3179,7 @@
      and the list are in, and whatever the panel is showing. It greys out when
      there is nothing left to clear, so it never promises an empty action. */
   function anythingSet(){
-    return !!(state.q || state.path.length || state.sel || state.poke || state.onlymulti || state.onlyinf ||
+    return !!(state.q || state.path.length || state.sel || state.poke || state.all || state.onlymulti || state.onlyinf ||
               attrsActive() || gstate.showAll || !state.scope);
   }
   function syncClears(){
@@ -3337,6 +3413,7 @@
     if(state.onlymulti) put("multi",1);
     if(state.onlyinf) put("inf",1);
     if(!state.scope) put("all",1);
+    if(state.all) put("list",state.all);
     if(document.body.classList.contains("focusmode")) put("focus",1);
     return p.join("&");
   }
@@ -3393,6 +3470,7 @@
       bag(state.colours,v.col); bag(state.misc,v.misc);
       state.onlymulti=v.multi==="1"; state.onlyinf=v.inf==="1";
       state.scope=v.all!=="1";
+      state.all=/^(referents|clusters|families)$/.test(v.list||"")?v.list:"";
       state.poke=v.poke?+v.poke:null;
       state.limit=120; state.showall=false; state.pfilter="";
       var path=(v.path||"").split("/").map(parseStep).filter(Boolean);
@@ -3464,6 +3542,7 @@
     if(state.onlymulti) out.push({label:"clusters only", off:function(){ state.onlymulti=false; $("#onlymulti").checked=false }});
     if(state.onlyinf) out.push({label:"inferred only", off:function(){ state.onlyinf=false; $("#onlyinf").checked=false; INFCACHE=null }});
     if(state.tab==="species" && !state.scope) out.push({label:"every Pokémon", off:function(){ state.scope=true }});
+    if(state.all) out.push({label:ALLTITLE[state.all].toLowerCase(), off:function(){ state.all="" }});
     if(state.sort!=="species") out.push({label:"sorted: "+$("#sort").options[$("#sort").selectedIndex].text,
       off:function(){ state.sort="species"; $("#sort").value="species" }});
     return out;
@@ -3585,18 +3664,26 @@
   }
 
   /* ---------- the counts are the shortest route in ---------- */
+  /* The numbers are counted here rather than read from meta, because meta is
+     written by the generator and a correction made since then can move one of
+     them. A count that opens a list has to be the length of that list. */
+  function countOf(which){
+    if(which==="species")   return Object.keys(D.species).length;
+    if(which==="referents") return Object.keys(D.referents).length;
+    if(which==="families")  return Object.keys(D.families).length;
+    return Object.keys(D.groups).filter(function(g){ return (D.groups[g].m||[]).length>1 }).length;
+  }
   function buildCounts(meta){
     var box=$("#counts"); box.innerHTML="";
-    [[meta.species,"Pokémon",function(){ setTab("species") }],
-     [meta.referents,"referents",function(){ setTab("clusters"); goTo([],{top:true}) }],
-     [meta.clusters,"clusters",function(){
-        setTab("clusters"); state.onlymulti=true; $("#onlymulti").checked=true; goTo([],{top:true}) }],
-     [meta.families,"families",function(){ setTab("clusters"); goTo([],{top:true}) }]
+    [["species","Pokémon","Show every Pokémon",function(){ setTab("species") }],
+     ["referents","referents","List every referent",function(){ openAll("referents") }],
+     ["clusters","clusters","List every cluster",function(){ openAll("clusters") }],
+     ["families","families","List every family",function(){ openAll("families") }]
     ].forEach(function(c,i){
       if(i) box.appendChild(el("span","countsep"," · "));
-      var b=el("button","countbtn",c[0]+" "+c[1]);
-      b.type="button"; b.title="Show "+c[1];
-      b.onclick=c[2];
+      var b=el("button","countbtn",countOf(c[0])+" "+c[1]);
+      b.type="button"; b.title=c[2];
+      b.onclick=c[3];
       box.appendChild(b);
     });
   }
