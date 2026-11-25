@@ -217,6 +217,18 @@ def _(D):
     assert not D["referents"][ref].get("i"), "a hand-placed referent is no longer a guess"
 
 
+@case("the header's own counts follow a merge")
+def _(D):
+    before = D["meta"]["clusters"]
+    src = pick(D, lambda v: not (v.get("ch") or []) and len(v.get("m") or []) > 1, "meta")
+    dst = pick(D, lambda v: not (v.get("ch") or []) and len(v.get("m") or []) > 1
+                            and v is not D["groups"][src], "meta")
+    fk.merge(D, src, dst)
+    assert D["meta"]["clusters"] == before - 1, \
+        "folding one cluster into another leaves one fewer cluster in the header"
+    assert D["meta"]["referents"] == len(D["referents"])
+
+
 @case("set-kind recategorises and clears the inferred flag")
 def _(D):
     r = next(r for r, v in sorted(D["referents"].items()) if v.get("i"))

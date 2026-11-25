@@ -262,7 +262,31 @@ def load():
         return json.load(f)
 
 
+def meta_counts(D):
+    """What the four numbers in the page's header mean, in one place.
+
+       A cluster is a node holding more than one referent — the same test the
+       page uses for "clusters only" and for its every-cluster list. The rest
+       are plain lengths."""
+    return {"species":   len(D["species"]),
+            "referents": len(D["referents"]),
+            "families":  len(D["families"]),
+            "groups":    len(D["groups"]),
+            "clusters":  sum(1 for v in D["groups"].values()
+                             if len(v.get("m") or []) > 1)}
+
+
+def remeta(D):
+    """meta came from a generator that is no longer here, and nothing updated
+       it afterwards: every merge left meta.clusters a little further from the
+       truth, and the header was printing 574 where 569 clusters existed. So
+       the counts are derived here, on the way out, and no command has to
+       remember to."""
+    D.setdefault("meta", {}).update(meta_counts(D))
+
+
 def save(D):
+    remeta(D)
     with open(DATA, "w", encoding="utf-8") as f:
         json.dump(D, f, ensure_ascii=False, indent=0, sort_keys=True)
     stamp_write(D)
@@ -537,6 +561,11 @@ def check(D, quiet=False):
         if fam and not v.get("p"):
             if g not in (F[fam].get("c") or []) + (F[fam].get("l") or []):
                 bad.append(("top cluster not listed by its family", fam, g))
+    # the header's own numbers. A fresh dataset can arrive with these already
+    # wrong, and they are the first thing a reader sees.
+    for k, want in sorted(meta_counts(D).items()):
+        if D.get("meta", {}).get(k) != want:
+            bad.append(("stale meta." + k, D.get("meta", {}).get(k), want))
     if not quiet:
         print("integrity: %s" % ("clean" if not bad else "%d problems" % len(bad)))
         for b in bad[:30]:
@@ -554,6 +583,7 @@ def recount(D):
             v["tn"] = len(sub_species(D, g))
         v["n"] = len({i for m in (v.get("m") or []) if m in D["referents"]
                       for i in D["referents"][m]["s"]})
+    remeta(D)          # a write that makes or folds a cluster moves the header too
     return "recounted %d families and every cluster total" % len(D["families"])
 
 
