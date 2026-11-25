@@ -18606,7 +18606,6 @@
 "egg",
 "lure",
 "machine part",
-"pad",
 "stripes",
 "symbols"
 ],
@@ -18618,7 +18617,7 @@
 "sea-monkeys",
 "vessels & decoration"
 ],
-"n": 95
+"n": 91
 },
 "Other plants": {
 "b": "Plants",
@@ -18830,7 +18829,7 @@
 ],
 "k": "life",
 "l": [],
-"n": 41
+"n": 45
 },
 "Vehicles": {
 "b": "Machines",
@@ -31915,7 +31914,7 @@
 "photonastic flower"
 ],
 "n": 3,
-"tn": 32
+"tn": 36
 },
 "flower meadow": {
 "f": "Trees & flowers",
@@ -37634,6 +37633,9 @@
 "p": "garden flower"
 },
 "lily": {
+"ch": [
+"lily pad"
+],
 "f": "Trees & flowers",
 "k": "life",
 "m": [
@@ -37644,7 +37646,18 @@
 "red spider lily (resurrection lily)"
 ],
 "n": 5,
-"p": "tropical flower"
+"p": "tropical flower",
+"tn": 9
+},
+"lily pad": {
+"f": "Trees & flowers",
+"k": "life",
+"m": [
+"frog on a lily pad",
+"lily pad"
+],
+"n": 4,
+"p": "lily"
 },
 "lindu": {
 "f": "Gods & deities",
@@ -41454,15 +41467,6 @@
 ],
 "n": 1,
 "p": "ocean fish"
-},
-"pad": {
-"f": "Other objects",
-"k": "object",
-"m": [
-"frog on a lily pad",
-"lily pad"
-],
-"n": 4
 },
 "paintbrush": {
 "f": "Household & tools",
@@ -49968,7 +49972,7 @@
 ],
 "n": 6,
 "p": "flower",
-"tn": 18
+"tn": 22
 },
 "trowel": {
 "f": "Household & tools",
@@ -63536,8 +63540,8 @@
 "x": 1
 },
 "frog on a lily pad": {
-"g": "pad",
-"k": "object",
+"g": "lily pad",
+"k": "life",
 "s": [
 658
 ]
@@ -69845,8 +69849,8 @@
 "w": "Lilium"
 },
 "lily pad": {
-"g": "pad",
-"k": "object",
+"g": "lily pad",
+"k": "life",
 "s": [
 270,
 271,
