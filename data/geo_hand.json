@@ -48,6 +48,13 @@
       "place": "Eurasia & Africa",
       "why": "the mountains of southern Europe, the Caucasus, the Himalaya and east and southern Africa; the Sela Pass is one of them, not the range"
     },
+    "bison latifrons": {
+      "place": "North America",
+      "lat": 43.0,
+      "lon": -99.0,
+      "why": "a Late Pleistocene bison ranging from southern Canada to Mexico; it was pinned to Chilpancingo de los Bravo, one locality near the southern edge of that range",
+      "q": "Q49"
+    },
     "buckskin fringe": {
       "lat": 43.0,
       "lon": -99.0,
@@ -123,6 +130,13 @@
       "lon": 4.0,
       "place": "Western Europe",
       "why": "its own article; same cluster, same gap"
+    },
+    "gigantopithecus": {
+      "place": "China",
+      "lat": 34.0,
+      "lon": 108.9,
+      "why": "known from central to southern China; it was pinned to Liucheng County, the cave that yielded the first mandible and most of the teeth, which is where it was found rather than where it lived",
+      "q": "Q148"
     },
     "great tit": {
       "lat": 50.0,
@@ -347,6 +361,13 @@
       "lon": -155.47,
       "why": "she is held to live on Mauna Kea itself, which this map already pins separately; Hawaii was the island, not the mountain"
     },
+    "procoptodon": {
+      "place": "Australia",
+      "lat": -25.0,
+      "lon": 133.0,
+      "why": "a Pleistocene giant short-faced kangaroo found across Australia; it was pinned to New South Wales, one state of it",
+      "q": "Q408"
+    },
     "pygmy marmoset": {
       "lat": -3.16,
       "lon": -60.03,
@@ -440,7 +461,10 @@
     }
   },
   "unplace": {
+    "diplocaulus": "lived across North America and Africa, the Moroccan material being the youngest known lepospondyl; it was pinned to Danville, a single town standing in for a genus on two continents",
+    "eremotherium": "a ground sloth of southern North America, Central America and northern South America; it was pinned to Espírito Santo, one Brazilian state, and no one point represents that range",
     "hadrosaur": "was pinned to the Kanguk Formation, one Arctic site standing in for a clade on five continents; its sibling clade-level referents carry no pin either",
+    "protostega": "known from the Smoky Hill Chalk of Kansas, the Mooreville Chalk of Alabama, the Rybushka Formation in Russia and the Pierre Shale in Canada; it was pinned to the second of those four",
     "tailor": "reached Germany one hop out through 'a kind of Q778000'; a trade is from nowhere"
   }
 }
