@@ -17333,7 +17333,7 @@
 ],
 "k": "media & art",
 "l": [],
-"n": 48
+"n": 49
 },
 "Bats": {
 "b": "Mammals",
@@ -17354,7 +17354,7 @@
 ],
 "k": "concept",
 "l": [],
-"n": 59
+"n": 57
 },
 "Birds": {
 "b": "Birds",
@@ -17384,7 +17384,7 @@
 ],
 "k": "media & art",
 "l": [],
-"n": 30
+"n": 31
 },
 "Buildings & monuments": {
 "c": [
@@ -18007,7 +18007,7 @@
 "fountain pen nib",
 "mage's wand"
 ],
-"n": 131
+"n": 132
 },
 "Insects & spiders": {
 "b": "Insects & invertebrates",
@@ -18067,7 +18067,7 @@
 "princess kaguya of the tale of the bamboo cutter",
 "satori"
 ],
-"n": 114,
+"n": 113,
 "rg": {
 "Japan": [
 "animal yokai",
@@ -22366,17 +22366,6 @@
 }
 },
 "groups": {
-"\"brains and brawn\" team-up trope": {
-"f": "Belief & custom",
-"i": 1,
-"k": "concept",
-"leaf": 1,
-"m": [
-"\"brains and brawn\" team-up trope"
-],
-"n": 1,
-"p": "language & wordplay"
-},
 "\"heart of gold\"": {
 "f": "Abstract ideas",
 "i": 1,
@@ -22387,17 +22376,6 @@
 ],
 "n": 1,
 "p": "virtues & feelings"
-},
-"\"kilroy was here\" graffiti": {
-"f": "Belief & custom",
-"i": 1,
-"k": "concept",
-"leaf": 1,
-"m": [
-"\"kilroy was here\" graffiti"
-],
-"n": 1,
-"p": "language & wordplay"
 },
 "\"pearls before swine\"": {
 "f": "Belief & custom",
@@ -23832,7 +23810,7 @@
 "leaf": 1,
 "m": [],
 "n": 0,
-"tn": 30
+"tn": 31
 },
 "arrow and fletching": {
 "f": "Weapons & armour",
@@ -23870,12 +23848,13 @@
 "f": "Art & craft",
 "k": "media & art",
 "m": [
+"\"kilroy was here\" graffiti",
 "curtiss p-40 warhawk nose art",
 "graffiti art",
 "pixel art",
 "psychedelic art"
 ],
-"n": 4
+"n": 5
 },
 "arthropleura": {
 "f": "Prehistoric beasts",
@@ -34266,7 +34245,6 @@
 "nuppeppo",
 "nurikabe",
 "oboroguruma",
-"rei-kyo",
 "tsuchikorobi",
 "tsukumogami",
 "tsurube-otoshi",
@@ -34277,7 +34255,7 @@
 "leaf": 1,
 "m": [],
 "n": 0,
-"tn": 27
+"tn": 26
 },
 "hauntings": {
 "ch": [
@@ -37260,8 +37238,6 @@
 },
 "language & wordplay": {
 "ch": [
-"\"brains and brawn\" team-up trope",
-"\"kilroy was here\" graffiti",
 "\"pearls before swine\"",
 "\"purebred / pure bread\" pun",
 "\"the big apple\" / new york city",
@@ -37276,7 +37252,7 @@
 "\"zero to hero\""
 ],
 "n": 1,
-"tn": 16
+"tn": 14
 },
 "lanternfish": {
 "f": "Fish",
@@ -39209,9 +39185,10 @@
 "k": "object",
 "m": [
 "mirror",
+"rei-kyo (japanese bronze mirror)",
 "snow white's magic mirror"
 ],
-"n": 1,
+"n": 2,
 "p": "around the house"
 },
 "missile": {
@@ -43796,18 +43773,6 @@
 "n": 1,
 "p": "heavy machinery"
 },
-"rei-kyo": {
-"f": "Japanese folklore",
-"i": 1,
-"k": "folklore",
-"leaf": 1,
-"m": [
-"rei-kyo (japanese bronze mirror)"
-],
-"n": 1,
-"p": "haunted objects & places",
-"rg": "Japan"
-},
 "reindeer": {
 "f": "Hoofed mammals",
 "k": "life",
@@ -47391,6 +47356,7 @@
 "f": "Books & stories",
 "k": "media & art",
 "m": [
+"\"brains and brawn\" team-up trope",
 "antihero",
 "magical girl",
 "picaresque rogue",
@@ -47398,7 +47364,7 @@
 "the \"small girl with a giant weapon\" trope",
 "witch trope"
 ],
-"n": 8
+"n": 9
 },
 "storytelling itself": {
 "ch": [
@@ -52316,7 +52282,7 @@
 "build": "f4b4a145",
 "clusters": 574,
 "families": 59,
-"groups": 2635,
+"groups": 2632,
 "kinds": [
 "concept",
 "earth & sky",
@@ -52342,9 +52308,8 @@
 "x": 1
 },
 "\"brains and brawn\" team-up trope": {
-"g": "\"brains and brawn\" team-up trope",
-"i": 1,
-"k": "concept",
+"g": "story archetype",
+"k": "media & art",
 "s": [
 977
 ],
@@ -52389,9 +52354,8 @@
 },
 "\"kilroy was here\" graffiti": {
 "d": "\"Kilroy was here\" graffiti",
-"g": "\"kilroy was here\" graffiti",
-"i": 1,
-"k": "concept",
+"g": "art",
+"k": "media & art",
 "s": [
 944
 ],
@@ -54484,7 +54448,8 @@
 "k": "object",
 "s": [
 308
-]
+],
+"w": "Badlah"
 },
 "baghdad battery": {
 "d": "Baghdad Battery",
@@ -59674,6 +59639,8 @@
 "s": [
 160
 ],
+"w": "Crocodile",
+"ws": "Reproduction",
 "x": 1
 },
 "crocodile clip": {
@@ -60007,7 +59974,8 @@
 "k": "life",
 "s": [
 738
-]
+],
+"w": "Cyclommatus"
 },
 "cyclopean ghost": {
 "g": "ghost",
@@ -63939,11 +63907,11 @@
 "genie (i dream of jeannie)": {
 "d": "genie (I Dream of Jeannie)",
 "g": "genie",
-"k": "folklore",
+"k": "media & art",
 "s": [
 308
 ],
-"w": "Jinn"
+"w": "I Dream of Jeannie"
 },
 "gentleman thief": {
 "g": "gentleman thief",
@@ -67851,6 +67819,7 @@
 624,
 625
 ],
+"w": "Japanese rhinoceros beetle",
 "x": 1
 },
 "japanese robin": {
@@ -70954,7 +70923,9 @@
 160,
 760,
 981
-]
+],
+"w": "Costume",
+"ws": "Mascots"
 },
 "mask": {
 "g": "mask",
@@ -71633,7 +71604,9 @@
 "k": "object",
 "s": [
 71
-]
+],
+"w": "Water balloon",
+"ws": "Yo-yo balloon"
 },
 "mizugumo water shoes": {
 "g": "shoes",
@@ -76418,7 +76391,8 @@
 257,
 461,
 953
-]
+],
+"w": "Ra"
 },
 "rabbit": {
 "g": "rabbit",
@@ -76924,12 +76898,12 @@
 },
 "rei-kyo (japanese bronze mirror)": {
 "d": "rei-kyo (Japanese bronze mirror)",
-"g": "rei-kyo",
-"i": 1,
-"k": "folklore",
+"g": "mirror",
+"k": "object",
 "s": [
 436
-]
+],
+"w": "Bronze mirror"
 },
 "reindeer": {
 "g": "reindeer",
@@ -77076,7 +77050,8 @@
 "k": "person",
 "s": [
 431
-]
+],
+"w": "Rhythmic gymnastics"
 },
 "ribbon seal": {
 "g": "seal",
@@ -77490,7 +77465,8 @@
 "k": "object",
 "s": [
 226
-]
+],
+"w": "Roundel"
 },
 "royal penguin": {
 "g": "penguin",
@@ -80405,7 +80381,8 @@
 "k": "object",
 "s": [
 431
-]
+],
+"w": "Slinky"
 },
 "sprite": {
 "g": "sprite",
@@ -81884,7 +81861,9 @@
 "k": "life",
 "s": [
 738
-]
+],
+"w": "Magnetoreception",
+"ws": "In insects"
 },
 "terracotta army": {
 "d": "Terracotta Army",
@@ -83520,7 +83499,8 @@
 "k": "object",
 "s": [
 160
-]
+],
+"w": "Transforming robots"
 },
 "transmission tower and insulators": {
 "g": "tower",

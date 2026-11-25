@@ -8,6 +8,13 @@
     "`place` pins a referent; `unplace` suppresses whatever the passes found."
   ],
   "place": {
+    "\"the big apple\" / new york city": {
+      "place": "New York City",
+      "lat": 40.71,
+      "lon": -74.01,
+      "why": "“The Big Apple” is a nickname for New York City, which the Unova region is based on",
+      "q": "Q60"
+    },
     "asian black bear": {
       "lat": 30.0,
       "lon": 95.0,
