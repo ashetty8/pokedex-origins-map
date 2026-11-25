@@ -176,12 +176,6 @@
       "place": "Japan",
       "why": "its own article; the dragon cluster is rightly tied to no one place, so nothing else reaches it"
     },
-    "japanese dragon (ryu)": {
-      "lat": 35.0,
-      "lon": 136.0,
-      "place": "Japan",
-      "why": "as japanese dragon"
-    },
     "japanese war fan": {
       "lat": 35.0,
       "lon": 136.0,
@@ -359,6 +353,12 @@
       "place": "Amazon rainforest",
       "q": "Q177567",
       "why": "the western Amazon basin of Brazil, Peru, Ecuador, Colombia and northern Bolivia"
+    },
+    "secretarybird": {
+      "place": "Sub-Saharan Africa",
+      "lat": 0.5,
+      "lon": 22.0,
+      "why": "endemic to Africa, in the open grasslands and savanna of the sub-Saharan region"
     },
     "tessen (japanese war fan)": {
       "lat": 35.0,

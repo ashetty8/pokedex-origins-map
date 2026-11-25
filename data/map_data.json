@@ -18993,7 +18993,7 @@
 "barbegazi (alpine gnome)": {
 "28": "sandslash-alola"
 },
-"barding (horse armour)": {
+"barding": {
 "545": "scolipede-mega"
 },
 "bass guitar": {
@@ -19487,7 +19487,7 @@
 "kapatcir-kamuy (ainu divine being)": {
 "628": "braviary-hisui"
 },
-"khakkhara (buddhist monk's staff)": {
+"khakkhara": {
 "358": "chimecho-mega"
 },
 "king imagery": {
@@ -19796,7 +19796,7 @@
 "ratite": {
 "145": "zapdos-galar"
 },
-"red spider lily (resurrection lily)": {
+"red spider lily": {
 "670": "floette-eternal"
 },
 "reel lawn mower": {
@@ -20448,7 +20448,7 @@
 "chimecho-mega": {
 "f": "mega",
 "own": [
-"khakkhara (Buddhist monk's staff)",
+"khakkhara",
 "the number seven in Shinto and Buddhist culture"
 ],
 "s": 358
@@ -20764,7 +20764,7 @@
 "floette-eternal": {
 "f": "eternal",
 "own": [
-"red spider lily (resurrection lily)",
+"red spider lily",
 "the ultimate weapon"
 ],
 "s": 670
@@ -21858,7 +21858,7 @@
 "f": "mega",
 "own": [
 "knight or gladiator armour",
-"barding (horse armour)"
+"barding"
 ],
 "s": 545
 },
@@ -22810,7 +22810,6 @@
 "k": "folklore",
 "m": [
 "akaname",
-"akaname (filth-licking yokai)",
 "akaname/akashita (disease spirits)"
 ],
 "n": 3,
@@ -23266,8 +23265,7 @@
 "angel",
 "guardian angel",
 "lucifer the fallen angel",
-"sea angel",
-"sea angel (clione)"
+"sea angel"
 ],
 "n": 10,
 "rg": "West Asia & Arabia"
@@ -23703,7 +23701,6 @@
 "m": [
 "ashigaru armour",
 "barding",
-"barding (horse armour)",
 "body armour",
 "cuirass",
 "king arthur's magical armour",
@@ -23960,9 +23957,9 @@
 "asura": {
 "f": "Gods & deities",
 "k": "mythology",
+"leaf": 1,
 "m": [
-"asura",
-"asura (three-headed buddhist demigod)"
+"asura"
 ],
 "n": 4,
 "rg": "South & Southeast Asia"
@@ -24608,9 +24605,9 @@
 "basan": {
 "f": "Japanese folklore",
 "k": "folklore",
+"leaf": 1,
 "m": [
-"basan",
-"basan (fire-breathing chicken)"
+"basan"
 ],
 "n": 3,
 "p": "animal yokai",
@@ -24786,9 +24783,9 @@
 "beast": {
 "f": "Mythic beasts",
 "k": "mythology",
+"leaf": 1,
 "m": [
-"raiju",
-"raiju (lightning beast)"
+"raiju"
 ],
 "n": 5,
 "rg": "Japan"
@@ -27150,7 +27147,6 @@
 "m": [
 "centipede",
 "fire centipede",
-"fire centipede (orphnaeus brevilabiatus)",
 "omukade",
 "scolopendra gigantea centipede"
 ],
@@ -27605,7 +27601,6 @@
 "griffin",
 "lamassu",
 "paleontological chimera",
-"paleontological chimera (misassembled fossil)",
 "qilin",
 "serpopard",
 "sphinx"
@@ -27706,9 +27701,9 @@
 "chochin-obake": {
 "f": "Ghosts & spirits",
 "k": "folklore",
+"leaf": 1,
 "m": [
-"chochin-obake",
-"chochin-obake (haunted paper lantern)"
+"chochin-obake"
 ],
 "n": 4,
 "p": "hauntings",
@@ -28753,7 +28748,6 @@
 "k": "life",
 "m": [
 "blue crayfish",
-"blue crayfish (procambarus alleni)",
 "red swamp crayfish"
 ],
 "n": 4,
@@ -28808,9 +28802,9 @@
 "crinoid": {
 "f": "Sea life",
 "k": "life",
+"leaf": 1,
 "m": [
-"crinoid",
-"crinoid (sea lily)"
+"crinoid"
 ],
 "n": 3,
 "p": "echinoderm & worm"
@@ -30056,7 +30050,6 @@
 "european fantasy dragon",
 "four-winged wyvern",
 "japanese dragon",
-"japanese dragon (ryu)",
 "juvenile dragon",
 "lindworm",
 "puente del dragon",
@@ -31072,9 +31065,9 @@
 "eurypterid": {
 "f": "Ancient sea life",
 "k": "prehistoric",
+"leaf": 1,
 "m": [
-"eurypterid",
-"eurypterid (sea scorpion)"
+"eurypterid"
 ],
 "n": 3,
 "p": "ancient invertebrates"
@@ -31752,8 +31745,7 @@
 "phoenix",
 "simurgh",
 "slavic firebird",
-"thunderbird",
-"thunderbird (native american legend)"
+"thunderbird"
 ],
 "n": 9,
 "rg": "Slavic & Eastern Europe"
@@ -32300,7 +32292,6 @@
 "glass frog",
 "hairy frog",
 "horned frog",
-"horned frog (megophrys, ceratophrys)",
 "poison dart frog",
 "splendid leaf frog"
 ],
@@ -34148,9 +34139,9 @@
 "harionago": {
 "f": "Japanese folklore",
 "k": "folklore",
+"leaf": 1,
 "m": [
-"harionago",
-"harionago (long-haired ghoul)"
+"harionago"
 ],
 "n": 2,
 "rg": "Japan"
@@ -36184,9 +36175,9 @@
 "jinn": {
 "f": "Other folklore",
 "k": "folklore",
+"leaf": 1,
 "m": [
-"jinn",
-"jinn (genie)"
+"jinn"
 ],
 "n": 3,
 "rg": "West Asia & Arabia"
@@ -36510,9 +36501,9 @@
 "karura": {
 "f": "Gods & deities",
 "k": "mythology",
+"leaf": 1,
 "m": [
-"karura",
-"karura (garuda)"
+"karura"
 ],
 "n": 4,
 "rg": "Japan"
@@ -36913,9 +36904,9 @@
 "koinobori": {
 "f": "Other objects",
 "k": "object",
+"leaf": 1,
 "m": [
-"koinobori",
-"koinobori (carp streamer)"
+"koinobori"
 ],
 "n": 3,
 "p": "party & decoration"
@@ -37642,8 +37633,7 @@
 "blue water lily",
 "giant water lily",
 "lily",
-"red spider lily",
-"red spider lily (resurrection lily)"
+"red spider lily"
 ],
 "n": 5,
 "p": "tropical flower",
@@ -38831,9 +38821,9 @@
 "meganeura": {
 "f": "Prehistoric beasts",
 "k": "prehistoric",
+"leaf": 1,
 "m": [
-"meganeura",
-"meganeura (griffinfly)"
+"meganeura"
 ],
 "n": 2,
 "p": "pterosaur & giant insect"
@@ -40113,7 +40103,6 @@
 "k": "life",
 "m": [
 "dragon turtle",
-"minogame",
 "minogame (japanese legend)",
 "taro urashima's turtle",
 "the rainbow turtle of urashima taro",
@@ -40646,9 +40635,9 @@
 "nukekubi": {
 "f": "Japanese folklore",
 "k": "folklore",
+"leaf": 1,
 "m": [
-"nukekubi",
-"nukekubi (flying severed head)"
+"nukekubi"
 ],
 "n": 2,
 "p": "ghosts & souls",
@@ -40668,9 +40657,9 @@
 "nurarihyon": {
 "f": "Japanese folklore",
 "k": "folklore",
+"leaf": 1,
 "m": [
-"nurarihyon",
-"nurarihyon (jellyfish yokai)"
+"nurarihyon"
 ],
 "n": 2,
 "rg": "Japan"
@@ -41533,9 +41522,9 @@
 "pan": {
 "f": "Gods & deities",
 "k": "mythology",
+"leaf": 1,
 "m": [
-"pan",
-"pan (greek god)"
+"pan"
 ],
 "n": 3,
 "rg": "Greece & Rome"
@@ -45719,9 +45708,9 @@
 "shishi-odoshi": {
 "f": "Buildings & monuments",
 "k": "object",
+"leaf": 1,
 "m": [
-"shishi-odoshi",
-"shishi-odoshi (deer scare)"
+"shishi-odoshi"
 ],
 "n": 2,
 "p": "building & structure"
@@ -46404,9 +46393,9 @@
 "f": "Other folklore",
 "i": 1,
 "k": "folklore",
+"leaf": 1,
 "m": [
-"snowman",
-"snowman (yukidaruma)"
+"snowman"
 ],
 "n": 3
 },
@@ -47002,7 +46991,6 @@
 "m": [
 "fire staff",
 "khakkhara",
-"khakkhara (buddhist monk's staff)",
 "khakkhara staff"
 ],
 "n": 4,
@@ -48164,9 +48152,9 @@
 "f": "Carnivores",
 "i": 1,
 "k": "life",
+"leaf": 1,
 "m": [
-"tanuki",
-"tanuki (japanese raccoon dog)"
+"tanuki"
 ],
 "n": 3,
 "p": "dog family"
@@ -51217,7 +51205,6 @@
 "m": [
 "disease-bringing kamaitachi",
 "kamaitachi",
-"kamaitachi (sickle weasel yokai)",
 "weasel"
 ],
 "n": 8,
@@ -51555,7 +51542,6 @@
 "baby witch",
 "european witch",
 "witch",
-"witch (pointed hat, hooked nose, broom)",
 "witch's and gorgon's hair"
 ],
 "n": 6,
@@ -51795,7 +51781,6 @@
 "professional wrestler",
 "scholastic wrestler",
 "sumo wrestler",
-"sumo wrestler (rikishi)",
 "wrestler"
 ],
 "n": 7,
@@ -52300,7 +52285,7 @@
 "person",
 "prehistoric"
 ],
-"referents": 3883,
+"referents": 3851,
 "species": 1025
 },
 "referents": {
@@ -52898,15 +52883,8 @@
 "g": "akaname",
 "k": "folklore",
 "s": [
+108,
 463
-],
-"w": "Akaname"
-},
-"akaname (filth-licking yokai)": {
-"g": "akaname",
-"k": "folklore",
-"s": [
-108
 ],
 "w": "Akaname"
 },
@@ -54043,18 +54021,10 @@
 "g": "asura",
 "k": "mythology",
 "s": [
+85,
 103,
 689,
 768
-],
-"w": "Asura"
-},
-"asura (three-headed buddhist demigod)": {
-"d": "asura (three-headed Buddhist demigod)",
-"g": "asura",
-"k": "mythology",
-"s": [
-85
 ],
 "w": "Asura"
 },
@@ -54882,16 +54852,8 @@
 "i": 1,
 "k": "object",
 "s": [
+545,
 889
-],
-"w": "Barding"
-},
-"barding (horse armour)": {
-"g": "armour",
-"i": 1,
-"k": "object",
-"s": [
-545
 ],
 "w": "Barding"
 },
@@ -55006,16 +54968,9 @@
 "g": "basan",
 "k": "folklore",
 "s": [
-257
-],
-"w": "Basan (legendary bird)"
-},
-"basan (fire-breathing chicken)": {
-"g": "basan",
-"k": "folklore",
-"s": [
 255,
-256
+256,
+257
 ],
 "w": "Basan (legendary bird)"
 },
@@ -55979,16 +55934,8 @@
 "g": "crayfish",
 "k": "life",
 "s": [
+692,
 693
-],
-"w": "Procambarus alleni"
-},
-"blue crayfish (procambarus alleni)": {
-"d": "blue crayfish (Procambarus alleni)",
-"g": "crayfish",
-"k": "life",
-"s": [
-692
 ],
 "w": "Procambarus alleni"
 },
@@ -58448,17 +58395,10 @@
 "g": "chochin-obake",
 "k": "folklore",
 "s": [
+356,
 477,
 608,
 609
-],
-"w": "Chōchin'obake"
-},
-"chochin-obake (haunted paper lantern)": {
-"g": "chochin-obake",
-"k": "folklore",
-"s": [
-356
 ],
 "w": "Chōchin'obake"
 },
@@ -59607,16 +59547,9 @@
 "g": "crinoid",
 "k": "life",
 "s": [
-969
-],
-"w": "Crinoid"
-},
-"crinoid (sea lily)": {
-"g": "crinoid",
-"k": "life",
-"s": [
 345,
-346
+346,
+969
 ],
 "w": "Crinoid"
 },
@@ -62339,14 +62272,7 @@
 "g": "eurypterid",
 "k": "prehistoric",
 "s": [
-141
-],
-"w": "Eurypterid"
-},
-"eurypterid (sea scorpion)": {
-"g": "eurypterid",
-"k": "prehistoric",
-"s": [
+141,
 451,
 452
 ],
@@ -62911,15 +62837,8 @@
 "g": "centipede",
 "k": "life",
 "s": [
+850,
 851
-]
-},
-"fire centipede (orphnaeus brevilabiatus)": {
-"d": "fire centipede (Orphnaeus brevilabiatus)",
-"g": "centipede",
-"k": "life",
-"s": [
-850
 ],
 "w": "Orphnaeus brevilabiatus"
 },
@@ -65572,16 +65491,8 @@
 "g": "harionago",
 "k": "folklore",
 "s": [
+857,
 858
-],
-"w": "Harionago"
-},
-"harionago (long-haired ghoul)": {
-"d": "Harionago (long-haired ghoul)",
-"g": "harionago",
-"k": "folklore",
-"s": [
-857
 ],
 "w": "Harionago"
 },
@@ -66560,16 +66471,8 @@
 1,
 2,
 3,
+657,
 658
-],
-"w": "Horned frog"
-},
-"horned frog (megophrys, ceratophrys)": {
-"d": "horned frog (Megophrys, Ceratophrys)",
-"g": "frog",
-"k": "life",
-"s": [
-657
 ],
 "w": "Horned frog"
 },
@@ -67708,17 +67611,9 @@
 "g": "dragon",
 "k": "mythology",
 "s": [
-149
-],
-"w": "Japanese dragon"
-},
-"japanese dragon (ryu)": {
-"d": "Japanese dragon (ryu)",
-"g": "dragon",
-"k": "mythology",
-"s": [
 147,
-148
+148,
+149
 ],
 "w": "Japanese dragon"
 },
@@ -68053,16 +67948,9 @@
 "g": "jinn",
 "k": "folklore",
 "s": [
+385,
 491,
 855
-],
-"w": "Jinn"
-},
-"jinn (genie)": {
-"g": "jinn",
-"k": "folklore",
-"s": [
-385
 ],
 "w": "Jinn"
 },
@@ -68296,19 +68184,12 @@
 "g": "weasel",
 "k": "folklore",
 "s": [
+215,
 264,
 461,
+619,
 807,
 903
-],
-"w": "Kamaitachi"
-},
-"kamaitachi (sickle weasel yokai)": {
-"g": "weasel",
-"k": "folklore",
-"s": [
-215,
-619
 ],
 "w": "Kamaitachi"
 },
@@ -68486,17 +68367,9 @@
 "g": "karura",
 "k": "mythology",
 "s": [
-257
-],
-"w": "Karura"
-},
-"karura (garuda)": {
-"d": "Karura (Garuda)",
-"g": "karura",
-"k": "mythology",
-"s": [
 126,
 240,
+257,
 467
 ],
 "w": "Karura"
@@ -68573,17 +68446,8 @@
 "i": 1,
 "k": "object",
 "s": [
+358,
 448
-],
-"w": "Khakkhara"
-},
-"khakkhara (buddhist monk's staff)": {
-"d": "khakkhara (Buddhist monk's staff)",
-"g": "staff",
-"i": 1,
-"k": "object",
-"s": [
-358
 ],
 "w": "Khakkhara"
 },
@@ -68999,16 +68863,9 @@
 "g": "koinobori",
 "k": "object",
 "s": [
-604
-],
-"w": "Koinobori"
-},
-"koinobori (carp streamer)": {
-"g": "koinobori",
-"k": "object",
-"s": [
 129,
-130
+130,
+604
 ],
 "w": "Koinobori"
 },
@@ -71185,16 +71042,8 @@
 "g": "meganeura",
 "k": "prehistoric",
 "s": [
+193,
 469
-],
-"w": "Meganeura"
-},
-"meganeura (griffinfly)": {
-"d": "Meganeura (griffinfly)",
-"g": "meganeura",
-"k": "prehistoric",
-"s": [
-193
 ],
 "w": "Meganeura"
 },
@@ -71551,21 +71400,14 @@
 361
 ]
 },
-"minogame": {
-"g": "mythic turtle",
-"k": "life",
-"s": [
-1024
-],
-"w": "Cultural depictions of turtles"
-},
 "minogame (japanese legend)": {
 "d": "minogame (Japanese legend)",
 "g": "mythic turtle",
 "k": "life",
 "s": [
 7,
-8
+8,
+1024
 ],
 "w": "Cultural depictions of turtles",
 "ws": "Japan"
@@ -73253,15 +73095,8 @@
 "g": "nukekubi",
 "k": "folklore",
 "s": [
+200,
 806
-],
-"w": "Rokurokubi"
-},
-"nukekubi (flying severed head)": {
-"g": "nukekubi",
-"k": "folklore",
-"s": [
-200
 ],
 "w": "Rokurokubi"
 },
@@ -73279,16 +73114,8 @@
 "g": "nurarihyon",
 "k": "folklore",
 "s": [
+592,
 593
-],
-"w": "Nurarihyon"
-},
-"nurarihyon (jellyfish yokai)": {
-"d": "Nurarihyon (jellyfish yokai)",
-"g": "nurarihyon",
-"k": "folklore",
-"s": [
-592
 ],
 "w": "Nurarihyon"
 },
@@ -74218,17 +74045,10 @@
 "g": "chimera",
 "k": "mythology",
 "s": [
+880,
 881,
 882,
 883
-],
-"w": "Chimera (paleontology)"
-},
-"paleontological chimera (misassembled fossil)": {
-"g": "chimera",
-"k": "mythology",
-"s": [
-880
 ],
 "w": "Chimera (paleontology)"
 },
@@ -74260,17 +74080,9 @@
 "g": "pan",
 "k": "mythology",
 "s": [
+274,
 672,
 673
-],
-"w": "Pan (god)"
-},
-"pan (greek god)": {
-"d": "Pan (Greek god)",
-"g": "pan",
-"k": "mythology",
-"s": [
-274
 ],
 "w": "Pan (god)"
 },
@@ -75612,6 +75424,7 @@
 "s": [
 311
 ],
+"w": "Electric charge",
 "x": 1
 },
 "possessed magic sword": {
@@ -76567,18 +76380,11 @@
 "g": "beast",
 "k": "mythology",
 "s": [
-243,
-807
-],
-"w": "Raijū"
-},
-"raiju (lightning beast)": {
-"g": "beast",
-"k": "mythology",
-"s": [
 135,
+243,
 309,
-310
+310,
+807
 ],
 "w": "Raijū"
 },
@@ -76778,14 +76584,6 @@
 "w": "Red panda"
 },
 "red spider lily": {
-"g": "lily",
-"k": "life",
-"s": [
-670
-],
-"w": "Lycoris radiata"
-},
-"red spider lily (resurrection lily)": {
 "g": "lily",
 "k": "life",
 "s": [
@@ -77793,7 +77591,7 @@
 "s": [
 6
 ],
-"w": "Salamander"
+"w": "Salamanders in folklore"
 },
 "saline solution": {
 "g": "saline solution",
@@ -78397,16 +78195,8 @@
 "g": "angel",
 "k": "life",
 "s": [
+489,
 490
-],
-"w": "Sea angel"
-},
-"sea angel (clione)": {
-"d": "sea angel (Clione)",
-"g": "angel",
-"k": "life",
-"s": [
-489
 ],
 "w": "Sea angel"
 },
@@ -79073,15 +78863,8 @@
 "g": "shishi-odoshi",
 "k": "object",
 "s": [
+234,
 899
-],
-"w": "Shishi-odoshi"
-},
-"shishi-odoshi (deer scare)": {
-"g": "shishi-odoshi",
-"k": "object",
-"s": [
-234
 ],
 "w": "Shishi-odoshi"
 },
@@ -79824,15 +79607,7 @@
 "i": 1,
 "k": "folklore",
 "s": [
-122
-],
-"w": "Snowman"
-},
-"snowman (yukidaruma)": {
-"g": "snowman",
-"i": 1,
-"k": "folklore",
-"s": [
+122,
 554,
 555
 ],
@@ -81051,15 +80826,7 @@
 "g": "wrestler",
 "k": "person",
 "s": [
-260
-],
-"w": "Rikishi",
-"x": 1
-},
-"sumo wrestler (rikishi)": {
-"g": "wrestler",
-"k": "person",
-"s": [
+260,
 296,
 297
 ],
@@ -81603,18 +81370,9 @@
 "i": 1,
 "k": "life",
 "s": [
+263,
 264,
 447
-],
-"w": "Japanese raccoon dog"
-},
-"tanuki (japanese raccoon dog)": {
-"d": "tanuki (Japanese raccoon dog)",
-"g": "tanuki",
-"i": 1,
-"k": "life",
-"s": [
-263
 ],
 "w": "Japanese raccoon dog"
 },
@@ -83062,17 +82820,9 @@
 "g": "firebird",
 "k": "mythology",
 "s": [
+145,
 785,
 940
-],
-"w": "Thunderbird (mythology)"
-},
-"thunderbird (native american legend)": {
-"d": "thunderbird (Native American legend)",
-"g": "firebird",
-"k": "mythology",
-"s": [
-145
 ],
 "w": "Thunderbird (mythology)"
 },
@@ -85538,17 +85288,9 @@
 "g": "witch",
 "k": "person",
 "s": [
+198,
 429,
 857
-],
-"w": "Witchcraft",
-"x": 1
-},
-"witch (pointed hat, hooked nose, broom)": {
-"g": "witch",
-"k": "person",
-"s": [
-198
 ],
 "w": "Witchcraft",
 "x": 1
@@ -86932,7 +86674,7 @@
 "Galapagos tortoise",
 "Lonesome George",
 "the rainbow turtle of Urashima Taro",
-"minogame",
+"minogame (japanese legend)",
 "World Turtle",
 "\"turtles all the way down\"",
 "diamondback terrapin",
@@ -87035,7 +86777,7 @@
 [
 "lungless salamander",
 "chameleon",
-"akaname (filth-licking yokai)"
+"akaname"
 ],
 [
 "folklore",
@@ -87343,7 +87085,7 @@
 "duck",
 "fire salamander (folklore)",
 "iguana",
-"Karura (Garuda)",
+"karura",
 "hyottoko mask"
 ],
 [
@@ -87384,7 +87126,7 @@
 [
 "Asian carp",
 "goldfish",
-"koinobori (carp streamer)",
+"koinobori",
 "Dragon Gate carp legend",
 "crown"
 ],
@@ -87412,7 +87154,7 @@
 "Gyarados",
 [
 "Chinese dragon",
-"koinobori (carp streamer)",
+"koinobori",
 "Dragon Gate carp legend",
 "Namazu (earthquake catfish)",
 "sea serpents on medieval maps",
@@ -87499,7 +87241,7 @@
 "dog",
 "cat",
 "fox",
-"raiju (lightning beast)",
+"raiju",
 "cheetah",
 "porcupine",
 "cartoon lightning bolt",
@@ -87647,7 +87389,7 @@
 "145": [
 "Zapdos",
 [
-"thunderbird (Native American legend)",
+"thunderbird",
 "lightning bird",
 "cream-coloured woodpecker",
 "hummingbird",
@@ -87678,7 +87420,7 @@
 "Dratini",
 [
 "sea serpent",
-"Japanese dragon (ryu)",
+"japanese dragon",
 "Chinese dragon",
 "imugi (Korean proto-dragon)",
 "Loch Ness Monster",
@@ -87694,7 +87436,7 @@
 "Dragonair",
 [
 "sea serpent",
-"Japanese dragon (ryu)",
+"japanese dragon",
 "Chinese dragon",
 "snake",
 "rattlesnake",
@@ -88371,7 +88113,7 @@
 [
 "dragonfly",
 "banded darter",
-"Meganeura (griffinfly)"
+"meganeura"
 ],
 [
 "life",
@@ -88444,7 +88186,7 @@
 [
 "crow",
 "carrion crow",
-"witch (pointed hat, hooked nose, broom)",
+"witch",
 "witch's familiar",
 "black hawk-eagle"
 ],
@@ -88500,7 +88242,7 @@
 "200": [
 "Misdreavus",
 [
-"nukekubi (flying severed head)",
+"nukekubi",
 "banshee",
 "teru teru bozu",
 "mare (nightmare spirit)",
@@ -88735,7 +88477,7 @@
 "215": [
 "Sneasel",
 [
-"kamaitachi (sickle weasel yokai)",
+"kamaitachi",
 "cat",
 "cat-sith",
 "Puss in Boots swashbuckler"
@@ -89056,7 +88798,7 @@
 [
 "sika deer",
 "reindeer",
-"shishi-odoshi (deer scare)",
+"shishi-odoshi",
 "scare-eye balloon",
 "velvet antler medicine"
 ],
@@ -89152,7 +88894,7 @@
 "booby",
 "duck",
 "fire salamander (folklore)",
-"Karura (Garuda)",
+"karura",
 "baby iguana",
 "hyottoko mask"
 ],
@@ -89386,7 +89128,7 @@
 [
 "chicken hatchling",
 "painted festival chick",
-"basan (fire-breathing chicken)",
+"basan",
 "vent sexing"
 ],
 [
@@ -89398,7 +89140,7 @@
 "Combusken",
 [
 "cockfighting chicken",
-"basan (fire-breathing chicken)"
+"basan"
 ],
 [
 "folklore",
@@ -89507,7 +89249,7 @@
 [
 "raccoon",
 "Japanese badger",
-"tanuki (Japanese raccoon dog)"
+"tanuki"
 ],
 [
 "life"
@@ -89658,7 +89400,7 @@
 "sprouting acorn",
 "tengu",
 "shibatengu",
-"Pan (Greek god)",
+"pan",
 "Pinocchio"
 ],
 [
@@ -89989,7 +89731,7 @@
 "296": [
 "Makuhita",
 [
-"sumo wrestler (rikishi)",
+"sumo wrestler",
 "punching bag",
 "chonmage topknot",
 "boxing glove",
@@ -90003,7 +89745,7 @@
 "297": [
 "Hariyama",
 [
-"sumo wrestler (rikishi)",
+"sumo wrestler",
 "chonmage",
 "mawashi and sagari",
 "salt-throwing dohyo ritual",
@@ -90190,7 +89932,7 @@
 "Electrike",
 [
 "canine pup",
-"raiju (lightning beast)"
+"raiju"
 ],
 [
 "life",
@@ -90216,7 +89958,7 @@
 "Manectric",
 [
 "canine",
-"raiju (lightning beast)",
+"raiju",
 "crocodile clip"
 ],
 [
@@ -90735,7 +90477,7 @@
 "345": [
 "Lileep",
 [
-"crinoid (sea lily)",
+"crinoid",
 "sea anemone"
 ],
 [
@@ -90745,7 +90487,7 @@
 "346": [
 "Cradily",
 [
-"crinoid (sea lily)",
+"crinoid",
 "sea anemone",
 "predatory tunicate",
 "eyespot mimicry",
@@ -90892,7 +90634,7 @@
 "356": [
 "Dusclops",
 [
-"chochin-obake (haunted paper lantern)",
+"chochin-obake",
 "onibi",
 "hitodama",
 "one-eyed yokai",
@@ -91337,7 +91079,7 @@
 "meteor",
 "iron meteorite",
 "tanzaku and the Tanabata festival",
-"jinn (genie)",
+"jinn",
 "third eye"
 ],
 [
@@ -92337,7 +92079,7 @@
 [
 "scorpion",
 "vinegarroon",
-"eurypterid (sea scorpion)"
+"eurypterid"
 ],
 [
 "life",
@@ -92349,7 +92091,7 @@
 [
 "scorpion",
 "vinegarroon",
-"eurypterid (sea scorpion)"
+"eurypterid"
 ],
 [
 "life",
@@ -92561,7 +92303,7 @@
 "467": [
 "Magmortar",
 [
-"Karura (Garuda)",
+"karura",
 "duck",
 "booby",
 "fire salamander (folklore)",
@@ -92946,7 +92688,7 @@
 "489": [
 "Phione",
 [
-"sea angel (Clione)",
+"sea angel",
 "polyphenism"
 ],
 [
@@ -93968,7 +93710,7 @@
 "Darumaka",
 [
 "daruma doll",
-"snowman (yukidaruma)",
+"snowman",
 "yeti"
 ],
 [
@@ -93981,7 +93723,7 @@
 [
 "daruma doll",
 "Bodhidharma",
-"snowman (yukidaruma)",
+"snowman",
 "yeti"
 ],
 [
@@ -94517,7 +94259,7 @@
 "592": [
 "Frillish",
 [
-"Nurarihyon (jellyfish yokai)",
+"nurarihyon",
 "Kurage no Hinotama",
 "Stygiomedusa (phantom jelly)",
 "Victorian dress"
@@ -94942,7 +94684,7 @@
 "619": [
 "Mienfoo",
 [
-"kamaitachi (sickle weasel yokai)"
+"kamaitachi"
 ],
 [
 "life"
@@ -95547,7 +95289,7 @@
 "657": [
 "Frogadier",
 [
-"horned frog (Megophrys, Ceratophrys)",
+"horned frog",
 "frog foam nest",
 "ninja",
 "mizugumo water shoes"
@@ -96111,7 +95853,7 @@
 "Clauncher",
 [
 "pistol shrimp",
-"blue crayfish (Procambarus alleni)",
+"blue crayfish",
 "mutated blue American lobster"
 ],
 [
@@ -98563,7 +98305,7 @@
 "emu",
 "kiwi",
 "cassowary",
-"asura (three-headed Buddhist demigod)"
+"asura"
 ],
 [
 "life",
@@ -98573,7 +98315,7 @@
 "850": [
 "Sizzlipede",
 [
-"fire centipede (Orphnaeus brevilabiatus)",
+"fire centipede",
 "Sierra luminous millipede",
 "radiator"
 ],
@@ -98671,7 +98413,7 @@
 "witch",
 "witch hat",
 "witch's ladder",
-"Harionago (long-haired ghoul)"
+"harionago"
 ],
 [
 "folklore",
@@ -99050,7 +98792,7 @@
 "880": [
 "Dracozolt",
 [
-"paleontological chimera (misassembled fossil)",
+"paleontological chimera",
 "dromaeosaur",
 "stegosaur",
 "the Crystal Palace Dinosaurs",
