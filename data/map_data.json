@@ -71666,7 +71666,9 @@
 "k": "mythology",
 "s": [
 78
-]
+],
+"w": "Unicorn",
+"ws": "Modern culture"
 },
 "mohawk hairstyle": {
 "g": "hairstyle",
@@ -74587,7 +74589,7 @@
 "s": [
 51
 ],
-"w": "Pelé"
+"w": "Pele (deity)"
 },
 "pele's curse": {
 "d": "Pele's Curse",
@@ -79600,7 +79602,8 @@
 "k": "earth & sky",
 "s": [
 59
-]
+],
+"w": "Plume (fluid dynamics)"
 },
 "smooth-hound shark": {
 "g": "shark",
@@ -85962,7 +85965,8 @@
 "k": "folklore",
 "s": [
 28
-]
+],
+"w": "Gazu Hyakki Tsurezure Bukuro"
 },
 "yamata no orochi": {
 "d": "Yamata no Orochi",
