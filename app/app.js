@@ -1224,7 +1224,8 @@
           body.appendChild(tl);
         });
         body.appendChild(sectionTitle("Pokémon · "+pl.n));
-        body.appendChild(speciesTags(Object.keys(pl.sp).map(Number).sort(function(a,b){return a-b})));
+        body.appendChild(speciesTags(Object.keys(pl.sp).map(Number).sort(function(a,b){return a-b}),
+                                     formsAcross(pl.refs)));
       }
     }
     else if(sel.t==="node"){
@@ -1271,7 +1272,7 @@
           : (pkids.length>pcap ? "Pokémon · first "+pcap+" of "+pkids.length : "Pokémon ("+pkids.length+")")));
         if(pkids.length>24) body.appendChild(chipFilter());
         if(!hits.length) body.appendChild(el("p","fnote","Nothing here is called that."));
-        body.appendChild(speciesTags(hits.slice(0,pcap)));
+        body.appendChild(speciesTags(hits.slice(0,pcap),formsAcross(refsUnder(f))));
         if(hits.length>pcap) body.appendChild(showAllBtn(hits.length-pcap,"more Pokémon"));
       }
       /* A region node is already a place — "Norse & Germanic" saying it is
@@ -1619,12 +1620,15 @@
     var m=D.formrefs && D.formrefs[String(refKey).toLowerCase()];
     return m ? m[String(id)] : null;
   }
-  /* A cluster's Pokémon list spans several referents, so there is no one
+  /* Only the referent panel lists one referent's Pokémon. The cluster, the
+     Atlas place and the node panels each span several, so there is no one
      refKey to ask — and asking none of them showed plain Zapdos under
      "ratite", whose referent is about the Galarian form. So collect the
      forms the referents in play name, and keep a form only while they all
      agree about that Pokémon: two referents pointing at different forms give
-     us no basis to pick one, and the default face is the honest answer. */
+     us no basis to pick one, and the default face is the honest answer.
+     A node with no referents under it (the root, a search) yields {}, which
+     is the same as asking nobody — the default face, as before. */
   function formsAcross(refs){
     var out={}, clash={};
     (refs||[]).forEach(function(ref){
