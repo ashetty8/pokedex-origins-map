@@ -381,6 +381,13 @@
       "lon": 22.0,
       "why": "endemic to Africa, in the open grasslands and savanna of the sub-Saharan region"
     },
+    "shrimp (ebi) nigiri": {
+      "place": "Japan",
+      "lat": 35.0,
+      "lon": 136.0,
+      "why": "nigiri is Japanese; the referent had been pinned to Tehran, the birthplace of the Iranian singer its link pointed at",
+      "q": "Q17"
+    },
     "tessen (japanese war fan)": {
       "lat": 35.0,
       "lon": 136.0,
@@ -461,6 +468,8 @@
     }
   },
   "unplace": {
+    "cotton candy (fairy floss)": "was pinned to West Java through a “located at” claim, which is not something a confection has; spun sugar belongs to no one place",
+    "custard": "was pinned to Ukraine as its “country of origin”, which custard does not have — it is a long-standing European preparation rather than one country's dish",
     "diplocaulus": "lived across North America and Africa, the Moroccan material being the youngest known lepospondyl; it was pinned to Danville, a single town standing in for a genus on two continents",
     "eremotherium": "a ground sloth of southern North America, Central America and northern South America; it was pinned to Espírito Santo, one Brazilian state, and no one point represents that range",
     "hadrosaur": "was pinned to the Kanguk Formation, one Arctic site standing in for a clade on five continents; its sibling clade-level referents carry no pin either",

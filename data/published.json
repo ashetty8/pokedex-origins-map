@@ -1,11 +1,20 @@
 {
  "live": {
-  "seen": "2026-11-25T07:01:43Z",
-  "version": "1795590034-6906"
+  "seen": "2026-11-25T07:02:11Z",
+  "version": "1795590121-b12c"
  },
  "ours": {
-  "at": "2026-11-25T07:01:43Z",
-  "files": {},
-  "version": "1795590034-6906"
+  "at": "2026-11-25T07:02:11Z",
+  "files": {
+   "app.js": "a43010cbbc3beec740ef94a6217db19696bf0792b33886f90e156ec481a20f7e",
+   "form_sprites.json": "c75c75b5b510aa63be2360f0343e7219eb540dc965426cdf5a5fea776fdf1551",
+   "geo.json": "62d8ed1e210ee27d4586dada72466c4e50929ce395f52c09f441ffd5f402cbc7",
+   "index.html": "106d22c74c3163d3be1418e7fddf113448bca5ea272de434468c2b50f61d7587",
+   "map_data.json": "3781354600e7950f2aa0a61f92878853491feeeefc8b1249e18b95230af42977",
+   "sprites.json": "611ca9c3d44badbd747138c9ce594fd4f8139b30abfd9287d9c1b2cd1f8a680d",
+   "style.css": "747ec409ec0ccbb4af14dd5e1b104fafffbb62846527d60f04cf2336de3b2921",
+   "world.json": "b8ef53ddc7852a2dbf78d5fe6ece9e36813e904c9f74e4bcc493508b76bc3cd9"
+  },
+  "version": "1795590121-b12c"
  }
 }
