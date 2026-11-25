@@ -18807,7 +18807,7 @@
 "baby mobile",
 "carnival target game"
 ],
-"n": 87
+"n": 89
 },
 "Trades & roles": {
 "c": [
@@ -24335,12 +24335,13 @@
 "crystal ball",
 "disco ball",
 "great ball",
+"item ball",
 "poke ball",
 "rubber ball",
 "seed ball",
 "wrecking ball"
 ],
-"n": 16,
+"n": 18,
 "p": "outdoor toy"
 },
 "ball lightning": {
@@ -41333,7 +41334,7 @@
 "leaf": 1,
 "m": [],
 "n": 0,
-"tn": 26
+"tn": 28
 },
 "outfit": {
 "f": "Clothing & adornment",
@@ -52295,7 +52296,7 @@
 "person",
 "prehistoric"
 ],
-"referents": 3882,
+"referents": 3883,
 "species": 1025
 },
 "referents": {
@@ -67527,6 +67528,15 @@
 ],
 "w": "Itaomacip",
 "x": 1
+},
+"item ball": {
+"g": "ball",
+"k": "object",
+"s": [
+590,
+591
+],
+"w": "Pokémon (video game series)"
 },
 "itzpapalotl": {
 "d": "Itzpapalotl",
@@ -94476,7 +94486,8 @@
 "Amanita muscaria",
 "Agaricus mushroom",
 "RPG mimic",
-"poisonous mushroom lookalikes"
+"poisonous mushroom lookalikes",
+"item ball"
 ],
 [
 "life"
@@ -94487,7 +94498,8 @@
 [
 "Amanita muscaria",
 "Agaricus mushroom",
-"RPG mimic"
+"RPG mimic",
+"item ball"
 ],
 [
 "life"
