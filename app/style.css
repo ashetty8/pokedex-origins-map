@@ -121,10 +121,21 @@ select{font:inherit;font-size:.82rem;padding:8px 10px;border:1px solid var(--rul
 /* the gap under the title belongs to the sticky box, so rows pass under a
    solid edge and the panel beside it can be measured in one piece */
 .resultstick .resulthead{margin-bottom:0}
+/* --- the letters --- */
+.azbar{display:flex;flex-wrap:wrap;gap:1px;margin-top:9px;max-width:1000px}
+.azbar[hidden]{display:none}
+.azkey{flex:1 1 auto;min-width:21px;background:var(--card);border:1px solid var(--rule);
+  border-radius:5px;padding:2px 0;font-family:var(--mono);font-size:.68rem;
+  color:var(--ink-soft);cursor:pointer;text-align:center}
+.azkey:hover{color:var(--ink);border-color:var(--ink-faint);background:var(--paper)}
+.azkey.off{opacity:.3;cursor:default}
+.azkey.off:hover{color:var(--ink-soft);border-color:var(--rule);background:var(--card)}
 /* On one column the header is already a third of the screen, and pinning a
    second block under it would leave the rows a strip to live in. The trail
    still prints, it just travels with the list. */
-@media (max-width:860px){.resultstick{position:static;margin-top:0;padding-top:0}}
+@media (max-width:860px){.resultstick{position:static;margin-top:0;padding-top:0}
+  /* and nothing of it is held, so a jump only has to clear the header */
+  html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + var(--topbar,128px) + 8px)}}
 .resulthead{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;flex-wrap:wrap;max-width:1000px}
 .resulthead h2{font-size:.95rem}
 .resultnote{font-family:var(--mono);font-size:.72rem;color:var(--ink-faint);font-variant-numeric:tabular-nums}
@@ -609,6 +620,14 @@ body.focusmode .resulthead{display:none}
 .layout{max-width:min(1860px,98vw)}
 
 /* --- toasts (an undo that is kinder than a dialog) --- */
+/* --- back to the top --- */
+/* Off to the side of the toasts, which own the middle of that edge. */
+.totop{position:fixed;right:22px;bottom:22px;z-index:55;background:var(--card);
+  border:1px solid var(--rule-strong);border-radius:999px;padding:7px 14px;
+  font-family:var(--mono);font-size:.72rem;color:var(--ink-soft);cursor:pointer;
+  box-shadow:0 6px 18px rgba(0,0,0,.14)}
+.totop:hover{color:var(--ink);border-color:var(--ink-faint)}
+.totop[hidden]{display:none}
 .toastwrap{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:60;
   display:flex;flex-direction:column;gap:8px;align-items:center;pointer-events:none;
   padding-bottom:env(safe-area-inset-bottom,0px)}

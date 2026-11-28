@@ -605,6 +605,69 @@
     };
     return b;
   }
+  /* ---------- the long lists ----------
+     Three and a half thousand rows is a different object from a hundred, and
+     the controls that suited the short lists do not reach the far end of it.
+     These are for the far end: a way back to the top from anywhere, and a way
+     to land on a letter without passing everything before it. */
+  function toTop(){
+    /* Smooth is a courtesy over a screenful or two and a journey over thirty
+       thousand pixels, which is what the referent list is. */
+    var far=window.scrollY>4000;
+    window.scrollTo({top:0,behavior:(REDUCE||far)?"auto":"smooth"});
+    var q=$("#q"); if(q) try{ q.focus({preventScroll:true}) }catch(e){}
+  }
+  function syncTopBtn(){
+    var b=$("#totop"); if(!b) return;
+    b.hidden = !(window.scrollY>1200 && state.tab!=="map" && state.tab!=="atlas");
+  }
+  addEventListener("scroll",syncTopBtn,{passive:true});
+  $("#totop").addEventListener("click",toTop);
+  /* The letter a row files under — the same string the A–Z sort orders by, so
+     the rail and the order it jumps through cannot disagree. */
+  function rowLetter(r){
+    var c=String(r.name||"").charAt(0).toUpperCase();
+    return (c>="A"&&c<="Z")?c:"#";
+  }
+  var AZ="#ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+  function renderAZ(){
+    var bar=$("#azbar"); if(!bar) return;
+    bar.innerHTML="";
+    /* only the flat lists, and only once there is enough of one to be lost in */
+    var on = !!state.all && state.tab==="clusters" && LASTROWS.length>200;
+    bar.hidden=!on;
+    if(!on) return;
+    var have={};
+    LASTROWS.forEach(function(r){ have[rowLetter(r)]=1 });
+    AZ.forEach(function(c){
+      var b=el("button","azkey"+(have[c]?"":" off"),c);
+      b.type="button";
+      b.disabled=!have[c];
+      b.title = state.sort==="az" ? "Jump to "+c : "Jump to "+c+" — sorts A–Z first";
+      b.onclick=function(){ jumpTo(c) };
+      bar.appendChild(b);
+    });
+  }
+  /* A letter is a request to be at that letter, so it sorts the list that way
+     when it is not already — jumping to M down a list ordered by Pokémon count
+     would land somewhere true and useless. */
+  function jumpTo(c){
+    if(state.sort!=="az"){ state.sort="az"; $("#sort").value="az"; state.limit=120; render() }
+    var at=-1;
+    for(var i=0;i<LASTROWS.length;i++){ if(rowLetter(LASTROWS[i])===c){ at=i; break } }
+    if(at<0) return;
+    if(state.limit<at+1){ state.limit=at+200; render() }
+    requestAnimationFrame(function(){
+      var rs=$("#results").querySelectorAll(".rows > *");
+      var row=rs[at]; if(!row) return;
+      /* a jump lands, it does not travel: smoothing this one would fly the
+         reader through every row between here and there */
+      try{ row.scrollIntoView({block:"start",behavior:"auto"}) }catch(e){ row.scrollIntoView() }
+      try{ row.focus({preventScroll:true}) }catch(e){}
+      say(c+" — row "+(at+1)+" of "+LASTROWS.length);
+    });
+  }
+
   /* ---------- where you are, on every tab ----------
      The four tabs have always shared one place — the same path drives Browse,
      the Map, the Atlas and the scoping of the Pokémon list — but each one said
@@ -767,6 +830,7 @@
     if(!D) return;
     var host=$("#results"); host.innerHTML=""; ATTRCACHE=null; INFCACHE=null;
     syncClears(); renderFilterBar(); renderWhere(); syncURL(false);
+    setTimeout(syncTopBtn,0);
     setTimeout(topbar,0);          /* the heading row may have changed height */
     $("#rail").classList.toggle("hidden",state.tab==="flags");
     $("#pokefilters").classList.toggle("hidden",state.tab==="flags");
@@ -853,7 +917,7 @@
       noun = state.all==="referents" ? " referents"
            : state.all==="clusters"  ? " clusters" : " families";
     $("#resultnote").textContent = rows.length + noun + (state.q?" matching “"+state.q+"”":"");
-    LASTROWS=rows; LASTMODE=mode; syncExport();
+    LASTROWS=rows; LASTMODE=mode; syncExport(); renderAZ();
     if(!rows.length){ host.appendChild(noMatch()); return }
     var list=el("div","rows");
     rows.slice(0,state.limit).forEach(function(r){
@@ -867,22 +931,42 @@
     host.appendChild(list);
     if(rows.length>state.limit){
       var m=el("button","more","Show "+Math.min(200,rows.length-state.limit)+" more of "+rows.length);
-      /* growing a list should not move it. Hold the scroll position and put
-         the caret on the first row that just arrived, so the keyboard keeps
-         its place too. */
-      m.onclick=function(){
-        var at=state.limit, y=window.scrollY;
-        state.limit+=200; render();
-        window.scrollTo(0,y);
-        requestAnimationFrame(function(){
-          var rs=$("#results").querySelectorAll(".rows > *");
-          if(rs[at]){ try{ rs[at].focus({preventScroll:true}) }catch(e){} }
-          window.scrollTo(0,y);
-          say((rows.length>state.limit?200:rows.length-at)+" more shown");
-        });
-      };
+      m.onclick=function(){ grow(rows.length,true) };
       host.appendChild(m);
+      /* 3883 referents was nineteen presses of that button. Reaching the end
+         of what is drawn is the same request, so the scroll makes it for you —
+         the button stays, because a keyboard never reaches the bottom of a
+         list that keeps growing away from it, and it is the only way to grow
+         one without a pointer. */
+      watchTail(m);
     }
+  }
+  /* Growing a list should not move it: hold the scroll where it is and, when
+     a person asked rather than the scroll, put the caret on the first row that
+     just arrived so the keyboard keeps its place too. */
+  function grow(total,byHand){
+    var at=state.limit, y=window.scrollY;
+    state.limit+=200; render();
+    window.scrollTo(0,y);
+    requestAnimationFrame(function(){
+      window.scrollTo(0,y);
+      if(byHand){
+        var rs=$("#results").querySelectorAll(".rows > *");
+        if(rs[at]){ try{ rs[at].focus({preventScroll:true}) }catch(e){} }
+      }
+      say((total>state.limit?200:total-at)+" more shown");
+    });
+  }
+  var TAILWATCH=null;
+  function watchTail(m){
+    if(TAILWATCH){ TAILWATCH.disconnect(); TAILWATCH=null }
+    if(!window.IntersectionObserver) return;      /* the button still works */
+    TAILWATCH=new IntersectionObserver(function(es){
+      if(!es.some(function(e){ return e.isIntersecting })) return;
+      TAILWATCH.disconnect(); TAILWATCH=null;     /* the next render re-arms it */
+      m.click();
+    },{rootMargin:"600px"});                      /* ahead of the edge, not at it */
+    TAILWATCH.observe(m);
   }
   /* Nothing matched. Say why, offer the way out, and — when it looks like a
      near miss rather than a filter problem — name the closest thing there is. */
