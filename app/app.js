@@ -847,8 +847,11 @@
     }
     else { rows=kindRows(); mode="kind"; $("#resulttitle").textContent="Categories"; }
     var noun = mode==="species"?" Pokémon":(mode==="family"?" families":(mode==="region"?" places of origin":(mode==="kind"?" categories":(mode==="branch"?" groups":" clusters & referents"))));
-    if(state.all) noun = state.all==="referents" ? " referents"
-                       : state.all==="clusters"  ? " clusters" : " families";
+    /* the flat list is a Browse view: naming the Pokémon tab's rows after it
+       would label Pokémon "referents" whenever a list was left open */
+    if(state.all && state.tab==="clusters")
+      noun = state.all==="referents" ? " referents"
+           : state.all==="clusters"  ? " clusters" : " families";
     $("#resultnote").textContent = rows.length + noun + (state.q?" matching “"+state.q+"”":"");
     LASTROWS=rows; LASTMODE=mode; syncExport();
     if(!rows.length){ host.appendChild(noMatch()); return }
@@ -3408,12 +3411,52 @@
     if(b && b.scrollIntoView) try{ b.scrollIntoView({block:"nearest",inline:"nearest"}) }catch(e){}
     syncTabFade();
   }
+  /* ---------- keeping your place across the tabs ----------
+     Leaving a tab used to throw away how far you had paged but keep the pixel
+     you had scrolled to: 720 rows deep at 4000px, you came back to 120 rows
+     and were still at 4000px — row 500 became row 117 with nothing to say so.
+     The two halves of "where you are" have to travel together or neither
+     should.
+
+     A remembered place is only good while the list under it is the same list,
+     so it is kept with a signature of everything that decides what is listed.
+     Search, filter, sort or move, and the signature changes and the place is
+     dropped rather than restored onto rows it was never measured against. */
+  var TABPLACE={};
+  function viewSig(){
+    return [state.tab,state.path.join(" › "),state.q,state.all,state.sort,
+            state.onlymulti?1:0,state.onlyinf?1:0,state.scope?1:0,state.awide?1:0,
+            state.poke,Array.from(state.types).join(","),Array.from(state.gens).join(","),
+            Array.from(state.colours).join(","),Array.from(state.misc).join(",")].join("|");
+  }
+  function rememberPlace(){
+    if(!D) return;
+    TABPLACE[state.tab]={sig:viewSig(),limit:state.limit,y:Math.round(window.scrollY||0)};
+  }
+  /* Sets the paging depth for the tab we are arriving at and hands back the
+     height to put it at — 0 when there is nothing to go back to, because
+     landing at the top of a fresh list beats landing in the middle of one. */
+  function restorePlace(){
+    var p=TABPLACE[state.tab];
+    var same=p && p.sig===viewSig();
+    state.limit=same?p.limit:120;
+    return same?p.y:0;
+  }
+  /* The rows have to exist before the height does, and sprites arrive after
+     the rows, so put it back once the layout has settled as well. */
+  function scrollBackTo(y){
+    window.scrollTo(0,y);
+    requestAnimationFrame(function(){ window.scrollTo(0,y) });
+  }
   function setTab(t){
     if(t==="flags" && !FLAGGING) t="clusters";   /* a bookmark from the artifact */
     if(state.tab===t && t!=="flags") return;
-    state.tab=t; state.limit=120;
+    rememberPlace();                 /* where we are leaving, before we leave it */
+    state.tab=t;
+    var y=restorePlace();
     if(t!=="map" && t!=="atlas") setFocusMode(false);
     closeRail(); markTabs(t); record(); render();
+    scrollBackTo(y);
     say(t==="clusters"?"Browse":t.charAt(0).toUpperCase()+t.slice(1));
   }
   TABS.forEach(function(t){ $("#tab-"+t).addEventListener("click",function(){ setTab(t) }) });
