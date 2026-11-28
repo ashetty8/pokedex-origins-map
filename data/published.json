@@ -1,20 +1,20 @@
 {
  "live": {
-  "seen": "2026-11-28T02:22:40Z",
-  "version": "1795832550-e5a3"
+  "seen": "2026-11-28T02:25:24Z",
+  "version": "1795832712-fad0"
  },
  "ours": {
-  "at": "2026-11-28T02:22:40Z",
+  "at": "2026-11-28T02:25:24Z",
   "files": {
    "app.js": "c40f0fb885fdc7568946d62eee43a896a3a9a1b94bf979e2899ebb4a000cdc78",
    "form_sprites.json": "c75c75b5b510aa63be2360f0343e7219eb540dc965426cdf5a5fea776fdf1551",
    "geo.json": "62d8ed1e210ee27d4586dada72466c4e50929ce395f52c09f441ffd5f402cbc7",
-   "index.html": "d16c85716d5dad5d37bca9b5bf927214ed77ef31e7789e963c3943ad68f08d44",
+   "index.html": "1f337726ba6171d32961960a1646be5b0e463b66cdf6a75ada51155b97e8e88c",
    "map_data.json": "3781354600e7950f2aa0a61f92878853491feeeefc8b1249e18b95230af42977",
    "sprites.json": "611ca9c3d44badbd747138c9ce594fd4f8139b30abfd9287d9c1b2cd1f8a680d",
-   "style.css": "d90e30e44c02f49865a59d55496f029870b2de54e0d0ac4d850ba2c2b199ed97",
+   "style.css": "cb08760e00067ebaa9bbd7476f4194005415f6e77b39d5b084e4d59c563db652",
    "world.json": "b8ef53ddc7852a2dbf78d5fe6ece9e36813e904c9f74e4bcc493508b76bc3cd9"
   },
-  "version": "1795832550-e5a3"
+  "version": "1795832712-fad0"
  }
 }
